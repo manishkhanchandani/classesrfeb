@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
@@ -12,6 +12,12 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$scope', function($scope) {
 
   $scope.profile = {};
+  
+  $scope.mapOptions = {
+      types: '(cities)'
+    };
+
+  $scope.details = {};
 
   //form submission
   $scope.profileSubmit = function() {

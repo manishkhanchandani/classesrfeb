@@ -13,7 +13,7 @@
       </div>
       <div class="form-group">
           <label for="birthPlace">Birth Place</label>
-          <input type="text" class="form-control" id="birthPlace" ng-model="profile.location" placeholder="Enter Birth Place">
+          <input type="text" class="form-control addressBox" id="birthPlace" ng-model="profile.location" placeholder="Enter Birth Place" ng-autocomplete options="mapOptions" details="profile.details">
       </div>
       <div class="form-group">
           <div class="row">
