@@ -26,6 +26,16 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
 
   $scope.details = {};
   
+  $scope.allProfiles = null;
+  
+  $scope.getAllProfiles = function() {
+    var profiles = localStorage.getItem('profiles');
+    $scope.allProfiles = JSON.parse(profiles);
+    console.log($scope.allProfiles);
+  };
+  $scope.getAllProfiles();
+  
+  
   function saveUser(profile) {
     //get the profile
     var profiles = localStorage.getItem('profiles');
@@ -38,11 +48,13 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
       obj = JSON.parse(profiles);
       if (obj[key]) {
         console.log('user already existed');
+        return;
       } else {
         obj[key] = profile;
         localStorage.setItem('profiles', JSON.stringify(obj));
       }
     }
+    $scope.getAllProfiles();
     return obj;
   }//end saveUser
 
@@ -52,5 +64,11 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
     $scope.profile.lng = $scope.details.components.lng;
     //saving user in local storage
     saveUser($scope.profile);
+  };
+  
+  
+  $scope.data = {};
+  $scope.matchProfile = function() {
+    console.log($scope.data);
   };
 }]);

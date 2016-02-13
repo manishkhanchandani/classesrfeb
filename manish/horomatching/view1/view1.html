@@ -3,6 +3,19 @@
 <div class="row">
   <div class="col-md-4">
     <h3>Match Making</h3>
+    <form ng-submit="matchProfile()">
+        <div class="form-group">
+            <label for="profile1">Profile Of User 1</label>
+            <select ng-model="data.profile1" id="profile1" class="form-control" ng-options="item.name for item in allProfiles" required>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="profile2">Profile Of User 2</label>
+            <select ng-model="data.profile2" id="profile2" class="form-control" ng-options="item.name for item in allProfiles" required>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Match the Profiles</button>
+    </form>
   </div>
   <div class="col-md-4">
     <h3>Create Birth Profile</h3>
@@ -48,7 +61,12 @@
     
   </div>
   <div class="col-md-4">
-    
+    <h3>All Profile</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="item in allProfiles">{{item.name}}<br>{{item.location}}<br>
+        {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}}
+      </li>
+    </ul>
   </div>
 </div>
 </div>
