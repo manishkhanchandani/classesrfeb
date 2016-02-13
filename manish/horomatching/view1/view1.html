@@ -1,9 +1,59 @@
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template 1</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <h1>Horoscope Match Making</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Match Making</h3>
+  </div>
+  <div class="col-md-4">
+    <h3>Birth Profile</h3>
+    <form ng-submit="profileSubmit()">
+      <div class="form-group">
+          <label for="profileName">Birth Profile Name</label>
+          <input type="text" class="form-control" id="profileName" ng-model="profile.name" placeholder="Enter Birth Profile">
       </div>
-
-    </div><!-- /.container -->
+      <div class="form-group">
+          <label for="birthPlace">Birth Place</label>
+          <input type="text" class="form-control" id="birthPlace" ng-model="profile.location" placeholder="Enter Birth Place">
+      </div>
+      <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="birthDay">Birth Day</label>
+                  <input type="number" class="form-control" id="birthDay" ng-model="profile.day" placeholder="Enter Day">
+              </div>
+              <div class="form-group">
+                  <label for="birthMonth">Birth Month</label>
+                  <input type="number" class="form-control" id="birthMonth" ng-model="profile.month" placeholder="Enter Month">
+              </div>
+              <div class="form-group">
+                  <label for="birthYear">Birth Year</label>
+                  <input type="number" class="form-control" id="birthYear" ng-model="profile.year" placeholder="Enter Year">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="birthHour">Birth Hour</label>
+                  <input type="number" class="form-control" id="birthHour" ng-model="profile.hour" placeholder="Enter Hour">
+              </div>
+              <div class="form-group">
+                  <label for="birthMinute">Birth Minute</label>
+                  <input type="number" class="form-control" id="birthMinute" ng-model="profile.minute" placeholder="Enter Minute">
+              </div>
+            </div>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary form-control">Submit</button>
+  </form>
+    
+  </div>
+  <div class="col-md-4">
+    
+  </div>
+</div>
+</div>
