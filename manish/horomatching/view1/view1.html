@@ -73,23 +73,14 @@
       <button type="submit" class="btn btn-primary form-control">Submit</button>
   </form>
   
-  <h3>All Profile</h3>
-  <div class="alert alert-info" role="alert" ng-if="allProfilesCount <= 0">
-    No Profiles in your list.
-  </div>
-  <ul class="list-group" ng-if="allProfilesCount > 0">
-    <li class="list-group-item" ng-repeat="item in allProfiles">{{item.name}}<br>{{item.location}}<br>
-      {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
-    </li>
-  </ul>
   </div>
   <div class="col-md-4">
-    <div class="row">
+    <div class="row" ng-if="allProfilesCount > 0">
       <div class="col-md-12">
         <h3>Current Match</h3>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="allProfilesCount > 0">
       <div class="col-md-12">
         <form ng-submit="matchCurrent()">
         <div class="form-group">
@@ -113,7 +104,7 @@
         </form>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="allProfilesCount > 0">
       <div class="col-md-12">
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="item in matchCurrentResult">
@@ -126,6 +117,26 @@
     </div>
     
     
+    
+    
+    
+    <div class="row">
+      <div class="col-md-12">
+      <h3>All Profile</h3>
+      </div>
+    </div>
+      <div class="alert alert-info" role="alert" ng-if="allProfilesCount <= 0">
+        No Profiles in your list.
+      </div>
+      <ul class="list-group" ng-if="allProfilesCount > 0">
+        <li class="list-group-item" ng-repeat="item in allProfiles"><strong>{{item.name}}</strong><br>{{item.location}}<br>
+          {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
+        </li>
+      </ul>
+      
+      
+      
+      
   </div>
   
   

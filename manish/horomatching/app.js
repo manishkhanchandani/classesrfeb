@@ -8,8 +8,10 @@ angular.module('myApp', [
   //'ngAutocomplete',
   //'ui.bootstrap'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
+  $locationProvider.html5Mode(true);
+
 }])
 
 .controller('mainController', ['$scope', function($scope) {
