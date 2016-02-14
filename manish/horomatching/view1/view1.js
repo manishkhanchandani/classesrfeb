@@ -37,13 +37,15 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   
   $scope.getAllProfiles = function() {
     var profiles = localStorage.getItem('profiles');
-    $scope.allProfiles = JSON.parse(profiles);
-    $scope.allProfilesCount = Object.keys($scope.allProfiles).length;
-    
-    for (var key in $scope.allProfiles) {
-      $scope.data.profile1 = $scope.allProfiles[key];
-      $scope.matchCurrentVar.profileCurrent = $scope.allProfiles[key];
-      break;
+    if (profiles) {
+      $scope.allProfiles = JSON.parse(profiles);
+      $scope.allProfilesCount = Object.keys($scope.allProfiles).length;
+      
+      for (var key in $scope.allProfiles) {
+        $scope.data.profile1 = $scope.allProfiles[key];
+        $scope.matchCurrentVar.profileCurrent = $scope.allProfiles[key];
+        break;
+      }
     }
   };
   $scope.getAllProfiles();
