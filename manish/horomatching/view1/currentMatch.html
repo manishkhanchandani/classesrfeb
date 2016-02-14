@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+        <h1>{{name}}'s Good And Bad Days</h1>
+    
+    
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      
+        <ul class="list-group" ng-if="matchCurrentResult">
+          <li class="list-group-item" ng-repeat="item in matchCurrentResult">
+            <strong>Date:</strong> {{item.date}}
+            <br />
+            <strong>Points:</strong> {{item.result.points}} (<strong>{{item.result.results}}</strong>)
+          </li>
+        </ul>
+    
+    
+    </div>
+  </div>
+</div>

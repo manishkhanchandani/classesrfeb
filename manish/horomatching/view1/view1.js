@@ -7,6 +7,49 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl'
   });
+  
+  $routeProvider.when('/currentMatch/:name/:dob/:lat/:lng/:date/:lat2/:lng2/:days', {
+    templateUrl: 'view1/currentMatch.html',
+    controller: 'View2Ctrl'
+  });
+}])
+
+
+.filter('encodeUrl', function() {
+  return function(str) {
+	  return encodeURIComponent(str);
+  };
+})
+
+
+.filter('pad', function() {
+  return function(num) {
+    var size = 2;
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+  };
+})
+
+.controller('View2Ctrl', ['$scope', 'dataService', '$routeParams', function($scope, dataService, $routeParams) {
+  console.log($routeParams);
+  $scope.name = $routeParams.name;
+  function matchCurrentSuccess(response) {
+    console.log(response);
+    if (response.data.success != 1) {
+     //show alert 
+    }
+    $scope.matchCurrentResult = response.data.data;
+    
+    
+  }
+  
+  function matchCurrentFailure(response) {
+    console.log('error: ', response);
+  }
+  
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/api.php?action=continuityLatLng&noOfDays='+$routeParams.days+'&from[dob]='+$routeParams.dob+'&from[lat]='+$routeParams.lat+'&from[lng]='+$routeParams.lng+'&to[dob]='+$routeParams.date+'&to[lat]='+$routeParams.lat2+'&to[lng]='+$routeParams.lng2;
+ dataService.get(url, matchCurrentSuccess, matchCurrentFailure, 1);
 }])
 
 .controller('View1Ctrl', ['$scope', 'dataService', '$interval', function($scope, dataService, $interval) {

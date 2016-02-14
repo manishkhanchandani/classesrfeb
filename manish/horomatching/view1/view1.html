@@ -106,7 +106,11 @@
     </div>
     <div class="row" ng-if="allProfilesCount > 0">
       <div class="col-md-12">
-        <ul class="list-group">
+        
+        <ul class="list-group" ng-if="matchCurrentResult">
+          <li class="list-group-item"><a href="http://horomatching.tk/currentMatch/{{matchCurrentVar.profileCurrent.name}}/{{matchCurrentVar.profileCurrent.year}}-{{matchCurrentVar.profileCurrent.month | pad}}-{{matchCurrentVar.profileCurrent.day | pad}}+{{matchCurrentVar.profileCurrent.hour | pad}}:{{matchCurrentVar.profileCurrent.minute | pad}}/{{matchCurrentVar.profileCurrent.lat}}/{{matchCurrentVar.profileCurrent.lng}}/{{matchCurrentVar.curDate | encodeUrl}}/{{details.components.lat}}/{{details.components.lng}}/{{matchCurrentVar.noOfDays}}">Share This Link</a> <br />
+          http://horomatching.tk/currentMatch/{{matchCurrentVar.profileCurrent.name}}/{{matchCurrentVar.profileCurrent.year}}-{{matchCurrentVar.profileCurrent.month | pad}}-{{matchCurrentVar.profileCurrent.day | pad}}+{{matchCurrentVar.profileCurrent.hour | pad}}:{{matchCurrentVar.profileCurrent.minute | pad}}/{{matchCurrentVar.profileCurrent.lat}}/{{matchCurrentVar.profileCurrent.lng}}/{{matchCurrentVar.curDate | encodeUrl}}/{{details.components.lat}}/{{details.components.lng}}/{{matchCurrentVar.noOfDays}}
+          </li>
           <li class="list-group-item" ng-repeat="item in matchCurrentResult">
             <strong>Date:</strong> {{item.date}}
             <br />
