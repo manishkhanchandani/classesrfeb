@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-4">
     <h3>Match Making</h3>
-    <form ng-submit="matchProfile()">
+    <form ng-submit="matchProfile()" ng-if="allProfilesCount > 1">
         <div class="form-group">
             <label for="profile1">Profile Of User 1</label>
             <select ng-model="data.profile1" id="profile1" class="form-control" ng-options="item.name for item in allProfiles" required>
@@ -16,6 +16,20 @@
         </div>
         <button type="submit" class="btn btn-primary form-control">Match the Profiles</button>
     </form>
+    <div class="alert alert-info" role="alert" ng-if="allProfilesCount < 2">
+      You don't have two profiles in your list. Please create atleast 2 profiles to see match making profiles.
+    </div>
+    <div class="alert alert-danger" role="alert" ng-if="matchError">
+      {{matchError}}
+    </div>
+    <div class="alert alert-success" role="alert" ng-if="points">
+      <strong>Matching Points:</strong> {{points.points}} <br />
+      <strong>Matching Result:</strong> {{points.results}}
+    </div>
+    
+    
+    
+
   </div>
   <div class="col-md-4">
     <h3>Create Birth Profile</h3>
@@ -33,11 +47,11 @@
             <div class="col-md-6">
               <div class="form-group">
                   <label for="birthDay">Birth Day</label>
-                  <input type="number" class="form-control" id="birthDay" ng-model="profile.day" placeholder="Enter Day" required>
+                  <input type="number" min="1" class="form-control" id="birthDay" ng-model="profile.day" placeholder="Enter Day" required>
               </div>
               <div class="form-group">
                   <label for="birthMonth">Birth Month</label>
-                  <input type="number" class="form-control" id="birthMonth" ng-model="profile.month" placeholder="Enter Month" required>
+                  <input type="number" min="1" class="form-control" id="birthMonth" ng-model="profile.month" placeholder="Enter Month" required>
               </div>
               <div class="form-group">
                   <label for="birthYear">Birth Year</label>
@@ -47,26 +61,73 @@
             <div class="col-md-6">
               <div class="form-group">
                   <label for="birthHour">Birth Hour</label>
-                  <input type="number" class="form-control" id="birthHour" ng-model="profile.hour" placeholder="Enter Hour" required>
+                  <input type="number" min="0" class="form-control" id="birthHour" ng-model="profile.hour" placeholder="Enter Hour" required>
               </div>
               <div class="form-group">
                   <label for="birthMinute">Birth Minute</label>
-                  <input type="number" class="form-control" id="birthMinute" ng-model="profile.minute" placeholder="Enter Minute" required>
+                  <input type="number" min="0" class="form-control" id="birthMinute" ng-model="profile.minute" placeholder="Enter Minute" required>
               </div>
             </div>
           </div>
       </div>
       <button type="submit" class="btn btn-primary form-control">Submit</button>
   </form>
-    
+  
+  <h3>All Profile</h3>
+  <div class="alert alert-info" role="alert" ng-if="allProfilesCount <= 0">
+    No Profiles in your list.
+  </div>
+  <ul class="list-group" ng-if="allProfilesCount > 0">
+    <li class="list-group-item" ng-repeat="item in allProfiles">{{item.name}}<br>{{item.location}}<br>
+      {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
+    </li>
+  </ul>
   </div>
   <div class="col-md-4">
-    <h3>All Profile</h3>
-    <ul class="list-group">
-      <li class="list-group-item" ng-repeat="item in allProfiles">{{item.name}}<br>{{item.location}}<br>
-        {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}}
-      </li>
-    </ul>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Current Match</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <form ng-submit="matchCurrent()">
+        <div class="form-group">
+            <label for="profileCurrent">Profile Of User</label>
+            <select ng-model="matchCurrentVar.profileCurrent" id="profileCurrent" class="form-control" ng-options="item.name for item in allProfiles" required>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="curDate">Current Date & Time</label>
+          <input type="text" class="form-control" id="curDate" ng-model="matchCurrentVar.curDate">
+        </div>
+        <div class="form-group">
+            <label for="currentPlace">Current Place</label>
+            <input type="text" class="form-control addressBox" id="currentPlace" ng-model="matchCurrentVar.currentPlace" placeholder="Enter Current Place" ng-autocomplete options="mapOptions" details="details" required>
+        </div>
+        <div class="form-group">
+            <label for="noOfDays">No of Days</label>
+          <input type="text" class="form-control" id="noOfDays" ng-model="matchCurrentVar.noOfDays">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Match Current Position</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="item in matchCurrentResult">
+            <strong>Date:</strong> {{item.date}}
+            <br />
+            <strong>Points:</strong> {{item.result.points}} (<strong>{{item.result.results}}</strong>)
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
   </div>
+  
+  
 </div>
 </div>
