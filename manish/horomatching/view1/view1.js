@@ -6,12 +6,12 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   $routeProvider.when('/', {
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl'
-  });
-  
-  $routeProvider.when('/currentMatch/:name/:dob/:lat/:lng/:date/:lat2/:lng2/:days', {
+  })
+  .when('/currentMatch/:name/:dob/:lat/:lng/:date/:lat2/:lng2/:days', {
     templateUrl: 'view1/currentMatch.html',
     controller: 'View2Ctrl'
   });
+  
 }])
 
 
@@ -267,4 +267,9 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
    alert(error.message);
   };
   $scope.setCurrentLocation();
+  
+  $scope.MM_openBrWindow = function(winName,features) { //v2.0
+    var theURL = ('http://horomatching.tk/currentMatch/'+$scope.matchCurrentVar.profileCurrent.name+'/'+$scope.matchCurrentVar.profileCurrent.year+'-'+pad($scope.matchCurrentVar.profileCurrent.month, 2)+'-'+pad($scope.matchCurrentVar.profileCurrent.day, 2)+'+'+pad($scope.matchCurrentVar.profileCurrent.hour, 2)+':'+pad($scope.matchCurrentVar.profileCurrent.minute, 2)+'/'+$scope.matchCurrentVar.profileCurrent.lat+'/'+$scope.matchCurrentVar.profileCurrent.lng+'/'+encodeURIComponent($scope.matchCurrentVar.curDate)+'/'+$scope.details.components.lat+'/'+$scope.details.components.lng+'/'+$scope.matchCurrentVar.noOfDays);
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(theURL),winName,features);
+  };
 }]);
