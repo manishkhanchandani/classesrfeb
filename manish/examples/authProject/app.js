@@ -14,6 +14,7 @@ config(['$routeProvider', function($routeProvider) {
 
 .controller('mainController', ['$scope', function($scope) {
   //https://www.firebase.com/docs/web/guide/login/password.html
+  //https://www.firebase.com/docs/web/guide/user-auth.html
   $scope.ref = new Firebase("https://mycontacts12.firebaseio.com");
   var ref = $scope.ref;
   
