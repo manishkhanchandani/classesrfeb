@@ -112,4 +112,29 @@ config(['$routeProvider', function($routeProvider) {
     });  
   };
   
+  // Create a callback which logs the current auth state
+  function authDataCallback(authData) {
+    if (authData) {
+      console.log("User " + authData.uid + " is logged in with " + authData.provider);
+    } else {
+      console.log("User is logged out");
+    }
+  }
+  /*
+  ref.onAuth(authDataCallback);
+  //To stop listening for changes, you can use offAuth().
+  ref.offAuth(authDataCallback);
+  //Additionally, you can use the getAuth() method to synchronously check authentication state.
+
+    var authData = ref.getAuth();
+    if (authData) {
+      console.log("User " + authData.uid + " is logged in with " + authData.provider);
+    } else {
+      console.log("User is logged out");
+    }
+    
+    logout
+    ref.unauth();
+    */
+  
 }])
