@@ -21,6 +21,7 @@ angular.module('myApp.auth', ['ngRoute'])
       if (error) {
         console.log("Error creating user:", error);
       } else {
+        console.log(userData);
         console.log("Successfully created user account with uid:", userData.uid);
       }
     });
