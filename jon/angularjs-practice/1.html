@@ -1,0 +1,122 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New Page 1</title>
+
+    <script src="js/angularjs/1.5.0-rc.2/angular.min.js"></script>
+
+    <script>
+        var app = angular.module('myApp',[]);
+
+        app.controller('mainController', function($scope, $log, $filter) {
+            $scope.name 	= 'John';
+            $scope.age		= 31;
+            $scope.gender	= 'male';
+            $scope.amount	= 12.99;
+            $scope.rank		= [1,2,3];
+            $scope.obj		= {'name': 'mango', 'lastname': 'apple'};
+
+            $scope.formatted_name	= $filter('uppercase')($scope.name);
+
+            //console.log($scope);
+
+            $log.log('this is log'. __line);
+            $log.info('this is info');
+            $log.warn('this is warn');
+            $log.debug('this is debug');
+            $log.error('this is error');
+
+            $log.error('this is deb');
+
+
+
+
+        });
+
+
+        app.controller('mainController2', ["$scope", "$timeout", "$log", "$filter", function($scope, $timeout, $log, $filter) {
+
+            $scope.name		= 'John2';
+
+            $scope.$watch('name', function(newValue, oldValue){
+                console.log('new value of variable name is ' + newValue);
+                console.log('old value of variable name is ' + oldValue);
+            });
+
+
+
+            $timeout( function(){
+                //changes displayed name to Mango after 5 seconds
+                $scope.name 	= 'Mango';
+                //$scope.name 	= 'Mango2';
+
+                console.log($scope.name);
+
+                //if(!$scope.$$phase) $scope.$apply();
+
+            }, 5000 );
+
+        }] );
+
+
+
+        app.controller('secondController', function($scope, $log, $filter){
+            $scope.anotherName	= 'Doe';
+        });
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+
+
+<div ng-controller="mainController2">
+
+
+    <input type="text" ng-model="name">
+
+    Hello {{name}}
+
+    <br><br>
+</div>
+
+
+<div ng-controller="mainController">
+
+
+    Hello {{name}}, your age is {{age}} and your gender is {{gender}}
+    <br>
+    You have {{amount}}
+    <br>
+    Your another name is {{obj.name}} and lastname is {{obj.lastname}}
+    <br>
+    Your rank is {{rank[1]}}
+
+    <br>
+    Formatted name is: {{formatted_name}}
+    <br>
+    Formatted name is: {{name | uppercase}}
+
+
+    {{nothing_here}}
+
+    <div ng-controller="secondController">
+        Hello {{name}} <br>
+        Hello {{anotherName}}
+
+
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
