@@ -82,4 +82,73 @@ angular.module('myApp.view1', ['ngRoute'])
     dataService.get(url, getAllSuccess, getAllFailure, false);
   };
   //Get All Ends
+  
+  //getOne
+  function getOneSuccess(response) {
+    console.log('success: ', response);
+    $scope.getOneItems = response.data.data;
+  }
+  
+  function getOneFailure(response) {
+    console.log('failure: ', response);
+  }
+  $scope.getOne = function(item) {
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+ item.id;
+     dataService.get(url, getOneSuccess, getOneFailure, true);
+  };
+  //getOne Ends
+  
+  //edit
+  $scope.frmEdit = {};
+  $scope.editDetails = {};
+  $scope.edit = function(item) {
+    console.log(item);
+    $scope.frmEdit.name = item.title;
+    $scope.frmEdit.email = item.detailsFull.email;
+    $scope.frmEdit.gender = item.detailsFull.gender;
+    $scope.frmEdit.tags = item.detailsFull.tagsSingle;
+    $scope.autocompleteEdit = item.location.formatted_addr;
+    $scope.editDetails.components = item.location;
+    $scope.editDetails.components.lat = item.location.latitude;
+    $scope.editDetails.components.lng = item.location.longitude;
+    $scope.editDetails.place_id = item.location.place_id;
+    $scope.editDetails.formatted_address = item.location.formatted_addr;
+    $scope.frmEdit.id = item.id;
+    console.log($scope.editDetails);
+  };
+  
+  function editSuccess(response) {
+    console.log('success: ', response);
+    $scope.frmEdit = {};
+  }
+  
+  function editFailure(response) {
+    console.log('failure: ', response);
+  }
+  
+  $scope.editSubmit = function() {
+    //main data
+    var submitData = '';
+    submitData = submitData + '&title='+encodeURIComponent($scope.frmEdit.name);
+    //xtra data
+    submitData = submitData + '&data[email]='+encodeURIComponent($scope.frmEdit.email);
+    submitData = submitData + '&data[gender]='+encodeURIComponent($scope.frmEdit.gender);
+    //location
+    submitData = submitData + '&location[latitude]='+encodeURIComponent($scope.editDetails.components.lat);
+    submitData = submitData + '&location[longitude]='+encodeURIComponent($scope.editDetails.components.lng);
+    submitData = submitData + '&location[country]='+encodeURIComponent($scope.editDetails.components.country);
+    submitData = submitData + '&location[state]='+encodeURIComponent($scope.editDetails.components.state);
+    submitData = submitData + '&location[city]='+encodeURIComponent($scope.editDetails.components.city);
+    submitData = submitData + '&location[zip]='+($scope.editDetails.components.zip ? encodeURIComponent($scope.editDetails.components.zip) : '');
+    submitData = submitData + '&location[place_id]='+encodeURIComponent($scope.editDetails.place_id);
+    submitData = submitData + '&location[county]='+encodeURIComponent($scope.editDetails.components.county);
+    submitData = submitData + '&location[formatted_addr]='+encodeURIComponent($scope.editDetails.formatted_address);
+    
+    //tags
+    submitData = submitData + '&tags='+encodeURIComponent($scope.frmEdit.tags);
+    
+    //url
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&id='+$scope.frmEdit.id+'&access_token='+access_token+'&path='+path;
+    dataService.post(url, submitData, editSuccess, editFailure);
+  };
 }]);
