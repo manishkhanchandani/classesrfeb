@@ -94,7 +94,7 @@ angular.module('myApp.view1', ['ngRoute'])
   }
   $scope.getOne = function(item) {
      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+ item.id;
-     dataService.get(url, getOneSuccess, getOneFailure, true);
+     dataService.get(url, getOneSuccess, getOneFailure, false);
   };
   //getOne Ends
   
