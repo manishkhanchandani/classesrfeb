@@ -70,7 +70,7 @@ angular.module('myApp.view1', ['ngRoute'])
   }
   
   $scope.getAll = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&path='+path;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&noCache=1&path='+path;
     if ($scope.details) {
       if ($scope.details.components) {
         if ($scope.details.components.lat && $scope.details.components.lng) {
@@ -150,5 +150,23 @@ angular.module('myApp.view1', ['ngRoute'])
     //url
     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&id='+$scope.frmEdit.id+'&access_token='+access_token+'&path='+path;
     dataService.post(url, submitData, editSuccess, editFailure);
+  };
+  
+  function deleteSuccess(response) {
+   console.log('success: ', response); 
+   $scope.getAll();
+  }
+  
+  function deleteFailure(response) {
+   console.log('failure: ', response); 
+  }
+  
+  $scope.deleteItem = function(item) {
+    var a = confirm('do you really want to delete this record?');
+    if (!a) {
+     return false; 
+    }
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=delete&id='+item.id+'&access_token='+access_token;
+    dataService.get(url, deleteSuccess, deleteFailure, false);
   };
 }]);
