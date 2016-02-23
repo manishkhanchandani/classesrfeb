@@ -10,7 +10,7 @@ angular.module('myApp.auth', ['ngRoute'])
 }])
 
 .controller('ViewAuthCtrl', ['$scope', function($scope) {
-  var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
+  var ref = new Firebase("https://blazing-inferno-4525.firebaseio.com");
 
 
   $scope.createNewUser = function() {
