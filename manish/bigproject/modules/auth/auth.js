@@ -31,6 +31,7 @@ angular.module('myApp.auth', ['ngRoute'])
         console.log(userData);
         console.log("Successfully created user account with uid:", userData.uid);
         $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
+        $scope.frm = {};
         //save it in my database also ToDo *
       }
       
