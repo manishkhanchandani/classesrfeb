@@ -16,3 +16,5 @@ config(['$routeProvider', function($routeProvider) {
 .controller('mainController', ['$scope', function($scope) {
 
 }])
+
+;
