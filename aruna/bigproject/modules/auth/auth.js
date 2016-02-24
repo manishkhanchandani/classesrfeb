@@ -3,13 +3,43 @@
 angular.module('myApp.auth', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/auth', {
+  $routeProvider.when('/auth/create', {
     templateUrl: 'modules/auth/auth.html',
-    controller: 'ViewAuthCtrl'
-  });
+    controller: 'ViewAuthCreateCtrl'
+  })
+  .when('/auth/login', {
+    templateUrl: 'modules/auth/login.html',
+    controller: 'ViewAuthLoginCtrl'
+  })
+        ;
 }])
 
-.controller('ViewAuthCtrl', ['$scope',function($scope) {
+.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
+  var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
+  $scope.loginError = null;
+  
+  $scope.frmLogin = {};
+  
+  $scope.loginUser = function() {
+    $scope.loginUser = function() {
+    ref.authWithPassword({
+      email    : $scope.frmLogin.email,
+      password : $scope.frmLogin.password
+    }, function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+      }
+    });
+  };
+
+  };
+  
+}])
+
+
+.controller('ViewAuthCreateCtrl', ['$scope',function($scope) {
  var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
  $scope.createUserError = null;
       $scope.createNewUser = function() {
