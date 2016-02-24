@@ -27,9 +27,13 @@ angular.module('myApp.auth', ['ngRoute'])
     }, function(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
+        $scope.loginError = "Login Failed!" + error;
       } else {
         console.log("Authenticated successfully with payload:", authData);
+        $scope.loginError = "Authenticated successfully with uid:" + authData.uid;
+        $scope.frmLogin = {};
       }
+      if(!$scope.$$phase) $scope.$apply();
     });
   };
   
