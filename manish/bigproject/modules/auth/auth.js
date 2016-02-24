@@ -21,7 +21,16 @@ angular.module('myApp.auth', ['ngRoute'])
   $scope.frmLogin = {};
   
   $scope.loginUser = function() {
-    console.log($scope.frmLogin);
+    ref.authWithPassword({
+      email    : $scope.frmLogin.email,
+      password : $scope.frmLogin.password
+    }, function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+      }
+    });
   };
   
 }])
