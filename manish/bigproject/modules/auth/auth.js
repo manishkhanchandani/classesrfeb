@@ -3,13 +3,13 @@
 angular.module('myApp.auth', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/auth', {
+  $routeProvider.when('/auth/create', {
     templateUrl: 'modules/auth/auth.html',
-    controller: 'ViewAuthCtrl'
+    controller: 'ViewAuthCreateCtrl'
   });
 }])
 
-.controller('ViewAuthCtrl', ['$scope', function($scope) {
+.controller('ViewAuthCreateCtrl', ['$scope', function($scope) {
   var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
 
   $scope.createUserError = null;
