@@ -6,7 +6,12 @@ angular.module('myApp.auth', ['ngRoute'])
   $routeProvider.when('/auth/create', {
     templateUrl: 'modules/auth/auth.html',
     controller: 'ViewAuthCreateCtrl'
-  });
+  })
+  .when('/auth/login', {
+    templateUrl: 'modules/auth/login.html',
+    controller: 'ViewAuthLoginCtrl'
+  })
+  ;
 }])
 
 .controller('ViewAuthCreateCtrl', ['$scope', function($scope) {
