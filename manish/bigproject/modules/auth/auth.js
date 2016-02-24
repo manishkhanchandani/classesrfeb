@@ -14,6 +14,18 @@ angular.module('myApp.auth', ['ngRoute'])
   ;
 }])
 
+.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
+  var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
+  $scope.loginError = null;
+  
+  $scope.frmLogin = {};
+  
+  $scope.loginUser = function() {
+    console.log($scope.frmLogin);
+  };
+  
+}])
+
 .controller('ViewAuthCreateCtrl', ['$scope', function($scope) {
   var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
 
