@@ -14,11 +14,11 @@ angular.module('myApp', [
   //,
   //'ngAutocomplete',
   //'ui.bootstrap'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+  .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/lessons'});
 }])
 
 .controller('mainController', ['$scope', function($scope) {
   
-}])
+}]);

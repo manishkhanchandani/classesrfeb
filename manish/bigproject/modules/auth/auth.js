@@ -3,13 +3,43 @@
 angular.module('myApp.auth', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/auth', {
+  $routeProvider.when('/auth/create', {
     templateUrl: 'modules/auth/auth.html',
-    controller: 'ViewAuthCtrl'
-  });
+    controller: 'ViewAuthCreateCtrl'
+  })
+  .when('/auth/login', {
+    templateUrl: 'modules/auth/login.html',
+    controller: 'ViewAuthLoginCtrl'
+  })
+  ;
 }])
 
-.controller('ViewAuthCtrl', ['$scope', function($scope) {
+.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
+  var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
+  $scope.loginError = null;
+  
+  $scope.frmLogin = {};
+  
+  $scope.loginUser = function() {
+    ref.authWithPassword({
+      email    : $scope.frmLogin.email,
+      password : $scope.frmLogin.password
+    }, function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+        $scope.loginError = "Login Failed!" + error;
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        $scope.loginError = "Authenticated successfully with uid:" + authData.uid;
+        $scope.frmLogin = {};
+      }
+      if(!$scope.$$phase) $scope.$apply();
+    });
+  };
+  
+}])
+
+.controller('ViewAuthCreateCtrl', ['$scope', function($scope) {
   var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
 
   $scope.createUserError = null;
@@ -31,6 +61,7 @@ angular.module('myApp.auth', ['ngRoute'])
         console.log(userData);
         console.log("Successfully created user account with uid:", userData.uid);
         $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
+        $scope.frm = {};
         //save it in my database also ToDo *
       }
       
