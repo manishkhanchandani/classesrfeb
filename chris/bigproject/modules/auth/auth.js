@@ -3,10 +3,40 @@
 angular.module('myApp.auth', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/auth', {
+  $routeProvider.when('/auth/create', {
     templateUrl: 'modules/auth/auth.html',
     controller: 'ViewAuthCtrl'
+  })
+  .when('/auth/login', {
+    templateUrl: 'modules/auth/login.html',
+    controller: 'ViewAuthLoginCtrl'
   });
+}])
+
+.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
+  var ref = new Firebase("https://cguo.firebaseio.com");
+  $scope.loginError = null;
+  
+  $scope.frmLogin = {};
+  
+  $scope.loginUser = function() {
+    ref.authWithPassword({
+      email    : $scope.frmLogin.email,
+      password : $scope.frmLogin.password
+    }, function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+        $scope.loginError = "Login Failed!" + error;
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        $scope.loginError = "Authenticated successfully with uid:" + authData.uid;
+        $scope.frmLogin = {};
+        //login service from our DB, ajax in Anguler
+      }
+      if(!$scope.$$phase) $scope.$apply();
+    });
+  };
+  
 }])
 
 .controller('ViewAuthCtrl', ['$scope', function($scope) {
