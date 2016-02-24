@@ -3,13 +3,20 @@
 angular.module('myApp.auth', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/auth', {
+  $routeProvider.when('/auth/create', {
     templateUrl: 'modules/auth/auth.html',
-    controller: 'ViewAuthCtrl'
-  });
+    controller: 'ViewAuthCreateCtrl'
+  })
+
+      .when('/auth/login', {
+        templateUrl: 'modules/auth/login.html',
+        controller: 'ViewAuthLoginCtrl'
+      })
+
+  ;
 }])
 
-.controller('ViewAuthCtrl', ['$scope', function($scope) {
+.controller('ViewAuthCreateCtrl', ['$scope', function($scope) {
   var ref = new Firebase("https://blazing-inferno-4525.firebaseio.com");
 
   $scope.createUserError = null;
@@ -33,12 +40,52 @@ angular.module('myApp.auth', ['ngRoute'])
         $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
         //Empties all data from form after success.
         $scope.$frm   = {};
-        //save it in my database also ToDo *
+        //save it in my database also. todo
+
+
       }
 
       //to update the scope in html page
       if(!$scope.$$phase) $scope.$apply();
     });
   };
+
+}])
+
+
+.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
+    var ref = new Firebase("https://blazing-inferno-4525.firebaseio.com");
+
+    $scope.loginError   = null;
+    $scope.frmLogin     = {};
+
+    $scope.loginUser    = function(){
+        console.log($scope.frmLogin);
+
+
+
+        ref.authWithPassword({
+            "email"     : $scope.frmLogin.email,
+            "password"  : $scope.frmLogin.password
+        }, function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+
+                $scope.loginError   = "Login Failed! " + error;
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+                $scope.loginError       = "Authenticated successfully with payload:" + authData.uid + "<br>token:" + authData.token;
+
+                //login service from our database
+
+            }
+
+            //to update the scope in html page
+            if(!$scope.$$phase) $scope.$apply();
+        });
+
+
+
+    };
 
 }]);
