@@ -32,6 +32,8 @@ angular.module('myApp.auth', ['ngRoute'])
         console.log("Authenticated successfully with payload:", authData);
         $scope.loginError = "Authenticated successfully with uid:" + authData.uid;
         $scope.frmLogin = {};
+        
+        //login service from our database (api)
       }
       if(!$scope.$$phase) $scope.$apply();
     });
@@ -62,7 +64,7 @@ angular.module('myApp.auth', ['ngRoute'])
         console.log("Successfully created user account with uid:", userData.uid);
         $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
         $scope.frm = {};
-        //save it in my database also ToDo *
+        //save it in my database also ToDo * (api)
       }
       
       //to update the scope in html page
