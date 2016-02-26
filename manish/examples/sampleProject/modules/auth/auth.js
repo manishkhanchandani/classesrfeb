@@ -11,6 +11,10 @@ angular.module('myApp.auth', ['ngRoute'])
     templateUrl: 'modules/auth/login.html',
     controller: 'ViewAuthLoginCtrl'
   })
+  .when('/auth/logout', {
+    templateUrl: 'modules/auth/logout.html',
+    controller: 'ViewAuthLogoutCtrl'
+  })
   ;
 }])
 
@@ -91,4 +95,33 @@ angular.module('myApp.auth', ['ngRoute'])
   };
   
   
-}]);
+}])
+
+
+.controller('ViewAuthLogoutCtrl', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  
+  $scope.logoutError = null;
+
+  function logoutSuccess(response) {
+    console.log('success results: ', response);
+    if (response.data.error === 1) {
+      $scope.logoutError = response.data.errorMessage;
+      return;
+    }
+    
+    $scope.logoutError = "You are successfully logged out of the page";
+    $scope.loggedInUsersData = null;
+    localStorage.removeItem('userProfile');
+    $location.path('/auth/login');
+  }
+ 
+  function logoutFailure(response) {
+    $scope.logoutError = "Error logging out " + response.statusText;
+  }
+    
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.loggedInUsersData.uid;
+    
+  dataService.get(url, logoutSuccess, logoutFailure, false);
+  
+}])
+;
