@@ -39,6 +39,7 @@ angular.module('myApp.auth', ['ngRoute'])
     };
     
     console.log($scope.loggedInUsersData);
+    localStorage.setItem('userProfile', JSON.stringify($scope.loggedInUsersData));
     
     //end setting user data
     $scope.frmLogin = {};

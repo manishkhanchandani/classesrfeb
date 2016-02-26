@@ -15,6 +15,15 @@ config(['$routeProvider', function($routeProvider) {
 
 .controller('mainController', ['$scope', function($scope) {
   $scope.loggedInUsersData = null;
+  
+  //get user data from localstorage
+  var userProfile = localStorage.getItem('userProfile');
+  if (userProfile) {
+   $scope.loggedInUsersData = JSON.parse(userProfile); 
+   console.log('loggedinuser: ', $scope.loggedInUsersData);
+  }
+  //end localstorage
+  
 }])
 
 ;
