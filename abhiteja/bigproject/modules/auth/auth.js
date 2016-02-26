@@ -38,14 +38,34 @@ angular.module('myApp.auth', ['ngRoute'])
        };
    }])
 
-    .controller('AuthCreateCtrl', ['$scope', function($scope) {
+    .controller('AuthCreateCtrl', ['$scope','dataService', function($scope, dataService) {
             var ref = new Firebase("https://boiling-heat-3323.firebaseio.com");
        $scope.createNewUser = function(){
            if($scope.frm.confirm_password !==$scope.frm.password){
                $scope.createUserError = "Password doesn't match with corrent password. \n\
                                            Please try again!!!";
+               
                return;
            }
+           console.log($scope.frm);
+          
+           //calling backend API with url and post data
+           var url = 'http://bootstrap.mkgalax.com/svnprojects/horo/login.php?action=register&saveIP=1';
+           var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+'\n\
+                            &uid=3210&username='+encodeURIComponent($scope.frm.username)+
+                            '&user_details[fullname]='+encodeURIComponent($scope.frm.fullname)+
+                            '&user_details[age]='+encodeURIComponent($scope.frm.age);
+           
+           function createUserSuccess(response){
+               console.log('success results: ', response);
+           }
+           function createUserFailure(response){
+               console.log('failure results: ', response);
+           }
+           dataService.post(url, postData, createUserSuccess, createUserFailure);
+           
+           return;
+           
            ref.createUser({
                 email    : $scope.frm.email,
                 password : $scope.frm.password
