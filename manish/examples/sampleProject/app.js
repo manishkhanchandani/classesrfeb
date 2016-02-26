@@ -14,7 +14,7 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-
+  $scope.loggedInUsersData = null;
 }])
 
 ;

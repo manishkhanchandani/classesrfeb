@@ -26,6 +26,21 @@ angular.module('myApp.auth', ['ngRoute'])
     }
     
     $scope.loginError = "Authenticated successfully with uid:" + response.data.data.uid;
+    //setting user data
+    $scope.loggedInUsersData = {
+      uid: response.data.data.uid,
+      token: response.data.data.token,
+      email: response.data.data.email,
+      user_created: response.data.data.user_created,
+      user_details: response.data.data.user_details,
+      username: response.data.data.username,
+      users_info_id: response.data.data.users_info_id,
+      ref_id: response.data.data.ref_id
+    };
+    
+    console.log($scope.loggedInUsersData);
+    
+    //end setting user data
     $scope.frmLogin = {};
   }
  
