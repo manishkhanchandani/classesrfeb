@@ -14,35 +14,36 @@ angular.module('myApp.auth', ['ngRoute'])
   ;
 }])
 
-.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
-  var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
+.controller('ViewAuthLoginCtrl', ['$scope', 'dataService', function($scope, dataService) {
   $scope.loginError = null;
   
   $scope.frmLogin = {};
-  
+  function loginSuccess(response) {
+    console.log('success results: ', response);
+    if (response.data.error === 1) {
+      $scope.loginError = response.data.errorMessage;
+      return;
+    }
+    
+    $scope.loginError = "Authenticated successfully with uid:" + response.data.data.uid;
+    $scope.frmLogin = {};
+  }
+ 
+  function loginFailure(response) {
+    $scope.loginError = "Login Failed! " + response.statusText;
+  }
+    
   $scope.loginUser = function() {
-    ref.authWithPassword({
-      email    : $scope.frmLogin.email,
-      password : $scope.frmLogin.password
-    }, function(error, authData) {
-      if (error) {
-        console.log("Login Failed!", error);
-        $scope.loginError = "Login Failed!" + error;
-      } else {
-        console.log("Authenticated successfully with payload:", authData);
-        $scope.loginError = "Authenticated successfully with uid:" + authData.uid;
-        $scope.frmLogin = {};
-        
-        //login service from our database (api)
-      }
-      if(!$scope.$$phase) $scope.$apply();
-    });
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
+    var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+    
+    dataService.post(url, postData, loginSuccess, loginFailure);
   };
   
 }])
 
 .controller('ViewAuthCreateCtrl', ['$scope', 'dataService', function($scope, dataService) {
-  var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
+  //var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
 
   $scope.createUserError = null;
 
@@ -56,7 +57,7 @@ angular.module('myApp.auth', ['ngRoute'])
     $scope.createUserError = "Successfully created user account with uid:" + response.data.data.uid + ", email: " + response.data.data.email + ", Username: " + response.data.data.username;
     $scope.frm = {};
   }
-  
+ 
   function createUserFailure(response) {
     $scope.createUserError = "Error creating user " + response.statusText;
   }
