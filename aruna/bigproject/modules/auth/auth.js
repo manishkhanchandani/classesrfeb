@@ -42,7 +42,7 @@ angular.module('myApp.auth', ['ngRoute'])
         }
 
         $scope.loginError = 'logged in Successfully.';
-        $scope.frmlogin = {};
+        $scope.frmLogin = {};
 
     }
   
