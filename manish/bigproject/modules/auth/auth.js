@@ -41,7 +41,7 @@ angular.module('myApp.auth', ['ngRoute'])
   
 }])
 
-.controller('ViewAuthCreateCtrl', ['$scope', function($scope) {
+.controller('ViewAuthCreateCtrl', ['$scope', 'dataService', function($scope, dataService) {
   var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
 
   $scope.createUserError = null;
@@ -51,6 +51,25 @@ angular.module('myApp.auth', ['ngRoute'])
        $scope.createUserError = 'Password does not match with confirm password. Please check again!';
        return;
     }
+    
+    console.log($scope.frm);
+    
+    function createUserSuccess(response) {
+      console.log('success results: ', response);
+    }
+    
+    function createUserFailure(response) {
+      console.log('failure results: ', response);
+    }
+    
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=register&saveIP=1';
+    var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+'&uid=1000&username='+encodeURIComponent($scope.frm.username)+'&user_details[fullname]='+encodeURIComponent($scope.frm.fullname)+'&user_details[age]='+encodeURIComponent($scope.frm.age);
+    
+    dataService.post(url, postData, createUserSuccess, createUserFailure);
+    
+    return;
+    
+    
     
     ref.createUser({
       email    : $scope.frm.email,
@@ -63,8 +82,9 @@ angular.module('myApp.auth', ['ngRoute'])
         console.log(userData);
         console.log("Successfully created user account with uid:", userData.uid);
         $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
-        $scope.frm = {};
         //save it in my database also ToDo * (api)
+        
+        $scope.frm = {};
       }
       
       //to update the scope in html page
