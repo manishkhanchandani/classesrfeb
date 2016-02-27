@@ -42,11 +42,14 @@ angular.module('myApp.auth', ['ngRoute'])
       ref_id: response.data.data.ref_id
     };
     
+    $scope.$parent.loggedInUsersData = $scope.loggedInUsersData;
     console.log($scope.loggedInUsersData);
+    console.log($scope.$parent.loggedInUsersData);
     localStorage.setItem('userProfile', JSON.stringify($scope.loggedInUsersData));
     
     //end setting user data
     $scope.frmLogin = {};
+    if(!$scope.$$phase) $scope.$apply();
   }
  
   function loginFailure(response) {
@@ -111,7 +114,9 @@ angular.module('myApp.auth', ['ngRoute'])
     
     $scope.logoutError = "You are successfully logged out of the page";
     $scope.loggedInUsersData = null;
+    $scope.$parent.loggedInUsersData = null;
     localStorage.removeItem('userProfile');
+    if(!$scope.$$phase) $scope.$apply();
     $location.path('/auth/login');
   }
  
