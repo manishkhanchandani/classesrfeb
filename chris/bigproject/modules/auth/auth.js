@@ -24,18 +24,19 @@ angular.module('myApp.auth', ['ngRoute'])
               $scope.loginError = response.data.errorMessage;
               return;
           }
-          $scope.loginError = 'New user created successfully.';
+          $scope.loginError = 'Login successfully.';
           $scope.frmLogin = {};
       }
       function loginUserFailure(response){
           console.log('failure results: ', response);
-          $scope.loginError = 'Failed to create user.';
+          $scope.loginError = 'Failed to Login.';
       }
   
   $scope.loginUser = function() {
       var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
       var postData = 'userName='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
       dataService.post(url, postData, loginUserSuccess, loginUserFailure);
+      console.log(postData);
     /*ref.authWithPassword({
       email    : $scope.frmLogin.email,
       password : $scope.frmLogin.password
