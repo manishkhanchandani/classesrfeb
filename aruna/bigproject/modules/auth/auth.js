@@ -14,15 +14,8 @@ angular.module('myApp.auth', ['ngRoute'])
         ;
 }])
 
-.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
-  var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
-  $scope.loginError = null;
-  
-  $scope.frmLogin = {};
-  
-  
-   $scope.loginUser = function() {
-    ref.authWithPassword({
+
+    /*ref.authWithPassword({
       email    : $scope.frmLogin.email,
       password : $scope.frmLogin.password
     }, function(error, authData) {
@@ -35,8 +28,38 @@ angular.module('myApp.auth', ['ngRoute'])
         $scope.frmLogin = {};
       }
       if(!$scope.$$phase) $scope.$apply();
-    });
-  };
+    });*/
+
+
+.controller('ViewAuthLoginCtrl', ['$scope','dataService', function($scope,dataService) {
+  //var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
+    $scope.loginError = null;
+    function loginSuccess(response) {
+        console.log('success results: ', response);
+        if (response.data.error === 1) {
+          $scope.loginError = response.data.errorMessage;
+          return;
+        }
+
+        $scope.loginError = 'logged in Successfully.';
+        $scope.frmlogin = {};
+
+    }
+  
+  function loginFailure(response) {
+    console.log('failure results: ', response);
+    $scope.loginError = 'Failed to login. Please try again';
+  }
+
+    $scope.loginUser = function() {
+        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
+        var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+    
+    dataService.post(url, postData, loginSuccess, loginFailure);
+    };
+  
+  
+  
 
 
  
@@ -45,8 +68,27 @@ angular.module('myApp.auth', ['ngRoute'])
 
 
 .controller('ViewAuthCreateCtrl', ['$scope','dataService',function($scope,dataService) {
- var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
+// var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
  $scope.createUserError = null;
+ 
+ function createUserSuccess(response) {
+    console.log('success results: ', response);
+    if (response.data.error === 1) {
+      $scope.createUserError = response.data.errorMessage;
+      return;
+    }
+    
+     $scope.createUserError = 'New User Created Successfully.';
+    $scope.frm = {};
+    
+  }
+  
+  function createUserFailure(response) {
+    console.log('failure results: ', response);
+    $scope.createUserError = 'Failed to create user. Please try again';
+  }
+
+ 
       $scope.createNewUser = function() {
           
           if ($scope.frm.confirm_password !== $scope.frm.password) {
@@ -55,27 +97,21 @@ angular.module('myApp.auth', ['ngRoute'])
     }
     console.log($scope.frm);
     
-    function createUserSuccess(response) {
-      console.log('success results: ', response);
-    }
     
-    function createUserFailure(response) {
-      console.log('failure results: ', response);
-    }
 
     
   var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=register&saveIP=1';
     var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+
-            '&uid=100&username='+encodeURIComponent($scope.frm.username)+'&user_details[fullname]='
+            '&username='+encodeURIComponent($scope.frm.username)+'&user_details[fullname]='
             +encodeURIComponent($scope.frm.fullname)+'&user_details[age]='+encodeURIComponent($scope.frm.age);
     
      dataService.post(url, postData, createUserSuccess, createUserFailure);
+     };
+
+}]);
 
 
-
-return;
-
-   ref.createUser({
+  /* ref.createUser({
       email    : $scope.frm.email,
       password : $scope.frm.password
     }, function(error, userData) {
@@ -92,9 +128,5 @@ return;
 if(!$scope.$$phase) $scope.$apply();
 
 
-    });
-  };
-
-
-
-}]);
+    });*/
+  
