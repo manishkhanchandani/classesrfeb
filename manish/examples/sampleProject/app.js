@@ -4,10 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.auth',
-  'myApp.lessons'
-  //,
-  //'ngAutocomplete',
-  //'ui.bootstrap'
+  'myApp.lessons',
+  'ngAutocomplete'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/lessons'});

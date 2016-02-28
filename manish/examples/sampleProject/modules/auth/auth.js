@@ -23,7 +23,7 @@ angular.module('myApp.auth', ['ngRoute'])
   
   $scope.frmLogin = {};
   function loginSuccess(response) {
-    console.log('success results: ', response);
+    //console.log('success results: ', response);
     if (response.data.error === 1) {
       $scope.loginError = response.data.errorMessage;
       return;
@@ -43,8 +43,8 @@ angular.module('myApp.auth', ['ngRoute'])
     };
     
     $scope.$parent.loggedInUsersData = $scope.loggedInUsersData;
-    console.log($scope.loggedInUsersData);
-    console.log($scope.$parent.loggedInUsersData);
+    //console.log($scope.loggedInUsersData);
+    //console.log($scope.$parent.loggedInUsersData);
     localStorage.setItem('userProfile', JSON.stringify($scope.loggedInUsersData));
     
     //end setting user data
@@ -71,7 +71,7 @@ angular.module('myApp.auth', ['ngRoute'])
   $scope.createUserError = null;
 
   function createUserSuccess(response) {
-    console.log('success results: ', response);
+    //console.log('success results: ', response);
     if (response.data.error === 1) {
       $scope.createUserError = response.data.errorMessage;
       return;
