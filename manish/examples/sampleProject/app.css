@@ -18,3 +18,8 @@ canvas {
     margin: 6px 0 0 6px;
 }
 /*file upload*/
+
+
+.dateFormatted {
+  font-size: 10px;
+}

@@ -30,8 +30,58 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   });
 }])
 
-.controller('ViewLessonsCtrl', ['$scope', function($scope) {
+.controller('ViewLessonsCtrl', ['$scope', 'dataService', function($scope, dataService) {
+    //location starts
+    $scope.mapOptions = {
+      types: 'geocode'
+    };
+
+    $scope.details = {};
+    //location ends
+    
+    $scope.type = 1;
+    $scope.frm = {radius: 30};
+    
+    
+  function getSuccess(response) {
+      console.log('success: ', response);
+      $scope.results = response.data.data.results;
+      $scope.defaultImage = 'images/noimage.jpg';
+      
+      //getting main image
+      angular.forEach(response.data.data.results, function(value, key) {
+        angular.forEach(value.detailsFull.images, function(valueImg, keyImg) {
+          if (!$scope.results[key].mainImage) {
+            $scope.results[key].mainImage = valueImg;
+          }
+        });
+      });
+      
+      console.log($scope.results);
+    }
   
+    function getFailure(response) {
+      console.log('failure: ', response);
+    }
+    
+    $scope.getData = function() {
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1';
+      
+      if ($scope.frm.keyword) {
+        url = url + '&q='+encodeURIComponent($scope.frm.keyword);
+      }
+      
+      if ($scope.location) {
+        url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng;
+        if ($scope.frm.radius) {
+          url = url + '&r='+$scope.frm.radius;
+        }
+      }
+      
+      dataService.get(url, getSuccess, getFailure, true);
+    };
+    
+    $scope.getData();
 }])
 .controller('ViewCreateLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
     $scope.frmAdd = {};
@@ -49,6 +99,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     function addSuccess(response) {
       console.log('success: ', response);
       $location.path('/lessons/create/images/'+response.data.data.id);
+      $scope.frmAdd = {};
       
     }
     
