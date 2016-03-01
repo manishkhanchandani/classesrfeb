@@ -33,7 +33,8 @@ angular.module('myApp.auth', ['ngRoute'])
                    $scope.loginUserError = response.data.errorMessage;
                    return;
                }
-               $scope.loginUserError = "Login Success";
+               $scope.$parent.loggedInUserData = response.data.data;
+               $scope.loginUserError = "You have Successfully Logged in to Website";
                $scope.frmLogin = {};
             }
             function loginUserFailure(response){
