@@ -18,7 +18,7 @@ angular.module('myApp.auth', ['ngRoute'])
         $scope.loginError = null;
         $scope.frmLogin = {};
 
-        function createUserSuccess(response) {
+        function loginSuccess(response) {
             console.log('success results: ', response);
             if (response.data.error === 1) {
                 $scope.loginError = response.data.errorMessage;
@@ -28,7 +28,7 @@ angular.module('myApp.auth', ['ngRoute'])
             $scope.frm = {};
         }
 
-        function createUserFailure(response) {
+        function loginFailure(response) {
             console.log('failure results: ', response);
             $scope.loginError = 'Failed to login user. Please try again';
         }
@@ -38,7 +38,7 @@ angular.module('myApp.auth', ['ngRoute'])
             console.log($scope.frmLogin);
             var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
             var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
-            dataService.post(url, postData, createUserSuccess, createUserFailure);
+            dataService.post(url, postData, loginSuccess, loginFailure);
         };
 
     }])
