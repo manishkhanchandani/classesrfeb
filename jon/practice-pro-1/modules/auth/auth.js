@@ -15,22 +15,24 @@ angular.module('myApp.auth', ['ngRoute'])
     }])
 
     .controller('ViewAuthLoginCtrl', ['$scope', 'dataService', function($scope, dataService) {
-        $scope.loginError = null;
+        $scope.loginStatus = null;
         $scope.frmLogin = {};
 
         function loginSuccess(response) {
             console.log('success results: ', response);
             if (response.data.error === 1) {
-                $scope.loginError = response.data.errorMessage;
+                $scope.loginStatus = response.data.errorMessage;
                 return;
             }
-            $scope.loginError = 'User Login Successfully.';
+
+
+            $scope.loginStatus   = 'User Authenticated Successfully.' + response.data.data.user_details.fullname;
             $scope.frm = {};
         }
 
         function loginFailure(response) {
             console.log('failure results: ', response);
-            $scope.loginError = 'Failed to login user. Please try again';
+            $scope.loginStatus = 'Failed to login user. Please try again';
         }
 
         $scope.loginUser = function() {
@@ -60,6 +62,7 @@ angular.module('myApp.auth', ['ngRoute'])
      if(!$scope.$$phase) $scope.$apply();
      });
      */
+
 
     .controller('ViewAuthCreateCtrl', ['$scope', 'dataService', function($scope, dataService) {
 
