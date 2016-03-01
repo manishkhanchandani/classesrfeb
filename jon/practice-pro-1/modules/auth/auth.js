@@ -2,108 +2,128 @@
 
 angular.module('myApp.auth', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/auth/create', {
-    templateUrl: 'modules/auth/auth.html',
-    controller: 'ViewAuthCreateCtrl'
-  })
+    .config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/auth/create', {
+                templateUrl: 'modules/auth/auth.html',
+                controller: 'ViewAuthCreateCtrl'
+            })
+            .when('/auth/login', {
+                templateUrl: 'modules/auth/login.html',
+                controller: 'ViewAuthLoginCtrl'
+            })
+        ;
+    }])
 
-      .when('/auth/login', {
-        templateUrl: 'modules/auth/login.html',
-        controller: 'ViewAuthLoginCtrl'
-      })
+    .controller('ViewAuthLoginCtrl', ['$scope', 'dataService', function($scope, dataService) {
+        $scope.loginError = null;
+        $scope.frmLogin = {};
 
-  ;
-}])
+        function createUserSuccess(response) {
+            console.log('success results: ', response);
+            if (response.data.error === 1) {
+                $scope.loginError = response.data.errorMessage;
+                return;
+            }
+            $scope.loginError = 'User Login Successfully.';
+            $scope.frm = {};
+        }
 
-.controller('ViewAuthCreateCtrl', ['$scope', 'dataService', function($scope, dataService) {
-  var ref = new Firebase("https://blazing-inferno-4525.firebaseio.com");
-
-  $scope.createUserError = null;
-
-  $scope.createNewUser = function() {
-    if ($scope.frm.confirm_password !== $scope.frm.password) {
-      $scope.createUserError = 'Password does not match with confirm password. Please check again!';
-      return;
-    }
-
-      console.log($scope.frm);
-
-      function createUserSuccess(response) {
-          console.log('success results: ', response);
-      }
-
-      function createUserFailure(response) {
-          console.log('failure results: ', response);
-      }
-
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=register&saveIP=1';
-      var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+'&uid=1000&username='+encodeURIComponent($scope.frm.username)+'&user_details[fullname]='+encodeURIComponent($scope.frm.fullname)+'&user_details[age]='+encodeURIComponent($scope.frm.age);
+        function createUserFailure(response) {
+            console.log('failure results: ', response);
+            $scope.loginError = 'Failed to login user. Please try again';
+        }
 
 
-      dataService.post(url, postData, createUserSuccess, createUserFailure);
+        $scope.loginUser = function() {
+            console.log($scope.frmLogin);
+            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
+            var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+            dataService.post(url, postData, createUserSuccess, createUserFailure);
+        };
 
-    return;
+    }])
+    /*
+     var ref = new Firebase("https://boiling-inferno-4525.firebaseio.com");
+     ref.authWithPassword({
+     email    : $scope.frmLogin.email,
+     password : $scope.frmLogin.password
+     }, function(error, authData) {
+     if (error) {
+     console.log("Login Failed!", error);
+     $scope.loginError = "Login Failed!" + error;
+     } else {
+     console.log("Authenticated successfully with payload:", authData);
+     $scope.loginError = "Authenticated successfully with uid:" + authData.uid;
+     $scope.frmLogin = {};
 
-    ref.createUser({
-      email    : $scope.frm.email,
-      password : $scope.frm.password
-    }, function(error, userData) {
-      if (error) {
-        console.log("Error creating user:", error);
-        $scope.createUserError = "Error creating user:" + error;
-      } else {
-        console.log(userData);
-        console.log("Successfully created user account with uid:", userData.uid);
-        $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
-        //Empties all data from form after success.
-        $scope.$frm   = {};
-        //save it in my database also. todo
+     //login service from our database (api)
+     }
+     if(!$scope.$$phase) $scope.$apply();
+     });
+     */
 
-
-      }
-
-      //to update the scope in html page
-      if(!$scope.$$phase) $scope.$apply();
-    });
-  };
-
-}])
-
-
-.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
-    var ref = new Firebase("https://blazing-inferno-4525.firebaseio.com");
-
-    $scope.loginError   = null;
-    $scope.frmLogin     = {};
-
-    $scope.loginUser    = function(){
-        console.log($scope.frmLogin);
+    .controller('ViewAuthCreateCtrl', ['$scope', 'dataService', function($scope, dataService) {
 
 
+        $scope.createUserError = null;
 
-        ref.authWithPassword({
-            "email"     : $scope.frmLogin.email,
-            "password"  : $scope.frmLogin.password
-        }, function(error, authData) {
-            if (error) {
-                console.log("Login Failed!", error);
 
-                $scope.loginError   = "Login Failed! " + error;
-            } else {
-                console.log("Authenticated successfully with payload:", authData);
-                $scope.loginError       = "Authenticated successfully with payload:" + authData.uid + "<br>token:" + authData.token;
+        function createUserSuccess(response) {
 
-                //login service from our database
+            console.log('success results: ', response);
 
+            console.log(response);
+
+            if (response.data.error === 1) {
+                $scope.createUserError = response.data.errorMessage;
+                return;
             }
 
-            //to update the scope in html page
-            if(!$scope.$$phase) $scope.$apply();
-        });
+            $scope.createUserError = 'New User Created Successfully.';
+            $scope.frm = {};
+        }
+
+        function createUserFailure(response) {
+            console.log('failure results: ', response);
+            $scope.createUserError = 'Failed to create user. Please try again';
+        }
+
+        $scope.createNewUser = function() {
+            if ($scope.frm.confirm_password !== $scope.frm.password) {
+                $scope.createUserError = 'Password does not match with confirm password. Please check again!';
+                return;
+            }
+
+            console.log($scope.frm);
 
 
+            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=register&saveIP=1';
+            var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+'&username='+encodeURIComponent($scope.frm.username)+'&user_details[fullname]='+encodeURIComponent($scope.frm.fullname)+'&user_details[age]='+encodeURIComponent($scope.frm.age);
 
-    };
+            dataService.post(url, postData, createUserSuccess, createUserFailure);
+        };
 
-}]);
+
+    }]);
+
+/*
+ var ref = new Firebase("https://boiling-inferno-4525.firebaseio.com");
+ ref.createUser({
+ email    : $scope.frm.email,
+ password : $scope.frm.password
+ }, function(error, userData) {
+ if (error) {
+ console.log("Error creating user:", error);
+ $scope.createUserError = "Error creating user:" + error;
+ } else {
+ console.log(userData);
+ console.log("Successfully created user account with uid:", userData.uid);
+ $scope.createUserError = "Successfully created user account with uid:" + userData.uid;
+ //save it in my database also ToDo * (api)
+
+ $scope.frm = {};
+ }
+
+ //to update the scope in html page
+ if(!$scope.$$phase) $scope.$apply();
+ });*/
