@@ -23,7 +23,7 @@ angular.module('myApp.auth', ['ngRoute'])
   
   $scope.frmLogin = {};
   function loginSuccess(response) {
-    console.log('success results: ', response);
+    //console.log('success results: ', response);
     if (response.data.error === 1) {
       $scope.loginError = response.data.errorMessage;
       return;
@@ -42,11 +42,14 @@ angular.module('myApp.auth', ['ngRoute'])
       ref_id: response.data.data.ref_id
     };
     
-    console.log($scope.loggedInUsersData);
+    $scope.$parent.loggedInUsersData = $scope.loggedInUsersData;
+    //console.log($scope.loggedInUsersData);
+    //console.log($scope.$parent.loggedInUsersData);
     localStorage.setItem('userProfile', JSON.stringify($scope.loggedInUsersData));
     
     //end setting user data
     $scope.frmLogin = {};
+    if(!$scope.$$phase) $scope.$apply();
   }
  
   function loginFailure(response) {
@@ -68,7 +71,7 @@ angular.module('myApp.auth', ['ngRoute'])
   $scope.createUserError = null;
 
   function createUserSuccess(response) {
-    console.log('success results: ', response);
+    //console.log('success results: ', response);
     if (response.data.error === 1) {
       $scope.createUserError = response.data.errorMessage;
       return;
@@ -111,7 +114,9 @@ angular.module('myApp.auth', ['ngRoute'])
     
     $scope.logoutError = "You are successfully logged out of the page";
     $scope.loggedInUsersData = null;
+    $scope.$parent.loggedInUsersData = null;
     localStorage.removeItem('userProfile');
+    if(!$scope.$$phase) $scope.$apply();
     $location.path('/auth/login');
   }
  
