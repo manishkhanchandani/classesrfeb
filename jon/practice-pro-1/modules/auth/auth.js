@@ -33,7 +33,6 @@ angular.module('myApp.auth', ['ngRoute'])
             $scope.loginError = 'Failed to login user. Please try again';
         }
 
-
         $scope.loginUser = function() {
             console.log($scope.frmLogin);
             var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
