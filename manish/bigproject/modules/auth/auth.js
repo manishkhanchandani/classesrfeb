@@ -14,13 +14,36 @@ angular.module('myApp.auth', ['ngRoute'])
   ;
 }])
 
-.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
-  $scope.loginError = null;
+.controller('ViewAuthLoginCtrl', ['$scope', 'dataService', function($scope, dataService) {
+  $scope.loginStatus = null;
   
   $scope.frmLogin = {};
   
-  $scope.loginUser = function() {
+  
+  function loginSuccess(response) {
+    console.log('success: ', response);
     
+    if (response.data.error === 1) {
+      $scope.loginStatus = response.data.errorMessage;
+      return;
+    }
+    
+    $scope.$parent.loggedInUsersData = response.data.data;
+    $scope.loginStatus = 'You are successfully logged in to our website.';
+    $scope.frmLogin = {};
+
+  }
+  
+  function loginFailure(response) {
+    console.log('failure: ', response);
+    
+    $scope.loginStatus = 'Could not query the server, please try again later';
+  }
+  
+  $scope.loginUser = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
+    var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+    dataService.post(url, postData, loginSuccess, loginFailure);
   };
   
 }])
