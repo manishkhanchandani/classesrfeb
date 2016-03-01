@@ -34,7 +34,7 @@ angular.module('myApp.auth', ['ngRoute'])
   
   $scope.loginUser = function() {
       var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
-      var postData = 'userName='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+      var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
       dataService.post(url, postData, loginUserSuccess, loginUserFailure);
       console.log(postData);
     /*ref.authWithPassword({
