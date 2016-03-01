@@ -30,6 +30,8 @@ angular.module('myApp.auth', ['ngRoute'])
 
             $scope.loginStatus          = 'User Authenticated Successfully.' + response.data.data.user_details.fullname;
             $scope.frm = {};
+
+            //if(!$scope.$$phase) $scope.$apply();
         }
 
         function loginFailure(response) {
