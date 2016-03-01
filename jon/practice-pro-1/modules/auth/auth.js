@@ -25,8 +25,10 @@ angular.module('myApp.auth', ['ngRoute'])
                 return;
             }
 
+            //can not update global, unless specify updating the "parents" loggedInUsersData
+            $scope.$parent.loggedInUsersData    = response.data.data;
 
-            $scope.loginStatus   = 'User Authenticated Successfully.' + response.data.data.user_details.fullname;
+            $scope.loginStatus          = 'User Authenticated Successfully.' + response.data.data.user_details.fullname;
             $scope.frm = {};
         }
 
