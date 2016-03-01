@@ -15,13 +15,38 @@ angular.module('myApp.auth', ['ngRoute'])
         
     }])
 
-    .controller('AuthLoginCtrl', ['$scope', function($scope) {
-            var ref = new Firebase("https://boiling-heat-3323.firebaseio.com");
-            $scope.loginUserError = null;
-            $scope.frmLogin = {};
+    .controller('AuthLoginCtrl', ['$scope','dataService', function($scope, dataService) {
+            
+            //$scope.loginUserError = null;
+            //$scope.frmLogin = {};
             $scope.loginUser = function(){
                 if($scope.frmLogin.password === null){ return; }
-                ref.authWithPassword({
+            
+            console.log($scope.frmLogin);
+            
+            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
+            var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+            
+            function loginUserSuccess(response){
+               console.log('success results: ', response);
+               if(response.data.error === 1){
+                   $scope.loginUserError = response.data.errorMessage;
+                   return;
+               }
+               $scope.loginUserError = "Login Success";
+               $scope.frmLogin = {};
+            }
+            function loginUserFailure(response){
+               console.log('failure results: ', response);
+               $scope.loginUserError = "Failed to Login user. Please Try again";
+            }
+
+            dataService.post(url, postData, loginUserSuccess, loginUserFailure);
+            
+            
+                /*
+                 //var ref = new Firebase("https://boiling-heat-3323.firebaseio.com");
+                 ref.authWithPassword({
                   email    : $scope.frmLogin.email,
                   password : $scope.frmLogin.password
                 }, function(error, authData) {
@@ -34,12 +59,13 @@ angular.module('myApp.auth', ['ngRoute'])
                     $scope.frmLogin = {};
                   }
                   if(!$scope.$$phase) $scope.$apply();
-                });
-       };
+                });*/
+        };
+       $scope.loginUserError = null;
    }])
 
     .controller('AuthCreateCtrl', ['$scope','dataService', function($scope, dataService) {
-            var ref = new Firebase("https://boiling-heat-3323.firebaseio.com");
+            
        $scope.createNewUser = function(){
            if($scope.frm.confirm_password !==$scope.frm.password){
                $scope.createUserError = "Password doesn't match with corrent password. \n\
@@ -50,22 +76,29 @@ angular.module('myApp.auth', ['ngRoute'])
            console.log($scope.frm);
           
            //calling backend API with url and post data
-           var url = 'http://bootstrap.mkgalax.com/svnprojects/horo/login.php?action=register&saveIP=1';
-           var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+'\n\
-                            &uid=3210&username='+encodeURIComponent($scope.frm.username)+
+           var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=register&saveIP=1';
+           var postData = 'email='+encodeURIComponent($scope.frm.email)+'&password='+encodeURIComponent($scope.frm.password)+
+                            '&username='+encodeURIComponent($scope.frm.username)+
                             '&user_details[fullname]='+encodeURIComponent($scope.frm.fullname)+
                             '&user_details[age]='+encodeURIComponent($scope.frm.age);
            
            function createUserSuccess(response){
                console.log('success results: ', response);
+               if(response.data.error === 1){
+                   $scope.createUserError = response.data.errorMessage;
+                   return;
+               }
+               $scope.createUserError = "New User Created Successfully";
+               $scope.frm = {};
            }
            function createUserFailure(response){
                console.log('failure results: ', response);
+               $scope.createUserError = "Failed to create user. Please Try again";
            }
            dataService.post(url, postData, createUserSuccess, createUserFailure);
            
-           return;
-           
+           /*
+           var ref = new Firebase("https://boiling-heat-3323.firebaseio.com");
            ref.createUser({
                 email    : $scope.frm.email,
                 password : $scope.frm.password
@@ -80,7 +113,7 @@ angular.module('myApp.auth', ['ngRoute'])
                     //save it in my database
                 }
                 if(!$scope.$$phase) $scope.$apply();
-            }); 
+            }); */
        };
        
        $scope.createUserError = null;
