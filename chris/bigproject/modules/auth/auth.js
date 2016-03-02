@@ -10,7 +10,12 @@ angular.module('myApp.auth', ['ngRoute'])
   .when('/auth/login', {
     templateUrl: 'modules/auth/login.html',
     controller: 'ViewAuthLoginCtrl'
-  });
+  })
+  .when('/auth/logout', {
+    templateUrl: 'modules/auth/logout.html',
+    controller: 'ViewAuthLogoutCtrl'
+  })
+  ;
 }])
 
 .controller('ViewAuthLoginCtrl', ['$scope', 'dataService', function($scope, dataService) {
@@ -24,6 +29,12 @@ angular.module('myApp.auth', ['ngRoute'])
               $scope.loginError = response.data.errorMessage;
               return;
           }
+          // this will not really update the global scope
+          // $scope.loggedInUsersData = response.data.data;
+          $scope.$parent.loggedInUsersData = response.data.data
+          // setting user data in localStorage of browser
+          localStorage.setItem('userProfile', JSON.stringify($scope.$parent.loggedInUsersData));
+          
           $scope.loginError = 'Login successfully.';
           $scope.frmLogin = {};
       }
@@ -102,5 +113,23 @@ angular.module('myApp.auth', ['ngRoute'])
           if(!$scope.$$phase) $scope.$apply();
 
         });*/
-  };
+  }
+  .controller('ViewAuthLogoutCtrl', ['$scope', 'dataService', function($scope, dataService) {
+      $scope.logoutStatus = null;
+      function logoutSuccess(response) {
+          if (reponse.data.error ===1) {
+              $scope.logoutStatus = response.data.errorMessage;
+              return;
+          }
+          $scope.logoutStatus = 'You are successfully logged out.';
+          $scope.$parent.loggedInUsersData= null;
+          localStorage.removeItem('userProfile');
+      }
+      function logoutFailure(response) {
+          $scope.logoutStatus = 'Logout filed';
+      }
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.$parent.loggedInUsersData.uid;
+      dataService.get(url, logoutSuccess, logoutFailure, false); // no caching
+  }])
+  ;
 }]);

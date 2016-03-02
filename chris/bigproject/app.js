@@ -20,5 +20,11 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-  
+  $scope.loggedInUsersData = null;
+    
+    // for browser refresh
+    var userProfile = localStorage.getItem('userProfile');
+    if (userProfile) {
+        $scope.loggedInUsersData = JSON.parse(userProfile);
+    }
 }])
