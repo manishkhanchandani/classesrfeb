@@ -114,10 +114,11 @@ angular.module('myApp.auth', ['ngRoute'])
 
         });*/
   }
+}])
   .controller('ViewAuthLogoutCtrl', ['$scope', 'dataService', function($scope, dataService) {
       $scope.logoutStatus = null;
       function logoutSuccess(response) {
-          if (reponse.data.error ===1) {
+          if (response.data.error ===1) {
               $scope.logoutStatus = response.data.errorMessage;
               return;
           }
@@ -132,4 +133,3 @@ angular.module('myApp.auth', ['ngRoute'])
       dataService.get(url, logoutSuccess, logoutFailure, false); // no caching
   }])
   ;
-}]);
