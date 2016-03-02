@@ -3,7 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.auth'
+  'myApp.auth',
+  'myApp.lessons'
   //,
   //'ngAutocomplete',
   //'ui.bootstrap'
@@ -13,5 +14,7 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-  
-}]);
+        $scope.loggedInUserData = null;
+}])
+
+;
