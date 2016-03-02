@@ -37,12 +37,12 @@ angular.module('myApp.auth', ['ngRoute'])
 
 .controller('ViewAuthLoginCtrl', ['$scope','dataService', function($scope,dataService) {
   //var ref = new Firebase("https://glowing-inferno-3312.firebaseio.com");
-    $scope.loginError = null;
+    $scope.loginStatus = null;
     function loginSuccess(response) {
         console.log('success results: ', response);
         console.log('full name:',response.data.data.user_details.fullname)
         if (response.data.error === 1) {
-          $scope.loginError = response.data.errorMessage;
+          $scope.loginStatus = response.data.errorMessage;
           return;
         }
         $scope.$parent.loggedInUsersData = response.data.data;
@@ -50,14 +50,14 @@ angular.module('myApp.auth', ['ngRoute'])
          //setting the data in localStorage
     localStorage.setItem('userProfile', JSON.stringify($scope.$parent.loggedInUsersData));
         
-        $scope.loginError = 'logged in Successfully.';
+        $scope.loginStatus = 'logged in Successfully.';
         $scope.frmLogin = {};
 
     }
   
   function loginFailure(response) {
     console.log('failure results: ', response);
-    $scope.loginError = 'Failed to login. Please try again';
+    $scope.loginStatus = 'Failed to login. Please try again';
   }
 
     $scope.loginUser = function() {
