@@ -14,7 +14,7 @@ and open the template in the editor.
             var app= angular.module('myApp',[]);            
                 app.controller('mainController',['$scope',function($scope){
                  $scope.name='John';
-                 
+                 console.log($scope.name);
             $scope.$watch('name',function(newValue,oldValue){
                console.log('new value is' +newValue); 
                console.log('old value is' +oldValue); 

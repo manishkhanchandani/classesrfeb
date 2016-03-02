@@ -5,10 +5,10 @@ angular.module('myApp.lessons', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/lessons', {
     templateUrl: 'modules/lessons/lessons.html',
-    controller: 'ViewlessonsCtr'
+    controller: 'ViewLessonsCtrl'
   });
 }])
 
-.controller('ViewlessonsCtr',['$scope',function($scope) {
-
+.controller('ViewLessonsCtrl', ['$scope', function($scope) {
+  
 }]);

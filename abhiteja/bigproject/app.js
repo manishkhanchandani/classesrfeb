@@ -16,5 +16,5 @@ angular.module('myApp',
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-    $scope.name= 'Abhiteja';
+    $scope.loggedInUserData = null;
 }]);

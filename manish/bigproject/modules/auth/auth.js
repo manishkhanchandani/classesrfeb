@@ -11,16 +11,48 @@ angular.module('myApp.auth', ['ngRoute'])
     templateUrl: 'modules/auth/login.html',
     controller: 'ViewAuthLoginCtrl'
   })
+  .when('/auth/logout', {
+    templateUrl: 'modules/auth/logout.html',
+    controller: 'ViewAuthLogoutCtrl'
+  })
   ;
 }])
 
-.controller('ViewAuthLoginCtrl', ['$scope', function($scope) {
-  $scope.loginError = null;
+.controller('ViewAuthLoginCtrl', ['$scope', 'dataService', function($scope, dataService) {
+  $scope.loginStatus = null;
   
   $scope.frmLogin = {};
   
-  $scope.loginUser = function() {
+  
+  function loginSuccess(response) {
+    console.log('success: ', response);
     
+    if (response.data.error === 1) {
+      $scope.loginStatus = response.data.errorMessage;
+      return;
+    }
+    
+    $scope.$parent.loggedInUsersData = response.data.data;
+    
+    //setting the data in localStorage
+    localStorage.setItem('userProfile', JSON.stringify($scope.$parent.loggedInUsersData));
+    
+    
+    $scope.loginStatus = 'You are successfully logged in to our website.';
+    $scope.frmLogin = {};
+
+  }
+  
+  function loginFailure(response) {
+    console.log('failure: ', response);
+    
+    $scope.loginStatus = 'Could not query the server, please try again later';
+  }
+  
+  $scope.loginUser = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=login&saveIP=1';
+    var postData = 'username='+encodeURIComponent($scope.frmLogin.email)+'&password='+encodeURIComponent($scope.frmLogin.password);
+    dataService.post(url, postData, loginSuccess, loginFailure);
   };
   
 }])
@@ -82,7 +114,35 @@ angular.module('myApp.auth', ['ngRoute'])
   };
   
   
-}]);
+}])
+.controller('ViewAuthLogoutCtrl', ['$scope', 'dataService', function($scope, dataService) {
+  
+  $scope.logoutStatus = null;
+  
+  function logoutSuccess(response) {
+    if (response.data.error === 1) {
+      $scope.logoutStatus = response.data.errorMessage;
+      return;
+    }
+    
+    localStorage.removeItem('userProfile');
+    $scope.$parent.loggedInUsersData = null;
+    $scope.logoutStatus = 'You are successfully logged out from our website.';
+  }
+  
+  function logoutFailure(response) {
+     $scope.logoutStatus = 'There was some server problem, please try again...';
+  }
+  
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.$parent.loggedInUsersData.uid;
+  
+  dataService.get(url, logoutSuccess, logoutFailure, false);
+
+  
+  
+}])
+
+;
 
 /*
   var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");
