@@ -85,6 +85,9 @@ angular.module('myApp.auth', ['ngRoute'])
             }
             $scope.logoutStatus = 'Logged Out Successfully.';
             $scope.frm = {};
+
+            localStorage.removeItem('userProfile');
+            $scope.$parent.loggedInUsersData    = null;
         }
 
         function logoutFailure(response){
@@ -95,9 +98,6 @@ angular.module('myApp.auth', ['ngRoute'])
         var url     = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.loggedInUsersData.uid;
 
         dataService.get(url, logoutSuccess, logoutFailure, false);
-
-        localstorage.removeItem('userProfile');
-        $scope.$parent.loggedInUsersData    = null;
 
 
     }])
