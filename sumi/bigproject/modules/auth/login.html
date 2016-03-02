@@ -4,8 +4,8 @@
       <h3>Login</h3>
       
       
-            <div class="alert alert-warning" role="alert" ng-if="loginError">
-              {{loginError}}
+            <div class="alert alert-warning" role="alert" ng-if="loginStatus">
+              {{loginStatus}}
             </div>
     </div>
   </div>
@@ -13,8 +13,8 @@
     <div class="col-md-12">
       <form ng-submit="loginUser()">
           <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="frmLogin.email" required>
+              <label for="email">Username / Email address</label>
+              <input type="text" class="form-control" id="email" placeholder="Enter email" ng-model="frmLogin.email" required>
           </div>
           <div class="form-group">
               <label for="password">Password</label>
