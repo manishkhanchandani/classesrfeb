@@ -11,6 +11,10 @@ angular.module('myApp.auth', ['ngRoute'])
     templateUrl: 'modules/auth/login.html',
     controller: 'ViewAuthLoginCtrl'
   })
+  .when('/auth/logout', {
+    templateUrl: 'modules/auth/logout.html',
+    controller: 'ViewAuthLogoutCtrl'
+  })
   ;
 }])
 
@@ -29,6 +33,11 @@ angular.module('myApp.auth', ['ngRoute'])
     }
     
     $scope.$parent.loggedInUsersData = response.data.data;
+    
+    //setting the data in localStorage
+    localStorage.setItem('userProfile', JSON.stringify($scope.$parent.loggedInUsersData));
+    
+    
     $scope.loginStatus = 'You are successfully logged in to our website.';
     $scope.frmLogin = {};
 
@@ -105,7 +114,12 @@ angular.module('myApp.auth', ['ngRoute'])
   };
   
   
-}]);
+}])
+.controller('ViewAuthLogoutCtrl', ['$scope', 'dataService', function($scope, dataService) {
+  
+}])
+
+;
 
 /*
   var ref = new Firebase("https://boiling-torch-3780.firebaseio.com");

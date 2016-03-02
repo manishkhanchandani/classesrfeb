@@ -31,6 +31,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', 'dataService', function($scope, dataService) {
+    $scope.showLoading = false;
     //location starts
     $scope.mapOptions = {
       types: 'geocode'
@@ -39,11 +40,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.details = {};
     //location ends
     
-    $scope.type = 1;
+    $scope.type = 2;
     $scope.frm = {radius: 30};
     
     
   function getSuccess(response) {
+      $scope.showLoading = false;
       console.log('success: ', response);
       $scope.results = response.data.data.results;
       $scope.defaultImage = 'images/noimage.jpg';
@@ -61,10 +63,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     }
   
     function getFailure(response) {
+      $scope.showLoading = false;
       console.log('failure: ', response);
     }
     
     $scope.getData = function() {
+      $scope.showLoading = true;
       var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1';
       
       if ($scope.frm.keyword) {
@@ -77,6 +81,9 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
           url = url + '&r='+$scope.frm.radius;
         }
       }
+      
+      var path = '/manish/lessons';
+      url = url + '&path='+path;
       
       dataService.get(url, getSuccess, getFailure, true);
     };
@@ -432,6 +439,72 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
-.controller('ViewMyLessonsCtrl', ['$scope', function($scope) {
+.controller('ViewMyLessonsCtrl', ['$scope', 'dataService', function($scope, dataService) {
   
+    $scope.lessonsStatus = null;
+    $scope.showLoading = false;
+    //location starts
+    $scope.mapOptions = {
+      types: 'geocode'
+    };
+
+    $scope.details = {};
+    //location ends
+    
+    $scope.type = 2;
+    $scope.frm = {radius: 30};
+    
+    
+  function getSuccess(response) {
+      console.log('success: ', response);
+      $scope.showLoading = false;
+      if (response.data.error === 1) {
+        $scope.lessonsStatus = response.data.errorMessage;
+        return; 
+      }
+      
+      $scope.results = response.data.data.results;
+      $scope.defaultImage = 'images/noimage.jpg';
+      
+      //getting main image
+      angular.forEach(response.data.data.results, function(value, key) {
+        angular.forEach(value.detailsFull.images, function(valueImg, keyImg) {
+          if (!$scope.results[key].mainImage) {
+            $scope.results[key].mainImage = valueImg;
+          }
+        });
+      });
+      
+      console.log($scope.results);
+    }
+  
+    function getFailure(response) {
+      $scope.showLoading = false;
+      console.log('failure: ', response);
+    }
+    
+    $scope.getData = function() {
+      $scope.showLoading = true;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1';
+      
+      if ($scope.frm.keyword) {
+        url = url + '&q='+encodeURIComponent($scope.frm.keyword);
+      }
+      console.log($scope);
+      if ($scope.location) {
+        url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng;
+        if ($scope.frm.radius) {
+          url = url + '&r='+$scope.frm.radius;
+        }
+      }
+      
+      var path = '/manish/lessons';
+      url = url + '&path='+path;
+      var access_token = $scope.loggedInUsersData.token;
+      url = url + '&access_token='+access_token;
+      console.log(url);
+      dataService.get(url, getSuccess, getFailure, true);
+    };
+    
+    $scope.getData();
 }]);

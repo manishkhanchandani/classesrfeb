@@ -14,7 +14,14 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-
+  $scope.loggedInUsersData = null;
+  
+  //getting the details form localStorage
+  var userProfile = localStorage.getItem('userProfile');
+  if (userProfile) {
+      $scope.loggedInUsersData = JSON.parse(userProfile);
+  }
+  
 }])
 
 ;
