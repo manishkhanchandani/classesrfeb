@@ -5,10 +5,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.auth',
-  'myApp.lessons'
-
-  //,
-  //'ngAutocomplete',
+  'myApp.lessons',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -21,8 +19,6 @@ config(['$routeProvider', function($routeProvider) {
 
     //Get the details from local storage
     var userProfile                 = localStorage.getItem('userProfile');
-
-    console.log(userProfile);
 
     if( userProfile ){
         $scope.loggedInUsersData    = JSON.parse(userProfile);
