@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
     "myApp.lessons",
-    "myApp.auth"
+    "myApp.auth",
 //  'myApp.view1',
 //  'myApp.view2',
 //  'myApp.view3',
@@ -12,7 +12,7 @@ angular.module('myApp', [
 //  'myApp.view5',
 //  'myApp.view6'
   //,
-  //'ngAutocomplete',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
