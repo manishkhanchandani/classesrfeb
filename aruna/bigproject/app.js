@@ -10,9 +10,8 @@ angular.module('myApp', [
   'myApp.activities',
   'myApp.housingsale',
   'myApp.creative',
-  'myApp.messaging'
-  //,
-  //'ngAutocomplete',
+  'myApp.messaging',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ])
   .config(['$routeProvider', function($routeProvider) {
