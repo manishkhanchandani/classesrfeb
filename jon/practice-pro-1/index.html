@@ -76,7 +76,7 @@ $(document).on("keypress", 'form', function (e) {
           <ul class="dropdown-menu">
             <li ng-if="!loggedInUsersData"><a href="#/auth/create">Create New User</a></li>
             <li ng-if="!loggedInUsersData"><a href="#/auth/login">Login</a></li>
-            <li><a href="#/auth/logout">Logout</a></li>
+            <li ng-if="loggedInUsersData"><a href="#/auth/logout">Logout</a></li>
           </ul>
         </li>
         <li class="dropdown">
