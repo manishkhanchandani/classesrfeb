@@ -3,11 +3,12 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.auth',
-  'myApp.lessons',
-  'ngAutocomplete'
-  //'ui.bootstrap'
+    'ngRoute',
+    'myApp.auth',
+    'myApp.lessons',
+    'ngAutocomplete',
+    'ngRoute',
+    //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/view1'});
@@ -19,6 +20,8 @@ config(['$routeProvider', function($routeProvider) {
 
     //Get the details from local storage
     var userProfile                 = localStorage.getItem('userProfile');
+
+    console.log(userProfile);
 
     if( userProfile ){
         $scope.loggedInUsersData    = JSON.parse(userProfile);
