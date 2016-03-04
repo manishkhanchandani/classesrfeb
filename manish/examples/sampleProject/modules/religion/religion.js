@@ -40,8 +40,8 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.details = {};
     //location ends
     
-    $scope.type = 2;
-    $scope.frm = {radius: 30};
+    $scope.type = 1;
+    $scope.frm = {};
     
     
   function getSuccess(response) {
@@ -97,6 +97,10 @@ angular.module('myApp.religion', ['ngRoute'])
     
     function addSuccess(response) {
       console.log('success: ', response);
+      if (response.data.error === 1) {
+        $scope.createError = response.data.errorMessage;
+        return;
+      }
       $location.path('/religion/create/images/'+response.data.data.id);
       $scope.frmAdd = {};     
     }
@@ -109,6 +113,7 @@ angular.module('myApp.religion', ['ngRoute'])
 
       var submitData = '';
       submitData = submitData + '&title='+encodeURIComponent($scope.frmAdd.title);
+      submitData = submitData + '&cT=1';
       //xtra data
       submitData = submitData + '&description='+encodeURIComponent($scope.frmAdd.description);
       
