@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.auth',
   'myApp.lessons',
-  'ngAutocomplete'
+  'ngAutocomplete',
+  'myApp.religion'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/lessons'});
@@ -21,6 +22,17 @@ config(['$routeProvider', function($routeProvider) {
    console.log('loggedinuser: ', $scope.loggedInUsersData);
   }
   //end localstorage
+  
+  $scope.project = 'religion';
+  
+  switch ($scope.project) {
+    case 'religion':
+      $scope.menuTemplateUrl = 'modules/menu/religion.html';
+      break;
+    case 'lessons':
+      $scope.menuTemplateUrl = 'modules/menu/lessons.html';
+      break; 
+  }
   
 }])
 
