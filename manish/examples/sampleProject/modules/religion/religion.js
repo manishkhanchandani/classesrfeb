@@ -27,10 +27,19 @@ angular.module('myApp.religion', ['ngRoute'])
   }).when('/religion/my', {
     templateUrl: 'modules/religion/my.html',
     controller: 'ViewMyReligionCtrl'
+  })
+  
+  .when('/religion/search', {
+    templateUrl: 'modules/religion/religion.html',
+    controller: 'ViewReligionCtrl'
+  })
+  .when('/religion/search/:keyword', {
+    templateUrl: 'modules/religion/religion.html',
+    controller: 'ViewReligionCtrl'
   });
 }])
 
-.controller('ViewReligionCtrl', ['$scope', 'dataService', function($scope, dataService) {
+.controller('ViewReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
     $scope.showLoading = false;
     //location starts
     $scope.mapOptions = {
@@ -43,10 +52,20 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.type = 1;
     $scope.frm = {};
     
+    if ($routeParams.keyword) {
+      $scope.frm.keyword = $routeParams.keyword;
+    }
     
   function getSuccess(response) {
       $scope.showLoading = false;
       console.log('success: ', response);
+      
+      $scope.totalRows = 0;
+      if (response.data.error === 1) {
+        return;
+      }
+      
+      $scope.totalRows = response.data.data.totalRows;
       $scope.results = response.data.data.results;
       $scope.defaultImage = 'images/noimage.jpg';
       
@@ -85,10 +104,22 @@ angular.module('myApp.religion', ['ngRoute'])
       var path = '/manish/religion';
       url = url + '&path='+path;
       
+      url = url + '&orderBy=title&orderType=ASC';
+      
       dataService.get(url, getSuccess, getFailure, true);
     };
     
     $scope.getData();
+    
+    $scope.searchData = function() {
+      var urlPath = '/religion/search';
+      
+      if ($scope.frm.keyword) {
+        urlPath = urlPath + '/' + encodeURIComponent($scope.frm.keyword);
+      }
+      
+      $location.path(urlPath);
+    };
 }])
 .controller('ViewCreateReligionCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
     $scope.frmAdd = {};
