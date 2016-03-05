@@ -23,17 +23,19 @@ angular.module('myApp.lessons', ['ngRoute'])
 
     }])
 
-    .controller('ViewCreateCtrl', ['$scope', function($scope) {
+    .controller('ViewCreateCtrl', ['$scope', '$location', function($scope, $location) {
         //location starts
         $scope.mapOptions = {
             types: 'geocode'
         };
-
         console.log($scope);
-
         $scope.details = {};
         //location ends
 
+        $scope.submitCreateForm = function(){
+          //call api service to submit the form
+            $location.path('/lessions/create/images/1');
+        };
 
     }])
 
