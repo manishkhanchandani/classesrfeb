@@ -11,6 +11,11 @@ angular.module('myApp.auth', ['ngRoute'])
                 templateUrl: 'modules/auth/login.html',
                 controller: 'ViewAuthLoginCtrl'
             })
+
+            .when('/auth/logout', {
+                templateUrl: 'modules/auth/logout.html',
+                controller: 'ViewAuthLogoutCtrl'
+            })
         ;
     }])
 
@@ -27,6 +32,8 @@ angular.module('myApp.auth', ['ngRoute'])
 
             //can not update global, unless specify updating the "parents" loggedInUsersData
             $scope.$parent.loggedInUsersData    = response.data.data;
+
+            localStorage.setItem('userProfile', JSON.stringify($scope.$parent.loggedInUsersData));
 
             $scope.loginStatus          = 'User Authenticated Successfully.' + response.data.data.user_details.fullname;
             $scope.frm = {};
@@ -66,6 +73,35 @@ angular.module('myApp.auth', ['ngRoute'])
      if(!$scope.$$phase) $scope.$apply();
      });
      */
+
+    .controller('ViewAuthLogoutCtrl', ['$scope', 'dataService', function($scope, dataService) {
+        $scope.logoutStatus = null;
+
+        function logoutSuccess(response) {
+            console.log('success results: ', response);
+            if (response.data.error === 1) {
+                $scope.logoutStatus = response.data.errorMessage;
+                return;
+            }
+            $scope.logoutStatus = 'Logged Out Successfully.';
+            $scope.frm = {};
+
+            localStorage.removeItem('userProfile');
+            $scope.$parent.loggedInUsersData    = null;
+        }
+
+        function logoutFailure(response){
+            console.log('failure results: ', response);
+            $scope.logoutStatus = 'Failed to logout from server. Please try to logout again';
+        }
+
+        var url     = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.loggedInUsersData.uid;
+
+        dataService.get(url, logoutSuccess, logoutFailure, false);
+
+
+    }])
+
 
 
     .controller('ViewAuthCreateCtrl', ['$scope', 'dataService', function($scope, dataService) {

@@ -10,9 +10,8 @@ angular.module('myApp', [
   'myApp.activities',
   'myApp.housingsale',
   'myApp.creative',
-  'myApp.messaging'
-  //,
-  //'ngAutocomplete',
+  'myApp.messaging',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ])
   .config(['$routeProvider', function($routeProvider) {
@@ -20,5 +19,11 @@ angular.module('myApp', [
 }])
 
 .controller('mainController', ['$scope', function($scope) {
+  $scope.loggedInUsersData = null;
   
+   //getting the details form localStorage
+  var userProfile = localStorage.getItem('userProfile');
+  if (userProfile) {
+      $scope.loggedInUsersData = JSON.parse(userProfile);
+  }
 }]);

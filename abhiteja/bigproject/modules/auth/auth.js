@@ -11,6 +11,10 @@ angular.module('myApp.auth', ['ngRoute'])
         .when('/auth/login', {
             templateUrl: 'modules/auth/login.html',
             controller: 'AuthLoginCtrl'
+        })
+        .when('/auth/logout', {
+            templateUrl: 'modules/auth/logout.html',
+            controller: 'AuthLogoutCtrl'
         });
         
     }])
@@ -34,6 +38,8 @@ angular.module('myApp.auth', ['ngRoute'])
                    return;
                }
                $scope.$parent.loggedInUserData = response.data.data;
+               //setting data in localStorage
+               localStorage.setItem('userProfile',JSON.stringify($scope.$parent.loggedInUserData));
                $scope.loginUserError = "You have Successfully Logged in to Website";
                $scope.frmLogin = {};
             }
@@ -119,4 +125,29 @@ angular.module('myApp.auth', ['ngRoute'])
        
        $scope.createUserError = null;
             
-}]);
+}])
+
+      .controller('AuthLogoutCtrl', ['$scope','dataService', function($scope, dataService) {
+              
+        $scope.logoutstatus = null;
+        
+            
+        function logoutSuccess(response){
+            if(response.data.error === 1){
+                   $scope.logoutstatus = response.data.errorMessage;
+                   return;
+               }
+               
+               localStorage.removeItem('userProfile');
+               $scope.$parent.loggedInUserData = null;
+               $scope.logoutstatus = 'You successfully logged out from the website';
+        }
+        
+        function logoutFailure(response){
+            $scope.logoutstatus = "There was some server problem";
+        }
+        
+        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.$parent.loggedInUserData.uid; 
+        
+        dataService.get(url, logoutSuccess, logoutFailure, false);    
+   }]);

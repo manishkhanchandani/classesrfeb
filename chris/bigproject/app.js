@@ -4,7 +4,11 @@
 angular.module('myApp', [
   'ngRoute',
     "myApp.lessons",
-    "myApp.auth"
+    "myApp.auth",
+    "myApp.computer",
+    "myApp.activities",
+    "myApp.beauty",
+    "myApp.rideshare",
 //  'myApp.view1',
 //  'myApp.view2',
 //  'myApp.view3',
@@ -12,7 +16,7 @@ angular.module('myApp', [
 //  'myApp.view5',
 //  'myApp.view6'
   //,
-  //'ngAutocomplete',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -20,5 +24,11 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-  
+  $scope.loggedInUsersData = null;
+    
+    // for browser refresh
+    var userProfile = localStorage.getItem('userProfile');
+    if (userProfile) {
+        $scope.loggedInUsersData = JSON.parse(userProfile);
+    }
 }])

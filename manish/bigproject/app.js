@@ -4,9 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.auth',
-  'myApp.lessons'
-  //,
-  //'ngAutocomplete',
+  'myApp.lessons',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
