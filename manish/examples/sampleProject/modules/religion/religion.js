@@ -33,7 +33,11 @@ angular.module('myApp.religion', ['ngRoute'])
     templateUrl: 'modules/religion/religion.html',
     controller: 'ViewReligionCtrl'
   })
-  .when('/religion/search/:keyword', {
+  .when('/religion/search/:page', {
+    templateUrl: 'modules/religion/religion.html',
+    controller: 'ViewReligionCtrl'
+  })
+  .when('/religion/search/:page/:keyword', {
     templateUrl: 'modules/religion/religion.html',
     controller: 'ViewReligionCtrl'
   });
@@ -52,8 +56,17 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.type = 1;
     $scope.frm = {};
     
+    $scope.frm.urlPrefix = '#/religion/search';
+    $scope.frm.urlSufix = '';
+
+    $scope.frm.page = 0;
+    if ($routeParams.page) {
+      $scope.frm.page = $routeParams.page;
+    }
+    
     if ($routeParams.keyword) {
       $scope.frm.keyword = $routeParams.keyword;
+      $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
     }
     
   function getSuccess(response) {
@@ -65,6 +78,7 @@ angular.module('myApp.religion', ['ngRoute'])
         return;
       }
       
+      $scope.data = response.data.data;
       $scope.totalRows = response.data.data.totalRows;
       $scope.results = response.data.data.results;
       $scope.defaultImage = 'images/noimage.jpg';
@@ -79,6 +93,7 @@ angular.module('myApp.religion', ['ngRoute'])
       });
       
       console.log($scope.results);
+      console.log('data: ', $scope.data);
     }
   
     function getFailure(response) {
@@ -88,10 +103,14 @@ angular.module('myApp.religion', ['ngRoute'])
     
     $scope.getData = function() {
       $scope.showLoading = true;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1';
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&max=1';
       
       if ($scope.frm.keyword) {
         url = url + '&q='+encodeURIComponent($scope.frm.keyword);
+      }
+      
+      if ($scope.frm.page >= 0) {
+        url = url + '&page='+encodeURIComponent($scope.frm.page);
       }
       
       if ($scope.location) {
@@ -112,7 +131,7 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.getData();
     
     $scope.searchData = function() {
-      var urlPath = '/religion/search';
+      var urlPath = '/religion/search/0';
       
       if ($scope.frm.keyword) {
         urlPath = urlPath + '/' + encodeURIComponent($scope.frm.keyword);

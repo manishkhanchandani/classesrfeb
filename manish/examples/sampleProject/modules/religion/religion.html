@@ -48,18 +48,7 @@
         </div>
       </div>
       
-      <div class="row" ng-if="totalRows > 0">
-        <div class="col-md-12">
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      
-      
+      <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
       
     </div>
     
