@@ -55,8 +55,77 @@ angular.module('myApp.religion', ['ngRoute'])
 
 .controller('ViewReligionVerseAddCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
   $scope.frmAdd = {};
-  $scope.frmAdd.chapter = 'new';
+  $scope.frmAdd.book = 'newBook';
+  $scope.frmAdd.chapter = 'newChapter';
   
+  
+  //get data
+  $scope.showLoading = false;
+  $scope.id = $routeParams.id;
+  $scope.results = null;
+  function getSuccess(response) {
+    $scope.showLoading = false;
+    console.log('success: ', response);
+    
+    if (response.data.error === 1) {
+      return;
+    }
+    
+    $scope.results = response.data.data;
+    console.log($scope.results);
+  }
+    
+  function getFailure(response) {
+    $scope.showLoading = false;
+    console.log('failure: ', response);
+  }
+  dataService.getDataSingle($scope.id, false, true, getSuccess, getFailure);
+  
+  
+  $scope.resultsChapter = null;
+  function getSuccessChapter(response) {
+    $scope.showLoading = false;
+    console.log('success: ', response);
+    
+    if (response.data.error === 1) {
+      return;
+    }
+    
+    $scope.resultsChapter = response.data.data;
+    console.log($scope.resultsChapter);
+  }
+    
+  function getFailureChapter(response) {
+    $scope.showLoading = false;
+    console.log('failure: ', response);
+  }
+    
+  var pathChapter = '/manish/religion/'+$scope.id+'/chapter';
+  var paramsChapter = {};
+  dataService.getDataAll(pathChapter, false, true, getSuccessChapter, getFailureChapter, paramsChapter);
+  
+  
+  $scope.resultsBook = null;
+  function getSuccessBook(response) {
+    $scope.showLoading = false;
+    console.log('success: ', response);
+    
+    if (response.data.error === 1) {
+      return;
+    }
+    
+    $scope.resultsBook = response.data.data;
+    console.log($scope.resultsBook);
+  }
+    
+  function getFailureBook(response) {
+    $scope.showLoading = false;
+    console.log('failure: ', response);
+  }
+    
+  var pathBook = '/manish/religion/'+$scope.id+'/book';
+  var paramsBook = {};
+  dataService.getDataAll(pathBook, false, true, getSuccessBook, getFailureBook, paramsBook);
 }])
 
 .controller('ViewDetailReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
