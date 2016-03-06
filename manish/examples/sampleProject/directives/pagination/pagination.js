@@ -54,7 +54,6 @@
               
             });
             //min rows end
-            console.log(scope);
             
           }//end link
     };//end return

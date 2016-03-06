@@ -40,7 +40,70 @@ angular.module('myApp.religion', ['ngRoute'])
   .when('/religion/search/:page/:keyword', {
     templateUrl: 'modules/religion/religion.html',
     controller: 'ViewReligionCtrl'
-  });
+  })
+  .when('/religion/detail/:id', {
+    templateUrl: 'modules/religion/detail.html',
+    controller: 'ViewDetailReligionCtrl'
+  })
+  
+  .when('/religion/verses/add/:id', {
+    templateUrl: 'modules/religion/verses/create.html',
+    controller: 'ViewReligionVerseAddCtrl'
+  })
+  ;
+}])
+
+.controller('ViewReligionVerseAddCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
+  $scope.frmAdd = {};
+  $scope.frmAdd.chapter = 'new';
+  
+}])
+
+.controller('ViewDetailReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
+  
+  $scope.id = $routeParams.id;
+  $scope.results = {};
+  $scope.setImage = function(image) {
+      $scope.results.mainImage = image;
+  }
+
+  $scope.results.mainImage = 'images/noimage.jpg';
+  function getSuccess(response) {
+      $scope.showLoading = false;
+      console.log('success: ', response);
+      
+      if (response.data.error === 1) {
+        return;
+      }
+      
+      $scope.results = response.data.data;
+      
+      //getting main image
+      if ($scope.results.detailsFull.images) {
+        angular.forEach($scope.results.detailsFull.images, function(valueImg, keyImg) {
+          if (!$scope.results.mainImage) {
+            $scope.results.mainImage = valueImg;
+          }
+        });
+      }
+      
+      console.log($scope.results);
+    }
+  
+    function getFailure(response) {
+      $scope.showLoading = false;
+      console.log('failure: ', response);
+    }
+    
+    $scope.getData = function() {
+      $scope.showLoading = true;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&id='+$scope.id;
+      var path = '/manish/religion';
+      url = url + '&path='+path;
+      dataService.get(url, getSuccess, getFailure, true);
+    };
+    
+    $scope.getData();
 }])
 
 .controller('ViewReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
@@ -103,7 +166,7 @@ angular.module('myApp.religion', ['ngRoute'])
     
     $scope.getData = function() {
       $scope.showLoading = true;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&max=1';
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1';
       
       if ($scope.frm.keyword) {
         url = url + '&q='+encodeURIComponent($scope.frm.keyword);

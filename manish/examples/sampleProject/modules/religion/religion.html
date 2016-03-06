@@ -34,7 +34,7 @@
         <div class="col-md-4" ng-repeat="item in results">
           <img ng-if="item.mainImage" ng-src="{{item.mainImage}}" class="img-responsive img-thumbnail">
           <img ng-if="!item.mainImage" ng-src="{{defaultImage}}" class="img-responsive img-thumbnail">
-          <h4><a href="">{{item.title}}</a> <small>{{item.location.city}}, {{item.location.state}}</small> <br><span class="dateFormatted">{{item.ago}}</span></h4>
+          <h4><a href="#/religion/detail/{{item.id}}">{{item.title}}</a> <small>{{item.location.city}}, {{item.location.state}}</small> <br><span class="dateFormatted">{{item.ago}}</span></h4>
           <p ng-if="item.distance">{{item.distance}} mi away</p>
           <p>{{item.shortDesc}}</p>
         </div>
@@ -43,7 +43,7 @@
       
       <div class="row" ng-if="type === 2 && results && !showLoading">
         <div class="col-md-12" ng-repeat="item in results">
-          <p><span class="dateFormatted">{{item.dateFormatted}}</span> <a href="">{{item.title}}</a> <small>{{item.location.city}}, {{item.location.state}}</small>
+          <p><span class="dateFormatted">{{item.dateFormatted}}</span> <a href="#/religion/detail/{{item.id}}">{{item.title}}</a> <small>{{item.location.city}}, {{item.location.state}}</small>
           <span ng-if="item.distance">({{item.distance}} mi)</span></p>
         </div>
       </div>
