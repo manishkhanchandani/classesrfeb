@@ -9,18 +9,18 @@ angular.module('myApp.legal', ['ngRoute'])
   })
   .when('/legal/create', {
     templateUrl: 'modules/legal/create.html',
-    controller: 'ViewCreateCtrl'
+    controller: 'ViewLegalCreateCtrl'
   })
   .when('/legal/create/images/:id', {
     templateUrl: 'modules/legal/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewLegalImagesCtrl'
   });
 }])
 
 .controller('ViewLegalCtrl', ['$scope',function($scope) {
 
 }])
-.controller('ViewCreateCtrl', ['$scope',function($scope) {
+.controller('ViewLegalCreateCtrl', ['$scope','$location',function($scope,$location) {
  //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -28,8 +28,14 @@ angular.module('myApp.legal', ['ngRoute'])
 
   $scope.details = {};
   //location ends
+  
+   $scope.submitLegalCreateForm = function() {
+     //call api service to submit the form
+     console.log('hello');
+     $location.path('/legal/create/images/1');
+  };
 
 }])
-.controller('ViewImagesCtrl', ['$scope',function($scope) {
+.controller('ViewLegalImagesCtrl', ['$scope',function($scope) {
 
 }]);

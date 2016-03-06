@@ -9,11 +9,11 @@ angular.module('myApp.creative', ['ngRoute'])
   })
   .when('/creative/create', {
     templateUrl: 'modules/creative/create.html',
-    controller: 'ViewCreateCtrl'
+    controller: 'ViewCreativeCreateCtrl'
   })
   .when('/creative/create/images/:id', {
     templateUrl: 'modules/creative/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewCreativeImagesCtrl'
   });
 }])
 
@@ -21,7 +21,7 @@ angular.module('myApp.creative', ['ngRoute'])
 
 }])
 
- .controller('ViewCreateCtrl', ['$scope', function($scope) {
+ .controller('ViewCreativeCreateCtrl', ['$scope','$location', function($scope,$location) {
    //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -29,9 +29,16 @@ angular.module('myApp.creative', ['ngRoute'])
 
   $scope.details = {};
   //location ends
+  
+   $scope.submitCreativeCreateForm = function() {
+     //call api service to submit the form
+     console.log('hi');
+     $location.path('/creative/create/images/1');
+     
+  };
 }])
 
-.controller('ViewImagesCtrl', ['$scope', function($scope) {
+.controller('ViewCreativeImagesCtrl', ['$scope', function($scope) {
   
 }])
 ;

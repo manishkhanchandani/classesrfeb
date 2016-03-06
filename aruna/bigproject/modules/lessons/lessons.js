@@ -33,7 +33,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   
    $scope.submitCreateForm = function() {
      //call api service to submit the form
-     console.log('hey');
+     
      $location.path('/lessons/create/images/1');
   };
 }])
