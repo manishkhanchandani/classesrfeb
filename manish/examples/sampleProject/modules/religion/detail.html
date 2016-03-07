@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">{{results.title}}</h1>
+    </div>
+  </div>
+  
+  
+  
+  <!-- content -->
+  <div class="row">
+    <!--left content-->
+    <div class="col-md-3">
+      <img ng-src="{{results.mainImage}}" class="img-responsive img-thumbnail">
+      <!--images-->
+      <div class="row">
+          <div ng-repeat="image in results.detailsFull.images">
+          <div class="col-md-3"><img class="img-full" ng-src="{{image}}" ng-click="setImage(image)" /></div>
+          </div>
+      </div>
+      <!--images-->
+    </div>
+    <!--left content-->
+    <!--middle content-->
+    <div class="col-md-3">
+      <p><strong>Description</strong></p>
+      <p>{{results.description}}</p>
+      
+      <p><strong>Tags</strong>
+      </p>
+    </div>
+    <!--middle content-->
+    <!--right content-->
+    <div class="col-md-6">
+      <h3 class="page-header" style="margin:0;">Verses</h3>
+      <div class="text-right"><span><a href="#/religion/verses/view/{{results.id}}">View More</a></span><span ng-if="loggedInUsersData && results.uid === loggedInUsersData.uid"> | <a href="#/religion/verses/add/{{results.id}}">Add New Verse</a></span></div>
+    </div>
+    <!--right content-->
+  </div>
+  <!-- content -->
+      
+      
+</div>

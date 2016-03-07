@@ -9,18 +9,18 @@ angular.module('myApp.housingsale', ['ngRoute'])
   })
   .when('/housingsale/create', {
     templateUrl: 'modules/housingsale/create.html',
-    controller: 'ViewCreateCtrl'
+    controller: 'ViewHousingsaleCreateCtrl'
   })
   .when('/housingsale/create/images/:id', {
     templateUrl: 'modules/housingsale/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewHousingsaleImagesCtrl'
   });
 }])
 
 .controller('ViewHousingsaleCtrl', ['$scope',function($scope) {
 
 }])
-.controller('ViewCreateCtrl', ['$scope',function($scope) {
+.controller('ViewHousingsaleCreateCtrl', ['$scope','$location',function($scope,$location) {
  //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -28,8 +28,14 @@ angular.module('myApp.housingsale', ['ngRoute'])
 
   $scope.details = {};
   //location ends
+  
+   $scope.submitHousingsaleCreateForm = function() {
+     //call api service to submit the form
+     console.log('hai');
+     $location.path('/housingsale/create/images/1');
+  };
 
 }])
-.controller('ViewImagesCtrl', ['$scope',function($scope) {
+.controller('ViewHousingsaleImagesCtrl', ['$scope',function($scope) {
 
 }]);

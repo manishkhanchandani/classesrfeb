@@ -9,11 +9,11 @@ angular.module('myApp.activities', ['ngRoute'])
   })
   .when('/activities/create', {
     templateUrl: 'modules/activities/create.html',
-    controller: 'ViewCreateCtrl'
+    controller: 'ViewActivitiesCreateCtrl'
   })
   .when('/activities/create/images/:id', {
     templateUrl: 'modules/activities/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewActivitiesImagesCtrl'
   })
         ;
 }])
@@ -22,7 +22,7 @@ angular.module('myApp.activities', ['ngRoute'])
 
 }])
 
-.controller('ViewCreateCtrl', ['$scope',function($scope) {
+.controller('ViewActivitiesCreateCtrl', ['$scope','$location',function($scope,$location) {
 //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -30,8 +30,14 @@ angular.module('myApp.activities', ['ngRoute'])
 
   $scope.details = {};
   //location ends
+  
+   $scope.submitActivitiesCreateForm = function() {
+     //call api service to submit the form
+     console.log('hey');
+     $location.path('/activities/create/images/1');
+  };
 }])
 
-.controller('ViewImagesCtrl', ['$scope',function($scope) {
+.controller('ViewActivitiesImagesCtrl', ['$scope',function($scope) {
 
 }]);

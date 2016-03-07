@@ -26,5 +26,22 @@ angular.module('myApp').service('dataService', ['$http', function($http) {
         data: data
       }).then(callback, callbackFailed);
   };
+  
+  this.getDataSingle = function(id, cache, localCache, getSuccess, getFailure) {
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&id='+id;
+      if (!cache) {
+        url = url + '&noCache=1';
+      }
+      this.get(url, getSuccess, getFailure, localCache);
+    };
+  
+  this.getDataAll = function(path, cache, localCache, getSuccess, getFailure, params) {
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll';
+      if (!cache) {
+        url = url + '&noCache=1';
+      }
+      url = url + '&path='+path;
+      this.get(url, getSuccess, getFailure, localCache);
+    };
 }]);
 

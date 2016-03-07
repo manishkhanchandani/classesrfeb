@@ -33,10 +33,146 @@ angular.module('myApp.religion', ['ngRoute'])
     templateUrl: 'modules/religion/religion.html',
     controller: 'ViewReligionCtrl'
   })
-  .when('/religion/search/:keyword', {
+  .when('/religion/search/:page', {
     templateUrl: 'modules/religion/religion.html',
     controller: 'ViewReligionCtrl'
-  });
+  })
+  .when('/religion/search/:page/:keyword', {
+    templateUrl: 'modules/religion/religion.html',
+    controller: 'ViewReligionCtrl'
+  })
+  .when('/religion/detail/:id', {
+    templateUrl: 'modules/religion/detail.html',
+    controller: 'ViewDetailReligionCtrl'
+  })
+  
+  .when('/religion/verses/add/:id', {
+    templateUrl: 'modules/religion/verses/create.html',
+    controller: 'ViewReligionVerseAddCtrl'
+  })
+  ;
+}])
+
+.controller('ViewReligionVerseAddCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
+  $scope.frmAdd = {};
+  $scope.frmAdd.book = 'newBook';
+  $scope.frmAdd.chapter = 'newChapter';
+  
+  
+  //get data
+  $scope.showLoading = false;
+  $scope.id = $routeParams.id;
+  $scope.results = null;
+  function getSuccess(response) {
+    $scope.showLoading = false;
+    console.log('success: ', response);
+    
+    if (response.data.error === 1) {
+      return;
+    }
+    
+    $scope.results = response.data.data;
+    console.log($scope.results);
+  }
+    
+  function getFailure(response) {
+    $scope.showLoading = false;
+    console.log('failure: ', response);
+  }
+  dataService.getDataSingle($scope.id, false, true, getSuccess, getFailure);
+  
+  
+  $scope.resultsChapter = null;
+  function getSuccessChapter(response) {
+    $scope.showLoading = false;
+    console.log('success: ', response);
+    
+    if (response.data.error === 1) {
+      return;
+    }
+    
+    $scope.resultsChapter = response.data.data;
+    console.log($scope.resultsChapter);
+  }
+    
+  function getFailureChapter(response) {
+    $scope.showLoading = false;
+    console.log('failure: ', response);
+  }
+    
+  var pathChapter = '/manish/religion/'+$scope.id+'/chapter';
+  var paramsChapter = {};
+  dataService.getDataAll(pathChapter, false, true, getSuccessChapter, getFailureChapter, paramsChapter);
+  
+  
+  $scope.resultsBook = null;
+  function getSuccessBook(response) {
+    $scope.showLoading = false;
+    console.log('success: ', response);
+    
+    if (response.data.error === 1) {
+      return;
+    }
+    
+    $scope.resultsBook = response.data.data;
+    console.log($scope.resultsBook);
+  }
+    
+  function getFailureBook(response) {
+    $scope.showLoading = false;
+    console.log('failure: ', response);
+  }
+    
+  var pathBook = '/manish/religion/'+$scope.id+'/book';
+  var paramsBook = {};
+  dataService.getDataAll(pathBook, false, true, getSuccessBook, getFailureBook, paramsBook);
+}])
+
+.controller('ViewDetailReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
+  
+  $scope.id = $routeParams.id;
+  $scope.results = {};
+  $scope.setImage = function(image) {
+      $scope.results.mainImage = image;
+  }
+
+  $scope.results.mainImage = 'images/noimage.jpg';
+  function getSuccess(response) {
+      $scope.showLoading = false;
+      console.log('success: ', response);
+      
+      if (response.data.error === 1) {
+        return;
+      }
+      
+      $scope.results = response.data.data;
+      
+      //getting main image
+      if ($scope.results.detailsFull.images) {
+        angular.forEach($scope.results.detailsFull.images, function(valueImg, keyImg) {
+          if (!$scope.results.mainImage) {
+            $scope.results.mainImage = valueImg;
+          }
+        });
+      }
+      
+      console.log($scope.results);
+    }
+  
+    function getFailure(response) {
+      $scope.showLoading = false;
+      console.log('failure: ', response);
+    }
+    
+    $scope.getData = function() {
+      $scope.showLoading = true;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&id='+$scope.id;
+      var path = '/manish/religion';
+      url = url + '&path='+path;
+      dataService.get(url, getSuccess, getFailure, true);
+    };
+    
+    $scope.getData();
 }])
 
 .controller('ViewReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
@@ -52,8 +188,17 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.type = 1;
     $scope.frm = {};
     
+    $scope.frm.urlPrefix = '#/religion/search';
+    $scope.frm.urlSufix = '';
+
+    $scope.frm.page = 0;
+    if ($routeParams.page) {
+      $scope.frm.page = $routeParams.page;
+    }
+    
     if ($routeParams.keyword) {
       $scope.frm.keyword = $routeParams.keyword;
+      $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
     }
     
   function getSuccess(response) {
@@ -65,6 +210,7 @@ angular.module('myApp.religion', ['ngRoute'])
         return;
       }
       
+      $scope.data = response.data.data;
       $scope.totalRows = response.data.data.totalRows;
       $scope.results = response.data.data.results;
       $scope.defaultImage = 'images/noimage.jpg';
@@ -79,6 +225,7 @@ angular.module('myApp.religion', ['ngRoute'])
       });
       
       console.log($scope.results);
+      console.log('data: ', $scope.data);
     }
   
     function getFailure(response) {
@@ -92,6 +239,10 @@ angular.module('myApp.religion', ['ngRoute'])
       
       if ($scope.frm.keyword) {
         url = url + '&q='+encodeURIComponent($scope.frm.keyword);
+      }
+      
+      if ($scope.frm.page >= 0) {
+        url = url + '&page='+encodeURIComponent($scope.frm.page);
       }
       
       if ($scope.location) {
@@ -112,7 +263,7 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.getData();
     
     $scope.searchData = function() {
-      var urlPath = '/religion/search';
+      var urlPath = '/religion/search/0';
       
       if ($scope.frm.keyword) {
         urlPath = urlPath + '/' + encodeURIComponent($scope.frm.keyword);
