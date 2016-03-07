@@ -17,13 +17,19 @@ angular.module('myApp.rideshare', ['ngRoute'])
 
 .controller('ViewRideshareCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewRideshareCreateCtrl', ['$scope', function($scope) {
+}]).controller('ViewRideshareCreateCtrl', ['$scope', '$location', function($scope,$location) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
     }; 
     $scope.details = {}; 
     //location ends
+    $scope.submitCreateForm = function() {
+        //call api service to submit the form
+        console.log('test');
+        // redirect, using dummy id for mow
+        $location.path('/rideshare/create/images/1');
+    };
 }]).controller('ViewRideshareImagesCtrl', ['$scope', function($scope) {
 
 }]);

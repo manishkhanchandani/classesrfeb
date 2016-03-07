@@ -17,13 +17,19 @@ angular.module('myApp.beauty', ['ngRoute'])
 
 .controller('ViewBeautyCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewBeautyCreateCtrl', ['$scope', function($scope) {
+}]).controller('ViewBeautyCreateCtrl', ['$scope', '$location', function($scope,$location) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
     }; 
     $scope.details = {}; 
     //location ends
+    $scope.submitCreateForm = function() {
+        //call api service to submit the form
+        console.log('test');
+        // redirect, using dummy id for mow
+        $location.path('/beauty/create/images/1');
+    };
 }]).controller('ViewBeautyImagesCtrl', ['$scope', function($scope) {
 
 }]);

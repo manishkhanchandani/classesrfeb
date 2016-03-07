@@ -17,13 +17,19 @@ angular.module('myApp.computer', ['ngRoute'])
 
 .controller('ViewComputerCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewComputerCreateCtrl', ['$scope', function($scope) {
+}]).controller('ViewComputerCreateCtrl', ['$scope', '$location', function($scope,$location) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
     }; 
     $scope.details = {}; 
     //location ends
+    $scope.submitCreateForm = function() {
+        //call api service to submit the form
+        console.log('test');
+        // redirect, using dummy id for mow
+        $location.path('/computer/create/images/1');
+    };
 }]).controller('ViewComputerImagesCtrl', ['$scope', function($scope) {
 
 }]);
