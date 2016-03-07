@@ -8,22 +8,22 @@ angular.module('myApp.computer', ['ngRoute'])
     controller: 'ViewComputerCtrl'
   }).when('/computer/create', {
     templateUrl: 'modules/computer/create.html',
-    controller: 'ViewCreateCtrl'
-  }).when('/computer/create/images:id', {  //need id from page1
+    controller: 'ViewComputerCreateCtrl'
+  }).when('/computer/create/images/:id', {  //need id from page1
     templateUrl: 'modules/computer/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewComputerImagesCtrl'
   });
 }])
 
 .controller('ViewComputerCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewCreateCtrl', ['$scope', function($scope) {
+}]).controller('ViewComputerCreateCtrl', ['$scope', function($scope) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
     }; 
     $scope.details = {}; 
     //location ends
-}]).controller('ViewImagesCtrl', ['$scope', function($scope) {
+}]).controller('ViewComputerImagesCtrl', ['$scope', function($scope) {
 
 }]);
