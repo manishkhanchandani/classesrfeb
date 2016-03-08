@@ -4,9 +4,12 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.lessons',
-  'myApp.auth'
-  
-  //'ngAutocomplete'
+  'myApp.auth',
+  'myApp.jobs',
+  'myApp.antiques',
+  'myApp.realestate',
+  'myApp.education',
+  'ngAutocomplete'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -14,5 +17,11 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
+  $scope.loggedInUsersData= null;
   
-}])
+  var userProfile = localStorage.getItem('userProfile'); 
+  if(userProfile){
+  $scope.loggedInUsersData = JSON.parse(userProfile);
+  console.log($scope.loggedInUsersData);
+  }
+}]);
