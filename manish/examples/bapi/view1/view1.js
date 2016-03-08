@@ -35,7 +35,7 @@ angular.module('myApp.view1', ['ngRoute'])
   $scope.add = function() {
     //main data
     var submitData = '';
-    submitData = submitData + '&param='+encodeURIComponent($scope.frmAdd.name);
+    submitData = submitData + '&title='+encodeURIComponent($scope.frmAdd.name);
     //xtra data
     submitData = submitData + '&data[email]='+encodeURIComponent($scope.frmAdd.email);
     submitData = submitData + '&data[gender]='+encodeURIComponent($scope.frmAdd.gender);
