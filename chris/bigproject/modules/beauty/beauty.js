@@ -8,22 +8,28 @@ angular.module('myApp.beauty', ['ngRoute'])
     controller: 'ViewBeautyCtrl'
   }).when('/beauty/create', {
     templateUrl: 'modules/beauty/create.html',
-    controller: 'ViewCreateCtrl'
-  }).when('/beauty/create/images:id', {  //need id from page1
+    controller: 'ViewBeautyCreateCtrl'
+  }).when('/beauty/create/images/:id', {  //need id from page1
     templateUrl: 'modules/beauty/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewBeautyImagesCtrl'
   });
 }])
 
 .controller('ViewBeautyCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewCreateCtrl', ['$scope', function($scope) {
+}]).controller('ViewBeautyCreateCtrl', ['$scope', '$location', function($scope,$location) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
     }; 
     $scope.details = {}; 
     //location ends
-}]).controller('ViewImagesCtrl', ['$scope', function($scope) {
+    $scope.submitCreateForm = function() {
+        //call api service to submit the form
+        console.log('test');
+        // redirect, using dummy id for mow
+        $location.path('/beauty/create/images/1');
+    };
+}]).controller('ViewBeautyImagesCtrl', ['$scope', function($scope) {
 
 }]);

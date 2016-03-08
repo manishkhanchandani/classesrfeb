@@ -8,22 +8,28 @@ angular.module('myApp.activities', ['ngRoute'])
     controller: 'ViewActivitiesCtrl'
   }).when('/activities/create', {
     templateUrl: 'modules/activities/create.html',
-    controller: 'ViewActivitiesCtrl'
-  }).when('/activities/create/images:id', {  //need id from page1
+    controller: 'ViewActivitiesCreateCtrl'
+  }).when('/activities/create/images/:id', {  //need id from page1
     templateUrl: 'modules/activities/images.html',
-    controller: 'ViewImagesCtrl'
+    controller: 'ViewActivitiesImagesCtrl'
   });
 }])
 
 .controller('ViewActivitiesCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewCreateCtrl', ['$scope', function($scope) {
+}]).controller('ViewActivitiesCreateCtrl', ['$scope', '$location', function($scope, $location) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
     }; 
     $scope.details = {}; 
     //location ends
-}]).controller('ViewImagesCtrl', ['$scope', function($scope) {
+    $scope.submitCreateForm = function() {
+        //call api service to submit the form
+        console.log('test');
+        // redirect, using dummy id for mow
+        $location.path('/activities/create/images/1');
+    };
+}]).controller('ViewActivitiesImagesCtrl', ['$scope', function($scope) {
 
 }]);
