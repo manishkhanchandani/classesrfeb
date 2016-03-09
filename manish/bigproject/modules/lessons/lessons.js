@@ -20,7 +20,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   
 }])
 
-.controller('ViewCreateCtrl', ['$scope', '$location', function($scope, $location) {
+.controller('ViewCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
   //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -28,6 +28,17 @@ angular.module('myApp.lessons', ['ngRoute'])
 
   $scope.details = {};
   //location ends
+  
+  function addSuccess(response) {
+    console.log('success: ', response);
+    console.log('id is : ', response.data.data.id);
+    $scope.frm = {};
+    $location.path('/lessons/create/images/'+response.data.data.id);
+  }
+  
+  function addFailure(response) {
+    console.log('failure: ', response);
+  }
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
@@ -55,7 +66,7 @@ angular.module('myApp.lessons', ['ngRoute'])
     postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
     
     console.log(postData);
-     
+    dataService.post(url, postData, addSuccess, addFailure);
   };
 }])
 
