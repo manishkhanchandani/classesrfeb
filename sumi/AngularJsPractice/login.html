@@ -14,15 +14,17 @@
 				if(username == "Sumi" && password == "sumi"){
 				
 					$(".result").text("Logged in successfully");
+                                        var url = "success.html";    
+                                        $(location).attr('href',url);
 					return;
 				}
+                                
 				else{				
 					
-					$(".result").text("Log in failed");					
+					$(".result").text("Log in failed");			
 					
-					$("button").click(function(){
 					$("input").addClass("dotted");
-    });
+ 
 					}
 				
 			});		
