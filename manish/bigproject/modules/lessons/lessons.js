@@ -42,8 +42,6 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     
-     //$location.path('/lessons/create/images/1');
      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1';
      
     console.log(url);
