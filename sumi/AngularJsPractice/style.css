@@ -1,0 +1,20 @@
+#content {
+    width: 100%;
+    margin: auto;
+	
+	height:100%;	
+	text-align:center;
+	
+	}
+	
+	.class_h1{
+	background-color:#ffad33;
+	padding:10px;
+	}
+	fieldset{
+		width: 50%;
+    height: 60%;
+    margin-left: 23%;
+    margin-top: 5%;
+        }
+.dotted {border-style: dotted; border-color:red;}
