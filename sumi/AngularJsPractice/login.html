@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		
+			$("button").click(function(){
+				var username = $("#username").val();
+				
+				var password = $("#password").val();
+				
+				if(username == "Sumi" && password == "sumi"){
+				
+					$(".result").text("Logged in successfully");
+                                        var url = "success.html";    
+                                        $(location).attr('href',url);
+					return;
+				}
+                                
+				else{				
+					
+					$(".result").text("Log in failed");			
+					
+					$("input").addClass("dotted");
+ 
+					}
+				
+			});		
+
+		});
+	</script>
+	
+<body>
+    <fieldset><legend>Welcome</legend>
+		<div id="content">
+			<div class="class_h1"><h2>Login Page</h2></div><br>			
+			<div class="input_field"><label>Username:<input type="text" name="input" id="username"  /></label><div>
+			<br>
+			<div class="password_field"><label>Password:<input type="password" name="password" id="password" /></label></div>
+			<br>
+			<div><button>Submit</button></div><br>
+		</div>
+			<div class="result"></div>
+		</fieldset>
+</div>
+</body>
+</html>
