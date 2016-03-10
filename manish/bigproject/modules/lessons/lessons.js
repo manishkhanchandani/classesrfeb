@@ -72,11 +72,41 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   $scope.id = $routeParams.id;
   
-  $scope.frm = {};
   
+  
+  //get Data part
+  $scope.images = null;
+  function successGetData(response) {
+    console.log('success: ', response);
+    
+    //get images from the server
+    $scope.images = response.data.data.detailsFull.images;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, successGetData, failureGetData, false);
+  };
+  
+  //call the getdata function
+  $scope.getData();
+  
+  
+  //end getData part
+  
+  
+  
+  //add Image in database
+  $scope.frm = {};
   function addImageSuccess(response) {
     console.log('success: ', response);
     $scope.frm = {};
+    
+    $scope.getData();
   }
   
   function addImageFailure(response) {
@@ -97,23 +127,10 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 
   };//add image function ends
+  //ends add Image in database
   
   
-  function successGetData(response) {
-    console.log('success: ', response);
-  }
   
-  function failureGetData(response) {
-    console.log('failed: ', response);
-  }
-  
-  $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
-    dataService.get(url, successGetData, failureGetData, false);
-  };
-  
-  //call the getdata function
-  $scope.getData();
 }])
 
 
