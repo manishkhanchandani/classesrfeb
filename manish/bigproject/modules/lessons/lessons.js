@@ -96,7 +96,24 @@ angular.module('myApp.lessons', ['ngRoute'])
     dataService.post(url, postData, addImageSuccess, addImageFailure);
 
 
+  };//add image function ends
+  
+  
+  function successGetData(response) {
+    console.log('success: ', response);
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, successGetData, failureGetData, false);
   };
+  
+  //call the getdata function
+  $scope.getData();
 }])
 
 
