@@ -68,8 +68,35 @@ angular.module('myApp.lessons', ['ngRoute'])
   };
 }])
 
-.controller('ViewImagesCtrl', ['$scope', function($scope) {
+.controller('ViewImagesCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
+  $scope.id = $routeParams.id;
+  
+  $scope.frm = {};
+  
+  function addImageSuccess(response) {
+    console.log('success: ', response);
+    $scope.frm = {};
+  }
+  
+  function addImageFailure(response) {
+    console.log('failed: ', response);
+  }
+  
+  
+  $scope.addImage = function() {
+    console.log($scope.frm);
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+    var postData = '';
+    postData = postData + '&param='+encodeURIComponent($scope.frm.image);
+    
+    console.log(url);
+    console.log(postData);  
+    
+    dataService.post(url, postData, addImageSuccess, addImageFailure);
+
+
+  };
 }])
 
 
