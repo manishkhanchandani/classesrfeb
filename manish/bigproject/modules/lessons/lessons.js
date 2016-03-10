@@ -79,6 +79,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   function successGetData(response) {
     console.log('success: ', response);
     
+    //get images from the server
     $scope.images = response.data.data.detailsFull.images;
   }
   
@@ -93,6 +94,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   //call the getdata function
   $scope.getData();
+  
+  
   //end getData part
   
   
