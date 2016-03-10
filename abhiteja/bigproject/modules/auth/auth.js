@@ -75,7 +75,7 @@ angular.module('myApp.auth', ['ngRoute'])
             
        $scope.createNewUser = function(){
            if($scope.frm.confirm_password !==$scope.frm.password){
-               $scope.createUserError = "Password doesn't match with corrent password. \n\
+               $scope.createUserError = "Password doesn't match with current password. \n\
                                            Please try again!!!";
                
                return;
