@@ -69,8 +69,56 @@ angular.module('myApp.lessons', ['ngRoute'])
     
     console.log(postData);
     dataService.post(url, postData, addSuccess, addFailure);
+
+        // redirect, using dummy id for mow
+        //$location.path('/lessons/create/images/1');
     };
 }])
-.controller('ViewLessonsImagesCtrl', ['$scope', function($scope) {
+.controller('ViewLessonsImagesCtrl',  ['$scope', '$location', 'dataService', '$routeParams',function($scope, $location, dataService, $routeParams) {
+  
+  $scope.id = $routeParams.id;
+    // getData
+    $scope.images = null;
+  function successGetData(response) {
+    console.log('success: ', response);
+      // get images from server
+      $scope.images = response.data.data.detailsFull.images;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, successGetData, failureGetData, false);
+  };
+  
+  //call the getdata function
+  $scope.getData();
+// getData end  
+  $scope.frm = {};
+  
+  function addImageSuccess(response) {
+    //console.log('success: ', response);
+    $scope.frm = {};
+      $scope.getData();
+  }
+  
+  function addImageFailure(response) {
+    console.log('failed: ', response);
+  }
+    
+  $scope.addImage = function() {
+    console.log($scope.frm);
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+    var postData = '';
+    postData = postData + '&param='+encodeURIComponent($scope.frm.image);
+    
+    console.log(url);
+    console.log(postData);  
+    
+    dataService.post(url, postData, addImageSuccess, addImageFailure);
 
+  };//add image function end
 }]);
