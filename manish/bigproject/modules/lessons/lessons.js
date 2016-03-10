@@ -105,6 +105,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   function addImageSuccess(response) {
     console.log('success: ', response);
     $scope.frm = {};
+    
+    $scope.getData();
   }
   
   function addImageFailure(response) {
