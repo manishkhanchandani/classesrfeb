@@ -36,8 +36,11 @@ angular.module('myApp.lessons', ['ngRoute'])
   //location ends
   
   
+  $scope.results = null;
+  
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
+    $scope.results = response.data.data.results;
   }
   
   function failureGetData(response) {
@@ -51,6 +54,7 @@ angular.module('myApp.lessons', ['ngRoute'])
       url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
     }
     
+    //check the location
     if ($scope.location) {
       url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
     }
