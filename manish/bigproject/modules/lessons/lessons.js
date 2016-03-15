@@ -13,7 +13,17 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
+  //search and browse
+  .when('/lessons/search', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
   ;
+}])
+
+
+.controller('ViewSearchCtrl', ['$scope', function($scope) {
+  
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
