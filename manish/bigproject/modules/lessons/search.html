@@ -1,1 +1,34 @@
-search page
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Search or Browse Listings</h1>
+      <div class="alert alert-danger" role="alert" ng-if="searchStatus">
+      {{searchStatus}}
+      </div>
+    </div>
+  </div>
+  <!-- title ends -->
+  
+  <div class="row">
+    <div class="col-md-3">
+      <form ng-submit="getData()">
+        <div class="form-group">
+            <label for="keyword">Keyword</label>
+            <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+        </div>
+        <div class="form-group">
+            <label for="location">Near</label>
+            <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details">
+        </div>
+        <div class="form-group">
+            <label for="radius">Radius</label>
+            <input type="text" class="form-control" id="radius" placeholder="Enter radius in miles" ng-model="frm.radius" value="30">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Search</button>
+    </form>
+    </div><!-- form -->
+    <div class="col-md-9">
+    
+    </div><!-- results -->
+  </div>
+</div>

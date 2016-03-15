@@ -23,7 +23,23 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 
 .controller('ViewSearchCtrl', ['$scope', function($scope) {
+  $scope.frm = {};
   
+  $scope.frm.radius = 30;
+  
+  //location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+
+  $scope.details = {};
+  //location ends
+  
+  $scope.getData = function() {
+    
+  };//get data ends
+  
+  $scope.getData();//get data on page load
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
