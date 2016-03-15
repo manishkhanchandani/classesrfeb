@@ -12,11 +12,50 @@ angular.module('myApp.lessons', ['ngRoute'])
   }).when('/lessons/create/images/:id', {  //need id from page1
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewLessonsImagesCtrl'
+  }).when('/lessons/search', {//search $ browse
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
   });
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
 
+}])
+.controller('ViewLessonsSearchCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+    $scope.frm = {};
+    $scope.frm.radius = 30;
+    //location starts
+    $scope.mapOptions = {
+        types: 'geocode'
+    };
+    $scope.details = {};
+    //location ends
+  
+    $scope.results = {};
+  function successGetData(response) {
+    console.log('success: ', response.data.data.results);
+      $scope.results = response.data.data.results;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+    
+    $scope.getData = function() {
+        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/chris/lessons';
+        if ($scope.frm.keyword) {
+            url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
+        }
+        if ($scope.location) {
+            url = url + '&lat=' + encodeURIComponent($scope.details.lat);
+            url = url + '&lon=' + encodeURIComponent($scope.details.lon);
+            url = url + '&radius=' + encodeURIComponent($scope.details.radius);
+        }
+        dataService.get(url, successGetData, failureGetData, true);
+    };//get data ends
+  
+  $scope.getData();//get data on page load
+    
 }])
 .controller('ViewLessonsCreateCtrl', ['$scope','$location', 'dataService', function($scope, $location, dataService) {
     //location starts 
