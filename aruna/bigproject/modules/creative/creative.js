@@ -14,7 +14,16 @@ angular.module('myApp.creative', ['ngRoute'])
   .when('/creative/create/images/:id', {
     templateUrl: 'modules/creative/images.html',
     controller: 'ViewCreativeImagesCtrl'
-  });
+  })
+  .when('/creative/search', {
+    templateUrl: 'modules/creative/search.html',
+    controller: 'ViewCreativeSearchCtrl'
+  })
+        ;
+}])
+
+.controller('ViewCreativeSearchCtrl', ['$scope',function($scope) {
+
 }])
 
 .controller('ViewCreativeCtrl', ['$scope',function($scope) {
