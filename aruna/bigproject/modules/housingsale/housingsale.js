@@ -14,12 +14,22 @@ angular.module('myApp.housingsale', ['ngRoute'])
   .when('/housingsale/create/images/:id', {
     templateUrl: 'modules/housingsale/images.html',
     controller: 'ViewHousingsaleImagesCtrl'
+  })
+  
+   .when('/housingsale/search', {
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleSearchCtrl'
   });
+}])
+
+.controller('ViewHousingsaleSearchCtrl', ['$scope',function($scope) {
+
 }])
 
 .controller('ViewHousingsaleCtrl', ['$scope',function($scope) {
 
 }])
+
 .controller('ViewHousingsaleCreateCtrl', ['$scope','$location','dataService',function($scope,$location,dataService) {
  //location starts
   $scope.mapOptions = {

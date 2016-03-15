@@ -14,7 +14,17 @@ angular.module('myApp.legal', ['ngRoute'])
   .when('/legal/create/images/:id', {
     templateUrl: 'modules/legal/images.html',
     controller: 'ViewLegalImagesCtrl'
-  });
+  })
+  
+  .when('/legal/search', {
+    templateUrl: 'modules/legal/search.html',
+    controller: 'ViewLegalSearchCtrl'
+  })
+        ;
+}])
+
+.controller('ViewLegalSearchCtrl', ['$scope',function($scope) {
+
 }])
 
 .controller('ViewLegalCtrl', ['$scope',function($scope) {

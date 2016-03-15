@@ -15,7 +15,16 @@ angular.module('myApp.activities', ['ngRoute'])
     templateUrl: 'modules/activities/images.html',
     controller: 'ViewActivitiesImagesCtrl'
   })
+  
+  .when('/activities/search', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })
         ;
+}])
+
+.controller('ViewActivitiesSearchCtrl', ['$scope',function($scope) {
+
 }])
 
 .controller('ViewActivitiesCtrl', ['$scope',function($scope) {

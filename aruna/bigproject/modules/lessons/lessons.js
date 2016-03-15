@@ -15,7 +15,58 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
+  //route for search and browse
+  .when('/lessons/search', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
 ;
+}])
+//controller for search and browse
+.controller('ViewSearchCtrl', ['$scope','dataService','$location',function($scope,dataService,$location) {
+  $scope.frm = {};
+  
+  $scope.frm.radius = 30;
+  
+  //location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+
+  $scope.details = {};
+  //location ends
+  
+  $scope.results = null;
+  
+  function successGetData(response) {
+    console.log('success: ', response.data.data.results);
+    $scope.results = response.data.data.results;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  
+  $scope.getData = function() {
+      
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons';
+    //check the keyword
+    if ($scope.frm.keyword) {
+      url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
+    }
+    
+    //check the location
+    if ($scope.location) {
+      url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
+    }
+    
+    console.log(url);
+    dataService.get(url, successGetData, failureGetData, true);
+    
+  };//get data ends
+  
+  $scope.getData();//get data on page load
 }])
 
 .controller('ViewLessonsCtrl', ['$scope',function($scope) {
