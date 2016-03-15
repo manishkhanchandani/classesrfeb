@@ -22,7 +22,7 @@ angular.module('myApp.lessons', ['ngRoute'])
 }])
 
 
-.controller('ViewSearchCtrl', ['$scope', function($scope) {
+.controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
   $scope.frm = {};
   
   $scope.frm.radius = 30;
@@ -35,8 +35,28 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.details = {};
   //location ends
   
+  
+  function successGetData(response) {
+    console.log('success: ', response.data.data.results);
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
   $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons';
+    //check the keyword
+    if ($scope.frm.keyword) {
+      url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
+    }
     
+    if ($scope.location) {
+      url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
+    }
+    
+    console.log(url);
+    dataService.get(url, successGetData, failureGetData, true);
   };//get data ends
   
   $scope.getData();//get data on page load
