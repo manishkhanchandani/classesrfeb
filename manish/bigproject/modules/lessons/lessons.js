@@ -13,16 +13,49 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
+  
   //search and browse
+  
+  // '/lessons/search'
+  // '/lessons/search/0'
+  // '/lessons/search/0/keyword'
+  // '/lessons/search/0/lat/lng/radius'
+  // '/lessons/search/0/keyword/lat/lng/radius'
+  
+  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  
+  .when('/lessons/search/:page/:lat/:lng/:radius', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  
+  .when('/lessons/search/:page/:keyword', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  .when('/lessons/search/:page', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
   .when('/lessons/search', {
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewSearchCtrl'
   })
+  
   ;
 }])
 
 
-.controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+.controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  console.log($routeParams);
   $scope.frm = {};
   
   $scope.frm.radius = 30;
@@ -64,6 +97,12 @@ angular.module('myApp.lessons', ['ngRoute'])
   };//get data ends
   
   $scope.getData();//get data on page load
+  
+  
+  $scope.searchData = function() {
+    console.log($scope.frm);
+    console.log($scope.details);
+  };
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
