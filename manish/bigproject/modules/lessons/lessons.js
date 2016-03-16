@@ -100,8 +100,21 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   
   $scope.searchData = function() {
-    console.log($scope.frm);
-    console.log($scope.details);
+    var url = '/lessons/search/0';
+    
+    if ($scope.frm.keyword) {
+      url = url + '/' + encodeURIComponent($scope.frm.keyword);
+    }
+    
+    if ($scope.location) {
+      if (!$scope.frm.radius) {
+        $scope.frm.radius = 30;
+      }
+      
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius);
+    }
+    
+    $location.path(url);
   };
 }])
 
