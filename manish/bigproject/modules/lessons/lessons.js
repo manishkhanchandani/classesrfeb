@@ -55,7 +55,6 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 .controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
-  console.log($routeParams);
   $scope.frm = {};
   
   $scope.frm.radius = 30;
@@ -67,7 +66,6 @@ angular.module('myApp.lessons', ['ngRoute'])
 
   $scope.details = {};
   //location ends
-  
   
   $scope.results = null;
   
@@ -99,7 +97,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.getData();//get data on page load
   
   
-  $scope.searchData = function() {
+  /*Purpose of search data is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
+  $scope.constructURL = function() {
     var url = '/lessons/search/0';
     
     if ($scope.frm.keyword) {
