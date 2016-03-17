@@ -55,7 +55,18 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 .controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
-  console.log($routeParams);
+  
+  //location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+
+  $scope.details = {};
+  $scope.details.components = {};
+  //location ends
+  
+  
+  console.log('route param is ', $routeParams);
   $scope.frm = {};
   
   
@@ -76,17 +87,22 @@ angular.module('myApp.lessons', ['ngRoute'])
     $scope.frm.keyword = $routeParams.keyword;
   }
   
-  
-  
   $scope.frm.radius = 30;
   
-  //location starts
-  $scope.mapOptions = {
-    types: 'geocode'
-  };
-
-  $scope.details = {};
-  //location ends
+  if ($routeParams.radius) {
+     $scope.frm.radius = $routeParams.radius;
+  }
+  
+  if ($routeParams.lat) {
+    $scope.details.components.lat = $routeParams.lat;
+  }
+  
+  if ($routeParams.lng) {
+    $scope.details.components.lng = $routeParams.lng;
+  }
+  
+  console.log('frm is ', $scope.frm);
+  
   
   $scope.results = null;
   
