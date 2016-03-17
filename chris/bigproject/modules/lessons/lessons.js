@@ -15,13 +15,43 @@ angular.module('myApp.lessons', ['ngRoute'])
   }).when('/lessons/search', {//search $ browse
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewLessonsSearchCtrl'
-  });
+  })
+  //search and browse, plus paging of results
+  //all using the same ctrl
+  // '/lessons/search'
+  // '/lessons/search/0'
+  // '/lessons/search/0/keyword'
+  // '/lessons/search/0/lat/lng/radius
+  // '/lessons/search/0.keyword/lat/lng/radius'
+  
+  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
+  })
+  .when('/lessons/search/:page/:lat/:lng/:radius', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
+  })  
+  .when('/lessons/search/:page/:keyword', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
+  })  
+  .when('/lessons/search/:page', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
+  })
+  .when('/lessons/search', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
+  })
+  ;
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
 
 }])
-.controller('ViewLessonsSearchCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+.controller('ViewLessonsSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+    console.log($routeParams);
     $scope.frm = {};
     $scope.frm.radius = 30;
     //location starts
@@ -30,6 +60,13 @@ angular.module('myApp.lessons', ['ngRoute'])
     };
     $scope.details = {};
     //location ends
+    
+    // update $scope.frm from $routeParams
+    // This is how the parameters from url get to API url[in getData()] through $scope.frm.
+    if ($routeParams.keyward) {
+        $scope.frm.keyward = $routeParams.keyward;
+    }
+    // update ends
   
     $scope.results = {};
   function successGetData(response) {
@@ -55,6 +92,25 @@ angular.module('myApp.lessons', ['ngRoute'])
     };//get data ends
   
   $scope.getData();//get data on page load
+
+  /*Purpose of search data is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
+    // renamed it to constructURL.
+  $scope.constructURL = function() {
+      console.log($scope.frm);
+      
+      var url = '/lessons/search/0';
+      if ($scope.frm.keyword) {
+          url = url + '/' + encodeURIComponent($scope.frm.keyword);
+      }
+    if ($scope.location) {
+      if (!$scope.frm.radius) {
+        $scope.frm.radius = 30;
+      }
+      
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius);
+    }
+      $location.path(url);
+  }
     
 }])
 .controller('ViewLessonsCreateCtrl', ['$scope','$location', 'dataService', function($scope, $location, dataService) {
