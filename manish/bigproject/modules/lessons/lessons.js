@@ -22,13 +22,13 @@ angular.module('myApp.lessons', ['ngRoute'])
   // '/lessons/search/0/lat/lng/radius'
   // '/lessons/search/0/keyword/lat/lng/radius'
   
-  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius', {
+  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewSearchCtrl'
   })
   
   
-  .when('/lessons/search/:page/:lat/:lng/:radius', {
+  .when('/lessons/search/:page/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewSearchCtrl'
   })
@@ -65,8 +65,6 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.details.components = {};
   //location ends
   
-  
-  console.log('route param is ', $routeParams);
   $scope.frm = {};
   
   
@@ -101,8 +99,9 @@ angular.module('myApp.lessons', ['ngRoute'])
     $scope.details.components.lng = $routeParams.lng;
   }
   
-  console.log('frm is ', $scope.frm);
-  
+  if ($routeParams.location) {
+    $scope.location = decodeURIComponent($routeParams.location);
+  }
   
   $scope.results = null;
   
