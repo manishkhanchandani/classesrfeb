@@ -40,7 +40,7 @@ angular.module('myApp.lessons', ['ngRoute'])
                 console.log("Error: ",response);
             }
             
-            $scope.submitCreateForm = function(){
+            $scope.submitCreateLessonsForm = function(){
                 //$location.path('/lessons/create/images/1');
                 
                 var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='
@@ -70,7 +70,30 @@ angular.module('myApp.lessons', ['ngRoute'])
                 dataService.post(url,postData,addSuccess,addFailure);
                 
             };
+            
     }])
     .controller('ViewImagesLessonCtrl', ['$scope', function($scope) {
+            
+                    
+            //add image in database
+            function addImageSuccess(response){
+                console.log('success: ', response);
+                $scope.frm = {};
+            }
+            
+            function addImageFailure(response){
+                console.log('failed: ', response);
+            }
+            
+            $scope.addImage = function(){
+                console.log($scope.frm);
+                var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+                var postData = '';
+                postData = postData + '&param='+encodeURIComponent($scope.frm.image);
 
+                console.log(url);
+                console.log(postData);  
+
+                dataService.post(url, postData, addImageSuccess, addImageFailure);
+            };
     }]);

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Create Page</title>
+        <title>Matrimony Create Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -16,7 +16,7 @@ and open the template in the editor.
                 <div class="col-md-12">
                     <h1> Enter Main Details</h1>
                     
-                    <form ng-submit="submitCreateForm()">
+                    <form ng-submit="submitCreateMatriForm()">
                         <div class="form-group">
                             <label for="location">Location *</label>
                             <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details" required>
@@ -30,7 +30,11 @@ and open the template in the editor.
                             <textarea class="form-control" id="description" ng-model="frm.description" placeholder="Enter posting body" rows="5" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="tags">Teaching Subjects(comma separated tags by search)</label>
+                            <label for="title">Age</label>
+                            <input type="text" class="form-control" id="age" ng-model="frm.age" placeholder="Enter Age">
+                        </div>
+                        <div class="form-group">
+                            <label for="tags">Matrimony search tags(comma separated tags by search)</label>
                             <input type="text" class="form-control" id="tags" ng-model="frm.tags" placeholder="Enter tags">
                         </div>
                         <div class="form-group">
