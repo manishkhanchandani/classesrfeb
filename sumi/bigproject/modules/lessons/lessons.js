@@ -42,19 +42,53 @@ angular.module('myApp.lessons', ['ngRoute'])
   ;
 }])
 
-.controller('ViewSearchCtrl', ['$scope','$location','dataService', function($scope,$location,dataService) {
- $scope.frm = {};
-  
-  $scope.frm.radius = 30;
-  
+.controller('ViewSearchCtrl', ['$scope','$location','dataService','$routeParams', function($scope,$location,dataService,$routeParams) {
   //location starts
   $scope.mapOptions = {
     types: 'geocode'
   };
 
   $scope.details = {};
-  //location ends 
-  $scope.results = null;
+  $scope.details.components = {};
+  //location ends
+  
+  
+  console.log('route param is ', $routeParams);
+  $scope.frm = {};
+  
+  
+  //initialize the value of page, i.e. default value
+  $scope.frm.page = 0;
+  
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.frm.page = $routeParams.page;
+  }
+  //page
+  
+  //default keyword
+  $scope.frm.keyword = '';
+  
+  //check if url has keyword
+  if ($routeParams.keyword) {
+    $scope.frm.keyword = $routeParams.keyword;
+  }
+  
+  $scope.frm.radius = 30;
+  
+  if ($routeParams.radius) {
+     $scope.frm.radius = $routeParams.radius;
+  }
+  
+  if ($routeParams.lat) {
+    $scope.details.components.lat = $routeParams.lat;
+  }
+  
+  if ($routeParams.lng) {
+    $scope.details.components.lng = $routeParams.lng;
+  }
+  
+  console.log('frm is ', $scope.frm);
   
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
