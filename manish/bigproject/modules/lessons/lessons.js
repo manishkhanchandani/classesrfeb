@@ -126,6 +126,7 @@ angular.module('myApp.lessons', ['ngRoute'])
       url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
     }
     
+    url = url + '&page=' + $scope.frm.page;
     console.log(url);
     dataService.get(url, successGetData, failureGetData, true);
   };//get data ends
