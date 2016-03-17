@@ -55,7 +55,28 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 .controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
+  console.log($routeParams);
   $scope.frm = {};
+  
+  
+  //initialize the value of page, i.e. default value
+  $scope.frm.page = 0;
+  
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.frm.page = $routeParams.page;
+  }
+  //page
+  
+  //default keyword
+  $scope.frm.keyword = '';
+  
+  //check if url has keyword
+  if ($routeParams.keyword) {
+    $scope.frm.keyword = $routeParams.keyword;
+  }
+  
+  
   
   $scope.frm.radius = 30;
   
