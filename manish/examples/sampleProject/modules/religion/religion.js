@@ -185,7 +185,7 @@ angular.module('myApp.religion', ['ngRoute'])
     $scope.details = {};
     //location ends
     
-    $scope.type = 1;
+    $scope.type = 3;
     $scope.frm = {};
     
     $scope.frm.urlPrefix = '#/religion/search';
@@ -222,7 +222,11 @@ angular.module('myApp.religion', ['ngRoute'])
             $scope.results[key].mainImage = valueImg;
           }
         });
+        if (!$scope.results[key].mainImage) {
+          $scope.results[key].mainImage = $scope.defaultImage;
+        }//end if
       });
+      
       
       console.log($scope.results);
       console.log('data: ', $scope.data);
@@ -235,7 +239,7 @@ angular.module('myApp.religion', ['ngRoute'])
     
     $scope.getData = function() {
       $scope.showLoading = true;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1';
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&noCache=1';
       
       if ($scope.frm.keyword) {
         url = url + '&q='+encodeURIComponent($scope.frm.keyword);
