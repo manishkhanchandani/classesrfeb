@@ -24,11 +24,11 @@ angular.module('myApp.lessons', ['ngRoute'])
   // '/lessons/search/0/lat/lng/radius
   // '/lessons/search/0.keyword/lat/lng/radius'
   
-  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius', {
+  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewLessonsSearchCtrl'
   })
-  .when('/lessons/search/:page/:lat/:lng/:radius', {
+  .when('/lessons/search/:page/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewLessonsSearchCtrl'
   })  
@@ -51,23 +51,48 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 }])
 .controller('ViewLessonsSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
-    console.log($routeParams);
-    $scope.frm = {};
-    $scope.frm.radius = 30;
     //location starts
     $scope.mapOptions = {
         types: 'geocode'
     };
     $scope.details = {};
+    $scope.details.components = {};
     //location ends
     
-    // update $scope.frm from $routeParams
+    console.log($routeParams);
+    $scope.frm = {};
+      // update $scope.frm from $routeParams
     // This is how the parameters from url get to API url[in getData()] through $scope.frm.
-    if ($routeParams.keyward) {
-        $scope.frm.keyward = $routeParams.keyward;
-    }
-    // update ends
   
+  //initialize the value of page, i.e. default value
+  $scope.frm.page = 0;  
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.frm.page = $routeParams.page;
+  }
+  //page
+  
+  //default keyword
+  $scope.frm.keyword = '';  
+  //check if url has keyword
+  if ($routeParams.keyword) {
+    $scope.frm.keyword = $routeParams.keyword;
+  }
+    
+    $scope.frm.radius = 30;
+  if ($routeParams.radius) {
+    $scope.frm.radius = $routeParams.radius;
+  }
+    if ($routeParams.lat) {
+        $scope.details.components.lat = $routeParams.lat;
+    }
+    if ($routeParams.lng) {
+        $scope.details.components.lng = $routeParams.lng;
+    }
+  if ($routeParams.location) {
+    $scope.location = decodeURIComponent($routeParams.location);
+  }
+    
     $scope.results = {};
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
@@ -84,10 +109,11 @@ angular.module('myApp.lessons', ['ngRoute'])
             url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
         }
         if ($scope.location) {
-            url = url + '&lat=' + encodeURIComponent($scope.details.lat);
-            url = url + '&lon=' + encodeURIComponent($scope.details.lon);
+            url = url + '&lat=' + encodeURIComponent($scope.details.components.lat);
+            url = url + '&lon=' + encodeURIComponent($scope.details.components.lng);
             url = url + '&radius=' + encodeURIComponent($scope.details.radius);
         }
+        url = url + '&page=' + $scope.frm.page;
         dataService.get(url, successGetData, failureGetData, true);
     };//get data ends
   
@@ -107,7 +133,7 @@ angular.module('myApp.lessons', ['ngRoute'])
         $scope.frm.radius = 30;
       }
       
-      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius);
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius) + '/' + encodeURIComponent($scope.location);
     }
       $location.path(url);
   }
