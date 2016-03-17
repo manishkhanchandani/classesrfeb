@@ -146,7 +146,7 @@ angular.module('myApp.lessons', ['ngRoute'])
         $scope.frm.radius = 30;
       }
       
-      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius);
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius) + '/' + encodeURIComponent($scope.location);
     }
     
     $location.path(url);
