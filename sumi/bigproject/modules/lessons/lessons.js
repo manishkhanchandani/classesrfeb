@@ -13,7 +13,92 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
+   .when('/lessons/search/:page/:keyword/:lat/:lng/:radius', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  
+  .when('/lessons/search/:page/:lat/:lng/:radius', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  
+  .when('/lessons/search/:page/:keyword', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  .when('/lessons/search/:page', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
+  
+  .when('/lessons/search', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
+  })
   ;
+}])
+
+.controller('ViewSearchCtrl', ['$scope','$location','dataService', function($scope,$location,dataService) {
+ $scope.frm = {};
+  
+  $scope.frm.radius = 30;
+  
+  //location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+
+  $scope.details = {};
+  //location ends 
+  $scope.results = null;
+  
+  function successGetData(response) {
+    console.log('success: ', response.data.data.results);
+    $scope.results = response.data.data.results;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/sumi/lessons';
+    //check the keyword
+    if ($scope.frm.keyword) {
+      url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
+    }
+    
+    if ($scope.location) {
+      url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
+    }
+    
+    console.log(url);
+    dataService.get(url, successGetData, failureGetData, true);
+  };//get data ends
+  
+  $scope.getData();//get data on page load
+  
+  $scope.constructURL = function() {
+    var url = '/lessons/search/0';
+    
+    if ($scope.frm.keyword) {
+      url = url + '/' + encodeURIComponent($scope.frm.keyword);
+    }
+    
+    if ($scope.location) {
+      if (!$scope.frm.radius) {
+        $scope.frm.radius = 30;
+      }
+      
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius);
+    }
+    
+    $location.path(url);
+    console.log(url);
+  };
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
@@ -42,8 +127,6 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     
-     //$location.path('/lessons/create/images/1');
      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/sumi/lessons&tid=1';
      
     console.log(url);
@@ -70,7 +153,63 @@ angular.module('myApp.lessons', ['ngRoute'])
   };
 }])
 
-.controller('ViewImagesCtrl', ['$scope', function($scope) {
+.controller('ViewImagesCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  $scope.id = $routeParams.id;
+  
+  
+  
+  //get Data part
+  $scope.images = null;
+  function successGetData(response) {
+    console.log('success: ', response);
+    
+    //get images from the server
+    $scope.images = response.data.data.detailsFull.images;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, successGetData, failureGetData, false);
+  };
+  
+  //call the getdata function
+  $scope.getData();
+  //end getData part
+  //
+  //add Image in database
+  $scope.frm = {};
+  function addImageSuccess(response) {
+    console.log('success: ', response);
+    $scope.frm = {};
+    $scope.getData();
+  }
+  
+  function addImageFailure(response) {
+    console.log('failed: ', response);
+  }
+  
+  
+  $scope.addImage = function() {
+    console.log($scope.frm);
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+    var postData = '';
+    postData = postData + '&param='+encodeURIComponent($scope.frm.image);
+    
+    console.log(url);
+    console.log(postData);  
+    
+    dataService.post(url, postData, addImageSuccess, addImageFailure);
+
+
+  };//add image function ends
+  //ends add Image in database
+  
+  
   
 }])
 
