@@ -38,24 +38,18 @@
   <div class="col-md-12" ng-if="addNew">
     <form>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="adFrm.title">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="5" placeholder="Enter Description" ng-model="adFrm.description"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Example block-level help text here.</p>
+            <label for="link">Link (Where the user will be redirected)</label>
+            <input type="text" class="form-control" id="link" placeholder="http://" ng-model="adFrm.link">
         </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox">Check me out
-            </label>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary form-control">Create New Ad</button>
     </form>
   </div>
 </div>
