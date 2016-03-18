@@ -57,7 +57,7 @@ angular.module('myApp.activities', ['ngRoute'])
     // update $scope.frm from $routeParams
     $scope.frm.page = $routeParams.page? $routeParams.page : 0;
     if ($routeParams.keyword) {
-        $scope.frm.keyword = $routeParams.keyward;
+        $scope.frm.keyword = $routeParams.keyword;
     }
     $scope.frm.radius = $routeParams.radius? $routeParams.radius : 30;
     if ($routeParams.lat) {
@@ -80,18 +80,22 @@ angular.module('myApp.activities', ['ngRoute'])
     }
     $scope.getData = function() {
         var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/chris/activities';
-        url = $scope.frm.keyword? url + '&q=' + encodeURIComponent(scope.frm.keyword) : url;
+        if ($scope.frm.keyword) {
+            url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
+        }
         if ($scope.location) {
             url = url + '&lat=' + $scope.details.components.lat;
             url = url + '&lon=' + $scope.details.components.lng;
             url = url + $scope.frm.radius;
         }
+        console.log('API url: ', url);
         dataService.get(url, successGetData, failureGetData, true);
     }; //getData ends
     
     $scope.getData(); // get data on page load
     // construct url from form, for directing
     $scope.constructURL = function() {
+        console.log($scope.frm);
         var url = '/activities/search/0';
       if ($scope.frm.keyword) {
           url = url + '/' + encodeURIComponent($scope.frm.keyword);

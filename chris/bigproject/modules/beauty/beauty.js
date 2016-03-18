@@ -12,12 +12,111 @@ angular.module('myApp.beauty', ['ngRoute'])
   }).when('/beauty/create/images/:id', {  //need id from page1
     templateUrl: 'modules/beauty/images.html',
     controller: 'ViewBeautyImagesCtrl'
-  });
+  }).when('/beauty/search', {
+    templateUrl: 'modules/beauty/search.html',
+    controller: 'ViewBeautySearchCtrl'
+  })
+  .when('/beauty/search/:page/:keyword/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/beauty/search.html',
+    controller: 'ViewBeautySearchCtrl'
+  })
+  .when('/beauty/search/:page/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/beauty/search.html',
+    controller: 'ViewBeautySearchCtrl'
+  })  
+  .when('/beauty/search/:page/:keyword', {
+    templateUrl: 'modules/beauty/search.html',
+    controller: 'ViewBeautySearchCtrl'
+  })  
+  .when('/beauty/search/:page', {
+    templateUrl: 'modules/beauty/search.html',
+    controller: 'ViewBeautySearchCtrl'
+  })
+  .when('/beauty/search', {
+    templateUrl: 'modules/beauty/search.html',
+    controller: 'ViewBeautySearchCtrl'
+  })
+  ;
 }])
 
 .controller('ViewBeautyCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewBeautyCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+}])
+.controller('ViewBeautySearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+    $scope.frm = {};
+    $scope.frm.radius = 30;
+    //location starts
+    $scope.mapOptions = {
+        types: 'geocode'
+    };
+    $scope.details = {};
+    $scope.details.components = {};
+    //location ends
+    console.log($routeParams);
+    $scope.frm = {};    
+    // update $scope.frm from $routeParams
+    // This is how the parameters from url get to API url[in getData()] through $scope.frm.
+    $scope.frm.page = $routeParams.page? $routeParams.page : 0;
+    if ($routeParams.keyward) {
+        $scope.frm.keyward = $routeParams.keyward;
+    }
+    $scope.frm.radius = 30;
+  if ($routeParams.radius) {
+    $scope.frm.radius = $routeParams.radius;
+  }
+    if ($routeParams.lat) {
+        $scope.details.components.lat = $routeParams.lat;
+    }
+    if ($routeParams.lng) {
+        $scope.details.components.lng = $routeParams.lng;
+    }
+  if ($routeParams.location) {
+    $scope.location = decodeURIComponent($routeParams.location);
+  }
+    // update ends  
+    $scope.results = {};
+  function successGetData(response) {
+    console.log('success: ', response.data.data.results);
+      $scope.results = response.data.data.results;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+    
+    $scope.getData = function() {
+        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/chris/beauty';
+        if ($scope.frm.keyword) {
+            url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
+        }
+        if ($scope.location) {
+            url = url + '&lat=' + encodeURIComponent($scope.details.components.lat);
+            url = url + '&lon=' + encodeURIComponent($scope.details.components.lon);
+            url = url + '&radius=' + encodeURIComponent($scope.details.radius);
+        }
+        url = url + '&page=' + $scope.frm.page;
+        dataService.get(url, successGetData, failureGetData, true);
+    };//get data ends
+  
+  $scope.getData();//get data on page load
+  $scope.constructURL = function() {
+      console.log($scope.frm);
+      
+      var url = '/beauty/search/0';
+      if ($scope.frm.keyword) {
+          url = url + '/' + encodeURIComponent($scope.frm.keyword);
+      }
+    if ($scope.location) {
+      if (!$scope.frm.radius) {
+        $scope.frm.radius = 30;
+      }
+      
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius) + '/' + encodeURIComponent($scope.location);
+    }
+      $location.path(url);
+  }    
+}])
+.controller('ViewBeautyCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
