@@ -1,0 +1,55 @@
+<style type="text/css">
+.advertisements {
+  font-size: 12px;
+  font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+}
+.advertisements .description {
+  font-size: 10px;
+}
+.advertisements .links {
+  font-size: 10px;
+}
+</style>
+<div class="row advertisements">
+  <div class="col-md-12">
+    <p><b><a href="#">Title</a></b></p>
+    <p class="description">some description comes here. some description comes here. some description comes here. some description comes here.</p>
+  </div>
+  <div class="col-md-12">
+    <p><b><a href="#">Title2</a></b></p>
+    <p class="description">some description comes here. some description comes here. some description comes here. some description comes here.</p>
+  </div>
+  <div class="col-md-12">
+    <p><b><a href="#">Title2</a></b></p>
+    <p class="description">some description comes here. some description comes here. some description comes here. some description comes here.</p>
+  </div>
+  <div class="col-md-12">
+    <p><b><a href="#">Title2</a></b></p>
+    <p class="description">some description comes here. some description comes here. some description comes here. some description comes here.</p>
+  </div>
+  <div class="col-md-12">
+    <p><b><a href="#">Title2</a></b></p>
+    <p class="description">some description comes here. some description comes here. some description comes here. some description comes here.</p>
+  </div>
+  <div class="col-md-12 links">
+    <hr>
+    <a href="" ng-click="addNewForm();">Add New</a> | <a href="#">My Ads</a>
+  </div>
+  <div class="col-md-12" ng-if="addNew">
+    <form>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="adFrm.title">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="5" placeholder="Enter Description" ng-model="adFrm.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="link">Link (Where the user will be redirected)</label>
+            <input type="text" class="form-control" id="link" placeholder="http://" ng-model="adFrm.link">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Create New Ad</button>
+    </form>
+  </div>
+</div>

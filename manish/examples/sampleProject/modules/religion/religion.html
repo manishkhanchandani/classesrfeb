@@ -48,13 +48,29 @@
         </div>
       </div>
       
+      <div class="row" ng-if="type === 3 && results && !showLoading">
+        <ul class="media-list">
+          <li class="media" ng-repeat="item in results">
+            <div class="row">
+              <div class="col-md-3"><a href="#/religion/detail/{{item.id}}"><img ng-src="{{item.mainImage}}" class="img-responsive" alt="{{item.title}}"></a></div>
+              <div class="col-md-9"><h4 class="media-heading">{{item.title}}</h4>
+                <p>{{item.shortDesc}}</p>
+                <p><span class="dateFormatted">{{item.ago}}</span></p>
+              </div>
+            </div>
+            
+          </li>
+        </ul>
+      </div>
+      
+      
       <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
       
     </div>
     
     
     <div class="col-md-3">
-      
+      <div advertisments></div>
     </div>
   </div>
 </div>

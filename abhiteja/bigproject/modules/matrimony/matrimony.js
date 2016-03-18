@@ -41,7 +41,7 @@ angular.module('myApp.matrimony', ['ngRoute'])
                 console.log("Error: ",response);
             }
             
-            $scope.submitCreateForm = function(){
+            $scope.submitCreateMatriForm = function(){
                 //$location.path('/lessons/create/images/1');
                 
                 var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='
@@ -50,7 +50,7 @@ angular.module('myApp.matrimony', ['ngRoute'])
                 postData = postData + '&title='+encodeURIComponent($scope.frm.title);
                 postData = postData + '&description='+encodeURIComponent($scope.frm.description);
                 
-                postData = postData + '&path=/abhiteja/lessons'; 
+                postData = postData + '&path=/abhiteja/matrimony'; 
                 postData = postData + '&tid=1';
                 
                 postData = postData + '&location[latitude]='+encodeURIComponent($scope.details.components.lat);
