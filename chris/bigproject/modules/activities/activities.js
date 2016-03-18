@@ -12,12 +12,102 @@ angular.module('myApp.activities', ['ngRoute'])
   }).when('/activities/create/images/:id', {  //need id from page1
     templateUrl: 'modules/activities/images.html',
     controller: 'ViewActivitiesImagesCtrl'
-  });
+  }).when('/activities/search', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })
+  // search & browse, plus paging of results
+  .when('/activities/search/:page/:keyword/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })
+  .when('/activities/search/:page/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })  
+  .when('/activities/search/:page/:keyword', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })  
+  .when('/activities/search/:page', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })
+  .when('/activities/search', {
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
+  })
+  ;
 }])
 
 .controller('ViewActivitiesCtrl', ['$scope', function($scope) {
 
-}]).controller('ViewActivitiesCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+}])
+.controller('ViewActivitiesSearchCtrl', ['$scope', '$location', '$routeParams', 'dataService', function($scope, $location, $routeParams, dataService) {
+    $scope.frm = {};
+    
+    //Google location autocomplete starts
+    $scope.mapOptions = {
+        type: 'geocode'
+    };
+    $scope.details = {};
+    $scope.details.components = {}
+    //Google location autocomplete ends
+    
+    // update $scope.frm from $routeParams
+    $scope.frm.page = $routeParams.page? $routeParams.page : 0;
+    if ($routeParams.keyword) {
+        $scope.frm.keyword = $routeParams.keyward;
+    }
+    $scope.frm.radius = $routeParams.radius? $routeParams.radius : 30;
+    if ($routeParams.lat) {
+        $scope.details.components.lat = $routeParams.lat;
+    }
+    if ($routeParams.lng) {
+        $scope.details.components.lng = $routeParams.lng;
+    }
+  if ($routeParams.location) {
+    $scope.location = decodeURIComponent($routeParams.location);
+  }
+    
+    $scope.results = {};
+    function successGetData(response) {
+        console.log('success: ', response.data.data.results);
+        $scope.results = response.data.data.results;
+    }
+    function failureGetData(response) {
+        console.log('failed: ', response);
+    }
+    $scope.getData = function() {
+        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/chris/activities';
+        url = $scope.frm.keyword? url + '&q=' + encodeURIComponent(scope.frm.keyword) : url;
+        if ($scope.location) {
+            url = url + '&lat=' + $scope.details.components.lat;
+            url = url + '&lon=' + $scope.details.components.lng;
+            url = url + $scope.frm.radius;
+        }
+        dataService.get(url, successGetData, failureGetData, true);
+    }; //getData ends
+    
+    $scope.getData(); // get data on page load
+    // construct url from form, for directing
+    $scope.constructURL = function() {
+        var url = '/activities/search/0';
+      if ($scope.frm.keyword) {
+          url = url + '/' + encodeURIComponent($scope.frm.keyword);
+      }
+    if ($scope.location) {
+      if (!$scope.frm.radius) {
+        $scope.frm.radius = 30;
+      }
+      
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius) + '/' + encodeURIComponent($scope.location);
+     }
+      $location.path(url);
+        
+    }
+}])
+.controller('ViewActivitiesCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
     //location starts 
     $scope.mapOptions = { 
         types: 'geocode' 
