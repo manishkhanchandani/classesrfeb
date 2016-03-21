@@ -53,9 +53,9 @@
           <li class="media" ng-repeat="item in results">
             <div class="row">
               <div class="col-md-3"><a href="#/religion/detail/{{item.id}}"><img ng-src="{{item.mainImage}}" class="img-responsive" alt="{{item.title}}"></a></div>
-              <div class="col-md-9"><h4 class="media-heading">{{item.title}}</h4>
+              <div class="col-md-9"><h4 class="media-heading"><a href="#/religion/detail/{{item.id}}">{{item.title}}</a></h4>
                 <p>{{item.shortDesc}}</p>
-                <p><span class="dateFormatted">{{item.ago}}</span></p>
+                <p><span class="dateFormatted">Created On: <strong>{{item.dateFormattedAll}}</strong></span></p>
               </div>
             </div>
             

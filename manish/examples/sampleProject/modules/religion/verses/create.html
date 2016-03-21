@@ -5,7 +5,7 @@
       <div class="alert alert-danger" role="alert" ng-if="createError">
         {{createError}}
       </div>
-      <form ng-submit="mainDetails()">
+      <form ng-submit="submitNewVerse()">
         <div class="form-group">
             <label for="verseNumber">Verse Number</label>
             <input type="text" class="form-control" id="verseNumber" placeholder="Enter verse number" ng-model="frmAdd.verseNumber" required>
@@ -57,7 +57,6 @@
             </select>
         </div>
         </fieldset>
-        
         <button type="submit" class="btn btn-primary form-control">Submit</button>
     </form>
     </div>

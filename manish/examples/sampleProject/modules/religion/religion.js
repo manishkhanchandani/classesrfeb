@@ -126,6 +126,10 @@ angular.module('myApp.religion', ['ngRoute'])
   var pathBook = '/manish/religion/'+$scope.id+'/book';
   var paramsBook = {};
   dataService.getDataAll(pathBook, false, true, getSuccessBook, getFailureBook, paramsBook);
+  
+  $scope.submitNewVerse = function() {
+    console.log($scope.frmAdd);
+  };
 }])
 
 .controller('ViewDetailReligionCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
