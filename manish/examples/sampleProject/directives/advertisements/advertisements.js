@@ -18,6 +18,14 @@
           },
           templateUrl: 'directives/advertisements/advertisements.html',
           link: function(scope, elem, attrs) {
+            
+            //location starts
+            scope.mapAdOptions = {
+              types: 'geocode'
+            };
+        
+            scope.adDetails = {};
+            //location ends
             //show add form
             scope.addNew = false;
             scope.addNewForm = function() {

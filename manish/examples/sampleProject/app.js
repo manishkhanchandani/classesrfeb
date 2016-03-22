@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'paginationModule',
+  'advertisementModule',
   'myApp.auth',
   'myApp.lessons',
   'ngAutocomplete',
