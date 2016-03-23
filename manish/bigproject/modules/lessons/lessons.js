@@ -106,8 +106,10 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.results = null;
   
   function successGetData(response) {
-    console.log('success: ', response.data.data.results);
+    console.log('success: ', response);
     $scope.results = response.data.data.results;
+    
+    $scope.data = response.data.data;
   }
   
   function failureGetData(response) {
@@ -115,7 +117,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=2';
     //check the keyword
     if ($scope.frm.keyword) {
       url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
