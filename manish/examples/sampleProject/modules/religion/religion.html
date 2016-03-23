@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Religion (Search or Browse)</h1>
+      <div class="alert alert-danger" role="alert" ng-if="lessonsStatus">
+      {{religionStatus}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <form ng-submit="searchData()">
+        <div class="form-group">
+            <label for="keyword">Keyword</label>
+            <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Search</button>
+    </form>
+    </div>
+    <div class="col-md-7">
+    
+    
+    
+      <div class="row" ng-if="showLoading">
+        <div class="col-md-12">
+          <img src="images/loading.gif" >
+        </div>
+      </div>
+      
+      <div ng-if="totalRows == 0 && !showLoading" class="alert alert-danger" role="alert">
+        No Results Found.
+      </div>
+      <div class="row" ng-if="type === 1 && results && !showLoading">
+        <div class="col-md-4" ng-repeat="item in results">
+          <img ng-if="item.mainImage" ng-src="{{item.mainImage}}" class="img-responsive img-thumbnail">
+          <img ng-if="!item.mainImage" ng-src="{{defaultImage}}" class="img-responsive img-thumbnail">
+          <h4><a href="#/religion/detail/{{item.id}}">{{item.title}}</a> <small>{{item.location.city}}, {{item.location.state}}</small> <br><span class="dateFormatted">{{item.ago}}</span></h4>
+          <p ng-if="item.distance">{{item.distance}} mi away</p>
+          <p>{{item.shortDesc}}</p>
+        </div>
+      </div>
+      
+      
+      <div class="row" ng-if="type === 2 && results && !showLoading">
+        <div class="col-md-12" ng-repeat="item in results">
+          <p><span class="dateFormatted">{{item.dateFormatted}}</span> <a href="#/religion/detail/{{item.id}}">{{item.title}}</a> <small>{{item.location.city}}, {{item.location.state}}</small>
+          <span ng-if="item.distance">({{item.distance}} mi)</span></p>
+        </div>
+      </div>
+      
+      <div class="row" ng-if="type === 3 && results && !showLoading">
+        <ul class="media-list">
+          <li class="media" ng-repeat="item in results">
+            <div class="row">
+              <div class="col-md-3"><a href="#/religion/detail/{{item.id}}"><img ng-src="{{item.mainImage}}" class="img-responsive" alt="{{item.title}}"></a></div>
+              <div class="col-md-9"><h4 class="media-heading"><a href="#/religion/detail/{{item.id}}">{{item.title}}</a></h4>
+                <p>{{item.shortDesc}}</p>
+                <p><span class="dateFormatted">Created On: <strong>{{item.dateFormattedAll}}</strong></span></p>
+              </div>
+            </div>
+            
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
+      
+    </div>
+    
+    
+    <div class="col-md-3">
+      <div advertisments></div>
+    </div>
+  </div>
+</div>

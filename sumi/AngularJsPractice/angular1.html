@@ -1,0 +1,43 @@
+<html ng-app="myApp">
+    <head>
+       
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+        <script>
+            var app= angular.module('myApp',['ngRoute']);
+             app.config(['$routeProvider',function($routeProvider){
+                    $routeProvider
+                            .when('/myaccount',{
+                                controller:'myaccountController',
+                                templateUrl:'myaccount.html'
+                            })
+                                    .when('/balance',{
+                                        controller:"mybalanceController",
+                                        templateUrl:'balance.html'
+                                    })
+                            ;
+            }]);  
+            
+            
+            app.controller('firstController',['$scope',function($scope){
+            
+            }]);
+            app.controller('mybalanceController',['$scope',function($scope){
+            
+            }]);
+            
+           
+        </script>
+        
+    </head>
+    <body>
+        
+            <h1>This is Header</h1>
+             <a href="#/myaccount">My account</a>
+             <a href="#/balance">My balance</a>
+             <div ng-view></div>
+            <h1>This is footer</h1>
+            
+        
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Add/Edit/Show All</h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Add Record</h3>
+        <form ng-submit="add()">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" ng-model="frmAdd.name" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" ng-model="frmAdd.email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+              <label for="gender">Gender</label>
+              <input type="text" class="form-control" id="gender" ng-model="frmAdd.gender" placeholder="Enter gender">
+          </div>
+          <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control addressBox" id="location" ng-autocomplete ng-model="autocomplete" options="options" details="details" placeholder="Enter location">
+          </div>
+          <div class="form-group">
+              <label for="tags">Tags</label>
+              <input type="text" class="form-control" id="tags" ng-model="frmAdd.tags" placeholder="Enter comma separated tags">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <h3>View All</h3>
+      <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control addressBox" id="location" ng-autocomplete ng-model="autocomplete" options="options" details="details" placeholder="Enter location">
+      </div>
+      <button type="button" class="btn btn-primary" ng-click="getAll();">Gell All Records</button>
+      
+      <h3 ng-if="getAllItems">Results</h3>
+      <ul class="list-group" ng-if="getAllItems">
+        <li class="list-group-item" ng-repeat="item in getAllItems"><a href="" ng-click="getOne(item)">{{item.title}}</a> <span ng-if="item.distance"> - {{item.distance}} mi</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <h3>View Record</h3>
+      <div ng-if="getOneItems">
+        <b>Title: </b>{{getOneItems.title}}<br>
+        <b>Email: </b>{{getOneItems.detailsFull.email}}<br>
+        <b>Gender: </b>{{getOneItems.detailsFull.gender}}<br>
+        <b>Location: </b>{{getOneItems.location.formatted_addr}}<br>
+        <a href="" ng-click="edit(getOneItems)">Edit</a> | <a href="" ng-click="deleteItem(getOneItems)">Delete</a>
+      </div>
+    </div>
+    
+    
+    <div class="col-md-3">
+      <h3>Edit Record</h3>
+        <form ng-submit="editSubmit()">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" ng-model="frmEdit.name" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" ng-model="frmEdit.email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+              <label for="gender">Gender</label>
+              <input type="text" class="form-control" id="gender" ng-model="frmEdit.gender" placeholder="Enter gender">
+          </div>
+          <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control addressBox" id="location" ng-autocomplete ng-model="autocompleteEdit" options="options" details="editDetails" placeholder="Enter location">
+          </div>
+          <div class="form-group">
+              <label for="tags">Tags</label>
+              <input type="text" class="form-control" id="tags" ng-model="frmEdit.tags" placeholder="Enter comma separated tags">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    
+  </div>
+</div>

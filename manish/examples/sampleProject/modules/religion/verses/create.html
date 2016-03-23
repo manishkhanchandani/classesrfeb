@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h3>Enter New Verse For Religion "{{results.title}}"</h3>
+      <div class="alert alert-danger" role="alert" ng-if="createError">
+        {{createError}}
+      </div>
+      <form ng-submit="submitNewVerse()">
+        <div class="form-group">
+            <label for="verseNumber">Verse Number</label>
+            <input type="text" class="form-control" id="verseNumber" placeholder="Enter verse number" ng-model="frmAdd.verseNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Verse *</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter verse" ng-model="frmAdd.title" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Verse Description *</label>
+            <textarea type="text" class="form-control" id="description" placeholder="Enter verse description" ng-model="frmAdd.description" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tags">Verse Search Tags (Comma separated words to help user search this verse)</label>
+            <input type="text" class="form-control" id="tags" placeholder="Enter search tags" ng-model="frmAdd.tags">
+        </div>
+        <hr>
+        <fieldset><legend>Book</legend>
+        <div class="form-group">
+            <input type="radio" ng-model="frmAdd.book" value="newBook"> New Book 
+            <input type="radio" ng-model="frmAdd.book" value="currentBook"> Current Book
+        </div>
+        <div class="form-group" ng-if="frmAdd.book === 'newBook'">
+            <label for="new_chapter_name">New Book Name</label>
+            <input type="text" class="form-control" id="new_chapter_name" placeholder="Enter book name e.g. Main Book" ng-model="frmAdd.new_book_name">
+        </div>
+        <div class="form-group" ng-if="frmAdd.book === 'currentBook'">
+            <label for="current_book_name">Choose Book</label>
+            <select class="form-control" id="current_book_name" ng-model="current_book_name">
+              
+            </select>
+        </div>
+        </fieldset>
+        
+        <hr>
+        <fieldset><legend>Chapter</legend>
+        <div class="form-group">
+            <input type="radio" ng-model="frmAdd.chapter" value="newChapter"> New Chapter
+            <input type="radio" ng-model="frmAdd.chapter" value="currentChapter"> Current Chapter
+        </div>
+        <div class="form-group" ng-if="frmAdd.chapter === 'newChapter'">
+            <label for="new_chapter_name">New Chapter Name</label>
+            <input type="text" class="form-control" id="new_chapter_name" placeholder="Enter chapter name" ng-model="frmAdd.new_chapter_name">
+        </div>
+        <div class="form-group" ng-if="frmAdd.chapter === 'currentChapter'">
+            <label for="current_chapter_name">Choose Chapter</label>
+            <select class="form-control" id="current_chapter_name" ng-model="current_chapter_name">
+              
+            </select>
+        </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary form-control">Submit</button>
+    </form>
+    </div>
+    <div class="col-md-5">
+    
+    </div>
+  </div>
+</div>

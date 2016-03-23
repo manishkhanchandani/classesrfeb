@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"><h3>Login User</h3>
+            <div class="alert alert-warning" role="alert" ng-show="loginUserError" 
+                                                        ng-if="loginUserError">
+                {{loginUserError}}
+            </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form ng-submit="loginUser()">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="frmLogin.email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" ng-model="frmLogin.password" required>
+                </div>
+                <button type="submit" class="btn btn-primary form-control">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
