@@ -31,36 +31,36 @@ angular.module('myApp.housingsale', ['ngRoute'])
   
   .when('/housingsale/search/:page/:keyword/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/housingsale/search.html',
-    controller: 'ViewHousingsaleCreateCtrl'
+    controller: 'ViewHousingsaleSearchCtrl'
   })
   
   
   .when('/housingsale/search/:page/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/housingsale/search.html',
-    controller: 'ViewHousingsaleCreateCtrl'
+    controller: 'ViewHousingsaleSearchCtrl'
   })
   
   
   .when('/housingsale/search/:page/:keyword', {
     templateUrl: 'modules/housingsale/search.html',
-    controller: 'ViewHousingsaleCreateCtrl'
+    controller: 'ViewHousingsaleSearchCtrl'
   })
   
   .when('/housingsale/search/:page', {
     templateUrl: 'modules/housingsale/search.html',
-    controller: 'ViewHousingsaleCreateCtrl'
+    controller: 'ViewHousingsaleSearchCtrl'
   })
   
   .when('/housingsale/search', {
     templateUrl: 'modules/housingsale/search.html',
-    controller: 'ViewHousingsaleCreateCtrl'
+    controller: 'ViewHousingsaleSearchCtrl'
   })
   
         ;
 }])
 
 //controller for search and browse
-.controller('ViewHousingsaleCreateCtrl', ['$scope','dataService','$location','$routeParams',function($scope,dataService,$location,$routeParams) {
+.controller('ViewHousingsaleSearchCtrl', ['$scope','dataService','$location','$routeParams',function($scope,dataService,$location,$routeParams) {
 
 //location starts
   $scope.mapOptions = {
@@ -177,10 +177,6 @@ angular.module('myApp.housingsale', ['ngRoute'])
     $location.path(url);
   };
        
-}])
-
-.controller('ViewHousingsaleSearchCtrl', ['$scope',function($scope) {
-
 }])
 
 .controller('ViewHousingsaleCtrl', ['$scope',function($scope) {

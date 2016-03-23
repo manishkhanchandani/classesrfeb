@@ -55,13 +55,12 @@ angular.module('myApp.creative', ['ngRoute'])
     controller: 'ViewCreativeSearchCtrl'
   })
   
-        ;
+;
 }])
-
 //controller for search and browse
 .controller('ViewCreativeSearchCtrl', ['$scope','dataService','$location','$routeParams',function($scope,dataService,$location,$routeParams) {
-
-//location starts
+ 
+    //location starts
   $scope.mapOptions = {
     types: 'geocode'
   };
@@ -178,9 +177,6 @@ angular.module('myApp.creative', ['ngRoute'])
   
 }])
 
-.controller('ViewCreativeSearchCtrl', ['$scope',function($scope) {
-
-}])
 
 .controller('ViewCreativeCtrl', ['$scope',function($scope) {
 
