@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   
   'myApp.lessons',
+  'paginationModule',
   'myApp.auth',
   'myApp.legal',
   'myApp.activities',

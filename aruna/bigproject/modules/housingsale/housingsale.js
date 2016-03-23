@@ -19,7 +19,164 @@ angular.module('myApp.housingsale', ['ngRoute'])
    .when('/housingsale/search', {
     templateUrl: 'modules/housingsale/search.html',
     controller: 'ViewHousingsaleSearchCtrl'
-  });
+  })
+  
+    //search and browse
+  
+  // '/housingsale/search'
+  // '/housingsale/search/0'
+  // '/housingsale/search/0/keyword'
+  // '/housingsale/search/0/lat/lng/radius'
+  // '/housingsale/search/0/keyword/lat/lng/radius'
+  
+  .when('/housingsale/search/:page/:keyword/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleCreateCtrl'
+  })
+  
+  
+  .when('/housingsale/search/:page/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleCreateCtrl'
+  })
+  
+  
+  .when('/housingsale/search/:page/:keyword', {
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleCreateCtrl'
+  })
+  
+  .when('/housingsale/search/:page', {
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleCreateCtrl'
+  })
+  
+  .when('/housingsale/search', {
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleCreateCtrl'
+  })
+  
+        ;
+}])
+
+//controller for search and browse
+.controller('ViewHousingsaleCreateCtrl', ['$scope','dataService','$location','$routeParams',function($scope,dataService,$location,$routeParams) {
+
+//location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+
+  $scope.details = {};
+  $scope.details.components = {};
+  //location ends             
+                
+  //console.log('route param is ', $routeParams);
+  $scope.frm = {};
+  
+  $scope.frm.urlPrefix = '#/housingsale/search';
+  $scope.frm.urlSufix = '';
+  
+   //initialize the value of page, i.e. default value
+  $scope.frm.page = 0;
+  
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.frm.page = $routeParams.page;
+  }
+  //page
+  
+  //default keyword
+  $scope.frm.keyword = '';
+  
+  //check if url has keyword
+  if ($routeParams.keyword) {
+    $scope.frm.keyword = $routeParams.keyword;
+    
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
+  }
+  
+  
+  $scope.frm.radius = 30;
+  
+    if ($routeParams.lat) {
+    $scope.details.components.lat = $routeParams.lat;
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.lat;
+  }
+  
+  if ($routeParams.lng) {
+    $scope.details.components.lng = $routeParams.lng;
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.lng;
+  }
+ 
+  if ($routeParams.radius) {
+     $scope.frm.radius = $routeParams.radius;
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.radius;
+  }
+  
+  if ($routeParams.location) {
+    $scope.location = decodeURIComponent($routeParams.location);
+    
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
+  }
+ 
+  
+  
+  $scope.results = null;
+  
+  
+  function successGetData(response) {
+    console.log('success: ', response.data.data.results);
+    $scope.results = response.data.data.results;
+    
+     $scope.data = response.data.data;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  
+  $scope.getData = function() {
+      
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/aruna/housingsale&max=2';
+    //check the keyword
+    if ($scope.frm.keyword) {
+      url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
+    }
+    
+    //check the location
+    if ($scope.location) {
+      url = url + '&lat='+$scope.details.components.lat+'&lon='+$scope.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
+    }
+     url = url + '&page=' + $scope.frm.page;
+    console.log(url);
+    dataService.get(url, successGetData, failureGetData, true);//true is for cache
+    
+  };//get data ends
+  
+  $scope.getData();//get data on page load
+  
+  /*Purpose of construct url is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
+  
+  $scope.constructURL = function() {
+    var url = '/housingsale/search/0';
+    
+    if ($scope.frm.keyword) {
+      url = url + '/' + encodeURIComponent($scope.frm.keyword);
+    }
+    
+    if ($scope.location) {
+      if (!$scope.frm.radius) {
+        $scope.frm.radius = 30;
+      }
+      
+      url = url + '/' + $scope.details.components.lat + '/' + $scope.details.components.lng + '/' + encodeURIComponent($scope.frm.radius) + '/' + encodeURIComponent($scope.location);
+    }
+    // to send user to url
+    $location.path(url);
+  };
+       
 }])
 
 .controller('ViewHousingsaleSearchCtrl', ['$scope',function($scope) {

@@ -11,7 +11,7 @@
   
   <div class="row">
     <div class="col-md-3">
-      <form ng-submit="getData()">
+      <form ng-submit="constructURL()">
         <div class="form-group">
             <label for="keyword">Keyword</label>
             <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
@@ -39,7 +39,7 @@
           
         </div>
         
-      
+     <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>  
       
       
     </div><!-- results -->
