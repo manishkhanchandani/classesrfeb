@@ -19,8 +19,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   // '/lessons/search'
   // '/lessons/search/0'
   // '/lessons/search/0/keyword'
-  // '/lessons/search/0/lat/lng/radius'
-  // '/lessons/search/0/keyword/lat/lng/radius'
+  // '/lessons/search/0/lat/lng/radius/location'
+  // '/lessons/search/0/keyword/lat/lng/radius/location'
   
   .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/lessons/search.html',
@@ -68,6 +68,10 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.frm = {};
   
   
+  $scope.frm.urlPrefix = '#/lessons/search';
+  $scope.frm.urlSufix = '';
+  
+  
   //initialize the value of page, i.e. default value
   $scope.frm.page = 0;
   
@@ -83,27 +87,36 @@ angular.module('myApp.lessons', ['ngRoute'])
   //check if url has keyword
   if ($routeParams.keyword) {
     $scope.frm.keyword = $routeParams.keyword;
+    
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
   }
   
   $scope.frm.radius = 30;
   
-  if ($routeParams.radius) {
-     $scope.frm.radius = $routeParams.radius;
-  }
   
   if ($routeParams.lat) {
     $scope.details.components.lat = $routeParams.lat;
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.lat;
   }
   
   if ($routeParams.lng) {
     $scope.details.components.lng = $routeParams.lng;
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.lng;
+  }
+ 
+  if ($routeParams.radius) {
+     $scope.frm.radius = $routeParams.radius;
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.radius;
   }
   
   if ($routeParams.location) {
     $scope.location = decodeURIComponent($routeParams.location);
+    
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
   }
   
   $scope.results = null;
+  
   
   function successGetData(response) {
     console.log('success: ', response);
@@ -117,7 +130,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=2';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=1';
     //check the keyword
     if ($scope.frm.keyword) {
       url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
