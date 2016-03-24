@@ -129,14 +129,14 @@ angular.module('myApp.lessons', ['ngRoute'])
         angular.forEach(images, function(value1, key1) {
           if (!$scope.results[key].mainImage) {
             $scope.results[key].mainImage = value1;
-          }
-        });
-      }
+          }//end if
+        });//end foreach
+      }//end if
       
       if (!$scope.results[key].mainImage) {
         $scope.results[key].mainImage = 'images/noimage.jpg';
-      }
-    });
+      }//end if
+    });//end foreach
     //image ends
     
     $scope.data = response.data.data;
