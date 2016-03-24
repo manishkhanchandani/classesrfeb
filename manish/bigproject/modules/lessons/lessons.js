@@ -137,8 +137,7 @@ angular.module('myApp.lessons', ['ngRoute'])
         $scope.results[key].mainImage = 'images/noimage.jpg';
       }
     });
-    
-    console.log($scope.results);
+    //image ends
     
     $scope.data = response.data.data;
   }
