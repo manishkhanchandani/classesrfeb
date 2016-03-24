@@ -31,15 +31,26 @@
       
        <div class="list-group">
           <div class="list-group-item" ng-repeat="item in results">
-            <h4 class="list-group-item-heading">{{item.title}}</h4>
-            <p class="list-group-item-text">{{item.location.formatted_addr}}</p>
-            <p class="list-group-item-text">{{item.ago}}</p>
-            <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+            <div class="row">
+              <div class="col-md-2">
+                <img ng-src="{{item.mainImage}}" class="img-responsive">
+              </div>
+              <div class="col-md-10">
+                <h4 class="list-group-item-heading">{{item.title}}</h4>
+                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.location.formatted_addr}}</p>
+                <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
+                <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+              </div>
+            </div>
+          
+            
           </div>
           
         </div>
         
-     <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>  
+        <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
+        
+      
       
       
     </div><!-- results -->

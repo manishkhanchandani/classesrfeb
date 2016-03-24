@@ -56,7 +56,17 @@ angular.module('myApp.activities', ['ngRoute'])
     controller: 'ViewActivitiesSearchCtrl'
   })
   
+  .when('/activities/detail/:id', {
+    templateUrl: 'modules/activities/detail.html',
+    controller: 'ViewActivitiesDetailCtrl'
+  })
+  
         ;
+}])
+
+.controller('ViewActivitiesDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  
 }])
 
 //controller for search and browse
@@ -91,9 +101,9 @@ angular.module('myApp.activities', ['ngRoute'])
   
   //check if url has keyword
   if ($routeParams.keyword) {
-    $scope.frm.keyword = $routeParams.keyword;
+    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
     
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.keyword;
   }
   
   
@@ -117,7 +127,7 @@ angular.module('myApp.activities', ['ngRoute'])
   if ($routeParams.location) {
     $scope.location = decodeURIComponent($routeParams.location);
     
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.location;
   }
  
   
@@ -128,6 +138,24 @@ angular.module('myApp.activities', ['ngRoute'])
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
     $scope.results = response.data.data.results;
+    
+    //create the mainImage
+    angular.forEach($scope.results, function(value, key) {
+      var images = value.detailsFull.images;
+      if (images) {
+        angular.forEach(images, function(value1, key1) {
+          if (!$scope.results[key].mainImage) {
+           $scope.results[key].mainImage = value1;
+          }
+        });
+      }
+      
+      if (!$scope.results[key].mainImage) {
+        $scope.results[key].mainImage = 'images/noimage.jpg';
+      }
+    });
+    
+    console.log($scope.results);
     
      $scope.data = response.data.data;
   }

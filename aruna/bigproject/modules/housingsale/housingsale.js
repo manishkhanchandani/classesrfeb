@@ -56,7 +56,17 @@ angular.module('myApp.housingsale', ['ngRoute'])
     controller: 'ViewHousingsaleSearchCtrl'
   })
   
+  .when('/housingsale/detail/:id', {
+    templateUrl: 'modules/housingsale/detail.html',
+    controller: 'ViewHousingsaleDetailCtrl'
+  })
+  
         ;
+}])
+
+.controller('ViewHousingsaleDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  
 }])
 
 //controller for search and browse
@@ -128,6 +138,24 @@ angular.module('myApp.housingsale', ['ngRoute'])
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
     $scope.results = response.data.data.results;
+    
+    //create the mainImage
+    angular.forEach($scope.results, function(value, key) {
+      var images = value.detailsFull.images;
+      if (images) {
+        angular.forEach(images, function(value1, key1) {
+          if (!$scope.results[key].mainImage) {
+           $scope.results[key].mainImage = value1;
+          }
+        });
+      }
+      
+      if (!$scope.results[key].mainImage) {
+        $scope.results[key].mainImage = 'images/noimage.jpg';
+      }
+    });
+    
+    console.log($scope.results);
     
      $scope.data = response.data.data;
   }
