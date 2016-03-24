@@ -122,6 +122,24 @@ angular.module('myApp.lessons', ['ngRoute'])
     console.log('success: ', response);
     $scope.results = response.data.data.results;
     
+    //create the mainImage
+    angular.forEach($scope.results, function(value, key) {
+      var images = value.detailsFull.images;
+      if (images) {
+        angular.forEach(images, function(value1, key1) {
+          if (!$scope.results[key].mainImage) {
+            $scope.results[key].mainImage = value1;
+          }
+        });
+      }
+      
+      if (!$scope.results[key].mainImage) {
+        $scope.results[key].mainImage = 'images/noimage.jpg';
+      }
+    });
+    
+    console.log($scope.results);
+    
     $scope.data = response.data.data;
   }
   
@@ -130,7 +148,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=1';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=4';
     //check the keyword
     if ($scope.frm.keyword) {
       url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
