@@ -86,9 +86,9 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   //check if url has keyword
   if ($routeParams.keyword) {
-    $scope.frm.keyword = $routeParams.keyword;
+    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
     
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.keyword;
   }
   
   $scope.frm.radius = 30;
@@ -112,7 +112,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   if ($routeParams.location) {
     $scope.location = decodeURIComponent($routeParams.location);
     
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.location;
   }
   
   $scope.results = null;

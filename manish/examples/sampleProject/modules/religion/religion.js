@@ -127,8 +127,43 @@ angular.module('myApp.religion', ['ngRoute'])
   var paramsBook = {};
   dataService.getDataAll(pathBook, false, true, getSuccessBook, getFailureBook, paramsBook);
   
+  
+  function addSuccessBook(response) {
+    console.log('success book: ', response);
+  }
+  
+  function addFailureBook(response) {
+    console.log('failure book: ', response);
+  }
+  
+  
+  function submitNewVersefn() {
+    
+    var submitData = '';
+    submitData = submitData + '&title='+encodeURIComponent($scope.frmAdd.title);
+    submitData = submitData + '&description='+encodeURIComponent($scope.frmAdd.description);
+    
+    //tags
+    submitData = submitData + '&tags='+($scope.frmAdd.tags ? encodeURIComponent($scope.frmAdd.tags) : '');
+    //url
+    var access_token = $scope.loggedInUsersData.token;
+    var path = '/manish/religion/'+$scope.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+access_token+'&path='+path;
+    dataService.post(url, submitData, addSuccess, addFailure);
+  }
+  
   $scope.submitNewVerse = function() {
     console.log($scope.frmAdd);
+    //adding book
+    if ($scope.frmAdd.book === 'newBook') {
+      var submitData = '';
+      submitData = submitData + '&title='+encodeURIComponent($scope.frmAdd.new_book_name);
+      submitData = submitData + '&tags='+encodeURIComponent($scope.frmAdd.new_book_name);
+      var access_token = $scope.loggedInUsersData.token;
+      var path = '/manish/religion/'+$scope.id+'/book';
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+access_token+'&path='+path;
+      dataService.post(url, submitData, addSuccessBook, addFailureBook);
+    }
   };
 }])
 
