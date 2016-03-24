@@ -48,10 +48,19 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewSearchCtrl'
   })
+  .when('/lessons/detail/:id', {
+    templateUrl: 'modules/lessons/detail.html',
+    controller: 'ViewDetailCtrl'
+  })
   
   ;
 }])
 
+
+.controller('ViewDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  
+})
 
 .controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
