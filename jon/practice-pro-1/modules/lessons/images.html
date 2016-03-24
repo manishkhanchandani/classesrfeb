@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Enter Image URLs</h1>
+
+            <form ng-submit="addImage()">
+                <div class="form-group">
+                    <label for="location">Image URL:</label>
+                    <input type="text" class="form-control" id="imageURL" placeholder="Enter Image URL starting with HTTP://" ng-model="frm.imageURL" required>
+                </div>
+
+                <button type="submit" class="btn btn-default">Add Image</button>
+                <button type="submit" class="btn btn-default">Continue</button>
+                <button type="submit" class="btn btn-default">Back</button>
+            </form>
+
+            <br>
+            <div class="row">
+                <div class="col-md-3 text-center" ng-repeat="img in imageUrls">
+                    <img ng-src="{{img}}" class="img-responsive img-thumbnail" />
+                    <a href="">Delete</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -34,7 +34,7 @@ angular.module('myApp.lessons', ['ngRoute'])
 
         $scope.submitCreateForm = function(){
           //call api service to submit the form
-            $location.path('/lessions/create/images/1');
+            $location.path('/lessons/create/images/1');
         };
 
     }])
