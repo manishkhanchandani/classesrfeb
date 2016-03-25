@@ -12,6 +12,7 @@ angular.module('myApp', [
   'myApp.housingsale',
   'myApp.creative',
   'myApp.messaging',
+  'myApp.students',
   'ngAutocomplete'
   //'ui.bootstrap'
 ])
