@@ -146,6 +146,7 @@ angular.module('myApp.lessons', ['ngRoute'])
             if($routeParams.keyword){
                 $scope.frm.keyword = $routeParams.keyword;
             }
+            
             $scope.results = {};
             function successGetData(response){
                 console.log('success: ', response.data.data.results);
