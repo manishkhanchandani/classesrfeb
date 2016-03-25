@@ -58,11 +58,18 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 
 .controller('ViewDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  $scope.results = {};
+  
+  $scope.setImage = function(image) {
+    $scope.results.mainImage = image;
+  };
 
   function getSuccess(response) {
     $scope.results = response.data.data;
     
     var images = $scope.results.detailsFull.images;
+    $scope.images = images;
     if (images) {
       angular.forEach(images, function(value1, key1) {
         if (!$scope.results.mainImage) {
