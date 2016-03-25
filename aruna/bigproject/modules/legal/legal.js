@@ -66,7 +66,38 @@ angular.module('myApp.legal', ['ngRoute'])
 
 .controller('ViewLegalDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
+ $scope.results = {};
   
+  $scope.setImage = function(image) {
+    $scope.results.mainImage = image;
+  };
+            
+    
+    function getSuccess(response) {
+    $scope.results = response.data.data;
+    
+    var images = $scope.results.detailsFull.images;
+    if (images) {
+      angular.forEach(images, function(value1, key1) {
+        if (!$scope.results.mainImage) {
+          $scope.results.mainImage = value1;
+        }//end if
+      });//end foreach
+    }//end if
+    
+    if (!$scope.results.mainImage) {
+      $scope.results.mainImage = 'images/noimage.jpg';
+    }//end if
+    console.log($scope.results);
+  }
+  
+  function getFailure(response) {
+    console.log('failed: ', response);
+  }
+  
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&id='+$routeParams.id;
+  dataService.get(url, getSuccess, getFailure, true); 
+                
 }])
 
 //controller for search and browse
