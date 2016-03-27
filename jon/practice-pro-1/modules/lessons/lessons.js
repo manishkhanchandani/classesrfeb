@@ -50,7 +50,7 @@ angular.module('myApp.lessons', ['ngRoute'])
             console.log($scope.frm);
             console.log($scope.details);
 
-            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1';
+            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/jon/lessons&tid=1';
 
             var postData = '';
             postData = postData + '&title='+encodeURIComponent($scope.frm.title);
@@ -78,7 +78,54 @@ angular.module('myApp.lessons', ['ngRoute'])
 
     }])
 
-    .controller('ViewImagesCtrl', ['$scope', function($scope) {
+    .controller('ViewImagesCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+        console.log('routeParams contains:', $routeParams);
+        $scope.id           = $routeParams.id;
+        $scope.frm          = {};
+
+        //get Data part
+        $scope.images       = null;
+
+        function successGetData(response) {
+            console.log('success getData: ', response);
+            //get images from the server
+            $scope.images = response.data.data.detailsFull.images;
+        }
+
+        function failureGetData(response) {
+            console.log('failed getData: ', response);
+        }
+
+        $scope.getData = function() {
+            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+            dataService.get(url, successGetData, failureGetData, false);
+        };
+
+        //call the getdata function
+        $scope.getData();
+
+
+        // add images in the database
+        function addImageSuccess(response) {
+            console.log('success addImage: ', response);
+            $scope.frm = {};
+            $scope.getData();
+        }
+
+        function addImageFailure(response) {
+            console.log('failed addImage: ', response);
+        }
+
+        $scope.addImage     = function(){
+            console.log($scope.frm);
+            var url             = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+            var postData        = '';
+            postData            = postData + '&param='+encodeURIComponent($scope.frm.image);
+
+            console.log('url is: ', url);
+            console.log('post data containts: ', postData);
+            dataService.post(url, postData, addImageSuccess, addImageFailure);
+        };
 
     }])
     ;
