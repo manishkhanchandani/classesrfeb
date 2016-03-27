@@ -8,7 +8,7 @@ angular.module('myApp', [
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+  $routeProvider.otherwise({redirectTo: '/rx'});
 }])
 
 .filter('orderObjectBy', function() {
@@ -25,6 +25,21 @@ config(['$routeProvider', function($routeProvider) {
   };
 })
 
-.controller('mainController', ['$scope', function($scope) {
+.controller('mainController', ['$scope', 'dataService', function($scope, dataService) {
+  
+  //location start
+  $scope.location = null;
+  function ipSuccess(response) {
+    $scope.location = response.data.data.result;
+  }
+  
+  function ipFailure(response) {
+    console.log('ipfailed: ', response);
+  }
+  
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/ip.php';
+  dataService.get(url, ipSuccess, ipFailure, true);
+  //location ends
+  
   
 }])
