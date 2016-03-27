@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Homeopathic Treatment of Major Diseases</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <h3>Choose Disease</h3>
+      <form ng-submit="updateDisease();">
+          <div class="form-group">
+              <select ng-model="frm.disease" class="form-control" ng-options="option.disease for option in results" ng-change="updateDisease();">
+              <option value="">Choose any one:</option></select>
+          </div>
+          <!--<button type="submit" class="btn btn-default">Continue</button>-->
+      </form>
+      <div ng-if="queryResults">
+        <h3>Choose Tongue Color Or Pulse Quality</h3>
+        <form ng-submit="updateRemedy();">
+          <div class="form-group">
+              <select ng-model="frm.tongue" class="form-control" ng-options="option.title for option in queryResults" ng-change="updateRemedy();">
+              <option value="">Choose Tongue Or Pulse:</option></select>
+          </div>
+          <!--<button type="submit" class="btn btn-default">Continue</button>-->
+      </form>
+      </div>
+      
+        <div  ng-if="remedyResults">
+          <h3>Remedy Result</h3>
+          <p><b>Diagnosis:</b> {{remedyResults.tcd}}</p>
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="remedy in remedyResults.remedies">{{remedy}} 1M</li>
+          </ul>
+          <p ng-if="remedyResults.remedies.length === 1">Take 5 pills once every month. </p>
+          <p ng-if="remedyResults.remedies.length === 2">Take 5 pills of first remedy ({{remedyResults.remedies[0]}}) once in a month followed by other remedy ({{remedyResults.remedies[1]}}) in second month. Then again start the procedure with first remedy ({{remedyResults.remedies[0]}}) in following month.</p>
+          <p ng-if="remedyResults.remedies.length === 3">Take 5 pills of first remedy once in a month followed by second remedy in second month followed by third remedy in third month. Then again start with first remedy in following month</p>
+          <p ng-if="remedyResults.remedies.length >= 4">Take 5 pills of first remedy once in a month followed by second remedy in second month followed by third remedy in third month followed by fourth remedy in fourth month. Then again start with first remedy in following month.</p>
+          <p>Repeat the above step till you get completely cured.</p>
+          <p>Check back this site after every couple of months to see if there is change in any remedy.</p>
+          <h3>Save the Case</h3>
+          <form ng-submit="saveRemedy()">
+            <div class="form-group">
+                <label>Patient's Name</label>
+                <input type="text" class="form-control" placeholder="Enter name" ng-model="saveFrm.name">
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="text" class="form-control" placeholder="Enter date" ng-model="saveFrm.date">
+            </div>
+            <button type="submit" class="btn btn-default">Save Remedy</button>
+        </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div ng-if="profiles">
+        <h3>Current Saved Profiles</h3>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="profile in profiles | orderObjectBy:'formattedDt':true">
+            <p><a href="#{{profile.path}}"><strong>{{profile.name}}</strong></a></p>
+            <p><small><strong>Created:</strong> {{profile.createdDt}}</small></p>
+            <p><strong>Remedies:</strong> 
+              <ol>
+                <li ng-repeat="remedy in profile.remedy">{{remedy}}</li>
+              </ol>
+            </p>
+            <p><strong>{{profile.disease}}</strong></p>
+            <p><b>Tongue: </b>{{profile.tongue}} (Pulse: {{profile.pulse}})</p>
+            <p><b>Diagnosis: </b>{{profile.tcd}}</p>
+            <p><a href="" ng-click="deleteProfile(profile)" class="pull-right">Delete</a></p>
+            <br style="clear:both">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>

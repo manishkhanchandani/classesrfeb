@@ -55,8 +55,19 @@ angular.module('myApp.creative', ['ngRoute'])
     controller: 'ViewCreativeSearchCtrl'
   })
   
+  .when('/creative/detail/:id', {
+    templateUrl: 'modules/creative/detail.html',
+    controller: 'ViewCreativeDetailCtrl'
+  })
+  
 ;
 }])
+
+.controller('ViewCreativeDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  
+}])
+
 //controller for search and browse
 .controller('ViewCreativeSearchCtrl', ['$scope','dataService','$location','$routeParams',function($scope,dataService,$location,$routeParams) {
  
@@ -89,9 +100,9 @@ angular.module('myApp.creative', ['ngRoute'])
   
   //check if url has keyword
   if ($routeParams.keyword) {
-    $scope.frm.keyword = $routeParams.keyword;
+    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
     
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.keyword;
   }
   
   
@@ -115,7 +126,7 @@ angular.module('myApp.creative', ['ngRoute'])
   if ($routeParams.location) {
     $scope.location = decodeURIComponent($routeParams.location);
     
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.location;
   }
  
   
@@ -126,6 +137,24 @@ angular.module('myApp.creative', ['ngRoute'])
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
     $scope.results = response.data.data.results;
+    
+    //create the mainImage
+    angular.forEach($scope.results, function(value, key) {
+      var images = value.detailsFull.images;
+      if (images) {
+        angular.forEach(images, function(value1, key1) {
+          if (!$scope.results[key].mainImage) {
+           $scope.results[key].mainImage = value1;
+          }
+        });
+      }
+      
+      if (!$scope.results[key].mainImage) {
+        $scope.results[key].mainImage = 'images/noimage.jpg';
+      }
+    });
+    
+    console.log($scope.results);
     
      $scope.data = response.data.data;
   }

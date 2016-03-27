@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lessons Listings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Search Listings</h3>
+                    <div class="alert alert-danger" role="alert" ng-if="searchStatus">
+                        {{searchStatus}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <form ng-submit="constructURL()">
+                    <div class="form-group">
+                        <label for="keyword">Keyword</label>
+                        <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Near</label>
+                        <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details">
+                    </div>
+                    <div class="form-group">
+                        <label for="radius">Radius</label>
+                        <input type="text" class="form-control" id="radius" placeholder="Enter radius in miles" ng-model="frm.radius" value="30">
+                    </div>
+                    <button type="submit" class="btn btn-primary form-control">Search</button>
+                </form>
+                </div>
+                <div class="col-md-9">
+                    <div class="list-group">
+                        <div class="list-group-item" ng-repeat="item in results">
+                          <div class="row">
+                            <div class="col-md-2">
+                              <img ng-src="{{item.mainImage}}" class="img-responsive">
+                            </div>
+                            <div class="col-md-10">
+                              <h4 class="list-group-item-heading">{{item.title}}</h4>
+                              <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.location.formatted_addr}}</a></p>
+                              <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
+                              <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+                            </div>
+                          </div>  
+                        </div>
+          
+        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -9,12 +9,17 @@ angular.module('myApp', [
   'myApp.lessons',
   'ngAutocomplete',
   'myApp.religion'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/lessons'});
+])
+
+.constant('config', {
+  sitePath: 'religion'
+})
+
+.config(['$routeProvider', 'config', function($routeProvider, config) {
+  $routeProvider.otherwise({redirectTo: '/'+config.sitePath});
 }])
 
-.controller('mainController', ['$scope', function($scope) {
+.controller('mainController', ['$scope', 'config', function($scope, config) {
   $scope.loggedInUsersData = null;
   
   //get user data from localstorage
@@ -25,7 +30,7 @@ config(['$routeProvider', function($routeProvider) {
   }
   //end localstorage
   
-  $scope.project = 'religion';
+  $scope.project = config.sitePath;
   
   switch ($scope.project) {
     case 'religion':
