@@ -29,6 +29,13 @@ angular.module('myApp.view1', ['ngRoute'])
 
 
 .controller('ViewRxCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
+  
+  //tracking
+  $scope.$watch('location', function (newValue, oldValue) {
+    if (!newValue) return;
+    dataService.tracking($scope.ref, newValue, 1, null);
+  });
+  
   $scope.frm = {};
   
   $scope.results = {};
@@ -122,6 +129,8 @@ angular.module('myApp.view1', ['ngRoute'])
       tcd: $scope.frm.tongue.tcd
     };
     
+    dataService.tracking($scope.ref, $scope.location, 2, profile);
+    
     var obj = {};
     var profiles = localStorage.getItem('profiles');
     if (!profiles) {
@@ -147,6 +156,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var obj = {};
     var profiles = localStorage.getItem('profiles');
     obj = JSON.parse(profiles);
+    dataService.tracking($scope.ref, $scope.location, 3, obj[p.key]);
     delete obj[p.key];
     localStorage.setItem('profiles', JSON.stringify(obj));
     $scope.showProfiles();

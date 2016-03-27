@@ -25,12 +25,15 @@ config(['$routeProvider', function($routeProvider) {
   };
 })
 
-.controller('mainController', ['$scope', 'dataService', function($scope, dataService) {
+.controller('mainController', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
   
+  
+	$scope.ref = new Firebase('https://mycontacts12.firebaseio.com/projects/homeopathyrx');
   //location start
   $scope.location = null;
   function ipSuccess(response) {
     $scope.location = response.data.data.result;
+    //dataService.tracking($scope.ref, $scope.location);
   }
   
   function ipFailure(response) {
