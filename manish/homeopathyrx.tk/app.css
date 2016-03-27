@@ -113,6 +113,15 @@ footer {
 
 
 
+.section-title {
+  padding: 10px;
+  background: #0383c0;
+  color: #fff; 
+}
+
+.section-title small {
+  color: #ccc; 
+}
 
 
 

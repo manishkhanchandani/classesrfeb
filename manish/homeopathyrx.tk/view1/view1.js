@@ -20,6 +20,10 @@ angular.module('myApp.view1', ['ngRoute'])
     templateUrl: 'view1/rx.html',
     controller: 'ViewRxCtrl'
   })
+  .when('/hom', {
+    templateUrl: 'view1/hom.html',
+    controller: 'View1Ctrl'
+  })
   ;
 }])
 
