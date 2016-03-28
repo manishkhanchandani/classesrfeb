@@ -70,6 +70,35 @@
             <br style="clear:both">
           </li>
         </ul>
+        <div id="exportable" style="display:none;">
+          <table width="100%">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Created Dt</th>
+                      <th>Remedies</th>
+                      <th>Disease</th>
+                      <th>Tongue</th>
+                      <th>Pulse</th>
+                      <th>Diagnosis</th>
+                      <th>Path</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="profile in profiles | orderObjectBy:'formattedDt':true">
+                      <td>{{profile.name}}</td>
+                      <td>{{profile.createdDt}}</td>
+                      <td>{{profile.remedy}}</td>
+                      <td>{{profile.disease}}</td>
+                      <td>{{profile.tongue}}</td>
+                      <td>{{profile.pulse}}</td>
+                      <td>{{profile.tcd}}</td>
+                      <td>{{profile.path}}</td>
+                  </tr>
+              </tbody>
+          </table>
+          </div>
+        <div><a href="" ng-click="exportData();" class="btn btn-primary">Export to xls</a></div>
       </div>
     </div>
     <div class="col-md-3">

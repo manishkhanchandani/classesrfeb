@@ -33,6 +33,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="js/ui-bootstrap-tpls.min.js"></script>
+<script src="js/FileSaver.js"></script>
 
 <script type="text/javascript" src="js/ngAutocomplete.js"></script>
   <script src="app.js"></script>
@@ -66,7 +67,7 @@ $(document).on("keypress", 'form', function (e) {
      <div class="collapse navbar-collapse" id="topFixedNavbar1">
        <ul class="nav navbar-nav">
          <li><a href="#/hom">What is Homeopathy</a></li>
-         <li ng-if="location"><a href="">{{location.city}}, {{location.region}}, {{location.country}}</a></li>
+         <li ng-if="location"><a href=""><span ng-if="location.city">{{location.city}}, </span><span ng-if="location.region">{{location.region}}, </span><span ng-if="location.country">{{location.country}}</span></a></li>
        </ul>
      </div>
      <!-- /.navbar-collapse -->

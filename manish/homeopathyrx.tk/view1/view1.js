@@ -163,6 +163,12 @@ angular.module('myApp.view1', ['ngRoute'])
   };
   
   
+  $scope.exportData = function () {
+        var blob = new Blob([document.getElementById('exportable').innerHTML], {
+            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+        });
+        saveAs(blob, "Report.xls");
+    };
 }])
 
 
