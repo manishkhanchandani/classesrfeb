@@ -56,7 +56,7 @@
         <h3>Current Saved Profiles</h3>
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="profile in profiles | orderObjectBy:'formattedDt':true">
-            <p><a href="#{{profile.path}}"><strong>{{profile.name}}</strong></a></p>
+            <p><a href="{{profile.path}}"><strong>{{profile.name}}</strong></a></p>
             <p><small><strong>Created:</strong> {{profile.createdDt}}</small></p>
             <p><strong>Remedies:</strong> 
               <ol>

@@ -52,6 +52,7 @@ angular.module('myApp').service('dataService', ['$http', '$location', function($
       var postID = newPostRef.key();
       ref.child('mainTracking').child('trackingUser').child(user).child('location').set(location);
       ref.child('mainTracking').child('trackingUser').child(user).child('access').child(createdDtLite).child(postID).set(obj);
+      ref.child('mainTracking').child('trackingPath').child(btoa($location.absUrl())).child('path').set($location.absUrl());
       ref.child('mainTracking').child('trackingPath').child(btoa($location.absUrl())).child(createdDtLite).push(obj);
     } else if (type == 2) {
       var obj2 = {};

@@ -122,7 +122,7 @@ angular.module('myApp.view1', ['ngRoute'])
       createdDt: $scope.saveFrm.date,
       formattedDt: dt.toString(),
       name: $scope.saveFrm.name,
-      path: '/rx/'+$scope.frm.disease.disease_id+'/'+ $scope.frm.tongue.id,
+      path: 'rx/'+$scope.frm.disease.disease_id+'/'+ $scope.frm.tongue.id,
       disease_id: $scope.frm.disease.disease_id,
       id: $scope.frm.tongue.id,
       remedy: $scope.remedyResults.remedies,
