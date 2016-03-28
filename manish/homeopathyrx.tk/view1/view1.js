@@ -4,6 +4,10 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
+  .when('/', {
+    templateUrl: 'view1/rx.html',
+    controller: 'ViewRxCtrl'
+  })
   .when('/rx', {
     templateUrl: 'view1/rx.html',
     controller: 'ViewRxCtrl'
@@ -118,7 +122,7 @@ angular.module('myApp.view1', ['ngRoute'])
       createdDt: $scope.saveFrm.date,
       formattedDt: dt.toString(),
       name: $scope.saveFrm.name,
-      path: '/rx/'+$scope.frm.disease.disease_id+'/'+ $scope.frm.tongue.id,
+      path: 'rx/'+$scope.frm.disease.disease_id+'/'+ $scope.frm.tongue.id,
       disease_id: $scope.frm.disease.disease_id,
       id: $scope.frm.tongue.id,
       remedy: $scope.remedyResults.remedies,
@@ -163,6 +167,12 @@ angular.module('myApp.view1', ['ngRoute'])
   };
   
   
+  $scope.exportData = function () {
+        var blob = new Blob([document.getElementById('exportable').innerHTML], {
+            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+        });
+        saveAs(blob, "Report.xls");
+    };
 }])
 
 

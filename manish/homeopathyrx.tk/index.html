@@ -19,6 +19,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
   <link rel="stylesheet" href="app.css">
+  <base href="/classesrfeb/manish/homeopathyrx.tk/">
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
@@ -33,6 +34,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="js/ui-bootstrap-tpls.min.js"></script>
+<script src="js/FileSaver.js"></script>
 
 <script type="text/javascript" src="js/ngAutocomplete.js"></script>
   <script src="app.js"></script>
@@ -61,12 +63,12 @@ $(document).on("keypress", 'form', function (e) {
      <!-- Brand and toggle get grouped for better mobile display -->
      <div class="navbar-header">
        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-       <a class="navbar-brand" href="#/">HomeopathyRx</a></div>
+       <a class="navbar-brand" href="main">HomeopathyRx</a></div>
      <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="topFixedNavbar1">
        <ul class="nav navbar-nav">
-         <li><a href="#/hom">What is Homeopathy</a></li>
-         <li ng-if="location"><a href="">{{location.city}}, {{location.region}}, {{location.country}}</a></li>
+         <li><a href="hom">What is Homeopathy</a></li>
+         <li ng-if="location"><a href=""><span ng-if="location.city">{{location.city}}, </span><span ng-if="location.region">{{location.region}}, </span><span ng-if="location.country">{{location.country}}</span></a></li>
        </ul>
      </div>
      <!-- /.navbar-collapse -->
