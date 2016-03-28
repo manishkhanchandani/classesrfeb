@@ -4,6 +4,10 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
+  .when('/', {
+    templateUrl: 'view1/rx.html',
+    controller: 'ViewRxCtrl'
+  })
   .when('/rx', {
     templateUrl: 'view1/rx.html',
     controller: 'ViewRxCtrl'

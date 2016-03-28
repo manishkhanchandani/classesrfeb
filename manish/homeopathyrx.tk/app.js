@@ -7,8 +7,9 @@ angular.module('myApp', [
   'ngAutocomplete'
   //'ui.bootstrap'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/rx'});
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $routeProvider.otherwise({redirectTo: '/'});
+  $locationProvider.html5Mode(true);
 }])
 
 .filter('orderObjectBy', function() {
