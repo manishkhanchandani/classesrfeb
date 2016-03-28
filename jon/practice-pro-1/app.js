@@ -10,7 +10,7 @@ angular.module('myApp', [
     //'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.otherwise({redirectTo: '/lessons'});
 }])
 
 .controller('mainController', ['$scope', function($scope) {
