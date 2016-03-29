@@ -8,12 +8,29 @@ angular.module('myApp', [
   'myApp.lessons',
   'ngAutocomplete'
   //'ui.bootstrap'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+.constant('configs', {
+  siteUrl: 'lessons'
+})
+
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/lessons'});
 }])
 
-.controller('mainController', ['$scope', function($scope) {
+.controller('mainController', ['$scope', 'configs', function($scope, configs) {
+  
+  $scope.templateUrl = null;
+
+  if (configs.siteUrl === 'lessons') {
+    $scope.templateUrl = 'modules/navItems/lessons.html';
+  } else if (configs.siteUrl === 'legal') {
+    $scope.templateUrl = 'modules/navItems/legal.html';
+  } else if (configs.siteUrl === 'activities') {
+    $scope.templateUrl = 'modules/navItems/activities.html';
+  } else if (configs.siteUrl === 'housing') {
+    $scope.templateUrl = 'modules/navItems/housing.html';
+  }
+  
   $scope.loggedInUsersData = null;
   
   //getting the details form localStorage
