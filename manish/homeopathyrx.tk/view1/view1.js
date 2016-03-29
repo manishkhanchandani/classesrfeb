@@ -34,6 +34,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('ViewRxCtrl', ['$scope', 'dataService', '$routeParams', '$location', function($scope, dataService, $routeParams, $location) {
   
+  document.body.scrollTop;
   //tracking
   $scope.$watch('location', function (newValue, oldValue) {
     if (!newValue) return;
