@@ -4,8 +4,8 @@ angular.module('myApp.legal', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/legal', {
-    templateUrl: 'modules/legal/legal.html',
-    controller: 'ViewLegalCtrl'
+    templateUrl: 'modules/legal/search.html',
+    controller: 'ViewLegalSearchCtrl'
   })
   .when('/legal/create', {
     templateUrl: 'modules/legal/create.html',

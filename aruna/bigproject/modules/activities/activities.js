@@ -4,8 +4,8 @@ angular.module('myApp.activities', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/activities', {
-    templateUrl: 'modules/activities/activities.html',
-    controller: 'ViewAtivitiesCtrl'
+    templateUrl: 'modules/activities/search.html',
+    controller: 'ViewActivitiesSearchCtrl'
   })
   .when('/activities/create', {
     templateUrl: 'modules/activities/create.html',

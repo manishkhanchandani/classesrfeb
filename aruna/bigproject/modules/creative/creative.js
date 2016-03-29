@@ -4,8 +4,8 @@ angular.module('myApp.creative', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/creative', {
-    templateUrl: 'modules/creative/creative.html',
-    controller: 'ViewCreativeCtrl'
+    templateUrl: 'modules/creative/search.html',
+    controller: 'ViewCreativeSearchCtrl'
   })
   .when('/creative/create', {
     templateUrl: 'modules/creative/create.html',

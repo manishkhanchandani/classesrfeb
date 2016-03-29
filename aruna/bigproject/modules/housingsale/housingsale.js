@@ -4,8 +4,8 @@ angular.module('myApp.housingsale', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/housingsale', {
-    templateUrl: 'modules/housingsale/housingsale.html',
-    controller: 'ViewHousingsaleCtrl'
+    templateUrl: 'modules/housingsale/search.html',
+    controller: 'ViewHousingsaleSearchCtrl'
   })
   .when('/housingsale/create', {
     templateUrl: 'modules/housingsale/create.html',
