@@ -4,8 +4,8 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/lessons', {
-    templateUrl: 'modules/lessons/lessons.html',
-    controller: 'ViewLessonsCtrl'
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
   }).when('/lessons/create', {
     templateUrl: 'modules/lessons/create.html',
     controller: 'ViewCreateCtrl'
@@ -187,7 +187,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=4';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=12';
     //check the keyword
     if ($scope.frm.keyword) {
       url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
