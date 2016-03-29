@@ -4,8 +4,8 @@ angular.module('myApp.lessons', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/lessons', {
-    templateUrl: 'modules/lessons/lessons.html',
-    controller: 'ViewLessonsCtrl'
+    templateUrl:  'modules/lessons/search.html',
+    controller: 'ViewSearchCtrl'
   })
     .when('/lessons/create', {
     templateUrl: 'modules/lessons/create.html',
