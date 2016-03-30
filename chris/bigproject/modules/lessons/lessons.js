@@ -44,10 +44,17 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewLessonsSearchCtrl'
   })
+  .when('/lessons/detail/:id', {
+    templateUrl: 'modules/lessons/detail.html',
+    controller: 'ViewLessonsDetailCtrl'
+  })
   ;
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
+
+}])
+.controller('ViewLessonsDetailCtrl', ['$scope', function($scope) {
 
 }])
 .controller('ViewLessonsSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
@@ -78,33 +85,50 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.frm.keyword = '';  
   //check if url has keyword
   if ($routeParams.keyword) {
-    $scope.frm.keyword = $routeParams.keyword;
+    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
     $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
   }
     if ($routeParams.lat) {
         $scope.details.components.lat = $routeParams.lat;
-    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.lat);
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + $routeParams.lat;
     }
     if ($routeParams.lng) {
         $scope.details.components.lng = $routeParams.lng
-    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.lng);
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + $routeParams.lng;
     }
     
     $scope.frm.radius = 30;
   if ($routeParams.radius) {
     $scope.frm.radius = $routeParams.radius;
       
-    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.radius);
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + $routeParams.radius;
   }
   if ($routeParams.location) {
     $scope.location = decodeURIComponent($routeParams.location);
-    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + $routeParams.location;
   }
     
     $scope.results = {};
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
       $scope.results = response.data.data.results;
+      // create the mainImage
+      angular.forEach($scope.results, function(value, key) {
+          // value == $scope.results[key]
+          var images = value.detailsFull.images;
+          if (images) {
+              angular.forEach(images, function(value1, key1) {
+                  // value1 == images[key1];
+                  // use the first image
+                  if (!$scope.results[key].mainImage) {
+                    $scope.results[key].mainImage = value1;  
+                  }
+              });
+          }
+          if (!$scope.results[key].mainImage) {
+              $scope.results[key].mainImage = 'img/noimage.jpg';
+          }
+      });
       $scope.data = response.data.data;
   }
   
