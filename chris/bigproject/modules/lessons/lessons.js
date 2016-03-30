@@ -22,7 +22,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   // '/lessons/search/0'
   // '/lessons/search/0/keyword'
   // '/lessons/search/0/lat/lng/radius
-  // '/lessons/search/0.keyword/lat/lng/radius'
+  // '/lessons/search/0/keyword/lat/lng/radius'
   
   .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
     templateUrl: 'modules/lessons/search.html',
@@ -61,6 +61,8 @@ angular.module('myApp.lessons', ['ngRoute'])
     
     console.log($routeParams);
     $scope.frm = {};
+    $scope.frm.urlPrefix = '#/lessons/search';  //before 0
+    $scope.frm.urlSufix = '';  //after 0
       // update $scope.frm from $routeParams
     // This is how the parameters from url get to API url[in getData()] through $scope.frm.
   
@@ -77,26 +79,33 @@ angular.module('myApp.lessons', ['ngRoute'])
   //check if url has keyword
   if ($routeParams.keyword) {
     $scope.frm.keyword = $routeParams.keyword;
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.keyword);
   }
+    if ($routeParams.lat) {
+        $scope.details.components.lat = $routeParams.lat;
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.lat);
+    }
+    if ($routeParams.lng) {
+        $scope.details.components.lng = $routeParams.lng
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.lng);
+    }
     
     $scope.frm.radius = 30;
   if ($routeParams.radius) {
     $scope.frm.radius = $routeParams.radius;
+      
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.radius);
   }
-    if ($routeParams.lat) {
-        $scope.details.components.lat = $routeParams.lat;
-    }
-    if ($routeParams.lng) {
-        $scope.details.components.lng = $routeParams.lng;
-    }
   if ($routeParams.location) {
     $scope.location = decodeURIComponent($routeParams.location);
+    $scope.frm.urlSufix =$scope.frm.urlSufix + '/' + encodeURIComponent($routeParams.location);
   }
     
     $scope.results = {};
   function successGetData(response) {
     console.log('success: ', response.data.data.results);
       $scope.results = response.data.data.results;
+      $scope.data = response.data.data;
   }
   
   function failureGetData(response) {
@@ -104,7 +113,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
     
     $scope.getData = function() {
-        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/chris/lessons';
+        var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/chris/lessons&max=2';
         if ($scope.frm.keyword) {
             url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
         }
