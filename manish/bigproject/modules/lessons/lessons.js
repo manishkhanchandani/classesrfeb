@@ -155,14 +155,14 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&path=/manny/lessons&max=4';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&path=/manny/lessons&max=4&noCache=1';
     
     
     url = url + '&page=' + $scope.frm.page;
     
     var access_token = $scope.loggedInUsersData.token;
     url = url + '&access_token='+access_token;
-    dataService.get(url, successGetData, failureGetData, true);
+    dataService.get(url, successGetData, failureGetData, false);
   };//get data ends
   
   $scope.getData();//get data on page load
