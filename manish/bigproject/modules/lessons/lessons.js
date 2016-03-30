@@ -131,7 +131,6 @@ angular.module('myApp.lessons', ['ngRoute'])
   function successGetData(response) {
     console.log('success: ', response);
     $scope.results = response.data.data.results;
-    
     //create the mainImage
     angular.forEach($scope.results, function(value, key) {
       var images = value.detailsFull.images;
@@ -148,7 +147,6 @@ angular.module('myApp.lessons', ['ngRoute'])
       }//end if
     });//end foreach
     //image ends
-    
     $scope.data = response.data.data;
   }
   
@@ -157,10 +155,13 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=4';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&path=/manny/lessons&max=4';
     
     
     url = url + '&page=' + $scope.frm.page;
+    
+    var access_token = $scope.loggedInUsersData.token;
+    url = url + '&access_token='+access_token;
     dataService.get(url, successGetData, failureGetData, true);
   };//get data ends
   
