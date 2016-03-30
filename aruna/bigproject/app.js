@@ -18,7 +18,7 @@ angular.module('myApp', [
 ])
 
 .constant('configs', {
-  siteUrl: 'housingsale'
+  siteUrl: 'students'
 })
 
   .config(['$routeProvider', function($routeProvider) {
@@ -39,7 +39,10 @@ angular.module('myApp', [
     $scope.templateUrl = 'modules/navItems/housingsale.html';
   } else if (configs.siteUrl === 'creative') {
     $scope.templateUrl = 'modules/navItems/creative.html';
+  }else if (configs.siteUrl === 'students') {
+    $scope.templateUrl = 'modules/navItems/students.html';
   }
+  
         
   $scope.loggedInUsersData = null;
   
