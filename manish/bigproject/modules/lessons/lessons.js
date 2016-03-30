@@ -157,7 +157,7 @@ angular.module('myApp.lessons', ['ngRoute'])
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=12';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=4';
     
     
     url = url + '&page=' + $scope.frm.page;
