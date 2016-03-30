@@ -61,6 +61,16 @@ angular.module('myApp.activities', ['ngRoute'])
     controller: 'ViewActivitiesDetailCtrl'
   })
   
+  //my profile route
+  .when('/activities/my/:page', {
+    templateUrl: 'modules/activities/my.html',
+    controller: 'ViewActivitiesMyProfileCtrl'
+  })
+  .when('/activities/my', {
+    templateUrl: 'modules/activities/my.html',
+    controller: 'ViewActivitiesMyProfileCtrl'
+  })
+  
         ;
 }])
 
@@ -99,6 +109,74 @@ angular.module('myApp.activities', ['ngRoute'])
   dataService.get(url, getSuccess, getFailure, true); 
                 
 }])
+
+// controller for my profile
+.controller('ViewActivitiesMyProfileCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  
+
+  
+  $scope.frm = {};
+  
+  
+  $scope.frm.urlPrefix = '#/activities/my';
+  $scope.frm.urlSufix = '';
+  
+  
+  //initialize the value of page, i.e. default value
+  $scope.frm.page = 0;
+  
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.frm.page = $routeParams.page;
+  }
+  //page
+  
+  $scope.results = null;
+  
+  
+  function successGetData(response) {
+    console.log('success: ', response);
+    $scope.results = response.data.data.results;
+    
+    //create the mainImage
+    angular.forEach($scope.results, function(value, key) {
+      var images = value.detailsFull.images;
+      if (images) {
+        angular.forEach(images, function(value1, key1) {
+          if (!$scope.results[key].mainImage) {
+            $scope.results[key].mainImage = value1;
+          }//end if
+        });//end foreach
+      }//end if
+      
+      if (!$scope.results[key].mainImage) {
+        $scope.results[key].mainImage = 'images/noimage.jpg';
+      }//end if
+    });//end foreach
+    //image ends
+    
+    $scope.data = response.data.data;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&path=/aruna/activities&max=12&noCache=1';
+    
+    
+    url = url + '&page=' + $scope.frm.page;
+    
+    var access_token = $scope.loggedInUsersData.token;
+    url = url + '&access_token='+access_token;
+    dataService.get(url, successGetData, failureGetData, false);
+  };//get data ends
+  
+  $scope.getData();//get data on page load
+}])
+
 
 //controller for search and browse
 .controller('ViewActivitiesSearchCtrl', ['$scope','dataService','$location','$routeParams',function($scope,dataService,$location,$routeParams) {
