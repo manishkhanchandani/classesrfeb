@@ -18,7 +18,7 @@ angular.module('myApp', [
 ])
 
 .constant('configs', {
-  siteUrl: 'activities'
+  siteUrl: 'lessons'
 })
 
   .config(['$routeProvider', function($routeProvider) {
