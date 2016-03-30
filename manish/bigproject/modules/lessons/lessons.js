@@ -6,7 +6,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   $routeProvider.when('/lessons', {
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewSearchCtrl'
-  }).when('/lessons/create', {
+  })
+  .when('/lessons/create', {
     templateUrl: 'modules/lessons/create.html',
     controller: 'ViewCreateCtrl'
   }).when('/lessons/create/images/:id', {
@@ -53,6 +54,16 @@ angular.module('myApp.lessons', ['ngRoute'])
     controller: 'ViewDetailCtrl'
   })
   
+  
+  .when('/lessons/my/:page', {
+    templateUrl: 'modules/lessons/my.html',
+    controller: 'ViewMyProfileCtrl'
+  })
+  .when('/lessons/my', {
+    templateUrl: 'modules/lessons/my.html',
+    controller: 'ViewMyProfileCtrl'
+  })
+  
   ;
 }])
 
@@ -92,6 +103,71 @@ angular.module('myApp.lessons', ['ngRoute'])
   dataService.get(url, getSuccess, getFailure, true);
   
 }])
+
+.controller('ViewMyProfileCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  
+
+  
+  $scope.frm = {};
+  
+  
+  $scope.frm.urlPrefix = '#/lessons/my';
+  $scope.frm.urlSufix = '';
+  
+  
+  //initialize the value of page, i.e. default value
+  $scope.frm.page = 0;
+  
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.frm.page = $routeParams.page;
+  }
+  //page
+  
+  $scope.results = null;
+  
+  
+  function successGetData(response) {
+    console.log('success: ', response);
+    $scope.results = response.data.data.results;
+    
+    //create the mainImage
+    angular.forEach($scope.results, function(value, key) {
+      var images = value.detailsFull.images;
+      if (images) {
+        angular.forEach(images, function(value1, key1) {
+          if (!$scope.results[key].mainImage) {
+            $scope.results[key].mainImage = value1;
+          }//end if
+        });//end foreach
+      }//end if
+      
+      if (!$scope.results[key].mainImage) {
+        $scope.results[key].mainImage = 'images/noimage.jpg';
+      }//end if
+    });//end foreach
+    //image ends
+    
+    $scope.data = response.data.data;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=12';
+    
+    
+    url = url + '&page=' + $scope.frm.page;
+    dataService.get(url, successGetData, failureGetData, true);
+  };//get data ends
+  
+  $scope.getData();//get data on page load
+}])
+
+
 
 .controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
