@@ -26,6 +26,7 @@
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.location.formatted_addr}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+                <p><a href="#/lessons/edit/{{item.id}}">Edit This Profile</a></p>
               </div>
             </div>
           

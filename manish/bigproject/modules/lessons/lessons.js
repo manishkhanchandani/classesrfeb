@@ -10,7 +10,12 @@ angular.module('myApp.lessons', ['ngRoute'])
   .when('/lessons/create', {
     templateUrl: 'modules/lessons/create.html',
     controller: 'ViewCreateCtrl'
-  }).when('/lessons/create/images/:id', {
+  })
+  .when('/lessons/edit/:id', {
+    templateUrl: 'modules/lessons/create.html',
+    controller: 'ViewCreateCtrl'
+  })
+  .when('/lessons/create/images/:id', {
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
