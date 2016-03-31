@@ -10,7 +10,12 @@ angular.module('myApp.lessons', ['ngRoute'])
   .when('/lessons/create', {
     templateUrl: 'modules/lessons/create.html',
     controller: 'ViewCreateCtrl'
-  }).when('/lessons/create/images/:id', {
+  })
+  .when('/lessons/edit/:id', {
+    templateUrl: 'modules/lessons/create.html',
+    controller: 'ViewEditCtrl'
+  })
+  .when('/lessons/create/images/:id', {
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
@@ -351,6 +356,90 @@ angular.module('myApp.lessons', ['ngRoute'])
     postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
     
     console.log(postData);
+    dataService.post(url, postData, addSuccess, addFailure);
+  };
+}])
+
+
+.controller('ViewEditCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  $scope.frm = {};
+  
+  //location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+
+  $scope.details = {};
+  $scope.details.components = {};
+  //location ends
+  
+  function successGetData(response) {
+    console.log('success1: ', response);
+    if (response.data.data.uid !== $scope.loggedInUsersData.uid) {
+      //if logged in users data does not match with current records data, then send user to my profile
+      $location.path('/lessons/my');
+      return;
+    }
+    
+    $scope.frm.title = response.data.data.title;
+    $scope.frm.description = response.data.data.description;
+    $scope.frm.tags = response.data.data.detailsFull.tagsSingle;
+    $scope.frm.gender = response.data.data.detailsFull.gender;
+    $scope.location = response.data.data.location.formatted_addr;
+    
+    
+    $scope.details.components.lat = response.data.data.location.latitude;
+    $scope.details.components.lng = response.data.data.location.longitude;
+    $scope.details.components.country = response.data.data.location.country;
+    $scope.details.components.state = response.data.data.location.state;
+    $scope.details.components.city = response.data.data.location.city;
+    $scope.details.components.postal_code = response.data.data.location.postal_code;
+    $scope.details.place_id = response.data.data.location.place_id;
+    $scope.details.components.county = response.data.data.location.county;
+  }
+  
+  function failureGetData(response) {
+    console.log('failed: ', response);
+  }
+  
+  $scope.getData = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, successGetData, failureGetData, false);
+  };
+  
+  //call the getdata function
+  $scope.getData();
+  
+  function addSuccess(response) {
+    $scope.frm = {};
+    $location.path('/lessons/create/images/'+$routeParams.id);
+  }
+  
+  function addFailure(response) {
+    console.log('failure: ', response);
+  }
+  
+  $scope.submitCreateForm = function() {
+     //call api service to submit the form
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1&id='+$routeParams.id;
+
+    var postData = '';
+    postData = postData + '&title='+encodeURIComponent($scope.frm.title);
+    postData = postData + '&description='+encodeURIComponent($scope.frm.description);
+    
+    postData = postData + '&location[latitude]='+encodeURIComponent($scope.details.components.lat);
+    postData = postData + '&location[longitude]='+encodeURIComponent($scope.details.components.lng);
+    postData = postData + '&location[country]='+encodeURIComponent($scope.details.components.country);
+    postData = postData + '&location[state]='+encodeURIComponent($scope.details.components.state);
+    postData = postData + '&location[city]='+encodeURIComponent($scope.details.components.city);
+    postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
+    postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
+    postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
+    
+    postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
+    
+    postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
     dataService.post(url, postData, addSuccess, addFailure);
   };
 }])
