@@ -411,10 +411,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   $scope.getData();
   
   function addSuccess(response) {
-    console.log('success: ', response);
-    console.log('id is : ', response.data.data.id);
     $scope.frm = {};
-    $location.path('/lessons/create/images/'+response.data.data.id);
+    $location.path('/lessons/create/images/'+$routeParams.id);
   }
   
   function addFailure(response) {
@@ -423,9 +421,8 @@ angular.module('myApp.lessons', ['ngRoute'])
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1';
-     
-    console.log(url);
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1&id='+$routeParams.id;
+
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
     postData = postData + '&description='+encodeURIComponent($scope.frm.description);
@@ -443,8 +440,6 @@ angular.module('myApp.lessons', ['ngRoute'])
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
     postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
-    
-    console.log(postData);
     dataService.post(url, postData, addSuccess, addFailure);
   };
 }])
