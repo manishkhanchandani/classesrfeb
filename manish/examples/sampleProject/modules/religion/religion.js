@@ -242,7 +242,6 @@ angular.module('myApp.religion', ['ngRoute'])
     
   function getSuccess(response) {
       $scope.showLoading = false;
-      console.log('success: ', response);
       
       $scope.totalRows = 0;
       if (response.data.error === 1) {
@@ -267,8 +266,6 @@ angular.module('myApp.religion', ['ngRoute'])
       });
       
       
-      console.log($scope.results);
-      console.log('data: ', $scope.data);
     }
   
     function getFailure(response) {
