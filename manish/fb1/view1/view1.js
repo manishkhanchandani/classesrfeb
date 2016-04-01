@@ -19,8 +19,8 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
   
   //add new records
   $scope.addForm = function() {
-    $scope.records.$add($scope.frm).then(function(ref) {
-       var id = ref.key();
+    $scope.records.$add($scope.frm).then(function(response) {
+       var id = response.key();
        console.log('record added with id: ', id);
        $scope.frm = {};
     });

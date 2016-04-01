@@ -34,7 +34,6 @@
           <table class="table table-bordered">
               <thead>
                   <tr>
-                      <th>#</th>
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Edit</th>
@@ -42,10 +41,9 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <th scope="row">1</th>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
+                  <tr ng-repeat="item in records">
+                      <td>{{item.firstname}}</td>
+                      <td>{{item.lastname}}</td>
                       <td>Edit</td>
                       <td>Delete</td>
                   </tr>
