@@ -16,6 +16,37 @@ angular.module('myApp.lessons', ['ngRoute'])
             templateUrl: 'modules/lessons/images.html',
             controller: 'ViewImagesCtrl'
         })
+
+        //search and browse
+
+        // '/lessons/search'
+        // '/lessons/search/0'
+        // '/lessons/search/0/keyword'
+        // '/lessons/search/0/lat/lng/radius/location'
+        // '/lessons/search/0/keyword/lat/lng/radius/location'
+
+        .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
+            templateUrl: 'modules/lessons/search.html',
+            controller: 'ViewSearchCtrl'
+        })
+
+
+        .when('/lessons/search/:page/:lat/:lng/:radius/:location', {
+            templateUrl: 'modules/lessons/search.html',
+            controller: 'ViewSearchCtrl'
+        })
+
+
+        .when('/lessons/search/:page/:keyword', {
+            templateUrl: 'modules/lessons/search.html',
+            controller: 'ViewSearchCtrl'
+        })
+
+        .when('/lessons/search/:page', {
+            templateUrl: 'modules/lessons/search.html',
+            controller: 'ViewSearchCtrl'
+        })
+
         .when('/lessons/search', {
             templateUrl: 'modules/lessons/search.html',
             controller: 'ViewSearchCtrl'
@@ -29,6 +60,8 @@ angular.module('myApp.lessons', ['ngRoute'])
         $scope.mapOptions = {
             types: 'geocode'
         };
+
+        console.log('routeParams has: ', $routeParams);
 
         $scope.details = {};
         $scope.details.components = {};
@@ -114,7 +147,7 @@ angular.module('myApp.lessons', ['ngRoute'])
             console.log($scope.frm);
             console.log($scope.details);
 
-            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/jon/lessons&max=4';
+            var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/jon/lessons&max=1';
             //check the keyword
             if ($scope.frm.keyword) {
                 url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
@@ -125,11 +158,17 @@ angular.module('myApp.lessons', ['ngRoute'])
             }
 
             url = url + '&page=' + $scope.frm.page;
-            console.log(url);
+            console.log('getData URL is:', url);
             dataService.get(url, successGetData, failureGetData, true);
         };//get data ends
 
         $scope.getData();//get data on page load
+
+        $scope.searchData   = function(){
+            console.log('form contains:', $scope.frm);
+            console.log('form contains:', $scope.details);
+        };
+
 
         /*Purpose of search data is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
         $scope.constructURL = function() {
