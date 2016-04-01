@@ -21,15 +21,12 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
   $scope.addForm = function() {
     $scope.records.$add($scope.frm).then(function(response) {
        var id = response.key();
-       console.log('record added with id: ', id);
        $scope.frm = {};
     });
   };
   
   //when user fills the edit form and submit the data, it will update the server
   $scope.editForm = function() {
-    console.log($scope.frmEdit);
-    
     //get the id
     var id = $scope.frmEdit.id;
     
