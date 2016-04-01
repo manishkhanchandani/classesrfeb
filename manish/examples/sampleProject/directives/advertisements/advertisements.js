@@ -9,10 +9,10 @@
   }
   
   module
-    .directive('advertisments', advertisements);
+    .directive('advertisments', ['dataService', advertisements]);
     
 
-  function advertisements() {
+  function advertisements(dataService) {
     return {
           scope: {
             loggedInUsersData: '='
@@ -40,6 +40,19 @@
             };
             //show add form ends
             
+            scope.showPaypal = false;
+            function advtSuccess(response) {
+              console.log('advt success: ', response);
+              scope.adError = 'Advertisement Created Successfully. Please Click Subscribe to enable the advertisement.';
+              scope.showPaypal = true;
+              scope.addNew = false;
+            }
+            
+            function advtFailure(response) {
+              console.log('advt failed: ', response);
+              scope.adError = 'Could not insert advertisement record. Please try again later.';
+            }
+            
             //submit new add form
             scope.createNewAd = function() {
               if (!scope.loggedInUsersData) {
@@ -64,13 +77,22 @@
               
               //tags
               submitData = submitData + '&tags='+(scope.adFrm.tags ? encodeURIComponent(scope.adFrm.tags) : '');
+              var data = {};
+              data.tagsSingle = '';
+              data.images = {};
+              data.images[btoa(scope.adFrm.image)] = scope.adFrm.image;
+              data.links = {};
+              data.links[btoa(scope.adFrm.link)] = scope.adFrm.link;
+              submitData = submitData + '&data='+JSON.stringify(data);
+              //submitData = submitData + '&data[images]['+btoa(scope.adFrm.image)+']='+encodeURIComponent(scope.adFrm.image);
+              //submitData = submitData + '&data[links]['+btoa(scope.adFrm.link)+']='+encodeURIComponent(scope.adFrm.link);
               //url
               var access_token = scope.loggedInUsersData.token;
               var path = '/advertisements';
               var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+access_token+'&path='+path;
               console.log(url);
               console.log(submitData);
-              //dataService.post(url, submitData, addSuccess, addFailure);
+              dataService.post(url, submitData, advtSuccess, advtFailure);
             };
             //submit new add form ends
             

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.lessons', ['ngRoute'])
+angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/lessons', {
@@ -18,6 +18,16 @@ angular.module('myApp.lessons', ['ngRoute'])
   .when('/lessons/create/images/:id', {
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
+  })
+  .when('/lessons/create/imagesUpload/:id', {
+    templateUrl: 'modules/lessons/imageUpload.html',
+    controller: 'ViewImageUploadLessonsCtrl'
+  }).when('/lessons/create/youtube/:id', {
+    templateUrl: 'modules/lessons/youtube.html',
+    controller: 'ViewYoutubeLessonsCtrl'
+  }).when('/lessons/create/links/:id', {
+    templateUrl: 'modules/lessons/links.html',
+    controller: 'ViewLinksLessonsCtrl'
   })
   
   //search and browse
@@ -72,6 +82,174 @@ angular.module('myApp.lessons', ['ngRoute'])
   ;
 }])
 
+
+.controller('ViewImageUploadLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
+  console.log($routeParams);
+  var access_token = $scope.loggedInUsersData.token;
+  $scope.id = $routeParams.id;
+  
+  var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=upload&access_token='+access_token+'&id='+$routeParams.id;
+  var uploader = $scope.uploader = new FileUploader({
+      url: requestUrl
+  });
+  // FILTERS
+
+  uploader.filters.push({
+      name: 'imageFilter',
+      fn: function(item /*{File|FileLikeObject}*/, options) {
+          var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+          return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
+      }
+  });
+
+  // CALLBACKS
+
+  uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
+      console.info('onWhenAddingFileFailed', item, filter, options);
+  };
+  uploader.onAfterAddingFile = function(fileItem) {
+      console.info('onAfterAddingFile', fileItem);
+  };
+  uploader.onAfterAddingAll = function(addedFileItems) {
+      console.info('onAfterAddingAll', addedFileItems);
+  };
+  uploader.onBeforeUploadItem = function(item) {
+      console.info('onBeforeUploadItem', item);
+  };
+  uploader.onProgressItem = function(fileItem, progress) {
+      console.info('onProgressItem', fileItem, progress);
+  };
+  uploader.onProgressAll = function(progress) {
+      console.info('onProgressAll', progress);
+  };
+  uploader.onSuccessItem = function(fileItem, response, status, headers) {
+      console.info('onSuccessItem', fileItem, response, status, headers);
+  };
+  uploader.onErrorItem = function(fileItem, response, status, headers) {
+      console.info('onErrorItem', fileItem, response, status, headers);
+  };
+  uploader.onCancelItem = function(fileItem, response, status, headers) {
+      console.info('onCancelItem', fileItem, response, status, headers);
+  };
+  uploader.onCompleteItem = function(fileItem, response, status, headers) {
+      console.info('onCompleteItem', fileItem, response, status, headers);
+  };
+  uploader.onCompleteAll = function() {
+      console.info('onCompleteAll');
+  };
+  
+}])
+
+
+.controller('ViewYoutubeLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
+  console.log($routeParams);
+  var access_token = $scope.loggedInUsersData.token;
+  $scope.id = $routeParams.id;
+  $scope.frm = {};
+  $scope.youtubeUrls = [];
+  
+  function getSuccess(response) {
+    console.log('success: ', response);
+    
+    if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.youtube) {
+      angular.forEach(response.data.data.detailsFull.youtube, function(value, key) {
+        $scope.youtubeUrls.push(value);
+      });
+      console.log($scope.youtubeUrls);
+    }
+  }
+  
+  function getFailure(response) {
+    console.log('failure: ', response);
+  }
+  
+  $scope.getYoutube = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, getSuccess, getFailure);
+  };
+  
+  $scope.getYoutube();
+  
+  function addSuccess(response) {
+    console.log('success: ', response);
+    $scope.youtubeUrls = [];
+    $scope.getYoutube();
+    $scope.frm = {};
+  }
+  
+  function addFailure(response) {
+    console.log('failure: ', response);
+  }
+  
+  $scope.addYoutube = function() {
+    if (!$scope.frm.youtube) {
+      return; 
+    }
+    
+    
+      var submitData = '';
+      submitData = submitData + '&param='+encodeURIComponent($scope.frm.youtube);
+      //url
+      var access_token = $scope.loggedInUsersData.token;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
+      dataService.post(url, submitData, addSuccess, addFailure);
+  };
+}])
+.controller('ViewLinksLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
+  
+  console.log($routeParams);
+  var access_token = $scope.loggedInUsersData.token;
+  $scope.id = $routeParams.id;
+  $scope.frm = {};
+  $scope.linkUrls = [];
+  
+  function getSuccess(response) {
+    console.log('success: ', response);
+    
+    if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.links) {
+      angular.forEach(response.data.data.detailsFull.links, function(value, key) {
+        $scope.linkUrls.push(value);
+      });
+      console.log($scope.linkUrls);
+    }
+  }
+  
+  function getFailure(response) {
+    console.log('failure: ', response);
+  }
+  
+  $scope.getLinks = function() {
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+    dataService.get(url, getSuccess, getFailure);
+  };
+  
+  $scope.getLinks();
+  
+  function addSuccess(response) {
+    console.log('success: ', response);
+    $scope.linkUrls = [];
+    $scope.getLinks();
+    $scope.frm = {};
+  }
+  
+  function addFailure(response) {
+    console.log('failure: ', response);
+  }
+  
+  $scope.addLink = function() {
+    if (!$scope.frm.linkUrl) {
+      return; 
+    }
+    
+    
+      var submitData = '';
+      submitData = submitData + '&param='+encodeURIComponent($scope.frm.linkUrl);
+      //url
+      var access_token = $scope.loggedInUsersData.token;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+access_token+'&key=links&id='+$routeParams.id;
+      dataService.post(url, submitData, addSuccess, addFailure);
+  };
+}])
 
 .controller('ViewDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   

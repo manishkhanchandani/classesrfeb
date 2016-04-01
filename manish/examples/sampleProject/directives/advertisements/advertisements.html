@@ -40,12 +40,13 @@
   <div class="col-md-12 links">
     <hr>
     <a href="" ng-click="addNewForm();">Add New</a> | <a href="#">My Ads</a>
+    
+    <div class="alert alert-danger" role="alert" ng-if="adError">
+      {{adError}}
+    </div>
   </div>
   <div class="col-md-12" ng-if="addNew">
     <form ng-submit="createNewAd();">
-        <div class="alert alert-danger" role="alert" ng-if="adError">
-          {{adError}}
-        </div>
         <div class="form-group">
             <label for="location">Location</label>
             <input type="text" class="form-control addressBox" id="location" ng-model="adFrm.location" placeholder="Enter Location" ng-autocomplete options="mapAdOptions" details="adFrm.adDetails"> {{adFrm.adDetails.components}}
