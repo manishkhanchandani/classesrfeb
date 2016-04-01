@@ -44,8 +44,8 @@
                   <tr ng-repeat="item in records">
                       <td>{{item.firstname}}</td>
                       <td>{{item.lastname}}</td>
-                      <td>Edit</td>
-                      <td>Delete</td>
+                      <td><a href="" ng-click="editLink(item)">Edit</a></td>
+                      <td><a href="" ng-click="deleteLink(item)">Delete</a></td>
                   </tr>
               </tbody>
             </table>

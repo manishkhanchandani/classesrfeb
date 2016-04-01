@@ -28,17 +28,19 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
   
   //when user fills the edit form and submit the data, it will update the server
   $scope.editForm = function() {
-    
+    console.log($scope.frmEdit);
   };
   
   //go to server, get the record and show record in edit form
-  $scope.editLink = function() {
-    
+  $scope.editLink = function(r) {
+    $scope.frmEdit.firstname = r.firstname;
+    $scope.frmEdit.lastname = r.lastname;
+    $scope.frmEdit.id = r.$id;
   };
   
   //go to server, delete the record
-  $scope.deleteLink = function() {
-    
+  $scope.deleteLink = function(r) {
+    console.log(r);
   };
   
 }]);
