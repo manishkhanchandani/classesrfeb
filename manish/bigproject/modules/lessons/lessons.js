@@ -85,7 +85,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 .controller('ViewImageUploadLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
   //console.log($routeParams);
-  var access_token = $scope.loggedInUsersData.token;
+  var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   
   var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=upload&access_token='+access_token+'&id='+$routeParams.id;
@@ -143,7 +143,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 .controller('ViewYoutubeLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
   //console.log($routeParams);
-  var access_token = $scope.loggedInUsersData.token;
+  var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   $scope.frm = {};
   $scope.youtubeUrls = [];
@@ -190,7 +190,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       var submitData = '';
       submitData = submitData + '&param='+encodeURIComponent($scope.frm.youtube);
       //url
-      var access_token = $scope.loggedInUsersData.token;
+      var access_token = $scope.userData.token;
       var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
       dataService.post(url, submitData, addSuccess, addFailure);
   };
@@ -198,7 +198,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 .controller('ViewLinksLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
   
   //console.log($routeParams);
-  var access_token = $scope.loggedInUsersData.token;
+  var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   $scope.frm = {};
   $scope.linkUrls = [];
@@ -245,7 +245,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       var submitData = '';
       submitData = submitData + '&param='+encodeURIComponent($scope.frm.linkUrl);
       //url
-      var access_token = $scope.loggedInUsersData.token;
+      var access_token = $scope.userData.token;
       var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+access_token+'&key=links&id='+$routeParams.id;
       dataService.post(url, submitData, addSuccess, addFailure);
   };
@@ -314,7 +314,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm = {};
   
   
-  $scope.frm.urlPrefix = '#/lessons/my';
+  $scope.frm.urlPrefix = 'lessons/my';
   $scope.frm.urlSufix = '';
   
   
@@ -362,7 +362,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     url = url + '&page=' + $scope.frm.page;
     
-    var access_token = $scope.loggedInUsersData.token;
+    var access_token = $scope.userData.token;
     url = url + '&access_token='+access_token;
     dataService.get(url, successGetData, failureGetData, false);
   };//get data ends
@@ -387,7 +387,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm = {};
   
   
-  $scope.frm.urlPrefix = '#/lessons/search';
+  $scope.frm.urlPrefix = 'lessons/search';
   $scope.frm.urlSufix = '';
   
   $scope.loading = false;
@@ -489,7 +489,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     url = url + '&page=' + $scope.frm.page;
     //console.log(url);
-    dataService.get(url, successGetData, failureGetData, false);
+    dataService.get(url, successGetData, failureGetData, true);
   };//get data ends
   
   $scope.getData();//get data on page load
@@ -557,7 +557,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         return; 
       }
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1';
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid=1';
      
     //console.log(url);
     var postData = '';
@@ -598,7 +598,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   function successGetData(response) {
     //console.log('success1: ', response);
-    if (response.data.data.uid !== $scope.loggedInUsersData.uid) {
+    if (response.data.data.uid !== $scope.userData.uid) {
       //if logged in users data does not match with current records data, then send user to my profile
       $location.path('/lessons/my');
       return;
@@ -644,7 +644,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1&id='+$routeParams.id;
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid=1&id='+$routeParams.id;
 
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
@@ -715,7 +715,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.addImage = function() {
     //console.log($scope.frm);
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.userData.token+'&key=images&id='+$routeParams.id;
     var postData = '';
     postData = postData + '&param='+encodeURIComponent($scope.frm.image);
     

@@ -32,10 +32,10 @@ angular.module('myApp.auth', ['ngRoute'])
       return;
     }
     
-    $scope.$parent.loggedInUsersData = response.data.data;
+    $scope.$parent.userData = response.data.data;
     
     //setting the data in localStorage
-    localStorage.setItem('userProfile', JSON.stringify($scope.$parent.loggedInUsersData));
+    localStorage.setItem('userProfile', JSON.stringify($scope.$parent.userData));
     
     
     $scope.loginStatus = 'You are successfully logged in to our website.';
@@ -126,7 +126,7 @@ angular.module('myApp.auth', ['ngRoute'])
     }
     
     localStorage.removeItem('userProfile');
-    $scope.$parent.loggedInUsersData = null;
+    $scope.$parent.userData = null;
     $scope.logoutStatus = 'You are successfully logged out from our website.';
   }
   
@@ -134,7 +134,7 @@ angular.module('myApp.auth', ['ngRoute'])
      $scope.logoutStatus = 'There was some server problem, please try again...';
   }
   
-  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.$parent.loggedInUsersData.uid;
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=logout&saveIP=1&uid='+$scope.$parent.userData.uid;
   
   dataService.get(url, logoutSuccess, logoutFailure, false);
 

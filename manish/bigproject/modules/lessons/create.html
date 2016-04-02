@@ -46,7 +46,7 @@
             <input type="checkbox" ng-model="frm.pref_phone_text"> Phone Text &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="checkbox" ng-model="frm.pref_phone_call"> Phone Call
         </div>
-        
+        scope:  {{userData}}
         <div class="alert alert-danger" role="alert" ng-if="createStatus">
           {{createStatus}}
         </div>
