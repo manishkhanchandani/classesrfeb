@@ -524,6 +524,9 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.details = {};
   //location ends
   
+  $scope.createStatus = null;
+  $scope.frm = {};
+  
   function addSuccess(response) {
     //console.log('success: ', response);
     //console.log('id is : ', response.data.data.id);
@@ -532,10 +535,27 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   function addFailure(response) {
-    console.log('failure: ', response);
+    $scope.createStatus = 'Something went wrong, please try again';
+    //console.log('failure: ', response);
   }
   
   $scope.submitCreateForm = function() {
+      if (!$scope.location) {
+        $scope.createStatus = 'Please enter location';
+        return; 
+      }
+      if (!$scope.frm.title) {
+        $scope.createStatus = 'Please enter title';
+        return; 
+      }
+      if (!$scope.frm.description) {
+        $scope.createStatus = 'Please enter description';
+        return; 
+      }
+      if (!$scope.frm.tags) {
+        $scope.createStatus = 'Please enter subjects';
+        return; 
+      }
      //call api service to submit the form
      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1';
      
@@ -552,7 +572,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
     postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
     postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.location);
     
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
