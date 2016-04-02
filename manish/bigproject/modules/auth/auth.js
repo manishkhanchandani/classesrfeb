@@ -25,7 +25,7 @@ angular.module('myApp.auth', ['ngRoute'])
   
   
   function loginSuccess(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     
     if (response.data.error === 1) {
       $scope.loginStatus = response.data.errorMessage;
@@ -83,7 +83,7 @@ angular.module('myApp.auth', ['ngRoute'])
 
 
   function createUserSuccess(response) {
-    console.log('success results: ', response);
+    //console.log('success results: ', response);
     if (response.data.error === 1) {
       $scope.createUserError = response.data.errorMessage;
       return;
@@ -104,7 +104,7 @@ angular.module('myApp.auth', ['ngRoute'])
        return;
     }
     
-    console.log($scope.frm);
+    //console.log($scope.frm);
     
     
     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/login.php?action=register&saveIP=1';

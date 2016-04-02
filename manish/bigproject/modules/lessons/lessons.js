@@ -84,7 +84,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 .controller('ViewImageUploadLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
-  console.log($routeParams);
+  //console.log($routeParams);
   var access_token = $scope.loggedInUsersData.token;
   $scope.id = $routeParams.id;
   
@@ -142,20 +142,20 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 .controller('ViewYoutubeLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
-  console.log($routeParams);
+  //console.log($routeParams);
   var access_token = $scope.loggedInUsersData.token;
   $scope.id = $routeParams.id;
   $scope.frm = {};
   $scope.youtubeUrls = [];
   
   function getSuccess(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     
     if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.youtube) {
       angular.forEach(response.data.data.detailsFull.youtube, function(value, key) {
         $scope.youtubeUrls.push(value);
       });
-      console.log($scope.youtubeUrls);
+      //console.log($scope.youtubeUrls);
     }
   }
   
@@ -171,7 +171,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.getYoutube();
   
   function addSuccess(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     $scope.youtubeUrls = [];
     $scope.getYoutube();
     $scope.frm = {};
@@ -197,20 +197,20 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 }])
 .controller('ViewLinksLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
   
-  console.log($routeParams);
+  //console.log($routeParams);
   var access_token = $scope.loggedInUsersData.token;
   $scope.id = $routeParams.id;
   $scope.frm = {};
   $scope.linkUrls = [];
   
   function getSuccess(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     
     if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.links) {
       angular.forEach(response.data.data.detailsFull.links, function(value, key) {
         $scope.linkUrls.push(value);
       });
-      console.log($scope.linkUrls);
+      //console.log($scope.linkUrls);
     }
   }
   
@@ -226,7 +226,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.getLinks();
   
   function addSuccess(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     $scope.linkUrls = [];
     $scope.getLinks();
     $scope.frm = {};
@@ -275,7 +275,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     if (!$scope.results.mainImage) {
       $scope.results.mainImage = 'images/noimage.jpg';
     }//end if
-    console.log($scope.results);
+    //console.log($scope.results);
   }
   
   function getFailure(response) {
@@ -312,7 +312,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   
   function successGetData(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     $scope.results = response.data.data.results;
     //create the mainImage
     angular.forEach($scope.results, function(value, key) {
@@ -420,7 +420,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   
   function successGetData(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     $scope.results = response.data.data.results;
     $scope.loading = false;
     
@@ -463,7 +463,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     }
     
     url = url + '&page=' + $scope.frm.page;
-    console.log(url);
+    //console.log(url);
     dataService.get(url, successGetData, failureGetData, true);
   };//get data ends
   
@@ -490,10 +490,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
 }])
 
-.controller('ViewLessonsCtrl', ['$scope', function($scope) {
-  
-}])
-
 .controller('ViewCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
   //location starts
   $scope.mapOptions = {
@@ -504,10 +500,10 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   //location ends
   
   function addSuccess(response) {
-    console.log('success: ', response);
-    console.log('id is : ', response.data.data.id);
+    //console.log('success: ', response);
+    //console.log('id is : ', response.data.data.id);
     $scope.frm = {};
-    $location.path('/lessons/create/images/'+response.data.data.id);
+    $location.path('/lessons/create/imagesUpload/'+response.data.data.id);
   }
   
   function addFailure(response) {
@@ -518,7 +514,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
      //call api service to submit the form
      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.loggedInUsersData.token+'&path=/manny/lessons&tid=1';
      
-    console.log(url);
+    //console.log(url);
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
     postData = postData + '&description='+encodeURIComponent($scope.frm.description);
@@ -537,7 +533,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
     
-    console.log(postData);
+    //console.log(postData);
     dataService.post(url, postData, addSuccess, addFailure);
   };
 }])
@@ -556,7 +552,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   //location ends
   
   function successGetData(response) {
-    console.log('success1: ', response);
+    //console.log('success1: ', response);
     if (response.data.data.uid !== $scope.loggedInUsersData.uid) {
       //if logged in users data does not match with current records data, then send user to my profile
       $location.path('/lessons/my');
@@ -635,7 +631,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   //get Data part
   $scope.images = null;
   function successGetData(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     
     //get images from the server
     $scope.images = response.data.data.detailsFull.images;
@@ -661,7 +657,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   //add Image in database
   $scope.frm = {};
   function addImageSuccess(response) {
-    console.log('success: ', response);
+    //console.log('success: ', response);
     $scope.frm = {};
     
     $scope.getData();
@@ -673,13 +669,13 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   
   $scope.addImage = function() {
-    console.log($scope.frm);
+    //console.log($scope.frm);
     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
     var postData = '';
     postData = postData + '&param='+encodeURIComponent($scope.frm.image);
     
-    console.log(url);
-    console.log(postData);  
+    //console.log(url);
+    //console.log(postData);  
     
     dataService.post(url, postData, addImageSuccess, addImageFailure);
 
@@ -688,6 +684,13 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   //ends add Image in database
   
   
+  $scope.deleteImage = function(k) {
+    //console.log(k);
+    var a = confirm('Do you really want to delete this image');
+    if (!a) return;
+    
+    //do api call
+  };
   
 }])
 
