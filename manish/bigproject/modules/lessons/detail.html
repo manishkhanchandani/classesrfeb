@@ -27,7 +27,7 @@
       <!-- youtube urls -->
       
       <!-- links -->
-      <div class="row" ng-if="linkUrls">
+      <div class="row" ng-if="linkUrls.length > 0">
         <h3 class="text-center">External Link's</h3>
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="url in linkUrls"><a href="{{url}}" target="_blank">{{url}}</a></li>
