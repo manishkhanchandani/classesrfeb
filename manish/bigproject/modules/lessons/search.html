@@ -28,7 +28,7 @@
       <div class="alert alert-danger" role="alert" ng-if="searchStatus">
       {{searchStatus}}
       </div>
-      <div class="alert alert-danger" role="alert" ng-if="!results && !loading">
+      <div class="alert alert-danger" role="alert" ng-if="results.length === 0 && !loading">
         No results found.
       </div>
       <div ng-if="loading">

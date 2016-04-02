@@ -275,7 +275,19 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     if (!$scope.results.mainImage) {
       $scope.results.mainImage = 'images/noimage.jpg';
     }//end if
-    //console.log($scope.results);
+    
+    
+    $scope.youtubeUrls = [];
+    $scope.linkUrls = [];
+    if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.youtube) {
+      angular.forEach(response.data.data.detailsFull.youtube, function(value, key) {
+        $scope.youtubeUrls.push(value);
+      });
+      angular.forEach(response.data.data.detailsFull.links, function(value, key) {
+        $scope.linkUrls.push(value);
+      });
+    }
+    
   }
   
   function getFailure(response) {
@@ -440,6 +452,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       }//end if
     });//end foreach
     //image ends
+    
     
     $scope.data = response.data.data;
   }
