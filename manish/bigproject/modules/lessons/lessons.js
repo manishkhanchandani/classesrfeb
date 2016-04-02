@@ -288,6 +288,8 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       });
     }
     
+    
+    //console.log($scope.results);
   }
   
   function getFailure(response) {
@@ -296,6 +298,11 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&id='+$routeParams.id;
   dataService.get(url, getSuccess, getFailure, true);
+  
+  $scope.goBack = function() {
+    window.history.back();
+  };
+  
   
 }])
 
@@ -464,7 +471,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.getData = function() {
     $scope.loading = true;
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=12';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&max=12';
+    
+    
+    var path = '/manny/lessons';
+    url = url + '&path=' + path;
+    
     //check the keyword
     if ($scope.frm.keyword) {
       url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
@@ -477,7 +489,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     url = url + '&page=' + $scope.frm.page;
     //console.log(url);
-    dataService.get(url, successGetData, failureGetData, true);
+    dataService.get(url, successGetData, failureGetData, false);
   };//get data ends
   
   $scope.getData();//get data on page load

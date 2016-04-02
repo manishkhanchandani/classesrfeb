@@ -9,7 +9,8 @@
       </div>
     </div>
     <div class="col-md-4">
-      <h1>{{results.title}}</h1>
+      <div class="pull-right"><a href="" ng-click="goBack()">Go Back</a></div>
+      <h3>{{results.title}}</h3>
       <p>{{results.description}}</p>
       <p><a href="http://maps.google.com/maps?q=loc:{{results.lat}},{{results.lng}}" target="_blank">{{results.location.formatted_addr}}</a></p>
       <p><strong>Created on:</strong> {{results.dateFormattedAll}}</p>
