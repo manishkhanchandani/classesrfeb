@@ -371,6 +371,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm.urlPrefix = '#/lessons/search';
   $scope.frm.urlSufix = '';
   
+  $scope.loading = false;
   
   //initialize the value of page, i.e. default value
   $scope.frm.page = 0;
@@ -421,6 +422,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   function successGetData(response) {
     console.log('success: ', response);
     $scope.results = response.data.data.results;
+    $scope.loading = false;
     
     //create the mainImage
     angular.forEach($scope.results, function(value, key) {
@@ -444,9 +446,11 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   function failureGetData(response) {
     console.log('failed: ', response);
+    $scope.loading = false;
   }
   
   $scope.getData = function() {
+    $scope.loading = true;
     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/manny/lessons&max=12';
     //check the keyword
     if ($scope.frm.keyword) {
