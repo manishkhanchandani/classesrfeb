@@ -43,9 +43,31 @@
             scope.showPaypal = false;
             function advtSuccess(response) {
               console.log('advt success: ', response);
-              scope.adError = 'Advertisement Created Successfully. Please Click Subscribe to enable the advertisement.';
+              var result = response.data.data;
+              scope.adError = 'Advertisement Created Successfully. Please Click Subscribe link to enable the advertisement.';
               scope.showPaypal = true;
               scope.addNew = false;
+
+              scope.paypalFrm = {
+                itemName: 'Advertisement',
+                itemNumber: 1,
+                custom: {
+                  token: scope.loggedInUsersData.token,
+                  id: result.id,
+                  expiry: 30
+                },
+                trail_period_type: false,
+                trail_period_amount: 0,
+                trail_period_number: 1,
+                trail_period_frequency: 'M',
+                subscription_period_type: true,
+                subscription_period_amount: 0.01,
+                subscription_period_number: 1,
+                subscription_period_frequency: 'M',
+                confirmURL: 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/step3/',
+                cancelURL: 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/cancel/',
+                notifyURL: 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/pages/ipnNotify.php',
+              };
             }
             
             function advtFailure(response) {
@@ -77,6 +99,7 @@
               
               //tags
               submitData = submitData + '&tags='+(scope.adFrm.tags ? encodeURIComponent(scope.adFrm.tags) : '');
+              //data
               var data = {};
               data.tagsSingle = '';
               data.images = {};
@@ -84,14 +107,10 @@
               data.links = {};
               data.links[btoa(scope.adFrm.link)] = scope.adFrm.link;
               submitData = submitData + '&data='+JSON.stringify(data);
-              //submitData = submitData + '&data[images]['+btoa(scope.adFrm.image)+']='+encodeURIComponent(scope.adFrm.image);
-              //submitData = submitData + '&data[links]['+btoa(scope.adFrm.link)+']='+encodeURIComponent(scope.adFrm.link);
-              //url
+              //end data
               var access_token = scope.loggedInUsersData.token;
               var path = '/advertisements';
               var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+access_token+'&path='+path;
-              console.log(url);
-              console.log(submitData);
               dataService.post(url, submitData, advtSuccess, advtFailure);
             };
             //submit new add form ends
