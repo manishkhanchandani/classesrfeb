@@ -39,17 +39,13 @@ angular.module('myApp', [
   
   $scope.userData = null;
   
-  $scope.$watch('userData', function(newValue, oldValue) {
-    console.log('n2: ', newValue);
-    console.log('o2: ', oldValue);
-  });
-  /*
+  
   //getting the details form localStorage
-  var userProfile = localStorage.getItem('userProfile');
+  var userProfile = localStorage.getItem('userData');
   if (userProfile) {
-      $scope.loggedInUsersData = JSON.parse(userProfile);
+      $scope.userData = JSON.parse(userProfile);
   }
-  */
+  
 }])
 
 ;

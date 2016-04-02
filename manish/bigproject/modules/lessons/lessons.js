@@ -361,7 +361,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     
     url = url + '&page=' + $scope.frm.page;
-    
     var access_token = $scope.userData.token;
     url = url + '&access_token='+access_token;
     dataService.get(url, successGetData, failureGetData, false);
@@ -635,7 +634,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   function addSuccess(response) {
     $scope.frm = {};
-    $location.path('/lessons/create/images/'+$routeParams.id);
+    $location.path('/lessons/create/imagesUpload/'+$routeParams.id);
   }
   
   function addFailure(response) {
@@ -658,7 +657,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
     postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
     postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.location);
     
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     

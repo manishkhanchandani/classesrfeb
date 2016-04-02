@@ -160,6 +160,8 @@
                         fullname: resp.result.displayName
                       }
                     };
+                    scope.$parent.$parent.userData = scope.userData;
+                    scope.$parent.userData = scope.userData;
                     console.log(scope.userData);
                     if(!scope.$$phase) scope.$apply();
                     localStorage.setItem('userData', JSON.stringify(scope.userData));
