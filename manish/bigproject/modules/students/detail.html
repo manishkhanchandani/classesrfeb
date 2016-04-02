@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <img ng-src="{{results.mainImage}}" class="img-responsive">
+      <div class="row">
+        <div class="col-md-3" ng-repeat="image in images" style="min-height: 120px;">
+          <img ng-src="{{image}}" class="img-responsive img-thumbnail" ng-click="setImage(image)">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="pull-right"><a href="" ng-click="goBack()">Go Back</a></div>
+      <h3>{{results.title}}</h3>
+      <p>{{results.description}}</p>
+      <p><a href="http://maps.google.com/maps?q=loc:{{results.lat}},{{results.lng}}" target="_blank">{{results.location.formatted_addr}}</a></p>
+      <p><strong>Created on:</strong> {{results.dateFormattedAll}}</p>
+      <p><strong>Gender:</strong> {{results.detailsFull.gender}}</p>
+      
+      <!-- youtube urls -->
+      <div class="row" ng-if="youtubeUrls.length > 0">
+        <h3 class="text-center">Youtube Video's</h3>
+        <div class="col-md-12 text-center" ng-repeat="url in youtubeUrls">
+          <div class="embed-responsive embed-responsive-4by3">
+            <youtube-video video-url="url"></youtube-video>
+          </div>
+        </div>
+      </div>
+      <!-- youtube urls -->
+      
+      <!-- links -->
+      <div class="row" ng-if="linkUrls.length > 0">
+        <h3 class="text-center">External Link's</h3>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="url in linkUrls"><a href="{{url}}" target="_blank">{{url}}</a></li>
+        </ul>
+      </div>
+      <!-- links -->
+      
+      
+    </div>
+    <div class="col-md-3">
+    
+    </div>
+  </div>
+</div>

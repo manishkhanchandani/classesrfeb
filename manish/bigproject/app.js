@@ -3,11 +3,11 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'paginationModule',
-  'myApp.auth',
-  'myApp.lessons',
   'ngAutocomplete',
-  'googleLoginModule'
+  'googleLoginModule',
+  'paginationModule',
+  'myApp.lessons',
+  'myApp.students'
   //'ui.bootstrap'
 ])
 .constant('configs', {

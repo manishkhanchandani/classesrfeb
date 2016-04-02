@@ -1,89 +1,89 @@
 'use strict';
 
-angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'])
+angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/lessons', {
-    templateUrl: 'modules/lessons/search.html',
-    controller: 'ViewSearchCtrl'
+  $routeProvider.when('/students', {
+    templateUrl: 'modules/students/search.html',
+    controller: 'ViewStudentsSearchCtrl'
   })
-  .when('/lessons/create', {
-    templateUrl: 'modules/lessons/create.html',
-    controller: 'ViewCreateCtrl'
+  .when('/students/create', {
+    templateUrl: 'modules/students/create.html',
+    controller: 'ViewStudentsCreateCtrl'
   })
-  .when('/lessons/edit/:id', {
-    templateUrl: 'modules/lessons/create.html',
-    controller: 'ViewEditCtrl'
+  .when('/students/edit/:id', {
+    templateUrl: 'modules/students/create.html',
+    controller: 'ViewStudentsEditCtrl'
   })
-  .when('/lessons/create/images/:id', {
-    templateUrl: 'modules/lessons/images.html',
-    controller: 'ViewImagesCtrl'
+  .when('/students/create/images/:id', {
+    templateUrl: 'modules/students/images.html',
+    controller: 'ViewStudentsImagesCtrl'
   })
-  .when('/lessons/create/imagesUpload/:id', {
-    templateUrl: 'modules/lessons/imageUpload.html',
-    controller: 'ViewImageUploadLessonsCtrl'
-  }).when('/lessons/create/youtube/:id', {
-    templateUrl: 'modules/lessons/youtube.html',
-    controller: 'ViewYoutubeLessonsCtrl'
-  }).when('/lessons/create/links/:id', {
-    templateUrl: 'modules/lessons/links.html',
-    controller: 'ViewLinksLessonsCtrl'
+  .when('/students/create/imagesUpload/:id', {
+    templateUrl: 'modules/students/imageUpload.html',
+    controller: 'ViewStudentsImageUploadCtrl'
+  }).when('/students/create/youtube/:id', {
+    templateUrl: 'modules/students/youtube.html',
+    controller: 'ViewStudentsYoutubeCtrl'
+  }).when('/students/create/links/:id', {
+    templateUrl: 'modules/students/links.html',
+    controller: 'ViewStudentsLinksCtrl'
   })
   
   //search and browse
   
-  // '/lessons/search'
-  // '/lessons/search/0'
-  // '/lessons/search/0/keyword'
-  // '/lessons/search/0/lat/lng/radius/location'
-  // '/lessons/search/0/keyword/lat/lng/radius/location'
+  // '/students/search'
+  // '/students/search/0'
+  // '/students/search/0/keyword'
+  // '/students/search/0/lat/lng/radius/location'
+  // '/students/search/0/keyword/lat/lng/radius/location'
   
-  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
-    templateUrl: 'modules/lessons/search.html',
-    controller: 'ViewSearchCtrl'
+  .when('/students/search/:page/:keyword/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/students/search.html',
+    controller: 'ViewStudentsSearchCtrl'
   })
   
   
-  .when('/lessons/search/:page/:lat/:lng/:radius/:location', {
-    templateUrl: 'modules/lessons/search.html',
-    controller: 'ViewSearchCtrl'
+  .when('/students/search/:page/:lat/:lng/:radius/:location', {
+    templateUrl: 'modules/students/search.html',
+    controller: 'ViewStudentsSearchCtrl'
   })
   
   
-  .when('/lessons/search/:page/:keyword', {
-    templateUrl: 'modules/lessons/search.html',
-    controller: 'ViewSearchCtrl'
+  .when('/students/search/:page/:keyword', {
+    templateUrl: 'modules/students/search.html',
+    controller: 'ViewStudentsSearchCtrl'
   })
   
-  .when('/lessons/search/:page', {
-    templateUrl: 'modules/lessons/search.html',
-    controller: 'ViewSearchCtrl'
+  .when('/students/search/:page', {
+    templateUrl: 'modules/students/search.html',
+    controller: 'ViewStudentsSearchCtrl'
   })
   
-  .when('/lessons/search', {
-    templateUrl: 'modules/lessons/search.html',
-    controller: 'ViewSearchCtrl'
+  .when('/students/search', {
+    templateUrl: 'modules/students/search.html',
+    controller: 'ViewStudentsSearchCtrl'
   })
-  .when('/lessons/detail/:id', {
-    templateUrl: 'modules/lessons/detail.html',
-    controller: 'ViewDetailCtrl'
+  .when('/students/detail/:id', {
+    templateUrl: 'modules/students/detail.html',
+    controller: 'ViewStudentsDetailCtrl'
   })
   
   
-  .when('/lessons/my/:page', {
-    templateUrl: 'modules/lessons/my.html',
-    controller: 'ViewMyProfileCtrl'
+  .when('/students/my/:page', {
+    templateUrl: 'modules/students/my.html',
+    controller: 'ViewStudentsMyProfileCtrl'
   })
-  .when('/lessons/my', {
-    templateUrl: 'modules/lessons/my.html',
-    controller: 'ViewMyProfileCtrl'
+  .when('/students/my', {
+    templateUrl: 'modules/students/my.html',
+    controller: 'ViewStudentsMyProfileCtrl'
   })
   
   ;
 }])
 
 
-.controller('ViewImageUploadLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
+.controller('ViewStudentsImageUploadCtrl', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
   //console.log($routeParams);
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
@@ -141,7 +141,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 }])
 
 
-.controller('ViewYoutubeLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
+.controller('ViewStudentsYoutubeCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
   //console.log($routeParams);
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
@@ -195,7 +195,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
-.controller('ViewLinksLessonsCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
+.controller('ViewStudentsLinksCtrl', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
   
   //console.log($routeParams);
   var access_token = $scope.userData.token;
@@ -251,7 +251,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
 }])
 
-.controller('ViewDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('ViewStudentsDetailCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
   $scope.results = {};
   
@@ -306,7 +306,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
 }])
 
-.controller('ViewMyProfileCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('ViewStudentsMyProfileCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
   
 
@@ -314,7 +314,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm = {};
   
   
-  $scope.frm.urlPrefix = 'lessons/my';
+  $scope.frm.urlPrefix = 'students/my';
   $scope.frm.urlSufix = '';
   
   
@@ -357,7 +357,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&path=/manny/lessons&max=4&noCache=1';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&path=/manny/students&max=4&noCache=1';
     
     
     url = url + '&page=' + $scope.frm.page;
@@ -371,10 +371,8 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 
-.controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
-  
-  
-  $scope.title = 'Teachers';
+.controller('ViewStudentsSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  $scope.title = 'Students';
   
   //location starts
   $scope.mapOptions = {
@@ -388,7 +386,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm = {};
   
   
-  $scope.frm.urlPrefix = 'lessons/search';
+  $scope.frm.urlPrefix = 'students/search';
   $scope.frm.urlSufix = '';
   
   $scope.loading = false;
@@ -475,7 +473,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&max=12';
     
     
-    var path = '/manny/lessons';
+    var path = '/manny/students';
     url = url + '&path=' + path;
     
     //check the keyword
@@ -498,7 +496,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   /*Purpose of search data is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
   $scope.constructURL = function() {
-    var url = '/lessons/search/0';
+    var url = '/students/search/0';
     
     if ($scope.frm.keyword) {
       url = url + '/' + encodeURIComponent($scope.frm.keyword);
@@ -516,7 +514,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
 }])
 
-.controller('ViewCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+.controller('ViewStudentsCreateCtrl', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
   //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -532,7 +530,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     //console.log('success: ', response);
     //console.log('id is : ', response.data.data.id);
     $scope.frm = {};
-    $location.path('/lessons/create/imagesUpload/'+response.data.data.id);
+    $location.path('/students/create/imagesUpload/'+response.data.data.id);
   }
   
   function addFailure(response) {
@@ -558,7 +556,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         return; 
       }
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid=1';
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/students&tid=1';
      
     //console.log(url);
     var postData = '';
@@ -585,7 +583,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 }])
 
 
-.controller('ViewEditCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('ViewStudentsEditCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   $scope.frm = {};
   
   //location starts
@@ -601,7 +599,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     //console.log('success1: ', response);
     if (response.data.data.uid !== $scope.userData.uid) {
       //if logged in users data does not match with current records data, then send user to my profile
-      $location.path('/lessons/my');
+      $location.path('/students/my');
       return;
     }
     
@@ -636,7 +634,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   function addSuccess(response) {
     $scope.frm = {};
-    $location.path('/lessons/create/imagesUpload/'+$routeParams.id);
+    $location.path('/students/create/imagesUpload/'+$routeParams.id);
   }
   
   function addFailure(response) {
@@ -645,7 +643,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid=1&id='+$routeParams.id;
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/students&tid=1&id='+$routeParams.id;
 
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
@@ -668,7 +666,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
 }])
 
-.controller('ViewImagesCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('ViewStudentsImagesCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
   $scope.id = $routeParams.id;
   
