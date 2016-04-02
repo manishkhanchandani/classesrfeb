@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="location">Near</label>
-            <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details">
+            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details">
         </div>
         <div class="form-group">
             <label for="radius">Radius</label>
@@ -46,6 +46,7 @@
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.location.formatted_addr}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+                <p><strong>Subjects:</strong> {{item.detailsFull.tagsSingle}}</p>
               </div>
             </div>
           

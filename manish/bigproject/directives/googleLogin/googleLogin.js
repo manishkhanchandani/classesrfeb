@@ -75,7 +75,6 @@
                 scope.userData = JSON.parse(data);
                 scope.$parent.$parent.userData = scope.userData;
                 scope.$parent.userData = scope.userData;
-                console.log(scope.userData);
               }
               
               scope.logout = function() {
