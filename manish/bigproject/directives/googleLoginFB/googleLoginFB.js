@@ -56,7 +56,7 @@
             return attrs.templateUrl || googleLoginTemplate.getPath();
           },
           link: function(scope, elem, attrs) {
-              scope.ref = new Firebase('https://mycontacts12.firebaseio.com');
+              scope.ref = new Firebase(configs[$location.host()].firebaseUrl);
               scope.access_token = null;
               var data = localStorage.getItem('userData');
               if (data) {

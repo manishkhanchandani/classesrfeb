@@ -6,6 +6,8 @@ angular.module('myApp', [
   'ngAutocomplete',
   'googleLoginFBModule',
   'paginationModule',
+  'messagesModule',
+  'myApp.messages',
   'myApp.lessons',
   'myApp.students'
   //'ui.bootstrap'
@@ -16,10 +18,13 @@ angular.module('myApp', [
     clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
     clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
     apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
-    title: 'I Need Tutor :: Search/Browse Teachers'
+    title: 'I Need Tutor :: Search/Browse Teachers',
+    firebaseUrl: 'https://mycontacts12.firebaseio.com/projects/lessons'
     
   }
 })
+
+
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/lessons'});
