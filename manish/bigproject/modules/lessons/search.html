@@ -1,13 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Search or Browse Listings</h1>
-      <div class="alert alert-danger" role="alert" ng-if="searchStatus">
-      {{searchStatus}}
-      </div>
-      <div class="alert alert-danger" role="alert" ng-if="!results">
-        No results found.
-      </div>
+      <h3>Search or Browse {{title}}</h3>
     </div>
   </div>
   <!-- title ends -->
@@ -21,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="location">Near</label>
-            <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details">
+            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details">
         </div>
         <div class="form-group">
             <label for="radius">Radius</label>
@@ -31,18 +25,28 @@
     </form>
     </div><!-- form -->
     <div class="col-md-9">
+      <div class="alert alert-danger" role="alert" ng-if="searchStatus">
+      {{searchStatus}}
+      </div>
+      <div class="alert alert-danger" role="alert" ng-if="results.length === 0 && !loading">
+        No results found.
+      </div>
+      <div ng-if="loading">
+        <img src="images/loading.gif">
+      </div>
       
-       <div class="list-group">
+       <div class="list-group" ng-if="results && !loading">
           <div class="list-group-item" ng-repeat="item in results">
             <div class="row">
               <div class="col-md-2">
-                <img ng-src="{{item.mainImage}}" class="img-responsive">
+                <a href="lessons/detail/{{item.id}}"><img ng-src="{{item.mainImage}}" class="img-responsive img-thumbnail"></a>
               </div>
               <div class="col-md-10">
-                <h4 class="list-group-item-heading"><a href="#/lessons/detail/{{item.id}}">{{item.title}}</a></h4>
+                <h4 class="list-group-item-heading"><a href="lessons/detail/{{item.id}}">{{item.title}}</a></h4>
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.location.formatted_addr}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+                <p><strong>Subjects:</strong> {{item.detailsFull.tagsSingle}}</p>
               </div>
             </div>
           

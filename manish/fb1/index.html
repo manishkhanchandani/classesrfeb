@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <base href="/">
+  <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Latest compiled and minified CSS -->
@@ -18,7 +17,7 @@
 <![endif]-->
   <link rel="stylesheet" href="app.css">
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
 <!-- Firebase -->
@@ -34,36 +33,9 @@
 <script src="js/ui-bootstrap-tpls.min.js"></script>
 
 <script type="text/javascript" src="js/ngAutocomplete.js"></script>
-
-
-<!-- pagination module -->
-<script type="text/javascript" src="directives/pagination/pagination.js"></script>
-<!-- pagination module ends -->
-
-<!-- Include YT library and youtube directive (https://github.com/brandly/angular-youtube-embed)-->
-<script src="https://www.youtube.com/iframe_api"></script>
-<script src="js/angular-youtube-embed.js"></script>
-<!-- Include YT library and this directive -->
-
   <script src="app.js"></script>
   <script src="services/data.js"></script>
-  
-<!-- googleLogin module -->
-<script type="text/javascript" src="directives/googleLoginFB/googleLoginFB.js"></script>
-<!-- googleLogin module ends -->
-
-
-<!-- messages module -->
-<script type="text/javascript" src="directives/messages/messages.js"></script>
-<!-- messages module ends -->
-
-<!-- File Upload -->
-<script src="js/angularFileUpload/angular-file-upload.js"></script>
-<script src="js/angularFileUpload/directives.js"></script>
-<!-- File Upload -->
-
-  <script src="modules/lessons/lessons.js"></script>
-  <script src="modules/students/students.js"></script>
+  <script src="view1/view1.js"></script>
   <script>
   
 $(document).on("keypress", 'form', function (e) {
@@ -82,7 +54,25 @@ $(document).on("keypress", 'form', function (e) {
   </script>
 </head>
 <body ng-controller="mainController">
-<ng-include src="templateUrl"></ng-include>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Project name</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#/view1">view1</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 
   <div ng-view></div>
 </body>

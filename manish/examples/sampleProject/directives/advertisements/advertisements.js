@@ -9,10 +9,10 @@
   }
   
   module
-    .directive('advertisments', advertisements);
+    .directive('advertisments', ['dataService', advertisements]);
     
 
-  function advertisements() {
+  function advertisements(dataService) {
     return {
           scope: {
             loggedInUsersData: '='
@@ -40,6 +40,41 @@
             };
             //show add form ends
             
+            scope.showPaypal = false;
+            function advtSuccess(response) {
+              console.log('advt success: ', response);
+              var result = response.data.data;
+              scope.adError = 'Advertisement Created Successfully. Please Click Subscribe link to enable the advertisement.';
+              scope.showPaypal = true;
+              scope.addNew = false;
+
+              scope.paypalFrm = {
+                itemName: 'Advertisement',
+                itemNumber: 1,
+                custom: {
+                  token: scope.loggedInUsersData.token,
+                  id: result.id,
+                  expiry: 30
+                },
+                trail_period_type: false,
+                trail_period_amount: 0,
+                trail_period_number: 1,
+                trail_period_frequency: 'M',
+                subscription_period_type: true,
+                subscription_period_amount: 0.01,
+                subscription_period_number: 1,
+                subscription_period_frequency: 'M',
+                confirmURL: 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/step3/',
+                cancelURL: 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/cancel/',
+                notifyURL: 'http://bootstrap.mkgalaxy.com/svnprojects/mk/prjServices/pages/ipnNotify.php',
+              };
+            }
+            
+            function advtFailure(response) {
+              console.log('advt failed: ', response);
+              scope.adError = 'Could not insert advertisement record. Please try again later.';
+            }
+            
             //submit new add form
             scope.createNewAd = function() {
               if (!scope.loggedInUsersData) {
@@ -64,13 +99,19 @@
               
               //tags
               submitData = submitData + '&tags='+(scope.adFrm.tags ? encodeURIComponent(scope.adFrm.tags) : '');
-              //url
+              //data
+              var data = {};
+              data.tagsSingle = '';
+              data.images = {};
+              data.images[btoa(scope.adFrm.image)] = scope.adFrm.image;
+              data.links = {};
+              data.links[btoa(scope.adFrm.link)] = scope.adFrm.link;
+              submitData = submitData + '&data='+JSON.stringify(data);
+              //end data
               var access_token = scope.loggedInUsersData.token;
               var path = '/advertisements';
               var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+access_token+'&path='+path;
-              console.log(url);
-              console.log(submitData);
-              //dataService.post(url, submitData, addSuccess, addFailure);
+              dataService.post(url, submitData, advtSuccess, advtFailure);
             };
             //submit new add form ends
             
