@@ -109,7 +109,9 @@
               var badge = ref.child('badges');
   
               //reset badge
-              badge.child(scope.userData.id).child(scope.routeParams.uid).child('badge').set(0);
+              if (scope.routeParams.uid) {
+                badge.child(scope.userData.id).child(scope.routeParams.uid).child('badge').set(0);
+              }
               
               //from user
               var usersFrom = ref.child('users').child(scope.userData.id);
@@ -157,8 +159,11 @@
               
               //messages
               var mes = ref.child('messages');
-              var queryMes = mes.child(scope.userData.id).child(scope.routeParams.uid).orderByChild("timestamp").limitToLast(100);
-              scope.messages = $firebaseArray(queryMes);
+              scope.messages = null;
+              if (scope.routeParams.uid) {
+                var queryMes = mes.child(scope.userData.id).child(scope.routeParams.uid).orderByChild("timestamp").limitToLast(100);
+                scope.messages = $firebaseArray(queryMes);
+              }
               
               //badge
               badge.child(scope.userData.id).on("value", function(snapshot) {
@@ -169,7 +174,7 @@
                 $timeout(function(){
                     //any code in here will automatically have an apply run afterwards
                     if(!scope.$$phase) scope.$apply();
-                }, 3000);
+                });
               });
               //badge ends
                             
