@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAutocomplete',
-  'googleLoginModule',
+  'googleLoginFBModule',
   'paginationModule',
   'myApp.lessons',
   'myApp.students'
