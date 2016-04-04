@@ -7,7 +7,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     templateUrl: 'modules/lessons/search.html',
     controller: 'ViewSearchCtrl'
   })
-  .when('/test', {
+  .when('/', {
     templateUrl: 'modules/lessons/lessons.html',
     controller: 'ViewSearchCtrl'
   })
