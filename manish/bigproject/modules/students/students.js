@@ -361,7 +361,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid='+dataService.tid()+'&path=/manny/students&max=4&noCache=1';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid='+dataService.tid()+'&path=/manny/students&noCache=1';
     
     
     url = url + '&page=' + $scope.frm.page;
@@ -475,7 +475,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   
   $scope.getData = function() {
     $scope.loading = true;
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid='+dataService.tid()+'&showLocation=1&max=12';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid='+dataService.tid()+'&showLocation=1';
     
     
     var path = '/manny/students';

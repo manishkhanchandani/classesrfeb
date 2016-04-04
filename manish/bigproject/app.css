@@ -1,5 +1,24 @@
 /* CSS Document */
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
+}
+
+.navbar {
+  margin-bottom: 0px !important; 
+}
+
+.jumbotron {
+  background-image: url(http://nebula.wsimg.com/3bb36166931d1b4786bf97e89ad071be?AccessKeyId=79A616204600D905F6CA&disposition=0&alloworigin=1);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 450px;
+  margin-bottom: 0px !important;
+ color: black; 
+}
+
+.jumbotron .head {
+  
+}
+.jumbotron .subhead {
 }
