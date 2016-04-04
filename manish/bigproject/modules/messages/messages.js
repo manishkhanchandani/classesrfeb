@@ -13,6 +13,5 @@ angular.module('myApp.messages', ['ngRoute'])
   });
 }])
 
-.controller('MessagesCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
-  $scope.routeParams = $routeParams;
+.controller('MessagesCtrl', ['$scope', function($scope) {
 }]);

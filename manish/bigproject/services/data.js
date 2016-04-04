@@ -1,4 +1,4 @@
-angular.module('myApp').service('dataService', ['$http', function($http) {
+angular.module('myApp').service('dataService', ['$http', 'configs', '$location', function($http, configs, $location) {
   
   this.get = function(url, callback, callbackFailed, cache) {
       $http({
@@ -26,5 +26,19 @@ angular.module('myApp').service('dataService', ['$http', function($http) {
         data: data
       }).then(callback, callbackFailed);
   };
+  
+  this.tid = function() {
+    var host = $location.host();
+    var tid = configs[host].tid;
+    return tid;
+  };
+  
+  
+  this.config = function() {
+    var host = $location.host();
+    var config = configs[host];
+    return config;
+  };
+  
 }]);
 

@@ -19,7 +19,8 @@ angular.module('myApp', [
     clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
     apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
     title: 'I Need Tutor :: Search/Browse Teachers',
-    firebaseUrl: 'https://mycontacts12.firebaseio.com/projects/lessons'
+    firebaseUrl: 'https://mycontacts12.firebaseio.com/projects/lessons',
+    tid: 2
     
   }
 })

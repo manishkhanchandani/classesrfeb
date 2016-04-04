@@ -88,7 +88,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   
-  var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=upload&tid=2&access_token='+access_token+'&id='+$routeParams.id;
+  var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=upload&tid='+dataService.tid()+'&access_token='+access_token+'&id='+$routeParams.id;
   var uploader = $scope.uploader = new FileUploader({
       url: requestUrl
   });
@@ -164,7 +164,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   $scope.getYoutube = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, getSuccess, getFailure);
   };
   
@@ -191,7 +191,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       submitData = submitData + '&param='+encodeURIComponent($scope.frm.youtube);
       //url
       var access_token = $scope.userData.token;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid=2&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
       dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
@@ -219,7 +219,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   $scope.getLinks = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, getSuccess, getFailure);
   };
   
@@ -246,7 +246,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       submitData = submitData + '&param='+encodeURIComponent($scope.frm.linkUrl);
       //url
       var access_token = $scope.userData.token;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid=2&access_token='+access_token+'&key=links&id='+$routeParams.id;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+access_token+'&key=links&id='+$routeParams.id;
       dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
@@ -296,7 +296,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     console.log('failed: ', response);
   }
   
-  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&id='+$routeParams.id;
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&id='+$routeParams.id;
   dataService.get(url, getSuccess, getFailure, true);
   
   $scope.goBack = function() {
@@ -357,7 +357,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid=2&path=/manny/lessons&max=4&noCache=1';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid='+dataService.tid()+'&path=/manny/lessons&max=4&noCache=1';
     
     
     url = url + '&page=' + $scope.frm.page;
@@ -372,7 +372,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 .controller('ViewSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
-  
   
   $scope.title = 'Teachers';
   
@@ -472,7 +471,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.getData = function() {
     $scope.loading = true;
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid=2&showLocation=1&max=12';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid='+dataService.tid()+'&showLocation=1&max=100';
     
     
     var path = '/manny/lessons';
@@ -531,6 +530,10 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   function addSuccess(response) {
     //console.log('success: ', response);
     //console.log('id is : ', response.data.data.id);
+    if (response.error === 1) {
+      $scope.createStatus = response.errorMessage;
+      return;
+    }
     $scope.frm = {};
     $location.path('/lessons/create/imagesUpload/'+response.data.data.id);
   }
@@ -558,9 +561,9 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         return; 
       }
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid=2';
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid='+dataService.tid();
      
-    //console.log(url);
+    //console.log($scope.userData);
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
     postData = postData + '&description='+encodeURIComponent($scope.frm.description);
@@ -578,6 +581,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
     postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
+    postData = postData + '&data[age]='+encodeURIComponent($scope.frm.age);
+    postData = postData + '&data[email]='+encodeURIComponent($scope.frm.email);
+    postData = postData + '&data[phone]='+encodeURIComponent($scope.frm.phone);
+    postData = postData + '&data[pref_email]='+encodeURIComponent($scope.frm.pref_email);
+    postData = postData + '&data[pref_phone_text]='+encodeURIComponent($scope.frm.pref_phone_text);
+    postData = postData + '&data[pref_phone_call]='+encodeURIComponent($scope.frm.pref_phone_call);
     
     //console.log(postData);
     dataService.post(url, postData, addSuccess, addFailure);
@@ -609,6 +618,14 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.description = response.data.data.description;
     $scope.frm.tags = response.data.data.detailsFull.tagsSingle;
     $scope.frm.gender = response.data.data.detailsFull.gender;
+    $scope.frm.age = response.data.data.detailsFull.age;
+    $scope.frm.email = response.data.data.detailsFull.email;
+    $scope.frm.phone = response.data.data.detailsFull.phone;
+    $scope.frm.pref_email = response.data.data.detailsFull.pref_email;
+    $scope.frm.pref_phone_text = response.data.data.detailsFull.pref_phone_text;
+    $scope.frm.pref_phone_call = response.data.data.detailsFull.pref_phone_call;
+    console.log($scope.frm);
+    
     $scope.location = response.data.data.location.formatted_addr;
     
     
@@ -627,7 +644,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, successGetData, failureGetData, false);
   };
   
@@ -645,7 +662,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid=2&id='+$routeParams.id;
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid='+dataService.tid()+'&id='+$routeParams.id;
 
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
@@ -664,6 +681,13 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
     postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
+    postData = postData + '&data[age]='+encodeURIComponent($scope.frm.age);
+    postData = postData + '&data[email]='+encodeURIComponent($scope.frm.email);
+    postData = postData + '&data[phone]='+encodeURIComponent($scope.frm.phone);
+    postData = postData + '&data[pref_email]='+encodeURIComponent($scope.frm.pref_email);
+    postData = postData + '&data[pref_phone_text]='+encodeURIComponent($scope.frm.pref_phone_text);
+    postData = postData + '&data[pref_phone_call]='+encodeURIComponent($scope.frm.pref_phone_call);
+    
     dataService.post(url, postData, addSuccess, addFailure);
   };
 }])
@@ -688,7 +712,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, successGetData, failureGetData, false);
   };
   
@@ -716,7 +740,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.addImage = function() {
     //console.log($scope.frm);
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid=2&access_token='+$scope.userData.token+'&key=images&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+$scope.userData.token+'&key=images&id='+$routeParams.id;
     var postData = '';
     postData = postData + '&param='+encodeURIComponent($scope.frm.image);
     

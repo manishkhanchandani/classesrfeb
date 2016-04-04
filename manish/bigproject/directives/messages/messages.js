@@ -10,9 +10,8 @@
   }
   
   module
-    .directive('messages', ['messagesTemplate', 'messagesService', 'configs', '$location', 'dataService', '$firebaseArray', '$timeout', messages])
+    .directive('messages', ['messagesTemplate', 'configs', '$location', 'dataService', '$firebaseArray', '$timeout', '$routeParams', messages])
     .provider('messagesTemplate', messagesTemplateProvider)
-    .service('messagesService', ['$http', messagesService])
     
     .filter('mesDaysAgo', function() {
       return function(date) {
@@ -42,46 +41,12 @@
         return Math.floor(seconds) + " seconds ago";
       };
     })
-
     ;
-    
-  function messagesService($http) {
-    this.base_url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php';
-    this.login = function(uid, token, details) {
-      var url = this.base_url + '?action=login&saveIP=1&id='+uid+'&access_token='+token;
-      var data = '&details[email]='+encodeURIComponent(details.email)+'&details[url]='+encodeURIComponent(details.url)+'&details[name]='+encodeURIComponent(details.name)+'&details[firstName]='+encodeURIComponent(details.firstName)+'&details[lastName]='+encodeURIComponent(details.lastName)+'&details[image]='+encodeURIComponent(details.image);
-      $http({
-        method: 'POST',
-        url: url,
-        data: data,
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      }).then(function successCallback(response) {
-          //callback(response);
-        }, function errorCallback(response) {
-          console.log('error call back');
-          console.log(response);
-        });
-    };
-    
-    this.logout = function(uid, token) {
-      var url = this.base_url + '?action=logout&saveIP=1&id='+uid+'&access_token='+token;
-      $http({
-        method: 'GET',
-        url: url
-      }).then(function successCallback(response) {
-          //callback(response);
-        }, function errorCallback(response) {
-          console.log('error call back');
-          console.log(response);
-        });
-    };
-  }
   
-  function messages(messagesTemplate, messagesService, configs, $location, dataService, $firebaseArray, $timeout) {
+  function messages(messagesTemplate, configs, $location, dataService, $firebaseArray, $timeout, $routeParams) {
     return {
           scope: {
-            userData: '=',
-            routeParams: '='
+            userData: '='
           },
           templateUrl: function(elem, attrs) {
             return attrs.templateUrl || messagesTemplate.getPath();
@@ -94,12 +59,14 @@
               }
               //console.log('from user: ', scope.userData);
   
-              if (scope.routeParams.uid) {
-                if (scope.userData.id === scope.routeParams.uid) {
+              if ($routeParams.uid) {
+                if (scope.userData.id === $routeParams.uid) {
                   $location.path('/messages');
                   return;
                 }
               }
+              
+              scope.routeParams = $routeParams;
               
               scope.badges = {};
               
@@ -109,8 +76,8 @@
               var badge = ref.child('badges');
   
               //reset badge
-              if (scope.routeParams.uid) {
-                badge.child(scope.userData.id).child(scope.routeParams.uid).child('badge').set(0);
+              if ($routeParams.uid) {
+                badge.child(scope.userData.id).child($routeParams.uid).child('badge').set(0);
               }
               
               //from user
@@ -127,8 +94,8 @@
               });*/
               
               //to user
-              if (scope.routeParams.uid) {
-                var usersTo = ref.child('users').child(scope.routeParams.uid);
+              if ($routeParams.uid) {
+                var usersTo = ref.child('users').child($routeParams.uid);
                 
                 var queryTo = usersTo.orderByChild("timestamp").limitToLast(500);
                 scope.usersTo = $firebaseArray(queryTo);
@@ -141,15 +108,15 @@
                 scope.resultsToUser = results;
                 //console.log('to user: ', scope.resultsToUser);
                 //adding from - to user
-                usersFrom.child(scope.routeParams.uid).set({email: results.user_details.email, id: results.uid, name: results.user_details.name, image: results.user_details.image, url: results.user_details.url, timestamp: Firebase.ServerValue.TIMESTAMP});
+                usersFrom.child($routeParams.uid).set({email: results.user_details.email, id: results.uid, name: results.user_details.name, image: results.user_details.image, url: results.user_details.url, timestamp: Firebase.ServerValue.TIMESTAMP});
               }
               
               function getFailure(response) {
                 console.log('failure', response);
               }
               
-              if (scope.routeParams.uid) {
-                var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=user&id='+scope.routeParams.uid;
+              if ($routeParams.uid) {
+                var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=user&id='+$routeParams.uid;
                 dataService.get(url, getSuccess, getFailure, true);
               }
               
@@ -160,8 +127,8 @@
               //messages
               var mes = ref.child('messages');
               scope.messages = null;
-              if (scope.routeParams.uid) {
-                var queryMes = mes.child(scope.userData.id).child(scope.routeParams.uid).orderByChild("timestamp").limitToLast(100);
+              if ($routeParams.uid) {
+                var queryMes = mes.child(scope.userData.id).child($routeParams.uid).orderByChild("timestamp").limitToLast(100);
                 scope.messages = $firebaseArray(queryMes);
               }
               
