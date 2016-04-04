@@ -10,5 +10,5 @@ RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !=/favicon.ico
-RewriteRule ^(.*)$ index.html#\/$1 [NC,L,QSA]
+RewriteRule ^(.*)$ index.php#\/$1 [NC,L,QSA]
 

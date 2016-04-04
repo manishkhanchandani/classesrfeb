@@ -18,17 +18,25 @@ angular.module('myApp', [
     clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
     clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
     apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
-    title: 'I Need Tutor :: Search/Browse Teachers',
+    title: 'I Need Tutor :: Search/Browse Teachers And Students',
     firebaseUrl: 'https://mycontacts12.firebaseio.com/projects/lessons',
-    tid: 2
+    tid: 2,
+    homePage: 'modules/lessons/lessons.html'
     
   }
 })
 
 
 
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+.config(['$routeProvider', '$locationProvider', 'configs', function($routeProvider, $locationProvider, configs) {
+  var host = window.location.hostname;
+  var homePage = configs[host].homePage;
+  $routeProvider
+  .when('/', {
+    templateUrl: homePage,
+    controller: 'homePageController'
+  })
+  .otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
 }])
 
@@ -51,6 +59,10 @@ angular.module('myApp', [
   if (userProfile) {
       $scope.userData = JSON.parse(userProfile);
   }
+  
+}])
+
+.controller('homePageController', ['$scope', function($scope) {
   
 }])
 
