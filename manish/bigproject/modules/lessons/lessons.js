@@ -618,12 +618,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.description = response.data.data.description;
     $scope.frm.tags = response.data.data.detailsFull.tagsSingle;
     $scope.frm.gender = response.data.data.detailsFull.gender;
-    $scope.frm.age = response.data.data.detailsFull.age;
+    $scope.frm.age = parseInt(response.data.data.detailsFull.age);
     $scope.frm.email = response.data.data.detailsFull.email;
     $scope.frm.phone = response.data.data.detailsFull.phone;
-    $scope.frm.pref_email = response.data.data.detailsFull.pref_email;
-    $scope.frm.pref_phone_text = response.data.data.detailsFull.pref_phone_text;
-    $scope.frm.pref_phone_call = response.data.data.detailsFull.pref_phone_call;
+    $scope.frm.pref_email = (response.data.data.detailsFull.pref_email === "true") ? true : false;
+    $scope.frm.pref_phone_text = (response.data.data.detailsFull.pref_phone_text === "true") ? true : false;
+    $scope.frm.pref_phone_call = (response.data.data.detailsFull.pref_phone_call === "true") ? true : false;
     console.log($scope.frm);
     
     $scope.location = response.data.data.location.formatted_addr;
