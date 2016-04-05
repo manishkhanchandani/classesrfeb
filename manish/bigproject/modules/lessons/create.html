@@ -12,15 +12,23 @@
         </div>
         <div class="form-group">
             <label for="title">Posting Title *</label>
-            <input type="text" class="form-control" id="title" placeholder="Enter posting title" ng-model="frm.title" >
+            <input type="text" class="form-control" id="title" placeholder="Enter posting title" ng-model="frm.title" required>
         </div>
         <div class="form-group">
             <label for="description">Posting Body *</label>
-            <textarea class="form-control" id="description" placeholder="Enter posting body" ng-model="frm.description" rows="5" ></textarea>
+            <textarea class="form-control" id="description" placeholder="Enter posting body" ng-model="frm.description" rows="5" required></textarea>
         </div>
         <div class="form-group">
             <label for="tags">Teaching Subjects (Comma separated subjects for search) *</label>
-            <input type="text" class="form-control" id="tags" placeholder="Enter search tags" ng-model="frm.tags" >
+            <input type="text" class="form-control" id="tags" placeholder="Enter search tags" ng-model="frm.tags" required>
+        </div>
+        <div class="form-group">
+            <label for="charges">Charges *</label>
+            <input type="number" class="form-control" id="charges" placeholder="Enter rate or charge e.g. 75" ng-model="frm.charges" required>
+        </div>
+        <div class="form-group">
+            <label for="tags">Charges Explanation*</label>
+            <input type="text" class="form-control" id="tags" placeholder="e.g. $ per hour or $ per week or &#8364; per month" ng-model="frm.charge_explanation" required>
         </div>
         <h3>Contact & Person Information</h3>
         <div class="form-group">

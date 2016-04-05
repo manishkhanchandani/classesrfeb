@@ -567,7 +567,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
     postData = postData + '&description='+encodeURIComponent($scope.frm.description);
-    
+    console.log($scope.details);
     postData = postData + '&location[latitude]='+encodeURIComponent($scope.details.components.lat);
     postData = postData + '&location[longitude]='+encodeURIComponent($scope.details.components.lng);
     postData = postData + '&location[country]='+encodeURIComponent($scope.details.components.country);
@@ -576,17 +576,21 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
     postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
     postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.location);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
     
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
-    postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
-    postData = postData + '&data[age]='+encodeURIComponent($scope.frm.age);
-    postData = postData + '&data[email]='+encodeURIComponent($scope.frm.email);
-    postData = postData + '&data[phone]='+encodeURIComponent($scope.frm.phone);
-    postData = postData + '&data[pref_email]='+encodeURIComponent($scope.frm.pref_email);
-    postData = postData + '&data[pref_phone_text]='+encodeURIComponent($scope.frm.pref_phone_text);
-    postData = postData + '&data[pref_phone_call]='+encodeURIComponent($scope.frm.pref_phone_call);
+    postData = postData + '&data[gender]=' + (($scope.frm.gender) ? encodeURIComponent($scope.frm.gender) : '');
+    postData = postData + '&data[age]=' + (($scope.frm.age) ? encodeURIComponent($scope.frm.age) : '');
+    postData = postData + '&data[email]=' + (($scope.frm.email) ? encodeURIComponent($scope.frm.email) : '');
+    postData = postData + '&data[phone]=' + (($scope.frm.phone) ? encodeURIComponent($scope.frm.phone) : '');
+    postData = postData + '&data[pref_email]=' + (($scope.frm.pref_email) ? encodeURIComponent($scope.frm.pref_email) : '');
+    postData = postData + '&data[pref_phone_text]=' + (($scope.frm.pref_phone_text) ? encodeURIComponent($scope.frm.pref_phone_text) : '');
+    postData = postData + '&data[pref_phone_call]=' + (($scope.frm.pref_phone_call) ? encodeURIComponent($scope.frm.pref_phone_call) : '');
+    postData = postData + '&i1='+encodeURIComponent($scope.frm.charges);
+    postData = postData + '&data[charges]='+encodeURIComponent($scope.frm.charges);
+    postData = postData + '&data[charge_explanation]='+encodeURIComponent($scope.frm.charge_explanation);
+    postData = postData + '&data[location]='+encodeURIComponent($scope.location);
     
     //console.log(postData);
     dataService.post(url, postData, addSuccess, addFailure);
@@ -624,7 +628,8 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.pref_email = (response.data.data.detailsFull.pref_email === "true") ? true : false;
     $scope.frm.pref_phone_text = (response.data.data.detailsFull.pref_phone_text === "true") ? true : false;
     $scope.frm.pref_phone_call = (response.data.data.detailsFull.pref_phone_call === "true") ? true : false;
-    console.log($scope.frm);
+    $scope.frm.charges = parseInt(response.data.data.detailsFull.charges);
+    $scope.frm.charge_explanation = response.data.data.detailsFull.charge_explanation;
     
     $scope.location = response.data.data.location.formatted_addr;
     
@@ -676,17 +681,22 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
     postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
     postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.location);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
     
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
-    postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
-    postData = postData + '&data[age]='+encodeURIComponent($scope.frm.age);
-    postData = postData + '&data[email]='+encodeURIComponent($scope.frm.email);
-    postData = postData + '&data[phone]='+encodeURIComponent($scope.frm.phone);
-    postData = postData + '&data[pref_email]='+encodeURIComponent($scope.frm.pref_email);
-    postData = postData + '&data[pref_phone_text]='+encodeURIComponent($scope.frm.pref_phone_text);
-    postData = postData + '&data[pref_phone_call]='+encodeURIComponent($scope.frm.pref_phone_call);
+    
+    postData = postData + '&data[gender]=' + (($scope.frm.gender) ? encodeURIComponent($scope.frm.gender) : '');
+    postData = postData + '&data[age]=' + (($scope.frm.age) ? encodeURIComponent($scope.frm.age) : '');
+    postData = postData + '&data[email]=' + (($scope.frm.email) ? encodeURIComponent($scope.frm.email) : '');
+    postData = postData + '&data[phone]=' + (($scope.frm.phone) ? encodeURIComponent($scope.frm.phone) : '');
+    postData = postData + '&data[pref_email]=' + (($scope.frm.pref_email) ? encodeURIComponent($scope.frm.pref_email) : '');
+    postData = postData + '&data[pref_phone_text]=' + (($scope.frm.pref_phone_text) ? encodeURIComponent($scope.frm.pref_phone_text) : '');
+    postData = postData + '&data[pref_phone_call]=' + (($scope.frm.pref_phone_call) ? encodeURIComponent($scope.frm.pref_phone_call) : '');
+    postData = postData + '&i1='+encodeURIComponent($scope.frm.charges);
+    postData = postData + '&data[charges]='+encodeURIComponent($scope.frm.charges);
+    postData = postData + '&data[charge_explanation]='+encodeURIComponent($scope.frm.charge_explanation);
+    postData = postData + '&data[location]='+encodeURIComponent($scope.location);
     
     dataService.post(url, postData, addSuccess, addFailure);
   };

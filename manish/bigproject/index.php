@@ -91,7 +91,7 @@ $(document).on("keypress", 'form', function (e) {
 <body ng-controller="mainController">
 <ng-include src="templateUrl"></ng-include>
 
-  <div ng-view></div>
+  <div ng-view id="mkPrj"></div>
 
 <footer>
   <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>
