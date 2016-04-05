@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Users</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="user in trackingUser"><b>{{user.ip}}: </b> {{user.city}}, {{user.region}}, {{user.country}} <a href="http://maps.google.com/maps?q=loc:{{user.lat}},{{user.lng}}" target="_blank">Map</a></li>
+      </ul>
+    </div>
+    
+    <div class="col-md-5">
+      <h3>Tracking</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="track in tracking">
+        
+        <a href="{{track.url}}" target="_blank">{{track.url}}</a><br>
+        <strong>Date:</strong> {{track.createdAtFull}}
+         <b>Location: </b>
+        <span ng-if="trackingUser[track.location].city">{{trackingUser[track.location].city}} </span>
+        <span ng-if="trackingUser[track.location].region">{{trackingUser[track.location].region}} </span>
+        <span ng-if="trackingUser[track.location].country">{{trackingUser[track.location].country}} </span><a href="http://maps.google.com/maps?q=loc:{{trackingUser[track.location].lat}},{{trackingUser[track.location].lng}}" target="_blank">Map</a></li>
+      </ul>
+    </div>
+    
+    <div class="col-md-3">
+    
+    </div>
+  </div>
+</div>

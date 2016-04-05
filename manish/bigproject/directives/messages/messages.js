@@ -73,7 +73,7 @@
               //firebase reference
               var host = $location.host();
               var ref = new Firebase(configs[host].firebaseUrl);
-              var badge = ref.child('badges');
+              var badge = ref.child('messagesBadges');
   
               //reset badge
               if ($routeParams.uid) {
@@ -81,7 +81,7 @@
               }
               
               //from user
-              var usersFrom = ref.child('users').child(scope.userData.id);
+              var usersFrom = ref.child('messagesUsers').child(scope.userData.id);
               var queryFrom = usersFrom.orderByChild("timestamp").limitToLast(500);
               scope.usersFrom = $firebaseArray(queryFrom);
   
@@ -95,7 +95,7 @@
               
               //to user
               if ($routeParams.uid) {
-                var usersTo = ref.child('users').child($routeParams.uid);
+                var usersTo = ref.child('messagesUsers').child($routeParams.uid);
                 
                 var queryTo = usersTo.orderByChild("timestamp").limitToLast(500);
                 scope.usersTo = $firebaseArray(queryTo);
