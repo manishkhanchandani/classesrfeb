@@ -169,6 +169,16 @@
                 });
               };//badge ends
               
+              //delete message
+              scope.deleteMessage = function(message) {
+                var a = confirm('Do you really want to delete this message?');
+                if (!a) return;
+                mes.child(scope.userData.id).child($routeParams.uid).child(message.$id).remove();
+                //badge
+                badge.child(scope.userData.id).child($routeParams.uid).child('badge').set(0);
+              };
+              //end delete message
+              
               
           }//end link
       };//end return
