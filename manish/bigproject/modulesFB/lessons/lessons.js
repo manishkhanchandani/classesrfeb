@@ -338,7 +338,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 
-.controller('ViewSearchCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('ViewSearchCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', '$firebaseArray', function($scope, $location, dataService, $routeParams, $firebaseArray) {
   
   $scope.title = 'Teachers';
   
@@ -358,6 +358,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm.urlSufix = '';
   
   $scope.loading = false;
+  $scope.defaultImage = 'images/noimage.jpg';
+  
+  //without any location or keyword
+  var query = $scope.tutorsRecord.orderByChild("timestamp").limitToLast(500);
+  $scope.results = $firebaseArray(query);
+  return;
   
   //initialize the value of page, i.e. default value
   /*Purpose of search data is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
@@ -378,7 +384,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     $location.path(url);
   };
-  
   
   
   

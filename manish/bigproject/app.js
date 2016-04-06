@@ -42,6 +42,14 @@ angular.module('myApp', [
   $locationProvider.html5Mode(true);
 }])
 
+.filter('customDate', function($filter) {
+ return function(input) {
+  if(input == null){ return ""; }
+  var _date = $filter('date')(new Date(input), 'MMM dd yyyy');
+  return _date;
+ };
+})
+
 .controller('mainController', ['$scope', 'configs', '$location', '$firebaseArray', 'dataService', function($scope, configs, $location, $firebaseArray, dataService) {
   
   //config

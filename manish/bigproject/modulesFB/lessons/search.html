@@ -36,17 +36,18 @@
       </div>
       
        <div class="list-group" ng-if="results && !loading">
-          <div class="list-group-item" ng-repeat="item in results">
+          <div class="list-group-item" ng-repeat="item in results | limitTo : 4 : 0 | orderBy: '-timestamp'">
             <div class="row">
               <div class="col-md-2">
-                <a href="lessons/detail/{{item.id}}"><img ng-src="{{item.mainImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.$id}}" ng-if="item.details.images" ng-repeat="image in item.details.images | limitTo : 1 : 0"><img ng-src="{{image}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.$id}}" ng-if="!item.details.images"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
               </div>
               <div class="col-md-10">
-                <h4 class="list-group-item-heading"><a href="lessons/detail/{{item.id}}">{{item.title}}</a></h4>
-                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.detailsFull.location}}</a></p>
-                <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
+                <h4 class="list-group-item-heading"><a href="lessons/detail/{{item.$id}}">{{item.title}}</a></h4>
+                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.details.location}}</a></p>
+                <p class="list-group-item-text"><strong>Created On:</strong> {{item.timestamp | customDate}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
-                <p><strong>Subjects:</strong> {{item.detailsFull.tagsSingle}}</p>
+                <p><strong>Subjects:</strong> {{item.tags}}</p>
               </div>
             </div>
           
