@@ -22,7 +22,8 @@ angular.module('myApp', [
     title: 'I Need Tutor :: Search/Browse Teachers And Students',
     firebaseUrl: 'https://mycontacts12.firebaseio.com/projects/lessons',
     tid: 2,
-    homePage: 'modulesFB/lessons/lessons.html'
+    homePage: 'modulesFB/lessons/lessons.html',
+    apiUrl: 'http://api.mkgalaxy.com/'
     
   }
 })
@@ -41,18 +42,19 @@ angular.module('myApp', [
   $locationProvider.html5Mode(true);
 }])
 
-.controller('mainController', ['$scope', 'configs', '$location', '$firebaseArray', function($scope, configs, $location, $firebaseArray) {
+.controller('mainController', ['$scope', 'configs', '$location', '$firebaseArray', 'dataService', function($scope, configs, $location, $firebaseArray, dataService) {
   
+  //config
+  $scope.config = dataService.config();
   $scope.templateUrl = null;
-  var host = $location.host();
-  if (configs[host].siteUrl === 'lessons') {
+  if ($scope.config.siteUrl === 'lessons') {
     $scope.templateUrl = 'modules/navItems/lessons.html';
-  } else if (configs[host].siteUrl === 'student') {
+  } else if ($scope.config.siteUrl === 'student') {
     $scope.templateUrl = 'modules/navItems/student.html';
   }
-  document.title = configs[host].title;
+  document.title = $scope.config.title;
   //firebase functionality, remove if you want api
-  $scope.ref = new Firebase(configs[host].firebaseUrl);
+  $scope.ref = new Firebase($scope.config.firebaseUrl);
   $scope.tutorsRecord = $scope.ref.child('tutors').child('records');
   $scope.tutorsLocation = $scope.ref.child('tutors').child('location');
   $scope.tutorsTags = $scope.ref.child('tutors').child('tags');
