@@ -367,6 +367,22 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   };//get data ends
   
   $scope.getData();//get data on page load
+  
+  function deleteSuccess(response) {
+    $scope.getData();
+  }
+  
+  function deleteFailure(response) {
+    console.log('failure: ', response);
+  }
+
+  $scope.deleteProfile = function(itemDetail) {
+    var a = confirm('do you really want to delete this profile');
+    if (!a) return;
+    var access_token = $scope.userData.token;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=delete&tid='+dataService.tid()+'&id='+itemDetail.id+'&access_token='+access_token;
+    dataService.get(url, deleteSuccess, deleteFailure, false);
+  };
 }])
 
 
