@@ -9,7 +9,8 @@ angular.module('myApp', [
   'messagesModule',
   'myApp.messages',
   'myApp.lessons',
-  'myApp.students'
+  'myApp.students',
+  'firebase'
   //'ui.bootstrap'
 ])
 .constant('configs', {
@@ -21,7 +22,7 @@ angular.module('myApp', [
     title: 'I Need Tutor :: Search/Browse Teachers And Students',
     firebaseUrl: 'https://mycontacts12.firebaseio.com/projects/lessons',
     tid: 2,
-    homePage: 'modules/lessons/lessons.html'
+    homePage: 'modulesFB/lessons/lessons.html'
     
   }
 })
@@ -40,7 +41,7 @@ angular.module('myApp', [
   $locationProvider.html5Mode(true);
 }])
 
-.controller('mainController', ['$scope', 'configs', '$location', function($scope, configs, $location) {
+.controller('mainController', ['$scope', 'configs', '$location', '$firebaseArray', function($scope, configs, $location, $firebaseArray) {
   
   $scope.templateUrl = null;
   var host = $location.host();
@@ -50,6 +51,11 @@ angular.module('myApp', [
     $scope.templateUrl = 'modules/navItems/student.html';
   }
   document.title = configs[host].title;
+  //firebase functionality, remove if you want api
+  $scope.ref = new Firebase(configs[host].firebaseUrl);
+  $scope.tutorsArr = $firebaseArray($scope.ref.child('tutors'));
+  $scope.studentsArr = $firebaseArray($scope.ref.child('students'));
+  //firebase functionality
   
   $scope.userData = null;
   

@@ -68,8 +68,8 @@
 <script src="js/angularFileUpload/directives.js"></script>
 <!-- File Upload -->
 
-  <script src="modules/lessons/lessons.js"></script>
-  <script src="modules/students/students.js"></script>
+  <script src="modulesFB/lessons/lessons.js"></script>
+  <script src="modulesFB/students/students.js"></script>
   <script src="modules/messages/messages.js"></script>
   <script>
   
