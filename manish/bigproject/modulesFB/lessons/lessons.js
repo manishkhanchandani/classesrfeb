@@ -133,7 +133,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
   uploader.onCompleteItem = function(fileItem, response, status, headers) {
       console.info('onCompleteItem', fileItem, response, status, headers);
-      $scope.ref.child('tutors').child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
+      $scope.tutorsRecord.child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
   };
   uploader.onCompleteAll = function() {
       console.info('onCompleteAll');
@@ -166,7 +166,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       return; 
     }
     
-      $scope.ref.child('tutors').child($scope.id).child('details').child('youtubeUrls').child(md5($scope.frm.youtube)).set($scope.frm.youtube);
+      $scope.tutorsRecord.child($scope.id).child('details').child('youtubeUrls').child(md5($scope.frm.youtube)).set($scope.frm.youtube);
       $scope.resetData();
       $scope.frm.youtube = '';
   };
@@ -196,7 +196,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       return; 
     }
     
-      $scope.ref.child('tutors').child($scope.id).child('details').child('linkUrls').child(md5($scope.frm.linkUrl)).set($scope.frm.linkUrl);
+      $scope.tutorsRecord.child($scope.id).child('details').child('linkUrls').child(md5($scope.frm.linkUrl)).set($scope.frm.linkUrl);
       $scope.resetData();
       $scope.frm.linkUrl = '';
     
@@ -495,23 +495,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.createStatus = null;
   $scope.frm = {};
   
-  function addSuccess(response) {
-    //console.log('success: ', response);
-    //console.log('id is : ', response.data.data.id);
-    if (response.error === 1) {
-      $scope.createStatus = response.errorMessage;
-      return;
-    }
-    $scope.frm = {};
-    $location.path('/lessons/create/imagesUpload/'+response.data.data.id);
-  }
-  
-  
-  function addFailure(response) {
-    $scope.createStatus = 'Something went wrong, please try again';
-    //console.log('failure: ', response);
-  }
-  
   $scope.submitCreateForm = function() {
       if (!$scope.location) {
         $scope.createStatus = 'Please enter location';
@@ -529,9 +512,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         $scope.createStatus = 'Please enter subjects';
         return; 
       }
-     //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid='+dataService.tid();
-     
  
     var postData = {};
     postData.title = $scope.frm.title;
@@ -558,6 +538,8 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.details.charges = $scope.frm.charges;
     postData.details.charge_explanation = $scope.frm.charge_explanation;
     postData.details.location = $scope.location;
+    postData.uid = $scope.userData.id;
+    postData.timestamp = Firebase.ServerValue.TIMESTAMP;
 
     $scope.tutorsArr.$add(postData).then(function(response) {
        var id = response.key();
@@ -571,6 +553,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 .controller('ViewEditCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   $scope.frm = {};
+  $scope.id = $routeParams.id;
   
   //location starts
   $scope.mapOptions = {
@@ -581,95 +564,100 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.details.components = {};
   //location ends
   
-  function successGetData(response) {
-    //console.log('success1: ', response);
-    if (response.data.data.uid !== $scope.userData.uid) {
-      //if logged in users data does not match with current records data, then send user to my profile
+  $scope.current = null;
+  
+  $scope.resetData = function() {
+    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    if ($scope.current.uid !== $scope.userData.uid) {
       $location.path('/lessons/my');
       return;
-    }
+    }//end if
     
-    $scope.frm.title = response.data.data.title;
-    $scope.frm.description = response.data.data.description;
-    $scope.frm.tags = response.data.data.detailsFull.tagsSingle;
-    $scope.frm.gender = response.data.data.detailsFull.gender;
-    $scope.frm.age = parseInt(response.data.data.detailsFull.age);
-    $scope.frm.email = response.data.data.detailsFull.email;
-    $scope.frm.phone = response.data.data.detailsFull.phone;
-    $scope.frm.pref_email = (response.data.data.detailsFull.pref_email === "true") ? true : false;
-    $scope.frm.pref_phone_text = (response.data.data.detailsFull.pref_phone_text === "true") ? true : false;
-    $scope.frm.pref_phone_call = (response.data.data.detailsFull.pref_phone_call === "true") ? true : false;
-    $scope.frm.charges = parseInt(response.data.data.detailsFull.charges);
-    $scope.frm.charge_explanation = response.data.data.detailsFull.charge_explanation;
+    $scope.frm.title = $scope.current.title;
+    $scope.frm.description = $scope.current.description;
+    $scope.frm.tags = $scope.current.tags;
+    $scope.frm.gender = $scope.current.details.gender;
+    $scope.frm.age = parseInt($scope.current.details.age);
+    $scope.frm.email = $scope.current.details.email;
+    $scope.frm.phone = $scope.current.details.phone;
+    $scope.frm.pref_email = ($scope.current.details.pref_email === true) ? true : false;
+    $scope.frm.pref_phone_text = ($scope.current.details.pref_phone_text === true) ? true : false;
+    $scope.frm.pref_phone_call = ($scope.current.details.pref_phone_call === true) ? true : false;
+    $scope.frm.charges = parseInt($scope.current.details.charges);
+    $scope.frm.charge_explanation = $scope.current.details.charge_explanation;
     
-    $scope.location = response.data.data.location.formatted_addr;
+    $scope.location = $scope.current.details.location;
     
     
-    $scope.details.components.lat = response.data.data.location.latitude;
-    $scope.details.components.lng = response.data.data.location.longitude;
-    $scope.details.components.country = response.data.data.location.country;
-    $scope.details.components.state = response.data.data.location.state;
-    $scope.details.components.city = response.data.data.location.city;
-    $scope.details.components.postal_code = response.data.data.location.postal_code;
-    $scope.details.place_id = response.data.data.location.place_id;
-    $scope.details.components.county = response.data.data.location.county;
-  }
-  
-  function failureGetData(response) {
-    console.log('failed: ', response);
-  }
-  
-  $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
-    dataService.get(url, successGetData, failureGetData, false);
+    $scope.details.components.lat = $scope.current.location.latitude;
+    $scope.details.components.lng = $scope.current.location.longitude;
+    $scope.details.components.country = $scope.current.location.country;
+    $scope.details.components.state = $scope.current.location.state;
+    $scope.details.components.city = $scope.current.location.city;
+    $scope.details.components.postal_code = ($scope.current.location.postal_code) ? $scope.current.location.postal_code : '';
+    $scope.details.place_id = $scope.current.location.place_id;
+    $scope.details.components.county = $scope.current.location.county;
+    $scope.details.formatted_address = $scope.current.location.formatted_addr;
   };
   
-  //call the getdata function
-  $scope.getData();
+  $scope.tutorsArr.$loaded().then(function (arr) {
+    $scope.resetData();
+  });
   
-  function addSuccess(response) {
-    $scope.frm = {};
-    $location.path('/lessons/create/imagesUpload/'+$routeParams.id);
-  }
-  
-  function addFailure(response) {
-    console.log('failure: ', response);
-  }
   
   $scope.submitCreateForm = function() {
-     //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/lessons&tid='+dataService.tid()+'&id='+$routeParams.id;
-
-    var postData = '';
-    postData = postData + '&title='+encodeURIComponent($scope.frm.title);
-    postData = postData + '&description='+encodeURIComponent($scope.frm.description);
+    if (!$scope.location) {
+        $scope.createStatus = 'Please enter location';
+        return; 
+      }
+      if (!$scope.frm.title) {
+        $scope.createStatus = 'Please enter title';
+        return; 
+      }
+      if (!$scope.frm.description) {
+        $scope.createStatus = 'Please enter description';
+        return; 
+      }
+      if (!$scope.frm.tags) {
+        $scope.createStatus = 'Please enter subjects';
+        return; 
+      }
+ 
     
-    postData = postData + '&location[latitude]='+encodeURIComponent($scope.details.components.lat);
-    postData = postData + '&location[longitude]='+encodeURIComponent($scope.details.components.lng);
-    postData = postData + '&location[country]='+encodeURIComponent($scope.details.components.country);
-    postData = postData + '&location[state]='+encodeURIComponent($scope.details.components.state);
-    postData = postData + '&location[city]='+encodeURIComponent($scope.details.components.city);
-    postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
-    postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
-    postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
-    
-    postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
-    
-    
-    postData = postData + '&data[gender]=' + (($scope.frm.gender) ? encodeURIComponent($scope.frm.gender) : '');
-    postData = postData + '&data[age]=' + (($scope.frm.age) ? encodeURIComponent($scope.frm.age) : '');
-    postData = postData + '&data[email]=' + (($scope.frm.email) ? encodeURIComponent($scope.frm.email) : '');
-    postData = postData + '&data[phone]=' + (($scope.frm.phone) ? encodeURIComponent($scope.frm.phone) : '');
-    postData = postData + '&data[pref_email]=' + (($scope.frm.pref_email) ? encodeURIComponent($scope.frm.pref_email) : '');
-    postData = postData + '&data[pref_phone_text]=' + (($scope.frm.pref_phone_text) ? encodeURIComponent($scope.frm.pref_phone_text) : '');
-    postData = postData + '&data[pref_phone_call]=' + (($scope.frm.pref_phone_call) ? encodeURIComponent($scope.frm.pref_phone_call) : '');
-    postData = postData + '&i1='+encodeURIComponent($scope.frm.charges);
-    postData = postData + '&data[charges]='+encodeURIComponent($scope.frm.charges);
-    postData = postData + '&data[charge_explanation]='+encodeURIComponent($scope.frm.charge_explanation);
-    postData = postData + '&data[location]='+encodeURIComponent($scope.location);
-    
-    dataService.post(url, postData, addSuccess, addFailure);
+    $scope.current.title = $scope.frm.title;
+    $scope.current.description = $scope.frm.description;
+    $scope.current.location.latitude = $scope.details.components.lat;
+    $scope.current.location.longitude = $scope.details.components.lng;
+    $scope.current.location.country = $scope.details.components.country;
+    $scope.current.location.state = $scope.details.components.state;
+    $scope.current.location.city = $scope.details.components.city;
+    $scope.current.location.zip = $scope.details.components.postal_code;
+    $scope.current.location.place_id = $scope.details.place_id;
+    $scope.current.location.county = $scope.details.components.county;
+    $scope.current.location.formatted_addr = $scope.details.formatted_address;
+    $scope.current.tags = $scope.frm.tags;
+    $scope.current.details.gender = ($scope.frm.gender) ? $scope.frm.gender : '';
+    $scope.current.details.age = ($scope.frm.age) ? $scope.frm.age : '';
+    $scope.current.details.email = ($scope.frm.email) ? $scope.frm.email : '';
+    $scope.current.details.phone = ($scope.frm.phone) ? $scope.frm.phone : '';
+    $scope.current.details.pref_email = ($scope.frm.pref_email) ? $scope.frm.pref_email : false;
+    $scope.current.details.pref_phone_text = ($scope.frm.pref_phone_text) ? $scope.frm.pref_phone_text : false;
+    $scope.current.details.pref_phone_call = ($scope.frm.pref_phone_call) ? $scope.frm.pref_phone_call : false;
+    $scope.current.details.charges = $scope.frm.charges;
+    $scope.current.details.charge_explanation = $scope.frm.charge_explanation;
+    $scope.current.details.location = $scope.location;
+    $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
+    $scope.tutorsArr.$save($scope.current).then(function(response) {
+        //save location
+        $scope.tutorsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child(btoa($scope.current.location.city)).child($scope.id).set(true);
+        var tmp = $scope.current.tags.split(',');
+        angular.forEach(tmp, function(value, key) {
+          var val = value.replace(/^\s+|\s+$/g, '');
+          $scope.tutorsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child(btoa($scope.current.location.city)).child($scope.id).set(true);
+        });
+        //location ends
+        $location.path('/lessons/create/imagesUpload/'+$routeParams.id);
+    });
   };
 }])
 
@@ -690,7 +678,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   });
   
   $scope.addImage = function() {
-      $scope.ref.child('tutors').child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
+      $scope.tutorsRecord.child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
       $scope.resetData();
       $scope.frm.image = '';
   };//add image function ends
@@ -698,13 +686,11 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   
   $scope.deleteImage = function(k) {
-    console.log(k);
     var a = confirm('Do you really want to delete this image');
     if (!a) return;
     
-    $scope.ref.child('tutors').child($scope.id).child('details').child('images').child(k).remove();
+    $scope.tutorsRecord.child($scope.id).child('details').child('images').child(k).remove();
     $scope.resetData();
-    console.log('deleted');
     //do api call
   };
   

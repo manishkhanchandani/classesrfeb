@@ -53,8 +53,14 @@ angular.module('myApp', [
   document.title = configs[host].title;
   //firebase functionality, remove if you want api
   $scope.ref = new Firebase(configs[host].firebaseUrl);
-  $scope.tutorsArr = $firebaseArray($scope.ref.child('tutors'));
-  $scope.studentsArr = $firebaseArray($scope.ref.child('students'));
+  $scope.tutorsRecord = $scope.ref.child('tutors').child('records');
+  $scope.tutorsLocation = $scope.ref.child('tutors').child('location');
+  $scope.tutorsTags = $scope.ref.child('tutors').child('tags');
+  $scope.tutorsArr = $firebaseArray($scope.tutorsRecord);
+  $scope.studentsRecord = $scope.ref.child('students').child('records');
+  $scope.studentsLocation = $scope.ref.child('students').child('location');
+  $scope.studentsTags = $scope.ref.child('students').child('tags');
+  $scope.studentsArr = $firebaseArray($scope.studentsRecord);
   //firebase functionality
   
   $scope.userData = null;
