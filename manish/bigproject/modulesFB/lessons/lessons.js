@@ -88,11 +88,6 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   
-  $scope.current = null;
-  $scope.tutorsArr.$loaded().then(function (arr) {
-    $scope.current = arr.$getRecord($scope.id);
-  });
-  
   var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=uploadOnly&access_token='+access_token+'&id='+$routeParams.id;
   var uploader = $scope.uploader = new FileUploader({
       url: requestUrl
@@ -138,13 +133,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
   uploader.onCompleteItem = function(fileItem, response, status, headers) {
       console.info('onCompleteItem', fileItem, response, status, headers);
-      if (!$scope.current.details.images) {
-        $scope.current.details.images = {};
-      }
-      $scope.current.details.images[response.data.paramsKey] = response.data.param;
-      $scope.tutorsArr.$save($scope.current).then(function(response) {
-          console.log('image upload done');
-      });
+      $scope.ref.child('tutors').child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
   };
   uploader.onCompleteAll = function() {
       console.info('onCompleteAll');
@@ -158,53 +147,28 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   $scope.frm = {};
-  $scope.youtubeUrls = [];
   
-  function getSuccess(response) {
-    //console.log('success: ', response);
-    
-    if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.youtube) {
-      angular.forEach(response.data.data.detailsFull.youtube, function(value, key) {
-        $scope.youtubeUrls.push(value);
-      });
-      //console.log($scope.youtubeUrls);
-    }
-  }
   
-  function getFailure(response) {
-    console.log('failure: ', response);
-  }
+  $scope.current = null;
+  $scope.youtubeUrls = null;
   
-  $scope.getYoutube = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
-    dataService.get(url, getSuccess, getFailure);
+  $scope.resetData = function() {
+    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    $scope.youtubeUrls = $scope.current.details.youtubeUrls;
   };
   
-  $scope.getYoutube();
-  
-  function addSuccess(response) {
-    //console.log('success: ', response);
-    $scope.youtubeUrls = [];
-    $scope.getYoutube();
-    $scope.frm = {};
-  }
-  
-  function addFailure(response) {
-    console.log('failure: ', response);
-  }
+  $scope.tutorsArr.$loaded().then(function (arr) {
+    $scope.resetData();
+  });
   
   $scope.addYoutube = function() {
     if (!$scope.frm.youtube) {
       return; 
     }
     
-    
-      var submitData = '';
-      submitData = submitData + '&param='+encodeURIComponent($scope.frm.youtube);
-      //url
-      var access_token = $scope.userData.token;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
-      dataService.post(url, submitData, addSuccess, addFailure);
+      $scope.ref.child('tutors').child($scope.id).child('details').child('youtubeUrls').child(md5($scope.frm.youtube)).set($scope.frm.youtube);
+      $scope.resetData();
+      $scope.frm.youtube = '';
   };
 }])
 .controller('ViewLinksLessonsCtrlFB', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
@@ -213,53 +177,29 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   $scope.frm = {};
-  $scope.linkUrls = [];
   
-  function getSuccess(response) {
-    //console.log('success: ', response);
-    
-    if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.links) {
-      angular.forEach(response.data.data.detailsFull.links, function(value, key) {
-        $scope.linkUrls.push(value);
-      });
-      //console.log($scope.linkUrls);
-    }
-  }
+  $scope.current = null;
+  $scope.linkUrls = {};
   
-  function getFailure(response) {
-    console.log('failure: ', response);
-  }
-  
-  $scope.getLinks = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
-    dataService.get(url, getSuccess, getFailure);
+  $scope.resetData = function() {
+    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    $scope.linkUrls = $scope.current.details.linkUrls;
   };
   
-  $scope.getLinks();
+  $scope.tutorsArr.$loaded().then(function (arr) {
+    $scope.resetData();
+  });
   
-  function addSuccess(response) {
-    //console.log('success: ', response);
-    $scope.linkUrls = [];
-    $scope.getLinks();
-    $scope.frm = {};
-  }
-  
-  function addFailure(response) {
-    console.log('failure: ', response);
-  }
   
   $scope.addLink = function() {
     if (!$scope.frm.linkUrl) {
       return; 
     }
     
+      $scope.ref.child('tutors').child($scope.id).child('details').child('linkUrls').child(md5($scope.frm.linkUrl)).set($scope.frm.linkUrl);
+      $scope.resetData();
+      $scope.frm.linkUrl = '';
     
-      var submitData = '';
-      submitData = submitData + '&param='+encodeURIComponent($scope.frm.linkUrl);
-      //url
-      var access_token = $scope.userData.token;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+access_token+'&key=links&id='+$routeParams.id;
-      dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
 
@@ -747,19 +687,12 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   
   $scope.tutorsArr.$loaded().then(function (arr) {
     $scope.resetData();
-    console.log($scope.current);
   });
   
   $scope.addImage = function() {
-    if (!$scope.current.details.images) {
-        $scope.current.details.images = {};
-      }
-      $scope.current.details.images[btoa($scope.frm.image)] = $scope.frm.image;
-      $scope.tutorsArr.$save($scope.current).then(function(response) {
-          $scope.frm.image = '';
-          console.log('image saved');
-          $scope.resetData();
-      });
+      $scope.ref.child('tutors').child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
+      $scope.resetData();
+      $scope.frm.image = '';
   };//add image function ends
   //ends add Image in database
   
