@@ -1,17 +1,31 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Enter Main Details</h1>
-      
-      <form>
-        <div class="form-group">
-            <label for="location">Location *</label>
-            <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details" required>
-						<br>
-						{{details}}
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-    </div>
-  </div>
+	<div class="row">
+    	<div class="col-md-12">
+			<h2>Post your Ad</h2>
+			<form ng-submit="submitCreateForm()">
+				<div class="form-group">
+					<label for="location">Location *</label>
+					<input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details">
+				</div>
+				<div class="form-group">
+					<label for="title">Title *</label>
+					<input type="text" class="form-control" id="title" ng-model="frm.title" placeholder="Enter Title" required>
+				</div>
+				<div class="form-group">
+					<label for="description">Description *</label>
+					<textarea class="form-control" id="description" ng-model="frm.description" placeholder="Enter Description" rows="10" required></textarea>
+				</div>
+				<div class="form-group">
+					<label for="tags">Search Tags (Comma seperated tags)</label>
+					<input type="text" class="form-control" id="tags" ng-model="frm.tags" placeholder="Enter Search Tags" required>
+				</div>
+				<div class="form-group">
+					<label for="gender">Gender:</label>
+					<input type="radio" ng-model="frm.gender" value="male">Male
+					<input type="radio" ng-model="frm.gender" value="female">Female
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
 </div>
