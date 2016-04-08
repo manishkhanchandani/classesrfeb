@@ -16,8 +16,8 @@
       <br>
       <div class="row" ng-if="images">
         <div class="col-md-3" ng-repeat="(key, img) in images">
-          <img ng-src="{{img}}" class="img-responsive img-thumbnail">
-          <a href="" ng-click="deleteImage(key)">Delete</a>
+          <img ng-src="{{img}}" class="img-responsive" ng-class="(current.details.defaultImage==img) ? 'img-thumbnail' : ''">
+          <a href="" ng-click="makeDefaultImage(img)">Make Default Image</a> | <a href="" ng-click="deleteImage(key)">Delete</a>
         </div>
       </div>
       

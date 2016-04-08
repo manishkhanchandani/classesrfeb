@@ -17,7 +17,7 @@
   <div class="row" ng-if="linkUrls">
     <br>
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="url in linkUrls"><a href="{{url}}" target="_blank">{{url}}</a> (<a href="" ng-click="deleteLink(key)">Delete</a>)</li>
+      <li class="list-group-item" ng-repeat="(key, url) in linkUrls"><a href="{{url}}" target="_blank">{{url}}</a> (<a href="" ng-click="deleteLink(key)">Delete</a>)</li>
     </ul>
   </div>
       

@@ -32,8 +32,7 @@
               scope.startRows = parseInt(scope.startRows);
               scope.totalPages = parseInt(scope.totalPages);
               scope.totalRows = parseInt(scope.totalRows);
-              
-              
+
               scope.startRowsPlus = scope.startRows + 1;
               scope.minRows = scope.totalRows;
               if ((scope.startRows + scope.maxRows) < scope.totalRows) {
@@ -50,7 +49,6 @@
               if (scope.totalPages < (scope.pageNum + 1)) {
                 scope.nextPage = scope.totalPages;
               }
-              
               
             });
             //min rows end

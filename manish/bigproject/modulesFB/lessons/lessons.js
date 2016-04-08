@@ -35,16 +35,16 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   // '/lessons/search'
   // '/lessons/search/0'
   // '/lessons/search/0/keyword'
-  // '/lessons/search/0/lat/lng/radius/location'
-  // '/lessons/search/0/keyword/lat/lng/radius/location'
+  // '/lessons/search/0/lat/lng/country/state/county/location'
+  // '/lessons/search/0/keyword/lat/lng/country/state/county/location'
   
-  .when('/lessons/search/:page/:keyword/:lat/:lng/:radius/:location', {
+  .when('/lessons/search/:page/:keyword/:lat/:lng/:country/:state/:county/:location', {
     templateUrl: 'modulesFB/lessons/search.html',
     controller: 'ViewSearchCtrlFB'
   })
   
   
-  .when('/lessons/search/:page/:lat/:lng/:radius/:location', {
+  .when('/lessons/search/:page/:lat/:lng/:country/:state/:county/:location', {
     templateUrl: 'modulesFB/lessons/search.html',
     controller: 'ViewSearchCtrlFB'
   })
@@ -84,7 +84,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 .controller('ViewImageUploadLessonsCtrlFB', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
-  //console.log($routeParams);
+  var obj = dataService.tutorSetFirebase($scope.ref);
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   var requestUrl = $scope.config.apiUrl + 'records.php?action=uploadOnly&access_token='+access_token+'&id='+$routeParams.id;
@@ -132,7 +132,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   };
   uploader.onCompleteItem = function(fileItem, response, status, headers) {
       console.info('onCompleteItem', fileItem, response, status, headers);
-      $scope.tutorsRecord.child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
+      obj.tutorsRecord.child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
   };
   uploader.onCompleteAll = function() {
       console.info('onCompleteAll');
@@ -142,6 +142,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 .controller('ViewYoutubeLessonsCtrlFB', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
+  var obj = dataService.tutorSetFirebase($scope.ref);
   //console.log($routeParams);
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
@@ -152,11 +153,11 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.youtubeUrls = null;
   
   $scope.resetData = function() {
-    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    $scope.current = obj.tutorsArr.$getRecord($scope.id);
     $scope.youtubeUrls = $scope.current.details.youtubeUrls;
   };
   
-  $scope.tutorsArr.$loaded().then(function (arr) {
+  obj.tutorsArr.$loaded().then(function (arrR) {
     $scope.resetData();
   });
   
@@ -165,13 +166,25 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       return; 
     }
     
-      $scope.tutorsRecord.child($scope.id).child('details').child('youtubeUrls').child(md5($scope.frm.youtube)).set($scope.frm.youtube);
+      obj.tutorsRecord.child($scope.id).child('details').child('youtubeUrls').child(md5($scope.frm.youtube)).set($scope.frm.youtube);
       $scope.resetData();
       $scope.frm.youtube = '';
   };
+  
+  
+  $scope.deleteYoutube = function(k) {
+    var a = confirm('Do you really want to delete this youtube url?');
+    if (!a) return;
+    
+    obj.tutorsRecord.child($scope.id).child('details').child('youtubeUrls').child(k).remove();
+    $scope.resetData();
+    //do api call
+  };
+  
 }])
 .controller('ViewLinksLessonsCtrlFB', ['$scope', 'dataService', '$location', '$routeParams', function($scope, dataService, $location, $routeParams) {
   
+  var obj = dataService.tutorSetFirebase($scope.ref);
   //console.log($routeParams);
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
@@ -181,11 +194,11 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.linkUrls = {};
   
   $scope.resetData = function() {
-    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    $scope.current = obj.tutorsArr.$getRecord($scope.id);
     $scope.linkUrls = $scope.current.details.linkUrls;
   };
   
-  $scope.tutorsArr.$loaded().then(function (arr) {
+  obj.tutorsArr.$loaded().then(function (arrR) {
     $scope.resetData();
   });
   
@@ -195,61 +208,52 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       return; 
     }
     
-      $scope.tutorsRecord.child($scope.id).child('details').child('linkUrls').child(md5($scope.frm.linkUrl)).set($scope.frm.linkUrl);
+      obj.tutorsRecord.child($scope.id).child('details').child('linkUrls').child(md5($scope.frm.linkUrl)).set($scope.frm.linkUrl);
       $scope.resetData();
       $scope.frm.linkUrl = '';
     
   };
+  
+  
+  $scope.deleteLink = function(k) {
+    var a = confirm('Do you really want to delete this url?');
+    if (!a) return;
+    
+    obj.tutorsRecord.child($scope.id).child('details').child('linkUrls').child(k).remove();
+    $scope.resetData();
+    //do api call
+  };
+  
 }])
 
 .controller('ViewDetailCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
+  var obj = dataService.tutorSetFirebase($scope.ref);
   $scope.results = {};
+  $scope.results.mainImage = null;
+  obj.tutorsArr.$loaded().then(function (arrR) {
+    $scope.results = obj.tutorsArr.$getRecord($routeParams.id);
+    $scope.images = $scope.results.details.images;
+    $scope.youtubeUrls = $scope.results.details.youtubeUrls;
+    $scope.linkUrls = $scope.results.details.linkUrls;
+    
+    if ($scope.results.details.defaultImage) $scope.results.mainImage = $scope.results.details.defaultImage;
+    else if ($scope.results.details.images) {
+      angular.forEach($scope.results.details.images, function(value, key) {
+        if ($scope.results.mainImage) return;
+        $scope.results.mainImage = value;
+      });
+    } else {
+      $scope.results.mainImage = 'images/noimage.jpg';  
+    }
+  });
+  
+  
   
   $scope.setImage = function(image) {
     $scope.results.mainImage = image;
   };
 
-  function getSuccess(response) {
-    $scope.results = response.data.data;
-    
-    var images = $scope.results.detailsFull.images;
-    $scope.images = images;
-    if (images) {
-      angular.forEach(images, function(value1, key1) {
-        if (!$scope.results.mainImage) {
-          $scope.results.mainImage = value1;
-        }//end if
-      });//end foreach
-    }//end if
-    
-    if (!$scope.results.mainImage) {
-      $scope.results.mainImage = 'images/noimage.jpg';
-    }//end if
-    
-    
-    $scope.youtubeUrls = [];
-    $scope.linkUrls = [];
-    if (response.data && response.data.data && response.data.data.detailsFull && response.data.data.detailsFull.youtube) {
-      angular.forEach(response.data.data.detailsFull.youtube, function(value, key) {
-        $scope.youtubeUrls.push(value);
-      });
-      angular.forEach(response.data.data.detailsFull.links, function(value, key) {
-        $scope.linkUrls.push(value);
-      });
-    }
-    
-    
-    //console.log($scope.results);
-  }
-  
-  function getFailure(response) {
-    console.log('failed: ', response);
-  }
-  
-  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&id='+$routeParams.id;
-  dataService.get(url, getSuccess, getFailure, true);
-  
   $scope.goBack = function() {
     window.history.back();
   };
@@ -259,80 +263,31 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 .controller('ViewMyProfileCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
-  
+  var obj = dataService.tutorSetFirebase($scope.ref);
   $scope.searchStatus = null;
-  
   $scope.frm = {};
   
-  
-  $scope.frm.urlPrefix = 'lessons/my';
-  $scope.frm.urlSufix = '';
-  
-  
-  //initialize the value of page, i.e. default value
-  $scope.frm.page = 0;
-  
-  //page from url, if something coming from url, i will use that
-  if ($routeParams.page) {
-    $scope.frm.page = $routeParams.page;
-  }
-  //page
-  
-  $scope.results = null;
-  
-  
-  function successGetData(response) {
-    //console.log('success: ', response);
-    $scope.results = response.data.data.results;
-    //create the mainImage
-    angular.forEach($scope.results, function(value, key) {
-      var images = value.detailsFull.images;
-      if (images) {
-        angular.forEach(images, function(value1, key1) {
-          if (!$scope.results[key].mainImage) {
-            $scope.results[key].mainImage = value1;
-          }//end if
-        });//end foreach
-      }//end if
-      
-      if (!$scope.results[key].mainImage) {
-        $scope.results[key].mainImage = 'images/noimage.jpg';
-      }//end if
-    });//end foreach
-    //image ends
-    $scope.data = response.data.data;
-  }
-  
-  function failureGetData(response) {
-    console.log('failed: ', response);
-  }
-  
-  $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid='+dataService.tid()+'&path=/manny/lessons&noCache=1';
-    
-    
-    url = url + '&page=' + $scope.frm.page;
-    var access_token = $scope.userData.token;
-    url = url + '&access_token='+access_token;
-    dataService.get(url, successGetData, failureGetData, false);
-  };//get data ends
-  
-  $scope.getData();//get data on page load
-  
-  function deleteSuccess(response) {
-    $scope.getData();
-  }
-  
-  function deleteFailure(response) {
-    console.log('failure: ', response);
-  }
+  $scope.defaultImage = 'images/noimage.jpg';
+  $scope.results = [];
+  var keyword = decodeURIComponent($routeParams.keyword);
+  var queryRef = obj.tutorsMy.child($scope.userData.id).orderByValue().limitToLast(500);
+  queryRef.on('value', function(snapshot) {
+    $scope.results = [];
+    angular.forEach(snapshot.val(), function (value, key) {
+      obj.tutorsRecord.child(key).once('value', function(returnVar) {
+        var tmp = returnVar.val();
+        tmp.id = key;
+        $scope.results.push(tmp);
+      });
+    });
+    console.log($scope.results);
+    if(!$scope.$$phase) $scope.$apply();
+  });
 
   $scope.deleteProfile = function(itemDetail) {
     var a = confirm('do you really want to delete this profile');
     if (!a) return;
-    var access_token = $scope.userData.token;
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=delete&tid='+dataService.tid()+'&id='+itemDetail.id+'&access_token='+access_token;
-    dataService.get(url, deleteSuccess, deleteFailure, false);
+    console.log(itemDetail);
   };
 }])
 
@@ -341,6 +296,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 .controller('ViewSearchCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', '$firebaseArray', function($scope, $location, dataService, $routeParams, $firebaseArray) {
   
   $scope.title = 'Teachers';
+  var obj = dataService.tutorSetFirebase($scope.ref);
   
   //location starts
   $scope.mapOptions = {
@@ -351,19 +307,155 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm.details = {};
   $scope.frm.details.components = {};
   //location ends
-  
-  
-  
-  $scope.frm.urlPrefix = 'lessons/search';
-  $scope.frm.urlSufix = '';
+
+  $scope.urlPrefix = 'lessons/search';
+  $scope.urlSuffix = '';
   
   $scope.loading = false;
   $scope.defaultImage = 'images/noimage.jpg';
   
+  //pagination starts here
+  $scope.pagination = {};
+  $scope.pagination.maxRows = 100;
+  $scope.pagination.pageNum = 0;
+  //page from url, if something coming from url, i will use that
+  if ($routeParams.page) {
+    $scope.pagination.pageNum = parseInt($routeParams.page);
+  }
+  //page
+  
+  //default keyword
+  $scope.frm.keyword = '';
+  
+  $scope.pagination.startRow = $scope.pagination.pageNum * $scope.pagination.maxRows;
+  
+  $scope.pagination.startRowsPlus = $scope.pagination.startRow + 1;
+  //pagination ends here
+
+  
   //without any location or keyword
-  var query = $scope.tutorsRecord.orderByChild("timestamp").limitToLast(500);
-  $scope.results = $firebaseArray(query);
-  return;
+  var query = null;
+  
+  
+  if ($routeParams.keyword) {
+    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.keyword;
+  }
+  
+  if ($routeParams.lat) {
+    $scope.frm.details.components.lat = $routeParams.lat;
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.lat;
+  }
+  
+  if ($routeParams.lng) {
+    $scope.frm.details.components.lng = $routeParams.lng;
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.lng;
+  }
+  
+  if ($routeParams.country) {
+    $scope.frm.details.components.country = decodeURIComponent($routeParams.country);
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.country;
+  }
+  
+  if ($routeParams.state) {
+    $scope.frm.details.components.state = decodeURIComponent($routeParams.state);
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.state;
+  }
+  
+  if ($routeParams.county) {
+    $scope.frm.details.components.county = decodeURIComponent($routeParams.county);
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.county;
+  }
+  
+  if ($routeParams.location) {
+    $scope.frm.location = decodeURIComponent($routeParams.location);
+    $scope.urlSuffix = $scope.urlSuffix + '/' + $routeParams.location;
+  }
+  
+  $scope.setExtraPagination = function() {
+    $scope.pagination.minRows = $scope.pagination.totalRows;
+    if (($scope.pagination.startRow + $scope.pagination.maxRows) < $scope.pagination.totalRows) {
+      $scope.pagination.minRows = ($scope.pagination.startRow + $scope.pagination.maxRows);
+    }
+    
+    $scope.pagination.prevPage = $scope.pagination.pageNum - 1;
+    if (($scope.pagination.pageNum - 1) < 0) {
+      $scope.pagination.prevPage = 0;
+    }
+    
+    $scope.pagination.nextPage = ($scope.pagination.pageNum + 1);
+    if ($scope.pagination.totalPages < ($scope.pagination.pageNum + 1)) {
+      $scope.pagination.nextPage = $scope.pagination.totalPages;
+    } 
+  };
+  
+  $scope.orderBy = '-timestamp';
+  
+  var queryRef = null;
+  if ($routeParams.country && $routeParams.state && $routeParams.county) {
+    $scope.results = [];
+    var country = decodeURIComponent($routeParams.country);
+    var state = decodeURIComponent($routeParams.state);
+    var county = decodeURIComponent($routeParams.county);
+    $scope.orderBy = 'distance';
+    var tmpRef = obj.tutorsLocation;
+    if ($routeParams.keyword) {
+      var keyword = decodeURIComponent($routeParams.keyword);
+      tmpRef = obj.tutorsTags.child(btoa(keyword));
+    }
+    queryRef = tmpRef.child(btoa(country)).child(btoa(state)).child(btoa(county)).orderByValue().limitToLast(500);
+    queryRef.on('value', function(snapshot) {
+      $scope.results = [];
+      if (!snapshot.val()) return;
+      var size = Object.keys(snapshot.val()).length;
+      $scope.pagination.totalRows = size;
+      $scope.pagination.totalPages = Math.ceil($scope.pagination.totalRows/$scope.pagination.maxRows)-1;
+      //set pagination
+      $scope.setExtraPagination();
+      
+      angular.forEach(snapshot.val(), function (value, key) {
+        obj.tutorsRecord.child(key).once('value', function(returnVar) {
+          var tmp = returnVar.val();
+          tmp.distance = dataService.distance(parseFloat($routeParams.lat), parseFloat($routeParams.lng), tmp.location.latitude, tmp.location.longitude, 'M');
+          $scope.results.push(tmp);
+        });
+      });
+      
+      if(!$scope.$$phase) $scope.$apply();
+    });
+  } else if ($routeParams.keyword) {
+    $scope.results = [];
+    var keyword = decodeURIComponent($routeParams.keyword);
+    queryRef = obj.tutorsOnlyTags.child(btoa(keyword)).orderByValue().limitToLast(500);
+    queryRef.on('value', function(snapshot) {
+      var size = Object.keys(snapshot.val()).length;
+      $scope.pagination.totalRows = size;
+      $scope.pagination.totalPages = Math.ceil($scope.pagination.totalRows/$scope.pagination.maxRows)-1;
+      //set pagination
+      $scope.setExtraPagination();
+      
+      $scope.results = [];
+      angular.forEach(snapshot.val(), function (value, key) {
+        obj.tutorsRecord.child(key).once('value', function(returnVar) {
+          $scope.results.push(returnVar.val());
+        });
+      });
+      
+      if(!$scope.$$phase) $scope.$apply();
+    });
+  } else {
+    query = obj.tutorsRecord.orderByChild("timestamp").limitToLast(500);
+    
+    $scope.results = $firebaseArray(query);
+    $scope.results.$loaded().then(function(arrR) {
+      $scope.pagination.totalRows = arrR.length;
+      $scope.pagination.totalPages = Math.ceil($scope.pagination.totalRows/$scope.pagination.maxRows)-1;
+      
+      //set pagination
+      $scope.setExtraPagination();
+    });
+  
+  }
   
   //initialize the value of page, i.e. default value
   /*Purpose of search data is to create the url and pass the user to that url, it does not do any backend work. it just do client side redirection. url is contructed based on the route which we created.*/
@@ -375,121 +467,19 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     }
     
     if ($scope.frm.location) {
-      if (!$scope.frm.radius) {
-        $scope.frm.radius = 30;
-      }
-      
-      url = url + '/' + $scope.frm.details.components.lat + '/' + $scope.frm.details.components.lng + '/' + encodeURIComponent($scope.frm.radius) + '/' + encodeURIComponent($scope.frm.location);
+      url = url + '/' + $scope.frm.details.components.lat + '/' + $scope.frm.details.components.lng + '/' + encodeURIComponent($scope.frm.details.components.country) + '/' + encodeURIComponent($scope.frm.details.components.state) + '/' + encodeURIComponent($scope.frm.details.components.county) + '/' + encodeURIComponent($scope.frm.location);
     }
-    
+
     $location.path(url);
   };
-  
-  
-  
-  //page from url, if something coming from url, i will use that
-  if ($routeParams.page) {
-    $scope.frm.page = $routeParams.page;
-  }
-  //page
-  
-  //default keyword
-  $scope.frm.keyword = '';
-  
-  //check if url has keyword
-  if ($routeParams.keyword) {
-    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
-    
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.keyword;
-  }
-  
-  $scope.frm.radius = 30;
-  
-  
-  if ($routeParams.lat) {
-    $scope.frm.details.components.lat = $routeParams.lat;
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.lat;
-  }
-  
-  if ($routeParams.lng) {
-    $scope.frm.details.components.lng = $routeParams.lng;
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.lng;
-  }
- 
-  if ($routeParams.radius) {
-     $scope.frm.radius = $routeParams.radius;
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.radius;
-  }
-  
-  if ($routeParams.location) {
-    $scope.frm.location = decodeURIComponent($routeParams.location);
-    
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/' + $routeParams.location;
-  }
-  
-  $scope.results = null;
-  
-  
-  function successGetData(response) {
-    //console.log('success: ', response);
-    $scope.results = response.data.data.results;
-    $scope.loading = false;
-    
-    //create the mainImage
-    angular.forEach($scope.results, function(value, key) {
-      var images = value.detailsFull.images;
-      if (images) {
-        angular.forEach(images, function(value1, key1) {
-          if (!$scope.results[key].mainImage) {
-            $scope.results[key].mainImage = value1;
-          }//end if
-        });//end foreach
-      }//end if
-      
-      if (!$scope.results[key].mainImage) {
-        $scope.results[key].mainImage = 'images/noimage.jpg';
-      }//end if
-    });//end foreach
-    //image ends
-    
-    
-    $scope.data = response.data.data;
-  }
-  
-  function failureGetData(response) {
-    console.log('failed: ', response);
-    $scope.loading = false;
-  }
-  
-  $scope.getData = function() {
-    $scope.loading = true;
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid='+dataService.tid()+'&showLocation=1';
-    
-    
-    var path = '/manny/lessons';
-    url = url + '&path=' + path;
-    
-    //check the keyword
-    if ($scope.frm.keyword) {
-      url = url + '&q=' + encodeURIComponent($scope.frm.keyword); 
-    }
-    
-    //check the location
-    if ($scope.frm.location) {
-      url = url + '&lat='+$scope.frm.details.components.lat+'&lon='+$scope.frm.details.components.lng+'&r='+encodeURIComponent($scope.frm.radius);
-    }
-    
-    url = url + '&page=' + $scope.frm.page;
-    //console.log(url);
-    dataService.get(url, successGetData, failureGetData, true);
-  };//get data ends
-  
-  $scope.getData();//get data on page load
   
   
 }])
 
 .controller('ViewCreateCtrlFB', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+  
+  var obj = dataService.tutorSetFirebase($scope.ref);
+  
   //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -530,7 +520,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.location.city = $scope.details.components.city;
     postData.location.zip = $scope.details.components.postal_code;
     postData.location.place_id = $scope.details.place_id;
-    postData.location.county = $scope.details.components.county;
+    postData.location.county = ($scope.details.components.county) ? $scope.details.components.county : '';
     postData.location.formatted_addr = $scope.details.formatted_address;
     postData.tags = $scope.frm.tags;
     postData.details = {};
@@ -542,24 +532,31 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.details.pref_phone_text = ($scope.frm.pref_phone_text) ? $scope.frm.pref_phone_text : false;
     postData.details.pref_phone_call = ($scope.frm.pref_phone_call) ? $scope.frm.pref_phone_call : false;
     postData.details.charges = $scope.frm.charges;
-    postData.details.charge_explanation = $scope.frm.charge_explanation;
+    postData.details.charge_explanation = ($scope.frm.charge_explanation) ? $scope.frm.charge_explanation : '';
     postData.details.location = $scope.location;
     postData.uid = $scope.userData.id;
     postData.timestamp = Firebase.ServerValue.TIMESTAMP;
 
-    $scope.tutorsArr.$add(postData).then(function(response) {
-       var id = response.key();
-       console.log('id: ', id);
-       //save location
-        $scope.tutorsLocation.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(true);
-        if (postData.tags) {
-          var tmp = postData.tags.split(',');
-          angular.forEach(tmp, function(value, key) {
-            var val = value.replace(/^\s+|\s+$/g, '');
-            val = val.toLowerCase();
-            $scope.tutorsTags.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(true);
-          });
-        }//end if
+    obj.tutorsArr.$add(postData).then(function(response) {
+      var id = response.key();
+      console.log('id: ', id);
+      //save location
+      obj.tutorsMy.child($scope.userData.id).child(id).set(Firebase.ServerValue.TIMESTAMP);
+      if (postData.location.county) {
+        obj.tutorsLocation.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+      }
+      if (postData.tags) {
+        var tmp = postData.tags.split(',');
+        angular.forEach(tmp, function(value, key) {
+          var val = value.replace(/^\s+|\s+$/g, '');
+          val = val.toLowerCase();
+          if (postData.location.county) {
+            obj.tutorsTags.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+          }
+          
+          obj.tutorsOnlyTags.child(btoa(val)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+        });
+      }//end if
         //location ends
        $scope.frm = {};
        $location.path('/lessons/create/imagesUpload/'+id);
@@ -569,6 +566,9 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 
 .controller('ViewEditCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  var obj = dataService.tutorSetFirebase($scope.ref);
+  
   $scope.frm = {};
   $scope.id = $routeParams.id;
   
@@ -584,7 +584,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.current = null;
   
   $scope.resetData = function() {
-    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    $scope.current = obj.tutorsArr.$getRecord($scope.id);
     if ($scope.current.uid !== $scope.userData.uid) {
       $location.path('/lessons/my');
       return;
@@ -617,7 +617,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.details.formatted_address = $scope.current.location.formatted_addr;
   };
   
-  $scope.tutorsArr.$loaded().then(function (arr) {
+  obj.tutorsArr.$loaded().then(function (arrR) {
     $scope.resetData();
   });
   
@@ -639,16 +639,24 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         $scope.createStatus = 'Please enter subjects';
         return; 
       }
- 
+
     //delete previous location
     //save location
-    $scope.tutorsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).remove();
-    var tmp = $scope.current.tags.split(',');
-    angular.forEach(tmp, function(value, key) {
-      var val = value.replace(/^\s+|\s+$/g, '');
-      val = val.toLowerCase();
-      $scope.tutorsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).remove();
-    });
+    if ($scope.current.location.county) {
+      obj.tutorsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).remove();
+    }
+    if ($scope.current.tags) {
+      var tmp = $scope.current.tags.split(',');
+      angular.forEach(tmp, function(value, key) {
+        var val = value.replace(/^\s+|\s+$/g, '');
+        val = val.toLowerCase();
+        if ($scope.current.location.county) {
+          obj.tutorsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).remove();
+        }//end if
+        
+        obj.tutorsOnlyTags.child(btoa(val)).child($scope.id).remove();
+      });
+    }//end if
     //location ends
     //delete previous location
     $scope.current.title = $scope.frm.title;
@@ -660,7 +668,7 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.location.city = $scope.details.components.city;
     $scope.current.location.zip = $scope.details.components.postal_code;
     $scope.current.location.place_id = $scope.details.place_id;
-    $scope.current.location.county = $scope.details.components.county;
+    $scope.current.location.county = ($scope.details.components.county) ? $scope.details.components.county : '';
     $scope.current.location.formatted_addr = $scope.details.formatted_address;
     $scope.current.tags = $scope.frm.tags;
     $scope.current.details.gender = ($scope.frm.gender) ? $scope.frm.gender : '';
@@ -671,18 +679,24 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.details.pref_phone_text = ($scope.frm.pref_phone_text) ? $scope.frm.pref_phone_text : false;
     $scope.current.details.pref_phone_call = ($scope.frm.pref_phone_call) ? $scope.frm.pref_phone_call : false;
     $scope.current.details.charges = $scope.frm.charges;
-    $scope.current.details.charge_explanation = $scope.frm.charge_explanation;
+    $scope.current.details.charge_explanation = ($scope.frm.charge_explanation) ? $scope.frm.charge_explanation : '';
     $scope.current.details.location = $scope.location;
     $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
-    $scope.tutorsArr.$save($scope.current).then(function(response) {
+    obj.tutorsArr.$save($scope.current).then(function(response) {
         //save location
-        $scope.tutorsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(true);
+        if ($scope.current.location.county) {
+          obj.tutorsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);
+        }
         if ($scope.current.tags) {
           var tmp = $scope.current.tags.split(',');
           angular.forEach(tmp, function(value, key) {
             var val = value.replace(/^\s+|\s+$/g, '');
             val = val.toLowerCase();
-            $scope.tutorsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(true);
+            if ($scope.current.location.county) {
+            obj.tutorsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);
+            }//end if
+            
+            obj.tutorsOnlyTags.child(btoa(val)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);
           });
         }//end if
         //location ends
@@ -693,22 +707,23 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 
 .controller('ViewImagesCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
+  var obj = dataService.tutorSetFirebase($scope.ref);
   $scope.id = $routeParams.id;
   
   $scope.current = null;
   $scope.images = null;
   
   $scope.resetData = function() {
-    $scope.current = $scope.tutorsArr.$getRecord($scope.id);
+    $scope.current = obj.tutorsArr.$getRecord($scope.id);
     $scope.images = $scope.current.details.images;
   };
   
-  $scope.tutorsArr.$loaded().then(function (arr) {
+  obj.tutorsArr.$loaded().then(function (arrR) {
     $scope.resetData();
   });
   
   $scope.addImage = function() {
-      $scope.tutorsRecord.child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
+      obj.tutorsRecord.child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
       $scope.resetData();
       $scope.frm.image = '';
   };//add image function ends
@@ -719,9 +734,13 @@ angular.module('myApp.lessons', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     var a = confirm('Do you really want to delete this image');
     if (!a) return;
     
-    $scope.tutorsRecord.child($scope.id).child('details').child('images').child(k).remove();
+    obj.tutorsRecord.child($scope.id).child('details').child('images').child(k).remove();
     $scope.resetData();
     //do api call
+  };
+  
+  $scope.makeDefaultImage = function(img) {
+    obj.tutorsRecord.child($scope.id).child('details').child('defaultImage').set(img);
   };
   
 }])

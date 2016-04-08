@@ -19,11 +19,13 @@
           <div class="list-group-item" ng-repeat="item in results">
             <div class="row">
               <div class="col-md-2">
-                <a href="lessons/detail/{{item.id}}"><img ng-src="{{item.mainImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.id}}" ng-if="item.details.defaultImage"><img ng-src="{{item.details.defaultImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.id}}" ng-if="item.details.images && !item.details.defaultImage" ng-repeat="image in item.details.images | objectAsArray | limitTo: 1 : 0"><img ng-src="{{image}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.id}}" ng-if="!item.details.images"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
               </div>
               <div class="col-md-10">
                 <h4 class="list-group-item-heading"><a href="lessons/detail/{{item.id}}">{{item.title}}</a></h4>
-                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.lat}},{{item.lng}}" target="_blank">{{item.detailsFull.location}}</a></p>
+                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.detailsFull.location}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
                 <p><a href="lessons/edit/{{item.id}}">Edit This Profile</a> | <a href="" ng-click="deleteProfile(item);">Delete This Profile</a></p>

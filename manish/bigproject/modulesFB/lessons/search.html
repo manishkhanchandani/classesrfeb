@@ -17,10 +17,6 @@
             <label for="location">Near</label>
             <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details">
         </div>
-        <div class="form-group">
-            <label for="radius">Radius</label>
-            <input type="text" class="form-control" id="radius" placeholder="Enter radius in miles" ng-model="frm.radius" value="30">
-        </div>
         <button type="submit" class="btn btn-primary form-control">Search</button>
     </form>
     </div><!-- form -->
@@ -36,17 +32,18 @@
       </div>
       
        <div class="list-group" ng-if="results && !loading">
-          <div class="list-group-item" ng-repeat="item in results | limitTo : 4 : 0 | orderBy: '-timestamp'">
+          <div class="list-group-item" ng-repeat="item in results | limitTo : pagination.maxRows : pagination.startRow | orderBy: orderBy">
             <div class="row">
               <div class="col-md-2">
-                <a href="lessons/detail/{{item.$id}}" ng-if="item.details.images" ng-repeat="image in item.details.images | limitTo : 1 : 0"><img ng-src="{{image}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.$id}}" ng-if="item.details.defaultImage"><img ng-src="{{item.details.defaultImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="lessons/detail/{{item.$id}}" ng-if="item.details.images && !item.details.defaultImage" ng-repeat="image in item.details.images | objectAsArray | limitTo: 1 : 0"><img ng-src="{{image}}" class="img-responsive img-thumbnail"></a>
                 <a href="lessons/detail/{{item.$id}}" ng-if="!item.details.images"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
               </div>
               <div class="col-md-10">
                 <h4 class="list-group-item-heading"><a href="lessons/detail/{{item.$id}}">{{item.title}}</a></h4>
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.details.location}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.timestamp | customDate}}</p>
-                <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+                <p class="list-group-item-text" ng-if="item.distance >= 0">{{item.distance | number : 2}} miles away</p>
                 <p><strong>Subjects:</strong> {{item.tags}}</p>
               </div>
             </div>
@@ -55,9 +52,20 @@
           </div>
           
         </div>
-        
-        <div pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
-        
+        <div class="row" ng-if="pagination.totalRows > 0">
+          <div class="col-md-12">
+            <hr>
+            <p class="text-center"> Records <strong>{{pagination.startRowsPlus}}</strong> to <strong>{{pagination.minRows}}</strong> of <strong>{{pagination.totalRows}}</strong></p>
+            <nav>
+              <ul class="pager">
+                <li ng-if="pagination.pageNum > 0"><a href="{{urlPrefix}}/0{{urlSuffix}}">First</a></li>
+                <li ng-if="pagination.pageNum > 0"><a href="{{urlPrefix}}/{{pagination.prevPage}}{{urlSuffix}}">Previous</a></li>
+                <li ng-if="pagination.pageNum < pagination.totalPages"><a href="{{urlPrefix}}/{{pagination.nextPage}}{{urlSuffix}}">Next</a></li>
+                <li ng-if="pagination.pageNum < pagination.totalPages"><a href="{{urlPrefix}}/{{pagination.totalPages}}{{urlSuffix}}">Last</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       
       
       
