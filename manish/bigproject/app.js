@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'ngAutocomplete',
   'googleLoginFBModule',
+  'loginModule',
   'paginationModule',
   'messagesModule',
   'myApp.messages',

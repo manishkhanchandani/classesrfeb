@@ -61,20 +61,35 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
     var obj = {}
     switch (type) {
       case 'tutors':
-        obj.tutorsRecord = ref.child('tutors').child('records');
-        obj.tutorsLocation = ref.child('tutors').child('location');
-        obj.tutorsTags = ref.child('tutors').child('tags');
-        obj.tutorsOnlyTags = ref.child('tutors').child('onlyTags');
-        obj.tutorsMy = ref.child('tutors').child('my');
-        obj.tutorsArr = $firebaseArray(obj.tutorsRecord);
+        obj.owsRecord = ref.child('tutors').child('records');
+        obj.owsLocation = ref.child('tutors').child('location');
+        obj.owsTags = ref.child('tutors').child('tags');
+        obj.owsOnlyTags = ref.child('tutors').child('onlyTags');
+        obj.owsMy = ref.child('tutors').child('my');
+        obj.owsArr = $firebaseArray(obj.owsRecord);
+        obj.meta = {
+          showCharges: true,
+          showChargesExplanation: true,
+          title: 'Lessons',
+          titleHeading: 'Tutor',
+          redirectUrl: 'lessons'
+        };
         break;
       case 'students':
-        obj.studentsRecord = ref.child('students').child('records');
-        obj.studentsLocation = ref.child('students').child('location');
-        obj.studentsTags = ref.child('students').child('tags');
-        obj.studentsOnlyTags = ref.child('students').child('onlyTags');
-        obj.studentsMy = ref.child('students').child('my');
-        obj.studentsArr = $firebaseArray(obj.studentsRecord);
+        obj.owsRecord = ref.child('students').child('records');
+        obj.owsLocation = ref.child('students').child('location');
+        obj.owsTags = ref.child('students').child('tags');
+        obj.owsOnlyTags = ref.child('students').child('onlyTags');
+        obj.owsMy = ref.child('students').child('my');
+        obj.owsArr = $firebaseArray(obj.owsRecord);
+        obj.meta = {
+          showCharges: false,
+          showChargesExplanation: false,
+          title: 'Students',
+          titleHeading: 'Student',
+          redirectUrl: 'students'
+        };
+        
         break;  
     }
     return obj;

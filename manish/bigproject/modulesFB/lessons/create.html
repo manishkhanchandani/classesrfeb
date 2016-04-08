@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Enter Tutor Information</h1>
+      <h1>Enter {{meta.titleHeading}} Information</h1>
       <div class="alert alert-danger" role="alert" ng-if="createStatus">
         {{createStatus}}
       </div>
       <form ng-submit="submitCreateForm()">
         <div class="form-group">
             <label for="location">Location *</label>
-            <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details" >
+            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details" >
         </div>
         <div class="form-group">
             <label for="title">Posting Title *</label>
@@ -22,22 +22,22 @@
             <label for="tags">Teaching Subjects (Comma separated subjects for search) *</label>
             <input type="text" class="form-control" id="tags" placeholder="Enter search tags" ng-model="frm.tags" required>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-if="meta.showCharges">
             <label for="charges">Charges *</label>
             <input type="number" class="form-control" id="charges" placeholder="Enter rate or charge e.g. 75" ng-model="frm.charges" required>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-if="meta.showChargesExplanation">
             <label for="tags">Charges Explanation</label>
             <input type="text" class="form-control" id="tags" placeholder="e.g. $ per hour or $ per week or &#8364; per month" ng-model="frm.charge_explanation">
         </div>
         <h3>Contact & Person Information</h3>
         <div class="form-group">
-            <label for="gender">Teacher's Gender: </label>&nbsp;&nbsp;
+            <label for="gender">{{meta.titleHeading}}'s Gender: </label>&nbsp;&nbsp;
             <input type="radio" ng-model="frm.gender" value="Male"> Male &nbsp;&nbsp;
             <input type="radio" ng-model="frm.gender" value="Female"> Female
         </div>
         <div class="form-group">
-            <label for="age">Teacher's Age</label>
+            <label for="age">{{meta.titleHeading}}'s Age</label>
             <input type="number" class="form-control" id="age" placeholder="Enter age" ng-model="frm.age">
         </div>
         <div class="form-group">

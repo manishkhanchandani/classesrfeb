@@ -28,7 +28,7 @@
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.detailsFull.location}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
-                <p><a href="lessons/edit/{{item.id}}">Edit This Profile</a> | <a href="" ng-click="deleteProfile(item);">Delete This Profile</a></p>
+                <p><a href="{{meta.redirectUrl}}/edit/{{item.id}}">Edit This Profile</a> | <a href="" ng-click="deleteProfile(item);">Delete This Profile</a></p>
               </div>
             </div>
           

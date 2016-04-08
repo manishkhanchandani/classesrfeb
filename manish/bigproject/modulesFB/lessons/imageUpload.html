@@ -3,9 +3,9 @@
     <div class="col-md-12">
       <h3>Enter Image Details</h3>
       <ng-include src="'modules/common/fileUpload.html'"></ng-include>
-      <div><a href="lessons/create/images/{{id}}" class="btn btn-default">Continue</a> 
-        <a href="lessons/edit/{{id}}" class="btn btn-default">Back</a>
-        <a href="lessons" class="btn btn-default">Done</a></div>
+      <div><a href="{{meta.redirectUrl}}/create/images/{{id}}" class="btn btn-default">Continue</a> 
+        <a href="{{meta.redirectUrl}}/edit/{{id}}" class="btn btn-default">Back</a>
+        <a href="{{meta.redirectUrl}}/my" class="btn btn-default">Done</a></div>
     </div>
   </div>
 </div>
