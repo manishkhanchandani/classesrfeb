@@ -118,7 +118,7 @@ angular.module('myApp', [
         }
         $scope.userData = snapshot.val();
         localStorage.setItem('userData', JSON.stringify($scope.userData));
-        console.log('udata: ', $scope.userData);
+        //console.log('udata: ', $scope.userData);
         $timeout(function(){
           if(!$scope.$$phase) $scope.$apply();
         });

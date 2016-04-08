@@ -453,6 +453,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     var keyword = decodeURIComponent($routeParams.keyword);
     queryRef = obj.owsOnlyTags.child(btoa(keyword)).orderByValue().limitToLast(500);
     queryRef.on('value', function(snapshot) {
+      if (!snapshot.val()) return;
       var size = Object.keys(snapshot.val()).length;
       $scope.pagination.totalRows = size;
       $scope.pagination.totalPages = Math.ceil($scope.pagination.totalRows/$scope.pagination.maxRows)-1;
@@ -502,6 +503,11 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
 }])
 
 .controller('ViewCreateStudentsCtrlFB', ['$scope', '$location', 'dataService', function($scope, $location, dataService) {
+  
+  if (!$scope.userData) {
+    $location.path('/');
+    return;
+  }
   
   var obj = dataService.studentSetFirebase($scope.ref);
   $scope.meta = obj.meta;
@@ -589,6 +595,11 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
 }])
 
 .controller('ViewEditStudentsCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+  
+  if (!$scope.userData) {
+    $location.path('/');
+    return;
+  }
   
   var obj = dataService.studentSetFirebase($scope.ref);
   $scope.meta = obj.meta;
