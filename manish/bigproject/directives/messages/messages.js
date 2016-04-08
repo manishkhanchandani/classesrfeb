@@ -11,6 +11,7 @@
   
   module
     .directive('messages', ['messagesTemplate', 'configs', '$location', 'dataService', '$firebaseArray', '$timeout', '$routeParams', messages])
+    .directive('messagesCounter', ['dataService', '$timeout', messagesCounter])
     .provider('messagesTemplate', messagesTemplateProvider)
     
     .filter('mesDaysAgo', function() {
@@ -43,6 +44,33 @@
     })
     ;
   
+  function messagesCounter(dataService, $timeout) {
+    
+    return {
+          scope: {
+            userData: '='
+          },
+          templateUrl: 'directives/messages/messagesCounter.html',
+          link: function(scope, elem, attrs) {
+            if (!scope.userData) return;
+            var config = dataService.config();
+            var ref = new Firebase(config.firebaseUrl);
+            var badge = ref.child('messagesBadges').child(scope.userData.uid);
+            scope.counter = 0;
+            badge.on('value', function(snapshot) {
+              scope.counter = 0;
+              if (!snapshot.val()) return;
+              angular.forEach(snapshot.val(), function(value, key) {
+                scope.counter = scope.counter + value.badge;
+              });
+              $timeout(function(){
+                if(!scope.$$phase) scope.$apply();
+              });
+            });
+          }
+    };
+  }
+  
   function messages(messagesTemplate, configs, $location, dataService, $firebaseArray, $timeout, $routeParams) {
     return {
           scope: {
@@ -52,6 +80,7 @@
             return attrs.templateUrl || messagesTemplate.getPath();
           },
           link: function(scope, elem, attrs) {
+            
               if (!scope.userData) {
                  alert('Please login first to send message');
                  window.history.back();
@@ -60,7 +89,7 @@
               //console.log('from user: ', scope.userData);
   
               if ($routeParams.uid) {
-                if (scope.userData.id === $routeParams.uid) {
+                if (scope.userData.uid === $routeParams.uid) {
                   $location.path('/messages');
                   return;
                 }
@@ -77,17 +106,17 @@
   
               //reset badge
               if ($routeParams.uid) {
-                badge.child(scope.userData.id).child($routeParams.uid).child('badge').set(0);
+                badge.child(scope.userData.uid).child($routeParams.uid).child('badge').set(0);
               }
               
               //from user
-              var usersFrom = ref.child('messagesUsers').child(scope.userData.id);
+              var usersFrom = ref.child('messagesUsers').child(scope.userData.uid);
               var queryFrom = usersFrom.orderByChild("timestamp").limitToLast(500);
               scope.usersFrom = $firebaseArray(queryFrom);
   
               /*usersFrom.on('value', function(snapshot) {
                 angular.forEach(snapshot.val(), function(value, key) {
-                  badge.child(scope.userData.id).child(key).on("value", function(snapshot2) {
+                  badge.child(scope.userData.uid).child(key).on("value", function(snapshot2) {
                     scope.badges[snapshot2.key()] = snapshot2.val();
                   });
                 });
@@ -100,24 +129,21 @@
                 var queryTo = usersTo.orderByChild("timestamp").limitToLast(500);
                 scope.usersTo = $firebaseArray(queryTo);
                 //adding from - to user
-                usersTo.child(scope.userData.id).set({email: scope.userData.email, id: scope.userData.id, name: scope.userData.name, image: scope.userData.image, url: scope.userData.url, timestamp: Firebase.ServerValue.TIMESTAMP});
-              }
-              
-              function getSuccess(response) {
-                var results = response.data.data;
-                scope.resultsToUser = results;
-                //console.log('to user: ', scope.resultsToUser);
-                //adding from - to user
-                usersFrom.child($routeParams.uid).set({email: results.user_details.email, id: results.uid, name: results.user_details.name, image: results.user_details.image, url: results.user_details.url, timestamp: Firebase.ServerValue.TIMESTAMP});
-              }
-              
-              function getFailure(response) {
-                console.log('failure', response);
-              }
-              
-              if ($routeParams.uid) {
-                var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=user&id='+$routeParams.uid;
-                dataService.get(url, getSuccess, getFailure, true);
+                usersTo.child(scope.userData.uid).set({email: scope.userData.email, id: scope.userData.uid, name: scope.userData.displayName, image: scope.userData.image, url: scope.userData.url, timestamp: Firebase.ServerValue.TIMESTAMP});
+                
+                ref.child('users').child($routeParams.uid).once("value", function(snapshot) {
+                  var a = snapshot.exists();
+                  if (!a) {
+                    return;
+                  }
+                  scope.resultsToUser = snapshot.val();
+                  //adding from - to user
+                  var d = {email: scope.resultsToUser.email, id: scope.resultsToUser.uid, name: scope.resultsToUser.displayName, image: scope.resultsToUser.image, url: scope.resultsToUser.url, timestamp: Firebase.ServerValue.TIMESTAMP};
+                  usersFrom.child($routeParams.uid).set(d);
+                  $timeout(function(){
+                    if(!scope.$$phase) scope.$apply();
+                  });
+                });
               }
               
               
@@ -128,12 +154,12 @@
               var mes = ref.child('messages');
               scope.messages = null;
               if ($routeParams.uid) {
-                var queryMes = mes.child(scope.userData.id).child($routeParams.uid).orderByChild("timestamp").limitToLast(100);
+                var queryMes = mes.child(scope.userData.uid).child($routeParams.uid).orderByChild("timestamp").limitToLast(100);
                 scope.messages = $firebaseArray(queryMes);
               }
               
               //badge
-              badge.child(scope.userData.id).on("value", function(snapshot) {
+              badge.child(scope.userData.uid).on("value", function(snapshot) {
                 angular.forEach(snapshot.val(), function (value, key) {
                   scope.badges[key] = value;
                 });
@@ -173,9 +199,9 @@
               scope.deleteMessage = function(message) {
                 var a = confirm('Do you really want to delete this message?');
                 if (!a) return;
-                mes.child(scope.userData.id).child($routeParams.uid).child(message.$id).remove();
+                mes.child(scope.userData.uid).child($routeParams.uid).child(message.$id).remove();
                 //badge
-                badge.child(scope.userData.id).child($routeParams.uid).child('badge').set(0);
+                badge.child(scope.userData.uid).child($routeParams.uid).child('badge').set(0);
               };
               //end delete message
               

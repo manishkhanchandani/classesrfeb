@@ -54,9 +54,6 @@
   <script src="app.js"></script>
   <script src="services/data.js"></script>
   
-<!-- googleLogin module -->
-<script type="text/javascript" src="directives/googleLoginFB/googleLoginFB.js"></script>
-<!-- googleLogin module ends -->
 <!-- login module -->
 <script type="text/javascript" src="directives/login/login.js"></script>
 <!-- login module ends -->

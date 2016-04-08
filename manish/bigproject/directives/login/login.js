@@ -10,7 +10,7 @@
   }
   
   module
-    .directive('login', ['loginTemplate', 'loginService', 'configs', '$location', login])
+    .directive('login', ['loginTemplate', 'loginService', 'dataService', '$timeout', login])
     .provider('loginTemplate', loginTemplate)
     .service('loginService', [loginService])
     ;
@@ -25,7 +25,7 @@
     };
   }
   
-  function login(loginTemplate, loginService, configs, $location) {
+  function login(loginTemplate, loginService, dataService, $timeout) {
     return {
           scope: {
             userData: '='
@@ -34,7 +34,28 @@
             return attrs.templateUrl || loginTemplate.getPath();
           },
           link: function(scope, elem, attrs) {
-              scope.ref = new Firebase(configs[$location.host()].firebaseUrl);
+              var config = dataService.config();
+              scope.ref = new Firebase(config.firebaseUrl);
+              
+              //saving user data
+              scope.saveData = function(uid, provider, accessToken, displayName, email, id, image, url, firstName, lastName, gender) {
+                var data = {uid: uid, provider: provider, accessToken: accessToken, displayName: displayName, email: email, id: id, image: image, url: url, firstName: firstName, lastName: lastName, gender: gender};
+                scope.ref.child('users').child(uid).once("value", function(snapshot) {
+                  var a = snapshot.exists();
+                  if (!a) {
+                    data.timestamp = Firebase.ServerValue.TIMESTAMP;
+                  }
+                  data.updated = Firebase.ServerValue.TIMESTAMP;
+                  scope.userData = data;
+                  scope.$parent.$parent.userData = data;
+                  scope.$parent.userData = data;
+                  scope.ref.child('users').child(uid).update(data);
+                  $timeout(function(){
+                    if(!scope.$$phase) scope.$apply();
+                  });
+                });
+              };
+              
               //twitter
               scope.twitter = function() {
                 scope.ref.authWithOAuthPopup("twitter", function(error, authData) {
@@ -51,7 +72,8 @@
                   if (error) {
                     console.log("Login Failed!", error);
                   } else {
-                    console.log("Authenticated successfully with payload:", authData);
+                    //console.log("Authenticated successfully with payload:", authData);
+                    scope.saveData(authData.uid, authData.provider, authData.facebook.accessToken, authData.facebook.displayName, authData.facebook.email, authData.facebook.id, authData.facebook.profileImageURL, authData.facebook.cachedUserProfile.link, authData.facebook.cachedUserProfile.first_name, authData.facebook.cachedUserProfile.last_name, authData.facebook.cachedUserProfile.gender);
                   }
                 }, {
                   remember: "sessionOnly",
@@ -64,7 +86,11 @@
                   if (error) {
                     console.log("Login Failed!", error);
                   } else {
-                    console.log("Authenticated successfully with payload:", authData);
+                    //console.log("Authenticated successfully with payload:", authData);
+                    var tmp = authData.github.displayName.split(' ');
+                    var fn = tmp[0];
+                    var ln = tmp[1];
+                    scope.saveData(authData.uid, authData.provider, authData.github.accessToken, authData.github.displayName, authData.github.email, authData.github.id, authData.github.profileImageURL, authData.github.cachedUserProfile.url, fn, ln, '');
                   }
                 }, {
                   remember: "sessionOnly",
@@ -88,12 +114,21 @@
                       console.log("Login Failed!", error);
                       return;
                     }
-                    console.log(authData);
+                    scope.saveData(authData.uid, authData.provider, authData.google.accessToken, authData.google.displayName, authData.google.email, authData.google.id, authData.google.profileImageURL, authData.google.cachedUserProfile.link, authData.google.cachedUserProfile.given_name, authData.google.cachedUserProfile.family_name, authData.google.cachedUserProfile.gender);
                   }, {
                     remember: "sessionOnly",
                     scope: "email"
                   });//end authwithpopup  
               };
+              
+              scope.logout = function()
+              {
+                scope.ref.unauth();
+                scope.userData = null;
+                scope.$parent.$parent.userData = null;
+                scope.$parent.userData = null;
+                localStorage.removeItem('userData');
+              }
               
           }//end link
       };//end return

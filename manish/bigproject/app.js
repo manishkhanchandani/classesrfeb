@@ -4,7 +4,6 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAutocomplete',
-  'googleLoginFBModule',
   'loginModule',
   'paginationModule',
   'messagesModule',
@@ -93,7 +92,7 @@ angular.module('myApp', [
 
 
 
-.controller('mainController', ['$scope', 'configs', '$location', '$firebaseArray', 'dataService', function($scope, configs, $location, $firebaseArray, dataService) {
+.controller('mainController', ['$scope', '$location', '$firebaseArray', 'dataService', '$timeout', function($scope, $location, $firebaseArray, dataService, $timeout) {
   
   //config
   $scope.config = dataService.config();
@@ -103,9 +102,42 @@ angular.module('myApp', [
   } else if ($scope.config.siteUrl === 'student') {
     $scope.templateUrl = 'modules/navItems/student.html';
   }
+ 
   document.title = $scope.config.title;
   //firebase functionality, remove if you want api
   $scope.ref = new Firebase($scope.config.firebaseUrl);
+  //onAuth
+	function authDataCallback(authData) {
+		//console.log('authdata', authData);
+		if (authData) {
+		  //console.log("User is logged in", authData);
+      $scope.ref.child('users').child(authData.uid).once("value", function(snapshot) {
+        var a = snapshot.exists();
+        if (!a) {
+          return;
+        }
+        $scope.userData = snapshot.val();
+        localStorage.setItem('userData', JSON.stringify($scope.userData));
+        console.log('udata: ', $scope.userData);
+        $timeout(function(){
+          if(!$scope.$$phase) $scope.$apply();
+        });
+      });
+		  /*$scope.ref.child('users').child(authData.uid).once('value', function(ret) {
+				  $scope.$apply(function() {
+					  $scope.userData = ret.val();
+					  //console.log('userdata: ', $scope.userData);
+				  });
+			  });*/
+		} else {
+		  console.log("User is logged out", authData);
+		  $scope.userData = null;
+		}
+	}
+	
+	$scope.ref.onAuth(authDataCallback);
+  
+  
   /*$scope.tutorsRecord = $scope.ref.child('tutors').child('records');
   $scope.tutorsLocation = $scope.ref.child('tutors').child('location');
   $scope.tutorsTags = $scope.ref.child('tutors').child('tags');

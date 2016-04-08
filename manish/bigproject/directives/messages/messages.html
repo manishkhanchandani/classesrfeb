@@ -36,8 +36,8 @@ a.selColor:hover {
         </div>
       </div>
       <div ng-if="resultsToUser">
-        <h3>Messages (To {{resultsToUser.user_details.name}})</h3>
-        <form ng-submit="sendMessage(userData.id, resultsToUser.uid, userData.name, userData.image)">
+        <h3>Messages (To {{resultsToUser.displayName}})</h3>
+        <form ng-submit="sendMessage(userData.uid, resultsToUser.uid, userData.displayName, userData.image)">
           <div class="row">
             <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9" style="padding-right: 5px;">
                 <div class="form-group">

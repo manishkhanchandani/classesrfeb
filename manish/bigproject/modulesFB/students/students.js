@@ -237,6 +237,10 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   $scope.results.mainImage = null;
   obj.owsArr.$loaded().then(function (arrR) {
     $scope.results = obj.owsArr.$getRecord($routeParams.id);
+    if (!$scope.results) {
+      $location.path('/students/my');
+      return; 
+    }
     $scope.images = $scope.results.details.images;
     $scope.youtubeUrls = $scope.results.details.youtubeUrls;
     $scope.linkUrls = $scope.results.details.linkUrls;
@@ -275,7 +279,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   $scope.defaultImage = 'images/noimage.jpg';
   $scope.results = [];
   var keyword = decodeURIComponent($routeParams.keyword);
-  var queryRef = obj.owsMy.child($scope.userData.id).orderByValue().limitToLast(500);
+  var queryRef = obj.owsMy.child($scope.userData.uid).orderByValue().limitToLast(500);
   queryRef.on('value', function(snapshot) {
     $scope.results = [];
     angular.forEach(snapshot.val(), function (value, key) {
@@ -285,7 +289,6 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
         $scope.results.push(tmp);
       });
     });
-    console.log($scope.results);
     if(!$scope.$$phase) $scope.$apply();
   });
 
@@ -311,7 +314,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     }//end if
     
     obj.owsRecord.child(itemDetail.id).remove();
-    obj.owsMy.child($scope.userData.id).child(itemDetail.id).remove();
+    obj.owsMy.child($scope.userData.uid).child(itemDetail.id).remove();
   };
 }])
 
@@ -555,14 +558,14 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     postData.details.pref_phone_text = ($scope.frm.pref_phone_text) ? $scope.frm.pref_phone_text : false;
     postData.details.pref_phone_call = ($scope.frm.pref_phone_call) ? $scope.frm.pref_phone_call : false;
     postData.details.location = $scope.frm.location;
-    postData.uid = $scope.userData.id;
+    postData.uid = $scope.userData.uid;
     postData.timestamp = Firebase.ServerValue.TIMESTAMP;
 
     obj.owsArr.$add(postData).then(function(response) {
       var id = response.key();
       console.log('id: ', id);
       //save location
-      obj.owsMy.child($scope.userData.id).child(id).set(Firebase.ServerValue.TIMESTAMP);
+      obj.owsMy.child($scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
       if (postData.location.county) {
         obj.owsLocation.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
       }
