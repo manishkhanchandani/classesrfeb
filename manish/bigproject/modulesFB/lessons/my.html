@@ -21,7 +21,8 @@
               <div class="col-md-2">
                 <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="item.details.defaultImage"><img ng-src="{{item.details.defaultImage}}" class="img-responsive img-thumbnail"></a>
                 <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="item.details.images && !item.details.defaultImage" ng-repeat="image in item.details.images | objectAsArray | limitTo: 1 : 0"><img ng-src="{{image}}" class="img-responsive img-thumbnail"></a>
-                <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="!item.details.images"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="{{meta.redirectUrl}}/detail/{{item.$id}}" ng-if="!item.details.images && item.details.profileImage"><img ng-src="{{item.details.profileImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="{{meta.redirectUrl}}/detail/{{item.$id}}" ng-if="!item.details.images && !item.details.profileImage"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
               </div>
               <div class="col-md-10">
                 <h4 class="list-group-item-heading"><a href="{{meta.redirectUrl}}/detail/{{item.id}}">{{item.title}}</a></h4>

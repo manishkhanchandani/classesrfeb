@@ -206,6 +206,21 @@
               //end delete message
               
               
+              scope.deleteMessageProfile = function(tid) {
+                console.log(tid);
+                var a = confirm('Do you really want to delete this profile?');
+                if (!a) return;
+                //message
+                mes.child(scope.userData.uid).child(tid).remove();
+                //badge
+                badge.child(scope.userData.uid).child(tid).remove();
+                //user
+                ref.child('messagesUsers').child(scope.userData.uid).child(tid).remove();
+                if ($routeParams.uid === tid) {
+                  $location.path('/messages');
+                }
+              };
+              
           }//end link
       };//end return
   }

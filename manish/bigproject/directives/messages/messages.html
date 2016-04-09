@@ -14,13 +14,15 @@ a.selColor:hover {
       
       <ul class="list-group">
         <li class="list-group-item" ng-class="(u.id==resultsToUser.uid) ? 'active' : ''" ng-repeat="u in usersFrom | orderBy: '-timestamp'" style="overflow:auto;">
-          <span class="badge" ng-if="badges[u.id].badge > 0">{{badges[u.id].badge}}</span>
           <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
               <img ng-src="{{u.image}}" class="img-responsive img-thumbnail">
             </div>
             <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8" style="padding-left:0px;">
+              <span class="badge pull-right" ng-if="badges[u.id].badge > 0">{{badges[u.id].badge}}</span>
               <a href="messages/{{u.id}}" ng-class="(u.id==resultsToUser.uid) ? 'selColor' : ''"><strong>{{u.name}}</strong></a>
+              <br>
+              <a href="" ng-class="(u.id==resultsToUser.uid) ? 'selColor' : ''" ng-click="deleteMessageProfile(u.id)">Delete</a>
             </div>
           </div>
         </li>
@@ -58,7 +60,7 @@ a.selColor:hover {
                 <span>{{message.name}}</span>
               </div>
               <div class="col-md-10 col-sm-9 col-xs-9 col-lg-10">
-                <p class="pull-right"><a href="" ng-click="deleteMessage(message)">Delete</a></p>
+                <p class="pull-right"><a href="" ng-click="deleteMessage(message)"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a></p>
                 <p>{{message.message}}</p>
                 <p>{{message.timestamp | mesDaysAgo}}</p>
               </div>

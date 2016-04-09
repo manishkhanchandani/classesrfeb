@@ -251,6 +251,8 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
         if ($scope.results.mainImage) return;
         $scope.results.mainImage = value;
       });
+    } else if ($scope.results.details.profileImage) {
+      $scope.results.mainImage = $scope.results.details.profileImage;
     } else {
       $scope.results.mainImage = 'images/noimage.jpg';  
     }
@@ -509,6 +511,12 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     return;
   }
   
+  if ($scope.userData.provider === 'anonymous') {
+    alert('You are not authorized to post new data');
+    $location.path('/');
+    return;
+  }
+  
   var obj = dataService.studentSetFirebase($scope.ref);
   $scope.meta = obj.meta;
   
@@ -556,6 +564,8 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     postData.location.formatted_addr = $scope.frm.details.formatted_address;
     postData.tags = $scope.frm.tags;
     postData.details = {};
+    postData.details.profileImage = $scope.userData.image;
+    postData.details.postedBy = $scope.userData.displayName;
     postData.details.gender = ($scope.frm.gender) ? $scope.frm.gender : '';
     postData.details.age = ($scope.frm.age) ? $scope.frm.age : '';
     postData.details.email = ($scope.frm.email) ? $scope.frm.email : '';
@@ -597,6 +607,12 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
 .controller('ViewEditStudentsCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
   
   if (!$scope.userData) {
+    $location.path('/');
+    return;
+  }
+  
+  if ($scope.userData.provider === 'anonymous') {
+    alert('You are not authorized to post new data');
     $location.path('/');
     return;
   }
@@ -704,6 +720,9 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     $scope.current.location.county = ($scope.frm.details.components.county) ? $scope.frm.details.components.county : '';
     $scope.current.location.formatted_addr = $scope.frm.details.formatted_address;
     $scope.current.tags = $scope.frm.tags;
+    
+    $scope.current.details.profileImage = $scope.userData.image;
+    $scope.current.details.postedBy = $scope.userData.displayName;
     $scope.current.details.gender = ($scope.frm.gender) ? $scope.frm.gender : '';
     $scope.current.details.age = ($scope.frm.age) ? $scope.frm.age : '';
     $scope.current.details.email = ($scope.frm.email) ? $scope.frm.email : '';

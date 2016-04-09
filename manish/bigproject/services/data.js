@@ -72,7 +72,13 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
           showChargesExplanation: true,
           title: 'Lessons',
           titleHeading: 'Tutor',
-          redirectUrl: 'lessons'
+          redirectUrl: 'lessons',
+          beginClass: false,
+          availability: false,
+          preferred_location: false,
+          tutoring_goal: false,
+          lesson_frequency: false,
+          grade_level: false
         };
         break;
       case 'students':
@@ -87,7 +93,13 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
           showChargesExplanation: false,
           title: 'Students',
           titleHeading: 'Student',
-          redirectUrl: 'students'
+          redirectUrl: 'students',
+          beginClass: true,
+          availability: true,
+          preferred_location: true,
+          tutoring_goal: true,
+          lesson_frequency: true,
+          grade_level: true
         };
         
         break;  

@@ -103,7 +103,8 @@
                   if (error) {
                     console.log("Login Failed!", error);
                   } else {
-                    console.log("Authenticated successfully with payload:", authData);
+                    //console.log("Authenticated successfully with payload:", authData);
+                    scope.saveData(authData.uid, authData.provider, authData.token, 'Anonymous', '', authData.uid, 'images/noimage.jpg', '', 'Anonymous', 'Anonymous', '');
                   }
                 });
               };
