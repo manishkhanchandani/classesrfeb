@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Paypal Subscription for "{{current.title}}"</h3>
+        <p>Free for the first 3 months
+          <br>Then $0.99 USD for each month</p>
+        <!--https://www.paypal.com/cgi-bin/webscr-->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <input type="hidden" name="cmd" value="_xclick-subscriptions">
+          <input type="hidden" name="business" value="renu09@live.com">
+          <input type="hidden" name="item_name" id="item_name" ng-value="current.title">
+          <input type="hidden" name="custom" id="custom" ng-value='current.custom | json' >
+          <input type="hidden" name="currency_code" value="USD" />
+          
+          <!-- First two months of subscription are free. -->
+          <input type="hidden" name="a1" value="0" />
+          <input type="hidden" name="p1" value="3" />
+          <input type="hidden" name="t1" value="M" />
+          
+          <!-- Recurring subscription payments. -->
+          <input type="hidden" name="a3" value="0.01" />
+          <input type="hidden" name="p3" value="1" />
+          <input type="hidden" name="t3" value="M" />
+          <input type="hidden" name="src" value="1" />
+          <input type="hidden" name="sra" value="1" />
+          <input type="hidden" name="item_number" id="item_number" ng-value="current.$id" >
+          <input type="hidden" name="return" ng-value="current.confirmURL">
+          <input type="hidden" name="cancel_return" ng-value="current.cancelURL">
+          <input type="hidden" name="notify_url" ng-value="current.notifyURL">
+          <!-- Display the payment button. -->
+          <input type="image" name="submit" border="0"
+          src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_subscribe_cc_147x47.png"
+          alt="PayPal - The safer, easier way to pay online">
+          <img alt="" border="0" width="1" height="1"
+          src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+        </form>
+    </div>
+  </div>
+</div>

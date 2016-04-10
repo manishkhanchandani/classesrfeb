@@ -60,14 +60,16 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
   };
   
   this.setFirebase = function(type, ref) {
-    var obj = {}
+    var obj = {};
+    var theme = '';
     switch (type) {
       case 'tutors':
-        obj.owsRecord = ref.child('tutors').child('records');
-        obj.owsLocation = ref.child('tutors').child('location');
-        obj.owsTags = ref.child('tutors').child('tags');
-        obj.owsOnlyTags = ref.child('tutors').child('onlyTags');
-        obj.owsMy = ref.child('tutors').child('my');
+        theme = 'tutors';
+        obj.owsRecord = ref.child(theme).child('records');
+        obj.owsLocation = ref.child(theme).child('location');
+        obj.owsTags = ref.child(theme).child('tags');
+        obj.owsOnlyTags = ref.child(theme).child('onlyTags');
+        obj.owsMy = ref.child(theme).child('my');
         obj.owsArr = $firebaseArray(obj.owsRecord);
         obj.meta = {
           showCharges: true,
@@ -84,11 +86,12 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
         };
         break;
       case 'students':
-        obj.owsRecord = ref.child('students').child('records');
-        obj.owsLocation = ref.child('students').child('location');
-        obj.owsTags = ref.child('students').child('tags');
-        obj.owsOnlyTags = ref.child('students').child('onlyTags');
-        obj.owsMy = ref.child('students').child('my');
+        theme = 'students';
+        obj.owsRecord = ref.child(theme).child('records');
+        obj.owsLocation = ref.child(theme).child('location');
+        obj.owsTags = ref.child(theme).child('tags');
+        obj.owsOnlyTags = ref.child(theme).child('onlyTags');
+        obj.owsMy = ref.child(theme).child('my');
         obj.owsArr = $firebaseArray(obj.owsRecord);
         obj.meta = {
           showCharges: false,
@@ -105,6 +108,29 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
         };
         
         break;  
+      case 'massage':
+        theme = 'massage';
+        obj.owsRecord = ref.child(theme).child('records');
+        obj.owsLocation = ref.child(theme).child('location');
+        obj.owsTags = ref.child(theme).child('tags');
+        obj.owsOnlyTags = ref.child(theme).child('onlyTags');
+        obj.owsMy = ref.child(theme).child('my');
+        obj.owsArr = $firebaseArray(obj.owsRecord);
+        
+        theme = 'massageTmp';
+        obj.owsRecordTmp = ref.child(theme).child('records');
+        obj.owsLocationTmp = ref.child(theme).child('location');
+        obj.owsTagsTmp = ref.child(theme).child('tags');
+        obj.owsOnlyTagsTmp = ref.child(theme).child('onlyTags');
+        obj.owsMyTmp = ref.child(theme).child('my');
+        obj.owsArrTmp = $firebaseArray(obj.owsRecordTmp);
+        
+        obj.meta = {
+          redirectUrl: 'massage',
+          titleHeading: 'Contact Person'
+        };
+        
+        break;  
     }
     return obj;
   };
@@ -115,6 +141,9 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
   };
   this.studentSetFirebase = function(ref) {
     return this.setFirebase('students', ref);
+  };
+  this.massageSetFirebase = function(ref) {
+    return this.setFirebase('massage', ref);
   };
 
 }]);

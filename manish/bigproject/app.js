@@ -10,6 +10,7 @@ angular.module('myApp', [
   'myApp.messages',
   'myApp.lessons',
   'myApp.students',
+  'myApp.massage',
   'firebase'
   //'ui.bootstrap'
 ])
@@ -107,12 +108,7 @@ angular.module('myApp', [
   
   //config
   $scope.config = dataService.config();
-  $scope.templateUrl = null;
-  if ($scope.config.siteUrl === 'lessons') {
-    $scope.templateUrl = 'modules/navItems/lessons.html';
-  } else if ($scope.config.siteUrl === 'student') {
-    $scope.templateUrl = 'modules/navItems/student.html';
-  }
+  $scope.templateUrl = 'modules/navItems/'+$scope.config.siteUrl+'.html';
  
   document.title = $scope.config.title;
   //firebase functionality, remove if you want api

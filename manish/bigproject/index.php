@@ -74,9 +74,10 @@ include_once('php/init.php');
 <script src="js/angularFileUpload/directives.js"></script>
 <!-- File Upload -->
 
+  <script src="modules/messages/messages.js"></script>
   <script src="modulesFB/lessons/lessons.js"></script>
   <script src="modulesFB/students/students.js"></script>
-  <script src="modules/messages/messages.js"></script>
+  <script src="modulesFB/massage/massage.js"></script>
   <script>
   
 $(document).on("keypress", 'form', function (e) {

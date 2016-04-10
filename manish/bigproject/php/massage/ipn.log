@@ -1,0 +1,75 @@
+[2016-04-10 06:47 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 912
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=23%3A47%3A16+Apr+09%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-22Y8K17EYV3T&custom=%7B%0D%0A++%22id%22%3A+%22-KEykI4zcqQ-FOlCBNPV%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=AEgY-OcJj3JVBNF6dH29aUgLrD0fAfh-i0fnWTFTYcH7kFJ-CDW7LyGx&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_signup&item_name=Massage+Parlor+in+San+jose&mc_currency=USD&item_number=-KEykI4zcqQ-FOlCBNPV&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=66a0d9b4f3e48
+[2016-04-10 06:47 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: c3047f77b092d
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Sun, 10 Apr 2016 06:47:22 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=yDDIO3BTHtxi5GBBaoSlOSMLYZ8rPJQc6F3TQi6dFXKxkvuNsz32qLQEhMWPs3WZYR0GfHpIBfHyW_nGhde_VWT_ATlwqGmScoT2AsJWEowdi_7nkiGeJQu0BtzQD9zpaHThg3B2xPTFb1Y8D2Sm282dcQXTk3HcZgESRTgO8ZS4N_zhunEHeEmZaSl2mFXaAOVX0PoJCeItg1QYvKPXrm75ODCrMzm0FBn7zD-dfwvunsjqRoBFnQa03aL8HzZHXTRgCjBuMNUf38Vz8OTvBR13d85_8QXxoxToPAusI0d9pFkJ_F0JuM9mOywq8mGiOChZAHEJ1BUsrcAds2eYxiNE8n7mIVGOIFDBiP9Y1NjBapI-mC47hPRyPQMOGVEs2ZO6vrQE9BNkIVJkU0xUfbRMY8Fv_FkQzPRWN1jtGLxVxhJA_LHb7ixbR88; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 08-Apr-2026 06:47:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 10-Apr-2018 06:47:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D4193651031%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Sun, 10 Apr 2016 07:17:22 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Sun, 10-Apr-2016 07:17:22 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-10 06:47 UTC] custom: {
+  "id": "-KEykI4zcqQ-FOlCBNPV"
+} 
+[2016-04-10 06:47 UTC] customArr: array (
+  'id' => '-KEykI4zcqQ-FOlCBNPV',
+)
+[2016-04-10 06:47 UTC] post: array (
+  'amount1' => '0.00',
+  'amount3' => '0.01',
+  'address_status' => 'confirmed',
+  'subscr_date' => '23:47:16 Apr 09, 2016 PDT',
+  'payer_id' => 'BMD37LWCBPPVQ',
+  'address_street' => '1543 Monte Stella Pl',
+  'mc_amount1' => '0.00',
+  'mc_amount3' => '0.01',
+  'charset' => 'windows-1252',
+  'address_zip' => '95337',
+  'first_name' => 'Manish',
+  'reattempt' => '1',
+  'address_country_code' => 'US',
+  'address_name' => 'Manish Khanchandani',
+  'notify_version' => '3.8',
+  'subscr_id' => 'I-22Y8K17EYV3T',
+  'custom' => '{
+  "id": "-KEykI4zcqQ-FOlCBNPV"
+}',
+  'payer_status' => 'verified',
+  'business' => 'renu09@live.com',
+  'address_country' => 'United States',
+  'address_city' => 'Manteca',
+  'verify_sign' => 'AEgY-OcJj3JVBNF6dH29aUgLrD0fAfh-i0fnWTFTYcH7kFJ-CDW7LyGx',
+  'payer_email' => 'finance@mkgalaxy.com',
+  'last_name' => 'Khanchandani',
+  'address_state' => 'CA',
+  'receiver_email' => 'renu09@live.com',
+  'recurring' => '1',
+  'txn_type' => 'subscr_signup',
+  'item_name' => 'Massage Parlor in San jose',
+  'mc_currency' => 'USD',
+  'item_number' => '-KEykI4zcqQ-FOlCBNPV',
+  'residence_country' => 'US',
+  'period1' => '3 M',
+  'period3' => '1 M',
+  'ipn_track_id' => '66a0d9b4f3e48',
+)
+[2016-04-10 06:47 UTC] Verified IPN: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=23%3A47%3A16+Apr+09%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-22Y8K17EYV3T&custom=%7B%0D%0A++%22id%22%3A+%22-KEykI4zcqQ-FOlCBNPV%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=AEgY-OcJj3JVBNF6dH29aUgLrD0fAfh-i0fnWTFTYcH7kFJ-CDW7LyGx&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_signup&item_name=Massage+Parlor+in+San+jose&mc_currency=USD&item_number=-KEykI4zcqQ-FOlCBNPV&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=66a0d9b4f3e48 
