@@ -37,6 +37,7 @@ class classes_modules_lessons
       } else {
         $mainImage = 'images/noimage.jpg';  
       }
+      $details['mainImage'] = $mainImage;
       ob_start();
       include($params['dirname'].'pages/lessons/detail.php');
       $result = ob_get_clean();

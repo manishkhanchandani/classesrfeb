@@ -43,7 +43,9 @@ if ($requestUri === '/' || empty($requestUri)) {
   $cmd = new classes_routing(array('host' => $host, 'dirname' => DIRNAME, 'arr' => $arr));
   if (!empty($cmd->returnData)) {
     $returnData = $cmd->returnData;
-    $content = $returnData['result'];
+    $content = !empty($returnData['result']) ? $returnData['result'] : '';
+    $img = !empty($returnData['mainImage']) ? $returnData['mainImage'] : '';
+    $description = !empty($returnData['description']) ? $returnData['description'] : '';
   }
 }
 

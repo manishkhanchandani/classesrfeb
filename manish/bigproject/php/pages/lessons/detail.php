@@ -31,23 +31,31 @@
 				</span></p>
       
       <!-- youtube urls -->
-      <div class="row" ng-if="youtubeUrls">
+      <?php if (!empty($details['details']['youtubeUrls'])) { ?>
+      <div class="row">
         <h3 class="text-center">Youtube Video's</h3>
-        <div class="col-md-12 text-center" ng-repeat="url in youtubeUrls">
+        <?php foreach ($details['details']['youtubeUrls'] as $url) { ?>
+        <div class="col-md-12 text-center">
           <div class="embed-responsive embed-responsive-4by3">
-            <youtube-video video-url="url"></youtube-video>
+            <youtube-video video-url="<?php echo $url; ?>"></youtube-video>
           </div>
         </div>
+        <?php } ?>
       </div>
+      <?php } ?>
       <!-- youtube urls -->
       
       <!-- links -->
+      <?php if (!empty($details['details']['linkUrls'])) { ?>
       <div class="row" ng-if="linkUrls">
         <h3 class="text-center">External Link's</h3>
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat="url in linkUrls"><a href="{{url}}" target="_blank">{{url}}</a></li>
+          <?php foreach ($details['details']['linkUrls'] as $url) { ?>
+          <li class="list-group-item"><a href="<?php echo $url; ?>" target="_blank"><?php echo $url; ?></a></li>
+          <?php } ?>
         </ul>
       </div>
+      <?php } ?>
       <!-- links -->
       
       
