@@ -125,6 +125,18 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
         obj.owsMyTmp = ref.child(theme).child('my');
         obj.owsArrTmp = $firebaseArray(obj.owsRecordTmp);
         
+        theme = 'massageCancelled';
+        obj.owsRecordCan = ref.child(theme).child('records');
+        obj.owsLocationCan  = ref.child(theme).child('location');
+        obj.owsTagsCan  = ref.child(theme).child('tags');
+        obj.owsOnlyTagsCan  = ref.child(theme).child('onlyTags');
+        obj.owsMyCan  = ref.child(theme).child('my');
+        obj.owsArrCan  = $firebaseArray(obj.owsRecordCan);
+        
+        theme = 'massageDeleted';
+        obj.owsRecordDel = ref.child(theme).child('records');
+        obj.owsArrDel  = $firebaseArray(obj.owsRecordDel);
+        
         obj.meta = {
           redirectUrl: 'massage',
           titleHeading: 'Contact Person'

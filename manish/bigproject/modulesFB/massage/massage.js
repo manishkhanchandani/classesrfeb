@@ -351,8 +351,20 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.deleteProfile = function(itemDetail) {
     var a = confirm('do you really want to delete this profile');
     if (!a) return;
+    //saving in delete group
+    //obj.owsArrDel.$add(itemDetail).then(function(response) {
+      
+    //});
+    
+    obj.owsRecord.child(itemDetail.id).once('value', function(snapshot) {
+      obj.owsRecordDel.child(itemDetail.id).set(snapshot.val());
+    });
+
+
     if (itemDetail.location.county) {
       obj.owsLocation.child(btoa(itemDetail.location.country)).child(btoa(itemDetail.location.state)).child(btoa(itemDetail.location.county)).child(itemDetail.id).remove();
+      obj.owsLocationTmp.child(btoa(itemDetail.location.country)).child(btoa(itemDetail.location.state)).child(btoa(itemDetail.location.county)).child(itemDetail.id).remove();
+      obj.owsLocationCan.child(btoa(itemDetail.location.country)).child(btoa(itemDetail.location.state)).child(btoa(itemDetail.location.county)).child(itemDetail.id).remove();
     }
     
     
@@ -363,14 +375,24 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         val = val.toLowerCase();
         if (itemDetail.location.county) {
           obj.owsTags.child(btoa(val)).child(btoa(itemDetail.location.country)).child(btoa(itemDetail.location.state)).child(btoa(itemDetail.location.county)).child(itemDetail.id).remove();
+          obj.owsTagsTmp.child(btoa(val)).child(btoa(itemDetail.location.country)).child(btoa(itemDetail.location.state)).child(btoa(itemDetail.location.county)).child(itemDetail.id).remove();
+          obj.owsTagsCan.child(btoa(val)).child(btoa(itemDetail.location.country)).child(btoa(itemDetail.location.state)).child(btoa(itemDetail.location.county)).child(itemDetail.id).remove();
         }
         
         obj.owsOnlyTags.child(btoa(val)).child(itemDetail.id).remove();
+        obj.owsOnlyTagsTmp.child(btoa(val)).child(itemDetail.id).remove();
+        obj.owsOnlyTagsCan.child(btoa(val)).child(itemDetail.id).remove();
       });
     }//end if
     
     obj.owsRecord.child(itemDetail.id).remove();
     obj.owsMy.child($scope.userData.uid).child(itemDetail.id).remove();
+    
+    obj.owsRecordTmp.child(itemDetail.id).remove();
+    obj.owsMyTmp.child($scope.userData.uid).child(itemDetail.id).remove();
+    
+    obj.owsRecordCan.child(itemDetail.id).remove();
+    obj.owsMyCan.child($scope.userData.uid).child(itemDetail.id).remove();
   };
 }])
 
@@ -788,11 +810,14 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.title = $scope.frm.title;
     $scope.current.description = $scope.frm.description;
     $scope.current.coupon_info = $scope.frm.coupon_info;
-    $scope.current.agree = $scope.frm.agree;
-    $scope.current.grossprice = $scope.frm.grossprice;
-    $scope.current.discount = $scope.frm.discount;
-    $scope.current.netprice = $scope.frm.netprice;
-    $scope.current.paypal_email = $scope.frm.paypal_email;
+    
+    $scope.current.coupon_info = ($scope.frm.agree) ? $scope.frm.agree : '';
+    $scope.current.coupon_info = ($scope.frm.coupon_info) ? $scope.frm.coupon_info : '';
+    $scope.current.grossprice = ($scope.frm.grossprice) ? $scope.frm.grossprice : '';
+    $scope.current.discount = ($scope.frm.discount) ? $scope.frm.discount : '';
+    $scope.current.netprice = ($scope.frm.netprice) ? $scope.frm.netprice : '';
+    $scope.current.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
+    
     $scope.current.location.latitude = $scope.frm.details.components.lat;
     $scope.current.location.longitude = $scope.frm.details.components.lng;
     $scope.current.location.country = $scope.frm.details.components.country;
