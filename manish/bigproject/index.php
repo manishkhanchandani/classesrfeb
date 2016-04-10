@@ -1,4 +1,6 @@
 <?php
+include_once('php/init.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -6,9 +8,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title><?php echo $title; ?></title>
   <base href="/">
-  <meta name="description" content="">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>" />
+<meta property="og:description" content="<?php echo $description; ?>" />
+<meta property="og:image" content="<?php echo $img; ?>" />
+<meta name="description" content="<?php echo $description; ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <!-- Latest compiled and minified CSS -->
@@ -91,7 +97,7 @@ $(document).on("keypress", 'form', function (e) {
 <body ng-controller="mainController">
 <ng-include src="templateUrl"></ng-include>
 
-  <div ng-view id="mkPrj"></div>
+  <div ng-view id="mkPrj"><?php echo $content; ?></div>
 
 <footer>
   <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>

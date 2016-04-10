@@ -29,6 +29,7 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
   
   this.tid = function() {
     var host = $location.host();
+    host = host.replace("www.", "");
     var tid = configs[host].tid;
     return tid;
   };
@@ -36,6 +37,7 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
   
   this.config = function() {
     var host = $location.host();
+    host = host.replace("www.", "");
     var config = configs[host];
     return config;
   };

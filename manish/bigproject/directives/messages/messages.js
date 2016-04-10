@@ -10,7 +10,7 @@
   }
   
   module
-    .directive('messages', ['messagesTemplate', 'configs', '$location', 'dataService', '$firebaseArray', '$timeout', '$routeParams', messages])
+    .directive('messages', ['messagesTemplate', 'dataService', '$firebaseArray', '$timeout', '$routeParams', messages])
     .directive('messagesCounter', ['dataService', '$timeout', messagesCounter])
     .provider('messagesTemplate', messagesTemplateProvider)
     
@@ -71,7 +71,7 @@
     };
   }
   
-  function messages(messagesTemplate, configs, $location, dataService, $firebaseArray, $timeout, $routeParams) {
+  function messages(messagesTemplate, dataService, $firebaseArray, $timeout, $routeParams) {
     return {
           scope: {
             userData: '='
@@ -100,8 +100,8 @@
               scope.badges = {};
               
               //firebase reference
-              var host = $location.host();
-              var ref = new Firebase(configs[host].firebaseUrl);
+              var config = dataService.config();
+              var ref = new Firebase(config.firebaseUrl);
               var badge = ref.child('messagesBadges');
   
               //reset badge

@@ -24,12 +24,23 @@ angular.module('myApp', [
     tid: 2,
     homePage: 'modulesFB/lessons/lessons.html',
     apiUrl: 'http://api.mkgalaxy.com/'
-    
+  },
+  'ineedmassage.us': {
+    siteUrl: 'massage',
+    clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
+    clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
+    apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
+    title: 'I Need Massage :: Search/Browse Massage',
+    firebaseUrl: 'https://mkgxy.firebaseio.com/projects/massage',
+    tid: 3,
+    homePage: 'modulesFB/massage/massage.html',
+    apiUrl: 'http://api.mkgalaxy.com/'
   }
 })
 
 .config(['$routeProvider', '$locationProvider', 'configs', function($routeProvider, $locationProvider, configs) {
   var host = window.location.hostname;
+  host = host.replace("www.", "");
   var homePage = configs[host].homePage;
   $routeProvider
   .when('/', {
