@@ -1,43 +1,42 @@
-[2016-04-10 06:47 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+[2016-04-10 08:56 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
 Host: www.paypal.com
 Accept: */*
 Connection: Close
-Content-Length: 912
+Content-Length: 933
 Content-Type: application/x-www-form-urlencoded
 
- for IPN payload: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=23%3A47%3A16+Apr+09%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-22Y8K17EYV3T&custom=%7B%0D%0A++%22id%22%3A+%22-KEykI4zcqQ-FOlCBNPV%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=AEgY-OcJj3JVBNF6dH29aUgLrD0fAfh-i0fnWTFTYcH7kFJ-CDW7LyGx&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_signup&item_name=Massage+Parlor+in+San+jose&mc_currency=USD&item_number=-KEykI4zcqQ-FOlCBNPV&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=66a0d9b4f3e48
-[2016-04-10 06:47 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+ for IPN payload: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=01%3A56%3A12+Apr+10%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-0ERSL4X237J5&custom=%7B++%22id%22%3A+%22-KEzFobg6RHQvM1h4hYh%22%2C++%22uid%22%3A+%22google%3A112913147917981568678%22%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=Ah8pPyFDDl3aiM3SJrdf6o4gJ0HCAoYLT.KIrKtnGkzx2STpZej31f8c&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_cancel&item_name=hello&mc_currency=USD&item_number=-KEzFobg6RHQvM1h4hYh&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=803e22a0c4aa0
+[2016-04-10 08:56 UTC] HTTP response of validation request: HTTP/1.1 200 OK
 Server: Apache
 X-Frame-Options: SAMEORIGIN
-Paypal-Debug-Id: c3047f77b092d
+Paypal-Debug-Id: 64d056edbe412
 Cache-Control: max-age=0, no-cache, no-store, must-revalidate
 Pragma: no-cache
 Content-Type: text/html; charset=UTF-8
-DC: slc-b-origin-www-2.paypal.com
-Date: Sun, 10 Apr 2016 06:47:22 GMT
+DC: slc-a-origin-www-2.paypal.com
+Date: Sun, 10 Apr 2016 08:56:16 GMT
 Content-Length: 8
 Connection: close
-Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=yDDIO3BTHtxi5GBBaoSlOSMLYZ8rPJQc6F3TQi6dFXKxkvuNsz32qLQEhMWPs3WZYR0GfHpIBfHyW_nGhde_VWT_ATlwqGmScoT2AsJWEowdi_7nkiGeJQu0BtzQD9zpaHThg3B2xPTFb1Y8D2Sm282dcQXTk3HcZgESRTgO8ZS4N_zhunEHeEmZaSl2mFXaAOVX0PoJCeItg1QYvKPXrm75ODCrMzm0FBn7zD-dfwvunsjqRoBFnQa03aL8HzZHXTRgCjBuMNUf38Vz8OTvBR13d85_8QXxoxToPAusI0d9pFkJ_F0JuM9mOywq8mGiOChZAHEJ1BUsrcAds2eYxiNE8n7mIVGOIFDBiP9Y1NjBapI-mC47hPRyPQMOGVEs2ZO6vrQE9BNkIVJkU0xUfbRMY8Fv_FkQzPRWN1jtGLxVxhJA_LHb7ixbR88; domain=.paypal.com; path=/; Secure; HttpOnly
-Set-Cookie: cookie_check=yes; expires=Wed, 08-Apr-2026 06:47:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=jUn5MbrPEyqWd7zel--NzXRe0s0MA-efnCa24h2jlcKftzgYXVXUOa4GR5s3x3-dNRgmqHcTjM_NYxACGxsWYFCDXWEKnFidqlTiU6hg4jgGtyayzo2mIZmIqZPD0THDA_TwvFlznMKv9qZKe69mbbTO98z9O6mogE9jSuYe-yWyYn3qH3ISeCDs9hj1P4zQZtTTpjscT39cb7ujkRkfUWwxc24_raZQfsgk48bhcdVU_A8nXHhixCI0uFx3s0ghq-MlPfY2qmMLWlHjVUG1tYt7JDz_8RQ2xgNlFpXJSIWdb6Eg5EOekd5FXnOUDSZMA1NBvKoEetAmp2tqK3O0kqwm3b00eV0fc38rNHtQCdAUsTJTnP5MsliKyKXT0zu07uRMPTpiVOL6FkTAufpxKFV_MWXGXXplW43KIt2KodNj79TIKIHiU5ce7h4; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 08-Apr-2026 08:56:16 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
 Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
-Set-Cookie: navlns=0.0; expires=Tue, 10-Apr-2018 06:47:21 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
-Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D4193651031%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Sun, 10 Apr 2016 07:17:22 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 10-Apr-2018 08:56:16 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D789908055%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Sun, 10 Apr 2016 09:26:16 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
 Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
-Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Sun, 10-Apr-2016 07:17:22 GMT; path=/; secure
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Sun, 10-Apr-2016 09:26:16 GMT; path=/; secure
 Strict-Transport-Security: max-age=63072000
 
 VERIFIED
-[2016-04-10 06:47 UTC] custom: {
-  "id": "-KEykI4zcqQ-FOlCBNPV"
-} 
-[2016-04-10 06:47 UTC] customArr: array (
-  'id' => '-KEykI4zcqQ-FOlCBNPV',
+[2016-04-10 08:56 UTC] custom: {  "id": "-KEzFobg6RHQvM1h4hYh",  "uid": "google:112913147917981568678"} 
+[2016-04-10 08:56 UTC] customArr: array (
+  'id' => '-KEzFobg6RHQvM1h4hYh',
+  'uid' => 'google:112913147917981568678',
 )
-[2016-04-10 06:47 UTC] post: array (
+[2016-04-10 08:56 UTC] post: array (
   'amount1' => '0.00',
   'amount3' => '0.01',
   'address_status' => 'confirmed',
-  'subscr_date' => '23:47:16 Apr 09, 2016 PDT',
+  'subscr_date' => '01:56:12 Apr 10, 2016 PDT',
   'payer_id' => 'BMD37LWCBPPVQ',
   'address_street' => '1543 Monte Stella Pl',
   'mc_amount1' => '0.00',
@@ -49,27 +48,121 @@ VERIFIED
   'address_country_code' => 'US',
   'address_name' => 'Manish Khanchandani',
   'notify_version' => '3.8',
-  'subscr_id' => 'I-22Y8K17EYV3T',
-  'custom' => '{
-  "id": "-KEykI4zcqQ-FOlCBNPV"
-}',
+  'subscr_id' => 'I-0ERSL4X237J5',
+  'custom' => '{  "id": "-KEzFobg6RHQvM1h4hYh",  "uid": "google:112913147917981568678"}',
   'payer_status' => 'verified',
   'business' => 'renu09@live.com',
   'address_country' => 'United States',
   'address_city' => 'Manteca',
-  'verify_sign' => 'AEgY-OcJj3JVBNF6dH29aUgLrD0fAfh-i0fnWTFTYcH7kFJ-CDW7LyGx',
+  'verify_sign' => 'Ah8pPyFDDl3aiM3SJrdf6o4gJ0HCAoYLT.KIrKtnGkzx2STpZej31f8c',
   'payer_email' => 'finance@mkgalaxy.com',
   'last_name' => 'Khanchandani',
   'address_state' => 'CA',
   'receiver_email' => 'renu09@live.com',
   'recurring' => '1',
-  'txn_type' => 'subscr_signup',
-  'item_name' => 'Massage Parlor in San jose',
+  'txn_type' => 'subscr_cancel',
+  'item_name' => 'hello',
   'mc_currency' => 'USD',
-  'item_number' => '-KEykI4zcqQ-FOlCBNPV',
+  'item_number' => '-KEzFobg6RHQvM1h4hYh',
   'residence_country' => 'US',
   'period1' => '3 M',
   'period3' => '1 M',
-  'ipn_track_id' => '66a0d9b4f3e48',
+  'ipn_track_id' => '803e22a0c4aa0',
 )
-[2016-04-10 06:47 UTC] Verified IPN: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=23%3A47%3A16+Apr+09%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-22Y8K17EYV3T&custom=%7B%0D%0A++%22id%22%3A+%22-KEykI4zcqQ-FOlCBNPV%22%0D%0A%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=AEgY-OcJj3JVBNF6dH29aUgLrD0fAfh-i0fnWTFTYcH7kFJ-CDW7LyGx&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_signup&item_name=Massage+Parlor+in+San+jose&mc_currency=USD&item_number=-KEykI4zcqQ-FOlCBNPV&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=66a0d9b4f3e48 
+[2016-04-10 08:56 UTC] subscr_cancel started
+[2016-04-10 08:56 UTC] subscr_cancel path1: /massage/massage/records/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path2: /massage/massageCancelled/records/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path1: /massage/massage/my/google:112913147917981568678/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path2: /massage/massageCancelled/my/google:112913147917981568678/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path1: /massage/massage/location/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FuIEZyYW5jaXNjbyBDb3VudHk=/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path2: /massage/massageCancelled/location/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FuIEZyYW5jaXNjbyBDb3VudHk=/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path1: /massage/massage/tags/ZGtmamRrZg==/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FuIEZyYW5jaXNjbyBDb3VudHk=/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path2: /massage/massageCancelled/tags/ZGtmamRrZg==/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FuIEZyYW5jaXNjbyBDb3VudHk=/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path1: /massage/massage/onlyTags/ZGtmamRrZg==/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel path2: /massage/massageCancelled/onlyTags/ZGtmamRrZg==/-KEzFobg6RHQvM1h4hYh
+[2016-04-10 08:56 UTC] subscr_cancel ended
+[2016-04-10 08:56 UTC] Verified IPN: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=01%3A56%3A12+Apr+10%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-0ERSL4X237J5&custom=%7B++%22id%22%3A+%22-KEzFobg6RHQvM1h4hYh%22%2C++%22uid%22%3A+%22google%3A112913147917981568678%22%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=Ah8pPyFDDl3aiM3SJrdf6o4gJ0HCAoYLT.KIrKtnGkzx2STpZej31f8c&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_cancel&item_name=hello&mc_currency=USD&item_number=-KEzFobg6RHQvM1h4hYh&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=803e22a0c4aa0 
+[2016-04-10 08:57 UTC] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 942
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=01%3A57%3A31+Apr+10%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-FE71T0GMNVA3&custom=%7B++%22id%22%3A+%22-KEzKw3XaFuUrnHkbfby%22%2C++%22uid%22%3A+%22google%3A112913147917981568678%22%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=Awk3.-R4SHZONwgPOfhkWLydgtPZACdXgtWSq75hcRWiLDGYJJIc0.N-&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_cancel&item_name=massage+parlor&mc_currency=USD&item_number=-KEzKw3XaFuUrnHkbfby&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=8710f444dc0bf
+[2016-04-10 08:57 UTC] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 9896d52f4303
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Sun, 10 Apr 2016 08:57:35 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=SjmNFx8cDHSuPeJF5-_WqXdaFYx6AxSvciT-UOBavtt_2P7qrAd2YFUfoKhipQTVnlqatVl33V7VLDc9qkArtBJFvpMmtBlKL9HOXrWbTOnGGC3aUqdLyHTvQ7W16gVH9_dKk2KVbQvqdvU6NzM0pZ0hTmOPteupUO4LwkJeDNfbLMFyppnpqxRdYoeMQCCwAVX3QKwB75MRl0-VblRLP50TzCtC5bBx8EktIzhC8t1d-wCGyCFHCM5pPJpfd_iZq2lQlB_Dw-gcg26FrBVSTSRu_b14Cuq3tT4GL-4QRWICKA1FHZJXYLK7ZCCy2V0Hw3ua6hegWFisSRe66K5I_e3V1D8Xirkmq9JJiqkjWTrfaDKeyKA40ylYKwTl9GCU9NXOJROEqKhHy6DoT1L00bDdGGmi97lRTVhCkOEjsf9mMfpFACrzi96Anwe; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Wed, 08-Apr-2026 08:57:35 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Tue, 10-Apr-2018 08:57:35 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D2132085335%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Sun, 10 Apr 2016 09:27:35 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Sun, 10-Apr-2016 09:27:35 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-10 08:57 UTC] custom: {  "id": "-KEzKw3XaFuUrnHkbfby",  "uid": "google:112913147917981568678"} 
+[2016-04-10 08:57 UTC] customArr: array (
+  'id' => '-KEzKw3XaFuUrnHkbfby',
+  'uid' => 'google:112913147917981568678',
+)
+[2016-04-10 08:57 UTC] post: array (
+  'amount1' => '0.00',
+  'amount3' => '0.01',
+  'address_status' => 'confirmed',
+  'subscr_date' => '01:57:31 Apr 10, 2016 PDT',
+  'payer_id' => 'BMD37LWCBPPVQ',
+  'address_street' => '1543 Monte Stella Pl',
+  'mc_amount1' => '0.00',
+  'mc_amount3' => '0.01',
+  'charset' => 'windows-1252',
+  'address_zip' => '95337',
+  'first_name' => 'Manish',
+  'reattempt' => '1',
+  'address_country_code' => 'US',
+  'address_name' => 'Manish Khanchandani',
+  'notify_version' => '3.8',
+  'subscr_id' => 'I-FE71T0GMNVA3',
+  'custom' => '{  "id": "-KEzKw3XaFuUrnHkbfby",  "uid": "google:112913147917981568678"}',
+  'payer_status' => 'verified',
+  'business' => 'renu09@live.com',
+  'address_country' => 'United States',
+  'address_city' => 'Manteca',
+  'verify_sign' => 'Awk3.-R4SHZONwgPOfhkWLydgtPZACdXgtWSq75hcRWiLDGYJJIc0.N-',
+  'payer_email' => 'finance@mkgalaxy.com',
+  'last_name' => 'Khanchandani',
+  'address_state' => 'CA',
+  'receiver_email' => 'renu09@live.com',
+  'recurring' => '1',
+  'txn_type' => 'subscr_cancel',
+  'item_name' => 'massage parlor',
+  'mc_currency' => 'USD',
+  'item_number' => '-KEzKw3XaFuUrnHkbfby',
+  'residence_country' => 'US',
+  'period1' => '3 M',
+  'period3' => '1 M',
+  'ipn_track_id' => '8710f444dc0bf',
+)
+[2016-04-10 08:57 UTC] subscr_cancel started
+[2016-04-10 08:57 UTC] subscr_cancel path1: /massage/massage/records/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path2: /massage/massageCancelled/records/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path1: /massage/massage/my/google:112913147917981568678/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path2: /massage/massageCancelled/my/google:112913147917981568678/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path1: /massage/massage/location/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FudGEgQ2xhcmEgQ291bnR5/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path2: /massage/massageCancelled/location/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FudGEgQ2xhcmEgQ291bnR5/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path1: /massage/massage/tags/bWFzc2FnZQ==/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FudGEgQ2xhcmEgQ291bnR5/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path2: /massage/massageCancelled/tags/bWFzc2FnZQ==/VW5pdGVkIFN0YXRlcw==/Q0E=/U2FudGEgQ2xhcmEgQ291bnR5/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path1: /massage/massage/onlyTags/bWFzc2FnZQ==/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel path2: /massage/massageCancelled/onlyTags/bWFzc2FnZQ==/-KEzKw3XaFuUrnHkbfby
+[2016-04-10 08:57 UTC] subscr_cancel ended
+[2016-04-10 08:57 UTC] Verified IPN: cmd=_notify-validate&amount1=0.00&amount3=0.01&address_status=confirmed&subscr_date=01%3A57%3A31+Apr+10%2C+2016+PDT&payer_id=BMD37LWCBPPVQ&address_street=1543+Monte+Stella+Pl&mc_amount1=0.00&mc_amount3=0.01&charset=windows-1252&address_zip=95337&first_name=Manish&reattempt=1&address_country_code=US&address_name=Manish+Khanchandani&notify_version=3.8&subscr_id=I-FE71T0GMNVA3&custom=%7B++%22id%22%3A+%22-KEzKw3XaFuUrnHkbfby%22%2C++%22uid%22%3A+%22google%3A112913147917981568678%22%7D&payer_status=verified&business=renu09%40live.com&address_country=United+States&address_city=Manteca&verify_sign=Awk3.-R4SHZONwgPOfhkWLydgtPZACdXgtWSq75hcRWiLDGYJJIc0.N-&payer_email=finance%40mkgalaxy.com&last_name=Khanchandani&address_state=CA&receiver_email=renu09%40live.com&recurring=1&txn_type=subscr_cancel&item_name=massage+parlor&mc_currency=USD&item_number=-KEzKw3XaFuUrnHkbfby&residence_country=US&period1=3+M&period3=1+M&ipn_track_id=8710f444dc0bf 

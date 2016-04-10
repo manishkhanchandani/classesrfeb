@@ -106,7 +106,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.current = null;
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
-    $scope.current.custom = {id: $scope.current.$id};
+    $scope.current.custom = {id: $scope.current.$id, uid: $scope.current.uid};
     $scope.current.confirmURL = 'http://ineedmassage.us/massage/paypal/confirm/' + $scope.current.$id;
 		$scope.current.cancelURL = 'http://ineedmassage.us/massage/paypal/cancel/' + $scope.current.$id;
 		$scope.current.notifyURL = 'http://ineedmassage.us/php/massage/ipnNofity.php';
@@ -606,12 +606,12 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     var postData = {};
     postData.title = $scope.frm.title;
     postData.description = $scope.frm.description;
-    postData.agree = $scope.frm.agree;
-    postData.coupon_info = $scope.frm.coupon_info;
-    postData.grossprice = $scope.frm.grossprice;
-    postData.discount = $scope.frm.discount;
-    postData.netprice = $scope.frm.netprice;
-    postData.paypal_email = $scope.frm.paypal_email;
+    postData.agree = ($scope.frm.agree) ? $scope.frm.agree : '';
+    postData.coupon_info = ($scope.frm.coupon_info) ? $scope.frm.coupon_info : '';
+    postData.grossprice = ($scope.frm.grossprice) ? $scope.frm.grossprice : '';
+    postData.discount = ($scope.frm.discount) ? $scope.frm.discount : '';
+    postData.netprice = ($scope.frm.netprice) ? $scope.frm.netprice : '';
+    postData.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
     postData.location = {};
     postData.location.latitude = $scope.frm.details.components.lat;
     postData.location.longitude = $scope.frm.details.components.lng;
@@ -638,10 +638,17 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     obj.owsArrTmp.$add(postData).then(function(response) {
       var id = response.key();
       console.log('id: ', id);
+      
+      //setting path
+      obj.owsRecordTmp.child(id).child('paths').push('records/' + id);
       //save location
       obj.owsMyTmp.child($scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
+      //setting path
+      obj.owsRecordTmp.child(id).child('paths').push('my/' + $scope.userData.uid + '/' + id);
       if (postData.location.county) {
         obj.owsLocationTmp.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+        //setting path
+        obj.owsRecordTmp.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
       }
       if (postData.tags) {
         var tmp = postData.tags.split(',');
@@ -650,9 +657,13 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
           val = val.toLowerCase();
           if (postData.location.county) {
             obj.owsTagsTmp.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+            //setting path
+            obj.owsRecordTmp.child(id).child('paths').push('tags/' + btoa(val) + '/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
           }
           
           obj.owsOnlyTagsTmp.child(btoa(val)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+          //setting path
+          obj.owsRecordTmp.child(id).child('paths').push('onlyTags/' + btoa(val) + '/' + id);
         });
       }//end if
         //location ends

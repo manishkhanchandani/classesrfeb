@@ -5,7 +5,9 @@ try {
   include_once('../firebase/firebaseLib.php');
   define('DEFAULT_URL', 'https://mkgxy.firebaseio.com/projects');
   define('DEFAULT_TOKEN', 'vIthuXgIYof6rBxZknp2Y5XR0fLRwKT5ZFIclunM');
+  define('MAIN_PATH', '/massage');
   define('DEFAULT_PATH_TMP', '/massage/massageTmp');
+  define('DEFAULT_PATH_CANCELLED', '/massage/massageCancelled');
   define('DEFAULT_PATH', '/massage/massage');
   $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
   
@@ -46,85 +48,92 @@ try {
         }
     }
 
-  function deleteRecord($id, $user_id) {
-    
-    //getting data
-    $path = DEFAULT_PATH . '/posting/'.$id;
-    $postingData = json_decode($firebase->get($path), 1);
-    $path = DEFAULT_PATH . '/locations/'.$postingData['location_id'];
-    $locationData = json_decode($firebase->get($path), 1);
-
-    //setting data
-    $path = DEFAULT_PATH . '/postingCancelled/'.$id;
-    $firebase->set($path, $postingData);
-    $path = DEFAULT_PATH . '/users/'.$user_id.'/ownedCancelledProfiles/'.$id;
-    $firebase->set($path, true);
-    
-    //deleting data
-    $path = DEFAULT_PATH . '/users/'.$user_id.'/ownedProfiles/'.$id;
-    $firebase->delete($path);
-    $path = DEFAULT_PATH . '/posting/'.$id;
-    $firebase->delete($path);
-    $path = DEFAULT_PATH . '/browsePostings/citywise/'.base64_encode($locationData['country']).'/'.base64_encode($locationData['state']).'/'.base64_encode($locationData['city']).'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->delete($path);
-    $path = DEFAULT_PATH . '/browsePostings/statewise/'.base64_encode($locationData['country']).'/'.base64_encode($locationData['state']).'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->delete($path);
-    $path = DEFAULT_PATH . '/browsePostings/countrywise/'.base64_encode($locationData['country']).'/'.'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->delete($path);
-    $path = DEFAULT_PATH . '/browsePostings/countywise/'.base64_encode($locationData['country']).'/'.base64_encode($locationData['state']).'/'.base64_encode($locationData['county']).'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->delete($path);
-  }
- 
   function save_data($id, $user_id, $data) {
     global $firebase;
-    $custom = !empty($data['custom']) ? json_decode($data['custom'], 1) : '';
-    $data['custom'] = $custom;
     $data['mdate'] = date('r');
     $data['mtime'] = time();
-    $path = DEFAULT_PATH . '/payments/'.$user_id.'/'.$id;
-    $firebase->push($path, $data);
+    $path = MAIN_PATH . '/payments/all';
+    $sid = $firebase->push($path, $data);
+    $arr = json_decode($sid, 1);
+    $pathID = $arr['name'];
+    $path = MAIN_PATH . '/payments/users/'.$user_id.'/'.$id.'/'.$pathID;
+    $firebase->set($path, time());
+  }
+  
+  function getDetails($id) {
+    $path = DEFAULT_PATH_TMP . '/records/'.$id;
+    $rec = $firebase->get($path);
+    $record = json_decode($rec, 1);
+    if (empty($record)) {
+      $path = DEFAULT_PATH . '/records/'.$id;
+      $rec = $firebase->get($path);
+      $record = json_decode($rec, 1);
+      $record['path'] = 'massage';
+    } else {
+      $record['path'] = 'massageTmp';
+    }
+    error_log(date('[Y-m-d H:i e] '). "record: ".var_export($record, 1). PHP_EOL, 3, LOG_FILE);
+    return $record;  
   }
 
-  function subscr_cancel($id, $user_id, $data, $coupon='') {
+  function subscr_cancel($id, $user_id, $data) {
     global $firebase;
-    $path = DEFAULT_PATH . '/posting/'.$id.'/cancel';
-    $firebase->set($path, true);
-  }
-
-  function subscr_payment($id, $user_id, $data, $coupon='') {
-    global $firebase;
-  }
-
-  function subscr_signup($id, $user_id, $data, $coupon='') {
-    global $firebase;
-    $path = DEFAULT_PATH . '/users/'.$user_id;
-    $userData = json_decode($firebase->get($path), 1);
-    $path = DEFAULT_PATH . '/postingPending/'.$id;
-    $postingData = json_decode($firebase->get($path), 1);
-    if (empty($postingData)) {
+    error_log(date('[Y-m-d H:i e] '). "subscr_cancel started". PHP_EOL, 3, LOG_FILE);
+    $path = DEFAULT_PATH . '/records/'.$id;
+    $record = json_decode($firebase->get($path), 1);
+    if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    $path = DEFAULT_PATH . '/locations/'.$postingData['location_id'];
-    $locationData = json_decode($firebase->get($path), 1);
-    //insertion
-    $path = DEFAULT_PATH . '/posting/'.$id;
-    $firebase->set($path, $postingData);
-    $path = DEFAULT_PATH . '/users/'.$user_id.'/ownedProfiles/'.$id;
-    $firebase->set($path, true);
-    $path = DEFAULT_PATH . '/browsePostings/citywise/'.base64_encode($locationData['country']).'/'.base64_encode($locationData['state']).'/'.base64_encode($locationData['city']).'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->set($path, true);
-    $path = DEFAULT_PATH . '/browsePostings/statewise/'.base64_encode($locationData['country']).'/'.base64_encode($locationData['state']).'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->set($path, true);
-    $path = DEFAULT_PATH . '/browsePostings/countrywise/'.base64_encode($locationData['country']).'/'.'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->set($path, true);
-    $path = DEFAULT_PATH . '/browsePostings/countywise/'.base64_encode($locationData['country']).'/'.base64_encode($locationData['state']).'/'.base64_encode($locationData['county']).'/'.base64_encode($postingData['category']).'/'.$id;
-    $firebase->set($path, true);
-    
-    //deleting
-    $path = DEFAULT_PATH . '/postingPending/'.$id;
-    $firebase->delete($path);
-    $path = DEFAULT_PATH . '/users/'.$user_id.'/ownedPendingProfiles/'.$id;
-    $firebase->delete($path);
+    foreach ($record['paths'] as $v) {
+      $path = DEFAULT_PATH. '/' . $v;
+      $r = json_decode($firebase->get($path), 1);
+      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path1: ".$path. PHP_EOL, 3, LOG_FILE);
+      $path = DEFAULT_PATH_CANCELLED . '/' . $v;
+      $firebase->set($path, $r);
+      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path2: ".$path. PHP_EOL, 3, LOG_FILE);
+    }
+    error_log(date('[Y-m-d H:i e] '). "subscr_cancel ended". PHP_EOL, 3, LOG_FILE);
+  }
+
+  function subscr_payment($id, $user_id, $data) {
+    global $firebase;
+    error_log(date('[Y-m-d H:i e] '). "subscr_payment started". PHP_EOL, 3, LOG_FILE);
+    $path = DEFAULT_PATH . '/records/'.$id;
+    $record = json_decode($firebase->get($path), 1);
+    if (empty($record)) {
+      throw new Exception('empty posting data');
+    }
+    $exp = strtotime("+1 month", time());
+    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
+    $firebase->set($path, $exp);
+    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
+    $firebase->set($path, date('r', $exp));
+    error_log(date('[Y-m-d H:i e] '). "subscr_payment ended". PHP_EOL, 3, LOG_FILE);
+  }
+
+  function subscr_signup($id, $user_id, $data) {
+    global $firebase;
+    error_log(date('[Y-m-d H:i e] '). "subscr_signup started". PHP_EOL, 3, LOG_FILE);
+    $path = DEFAULT_PATH_TMP . '/records/'.$id;
+    $record = json_decode($firebase->get($path), 1);
+    if (empty($record)) {
+      throw new Exception('empty posting data');
+    }
+    foreach ($record['paths'] as $v) {
+      $path = DEFAULT_PATH_TMP. '/' . $v;
+      $r = json_decode($firebase->get($path), 1);
+      $firebase->delete($path);
+      error_log(date('[Y-m-d H:i e] '). "subscr_signup path1: ".$path. PHP_EOL, 3, LOG_FILE);
+      $path = DEFAULT_PATH . '/' . $v;
+      $firebase->set($path, $r);
+      error_log(date('[Y-m-d H:i e] '). "subscr_signup path2: ".$path. PHP_EOL, 3, LOG_FILE);
+    }
+    $exp = strtotime("+3 months", time());
+    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
+    $firebase->set($path, $exp);
+    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
+    $firebase->set($path, date('r', $exp));
+    error_log(date('[Y-m-d H:i e] '). "subscr_signup ended". PHP_EOL, 3, LOG_FILE);
     //custom logic ends here
   }
 
@@ -240,26 +249,28 @@ if (strcmp ($res, "VERIFIED") == 0) {
   $customArr = json_decode($custom, 1);
   error_log(date('[Y-m-d H:i e] '). "customArr: ". var_export($customArr, 1). PHP_EOL, 3, LOG_FILE);
   $id = !empty($customArr['id']) ? $customArr['id'] : '';
+  $user_id = !empty($customArr['uid']) ? $customArr['uid'] : '';
   $data = $_POST;
   error_log(date('[Y-m-d H:i e] '). "post: ".var_export($_POST, 1). PHP_EOL, 3, LOG_FILE);
   //custom logic comes here
-  /*
+  //checking data and setting it in record
   save_data($id, $user_id, $data);
+  
   if (!empty($_POST['txn_type'])) {
     switch ($_POST['txn_type']) {
       case 'subscr_signup':
-        subscr_signup($id, $user_id, $data, $coupon);
+        subscr_signup($id, $user_id, $data);
         break;
       case 'subscr_payment';
-        subscr_payment($id, $user_id, $data, $coupon);
+        subscr_payment($id, $user_id, $data);
         break;
       case 'subscr_cancel';
-        subscr_cancel($id, $user_id, $data, $coupon);
+        subscr_cancel($id, $user_id, $data);
         break;
       default:
         break;
     }
-  }*/
+  }
 
 	
 	if(DEBUG == true) {
