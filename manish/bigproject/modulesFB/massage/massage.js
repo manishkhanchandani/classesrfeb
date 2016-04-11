@@ -552,6 +552,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     $scope.results = $firebaseArray(query);
     $scope.results.$loaded().then(function(arrR) {
+      console.log($scope.results);
       $scope.pagination.totalRows = arrR.length;
       $scope.pagination.totalPages = Math.ceil($scope.pagination.totalRows/$scope.pagination.maxRows)-1;
       
@@ -742,15 +743,11 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.paypal_email = $scope.current.paypal_email;
     
     $scope.frm.tags = $scope.current.tags;
-    $scope.frm.gender = $scope.current.details.gender;
-    $scope.frm.age = parseInt($scope.current.details.age);
     $scope.frm.email = $scope.current.details.email;
     $scope.frm.phone = $scope.current.details.phone;
     $scope.frm.pref_email = ($scope.current.details.pref_email === true) ? true : false;
     $scope.frm.pref_phone_text = ($scope.current.details.pref_phone_text === true) ? true : false;
     $scope.frm.pref_phone_call = ($scope.current.details.pref_phone_call === true) ? true : false;
-    $scope.frm.charges = parseInt($scope.current.details.charges);
-    $scope.frm.charge_explanation = $scope.current.details.charge_explanation;
     
     $scope.frm.location = $scope.current.details.location;
     
@@ -830,15 +827,12 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.tags = $scope.frm.tags;
     $scope.current.details.profileImage = $scope.userData.image;
     $scope.current.details.postedBy = $scope.userData.displayName;
-    $scope.current.details.gender = ($scope.frm.gender) ? $scope.frm.gender : '';
-    $scope.current.details.age = ($scope.frm.age) ? $scope.frm.age : '';
     $scope.current.details.email = ($scope.frm.email) ? $scope.frm.email : '';
     $scope.current.details.phone = ($scope.frm.phone) ? $scope.frm.phone : '';
     $scope.current.details.pref_email = ($scope.frm.pref_email) ? $scope.frm.pref_email : false;
     $scope.current.details.pref_phone_text = ($scope.frm.pref_phone_text) ? $scope.frm.pref_phone_text : false;
     $scope.current.details.pref_phone_call = ($scope.frm.pref_phone_call) ? $scope.frm.pref_phone_call : false;
-    $scope.current.details.charges = $scope.frm.charges;
-    $scope.current.details.charge_explanation = ($scope.frm.charge_explanation) ? $scope.frm.charge_explanation : '';
+    
     $scope.current.details.location = $scope.frm.location;
     $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
     obj.owsArr.$save($scope.current).then(function(response) {

@@ -37,19 +37,34 @@
               var config = dataService.config();
               scope.ref = new Firebase(config.firebaseUrl);
               
+              
+              function refBy(response, uid)
+              {
+                scope.ref.child('users').child(uid).child('chain').set(response);
+              }
+  
               //saving user data
               scope.saveData = function(uid, provider, accessToken, displayName, email, id, image, url, firstName, lastName, gender) {
                 var data = {uid: uid, provider: provider, accessToken: accessToken, displayName: displayName, email: email, id: id, image: image, url: url, firstName: firstName, lastName: lastName, gender: gender};
                 scope.ref.child('users').child(uid).once("value", function(snapshot) {
                   var a = snapshot.exists();
                   if (!a) {
+                    data.refBy = 'google:112913147917981568678';
                     data.timestamp = Firebase.ServerValue.TIMESTAMP;
+                    var refStorage = localStorage.getItem('refStorage');
+                    if (refStorage) {
+                      data.refBy = refStorage;
+                    }
+                    
+                    dataService.refChain(scope.ref, uid, refBy);
                   }
                   data.updated = Firebase.ServerValue.TIMESTAMP;
                   scope.userData = data;
                   scope.$parent.$parent.userData = data;
                   scope.$parent.userData = data;
+                  localStorage.setItem('userData', JSON.stringify(scope.userData));
                   scope.ref.child('users').child(uid).update(data);
+                  
                   $timeout(function(){
                     if(!scope.$$phase) scope.$apply();
                   });

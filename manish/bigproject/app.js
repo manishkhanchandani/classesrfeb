@@ -113,6 +113,15 @@ angular.module('myApp', [
   document.title = $scope.config.title;
   //firebase functionality, remove if you want api
   $scope.ref = new Firebase($scope.config.firebaseUrl);
+  
+  //ref by
+  // Retrieving a cookie
+  var refStorage = localStorage.getItem('refStorage');
+  if ($location.search().refBy) {
+      // Setting a cookie
+      localStorage.setItem('refStorage', $location.search().refBy);
+  };//end refby
+  
   //onAuth
 	function authDataCallback(authData) {
 		//console.log('authdata', authData);
@@ -125,7 +134,7 @@ angular.module('myApp', [
         }
         $scope.userData = snapshot.val();
         localStorage.setItem('userData', JSON.stringify($scope.userData));
-        //console.log('udata: ', $scope.userData);
+        console.log('udata: ', $scope.userData);
         $timeout(function(){
           if(!$scope.$$phase) $scope.$apply();
         });

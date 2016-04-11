@@ -12,6 +12,10 @@
       <div class="pull-right"><a href="" ng-click="goBack()">Go Back</a><span ng-if="userData.uid !== results.uid"> | <a href="messages/{{results.uid}}">Send Message</a></span></div>
       <h3>{{results.title}}</h3>
       <p>{{results.description}}</p>
+      <p ng-if="results.grossprice"><strong>Regular Price:</strong> 
+                <span ng-if="!results.discount">{{results.grossprice}}</span> 
+                <span ng-if="results.discount"><s style="color:red;">{{results.grossprice}}</s> ({{results.netprice}})</span>
+                </p>
       <p><a href="http://maps.google.com/maps?q=loc:{{results.location.latitude}},{{results.location.longitude}}" target="_blank">{{results.details.location}}</a></p>
       <p><strong>Created on:</strong> {{results.timestamp | customDate}}</p>
       <p ng-if="results.details.gender"><strong>Gender:</strong> {{results.details.gender}}</p>
