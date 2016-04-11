@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>City Manager</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Benefits of City Manager</h3>
+      <p>Following the responsibilities of city manager. You will be earing 10% of all the profit from particular city for which you are manager. Profit can come from postings, advertisements, etc.</p>
+    </div>
+    <div class="col-md-8">
+      <h3>Become a city Manager</h3>
+      <form>
+          <p>Step 1 :: Main Information</p>
+          <div class="form-group">
+              <label for="location">Choose City *</label>
+              <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Email address *</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="frm.email" required>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="1" ng-model="frm.agree" required>I agree to <a href="">terms and conditions</a> of a city manager.
+              </label>
+          </div>
+          <button type="submit" class="btn btn-default">Proceed to step 2</button>
+      </form>
+      <form>
+          <p>Step 2 :: Other Information</p>
+          <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="frm.email" required>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="1" ng-model="frm.agree" required>I agree to <a href="">terms and conditions</a> of a city manager.
+              </label>
+          </div>
+          <button type="submit" class="btn btn-default">Proceed to step 3</button>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>

@@ -552,7 +552,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     $scope.results = $firebaseArray(query);
     $scope.results.$loaded().then(function(arrR) {
-      console.log($scope.results);
       $scope.pagination.totalRows = arrR.length;
       $scope.pagination.totalPages = Math.ceil($scope.pagination.totalRows/$scope.pagination.maxRows)-1;
       

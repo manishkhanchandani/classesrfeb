@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.lessons',
   'myApp.students',
   'myApp.massage',
+  'myApp.manager',
   'firebase'
   //'ui.bootstrap'
 ])

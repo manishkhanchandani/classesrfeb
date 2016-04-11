@@ -76,6 +76,7 @@ include_once('php/init.php');
   <script src="modules/messages/messages.js"></script>
   <script src="modulesFB/lessons/lessons.js"></script>
   <script src="modulesFB/students/students.js"></script>
+  <script src="modulesFB/manager/manager.js"></script>
   <script src="modulesFB/massage/massage.js"></script>
   <script>
   
@@ -99,8 +100,74 @@ $(document).on("keypress", 'form', function (e) {
 
   <div ng-view id="mkPrj"><?php echo $content; ?></div>
 
-<footer>
-  <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+
+    <h3>Ineed<span>Massage</span>.US</h3>
+
+    <p class="footer-links">
+      <a href="/">Home</a>
+      ·
+      <a href="#">About</a>
+      ·
+      <a href="#">Faq</a>
+      ·
+      <a href="#">Contact</a>
+    </p>
+    <p class="footer-links-small">
+      <a href="/manager/city">City Manager</a>
+      ·
+      <a href="/manager/county">County Manager</a>
+      ·
+      <a href="/manager/state">State Manager</a>
+      ·
+      <a href="/manager/country">Country Manger</a>
+    </p>
+
+    <p class="footer-company-name">Websmc &copy; 2016</p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>1543 Monte Stella Pl,  Manteca</span> 95337, CA, US</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+1 408 5052726</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">support@ineedmassage.us</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+    <p class="footer-company-about">
+      <span>About the company</span>
+      coming soon....
+    </p>
+
+    <div class="footer-icons">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+    </div>
+
+  </div>
+
 </footer>
+<!--<footer>
+  <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>
+</footer>-->
 </body>
 </html>
