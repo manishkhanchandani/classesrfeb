@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="./">Home</a></li>
         <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Massage Professionals <span class="caret"></span></a>
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professionals <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="massage">Search/Browse Massage Professionals</a></li>
             <li ng-if="userData && userData.provider != 'anonymous'"><a href="massage/create">Create New Massage Professional</a></li>
@@ -21,6 +21,14 @@
           </ul>
         </li>
         <li><a href="messages">Messages <span messages-counter user-data="userData"></span></a></li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ng-if="userData && userData.provider != 'anonymous'"><a href="manager/county">Become County Manager</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="contact">Contact Us</a></li>
+          </ul>
+        </li>
       </ul>
       <ul login user-data="userData" class="nav navbar-nav navbar-right"></ul>
     </div><!--/.nav-collapse -->

@@ -99,7 +99,7 @@ $(document).on("keypress", 'form', function (e) {
 <ng-include src="templateUrl"></ng-include>
 
   <div ng-view id="mkPrj"><?php echo $content; ?></div>
-
+<!--
 <footer class="footer-distributed">
 
   <div class="footer-left">
@@ -163,9 +163,9 @@ $(document).on("keypress", 'form', function (e) {
 
   </div>
 
-</footer>
-<!--<footer>
-  <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>
 </footer>-->
+<footer>
+  <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>
+</footer>
 </body>
 </html>

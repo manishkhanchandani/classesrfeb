@@ -8,19 +8,20 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     templateUrl: 'modulesFB/manager/county.html',
     controller: 'ViewManagerCountyCtrl'
   })
-  .when('/manager/state', {
-    templateUrl: 'modulesFB/manager/state.html',
-    controller: 'ViewManagerStateCtrl'
-  })
-  .when('/manager/country', {
-    templateUrl: 'modulesFB/manager/country.html',
-    controller: 'ViewManagerCountryCtrl'
-  })
   ;
 }])
 
 
 .controller('ViewManagerCountyCtrl', ['$scope', function($scope) {
+  if (!$scope.userData) {
+   $location.path('/');
+   return; 
+  }
+  if (!$scope.userData.uid) {
+   $location.path('/');
+   return; 
+  }
+  
   //location starts
   $scope.mapOptions = {
     types: '(cities)'
@@ -30,11 +31,4 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.frm.details = {};
   //location ends
 }])
-
-.controller('ViewManagerStateCtrl', ['$scope', function($scope) {
-  
-}])
-
-.controller('ViewManagerCountryCtrl', ['$scope', function($scope) {
-  
-}]);
+;
