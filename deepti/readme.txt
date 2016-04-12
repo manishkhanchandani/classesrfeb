@@ -13,6 +13,10 @@ Git commands:
 2) Git pull
 3) Git push
 
+New project p1
+
+1) copy starterprojectfb and pasted to my folder
+2) renamed to p1(proper name)
 
 
 
