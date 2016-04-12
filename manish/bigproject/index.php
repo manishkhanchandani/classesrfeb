@@ -116,8 +116,6 @@ $(document).on("keypress", 'form', function (e) {
       <a href="#">Contact</a>
     </p>
     <p class="footer-links-small">
-      <a href="/manager/city">City Manager</a>
-      ·
       <a href="/manager/county">County Manager</a>
       ·
       <a href="/manager/state">State Manager</a>

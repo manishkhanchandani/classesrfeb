@@ -3,10 +3,7 @@
 angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/manager/city', {
-    templateUrl: 'modulesFB/manager/city.html',
-    controller: 'ViewManagerCityCtrl'
-  })
+  $routeProvider
   .when('/manager/county', {
     templateUrl: 'modulesFB/manager/county.html',
     controller: 'ViewManagerCountyCtrl'
@@ -23,19 +20,15 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
 }])
 
 
-.controller('ViewManagerCityCtrl', ['$scope', function($scope) {
+.controller('ViewManagerCountyCtrl', ['$scope', function($scope) {
   //location starts
   $scope.mapOptions = {
-    types: 'geocode'
+    types: '(cities)'
   };
 
   $scope.frm = {};
   $scope.frm.details = {};
   //location ends
-}])
-
-.controller('ViewManagerCountyCtrl', ['$scope', function($scope) {
-  
 }])
 
 .controller('ViewManagerStateCtrl', ['$scope', function($scope) {
