@@ -15,8 +15,20 @@ angular.module('myApp.view1', ['ngRoute'])
   ;
 }])
 
-.controller('View1Ctrl', [function() {
-
+.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
+    
+    function success(response) {
+        console.log('success', response);
+    }
+    
+    function failure(response) {
+        console.log('failure', response);
+    }
+    
+    $http({
+        url: 'json/1.json',
+        method: 'GET'
+    }).then(success, failure);
 }])
 
 
