@@ -9,14 +9,17 @@
   <div class="row">
     <div class="col-md-4">
       <h3>Benefits of County Manager</h3>
-      <p>Following the responsibilities of county manager. You will be earning 30% of the profit from all the cities in that county for which you are manager. Profit can come from postings, advertisements, subscriptions etc.</p>
+      <p>Following the responsibilities of county manager. You will be earning x% of the profit from all the cities in that county for which you are manager. Profit can come from postings, advertisements, subscriptions etc.</p>
     </div>
     <div class="col-md-8">
       <h3>Become a county Manager</h3>
+      <div class="alert alert-danger" role="alert" ng-if="frm.status">
+        {{frm.status}}
+      </div>
       <form ng-submit="addCountyManager()">
           <div class="form-group">
               <label for="location">Choose City (County will be calculated automatically) *</label>
-              <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details" required>
+              <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details" >
           </div>
           <div class="form-group">
               <label for="county">County</label>
