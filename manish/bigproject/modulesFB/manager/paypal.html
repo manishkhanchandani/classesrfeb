@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>County Manager</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Benefits of Our Website County Manager</h3>
+      <p>Following the responsibilities of county manager. You will be earning 40% of the profit from all the cities in that county for which you are manager. 20% of all the profit will go to admin, 40% of all the profit will go as a referral fees. So if you refer more, you will also earn more.</p>
+      <p>Profit can come from postings, advertisements, subscriptions etc.</p>
+    </div>
+    <div class="col-md-8">
+      <h3>Become a our website county Manager</h3>
+      <p>{{results.county.county}}, {{results.county.state}}, {{results.county.country}}</p>
+      <div class="alert alert-danger" role="alert" ng-if="frm.status">
+        {{frm.status}}
+      </div>
+      <div>
+
+<!--https://www.paypal.com/cgi-bin/webscr-->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick-subscriptions">
+    <input type="hidden" name="business" value="renu09@live.com">
+  <input type="hidden" name="item_name" id="item_name" ng-value="results.itemName">
+   <input type="hidden" name="item_number" id="item_number" ng-value="results.itemNumber" >
+      <input type="hidden" name="custom" id="custom" ng-value='results | json' >
+      <input type="hidden" name="currency_code" value="USD" />
+  <!-- Recurring subscription payments. -->
+  <input type="hidden" name="a3" value="0.01" />
+  <input type="hidden" name="p3" value="1" />
+  <input type="hidden" name="t3" value="Y" />
+  <input type="hidden" name="src" value="1" />
+  <input type="hidden" name="sra" value="1" />
+  <input type="hidden" name="return" ng-value="frm.confirmURL">
+  <input type="hidden" name="cancel_return" ng-value="frm.cancelURL">
+  <input type="hidden" name="notify_url" ng-value="frm.notifyURL">
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" border="0"
+    src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_subscribe_cc_147x47.png"
+    alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
