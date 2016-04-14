@@ -2,137 +2,94 @@
 
 
 try {
-  include_once('../firebase/firebaseLib.php');
+  include_once('../../firebase/firebaseLib.php');
   define('DEFAULT_URL', 'https://mkgxy.firebaseio.com/projects');
   define('DEFAULT_TOKEN', 'vIthuXgIYof6rBxZknp2Y5XR0fLRwKT5ZFIclunM');
-  define('MAIN_PATH', '/massage');
-  define('DEFAULT_PATH_TMP', '/manager/countyPending');
-  define('DEFAULT_PATH_CANCELLED', '/manager/countyCancelled');
-  define('DEFAULT_PATH', '/manager/county');
+  define('MAIN_PATH', '/massage/manager');
+  define('DEFAULT_PATH_TMP', '/massage/manager/countyPending');
+  define('DEFAULT_PATH_CANCELLED', '/massage/manager/countyCancelled');
+  define('DEFAULT_PATH', '/massage/manager/county');
   $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+  include_once('../../functions.php');
   
-  if (!function_exists('curlget')) {
-      function curlget($url, $post=0, $POSTFIELDS='') {
-          $https = 0;
-          if (substr($url, 0, 5) === 'https') {
-              $https = 1;
-          }
-  
-          $ch = curl_init();
-          curl_setopt($ch, CURLOPT_URL, $url);  
-          if (!empty($post)) {
-              curl_setopt($ch, CURLOPT_POST, 1); 
-              curl_setopt($ch, CURLOPT_POSTFIELDS,$POSTFIELDS);
-          }
-  
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-          curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-          curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE_PATH);
-          curl_setopt($ch, CURLOPT_COOKIEJAR,COOKIE_FILE_PATH);
-          if (!empty($https)) {
-              curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-              curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-          }
-  
-          $result = curl_exec($ch); 
-          curl_close($ch);
-          return $result;
-      }
-  }
-  
-  if (!function_exists('pr')) {
-        function pr($d){
-            echo '<pre>';
-            print_r($d);
-            echo '</pre>';
-        }
-    }
-
-  function save_data($id, $user_id, $data) {
+  function save_data($customArr, $data) {
     global $firebase;
+    $user_id = $customArr['uid'];
+    $upath = $customArr['path'];
     $data['mdate'] = date('r');
     $data['mtime'] = time();
     $path = MAIN_PATH . '/payments/all';
     $sid = $firebase->push($path, $data);
     $arr = json_decode($sid, 1);
     $pathID = $arr['name'];
-    $path = MAIN_PATH . '/payments/users/'.$user_id.'/'.$id.'/'.$pathID;
+    $path = MAIN_PATH . '/payments/users/'.$user_id.'/'.$upath.'/'.$pathID;
     $firebase->set($path, time());
   }
   
-  function getDetails($id) {
-    $path = DEFAULT_PATH_TMP . '/records/'.$id;
+  function getDetails($uPath) {
+    $path = DEFAULT_PATH_TMP . '/'.$uPath;
     $rec = $firebase->get($path);
     $record = json_decode($rec, 1);
     if (empty($record)) {
-      $path = DEFAULT_PATH . '/records/'.$id;
+      $path = DEFAULT_PATH . '/'.$uPath;
       $rec = $firebase->get($path);
       $record = json_decode($rec, 1);
-      $record['path'] = 'massage';
+      if (empty($record)) {
+        $path = DEFAULT_PATH_CANCELLED . '/'.$uPath;
+        $rec = $firebase->get($path);
+        $record = json_decode($rec, 1);
+        $record['path'] = 'countyCancelled';
+      } else {
+        $record['path'] = 'county';
+      }
     } else {
-      $record['path'] = 'massageTmp';
+      $record['path'] = 'countyPending';
     }
     error_log(date('[Y-m-d H:i e] '). "record: ".var_export($record, 1). PHP_EOL, 3, LOG_FILE);
     return $record;  
   }
 
-  function subscr_cancel($id, $user_id, $data) {
+  function subscr_cancel($customArr, $data) {
     global $firebase;
     error_log(date('[Y-m-d H:i e] '). "subscr_cancel started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
+    $record = getDetails($customArr['path']);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    foreach ($record['paths'] as $v) {
-      $path = DEFAULT_PATH. '/' . $v;
-      $r = json_decode($firebase->get($path), 1);
-      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path1: ".$path. PHP_EOL, 3, LOG_FILE);
-      $path = DEFAULT_PATH_CANCELLED . '/' . $v;
-      $firebase->set($path, $r);
-      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path2: ".$path. PHP_EOL, 3, LOG_FILE);
-    }
+    error_log(date('[Y-m-d H:i e] '). "subscr_cancel path: ".$customArr['path']. PHP_EOL, 3, LOG_FILE);
+    $path = DEFAULT_PATH_CANCELLED . '/' . $customArr['path'];
+    $firebase->set($path, $record);
     error_log(date('[Y-m-d H:i e] '). "subscr_cancel ended". PHP_EOL, 3, LOG_FILE);
   }
 
-  function subscr_payment($id, $user_id, $data) {
+  function subscr_payment($customArr, $data) {
     global $firebase;
     error_log(date('[Y-m-d H:i e] '). "subscr_payment started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
+    $record = getDetails($customArr['path']);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    $exp = strtotime("+1 month", time());
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
+    $path = DEFAULT_PATH . '/' . $customArr['path'];
+    $firebase->set($path, $record);
+    $exp = strtotime("+1 year", time());
+    $path = DEFAULT_PATH . '/'. $customArr['path']. '/expiration';
     $firebase->set($path, $exp);
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
+    $path = DEFAULT_PATH . '/'. $customArr['path']. '/expiration_format';
     $firebase->set($path, date('r', $exp));
     error_log(date('[Y-m-d H:i e] '). "subscr_payment ended". PHP_EOL, 3, LOG_FILE);
   }
 
-  function subscr_signup($id, $user_id, $data) {
+  function subscr_signup($customArr, $data) {
     global $firebase;
     error_log(date('[Y-m-d H:i e] '). "subscr_signup started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH_TMP . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
+    $record = getDetails($customArr['path']);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    foreach ($record['paths'] as $v) {
-      $path = DEFAULT_PATH_TMP. '/' . $v;
-      $r = json_decode($firebase->get($path), 1);
-      $firebase->delete($path);
-      error_log(date('[Y-m-d H:i e] '). "subscr_signup path1: ".$path. PHP_EOL, 3, LOG_FILE);
-      $path = DEFAULT_PATH . '/' . $v;
-      $firebase->set($path, $r);
-      error_log(date('[Y-m-d H:i e] '). "subscr_signup path2: ".$path. PHP_EOL, 3, LOG_FILE);
-    }
-    $exp = strtotime("+3 months", time());
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
-    $firebase->set($path, $exp);
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
-    $firebase->set($path, date('r', $exp));
+    $path = DEFAULT_PATH_TMP . '/' . $customArr['path'];
+    $firebase->remove($path);
+    $path = DEFAULT_PATH . '/' . $customArr['path'];
+    $firebase->set($path, $record);
     error_log(date('[Y-m-d H:i e] '). "subscr_signup ended". PHP_EOL, 3, LOG_FILE);
     //custom logic ends here
   }
@@ -248,24 +205,22 @@ if (strcmp ($res, "VERIFIED") == 0) {
   error_log(date('[Y-m-d H:i e] '). "custom: $custom ". PHP_EOL, 3, LOG_FILE);
   $customArr = json_decode($custom, 1);
   error_log(date('[Y-m-d H:i e] '). "customArr: ". var_export($customArr, 1). PHP_EOL, 3, LOG_FILE);
-  $id = !empty($customArr['id']) ? $customArr['id'] : '';
-  $user_id = !empty($customArr['uid']) ? $customArr['uid'] : '';
   $data = $_POST;
   error_log(date('[Y-m-d H:i e] '). "post: ".var_export($_POST, 1). PHP_EOL, 3, LOG_FILE);
   //custom logic comes here
   //checking data and setting it in record
-  save_data($id, $user_id, $data);
+  save_data($customArr, $data);
   
   if (!empty($_POST['txn_type'])) {
     switch ($_POST['txn_type']) {
       case 'subscr_signup':
-        subscr_signup($id, $user_id, $data);
+        subscr_signup($customArr, $data);
         break;
       case 'subscr_payment';
-        subscr_payment($id, $user_id, $data);
+        subscr_payment($customArr, $data);
         break;
       case 'subscr_cancel';
-        subscr_cancel($id, $user_id, $data);
+        subscr_cancel($customArr, $data);
         break;
       default:
         break;

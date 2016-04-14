@@ -12,6 +12,14 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     templateUrl: 'modulesFB/manager/paypal.html',
     controller: 'PaypalManagerCountyCtrl'
   })
+  .when('/manager/paypal/confirm/:country/:state/:county', {
+    templateUrl: 'modulesFB/manager/paypal_confirm.html',
+    controller: 'PaypalManagerCountyCtrl'
+  })
+  .when('/manager/paypal/cancel/:country/:state/:county', {
+    templateUrl: 'modulesFB/manager/paypal_cancel.html',
+    controller: 'PaypalManagerCountyCtrl'
+  })
   ;
 }])
 
@@ -38,6 +46,7 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.results = snapshot.val();
     $scope.results.itemName = 'Website County Manger For ' + $scope.results.county.county + ', ' + $scope.results.county.state + ', ' + $scope.results.county.country;
     $scope.results.itemNumber = 1;
+    if(!$scope.$$phase) $scope.$apply();
   });
 }])
 
@@ -101,6 +110,7 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
               data.email = $scope.userData.email;
               data.uid = $scope.userData.uid;
               data.path = country + '/' + state + '/' + county;
+              data.timestamp = Firebase.ServerValue.TIMESTAMP;
               $scope.ref.child('manager').child('countyPending').child(country).child(state).child(county).set(data);
               $scope.frm.status = 'County added successfully.';
               $location.path('/manager/county/' + encodeURIComponent(country) + '/' + encodeURIComponent(state) + '/' + encodeURIComponent(county));
