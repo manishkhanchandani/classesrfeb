@@ -46,6 +46,7 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.results = snapshot.val();
     $scope.results.itemName = 'Website County Manger For ' + $scope.results.county.county + ', ' + $scope.results.county.state + ', ' + $scope.results.county.country;
     $scope.results.itemNumber = 1;
+    $scope.results.customJson = {uid: $scope.userData.uid, path: $scope.results.path};
     if(!$scope.$$phase) $scope.$apply();
   });
 }])
@@ -110,6 +111,7 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
               data.email = $scope.userData.email;
               data.uid = $scope.userData.uid;
               data.path = country + '/' + state + '/' + county;
+              obj.owsRecordTmp.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
               data.timestamp = Firebase.ServerValue.TIMESTAMP;
               $scope.ref.child('manager').child('countyPending').child(country).child(state).child(county).set(data);
               $scope.frm.status = 'County added successfully.';
