@@ -14,7 +14,24 @@ angular.module('myApp.view2', ['ngRoute'])
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('View2Ctrl', ['$scope','$http',function($scope,$http) {
+
+    function success(response){
+    console.log('success',response);
+        $scope.mydata=response.data;
+        
+    
+}
+
+function failure(response){
+    console.log('failure',response);
+}
+    
+    $http({
+        url:'json/templates.json',
+        method:'GET'
+    }).then (success,failure);
+    
 
 }])
 
