@@ -17,8 +17,12 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
     
+    $scope.myData = null;
+    
     function success(response) {
         console.log('success', response);
+        $scope.myData = response.data.result;
+        
     }
     
     function failure(response) {

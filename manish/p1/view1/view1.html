@@ -1,9 +1,15 @@
-
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template 1</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
-    </div><!-- /.container -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>My Data</h1>
+            
+            <div class="list-group">
+              <a href="#" class="list-group-item" ng-repeat="item in myData">
+                <h4 class="list-group-item-heading">{{item.name}} {{item.lastName}}</h4>
+                <p class="list-group-item-text">{{item.age}}, {{item.gender}}, {{item.phone}}</p>
+              </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
