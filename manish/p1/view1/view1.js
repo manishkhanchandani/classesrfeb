@@ -21,7 +21,7 @@ angular.module('myApp.view1', ['ngRoute'])
     
     function success(response) {
         console.log('success', response);
-        $scope.myData = response.data.result;
+        $scope.myData = response.data;
         
     }
     
@@ -30,7 +30,7 @@ angular.module('myApp.view1', ['ngRoute'])
     }
     
     $http({
-        url: 'json/1.json',
+        url: 'json/templates.json',
         method: 'GET'
     }).then(success, failure);
 }])

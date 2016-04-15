@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-md-12">
             <h1>My Data</h1>
-            
-            <div class="list-group">
-              <a href="#" class="list-group-item" ng-repeat="item in myData">
-                <h4 class="list-group-item-heading">{{item.name}} {{item.lastName}}</h4>
-                <p class="list-group-item-text">{{item.age}}, {{item.gender}}, {{item.phone}}</p>
-              </a>
-            </div>
-            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="item in myData">
+            <h3>{{item.name}}</h3>
+            <img src="img/{{item.images[0].name}}" class="img-responsive">
+            <br>
+            <b>Price:</b> {{item.price | currency}}
         </div>
     </div>
 </div>
