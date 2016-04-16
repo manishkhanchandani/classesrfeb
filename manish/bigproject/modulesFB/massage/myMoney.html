@@ -17,7 +17,7 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr ng-repeat="item in results | orderBy: '-mtime'">
+                  <tr dir-paginate="item in results | orderBy: '-mtime' | itemsPerPage: pageSize">
                       <th scope="row">#{{item.$id}}</th>
                       <td>{{item.mtime | customDate}}</td>
                       <td>{{item.amount | currency}}</td>
@@ -28,6 +28,8 @@
               </tbody>
           </table>
       </div>
+      
+      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
     </div>
     <div class="col-md-3">
       <p><strong>Total:</strong> {{resultsTotal | currency}}</p>

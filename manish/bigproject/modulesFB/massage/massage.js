@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'])
+angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed', 'angularUtils.directives.dirPagination'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/massage', {
@@ -908,8 +908,16 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
    $location.path('/');
    return; 
   }
+  
   var obj = dataService.massageSetFirebase($scope.ref);
   $scope.meta = obj.meta;
+  $scope.pageSize = 25;
+  $scope.itemCount = 0;
+  $scope.pageChangeHandler = function(num) {
+      console.log('groups page changed to ' + num);
+  };
+  
+    
   $scope.results = $firebaseArray($scope.ref.child('amountReceived').child('users').child($scope.userData.uid).orderByChild("mtime").limitToLast(500));
   $scope.ref.child('amountReceived').child('totalAmount').child('users').child($scope.userData.uid).on('value', function(snapshot) {
     $scope.resultsTotal = snapshot.val();
