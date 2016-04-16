@@ -111,7 +111,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
     $scope.current.custom = {id: $scope.current.$id, uid: $scope.current.uid};
-    $scope.current.confirmURL = 'http://ineedmassage.us/massage/paypal/confirm/' + $scope.current.$id;
+    $scope.current.confirmURL = 'http://ineedmassage.us/massage/imagesUpload/' + $scope.current.$id;
 		$scope.current.cancelURL = 'http://ineedmassage.us/massage/paypal/cancel/' + $scope.current.$id;
 		$scope.current.notifyURL = 'http://ineedmassage.us/php/massage/ipnNofity.php';
   });
