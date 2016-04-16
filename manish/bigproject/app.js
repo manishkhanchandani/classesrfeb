@@ -110,6 +110,7 @@ angular.module('myApp', [
   //config
   $scope.config = dataService.config();
   $scope.templateUrl = 'modules/navItems/'+$scope.config.siteUrl+'.html';
+  $scope.footerUrl = 'modules/navItems/footer_'+$scope.config.siteUrl+'.html';
  
   document.title = $scope.config.title;
   //firebase functionality, remove if you want api

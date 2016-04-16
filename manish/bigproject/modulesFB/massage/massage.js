@@ -628,6 +628,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         $scope.createStatus = 'Please enter tags';
         return; 
       }
+      if (!$scope.frm.agree) {
+        $scope.createStatus = 'Please agree to terms and conditions';
+        return; 
+      }
  
     var postData = {};
     postData.title = $scope.frm.title;
@@ -637,7 +641,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.grossprice = ($scope.frm.grossprice) ? $scope.frm.grossprice : '';
     postData.discount = ($scope.frm.discount) ? $scope.frm.discount : '';
     postData.netprice = ($scope.frm.netprice) ? $scope.frm.netprice : '';
-    postData.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
     postData.location = {};
     postData.location.latitude = $scope.frm.details.components.lat;
     postData.location.longitude = $scope.frm.details.components.lng;
@@ -743,7 +746,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.grossprice = $scope.current.grossprice;
     $scope.frm.discount = $scope.current.discount;
     $scope.frm.netprice = $scope.current.netprice;
-    $scope.frm.paypal_email = $scope.current.paypal_email;
     
     $scope.frm.tags = $scope.current.tags;
     $scope.frm.email = $scope.current.details.email;
@@ -785,6 +787,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       }
       if (!$scope.frm.tags) {
         $scope.createStatus = 'Please enter tags';
+        return; 
+      }
+      if (!$scope.frm.agree) {
+        $scope.createStatus = 'Please agree to terms and conditions';
         return; 
       }
 

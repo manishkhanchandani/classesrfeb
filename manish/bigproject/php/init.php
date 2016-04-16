@@ -1,8 +1,10 @@
 <?php
-$requestUri = $_SERVER['REQUEST_URI'];
 define('DIRNAME', dirname(__FILE__).'/');
 include(DIRNAME.'functions.php');
 include(DIRNAME.'firebase/firebaseLib.php');
+$requestUri = $_SERVER['REQUEST_URI'];
+$tmp = explode('?', $_SERVER['REQUEST_URI']);
+$requestUri = $tmp[0];
 
 define('DEFAULT_URL', 'https://mkgxy.firebaseio.com/projects');
 define('DEFAULT_TOKEN', 'vIthuXgIYof6rBxZknp2Y5XR0fLRwKT5ZFIclunM');

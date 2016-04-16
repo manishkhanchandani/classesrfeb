@@ -25,7 +25,13 @@
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="myMoney" ng-if="userData && userData.provider != 'anonymous'">My Money</a></li>
+            <!--<li><a href="withdraw" ng-if="userData && userData.provider != 'anonymous'">Withdraw Money</a></li>-->
+            <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
             <li ng-if="userData && userData.provider != 'anonymous'"><a href="manager/county">Become County Manager</a></li>
+            <!--<li ng-if="userData && userData.provider != 'anonymous'"><a href="manager/myCounty">My County</a></li>-->
+            <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
+            <li ng-if="userData && userData.provider != 'anonymous'"><a href="http://ineedmassage.us/?refBy={{userData.uid}}">Referrer Link</a></li>
+            <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
             <li><a href="about">About Us</a></li>
             <li><a href="contact">Contact Us</a></li>
           </ul>
@@ -35,3 +41,4 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
+

@@ -14,7 +14,9 @@ include_once('php/init.php');
 <meta property="og:url" content="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>" />
 <meta property="og:description" content="<?php echo $description; ?>" />
 <meta property="og:image" content="<?php echo $img; ?>" />
+<meta property="og:title" content="<?php echo $title; ?>" />
 <meta name="description" content="<?php echo $description; ?>">
+<!--<meta property="fb:app_id" content="1234567890" />-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <!-- Latest compiled and minified CSS -->
@@ -102,73 +104,8 @@ $(document).on("keypress", 'form', function (e) {
 <ng-include src="templateUrl"></ng-include>
 
   <div ng-view id="mkPrj"><?php echo $content; ?></div>
-<!--
-<footer class="footer-distributed">
 
-  <div class="footer-left">
 
-    <h3>Ineed<span>Massage</span>.US</h3>
-
-    <p class="footer-links">
-      <a href="/">Home</a>
-      ·
-      <a href="#">About</a>
-      ·
-      <a href="#">Faq</a>
-      ·
-      <a href="#">Contact</a>
-    </p>
-    <p class="footer-links-small">
-      <a href="/manager/county">County Manager</a>
-      ·
-      <a href="/manager/state">State Manager</a>
-      ·
-      <a href="/manager/country">Country Manger</a>
-    </p>
-
-    <p class="footer-company-name">Websmc &copy; 2016</p>
-  </div>
-
-  <div class="footer-center">
-
-    <div>
-      <i class="fa fa-map-marker"></i>
-      <p><span>1543 Monte Stella Pl,  Manteca</span> 95337, CA, US</p>
-    </div>
-
-    <div>
-      <i class="fa fa-phone"></i>
-      <p>+1 408 5052726</p>
-    </div>
-
-    <div>
-      <i class="fa fa-envelope"></i>
-      <p><a href="mailto:support@company.com">support@ineedmassage.us</a></p>
-    </div>
-
-  </div>
-
-  <div class="footer-right">
-
-    <p class="footer-company-about">
-      <span>About the company</span>
-      coming soon....
-    </p>
-
-    <div class="footer-icons">
-
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-github"></i></a>
-
-    </div>
-
-  </div>
-
-</footer>-->
-<footer>
-  <p>Copyright &copy; 2016 - <a href="terms">Terms</a> &middot; <a href="privacy">Privacy</a></p>
-</footer>
+<ng-include src="footerUrl"></ng-include>
 </body>
 </html>
