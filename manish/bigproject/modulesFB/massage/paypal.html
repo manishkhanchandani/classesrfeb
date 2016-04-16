@@ -2,14 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <h3>Paypal Subscription for "{{current.title}}"</h3>
-        <p>Free for the first 3 months
-          <br>Then $0.99 USD for each month</p>
+        <p>Fee is $19.99 USD per year</p>
         <!--https://www.paypal.com/cgi-bin/webscr-->
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
           <input type="hidden" name="cmd" value="_xclick-subscriptions">
           <input type="hidden" name="business" value="renu09@live.com">
           <input type="hidden" name="item_name" id="item_name" ng-value="current.title">
-          <input type="text" name="custom" id="custom" ng-value='current.custom | json' >
+          <input type="hidden" name="custom" id="custom" ng-value='current.custom | json' >
           <input type="hidden" name="currency_code" value="USD" />
           
           <!-- First two months of subscription are free.
@@ -20,7 +19,7 @@
           <!-- Recurring subscription payments. -->
           <input type="hidden" name="a3" value="19.99" />
           <input type="hidden" name="p3" value="1" />
-          <input type="hidden" name="t3" value="M" />
+          <input type="hidden" name="t3" value="Y" />
           <input type="hidden" name="src" value="1" />
           <input type="hidden" name="sra" value="1" />
           <input type="hidden" name="item_number" id="item_number" ng-value="current.$id" >
