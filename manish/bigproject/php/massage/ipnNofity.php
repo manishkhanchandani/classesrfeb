@@ -72,7 +72,7 @@ try {
       throw new Exception('empty posting data');
     }
     $exp = strtotime("+1 month", time());
-    $record['expiration'] = $exp;
+    $record['expiration'] = $exp * 1000;
     $record['expiration_format'] = date('r', $exp);
     
     
@@ -80,8 +80,17 @@ try {
     $totalAmount = $data['mc_gross'] - $data['mc_fee'];
     
     $totalAmount = 11.99;
-    $path = MAIN_PATH . '/amountReceived/totalAmount/'.$id;
-    $firebase->set($path, $totalAmount);
+    //total amount
+    $path = MAIN_PATH . '/amountReceived/totalAmount/total';
+     $amt = $firebase->get($path);
+     if (empty($amt)) {
+      $amt = 0.00; 
+     }
+     $amt = $amt + $totalAmount;
+    $firebase->set($path, $amt);
+    $record['totalAmount'] = $totalAmount;
+    //total amount ends
+    
     //get counter
     $path = MAIN_PATH . '/usersChain/counter';
     $counter = $firebase->get($path);

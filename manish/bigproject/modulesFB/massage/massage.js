@@ -94,6 +94,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     templateUrl: 'modulesFB/massage/my.html',
     controller: 'ViewMyProfileMassageCtrlFB'
   })
+  .when('/myMoney', {
+    templateUrl: 'modulesFB/massage/myMoney.html',
+    controller: 'ViewMyMoneyCtrlFB'
+  })
   
   ;
 }])
@@ -896,5 +900,20 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     obj.owsRecord.child($scope.id).child('details').child('defaultImage').set(img);
   };
   
+}])
+
+
+.controller('ViewMyMoneyCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', '$firebaseArray', function($scope, $location, dataService, $routeParams, $firebaseArray) {
+  if (!$scope.userData) {
+   $location.path('/');
+   return; 
+  }
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  $scope.results = $firebaseArray($scope.ref.child('amountReceived').child('users').child($scope.userData.uid).orderByChild("mtime").limitToLast(500));
+  $scope.ref.child('amountReceived').child('totalAmount').child('users').child($scope.userData.uid).on('value', function(snapshot) {
+    $scope.resultsTotal = snapshot.val();
+    if(!$scope.$$phase) $scope.$apply();
+  });
 }])
 ;

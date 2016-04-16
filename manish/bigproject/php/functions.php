@@ -84,7 +84,7 @@ function guid()
    $netAmount = ($percentage / 100) * $totalAmount;
    $desc['amount'] = $netAmount;
    $desc['mdate'] = date('r');
-   $desc['mtime'] = time();
+   $desc['mtime'] = time() * 1000;
    $desc['uid'] = $uid;
    $desc['totalAmount'] = $totalAmount;
    $desc['percentage'] = $percentage;
@@ -94,6 +94,14 @@ function guid()
    //$pathID = $arr['name'];
    $path = $basePath . '/amountReceived/users/'.$uid;
    $firebase->push($path, $desc);
+   
+   $path = $basePath . '/amountReceived/totalAmount/users/'.$uid;
+   $amt = $firebase->get($path);
+   if (empty($amt)) {
+    $amt = 0.00; 
+   }
+   $amt = $amt + $netAmount;
+   $firebase->set($path, $amt);
    //$path = $basePath . '/amountReceived/txn_id/'.$txn_id.'/'.$pathID;
    //$firebase->set($path, true);
    return true;

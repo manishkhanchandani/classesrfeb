@@ -114,9 +114,10 @@ try {
     $firebase->set($path, date('r', $exp));
     
     //error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin". PHP_EOL, 3, LOG_FILE);
-    //$totalAmount = $data['mc_gross'] - $data['mc_fee'];
-    //addAmountInUserAccount($firebase, ADMIN_USER, $totalAmount, 100, $data['txn_id'], array('type' => addCounty, 'title' => 'For County: '.$record['county']['county'].', '.$record['county']['state'].', '.$record['county']['country'], 'path' => $record['path'], 'txn_id' => $data['txn_id']), '/massage');
-    //error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin ends". PHP_EOL, 3, LOG_FILE);
+    $totalAmount = $data['mc_gross'] - $data['mc_fee'];
+    $totalAmount = 19.99;
+    addAmountInUserAccount($firebase, ADMIN_USER, $totalAmount, 100, $data['txn_id'], array('type' => addCounty, 'title' => 'For County: '.$record['county']['county'].', '.$record['county']['state'].', '.$record['county']['country'], 'path' => $record['path'], 'txn_id' => $data['txn_id']), '/massage');
+    error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin ends". PHP_EOL, 3, LOG_FILE);
     
     error_log(date('[Y-m-d H:i e] '). "subscr_payment ended". PHP_EOL, 3, LOG_FILE);
   }

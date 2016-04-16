@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>My Money</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="table-responsive">
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Description</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="item in results | orderBy: '-mtime'">
+                      <th scope="row">#{{item.$id}}</th>
+                      <td>{{item.mtime | customDate}}</td>
+                      <td>{{item.amount | currency}}</td>
+                      <td><span ng-if="item.type === 'addMassageRecord'">Referral Bonus</span>
+                        <span ng-if="item.type === 'addCounty'">County Fees ({{item.title}})</span>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <p><strong>Total:</strong> {{resultsTotal | currency}}</p>
+    </div>
+  </div>
+</div>
