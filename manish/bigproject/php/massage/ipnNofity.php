@@ -78,8 +78,7 @@ try {
     
     error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount". PHP_EOL, 3, LOG_FILE);
     $totalAmount = $data['mc_gross'] - $data['mc_fee'];
-    
-    $totalAmount = 11.99;
+
     //total amount
     $path = MAIN_PATH . '/amountReceived/totalAmount/total';
      $amt = $firebase->get($path);

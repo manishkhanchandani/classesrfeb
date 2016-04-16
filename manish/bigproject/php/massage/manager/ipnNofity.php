@@ -59,6 +59,7 @@ try {
   function subscr_refunded($uid, $uPath, $data) {
     global $firebase;
     return;
+    /*
     error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
     error_log(date('[Y-m-d H:i e] '). "subscr_refunded started". PHP_EOL, 3, LOG_FILE);
     $record = getDetails($uPath);
@@ -80,7 +81,7 @@ try {
     
     $path = DEFAULT_PATH . '/' . $uPath;
     $firebase->delete($path);
-    error_log(date('[Y-m-d H:i e] '). "subscr_refunded ended". PHP_EOL, 3, LOG_FILE);
+    error_log(date('[Y-m-d H:i e] '). "subscr_refunded ended". PHP_EOL, 3, LOG_FILE);*/
   }
   
   function subscr_cancel($uid, $uPath) {
@@ -115,7 +116,6 @@ try {
     
     //error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin". PHP_EOL, 3, LOG_FILE);
     $totalAmount = $data['mc_gross'] - $data['mc_fee'];
-    $totalAmount = 19.99;
     addAmountInUserAccount($firebase, ADMIN_USER, $totalAmount, 100, $data['txn_id'], array('type' => addCounty, 'title' => 'For County: '.$record['county']['county'].', '.$record['county']['state'].', '.$record['county']['country'], 'path' => $record['path'], 'txn_id' => $data['txn_id']), '/massage');
     error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin ends". PHP_EOL, 3, LOG_FILE);
     
