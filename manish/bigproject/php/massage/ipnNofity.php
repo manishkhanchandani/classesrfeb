@@ -10,43 +10,8 @@ try {
   define('DEFAULT_PATH_CANCELLED', '/massage/massageCancelled');
   define('DEFAULT_PATH', '/massage/massage');
   $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-  
-  if (!function_exists('curlget')) {
-      function curlget($url, $post=0, $POSTFIELDS='') {
-          $https = 0;
-          if (substr($url, 0, 5) === 'https') {
-              $https = 1;
-          }
-  
-          $ch = curl_init();
-          curl_setopt($ch, CURLOPT_URL, $url);  
-          if (!empty($post)) {
-              curl_setopt($ch, CURLOPT_POST, 1); 
-              curl_setopt($ch, CURLOPT_POSTFIELDS,$POSTFIELDS);
-          }
-  
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-          curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-          curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE_PATH);
-          curl_setopt($ch, CURLOPT_COOKIEJAR,COOKIE_FILE_PATH);
-          if (!empty($https)) {
-              curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-              curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-          }
-  
-          $result = curl_exec($ch); 
-          curl_close($ch);
-          return $result;
-      }
-  }
-  
-  if (!function_exists('pr')) {
-        function pr($d){
-            echo '<pre>';
-            print_r($d);
-            echo '</pre>';
-        }
-    }
+  include_once('../functions.php');
+  include_once('config.php');
 
   function save_data($id, $user_id, $data) {
     global $firebase;
@@ -61,6 +26,8 @@ try {
   }
   
   function getDetails($id) {
+    error_log(date('[Y-m-d H:i e] '). "getDetails started". PHP_EOL, 3, LOG_FILE);
+    global $firebase;
     $path = DEFAULT_PATH_TMP . '/records/'.$id;
     $rec = $firebase->get($path);
     $record = json_decode($rec, 1);
@@ -68,9 +35,9 @@ try {
       $path = DEFAULT_PATH . '/records/'.$id;
       $rec = $firebase->get($path);
       $record = json_decode($rec, 1);
-      $record['path'] = 'massage';
+      $record['sourcePath'] = 'massage';
     } else {
-      $record['path'] = 'massageTmp';
+      $record['sourcePath'] = 'massageTmp';
     }
     error_log(date('[Y-m-d H:i e] '). "record: ".var_export($record, 1). PHP_EOL, 3, LOG_FILE);
     return $record;  
@@ -79,8 +46,7 @@ try {
   function subscr_cancel($id, $user_id, $data) {
     global $firebase;
     error_log(date('[Y-m-d H:i e] '). "subscr_cancel started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
+    $record = getDetails($id);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
@@ -96,26 +62,112 @@ try {
   }
 
   function subscr_payment($id, $user_id, $data) {
-    global $firebase;
+    global $firebase, $smountSharingConfig;
     error_log(date('[Y-m-d H:i e] '). "subscr_payment started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
+    error_log(date('[Y-m-d H:i e] '). "id: ".$id. PHP_EOL, 3, LOG_FILE);
+    error_log(date('[Y-m-d H:i e] '). "user_id: ".$user_id. PHP_EOL, 3, LOG_FILE);
+    $record = getDetails($id);
     if (empty($record)) {
+      error_log(date('[Y-m-d H:i e] '). "empty posting data". PHP_EOL, 3, LOG_FILE);
       throw new Exception('empty posting data');
     }
     $exp = strtotime("+1 month", time());
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
-    $firebase->set($path, $exp);
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
-    $firebase->set($path, date('r', $exp));
+    $record['expiration'] = $exp;
+    $record['expiration_format'] = date('r', $exp);
+    
+    
+    error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount". PHP_EOL, 3, LOG_FILE);
+    $totalAmount = $data['mc_gross'] - $data['mc_fee'];
+    
+    $totalAmount = 11.99;
+    $path = MAIN_PATH . '/amountReceived/totalAmount/'.$id;
+    $firebase->set($path, $totalAmount);
+    //get counter
+    $path = MAIN_PATH . '/usersChain/counter';
+    $counter = $firebase->get($path);
+    if (empty($counter)) {
+      $counter = 1;
+    } else {
+      $counter = (int) $counter + 1;
+    }
+    
+    $arrChain = calc_recursive_counter($counter);
+    
+    //end counter
+    $arrRef = array();
+    $path = MAIN_PATH . '/manager/county/'.base64_encode($record['location']['country']).'/'.base64_encode($record['location']['state']).'/'.base64_encode($record['location']['county']);
+    $countyRecord = json_decode($firebase->get($path), 1);
+    
+    $arrRef['county'] = ADMIN_USER;
+    if (!empty($countyRecord)) {
+      $arrRef['county'] = $countyRecord['uid'];
+    }
+    
+    $path = MAIN_PATH . '/users/'.$user_id;
+    $usersRecord = json_decode($firebase->get($path), 1);
+    $arrRef['ref1'] = !empty($usersRecord['chain'][0]) ? $usersRecord['chain'][0] : ADMIN_USER;
+    $arrRef['ref2'] = !empty($usersRecord['chain'][1]) ? $usersRecord['chain'][1] : ADMIN_USER;
+    $arrRef['ref3'] = !empty($usersRecord['chain'][2]) ? $usersRecord['chain'][2] : ADMIN_USER;
+    $arrRef['ref4'] = !empty($usersRecord['chain'][3]) ? $usersRecord['chain'][3] : ADMIN_USER;
+    
+    $arrRef['ref5'] = !empty($arrChain[0]) ? json_decode($firebase->get(MAIN_PATH . '/usersChain/list/'.$arrChain[0]), 1) : ADMIN_USER;
+    $arrRef['ref6'] = !empty($arrChain[1]) ? json_decode($firebase->get(MAIN_PATH . '/usersChain/list/'.$arrChain[1]), 1) : ADMIN_USER;
+    $arrRef['ref7'] = !empty($arrChain[2]) ? json_decode($firebase->get(MAIN_PATH . '/usersChain/list/'.$arrChain[2]), 1) : ADMIN_USER;
+    $arrRef['ref8'] = !empty($arrChain[3]) ? json_decode($firebase->get(MAIN_PATH . '/usersChain/list/'.$arrChain[3]), 1) : ADMIN_USER;
+    
+    $record['chain'] = $arrRef;
+    
+    addAmountInUserAccount($firebase, ADMIN_USER, $totalAmount, $smountSharingConfig['admin'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['county'], $totalAmount, $smountSharingConfig['owner'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref1'], $totalAmount, $smountSharingConfig['ref1_level1'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref2'], $totalAmount, $smountSharingConfig['ref1_level2'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref3'], $totalAmount, $smountSharingConfig['ref1_level3'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref4'], $totalAmount, $smountSharingConfig['ref1_level4'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref5'], $totalAmount, $smountSharingConfig['ref2_level1'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref6'], $totalAmount, $smountSharingConfig['ref2_level2'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref7'], $totalAmount, $smountSharingConfig['ref2_level3'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    addAmountInUserAccount($firebase, $arrRef['ref8'], $totalAmount, $smountSharingConfig['ref2_level4'], $data['txn_id'], array('type' => addMassageRecord, 'record' => $id, 'txn_id' => $data['txn_id']), '/massage');
+    
+    error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount ends". PHP_EOL, 3, LOG_FILE);
+    
+    $path = DEFAULT_PATH . '/records/'. $id;
+    $firebase->update($path, $record);
+    
+    foreach ($record['paths'] as $v) {
+      $path = DEFAULT_PATH_TMP. '/' . $v;
+      $r = json_decode($firebase->get($path), 1);
+      if (empty($r)) {
+        continue;  
+      }
+      //$firebase->delete($path);
+      error_log(date('[Y-m-d H:i e] '). "subscr_payment path1: ".$path. PHP_EOL, 3, LOG_FILE);
+      $path = DEFAULT_PATH . '/' . $v;
+      $firebase->update($path, $r);
+      error_log(date('[Y-m-d H:i e] '). "subscr_payment path2: ".$path. PHP_EOL, 3, LOG_FILE);
+    }
+    
+    $path = MAIN_PATH . '/usersChain/counter';
+    $firebase->set($path, $counter);
+    
+    $path = MAIN_PATH . '/usersChain/list/'.$counter;
+    $firebase->set($path, $user_id);
+    
     error_log(date('[Y-m-d H:i e] '). "subscr_payment ended". PHP_EOL, 3, LOG_FILE);
   }
 
   function subscr_signup($id, $user_id, $data) {
     global $firebase;
     error_log(date('[Y-m-d H:i e] '). "subscr_signup started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH_TMP . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
+    $record = getDetails($id);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }

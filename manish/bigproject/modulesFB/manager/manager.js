@@ -30,16 +30,9 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   var state = decodeURIComponent($routeParams.state);
   var county = decodeURIComponent($routeParams.county);
   $scope.results = {};
-  $scope.ref.child('manager').child('countyPending').child(country).child(state).child(county).once("value", function(snapshot) {
-    var a = snapshot.exists();
-    if (!a) {
-      $scope.frm.status = 'County does not exists.';
-      alert('County does not exists.');
-      $location.path('/manager/county');
-      if(!$scope.$$phase) $scope.$apply();
-      return;
-    }
-    
+  
+  function processResults(snapshot)
+  {
     $scope.frm.confirmURL = 'http://ineedmassage.us/manager/paypal/confirm/' + encodeURIComponent(country) + '/' + encodeURIComponent(state) + '/' + encodeURIComponent(county);
 		$scope.frm.cancelURL = 'http://ineedmassage.us/manager/paypal/cancel/' + encodeURIComponent(country) + '/' + encodeURIComponent(state) + '/' + encodeURIComponent(county);
 		$scope.frm.notifyURL = 'http://ineedmassage.us/php/massage/manager/ipnNofity.php';
@@ -48,6 +41,22 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.results.itemNumber = 1;
     $scope.results.customJson = {uid: $scope.userData.uid, path: $scope.results.path};
     if(!$scope.$$phase) $scope.$apply();
+  }
+
+  $scope.ref.child('manager').child('county').child(country).child(state).child(county).once("value", function(snapshot) {
+    var a = snapshot.exists();
+    if (!a) {
+      $scope.ref.child('manager').child('countyPending').child(country).child(state).child(county).once("value", function(snapshot) {
+        var a = snapshot.exists();
+        if (!a) {
+          $scope.frm.status = 'County does not exists.';
+          alert('County does not exists.');
+          $location.path('/manager/county');
+          if(!$scope.$$phase) $scope.$apply();
+          return;
+        } else processResults(snapshot);
+      });
+    } else processResults(snapshot);
   });
 }])
 
@@ -111,7 +120,6 @@ angular.module('myApp.manager', ['ngRoute', 'angularFileUpload', 'youtube-embed'
               data.email = $scope.userData.email;
               data.uid = $scope.userData.uid;
               data.path = country + '/' + state + '/' + county;
-              obj.owsRecordTmp.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
               data.timestamp = Firebase.ServerValue.TIMESTAMP;
               $scope.ref.child('manager').child('countyPending').child(country).child(state).child(county).set(data);
               $scope.frm.status = 'County added successfully.';

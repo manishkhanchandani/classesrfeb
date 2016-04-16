@@ -96,5 +96,8 @@
   $uPath = 'VW5pdGVkIFN0YXRlcw==/Q0E=/U2FudGEgQ2xhcmEgQ291bnR5';
   //$record = getDetails($uPath);
   
-  subscr_cancel($uid, $uPath);
   
+    $path = '/massage/amountReceived/txn_id/9NP758795K865743F';
+    echo $txnIdRec = json_decode($firebase->get($path), 1);
+
+  exit;
