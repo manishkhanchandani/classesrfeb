@@ -74,6 +74,7 @@ try {
     $exp = strtotime("+1 month", time());
     $record['expiration'] = $exp * 1000;
     $record['expiration_format'] = date('r', $exp);
+    $record['uid'] = $user_id;
     
     
     error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount". PHP_EOL, 3, LOG_FILE);
@@ -193,6 +194,8 @@ try {
     $firebase->set($path, $exp);
     $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
     $firebase->set($path, date('r', $exp));
+    $path = DEFAULT_PATH . '/records/'. $id. '/uid';
+    $firebase->set($path, $user_id);
     error_log(date('[Y-m-d H:i e] '). "subscr_signup ended". PHP_EOL, 3, LOG_FILE);
     //custom logic ends here
   }
