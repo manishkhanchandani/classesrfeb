@@ -4,8 +4,13 @@
     <li><a href="" ng-click="google()">Google Login</a></li>
     <li><a href="" ng-click="facebook()">Facebook Login</a></li>
     <li><a href="" ng-click="github()">GitHub Login</a></li>
-    <!--<li><a href="" ng-click="annonymous()">Annonymous Login</a></li>-->
+    <li><a href="" ng-click="annonymous()">Annonymous Login</a></li>
   </ul>
 </li>
-<li><a href="" ng-if="userData">{{userData.displayName}}</a></li>
-<li><a href="" ng-click="logout();" ng-if="userData">Logout</a></li>
+<li class="dropdown" ng-if="userData">
+  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userData.displayName}} <span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="myProfile">My Profile</a></li>
+    <li><a href="" ng-click="logout();">Logout</a></li>
+  </ul>
+</li>

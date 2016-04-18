@@ -11,6 +11,7 @@
   
   module
     .directive('login', ['loginTemplate', 'loginService', 'dataService', '$timeout', login])
+    .directive('myProfile', ['dataService', '$timeout', myProfile])
     .provider('loginTemplate', loginTemplate)
     .service('loginService', [loginService])
     ;
@@ -24,6 +25,20 @@
       
     };
   }
+  
+  
+  function myProfile(dataService, $timeout) {
+    return {
+          scope: {
+            userData: '='
+          },
+          templateUrl: 'directives/login/myProfile.html',
+          link: function(scope, elem, attrs) {
+            console.log('hey');
+            console.log(scope.userData);
+          }
+    }//end return
+  }//end function
   
   function login(loginTemplate, loginService, dataService, $timeout) {
     return {

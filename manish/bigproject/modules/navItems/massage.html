@@ -16,8 +16,8 @@
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professionals <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="massage">Search/Browse Massage Professionals</a></li>
-            <li ng-if="userData && userData.provider != 'anonymous'"><a href="massage/create">Create New Massage Professional</a></li>
-            <li ng-if="userData && userData.provider != 'anonymous'"><a href="massage/my">My Massage Profiles</a></li>
+            <li ng-if="userData"><a href="massage/create">Create New Massage Professional</a></li>
+            <li ng-if="userData"><a href="massage/my">My Massage Profiles</a></li>
           </ul>
         </li>
         <li><a href="messages">Messages <span messages-counter user-data="userData"></span></a></li>
@@ -32,8 +32,8 @@
             <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
             <li ng-if="userData && userData.provider != 'anonymous'"><a href="http://ineedmassage.us/?refBy={{userData.uid}}">Referrer Link</a></li>
             <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
-            <li><a href="about">About Us</a></li>
-            <li><a href="contact">Contact Us</a></li>
+            <li><a href="massage/about">About Us</a></li>
+            <li><a href="massage/contact">Contact Us</a></li>
           </ul>
         </li>
       </ul>

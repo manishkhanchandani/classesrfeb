@@ -98,10 +98,36 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     templateUrl: 'modulesFB/massage/myMoney.html',
     controller: 'ViewMyMoneyCtrlFB'
   })
+  .when('/massage/contact', {
+    templateUrl: 'modulesFB/massage/contact.html',
+    controller: 'ViewContactMassageCtrlFB'
+  })
+  .when('/massage/about', {
+    templateUrl: 'modulesFB/massage/about.html',
+    controller: 'ViewAboutMassageCtrlFB'
+  })
   
   ;
 }])
 
+.controller('ViewDemoMassageCtrlFB', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  
+}])
+
+
+
+.controller('ViewAboutMassageCtrlFB', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  
+}])
+.controller('ViewContactMassageCtrlFB', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  
+}])
 .controller('ViewPaypalMassageCtrlFB', ['$scope', '$routeParams', 'dataService', '$location', function($scope, $routeParams, dataService, $location) {
   var obj = dataService.massageSetFirebase($scope.ref);
   $scope.meta = obj.meta;
@@ -111,7 +137,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
     $scope.current.custom = {id: $scope.current.$id, uid: $scope.current.uid};
-    $scope.current.confirmURL = 'http://ineedmassage.us/massage/imagesUpload/' + $scope.current.$id;
+    $scope.current.confirmURL = 'http://ineedmassage.us/massage/confirm/' + $scope.current.$id;
 		$scope.current.cancelURL = 'http://ineedmassage.us/massage/paypal/cancel/' + $scope.current.$id;
 		$scope.current.notifyURL = 'http://ineedmassage.us/php/massage/ipnNofity.php';
   });
@@ -667,7 +693,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     obj.owsArrTmp.$add(postData).then(function(response) {
       var id = response.key();
       console.log('id: ', id);
-      
+      obj.owsRecord.child(id).child('id').set(id);
       //setting path
       obj.owsRecordTmp.child(id).child('paths').push('records/' + id);
       //save location
@@ -845,6 +871,8 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.details.location = $scope.frm.location;
     $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
     obj.owsArr.$save($scope.current).then(function(response) {
+        
+        obj.owsRecord.child($scope.id).child('id').set($scope.id);
         //save location
         if ($scope.current.location.county) {
           obj.owsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);

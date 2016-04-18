@@ -49,6 +49,11 @@ angular.module('myApp', [
     templateUrl: homePage,
     controller: 'homePageController'
   })
+  
+  .when('/myProfile', {
+    templateUrl: 'modules/myProfile.html',
+    controller: 'ViewMyProfileCtrl'
+  })
   .otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
 }])
@@ -184,5 +189,11 @@ angular.module('myApp', [
 .controller('homePageController', ['$scope', function($scope) {
   
 }])
+
+
+
+.controller('ViewMyProfileCtrl', ['$scope', function($scope) {
+}])
+
 
 ;

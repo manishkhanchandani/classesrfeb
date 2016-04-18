@@ -50,6 +50,17 @@ section {
 }
 
 
+.section-title {
+  padding: 10px;
+  background: #0383c0;
+  color: #fff; 
+}
+
+.section-title small {
+  color: #ccc; 
+}
+
+
 .section-secondary {
   background: #e44d26;
   color: #fff;
