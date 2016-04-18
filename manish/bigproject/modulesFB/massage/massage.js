@@ -618,9 +618,9 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   if ($scope.userData.provider === 'anonymous') {
-    alert('You are not authorized to post new data');
-    $location.path('/');
-    return;
+    //alert('You are not authorized to post new data');
+    //$location.path('/');
+    //return;
   }
   
   var obj = dataService.massageSetFirebase($scope.ref);
@@ -690,20 +690,37 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.uid = $scope.userData.uid;
     postData.timestamp = Firebase.ServerValue.TIMESTAMP;
 
-    obj.owsArrTmp.$add(postData).then(function(response) {
+    var currentObj = {};
+    currentObj.owsArr = obj.owsArrTmp;
+    currentObj.owsRecord = obj.owsRecordTmp;
+    currentObj.owsMy = obj.owsMyTmp;
+    currentObj.owsLocation = obj.owsLocationTmp;
+    currentObj.owsTags = obj.owsTagsTmp;
+    currentObj.owsOnlyTags = obj.owsOnlyTagsTmp;
+    
+    if ($scope.userData.provider === 'anonymous') {
+      currentObj.owsArr = obj.owsArr;
+      currentObj.owsRecord = obj.owsRecord;
+      currentObj.owsMy = obj.owsMy;
+      currentObj.owsLocation = obj.owsLocation;
+      currentObj.owsTags = obj.owsTags;
+      currentObj.owsOnlyTags = obj.owsOnlyTags;
+    }
+
+    currentObj.owsArr.$add(postData).then(function(response) {
       var id = response.key();
       console.log('id: ', id);
-      obj.owsRecord.child(id).child('id').set(id);
+      currentObj.owsRecord.child(id).child('id').set(id);
       //setting path
-      obj.owsRecordTmp.child(id).child('paths').push('records/' + id);
+      currentObj.owsRecord.child(id).child('paths').push('records/' + id);
       //save location
-      obj.owsMyTmp.child($scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
+      currentObj.owsMy.child($scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
       //setting path
-      obj.owsRecordTmp.child(id).child('paths').push('my/' + $scope.userData.uid + '/' + id);
+      currentObj.owsRecord.child(id).child('paths').push('my/' + $scope.userData.uid + '/' + id);
       if (postData.location.county) {
-        obj.owsLocationTmp.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+        currentObj.owsLocation.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
         //setting path
-        obj.owsRecordTmp.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
+        currentObj.owsRecord.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
       }
       if (postData.tags) {
         var tmp = postData.tags.split(',');
@@ -711,19 +728,23 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
           var val = value.replace(/^\s+|\s+$/g, '');
           val = val.toLowerCase();
           if (postData.location.county) {
-            obj.owsTagsTmp.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+            currentObj.owsTags.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
             //setting path
-            obj.owsRecordTmp.child(id).child('paths').push('tags/' + btoa(val) + '/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
+            currentObj.owsRecord.child(id).child('paths').push('tags/' + btoa(val) + '/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
           }
           
-          obj.owsOnlyTagsTmp.child(btoa(val)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+          currentObj.owsOnlyTags.child(btoa(val)).child(id).set(Firebase.ServerValue.TIMESTAMP);
           //setting path
-          obj.owsRecordTmp.child(id).child('paths').push('onlyTags/' + btoa(val) + '/' + id);
+          currentObj.owsRecord.child(id).child('paths').push('onlyTags/' + btoa(val) + '/' + id);
         });
       }//end if
         //location ends
        $scope.frm = {};
-       $location.path('/massage/paypal/'+id);
+       if ($scope.userData.provider === 'anonymous') {
+          $location.path('/massage/create/imagesUpload/'+id);
+       } else {
+          $location.path('/massage/paypal/'+id);
+       }
     });
   };
 }])
@@ -736,9 +757,9 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   if ($scope.userData.provider === 'anonymous') {
-    alert('You are not authorized to post new data');
-    $location.path('/');
-    return;
+    //alert('You are not authorized to post edit data');
+    //$location.path('/');
+    //return;
   }
   
   var obj = dataService.massageSetFirebase($scope.ref);

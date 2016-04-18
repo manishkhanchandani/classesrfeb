@@ -41,17 +41,19 @@
                 <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="!item.details.images && !item.details.profileImage"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
               </div>
               <div class="col-md-10">
-                <p ng-if="userData.uid !== item.uid" class="pull-right"><span><a href="messages/{{item.uid}}">Send Message</a></span></p>
+                <p ng-if="userData.uid !== item.uid && item.details.postedBy !== 'Anonymous' && userData.displayName !== 'Anonymous' && userData.uid" class="pull-right"><span><a href="messages/{{item.uid}}">Send Message</a></span></p>
                 <h4 class="list-group-item-heading"><a href="{{meta.redirectUrl}}/detail/{{item.id}}">{{item.title}}</a></h4>
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.details.location}}</a></p>
-                <p ng-if="item.grossprice"><strong>Regular Price:</strong> 
-                <span ng-if="!item.discount">{{item.grossprice}}</span> 
-                <span ng-if="item.discount"><s style="color:red;">{{item.grossprice}}</s> ({{item.netprice}})</span> 
-                </p>
+                <div ng-if="item.details.postedBy !== 'Anonymous'">
+                  <p ng-if="item.grossprice"><strong>Regular Price:</strong> 
+                  <span ng-if="!item.discount">{{item.grossprice}}</span> 
+                  <span ng-if="item.discount"><s style="color:red;">{{item.grossprice}}</s> ({{item.netprice}})</span> 
+                  </p>
+                </div>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.timestamp | customDate}}</p>
                 <p class="list-group-item-text" ng-if="item.distance >= 0">{{item.distance | number : 2}} miles away</p>
                 <p><strong>Subjects:</strong> {{item.tags}}<br></p>
-                <p><strong>Posted By: </strong>{{item.details.postedBy}}</p>
+                <p ng-if="item.details.postedBy !== 'Anonymous'"><strong>Posted By: </strong>{{item.details.postedBy}}</p>
               </div>
             </div>
           
