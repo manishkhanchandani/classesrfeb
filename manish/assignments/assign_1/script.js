@@ -25,7 +25,7 @@ function getImageSuccess2(response)
 
 /*
 Usage:
-loadDoc('image1.txt', getImageSuccess);
+loadDoc('image1.txt', getImageSuccess1);
 
-loadDoc('image2.txt', getImageSuccess);
+loadDoc('image2.txt', getImageSuccess2);
 */
