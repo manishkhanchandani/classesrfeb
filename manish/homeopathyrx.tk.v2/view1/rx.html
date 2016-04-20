@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">
-      <form ng-submit="">
+    <form ng-submit="">
+    <div class="col-md-7">
           <div class="form-group">
               <label for="disorder">Choose Disorder</label>
               <select ng-model="frm.disease" class="form-control" ng-options="option.disease for option in results" ng-change="updateDisease();">
@@ -21,25 +21,46 @@
           </div>
           
           <div class="form-group">
-              <label for="name">Name</label>
+              <label for="name">Name *</label>
               <input type="text" class="form-control" id="name" placeholder="Enter name">
           </div>
           <div class="form-group">
-              <label for="email">Email address</label>
+              <label for="email">Email address *</label>
               <input type="email" class="form-control" id="email" placeholder="Enter email">
           </div>
           <div class="form-group">
-              <label for="age">Age</label>
+              <label for="age">Age *</label>
               <input type="text" class="form-control" id="age" placeholder="Enter age">
           </div>
-          <div class="form-group">
-              <label for="description">Describe your problem in detail (make sure you also mention when your problem increases/decreases, what you do whole day, your reactions in different situations, your attitude towards your friends, families, outsiders, etc. Your desire in food, your hatrance in food, etc.)</label>
-              <textarea class="form-control" id="description"></textarea>
-          </div>
-      </form>
     </div>
-    <div class="col-md-4">
-    
+    <div class="col-md-5">
+      <h3>Optional Questions</h3>
+      
+      <div class="form-group">
+          <label for="description">Describe your problem in detail? (Also mention any lab reports, x-ray, sonography, etc)</label>
+          <textarea class="form-control" id="description"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="modalities">When your problem increases/decreases?</label>
+          <textarea class="form-control" id="modalities"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="dowholeday">What you do whole day?</label>
+          <textarea class="form-control" id="dowholeday"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="reactions">Your reactions in different situations?</label>
+          <textarea class="form-control" id="reactions"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="attitude">Your attitude towards your friends, families, outsiders, etc.?</label>
+          <textarea class="form-control" id="attitude"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="food">Your desire in food, your hatrance in food, etc.?</label>
+          <textarea class="form-control" id="food"></textarea>
+      </div>
     </div>
+    </form>
   </div>
 </div>

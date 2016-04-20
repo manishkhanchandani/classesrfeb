@@ -53,7 +53,7 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
     $scope.results = $firebaseArray($scope.ref.child('diseases'));
     $scope.results.$loaded().then(function (arrR) {
       angular.forEach(arrR, function(value, key) {
-        diseases[value.disease_id] = value;
+        diseases[value.$id] = value;
       });
       $scope.getCurrentDiseases(diseases);
       $scope.results = diseases;
@@ -68,13 +68,13 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
   
   $scope.updateDisease = function() {
     if (!$scope.frm.disease) return;
-    $location.path('/rx/'+$scope.frm.disease.disease_id);
+    $location.path('/rx/did_'+$scope.frm.disease.disease_id);
   };
   
   $scope.updateRemedy = function() {
     if (!$scope.frm.disease) return;
     if (!$scope.frm.tongue) return;
-    $location.path('/rx/'+$scope.frm.disease.disease_id+'/'+$scope.frm.tongue.id);
+    $location.path('/rx/did_'+$scope.frm.disease.disease_id+'/rid_'+$scope.frm.tongue.id);
   };
 }])
 ;

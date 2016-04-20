@@ -15,13 +15,13 @@ foreach ($res['data']['diseases'] as $disease) {
   $details = array();
   $remedies = array();
   foreach ($tmp as $k => $v) {
-    $details[$k] = $v;
-    unset($details[$k]['remedies']);
-    $path = MAIN_PATH . '/remedies/'.$disease['disease_id'].'/'.$v['id'];
+    $details['rid_'.$k] = $v;
+    unset($details['rid_'.$k]['remedies']);
+    $path = MAIN_PATH . '/remedies/did_'.$disease['disease_id'].'/rid_'.$v['id'];
     $firebase->set($path, $v['remedies']);
   }
   $disease['details'] = $details;
- $path = MAIN_PATH2 . '/diseases/'.$disease['disease_id'];
+ $path = MAIN_PATH2 . '/diseases/did_'.$disease['disease_id'];
  $firebase->set($path, $disease);
 }
 pr($res);
