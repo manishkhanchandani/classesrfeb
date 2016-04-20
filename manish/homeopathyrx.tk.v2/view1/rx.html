@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Homeopathic Treatment</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <form ng-submit="">
+          <div class="form-group">
+              <label for="disorder">Choose Disorder</label>
+              <select ng-model="frm.disease" class="form-control" ng-options="option.disease for option in results" ng-change="updateDisease();">
+              <option value="">Choose any one:</option></select>
+          </div>
+          <div ng-if="frm.disease">
+              <div class="form-group">
+              <label for="disorder">Choose Tongue Color Or Pulse Quality</label>
+                  <select ng-model="frm.tongue" class="form-control" ng-options="option.title for option in frm.disease.details" ng-change="updateRemedy();">
+                  <option value="">Choose Tongue Or Pulse:</option></select>
+              </div>
+          </div>
+          
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" class="form-control" id="age" placeholder="Enter age">
+          </div>
+          <div class="form-group">
+              <label for="description">Describe your problem in detail (make sure you also mention when your problem increases/decreases, what you do whole day, your reactions in different situations, your attitude towards your friends, families, outsiders, etc. Your desire in food, your hatrance in food, etc.)</label>
+              <textarea class="form-control" id="description"></textarea>
+          </div>
+      </form>
+    </div>
+    <div class="col-md-4">
+    
+    </div>
+  </div>
+</div>

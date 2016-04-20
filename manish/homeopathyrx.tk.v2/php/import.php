@@ -3,9 +3,10 @@ include_once('firebase/firebaseLib.php');
 define('DEFAULT_URL', 'https://mkgxy.firebaseio.com/projects');
 define('DEFAULT_TOKEN', 'vIthuXgIYof6rBxZknp2Y5XR0fLRwKT5ZFIclunM');
 define('MAIN_PATH', '/homeopathyRx');
+define('MAIN_PATH2', '/homeopathy');
 $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
 include_once('functions.php');
-exit;
+
 $record = curlget('http://bootstrap.mkgalaxy.com/svnprojects/horo/homeopathy.php?action=queryDiseaseAll');
 $res = json_decode($record, 1);
 foreach ($res['data']['diseases'] as $disease) {
@@ -20,7 +21,7 @@ foreach ($res['data']['diseases'] as $disease) {
     $firebase->set($path, $v['remedies']);
   }
   $disease['details'] = $details;
- $path = MAIN_PATH . '/diseases/'.$disease['disease_id'];
+ $path = MAIN_PATH2 . '/diseases/'.$disease['disease_id'];
  $firebase->set($path, $disease);
 }
 pr($res);
