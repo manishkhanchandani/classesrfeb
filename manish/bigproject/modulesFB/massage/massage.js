@@ -678,6 +678,19 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.location.county = ($scope.frm.details.components.county) ? $scope.frm.details.components.county : '';
     postData.location.formatted_addr = $scope.frm.details.formatted_address;
     postData.tags = $scope.frm.tags;
+    postData.tags2 = postData.tags;
+    postData.tags2 = postData.tags2 + ',' + postData.title;
+    var tmp1 = postData.title.split(' ');
+    angular.forEach(tmp1, function(value, key) {
+        var val = value.replace(/^\s+|\s+$/g, '');
+        if (!val) {
+          return; 
+        }//end if
+        val = val.toLowerCase();
+        console.log('val2a is ', val);
+        postData.tags2 = postData.tags2 + ',' + val;
+    });
+      
     postData.details = {};
     postData.details.profileImage = $scope.userData.image;
     postData.details.postedBy = $scope.userData.displayName;
@@ -722,11 +735,17 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         //setting path
         currentObj.owsRecord.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
       }
-      if (postData.tags) {
-        var tmp = postData.tags.split(',');
+      
+      console.log(postData.tags2);
+      if (postData.tags2) {
+        var tmp = postData.tags2.split(',');
         angular.forEach(tmp, function(value, key) {
           var val = value.replace(/^\s+|\s+$/g, '');
+          if (!val) {
+            return; 
+          }//end if
           val = val.toLowerCase();
+          console.log('vala is ', val);
           if (postData.location.county) {
             currentObj.owsTags.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
             //setting path

@@ -11,7 +11,7 @@
   include_once('../functions.php');
   include_once('config.php');
   
-  echo $id = '-KFj3RQBT89WQK2xcSp-';
+  echo $id = '-KFo3903P478EKhber4d';
   $record = getRecordDetails($firebase, $id, DEFAULT_PATH_TMP, DEFAULT_PATH);
   pr($record);
   deleteRecord($firebase, $record);
