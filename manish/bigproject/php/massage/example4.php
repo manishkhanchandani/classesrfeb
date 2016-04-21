@@ -11,7 +11,7 @@
   include_once('../functions.php');
   include_once('config.php');
   
-  $id = '-KFo4NX_YfWglDlWmq1z';
+  $id = '-KFqzbjnx6-B4VBF8Akm';
   $user_id = 'google:101318303150498751334';
   echo $id;
   copyRecordByUserId($firebase, $id, $user_id, DEFAULT_PATH_TMP, DEFAULT_PATH);

@@ -46,6 +46,8 @@ function saveData($firebase, $user_id, $data, $path1) {
   $pathID = $arr['name'];
   
   $idPath = $path1 . '/records/'.$pathID;
+  $firebase->set($idPath.'/id', $pathID);
+  
   $recordPath = $idPath.'/paths';
   
   $firebase->set($path1.'/my/'.$user_id.'/'.$pathID, time() * 1000);

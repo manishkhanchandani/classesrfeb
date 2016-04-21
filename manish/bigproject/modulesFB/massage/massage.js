@@ -687,7 +687,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
           return; 
         }//end if
         val = val.toLowerCase();
-        console.log('val2a is ', val);
         postData.tags2 = postData.tags2 + ',' + val;
     });
       
@@ -736,7 +735,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         currentObj.owsRecord.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
       }
       
-      console.log(postData.tags2);
       if (postData.tags2) {
         var tmp = postData.tags2.split(',');
         angular.forEach(tmp, function(value, key) {
@@ -745,7 +743,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
             return; 
           }//end if
           val = val.toLowerCase();
-          console.log('vala is ', val);
           if (postData.location.county) {
             currentObj.owsTags.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
             //setting path
@@ -900,6 +897,20 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.location.county = ($scope.frm.details.components.county) ? $scope.frm.details.components.county : '';
     $scope.current.location.formatted_addr = $scope.frm.details.formatted_address;
     $scope.current.tags = $scope.frm.tags;
+    
+    $scope.current.tags2 = $scope.current.tags;
+    $scope.current.tags2 = $scope.current.tags2 + ',' + $scope.current.title;
+    var tmp1 = $scope.current.title.split(' ');
+    angular.forEach(tmp1, function(value, key) {
+        var val = value.replace(/^\s+|\s+$/g, '');
+        if (!val) {
+          return; 
+        }//end if
+        val = val.toLowerCase();
+        $scope.current.tags2 = $scope.current.tags2 + ',' + val;
+    });
+      
+      
     $scope.current.details.profileImage = $scope.userData.image;
     $scope.current.details.postedBy = $scope.userData.displayName;
     $scope.current.details.email = ($scope.frm.email) ? $scope.frm.email : '';
@@ -917,10 +928,13 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         if ($scope.current.location.county) {
           obj.owsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);
         }
-        if ($scope.current.tags) {
-          var tmp = $scope.current.tags.split(',');
+        if ($scope.current.tags2) {
+          var tmp = $scope.current.tags2.split(',');
           angular.forEach(tmp, function(value, key) {
             var val = value.replace(/^\s+|\s+$/g, '');
+            if (!val) {
+              return; 
+            }//end if
             val = val.toLowerCase();
             if ($scope.current.location.county) {
             obj.owsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);

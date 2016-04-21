@@ -20,7 +20,7 @@
             <li ng-if="userData"><a href="massage/my">My Massage Profiles</a></li>
           </ul>
         </li>
-        <li><a href="messages">Messages <span messages-counter user-data="userData"></span></a></li>
+        <li ng-if="userData && userData.provider != 'anonymous'"><a href="messages">Messages <span messages-counter user-data="userData"></span></a></li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">

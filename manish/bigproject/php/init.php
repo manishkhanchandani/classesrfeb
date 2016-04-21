@@ -26,6 +26,22 @@ $title = '';
 $description = '';
 $img = '';
 $content = '';
+
+
+$cmd = new classes_home(array('host' => $host, 'dirname' => DIRNAME));
+$pageParams = $cmd->getParams();
+if (!empty($pageParams['meta']['title'])) {
+  $title = $pageParams['meta']['title']; 
+}
+
+if (!empty($pageParams['meta']['description'])) {
+  $description = $pageParams['meta']['description']; 
+}
+
+if (!empty($pageParams['meta']['img'])) {
+  $img = $pageParams['meta']['img']; 
+}
+/*
 if ($requestUri === '/' || empty($requestUri)) {
     $cmd = new classes_home(array('host' => $host, 'dirname' => DIRNAME));
     $pageParams = $cmd->getParams();
@@ -40,7 +56,9 @@ if ($requestUri === '/' || empty($requestUri)) {
     if (!empty($pageParams['meta']['img'])) {
       $img = $pageParams['meta']['img']; 
     }
-} else if (!empty($requestUri)) {
+} else 
+*/
+if (!empty($requestUri) && $requestUri !== '/') {
   $arr = explode('/', $requestUri);
   $cmd = new classes_routing(array('host' => $host, 'dirname' => DIRNAME, 'arr' => $arr));
   if (!empty($cmd->returnData)) {
