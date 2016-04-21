@@ -40,15 +40,19 @@ function saveData($firebase, $user_id, $data, $path1) {
   $data['details']['postedBy'] = $userData['displayName'];
   $data['details']['profileImage'] = $userData['image'];
   
-  $path = $path1 . '/records';
-  $sid = $firebase->push($path, $data);
-  $arr = json_decode($sid, 1);
-  $pathID = $arr['name'];
-  
+  $pathID = $data['id'];
+  pr($data);
+  exit;
   $idPath = $path1 . '/records/'.$pathID;
-  $firebase->set($idPath.'/id', $pathID);
+  $firebase->set($path, $data);
+  //$arr = json_decode($sid, 1);
+  //$pathID = $arr['name'];
+  
+  //$idPath = $path1 . '/records/'.$pathID;
+  //$firebase->set($idPath.'/id', $pathID);
   
   $recordPath = $idPath.'/paths';
+  $firebase->delete($recordPath);
   
   $firebase->set($path1.'/my/'.$user_id.'/'.$pathID, time() * 1000);
   if (!empty($data['location']['county'])) {

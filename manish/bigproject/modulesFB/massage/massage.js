@@ -38,6 +38,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   .when('/massage/create/imagesUpload/:id', {
     templateUrl: 'modulesFB/massage/imageUpload.html',
     controller: 'ViewImageUploadMassageCtrlFB'
+  })
+  .when('/massage/create/img/:id', {
+    templateUrl: 'modulesFB/massage/img.html',
+    controller: 'ViewImgMassageCtrlFB'
   }).when('/massage/create/youtube/:id', {
     templateUrl: 'modulesFB/massage/youtube.html',
     controller: 'ViewYoutubeMassageCtrlFB'
@@ -165,6 +169,100 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
   });
+}])
+
+
+.controller('ViewImgMassageCtrlFB', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
+  
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  $scope.id = $routeParams.id;
+  
+  $scope.current = null;
+  $scope.images = null;
+  
+  $scope.resetData = function() {
+    $scope.current = obj.owsArr.$getRecord($scope.id);
+    $scope.images = $scope.current.details.images;
+  };
+  
+  obj.owsArr.$loaded().then(function (arrR) {
+    $scope.resetData();
+  });
+  
+  $scope.addImage = function() {
+      obj.owsRecord.child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
+      $scope.resetData();
+      $scope.frm.image = '';
+  };//add image function ends
+  //ends add Image in database
+  
+  
+  $scope.deleteImage = function(k) {
+    var a = confirm('Do you really want to delete this image');
+    if (!a) return;
+    
+    obj.owsRecord.child($scope.id).child('details').child('images').child(k).remove();
+    $scope.resetData();
+    //do api call
+  };
+  
+  $scope.makeDefaultImage = function(img) {
+    obj.owsRecord.child($scope.id).child('details').child('defaultImage').set(img);
+  };
+  
+  //upload image
+  var requestUrl = $scope.config.apiUrl + 'records.php?action=uploadOnlyNoAuth&uid='+$scope.userData.uid+'&id='+$routeParams.id;
+  var uploader = $scope.uploader = new FileUploader({
+      url: requestUrl
+  });
+  // FILTERS
+
+  uploader.filters.push({
+      name: 'imageFilter',
+      fn: function(item /*{File|FileLikeObject}*/, options) {
+          var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+          return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
+      }
+  });
+
+  // CALLBACKS
+
+  uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
+      console.info('onWhenAddingFileFailed', item, filter, options);
+  };
+  uploader.onAfterAddingFile = function(fileItem) {
+      console.info('onAfterAddingFile', fileItem);
+  };
+  uploader.onAfterAddingAll = function(addedFileItems) {
+      console.info('onAfterAddingAll', addedFileItems);
+  };
+  uploader.onBeforeUploadItem = function(item) {
+      console.info('onBeforeUploadItem', item);
+  };
+  uploader.onProgressItem = function(fileItem, progress) {
+      console.info('onProgressItem', fileItem, progress);
+  };
+  uploader.onProgressAll = function(progress) {
+      console.info('onProgressAll', progress);
+  };
+  uploader.onSuccessItem = function(fileItem, response, status, headers) {
+      console.info('onSuccessItem', fileItem, response, status, headers);
+  };
+  uploader.onErrorItem = function(fileItem, response, status, headers) {
+      console.info('onErrorItem', fileItem, response, status, headers);
+  };
+  uploader.onCancelItem = function(fileItem, response, status, headers) {
+      console.info('onCancelItem', fileItem, response, status, headers);
+  };
+  uploader.onCompleteItem = function(fileItem, response, status, headers) {
+      console.info('onCompleteItem', fileItem, response, status, headers);
+      obj.owsRecord.child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
+  };
+  uploader.onCompleteAll = function() {
+      console.info('onCompleteAll');
+  };
+  
 }])
 
 
@@ -757,7 +855,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         //location ends
        $scope.frm = {};
        if ($scope.userData.provider === 'anonymous') {
-          $location.path('/massage/create/imagesUpload/'+id);
+          $location.path('/massage/create/img/'+id);
        } else {
           $location.path('/massage/paypal/'+id);
        }

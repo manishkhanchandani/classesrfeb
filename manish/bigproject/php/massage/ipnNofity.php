@@ -71,6 +71,14 @@ try {
       error_log(date('[Y-m-d H:i e] '). "empty posting data". PHP_EOL, 3, LOG_FILE);
       throw new Exception('empty posting data');
     }
+    if ($record['details']['postedBy'] === '') {
+      copyRecordByUserId($firebase, $id, $user_id, DEFAULT_PATH_TMP, DEFAULT_PATH); 
+      $record = getDetails($id);
+      if (empty($record)) {
+        error_log(date('[Y-m-d H:i e] '). "empty posting data2". PHP_EOL, 3, LOG_FILE);
+        throw new Exception('empty posting data2');
+      }
+    }
     $exp = strtotime("+1 month", time());
     $record['expiration'] = $exp * 1000;
     $record['expiration_format'] = date('r', $exp);
