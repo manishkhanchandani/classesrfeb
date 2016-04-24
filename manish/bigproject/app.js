@@ -184,6 +184,15 @@ angular.module('myApp', [
       $scope.userData = JSON.parse(userProfile);
   }
   
+  //ip
+  $scope.ipDetails = null;
+  function getIpDetails(res) {
+    $scope.ipDetails = res.data.data.result;
+    console.log('ipdetails: ', $scope.ipDetails);
+  }
+  dataService.ip(getIpDetails);
+  //end ip
+  
 }])
 
 .controller('homePageController', ['$scope', function($scope) {

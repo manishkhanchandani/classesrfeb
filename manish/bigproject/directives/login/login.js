@@ -34,7 +34,6 @@
           },
           templateUrl: 'directives/login/myProfile.html',
           link: function(scope, elem, attrs) {
-            console.log('hey');
             console.log(scope.userData);
           }
     }//end return

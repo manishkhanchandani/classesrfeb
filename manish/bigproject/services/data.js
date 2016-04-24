@@ -59,6 +59,19 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
       return dist;
   };
   
+  this.ip = function(callback) {
+    var url = 'http://api.mkgalaxy.com/ip.php';
+    $http({
+      method: 'GET',
+      url: url
+    }).then(function successCallback(response) {
+        callback(response);
+      }, function errorCallback(response) {
+        console.log('error call back for ip');
+        console.log(response);
+      });
+  };
+  
   this.setFirebase = function(type, ref) {
     var obj = {};
     var theme = '';
