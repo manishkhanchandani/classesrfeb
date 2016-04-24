@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h3>Paypal Subscription for "{{current.title}}"</h3>
-        <p>Free for first three months, followed by $19.99 USD per year</p>
+        <p>Free for first year, followed by $9.99 USD per year</p>
         <!--https://www.paypal.com/cgi-bin/webscr-->
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
           <input type="hidden" name="cmd" value="_xclick-subscriptions">
@@ -13,11 +13,11 @@
           
           <!-- First two months of subscription are free. -->
           <input type="hidden" name="a1" value="0.00" />
-          <input type="hidden" name="p1" value="3" />
-          <input type="hidden" name="t1" value="M" />
+          <input type="hidden" name="p1" value="1" />
+          <input type="hidden" name="t1" value="Y" />
           
           <!-- Recurring subscription payments. -->
-          <input type="hidden" name="a3" value="11.99" />
+          <input type="hidden" name="a3" value="9.99" />
           <input type="hidden" name="p3" value="1" />
           <input type="hidden" name="t3" value="Y" />
           <input type="hidden" name="src" value="1" />

@@ -191,11 +191,19 @@ function updatePath($firebase, $paths)
     foreach ($record['paths'] as $v) {
       $path = DEFAULT_PATH. '/' . $v;
       $r = json_decode($firebase->get($path), 1);
-      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path1: ".$path. PHP_EOL, 3, LOG_FILE);
+      if (empty($r)) {
+        continue;  
+      }
       $path = DEFAULT_PATH_CANCELLED . '/' . $v;
       $firebase->set($path, $r);
-      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path2: ".$path. PHP_EOL, 3, LOG_FILE);
     }
+    
+    
+    $path = DEFAULT_PATH_CANCELLED . '/records/'. $id . '/cancelDate';
+    $firebase->set($path, time() * 1000);
+    $path = DEFAULT_PATH . '/records/'. $id . '/cancelDate';
+    $firebase->set($path, time() * 1000);
+    
     error_log(date('[Y-m-d H:i e] '). "subscr_cancel ended". PHP_EOL, 3, LOG_FILE);
   }
 
@@ -344,6 +352,13 @@ function updatePath($firebase, $paths)
     } else {
       $record = saveData($firebase, $user_id, $record); 
     }
+    
+    //setting the expiration
+    $exp = strtotime("+1 year", time());
+    $record['expiration'] = $exp * 1000;
+    $record['expiration_format'] = date('r', $exp);
+    $path = DEFAULT_PATH . '/records/'. $id;
+    $firebase->update($path, $record);
     
     foreach ($record['paths'] as $v) {
       $path = DEFAULT_PATH_TMP. '/' . $v;

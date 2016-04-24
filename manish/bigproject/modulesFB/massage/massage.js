@@ -138,12 +138,24 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.id = $routeParams.id;
   
   $scope.current = null;
-  obj.owsArrTmp.$loaded().then(function (arrR) {
-    $scope.current = obj.owsArrTmp.$getRecord($scope.id);
-    $scope.current.custom = {id: $scope.current.$id, uid: $scope.current.uid};
-    $scope.current.confirmURL = 'http://ineedmassage.us/massage/confirm/' + $scope.current.$id;
+  $scope.settings = function(arr)
+  {
+    $scope.current.custom = {id: $scope.current.id, uid: $scope.userData.uid};
+    $scope.current.confirmURL = 'http://ineedmassage.us/massage/paypal/confirm/' + $scope.current.$id;
 		$scope.current.cancelURL = 'http://ineedmassage.us/massage/paypal/cancel/' + $scope.current.$id;
 		$scope.current.notifyURL = 'http://ineedmassage.us/php/massage/ipnNofity.php';
+  };
+  
+  obj.owsArrTmp.$loaded().then(function (arrR) {
+    $scope.current = obj.owsArrTmp.$getRecord($scope.id);
+    if (!$scope.current) {
+      obj.owsArr.$loaded().then(function (arrR) {
+        $scope.current = obj.owsArr.$getRecord($scope.id); 
+        $scope.settings($scope.current);
+      });
+    } else { 
+      $scope.settings($scope.current);
+    }
   });
 }])
 
@@ -156,6 +168,14 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.current = null;
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
+    if (!$scope.current) {
+      obj.owsArr.$loaded().then(function (arrR) {
+        $scope.current = obj.owsArr.$getRecord($scope.id); 
+        $scope.settings($scope.current);
+      });
+    } else { 
+      $scope.settings($scope.current);
+    }
   });
 }])
 
@@ -168,6 +188,14 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.current = null;
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
+    if (!$scope.current) {
+      obj.owsArr.$loaded().then(function (arrR) {
+        $scope.current = obj.owsArr.$getRecord($scope.id); 
+        $scope.settings($scope.current);
+      });
+    } else { 
+      $scope.settings($scope.current);
+    }
   });
 }])
 
