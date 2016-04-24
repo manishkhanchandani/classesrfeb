@@ -952,11 +952,16 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.details.place_id = $scope.current.location.place_id;
     $scope.frm.details.components.county = $scope.current.location.county;
     $scope.frm.details.formatted_address = $scope.current.location.formatted_addr;
+    console.log($scope.frm);
   };
   
   obj.owsArr.$loaded().then(function (arrR) {
     $scope.resetData();
   });
+  
+  $scope.changePrice = function() {
+    $scope.frm.netprice = $scope.frm.grossprice - $scope.frm.discount; 
+  };
   
   
   $scope.submitCreateForm = function() {
@@ -1046,6 +1051,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.details.location = $scope.frm.location;
     $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
     $scope.current.updatedLocation = $scope.ipDetails;
+    console.log($scope.current);
     obj.owsArr.$save($scope.current).then(function(response) {
         
         obj.owsRecord.child($scope.id).child('id').set($scope.id);

@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-12">
+      <h1>Details of "{{results.title}}"</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
       <div ng-if="results.mainImage"><img ng-src="{{results.mainImage}}" class="img-responsive img-thumbnail"></div>
       <div class="row">
         <div class="col-md-3" ng-repeat="image in images" style="min-height: 120px;">
@@ -8,15 +13,16 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="pull-right"><a href="" ng-click="goBack()">Go Back</a><span ng-if="userData.uid !== results.uid && results.details.postedBy !== 'Anonymous' && userData.displayName !== 'Anonymous' && userData.uid"> | <a href="messages/{{results.uid}}">Send Message</a></span></div>
       <h3>{{results.title}}</h3>
       <p>{{results.description}}</p>
-      <div ng-if="results.details.postedBy !== 'Anonymous'">
+      <div>
       <p ng-if="results.grossprice"><strong>Regular Price:</strong> 
-                <span ng-if="!results.discount">{{results.grossprice}}</span> 
-                <span ng-if="results.discount"><s style="color:red;">{{results.grossprice}}</s> ({{results.netprice}})</span>
-                </p>
+      <span ng-if="!results.discount">{{results.grossprice | currency}}</span> 
+      <span ng-if="results.discount"><s style="color:red;">{{results.grossprice | currency}}</s> ({{results.netprice | currency}}, <strong>Discount of</strong> {{results.discount | currency}})</span> 
+      </p>
+      <p ng-if="results.coupon_info">{{results.coupon_info}}</p>
       </div>
       <p><a href="http://maps.google.com/maps?q=loc:{{results.location.latitude}},{{results.location.longitude}}" target="_blank">{{results.details.location}}</a></p>
       <p><strong>Created on:</strong> {{results.timestamp | customDate}}</p>

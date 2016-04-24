@@ -29,15 +29,15 @@
         </div>
         <div class="form-group">
             <label for="grossprice">Regular Price (in $)</label>
-            <input type="number" class="form-control" id="grossprice" placeholder="Enter regular price e.g. $ 60.00" ng-model="frm.grossprice">
+            <input type="number" class="form-control" id="grossprice" placeholder="Enter regular price e.g. $ 60.00" ng-model="frm.grossprice" ng-change="changePrice()">
         </div>
         <div class="form-group">
             <label for="discount">Discount Price (in $)</label>
-            <input type="number" class="form-control" id="discount" placeholder="Enter discounted amount e.g. $ 5.00" ng-model="frm.discount">
+            <input type="number" class="form-control" id="discount" placeholder="Enter discounted amount e.g. $ 5.00" ng-model="frm.discount" ng-change="changePrice()">
         </div>
         <div class="form-group">
             <label for="netprice">Net Price (in $)</label>
-            <input type="number" class="form-control" id="netprice" placeholder="Enter final net price e.g. $ 55.00" ng-model="frm.netprice" ng-value="(frm.grossprice - frm.discount)  | number : 2">
+            <input type="number" class="form-control" id="netprice" placeholder="Enter final net price e.g. $ 55.00" ng-model="frm.netprice"><!-- ng-value="(frm.grossprice - frm.discount)  | number : 2"-->
         </div>
         <h3>Contact & Person Information</h3>
         <div class="form-group">
