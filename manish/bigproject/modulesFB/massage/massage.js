@@ -171,10 +171,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     if (!$scope.current) {
       obj.owsArr.$loaded().then(function (arrR) {
         $scope.current = obj.owsArr.$getRecord($scope.id); 
-        $scope.settings($scope.current);
       });
-    } else { 
-      $scope.settings($scope.current);
     }
   });
 }])
@@ -827,6 +824,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.details.location = $scope.frm.location;
     postData.uid = $scope.userData.uid;
     postData.timestamp = Firebase.ServerValue.TIMESTAMP;
+    postData.createdLocation = $scope.ipDetails;
 
     var currentObj = {};
     currentObj.owsArr = obj.owsArrTmp;
@@ -1047,6 +1045,7 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     $scope.current.details.location = $scope.frm.location;
     $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
+    $scope.current.updatedLocation = $scope.ipDetails;
     obj.owsArr.$save($scope.current).then(function(response) {
         
         obj.owsRecord.child($scope.id).child('id').set($scope.id);

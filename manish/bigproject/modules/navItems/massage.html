@@ -35,7 +35,7 @@
             <li><a href="massage/about">About Us</a></li>
             <li><a href="massage/contact">Contact Us</a></li>
             <li role="separator" class="divider"></li>
-            <li class="dropdown-header" ng-if="ipDetails.lat && ipDetails.lng">{{ipDetails.lat}}, {{ipDetails.lng}}</li>
+            <li ng-if="ipDetails.lat && ipDetails.lng"><a href="http://maps.google.com/maps?q=loc:{{ipDetails.lat}},{{ipDetails.lng}}" target="_blank">{{ipDetails.lat}}, {{ipDetails.lng}}</a></li>
             <li class="dropdown-header" ng-if="ipDetails.city">{{ipDetails.city}}<span ng-if="ipDetails.region">, {{ipDetails.region}}</span><span ng-if="ipDetails.postal">, {{ipDetails.postal}}</span><span ng-if="ipDetails.country">, {{ipDetails.country}}</span></li>
             <li class="dropdown-header" ng-if="ipDetails.ip">{{ipDetails.ip}}</li>
           </ul>

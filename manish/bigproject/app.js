@@ -188,11 +188,33 @@ angular.module('myApp', [
   $scope.ipDetails = null;
   function getIpDetails(res) {
     $scope.ipDetails = res.data.data.result;
-    console.log('ipdetails: ', $scope.ipDetails);
   }
   dataService.ip(getIpDetails);
   //end ip
   
+  function failurelocation(error) {
+		console.log(error);
+	}
+  
+  /*if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position){
+      console.log(position);
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			var latLng = new google.maps.LatLng(latitude,longitude);
+			var geocoder;
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'latLng': latLng}, function(results, status) {
+        console.log(results);
+        console.log(results[0]);
+        console.log(results[0].formatted_address);
+				$('#address').html(results[0].formatted_address);
+				$.get('http://wc5.org/ci/pages/nearbyloc.php?lat='+latitude+'&lon='+longitude+'&address='+encodeURIComponent(results[0].formatted_address), function(data) {
+					console.log(data);
+				});
+			});
+		}, failurelocation, {maximumAge:600000});
+  }//end if*/
 }])
 
 .controller('homePageController', ['$scope', function($scope) {
