@@ -11,12 +11,16 @@
   include_once('../functions.php');
   include_once('config.php');
   
-  $id = '-KFyA4mKJhtk0g7Uqmn1';
-  $user_id = 'facebook:748940976'; //'github:5247621';//'facebook:748940976';
+  $id = '-KG5y1aTVficxdA5eCp6';
+  $user_id = 'google:117652198097778721736'; //'google:112913147917981568678';
   echo $id;
   echo '<br>';
-  $d = copyRecordByUserId($firebase, $id, $user_id);
-  echo 'data is ';
-  pr($d);
+  echo $user_id;
+  echo '<br>';
+  $data = array();
+  $data['mc_gross'] = 9.99;
+  $data['mc_fee'] = 0.59;
+  $data['txn_id'] = 10;
+  subscr_payment($id, $user_id, $data);
   echo 'done';
 ?>

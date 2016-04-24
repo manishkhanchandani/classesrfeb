@@ -79,6 +79,24 @@ function guid()
 }
 
 
+if (!function_exists('regexp')) {
+	function regexp($input, $regexp, $casesensitive=false)
+	{
+		if ($casesensitive === true) {
+			if (preg_match_all("/$regexp/sU", $input, $matches, PREG_SET_ORDER)) {
+				return $matches;
+			}
+		} else {
+			if (preg_match_all("/$regexp/siU", $input, $matches, PREG_SET_ORDER)) {
+				return $matches;
+			}
+		}
+
+		return false;
+	}
+}
+
+
  function addAmountInUserAccount($firebase, $uid, $totalAmount, $percentage, $txn_id, $desc=array(), $basePath='/massage')
  {
    $netAmount = ($percentage / 100) * $totalAmount;
