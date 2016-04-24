@@ -53,7 +53,7 @@
                 </div>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.timestamp | customDate}}</p>
                 <p class="list-group-item-text" ng-if="item.distance >= 0">{{item.distance | number : 2}} miles away</p>
-                <p><strong>Subjects:</strong> {{item.tags}}<br></p>
+                <p><strong>Massage Type:</strong> {{item.tags}}<br></p>
                 <p ng-if="item.details.postedBy !== 'Anonymous'"><strong>Posted By: </strong>{{item.details.postedBy}}</p>
               </div>
             </div>

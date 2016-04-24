@@ -26,6 +26,8 @@
       </div>
       <p><a href="http://maps.google.com/maps?q=loc:{{results.location.latitude}},{{results.location.longitude}}" target="_blank">{{results.details.location}}</a></p>
       <p><strong>Created on:</strong> {{results.timestamp | customDate}}</p>
+      <p><strong>Massage Type:</strong> {{results.tags}}<br></p>
+      <p ng-if="item.details.postedBy !== 'Anonymous'"><strong>Posted By: </strong>{{results.details.postedBy}}</p>
       <p ng-if="results.details.gender"><strong>Gender:</strong> {{results.details.gender}}</p>
       <p ng-if="results.details.age"><strong>Age:</strong> {{results.details.age}}</p>
       <p ng-if="results.details.email"><strong>Email:</strong> {{results.details.email}}</p>
