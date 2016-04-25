@@ -41,7 +41,11 @@
                   scope.adResults.push(value);
                 });
                 var num = parseInt(scope.numOfRows);
+                if (scope.adResults.length < num) {
+                  num = scope.adResults.length;  
+                }
                 scope.adResultsNum = array_rand(scope.adResults, num);
+                console.log(scope.adResultsNum);
               });
             };//$scope.refreshAds
             var stop = $interval(refreshAds, 30000);
@@ -92,8 +96,8 @@
               //tags
               submitData.tags = (scope.adFrm.tags ? scope.adFrm.tags : '');
               //data
-              submitData.images = scope.adFrm.image;
-              submitData.links = scope.adFrm.link;
+              submitData.images = (scope.adFrm.image) ? scope.adFrm.image : '';
+              submitData.links = (scope.adFrm.link) ? scope.adFrm.link : '';
               submitData.timestamp = Firebase.ServerValue.TIMESTAMP;
               scope.adRef.$add(submitData).then(function(response) {
                 var id = response.key();

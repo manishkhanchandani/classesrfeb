@@ -1,23 +1,25 @@
 <style type="text/css">
 .advertisements {
   font-size: 12px;
-  font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+  font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif
+  /*Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif*/
 }
 .advertisements .description {
-  font-size: 10px;
+  font-size: 11px;
 }
 .advertisements .links {
-  font-size: 10px;
+  font-size: 11px;
 }
 .advertisements .location {
-  font-size: 10px;
+  font-size: 11px;
 }
 </style>
 <div class="row advertisements">
   <div class="col-md-12" ng-if="adResultsNum" ng-repeat="items in adResultsNum">
     <div class="row">
       <div class="col-md-3">
-        <img src="{{adResults[items].images}}" class="img-responsive">
+        <img ng-if="adResults[items].images" src="{{adResults[items].images}}" class="img-responsive">
+        <img ng-if="!adResults[items].images" src="images/noimage.jpg" class="img-responsive">
       </div>
       <div class="col-md-9">
         <p><b><a href="{{adResults[items].links}}" target="_blank">{{adResults[items].title}}</a></b></p>
@@ -72,23 +74,23 @@
     <form ng-submit="createNewAd();">
         <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" class="form-control addressBox" id="location" ng-model="adFrm.location" placeholder="Enter Location" ng-autocomplete options="mapAdOptions" details="adFrm.adDetails"> {{adFrm.adDetails.components}}
+            <input type="text" class="form-control addressBox" id="location" ng-model="adFrm.location" placeholder="Enter Location" ng-autocomplete options="mapAdOptions" details="adFrm.adDetails">
         </div>
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="adFrm.title">
+            <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="adFrm.title" required>
         </div>
         <div class="form-group">
             <label for="image">Image URL</label>
-            <input type="text" class="form-control" id="image" placeholder="Enter Title" ng-model="adFrm.image">
+            <input type="text" class="form-control" id="image" placeholder="Enter Image URL" ng-model="adFrm.image">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="5" placeholder="Enter Description" ng-model="adFrm.description"></textarea>
+            <textarea class="form-control" id="description" rows="5" placeholder="Enter Description" ng-model="adFrm.description" required></textarea>
         </div>
         <div class="form-group">
             <label for="link">Link (Where the user will be redirected)</label>
-            <input type="text" class="form-control" id="link" placeholder="http://" ng-model="adFrm.link">
+            <input type="text" class="form-control" id="link" placeholder="http://" ng-model="adFrm.link" required>
         </div>
         <button type="submit" class="btn btn-primary form-control">Create New Ad</button>
     </form>
