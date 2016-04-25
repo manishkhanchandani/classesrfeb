@@ -27,10 +27,10 @@
             if (!scope.namespace) {
               scope.namespace = 'mainSpace';  
             }//end if
-            scope.adRefTmp  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('recordsTmp'));
-            scope.adRef  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('records'));
-            scope.adRefInactive  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('recordsInactive'));
-            scope.adRefMy  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('recordsMy'));
+            //scope.adRefTmp  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('recordsTmp'));
+            //scope.adRef  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('records'));
+            //scope.adRefInactive  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('recordsInactive'));
+            //scope.adRefMy  = $firebaseArray(scope.ref.child('advertisements').child(scope.namespace).child('recordsMy'));
             
             scope.adResults = null;
             scope.adResultsNum = null;
@@ -45,7 +45,6 @@
                   num = scope.adResults.length;  
                 }
                 scope.adResultsNum = array_rand(scope.adResults, num);
-                console.log(scope.adResultsNum);
               });
             };//$scope.refreshAds
             var stop = $interval(refreshAds, 30000);
@@ -99,8 +98,14 @@
               submitData.images = (scope.adFrm.image) ? scope.adFrm.image : '';
               submitData.links = (scope.adFrm.link) ? scope.adFrm.link : '';
               submitData.timestamp = Firebase.ServerValue.TIMESTAMP;
-              scope.adRef.$add(submitData).then(function(response) {
-                var id = response.key();
+              //scope.adRef.$add(submitData).then(function(response) {
+                //var id = response.key();
+                var newPostRef = scope.ref.child('advertisements').child(scope.namespace).child('records').push(submitData);
+                var id = newPostRef.key();
+                //adding additional records
+                scope.ref.child('advertisements').child(scope.namespace).child('recordsMy').child(scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
+                scope.ref.child('advertisements').child(scope.namespace).child('recordsLocation').child(btoa(submitData.location.country)).child(btoa(submitData.location.state)).child(btoa(submitData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+                //ending additional records
                 scope.adFrm = {};
                 scope.adError = 'Advertisement Created Successfully. Please Click Subscribe link to enable the advertisement.';
                 scope.showPaypal = true;
@@ -125,7 +130,7 @@
                   cancelURL: 'http://ineedmassage.us/advertisements/paypal/cancel/' + id,
                   notifyURL: 'http://ineedmassage.us/php/advertisements/ipnNofity.php'
                 };
-              });
+              //});
             };
             //submit new add form ends
             
