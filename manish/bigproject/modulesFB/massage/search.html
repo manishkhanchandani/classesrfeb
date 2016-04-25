@@ -20,7 +20,7 @@
         <button type="submit" class="btn btn-primary form-control">Search</button>
     </form>
     </div><!-- form -->
-    <div class="col-md-9">
+    <div class="col-md-6">
       <div class="alert alert-danger" role="alert" ng-if="searchStatus">
       {{searchStatus}}
       </div>
@@ -80,5 +80,8 @@
       
       
     </div><!-- results -->
+    <div class="col-md-3">
+      <div advertisments user-data="userData" namespace="massage" ref="ref" num-of-rows="3"></div>
+    </div>
   </div>
 </div>

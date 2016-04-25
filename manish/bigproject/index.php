@@ -1,6 +1,6 @@
 <?php
 include_once('php/init.php');
-
+$jsVersion = '1.1';
 
 ?>
 <!DOCTYPE html>
@@ -49,12 +49,15 @@ include_once('php/init.php');
 
 <script src="js/pagination/dirPagination.js"></script>
 
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script.js?v=<?php echo $jsVersion; ?>"></script>
 
 
 <!-- pagination module -->
 <script type="text/javascript" src="directives/pagination/pagination.js"></script>
 <!-- pagination module ends -->
+<!-- advertisements module -->
+<script type="text/javascript" src="directives/advertisements/advertisements.js?v=<?php echo $jsVersion; ?>"></script>
+<!-- advertisements module ends -->
 
 <!-- Include YT library and youtube directive (https://github.com/brandly/angular-youtube-embed)-->
 <script src="https://www.youtube.com/iframe_api"></script>
