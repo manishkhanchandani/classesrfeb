@@ -45,6 +45,7 @@
                   num = scope.adResults.length;  
                 }
                 scope.adResultsNum = array_rand(scope.adResults, num);
+                if(!scope.$$phase) scope.$apply();
               });
             };//$scope.refreshAds
             var stop = $interval(refreshAds, 30000);

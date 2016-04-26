@@ -189,6 +189,7 @@ angular.module('myApp', [
   $scope.ipDetails = null;
   function getIpDetails(res) {
     $scope.ipDetails = res.data.data.result;
+    dataService.get('http://wc5.org/ci/pages/nearbyloc.php?lat='+$scope.ipDetails.lat+'&lon='+$scope.ipDetails.lng, function(response) { $scope.ipDetails.nearby = response.data; }, function(error) {console.log('error: ', error);}, true);
   }
   dataService.ip(getIpDetails);
   //end ip

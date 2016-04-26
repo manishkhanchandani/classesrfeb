@@ -38,6 +38,8 @@
             <li ng-if="ipDetails.lat && ipDetails.lng"><a href="http://maps.google.com/maps?q=loc:{{ipDetails.lat}},{{ipDetails.lng}}" target="_blank">{{ipDetails.lat}}, {{ipDetails.lng}}</a></li>
             <li class="dropdown-header" ng-if="ipDetails.city">{{ipDetails.city}}<span ng-if="ipDetails.region">, {{ipDetails.region}}</span><span ng-if="ipDetails.postal">, {{ipDetails.postal}}</span><span ng-if="ipDetails.country">, {{ipDetails.country}}</span></li>
             <li class="dropdown-header" ng-if="ipDetails.ip">{{ipDetails.ip}}</li>
+            <li role="separator" class="divider"></li>
+            <li ng-if="ipDetails.nearby" ng-repeat="nearby in ipDetails.nearby | orderBy: distance"><a href="">{{nearby.city}} ({{nearby.distance}} miles)</a></li>
           </ul>
         </li>
       </ul>
