@@ -20,7 +20,7 @@
       <div>
       <p ng-if="results.grossprice"><strong>Regular Price:</strong> 
       <span ng-if="!results.discount">{{results.grossprice | currency}}</span> 
-      <span ng-if="results.discount"><s style="color:red;">{{results.grossprice | currency}}</s> ({{results.netprice | currency}}, <strong>Discount of</strong> {{results.discount | currency}})</span> 
+      <span ng-if="results.discount"><s style="color:red;">{{results.grossprice | currency}}</s> ({{results.userprice | currency}}, <strong>Discount of</strong> {{results.discount | currency}})</span> 
       </p>
       <p ng-if="results.coupon_info">{{results.coupon_info}}</p>
       </div>

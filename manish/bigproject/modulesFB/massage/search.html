@@ -47,7 +47,7 @@
                 <div>
                   <p ng-if="item.grossprice"><strong>Regular Price:</strong> 
                   <span ng-if="!item.discount">{{item.grossprice | currency}}</span> 
-                  <span ng-if="item.discount"><s style="color:red;">{{item.grossprice | currency}}</s> ({{item.netprice | currency}}, <strong>Discount of</strong> {{item.discount | currency}})</span> 
+                  <span ng-if="item.discount"><s style="color:red;">{{item.grossprice | currency}}</s> ({{item.userprice | currency}}, <strong>Discount of</strong> {{item.discount | currency}})</span> 
                   </p>
                   <!--<p ng-if="item.coupon_info">{{item.coupon_info}}</p>-->
                 </div>

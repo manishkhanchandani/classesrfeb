@@ -1032,6 +1032,8 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.discount = ($scope.frm.discount) ? $scope.frm.discount : '';
     $scope.current.netprice = ($scope.frm.netprice) ? $scope.frm.netprice : '';
     $scope.current.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
+    $scope.current.userprice = ($scope.frm.userprice) ? $scope.frm.userprice : '';
+    $scope.current.admin_fees = ($scope.frm.admin_fees) ? $scope.frm.admin_fees : '';
     
     $scope.current.location.latitude = $scope.frm.details.components.lat;
     $scope.current.location.longitude = $scope.frm.details.components.lng;

@@ -20,8 +20,8 @@ $jsVersion = '1.1';
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css?v=<?php echo $jsVersion; ?>">
+  <link href="css/font-awesome.min.css?v=<?php echo $jsVersion; ?>" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,25 +29,24 @@ $jsVersion = '1.1';
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app.css?v=<?php echo $jsVersion; ?>">
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+<script src="js/angular.min.js?v=<?php echo $jsVersion; ?>"></script>
+<script src="js/angular-route.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- Firebase -->
-<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<script src="js/firebase.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- AngularFire -->
-<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script src="js/angularfire.min.js?v=<?php echo $jsVersion; ?>"></script>
 
 <!-- jquery -->
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery-1.11.3.min.js?v=<?php echo $jsVersion; ?>"></script>
+<script src="js/jquery-migrate-1.2.1.min.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/ui-bootstrap-tpls.min.js"></script>
-<script type="text/javascript" src="js/ngAutocomplete.js"></script>
+<script src="js/bootstrap.min.js?v=<?php echo $jsVersion; ?>"></script>
+<script type="text/javascript" src="js/ngAutocomplete.js?v=<?php echo $jsVersion; ?>"></script>
 
-<script src="js/pagination/dirPagination.js"></script>
+<script src="js/pagination/dirPagination.js?v=<?php echo $jsVersion; ?>"></script>
 
 <script type="text/javascript" src="js/script.js?v=<?php echo $jsVersion; ?>"></script>
 
@@ -61,31 +60,31 @@ $jsVersion = '1.1';
 
 <!-- Include YT library and youtube directive (https://github.com/brandly/angular-youtube-embed)-->
 <script src="https://www.youtube.com/iframe_api"></script>
-<script src="js/angular-youtube-embed.js"></script>
+<script src="js/angular-youtube-embed.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- Include YT library and this directive -->
 
-  <script src="app.js"></script>
-  <script src="services/data.js"></script>
+  <script src="app.js?v=<?php echo $jsVersion; ?>"></script>
+  <script src="services/data.js?v=<?php echo $jsVersion; ?>"></script>
   
 <!-- login module -->
-<script type="text/javascript" src="directives/login/login.js"></script>
+<script type="text/javascript" src="directives/login/login.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- login module ends -->
 
 
 <!-- messages module -->
-<script type="text/javascript" src="directives/messages/messages.js"></script>
+<script type="text/javascript" src="directives/messages/messages.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- messages module ends -->
 
 <!-- File Upload -->
-<script src="js/angularFileUpload/angular-file-upload.js"></script>
-<script src="js/angularFileUpload/directives.js"></script>
+<script src="js/angularFileUpload/angular-file-upload.js?v=<?php echo $jsVersion; ?>"></script>
+<script src="js/angularFileUpload/directives.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- File Upload -->
 
-  <script src="modules/messages/messages.js"></script>
-  <script src="modulesFB/lessons/lessons.js"></script>
-  <script src="modulesFB/students/students.js"></script>
-  <script src="modulesFB/manager/manager.js"></script>
-  <script src="modulesFB/massage/massage.js"></script>
+  <script src="modules/messages/messages.js?v=<?php echo $jsVersion; ?>"></script>
+  <script src="modulesFB/lessons/lessons.js?v=<?php echo $jsVersion; ?>"></script>
+  <script src="modulesFB/students/students.js?v=<?php echo $jsVersion; ?>"></script>
+  <script src="modulesFB/manager/manager.js?v=<?php echo $jsVersion; ?>"></script>
+  <script src="modulesFB/massage/massage.js?v=<?php echo $jsVersion; ?>"></script>
   <script>
   
 $(document).on("keypress", 'form', function (e) {
