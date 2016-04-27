@@ -29,7 +29,7 @@
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.detailsFull.location}}</a></p>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.dateFormattedAll}}</p>
                 <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
-                <p><a href="{{meta.redirectUrl}}/edit/{{item.id}}">Edit This Profile</a> | <a href="{{meta.redirectUrl}}/create/imagesUpload/{{item.id}}">Upload Image</a> | <a href="{{meta.redirectUrl}}/create/images/{{item.id}}">Add Image Url</a> | <a href="{{meta.redirectUrl}}/create/youtube/{{item.id}}">Add Youtube Url</a> | <a href="{{meta.redirectUrl}}/create/links/{{item.id}}">Add Links/PDF</a><br><a href="" ng-click="deleteProfile(item);">Delete This Profile</a></p>
+                <p><a href="{{meta.redirectUrl}}/edit/{{item.id}}">Edit This Profile</a> | <a href="{{meta.redirectUrl}}/create/img/{{item.id}}">Add Image</a> | <a href="{{meta.redirectUrl}}/create/youtube/{{item.id}}">Add Youtube Url</a> | <a href="{{meta.redirectUrl}}/create/links/{{item.id}}">Add Links/PDF</a><br><a href="" ng-click="deleteProfile(item);">Delete This Profile</a></p>
               </div>
             </div>
           

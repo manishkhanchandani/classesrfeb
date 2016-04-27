@@ -749,6 +749,15 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   var obj = dataService.massageSetFirebase($scope.ref);
   $scope.meta = obj.meta;
   
+  
+  $scope.changePrice = function() {
+    $scope.frm.admin_fees = $scope.frm.grossprice * (10 / 100);
+    if (!$scope.frm.discount) $scope.frm.discount = 0.00;
+    $scope.frm.netprice = $scope.frm.grossprice - $scope.frm.discount - $scope.frm.admin_fees;
+    $scope.frm.userprice =  $scope.frm.grossprice - $scope.frm.discount;
+  };
+  
+  
   //location starts
   $scope.mapOptions = {
     types: 'geocode'
@@ -800,6 +809,11 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.location.place_id = $scope.frm.details.place_id;
     postData.location.county = ($scope.frm.details.components.county) ? $scope.frm.details.components.county : '';
     postData.location.formatted_addr = $scope.frm.details.formatted_address;
+    
+    postData.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
+    postData.userprice = ($scope.frm.userprice) ? $scope.frm.userprice : '';
+    postData.admin_fees = ($scope.frm.admin_fees) ? $scope.frm.admin_fees : '';
+    
     postData.tags = $scope.frm.tags;
     postData.tags2 = postData.tags;
     postData.tags2 = postData.tags2 + ',' + postData.title;
@@ -827,21 +841,21 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.createdLocation = $scope.ipDetails;
 
     var currentObj = {};
-    currentObj.owsArr = obj.owsArrTmp;
+    /*currentObj.owsArr = obj.owsArrTmp;
     currentObj.owsRecord = obj.owsRecordTmp;
     currentObj.owsMy = obj.owsMyTmp;
     currentObj.owsLocation = obj.owsLocationTmp;
     currentObj.owsTags = obj.owsTagsTmp;
-    currentObj.owsOnlyTags = obj.owsOnlyTagsTmp;
+    currentObj.owsOnlyTags = obj.owsOnlyTagsTmp;*/
     
-    if ($scope.userData.provider === 'anonymous') {
+    //if ($scope.userData.provider === 'anonymous') {
       currentObj.owsArr = obj.owsArr;
       currentObj.owsRecord = obj.owsRecord;
       currentObj.owsMy = obj.owsMy;
       currentObj.owsLocation = obj.owsLocation;
       currentObj.owsTags = obj.owsTags;
       currentObj.owsOnlyTags = obj.owsOnlyTags;
-    }
+    //}
 
     currentObj.owsArr.$add(postData).then(function(response) {
       var id = response.key();
@@ -880,11 +894,11 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       }//end if
         //location ends
        $scope.frm = {};
-       if ($scope.userData.provider === 'anonymous') {
+       //if ($scope.userData.provider === 'anonymous') {
           $location.path('/massage/create/img/'+id);
-       } else {
-          $location.path('/massage/paypal/'+id);
-       }
+       //} else {
+          //$location.path('/massage/paypal/'+id);
+       //}
     });
   };
 }])
@@ -933,6 +947,9 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.grossprice = $scope.current.grossprice;
     $scope.frm.discount = $scope.current.discount;
     $scope.frm.netprice = $scope.current.netprice;
+    $scope.frm.paypal_email = $scope.current.paypal_email;
+    $scope.frm.userprice = $scope.current.userprice;
+    $scope.frm.admin_fees = $scope.current.admin_fees;
     
     $scope.frm.tags = $scope.current.tags;
     $scope.frm.email = $scope.current.details.email;
@@ -952,7 +969,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.details.place_id = $scope.current.location.place_id;
     $scope.frm.details.components.county = $scope.current.location.county;
     $scope.frm.details.formatted_address = $scope.current.location.formatted_addr;
-    console.log($scope.frm);
   };
   
   obj.owsArr.$loaded().then(function (arrR) {
@@ -960,7 +976,8 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   });
   
   $scope.changePrice = function() {
-    $scope.frm.netprice = $scope.frm.grossprice - $scope.frm.discount; 
+    $scope.frm.admin_fees = $scope.frm.grossprice * (10 / 100);
+    $scope.frm.netprice = $scope.frm.grossprice - $scope.frm.discount - $scope.frm.admin_fees; 
   };
   
   

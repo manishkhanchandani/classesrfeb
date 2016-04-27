@@ -28,16 +28,22 @@
             <textarea class="form-control" id="coupon_info" placeholder="Enter coupon / discount information, e.g. 20% off if you buy 6 passes" ng-model="frm.coupon_info"></textarea>
         </div>
         <div class="form-group">
-            <label for="grossprice">Regular Price (in $)</label>
-            <input type="number" class="form-control" id="grossprice" placeholder="Enter regular price e.g. $ 60.00" ng-model="frm.grossprice" ng-change="changePrice()">
+            <label for="grossprice">Regular Price (in $) *</label>
+            <input type="number" class="form-control" id="grossprice" placeholder="Enter regular price e.g. 60.00 (in US dollars)" ng-model="frm.grossprice" ng-change="changePrice()" required>
         </div>
         <div class="form-group">
             <label for="discount">Discount Price (in $)</label>
-            <input type="number" class="form-control" id="discount" placeholder="Enter discounted amount e.g. $ 5.00" ng-model="frm.discount" ng-change="changePrice()">
+            <input type="number" class="form-control" id="discount" placeholder="Enter discounted amount e.g. 5.00 (in US dollars)" ng-model="frm.discount" ng-change="changePrice()">
         </div>
         <div class="form-group">
-            <label for="netprice">Net Price (in $)</label>
-            <input type="number" class="form-control" id="netprice" placeholder="Enter final net price e.g. $ 55.00" ng-model="frm.netprice"><!-- ng-value="(frm.grossprice - frm.discount)  | number : 2"-->
+            <label for="admin_fees">Admin Fees (Amount to be paid to admin): {{frm.admin_fees | currency}}</label>
+        </div>
+        <div class="form-group">
+            <label for="netprice">Net Price To You {{frm.netprice | currency}} and User Pays {{frm.userprice | currency}}</label>
+        </div>
+        <div class="form-group">
+            <label for="paypal_email">Your Paypal Email * </label>
+            <input type="email" class="form-control" id="paypal_email" placeholder="Enter Paypal Email" ng-model="frm.paypal_email" required>
         </div>
         <h3>Contact & Person Information</h3>
         <div class="form-group">
