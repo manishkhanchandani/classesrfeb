@@ -49,7 +49,7 @@
                   <span ng-if="!item.discount">{{item.grossprice | currency}}</span> 
                   <span ng-if="item.discount"><s style="color:red;">{{item.grossprice | currency}}</s> ({{item.userprice | currency}}, <strong>Discount of</strong> {{item.discount | currency}})</span> 
                   </p>
-                  <!--<p ng-if="item.coupon_info">{{item.coupon_info}}</p>-->
+                  <p ng-if="item.coupon_info"><strong>Info:</strong> {{item.coupon_info}}</p>
                 </div>
                 <p class="list-group-item-text"><strong>Created On:</strong> {{item.timestamp | customDate}}</p>
                 <p class="list-group-item-text" ng-if="item.distance >= 0">{{item.distance | number : 2}} miles away</p>
