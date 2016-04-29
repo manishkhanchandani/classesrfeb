@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.lessons',
   'myApp.students',
   'myApp.massage',
+  'myApp.mkt',
   'myApp.manager',
   'advertisementModule',
   'firebase'
@@ -37,6 +38,17 @@ angular.module('myApp', [
     firebaseUrl: 'https://mkgxy.firebaseio.com/projects/massage',
     tid: 3,
     homePage: 'modulesFB/massage/massage.html',
+    apiUrl: 'http://api.mkgalaxy.com/'
+  },
+  '24hr-market.tk': {
+    siteUrl: 'mkt',
+    clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
+    clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
+    apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
+    title: '24hr Market',
+    firebaseUrl: 'https://mkgxy.firebaseio.com/projects/mkt',
+    tid: 'mkt',
+    homePage: 'modulesFB/mkt/mkt.html',
     apiUrl: 'http://api.mkgalaxy.com/'
   }
 })
@@ -94,25 +106,7 @@ angular.module('myApp', [
 })
 
 
-//http://gonzalo123.com/2014/09/08/sharing-scope-between-controllers-with-angularjs/
-.factory('Scopes', function ($rootScope) {
-    var mem = {};
- 
-    return {
-        store: function (key, value) {
-            $rootScope.$emit('scope.stored', key);
-            mem[key] = value;
-        },
-        get: function (key) {
-            return mem[key];
-        }
-    };
-})
-
-
-
 .controller('mainController', ['$scope', '$location', '$firebaseArray', 'dataService', '$timeout', function($scope, $location, $firebaseArray, dataService, $timeout) {
-  
   //config
   $scope.config = dataService.config();
   $scope.templateUrl = 'modules/navItems/'+$scope.config.siteUrl+'.html';
@@ -189,7 +183,13 @@ angular.module('myApp', [
   $scope.ipDetails = null;
   function getIpDetails(res) {
     $scope.ipDetails = res.data.data.result;
-    dataService.get('http://wc5.org/ci/pages/nearbyloc.php?lat='+$scope.ipDetails.lat+'&lon='+$scope.ipDetails.lng, function(response) { $scope.ipDetails.nearby = response.data; }, function(error) {console.log('error: ', error);}, true);
+    dataService.get('http://api.mkgalaxy.com/api.php?action=nearby&lat='+$scope.ipDetails.lat+'&lng='+$scope.ipDetails.lng, function(response) {
+      $scope.ipDetails.nearby = [];
+      angular.forEach(response.data.data, function (value, key) {
+        value.distance = parseFloat(value.distance);
+        $scope.ipDetails.nearby.push(value);
+      });
+    }, function(error) {console.log('error: ', error);}, true);
   }
   dataService.ip(getIpDetails);
   //end ip

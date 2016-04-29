@@ -76,6 +76,28 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
     var obj = {};
     var theme = '';
     switch (type) {
+      case 'mkt':
+        theme = 'mkt';
+        obj.owsRecord = ref.child(theme).child('records');
+        obj.owsLocation = ref.child(theme).child('location');
+        obj.owsTags = ref.child(theme).child('tags');
+        obj.owsOnlyTags = ref.child(theme).child('onlyTags');
+        obj.owsMy = ref.child(theme).child('my');
+        obj.owsArr = $firebaseArray(obj.owsRecord);
+        obj.meta = {
+          showCharges: true,
+          showChargesExplanation: true,
+          title: '24hr-Market',
+          titleHeading: '24hr-Market',
+          redirectUrl: 'mkt',
+          beginClass: false,
+          availability: false,
+          preferred_location: false,
+          tutoring_goal: false,
+          lesson_frequency: false,
+          grade_level: false
+        };
+        break;
       case 'tutors':
         theme = 'tutors';
         obj.owsRecord = ref.child(theme).child('records');
@@ -181,6 +203,9 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
   };
   this.massageSetFirebase = function(ref) {
     return this.setFirebase('massage', ref);
+  };
+  this.mktSetFirebase = function(ref) {
+    return this.setFirebase('mkt', ref);
   };
   
   this.refChainList = [];

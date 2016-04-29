@@ -85,6 +85,7 @@ $jsVersion = '1.1';
   <script src="modulesFB/students/students.js?v=<?php echo $jsVersion; ?>"></script>
   <script src="modulesFB/manager/manager.js?v=<?php echo $jsVersion; ?>"></script>
   <script src="modulesFB/massage/massage.js?v=<?php echo $jsVersion; ?>"></script>
+  <script src="modulesFB/mkt/mkt.js?v=<?php echo $jsVersion; ?>"></script>
   <script>
   
 $(document).on("keypress", 'form', function (e) {
