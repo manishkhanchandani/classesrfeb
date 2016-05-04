@@ -127,12 +127,23 @@ function processData($firebase, $id, $user_id, $data) {
     
     $remedy = "\n\n";
     if (!empty($remedyRecord)) {
+      
+      if (count($remedyRecord) == 1) {
+        $remedy .= "Take ".$remedyRecord[0]." (One dose of 5 pills) and then no medicine for a month.\n";  
+      } else if (count($remedyRecord) == 2) {
+        $remedy .= "Take ".$remedyRecord[0]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[1]." (One dose of 5 pills) and then no medicine for a month.";  
+      } else if (count($remedyRecord) == 3) {
+        $remedy .= "Take ".$remedyRecord[0]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[1]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[2]." (One dose of 5 pills) and then no medicine for a month.";  
+      } else if (count($remedyRecord) == 4) {
+        $remedy .= "Take ".$remedyRecord[0]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[1]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[2]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[3]." (One dose of 5 pills) and then no medicine for a month.";  
+      }
+      /*
       foreach ($remedyRecord as $k => $v) {
         if ($k >= 1) {
           $remedy .= "Followed by: ";  
         }
         $remedy .= "Take ".$v." (One dose of 5 pills) and then no medicine for a month.\n";  
-      }
+      }*/
     }//end if
     $prescription = "Dear ".$record['name'].",
 Your prescription for this month is ".$remedy."
