@@ -138,8 +138,10 @@ function processData($firebase, $id, $user_id, $data) {
       
       
     }//end if
+    
+    $remedy .= "\n\nIn chronic cases, You have to take this remedy till you get change in your problem. If your problem decreases or increases, then it means medicine has started working and so don't take any further doses for 3 more months. After 3 months come back on the website to create a follow-up case. In acute case, one dose will cure your problem.";
     $prescription = "Dear ".$record['name'].",
-Your prescription for this month is ".$remedy."
+Your prescription for this month is: ".$remedy."
     ";
     error_log(date('[Y-m-d H:i e] '). "prescription: ". $prescription. PHP_EOL, 3, LOG_FILE);
     mail($record['email'], 'Homeopathic Prescription For '.$record['name'], $prescription, 'From: HomeopathyRx<remedy@homeopathyrx.tk>');
