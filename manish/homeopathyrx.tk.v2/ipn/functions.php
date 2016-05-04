@@ -114,8 +114,6 @@ function processData($firebase, $id, $user_id, $data) {
     $r['amount']['gross'] = $data['mc_gross'];
     $r['amount']['fees'] = $data['mc_fee'];
     $r['amount']['net'] = $data['mc_gross'] - $data['mc_fee'];
-    error_log(date('[Y-m-d H:i e] '). "r: ". var_export($r, 1). PHP_EOL, 3, LOG_FILE);
-    $firebase->update($path, $r);
     //get email
     $record = json_decode($firebase->get($path), 1);
     error_log(date('[Y-m-d H:i e] '). "record: ". var_export($record, 1). PHP_EOL, 3, LOG_FILE);
@@ -137,17 +135,17 @@ function processData($firebase, $id, $user_id, $data) {
       } else if (count($remedyRecord) == 4) {
         $remedy .= "Take ".$remedyRecord[0]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[1]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[2]." (One dose of 5 pills) and then no medicine for a month.\nFollowed by ".$remedyRecord[3]." (One dose of 5 pills) and then no medicine for a month.";  
       }
-      /*
-      foreach ($remedyRecord as $k => $v) {
-        if ($k >= 1) {
-          $remedy .= "Followed by: ";  
-        }
-        $remedy .= "Take ".$v." (One dose of 5 pills) and then no medicine for a month.\n";  
-      }*/
+      
+      
     }//end if
     $prescription = "Dear ".$record['name'].",
 Your prescription for this month is ".$remedy."
     ";
     error_log(date('[Y-m-d H:i e] '). "prescription: ". $prescription. PHP_EOL, 3, LOG_FILE);
     mail($record['email'], 'Homeopathic Prescription For '.$record['name'], $prescription, 'From: HomeopathyRx<remedy@homeopathyrx.tk>');
+    
+    $r['remedies'] = $remedyRecord;
+    $r['prescription'] = $prescription;
+    error_log(date('[Y-m-d H:i e] '). "r: ". var_export($r, 1). PHP_EOL, 3, LOG_FILE);
+    $firebase->update($path, $r);
 }
