@@ -44,10 +44,11 @@
                 <p ng-if="userData.uid !== item.uid && item.details.postedBy !== 'Anonymous' && userData.displayName !== 'Anonymous' && userData.uid" class="pull-right"><span><a href="messages/{{item.uid}}">Send Message</a></span></p>
                 <h4 class="list-group-item-heading"><a href="{{meta.redirectUrl}}/detail/{{item.id}}">{{item.title}}</a></h4>
                 <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.details.location}}</a></p>
-                <div>
+                <div>{{item.grossprice | currency}}, {{item.userprice | currency}}, {{item.discount | currency}}
                   <p ng-if="item.grossprice"><strong>Regular Price:</strong> 
                   <span ng-if="!item.discount">{{item.grossprice | currency}}</span> 
-                  <span ng-if="item.discount"><s style="color:red;">{{item.grossprice | currency}}</s> ({{item.userprice | currency}}, <strong>Discount of</strong> {{item.discount | currency}})</span> 
+                  <span ng-if="item.discount"><s style="color:red;">{{item.grossprice | currency}}</s> ({{item.userprice | currency}}, <strong>Discount of</strong> {{item.discount | currency}}) <a href='https://www.chainedpayments.com/EZChain/go.php?ButtonID=K071309725X5AVUN6Z1FLO006&ItemName=Massage+Coupon&ItemPrice={{item.userprice}}&CompanyName=Websmc&ReturnURL=http%3A%2F%2FreturnUrl&CancelURL=http%3A%2F%2FcancelUrl&Receiver2Amount={{item.netprice}}&Email2=renu09-facilitator%40live.com' target='_blank' class="pull-right">Get Coupon!!</a></span>
+                  
                   </p>
                   <p ng-if="item.coupon_info"><strong>Info:</strong> {{item.coupon_info}}</p>
                 </div>
@@ -81,7 +82,7 @@
       
     </div><!-- results -->
     <div class="col-md-3">
-      <div advertisments user-data="userData" namespace="massage" ref="ref" num-of-rows="5"></div>
+      <div advertisment user-data="userData" namespace="massage" ref="ref" num-of-rows="5"></div>
     </div>
   </div>
 </div>

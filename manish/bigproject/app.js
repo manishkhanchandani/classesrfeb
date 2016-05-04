@@ -12,6 +12,7 @@ angular.module('myApp', [
   'myApp.students',
   'myApp.massage',
   'myApp.mkt',
+  'myApp.food',
   'myApp.manager',
   'advertisementModule',
   'firebase'
@@ -49,6 +50,17 @@ angular.module('myApp', [
     firebaseUrl: 'https://mkgxy.firebaseio.com/projects/mkt',
     tid: 'mkt',
     homePage: 'modulesFB/mkt/mkt.html',
+    apiUrl: 'http://api.mkgalaxy.com/'
+  },
+  '24hr-food.tk': {
+    siteUrl: 'food',
+    clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
+    clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
+    apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
+    title: '24hr Food',
+    firebaseUrl: 'https://mkgxy.firebaseio.com/projects/food',
+    tid: 'food',
+    homePage: 'modulesFB/food/food.html',
     apiUrl: 'http://api.mkgalaxy.com/'
   }
 })

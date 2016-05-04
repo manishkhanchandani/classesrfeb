@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="row">
-    <form ng-submit="">
     <div class="col-md-7">
+      <form ng-submit="submitForm()">
           <div class="form-group">
               <label for="disorder">Choose Disorder</label>
               <select ng-model="frm.disease" class="form-control" ng-options="option.disease for option in results" ng-change="updateDisease();">
@@ -22,45 +22,46 @@
           
           <div class="form-group">
               <label for="name">Name *</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter name">
+              <input type="text" class="form-control" ng-model="frm.name" id="name" placeholder="Enter name">
           </div>
           <div class="form-group">
               <label for="email">Email address *</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
+              <input type="email" class="form-control" id="email" ng-model="frm.email" placeholder="Enter email">
           </div>
           <div class="form-group">
               <label for="age">Age *</label>
-              <input type="text" class="form-control" id="age" placeholder="Enter age">
+              <input type="number" class="form-control" id="age" ng-model="frm.age" placeholder="Enter age">
           </div>
+          <h3>Optional Questions</h3>
+          
+          <div class="form-group">
+              <label for="description">Describe your problem in detail? (Also mention any lab reports, x-ray, sonography, etc)</label>
+              <textarea class="form-control" id="description" ng-model="frm.description"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="modalities">When your problem increases/decreases?</label>
+              <textarea class="form-control" id="modalities" ng-model="frm.modalities"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="dowholeday">What you do whole day?</label>
+              <textarea class="form-control" id="dowholeday" ng-model="frm.dowholeday"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="reactions">Your reactions in different situations like in anger, fear, anxiety, sadness, crying?</label>
+              <textarea class="form-control" id="reactions" ng-model="frm.reactions"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="attitude">Your attitude towards your friends, families, outsiders, etc.?</label>
+              <textarea class="form-control" id="attitude" ng-model="frm.attitude"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="food">Your desire in food, your hatrance in food, etc.?</label>
+              <textarea class="form-control" id="food" ng-model="frm.food"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Continue</button>
+      </form>
     </div>
     <div class="col-md-5">
-      <h3>Optional Questions</h3>
-      
-      <div class="form-group">
-          <label for="description">Describe your problem in detail? (Also mention any lab reports, x-ray, sonography, etc)</label>
-          <textarea class="form-control" id="description"></textarea>
-      </div>
-      <div class="form-group">
-          <label for="modalities">When your problem increases/decreases?</label>
-          <textarea class="form-control" id="modalities"></textarea>
-      </div>
-      <div class="form-group">
-          <label for="dowholeday">What you do whole day?</label>
-          <textarea class="form-control" id="dowholeday"></textarea>
-      </div>
-      <div class="form-group">
-          <label for="reactions">Your reactions in different situations?</label>
-          <textarea class="form-control" id="reactions"></textarea>
-      </div>
-      <div class="form-group">
-          <label for="attitude">Your attitude towards your friends, families, outsiders, etc.?</label>
-          <textarea class="form-control" id="attitude"></textarea>
-      </div>
-      <div class="form-group">
-          <label for="food">Your desire in food, your hatrance in food, etc.?</label>
-          <textarea class="form-control" id="food"></textarea>
-      </div>
     </div>
-    </form>
   </div>
 </div>
