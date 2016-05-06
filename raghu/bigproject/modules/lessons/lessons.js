@@ -17,17 +17,37 @@ angular.module('myApp.lessons', ['ngRoute'])
     templateUrl: 'modules/lessons/images.html',
     controller: 'ViewImagesCtrl'
   })
+  .when('/lessons/search', {
+    templateUrl: 'modules/lessons/search.html',
+    controller: 'ViewLessonsSearchCtrl'
+  })
 	;
 }])
 
 .controller('ViewLessonsCtrl', ['$scope', function($scope) {
 	
 }])
+
+.controller('ViewLessonsSearchCtrl', ['$scope', function($scope) {
+	
+}])
+
 .controller('ViewCreateCtrl', ['$scope', '$location', 'dataService',function($scope, $location, dataService) {
 	$scope.mapOptions = {
 		types: 'geocode'
 	};
 	$scope.details = {};	
+	
+	function createAdSuccess(response) {
+			console.log('success');
+			console.log(response.data.data.id);
+			$scope.frm = {};   //Why are we not doing $scope.frm = null
+			$location.path('/lessons/images/' + response.data.data.id);
+		}
+	function createAdFailure(response) {
+			console.log('Create lesson add: Post data failure: ', response);
+		}
+	
 	$scope.submitCreateForm = function() {
 		//Call the api to submit the form form here
 		
@@ -70,23 +90,53 @@ angular.module('myApp.lessons', ['ngRoute'])
 	
 		console.log(postData);
 		
-		
-		function createAdSuccess(response) {
-			console.log('success');
-			console.log(response.data.data.id);
-			$scope.frm = {};   //Why are we not doing $scope.frm = null
-			$location.path('/lessons/images/' + response.data.data.id);
-		}
-		function createAdFailure(response) {
-			console.log('Create lesson add: Post data failure: ', response);
-		}
-		
 		dataService.post(url, postData, createAdSuccess, createAdFailure);
 		}
 	};
 	$scope.details = {};	
 }])
-.controller('ViewImagesCtrl', ['$scope', function($scope) {
+.controller('ViewImagesCtrl', ['$scope', '$routeParams','dataService', function($scope, $routeParams,dataService) {
 	
+	$scope.images = {};
+	$scope.addImage = function() {
+			function submitImgSuccess(response){
+				$scope.frm = {};
+				console.log('success: submitImgSuccess');
+				console.log(response);
+				$scope.getData();
+			}
+			function submitImgFaiure(response){
+				console.log('ERROR: submitImgFaiure');
+				console.log(response);
+			}
+			var imageUrl = $scope.frm.imageUrl;
+			if (imageUrl) {
+				var postData = '';
+      		postData = postData + '&param='+encodeURIComponent(imageUrl);
+				var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&access_token='+$scope.loggedInUsersData.token+'&key=images&id='+$routeParams.id;
+				
+				
+				dataService.post(url, postData, submitImgSuccess, submitImgFaiure);
+				
+			} //end addImage function 
+		};
+
+	
+		function successGetData(response){
+				console.log('success: successGetData');
+				console.log(response);
+				$scope.images = response.data.data.detailsFull.images;
+		}
+		function failureGetData(response){
+				console.log('ERROR: failureGetData');
+				console.log(response);
+			}
+	$scope.getData = function() {
+			var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&id='+$routeParams.id;
+		
+			dataService.get(url, successGetData, failureGetData, false);
+		}; //end getData function
+		
+	$scope.getData();	
 }])
 ;
