@@ -14,6 +14,14 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
   $locationProvider.html5Mode(true);
 }])
 
+.filter('customDate', function($filter) {
+ return function(input) {
+  if(input == null){ return ""; }
+  var _date = $filter('date')(new Date(input), 'MMM dd yyyy');
+  return _date;
+ };
+})
+
 .controller('mainController', ['$scope', 'dataService', '$timeout', function($scope, dataService, $timeout) {
   $scope.config = dataService.config();
   $scope.ref = new Firebase($scope.config.firebaseUrl);

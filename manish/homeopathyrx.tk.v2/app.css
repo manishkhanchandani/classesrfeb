@@ -65,6 +65,10 @@ section {
   list-style: none;
   font-size: 18px;
   line-height: 2em;
+  font-weight:bold;
+}
+.feature-list li p {
+  font-weight:normal;
 }
 
 footer {
