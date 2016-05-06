@@ -88,7 +88,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   var access_token = $scope.userData.token;
   $scope.id = $routeParams.id;
   
-  var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=upload&tid=2&access_token='+access_token+'&id='+$routeParams.id;
+  var requestUrl = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=upload&tid='+dataService.tid()+'&access_token='+access_token+'&id='+$routeParams.id;
   var uploader = $scope.uploader = new FileUploader({
       url: requestUrl
   });
@@ -164,7 +164,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   }
   
   $scope.getYoutube = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, getSuccess, getFailure);
   };
   
@@ -191,7 +191,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
       submitData = submitData + '&param='+encodeURIComponent($scope.frm.youtube);
       //url
       var access_token = $scope.userData.token;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid=2&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+access_token+'&key=youtube&id='+$routeParams.id;
       dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
@@ -219,7 +219,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   }
   
   $scope.getLinks = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&tid=2&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&noCache=1&tid='+dataService.tid()+'&id='+$routeParams.id;
     dataService.get(url, getSuccess, getFailure);
   };
   
@@ -246,7 +246,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
       submitData = submitData + '&param='+encodeURIComponent($scope.frm.linkUrl);
       //url
       var access_token = $scope.userData.token;
-      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid=2&access_token='+access_token+'&key=links&id='+$routeParams.id;
+      var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+access_token+'&key=links&id='+$routeParams.id;
       dataService.post(url, submitData, addSuccess, addFailure);
   };
 }])
@@ -296,7 +296,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     console.log('failed: ', response);
   }
   
-  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&id='+$routeParams.id;
+  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&id='+$routeParams.id;
   dataService.get(url, getSuccess, getFailure, true);
   
   $scope.goBack = function() {
@@ -357,7 +357,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid=2&path=/manny/students&max=4&noCache=1';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=my&showLocation=1&tid='+dataService.tid()+'&path=/manny/students&noCache=1';
     
     
     url = url + '&page=' + $scope.frm.page;
@@ -367,11 +367,27 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   };//get data ends
   
   $scope.getData();//get data on page load
+  
+  function deleteSuccess(response) {
+    $scope.getData();
+  }
+  
+  function deleteFailure(response) {
+    console.log('failure: ', response);
+  }
+
+  $scope.deleteProfile = function(itemDetail) {
+    var a = confirm('do you really want to delete this profile');
+    if (!a) return;
+    var access_token = $scope.userData.token;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=delete&tid='+dataService.tid()+'&id='+itemDetail.id+'&access_token='+access_token;
+    dataService.get(url, deleteSuccess, deleteFailure, false);
+  };
 }])
 
 
 
-.controller('ViewStudentsSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('ViewStudentsSearchCtrl', ['$scope', '$location', 'dataService', '$routeParams', 'configs', function($scope, $location, dataService, $routeParams, configs) {
   $scope.title = 'Students';
   
   //location starts
@@ -471,7 +487,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   
   $scope.getData = function() {
     $scope.loading = true;
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid=2&showLocation=1&max=12';
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&tid='+dataService.tid()+'&showLocation=1';
     
     
     var path = '/manny/students';
@@ -555,7 +571,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
         return; 
       }
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/students&tid=2';
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=add&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/students&tid='+dataService.tid();
      
     //console.log(url);
     var postData = '';
@@ -570,11 +586,18 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
     postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
     postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.location);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
     
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
-    postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
+    postData = postData + '&data[gender]=' + (($scope.frm.gender) ? encodeURIComponent($scope.frm.gender) : '');
+    postData = postData + '&data[age]=' + (($scope.frm.age) ? encodeURIComponent($scope.frm.age) : '');
+    postData = postData + '&data[email]=' + (($scope.frm.email) ? encodeURIComponent($scope.frm.email) : '');
+    postData = postData + '&data[phone]=' + (($scope.frm.phone) ? encodeURIComponent($scope.frm.phone) : '');
+    postData = postData + '&data[pref_email]=' + (($scope.frm.pref_email) ? encodeURIComponent($scope.frm.pref_email) : '');
+    postData = postData + '&data[pref_phone_text]=' + (($scope.frm.pref_phone_text) ? encodeURIComponent($scope.frm.pref_phone_text) : '');
+    postData = postData + '&data[pref_phone_call]=' + (($scope.frm.pref_phone_call) ? encodeURIComponent($scope.frm.pref_phone_call) : '');
+    postData = postData + '&data[location]='+encodeURIComponent($scope.location);
     
     //console.log(postData);
     dataService.post(url, postData, addSuccess, addFailure);
@@ -605,8 +628,15 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     $scope.frm.title = response.data.data.title;
     $scope.frm.description = response.data.data.description;
     $scope.frm.tags = response.data.data.detailsFull.tagsSingle;
+    
     $scope.frm.gender = response.data.data.detailsFull.gender;
-    $scope.location = response.data.data.location.formatted_addr;
+    $scope.frm.age = parseInt(response.data.data.detailsFull.age);
+    $scope.frm.email = response.data.data.detailsFull.email;
+    $scope.frm.phone = response.data.data.detailsFull.phone;
+    $scope.frm.pref_email = (response.data.data.detailsFull.pref_email === "true") ? true : false;
+    $scope.frm.pref_phone_text = (response.data.data.detailsFull.pref_phone_text === "true") ? true : false;
+    $scope.frm.pref_phone_call = (response.data.data.detailsFull.pref_phone_call === "true") ? true : false;
+    $scope.location = response.data.data.detailsFull.location;
     
     
     $scope.details.components.lat = response.data.data.location.latitude;
@@ -624,7 +654,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, successGetData, failureGetData, false);
   };
   
@@ -642,7 +672,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   
   $scope.submitCreateForm = function() {
      //call api service to submit the form
-     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/students&tid=2&id='+$routeParams.id;
+     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=update&saveIP=1&access_token='+$scope.userData.token+'&path=/manny/students&tid='+dataService.tid()+'&id='+$routeParams.id;
 
     var postData = '';
     postData = postData + '&title='+encodeURIComponent($scope.frm.title);
@@ -656,11 +686,18 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
     postData = postData + '&location[zip]='+encodeURIComponent($scope.details.components.postal_code);
     postData = postData + '&location[place_id]='+encodeURIComponent($scope.details.place_id);
     postData = postData + '&location[county]='+encodeURIComponent($scope.details.components.county);
-    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.location);
+    postData = postData + '&location[formatted_addr]='+encodeURIComponent($scope.details.formatted_address);
     
     postData = postData + '&tags='+encodeURIComponent($scope.frm.tags);
     
-    postData = postData + '&data[gender]='+encodeURIComponent($scope.frm.gender);
+    postData = postData + '&data[gender]=' + (($scope.frm.gender) ? encodeURIComponent($scope.frm.gender) : '');
+    postData = postData + '&data[age]=' + (($scope.frm.age) ? encodeURIComponent($scope.frm.age) : '');
+    postData = postData + '&data[email]=' + (($scope.frm.email) ? encodeURIComponent($scope.frm.email) : '');
+    postData = postData + '&data[phone]=' + (($scope.frm.phone) ? encodeURIComponent($scope.frm.phone) : '');
+    postData = postData + '&data[pref_email]=' + (($scope.frm.pref_email) ? encodeURIComponent($scope.frm.pref_email) : '');
+    postData = postData + '&data[pref_phone_text]=' + (($scope.frm.pref_phone_text) ? encodeURIComponent($scope.frm.pref_phone_text) : '');
+    postData = postData + '&data[pref_phone_call]=' + (($scope.frm.pref_phone_call) ? encodeURIComponent($scope.frm.pref_phone_call) : '');
+    postData = postData + '&data[location]='+encodeURIComponent($scope.location);
     dataService.post(url, postData, addSuccess, addFailure);
   };
 }])
@@ -685,7 +722,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   }
   
   $scope.getData = function() {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid=2&noCache=1&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getOne&tid='+dataService.tid()+'&noCache=1&id='+$routeParams.id;
     dataService.get(url, successGetData, failureGetData, false);
   };
   
@@ -713,7 +750,7 @@ angular.module('myApp.students', ['ngRoute', 'angularFileUpload', 'youtube-embed
   
   $scope.addImage = function() {
     //console.log($scope.frm);
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid=2&access_token='+$scope.userData.token+'&key=images&id='+$routeParams.id;
+    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=updateSingle&tid='+dataService.tid()+'&access_token='+$scope.userData.token+'&key=images&id='+$routeParams.id;
     var postData = '';
     postData = postData + '&param='+encodeURIComponent($scope.frm.image);
     

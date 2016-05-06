@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{userData.displayName}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <img ng-src="{{userData.image}}" class="img-responsive img-thumbnail">
+    </div>
+    <div class="col-md-9">
+      <p ng-if="userData.email"><strong>Email:</strong> {{userData.email}}</p>
+      <p ng-if="userData.timestamp"><strong>Joined Date:</strong> {{userData.timestamp | customDate}}</p>
+      <p ng-if="userData.uid"><strong>Uid:</strong> {{userData.uid}}</p>
+      <p ng-if="userData.url"><strong>Url:</strong> <a href="{{userData.url}}" target="_blank">{{userData.url}}</a></p>
+      
+      
+    </div>
+  </div>
+</div>

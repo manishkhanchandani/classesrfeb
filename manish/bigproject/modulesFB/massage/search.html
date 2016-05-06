@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Search or Browse {{meta.title}}</h3>
+    </div>
+  </div>
+  <!-- title ends -->
+  
+  <div class="row">
+    <div class="col-md-3">
+      <form ng-submit="constructURL()">
+        <div class="form-group">
+            <label for="keyword">Keyword</label>
+            <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+        </div>
+        <div class="form-group">
+            <label for="location">Near</label>
+            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Search</button>
+    </form>
+    </div><!-- form -->
+    <div class="col-md-6">
+      <div class="alert alert-danger" role="alert" ng-if="searchStatus">
+      {{searchStatus}}
+      </div>
+      <div class="alert alert-danger" role="alert" ng-if="results.length === 0 && !loading">
+        No results found.
+      </div>
+      <div ng-if="loading">
+        <img src="images/loading.gif">
+      </div>
+      
+       <div class="list-group" ng-if="results && !loading">
+          <div class="list-group-item" ng-repeat="item in results | limitTo : pagination.maxRows : pagination.startRow | orderBy: orderBy">
+            <div class="row">
+              <div class="col-md-2">
+                <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="item.details.defaultImage"><img ng-src="{{item.details.defaultImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="item.details.images && !item.details.defaultImage" ng-repeat="image in item.details.images | objectAsArray | limitTo: 1 : 0"><img ng-src="{{image}}" class="img-responsive img-thumbnail"></a>
+                <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="!item.details.images && item.details.profileImage"><img ng-src="{{item.details.profileImage}}" class="img-responsive img-thumbnail"></a>
+                <a href="{{meta.redirectUrl}}/detail/{{item.id}}" ng-if="!item.details.images && !item.details.profileImage"><img ng-src="{{defaultImage}}" class="img-responsive img-thumbnail"></a>
+              </div>
+              <div class="col-md-10">
+                <p ng-if="userData.uid !== item.uid && item.details.postedBy !== 'Anonymous' && userData.displayName !== 'Anonymous' && userData.uid" class="pull-right"><span><a href="messages/{{item.uid}}">Send Message</a></span></p>
+                <h4 class="list-group-item-heading"><a href="{{meta.redirectUrl}}/detail/{{item.id}}">{{item.title}}</a></h4>
+                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.location.latitude}},{{item.location.longitude}}" target="_blank">{{item.details.location}}</a></p>
+                <div>{{item.grossprice | currency}}, {{item.userprice | currency}}, {{item.discount | currency}}
+                  <p ng-if="item.grossprice"><strong>Regular Price:</strong> 
+                  <span ng-if="!item.discount">{{item.grossprice | currency}}</span> 
+                  <span ng-if="item.discount"><s style="color:red;">{{item.grossprice | currency}}</s> ({{item.userprice | currency}}, <strong>Discount of</strong> {{item.discount | currency}}) <a href='https://www.chainedpayments.com/EZChain/go.php?ButtonID=K071309725X5AVUN6Z1FLO006&ItemName=Massage+Coupon&ItemPrice={{item.userprice}}&CompanyName=Websmc&ReturnURL=http%3A%2F%2FreturnUrl&CancelURL=http%3A%2F%2FcancelUrl&Receiver2Amount={{item.netprice}}&Email2=renu09-facilitator%40live.com' target='_blank' class="pull-right">Get Coupon!!</a></span>
+                  
+                  </p>
+                  <p ng-if="item.coupon_info"><strong>Info:</strong> {{item.coupon_info}}</p>
+                </div>
+                <p class="list-group-item-text"><strong>Created On:</strong> {{item.timestamp | customDate}}</p>
+                <p class="list-group-item-text" ng-if="item.distance >= 0">{{item.distance | number : 2}} miles away</p>
+                <p><strong>Massage Type:</strong> {{item.tags}}<br></p>
+                <p ng-if="item.details.postedBy !== 'Anonymous'"><strong>Posted By: </strong>{{item.details.postedBy}}</p>
+              </div>
+            </div>
+          
+            
+          </div>
+          
+        </div>
+        <div class="row" ng-if="pagination.totalRows > 0">
+          <div class="col-md-12">
+            <hr>
+            <p class="text-center"> Records <strong>{{pagination.startRowsPlus}}</strong> to <strong>{{pagination.minRows}}</strong> of <strong>{{pagination.totalRows}}</strong></p>
+            <nav>
+              <ul class="pager">
+                <li ng-if="pagination.pageNum > 0"><a href="{{urlPrefix}}/0{{urlSuffix}}">First</a></li>
+                <li ng-if="pagination.pageNum > 0"><a href="{{urlPrefix}}/{{pagination.prevPage}}{{urlSuffix}}">Previous</a></li>
+                <li ng-if="pagination.pageNum < pagination.totalPages"><a href="{{urlPrefix}}/{{pagination.nextPage}}{{urlSuffix}}">Next</a></li>
+                <li ng-if="pagination.pageNum < pagination.totalPages"><a href="{{urlPrefix}}/{{pagination.totalPages}}{{urlSuffix}}">Last</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      
+      
+      
+    </div><!-- results -->
+    <div class="col-md-3">
+      <div advertisment user-data="userData" namespace="massage" ref="ref" num-of-rows="5"></div>
+    </div>
+  </div>
+</div>

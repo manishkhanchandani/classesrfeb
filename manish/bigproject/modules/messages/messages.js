@@ -7,8 +7,11 @@ angular.module('myApp.messages', ['ngRoute'])
     templateUrl: 'modules/messages/messages.html',
     controller: 'MessagesCtrl'
   });
+  $routeProvider.when('/messages/:uid', {
+    templateUrl: 'modules/messages/messages.html',
+    controller: 'MessagesCtrl'
+  });
 }])
 
 .controller('MessagesCtrl', ['$scope', function($scope) {
-  console.log($scope);
 }]);

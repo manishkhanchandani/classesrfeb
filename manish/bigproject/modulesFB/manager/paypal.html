@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>County Manager</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Benefits of Our Website County Manager</h3>
+      <p>Following the responsibilities of county manager. You will be earning 40% of the profit from all the cities in that county for which you are manager. 20% of all the profit will go to admin, 40% of all the profit will go as a referral fees. So if you refer more, you will also earn more.</p>
+      <p>Profit can come from postings, advertisements, subscriptions etc.</p>
+    </div>
+    <div class="col-md-8">
+      <h3>Become a our website county Manager</h3>
+      <p>{{results.county.county}}, {{results.county.state}}, {{results.county.country}}</p>
+      <div class="alert alert-danger" role="alert" ng-if="frm.status">
+        {{frm.status}}
+      </div>
+      <div>
+
+        <ng-include src="'modulesFB/manager/paypal_form.html'"></ng-include>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>

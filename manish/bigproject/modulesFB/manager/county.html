@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>County Manager</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Benefits of County Manager</h3>
+      <p>Following the responsibilities of county manager. You will be earning x% of the profit from all the cities in that county for which you are manager. Profit can come from postings, advertisements, subscriptions etc.</p>
+    </div>
+    <div class="col-md-8">
+      <h3>Become a county Manager</h3>
+      <div class="alert alert-danger" role="alert" ng-if="frm.status">
+        {{frm.status}}
+      </div>
+      <form ng-submit="addCountyManager()">
+          <div class="form-group">
+              <label for="location">Choose City (County will be calculated automatically) *</label>
+              <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details" >
+          </div>
+          <div class="form-group">
+              <label for="county">County</label>
+              <input type="text" class="form-control" id="county" ng-model="frm.details.components.county" disabled>
+          </div>
+          <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" ng-value="userData.email" disabled>
+          </div>
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter name" ng-value="userData.displayName" disabled>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" value="1" ng-model="frm.agree" required>I agree to <a href="">terms and conditions</a> of a county manager.
+              </label>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>

@@ -1,0 +1,102 @@
+<style type="text/css">
+.advertisements {
+  font-size: 12px;
+  font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif
+  /*Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif*/
+}
+.advertisements .description {
+  font-size: 11px;
+}
+.advertisements .links {
+  font-size: 11px;
+}
+.advertisements .location {
+  font-size: 11px;
+}
+</style>
+<div class="row advertisements">
+  <div class="col-md-12" ng-if="adResultsNum" ng-repeat="items in adResultsNum">
+    <div class="row">
+      <div class="col-md-3">
+        <img ng-if="adResults[items].images" src="{{adResults[items].images}}" class="img-responsive">
+        <img ng-if="!adResults[items].images" src="images/noimage.jpg" class="img-responsive">
+      </div>
+      <div class="col-md-9">
+        <p><b><a href="{{adResults[items].links}}" target="_blank">{{adResults[items].title}}</a></b></p>
+        <p class="description">{{adResults[items].description | limitTo:255}}</p>
+        <p class="location"><a href="http://maps.google.com/maps?q=loc:{{adResults[items].location.latitude}},{{adResults[items].location.longitude}}" target="_blank">{{adResults[items].location.formatted_addr}}</a></p>
+      </div>
+    </div>
+  </div>
+ 
+  
+  <div class="col-md-12 links">
+    <hr>
+    <a href="" ng-click="addNewForm();">Add New</a> | <a href="#">My Ads</a>
+    
+    <div class="alert alert-danger" role="alert" ng-if="adError">
+      {{adError}}
+    </div>
+      <div ng-if="showPaypal">
+      <!--https://www.paypal.com/cgi-bin/webscr-->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+          <input type="hidden" name="cmd" value="_xclick-subscriptions">
+          <input type="hidden" name="business" value="renu09@live.com">
+        <input type="hidden" name="item_name" id="item_name" ng-value="paypalFrm.itemName">
+            <input type="hidden" name="custom" id="custom" ng-value='paypalFrm.custom | json' >
+            <input type="hidden" name="currency_code" value="USD" />
+      
+        <!-- First two months of subscription are free. -->
+        <input ng-if="paypalFrm.trail_period_type" type="hidden" name="a1" ng-value="paypalFrm.trail_period_amount" />
+        <input ng-if="paypalFrm.trail_period_type" type="hidden" name="p1" ng-value="paypalFrm.trail_period_number" />
+        <input ng-if="paypalFrm.trail_period_type" type="hidden" name="t1" ng-value="paypalFrm.trail_period_frequency" />
+      
+        <!-- Recurring subscription payments. -->
+        <input ng-if="paypalFrm.subscription_period_type" type="hidden" name="a3" ng-value="paypalFrm.subscription_period_amount" />
+        <input ng-if="paypalFrm.subscription_period_type" type="hidden" name="p3" ng-value="paypalFrm.subscription_period_number" />
+        <input ng-if="paypalFrm.subscription_period_type" type="hidden" name="t3" ng-value="paypalFrm.subscription_period_frequency" />
+        <input type="hidden" name="src" value="1" />
+        <input type="hidden" name="sra" value="1" />
+         <input type="hidden" name="item_number" id="item_number" ng-value="paypalFrm.itemNumber" >
+        <input type="hidden" name="return" ng-value="paypalFrm.confirmURL">
+        <input type="hidden" name="cancel_return" ng-value="paypalFrm.cancelURL">
+        <input type="hidden" name="notify_url" ng-value="paypalFrm.notifyURL">
+          <!-- Display the payment button. -->
+          <input type="image" name="submit" border="0"
+          src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_subscribe_cc_147x47.png"
+          alt="PayPal - The safer, easier way to pay online">
+          <img alt="" border="0" width="1" height="1"
+          src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+      </form>
+      </div>
+  </div>
+  <div class="col-md-12" ng-if="addNew">
+    <form ng-submit="createNewAd();">
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control addressBox" id="location" ng-model="adFrm.location" placeholder="Enter Location" ng-autocomplete options="mapAdOptions" details="adFrm.adDetails">
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="adFrm.title" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input type="text" class="form-control" id="image" placeholder="Enter Image URL" ng-model="adFrm.image">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="5" placeholder="Enter Description" ng-model="adFrm.description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="link">Link (Where the user will be redirected)</label>
+            <input type="text" class="form-control" id="link" placeholder="http://" ng-model="adFrm.link" required>
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Create New Ad</button>
+    </form>
+  </div>
+  
+  <div class="col-md-12" ng-if="myAds">
+    <p><a href="">Current Ads</a> | <a href="">Pending Ads</a></p>
+  </div>
+</div>

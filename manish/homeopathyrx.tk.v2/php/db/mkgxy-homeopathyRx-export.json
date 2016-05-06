@@ -1,0 +1,3146 @@
+{
+  "diseases" : [ null, {
+    "details" : [ null, {
+      "disease_id" : "1",
+      "id" : "1",
+      "pulse" : "Tight and Floating",
+      "pulse_id" : "1",
+      "tcd" : "Cold And Wind",
+      "tcd_id" : "1",
+      "title" : "Thin White Coating (Pulse: Tight and Floating)",
+      "tongue" : "Thin White Coating",
+      "tongue_id" : "1"
+    }, {
+      "disease_id" : "1",
+      "id" : "2",
+      "pulse" : "Floating and Rapid",
+      "pulse_id" : "2",
+      "tcd" : "Hot Wind",
+      "tcd_id" : "2",
+      "title" : "Thin Yellow Coating (Pulse: Floating and Rapid)",
+      "tongue" : "Thin Yellow Coating",
+      "tongue_id" : "2"
+    }, {
+      "disease_id" : "1",
+      "id" : "3",
+      "pulse" : "Floating and Slippery",
+      "pulse_id" : "3",
+      "tcd" : "Damp Wind",
+      "tcd_id" : "3",
+      "title" : "Greasy, white coating (Pulse: Floating and Slippery)",
+      "tongue" : "Greasy, white coating",
+      "tongue_id" : "3"
+    }, {
+      "disease_id" : "1",
+      "id" : "4",
+      "pulse" : "Wiry",
+      "pulse_id" : "4",
+      "tcd" : "Constrained Liver Qi",
+      "tcd_id" : "4",
+      "title" : "White coating (Pulse: Wiry)",
+      "tongue" : "White coating",
+      "tongue_id" : "4"
+    }, {
+      "disease_id" : "1",
+      "id" : "5",
+      "pulse" : "Wiry and rapid",
+      "pulse_id" : "5",
+      "tcd" : "Liver Fire Blazing Upwards",
+      "tcd_id" : "5",
+      "title" : "Red or yellow coating (Pulse: Wiry and rapid)",
+      "tongue" : "Red or yellow coating",
+      "tongue_id" : "5"
+    }, {
+      "disease_id" : "1",
+      "id" : "6",
+      "pulse" : "Wiry",
+      "pulse_id" : "4",
+      "tcd" : "Aberrant Liver Yang Ascending",
+      "tcd_id" : "6",
+      "title" : "Red, thin, dry coating (Pulse: Wiry)",
+      "tongue" : "Red, thin, dry coating",
+      "tongue_id" : "6"
+    }, {
+      "disease_id" : "1",
+      "id" : "7",
+      "pulse" : "Empty",
+      "pulse_id" : "6",
+      "tcd" : "Deficient Spleen Qi",
+      "tcd_id" : "7",
+      "title" : "Pale white coating (Pulse: Empty)",
+      "tongue" : "Pale white coating",
+      "tongue_id" : "7"
+    }, {
+      "disease_id" : "1",
+      "id" : "8",
+      "pulse" : "Thin and soft",
+      "pulse_id" : "7",
+      "tcd" : "Deficient Blood",
+      "tcd_id" : "8",
+      "title" : "Pale, white coating (Pulse: Thin and soft)",
+      "tongue" : "Pale, white coating",
+      "tongue_id" : "8"
+    }, {
+      "disease_id" : "1",
+      "id" : "9",
+      "pulse" : "Slippery",
+      "pulse_id" : "8",
+      "tcd" : "Turbid Mucus",
+      "tcd_id" : "9",
+      "title" : "Greasy, pasty, white coating (Pulse: Slippery)",
+      "tongue" : "Greasy, pasty, white coating",
+      "tongue_id" : "9"
+    }, {
+      "disease_id" : "1",
+      "id" : "10",
+      "pulse" : "Thin and rapid",
+      "pulse_id" : "9",
+      "tcd" : "Deficient Kidney Yin",
+      "tcd_id" : "10",
+      "title" : "Red, peeled, dry coating (Pulse: Thin and rapid)",
+      "tongue" : "Red, peeled, dry coating",
+      "tongue_id" : "10"
+    }, {
+      "disease_id" : "1",
+      "id" : "11",
+      "pulse" : "Frail and soft",
+      "pulse_id" : "10",
+      "tcd" : "Deficient Qi",
+      "tcd_id" : "11",
+      "title" : "Pale, swollen, moist, scanty coating (Pulse: Frail and soft)",
+      "tongue" : "Pale, swollen, moist, scanty coating",
+      "tongue_id" : "11"
+    }, {
+      "disease_id" : "1",
+      "id" : "12",
+      "pulse" : "Choppy",
+      "pulse_id" : "11",
+      "tcd" : "Congealed Blood",
+      "tcd_id" : "12",
+      "title" : "Purplish darkish coating or red spots on tongue (Pulse: Choppy)",
+      "tongue" : "Purplish darkish coating or red spots on tongue",
+      "tongue_id" : "12"
+    } ],
+    "disease" : "Headaches",
+    "disease_id" : "1"
+  }, {
+    "details" : {
+      "13" : {
+        "disease_id" : "2",
+        "id" : "13",
+        "pulse" : "Wiry and Slippery",
+        "pulse_id" : "12",
+        "tcd" : "Wind Mucus Obstructing Meridians, Liver Yang",
+        "tcd_id" : "13",
+        "title" : "Greasy, white coating (Pulse: Wiry and Slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "14" : {
+        "disease_id" : "2",
+        "id" : "14",
+        "pulse" : "Wiry, slippery, and full",
+        "pulse_id" : "13",
+        "tcd" : "Fire Mucus Suddenly Collapsing, Liver Fire Blazing",
+        "tcd_id" : "14",
+        "title" : "Greasy, yellow coating (Pulse: Wiry, slippery, and full)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "15" : {
+        "disease_id" : "2",
+        "id" : "15",
+        "pulse" : "Sinking and wiry",
+        "pulse_id" : "14",
+        "tcd" : "Cold Mucus Obstructing",
+        "tcd_id" : "15",
+        "title" : "Pale, puffy, darkish coating (Pulse: Sinking and wiry)",
+        "tongue" : "Pale, puffy, darkish coating",
+        "tongue_id" : "14"
+      },
+      "16" : {
+        "disease_id" : "2",
+        "id" : "16",
+        "pulse" : "Sinking, rapid and thin or hidden",
+        "pulse_id" : "15",
+        "tcd" : "Yin and Yang Collapsing",
+        "tcd_id" : "16",
+        "title" : "Tremulous, pale (Pulse: Sinking, rapid and thin or hidden)",
+        "tongue" : "Tremulous, pale",
+        "tongue_id" : "15"
+      },
+      "17" : {
+        "disease_id" : "2",
+        "id" : "17",
+        "pulse" : "Sinking and choppy",
+        "pulse_id" : "16",
+        "tcd" : "Deficient Qi, Congealed Blood",
+        "tcd_id" : "17",
+        "title" : "Pale, white coating (Pulse: Sinking and choppy)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "18" : {
+        "disease_id" : "2",
+        "id" : "18",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red coating (Pulse: Wiry)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      }
+    },
+    "disease" : "Cerebro-Vascular Accidents - Strokes",
+    "disease_id" : "2"
+  }, {
+    "details" : {
+      "19" : {
+        "disease_id" : "3",
+        "id" : "19",
+        "pulse" : "Thin or empty",
+        "pulse_id" : "17",
+        "tcd" : "Deficient Blood and Deficient Spleen Qi",
+        "tcd_id" : "19",
+        "title" : "Pale coating (Pulse: Thin or empty)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "20" : {
+        "disease_id" : "3",
+        "id" : "20",
+        "pulse" : "Rapid and thin",
+        "pulse_id" : "18",
+        "tcd" : "Heart and Kidney not in Balance (or Deficient Heart Yin and Deficient Kidney Yin)",
+        "tcd_id" : "20",
+        "title" : "Red coating (Pulse: Rapid and thin)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "21" : {
+        "disease_id" : "3",
+        "id" : "21",
+        "pulse" : "Wiry and thin",
+        "pulse_id" : "19",
+        "tcd" : "Deficient Heart Qi and Gall-Bladder Qi",
+        "tcd_id" : "21",
+        "title" : "Pale coating (Pulse: Wiry and thin)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "22" : {
+        "disease_id" : "3",
+        "id" : "22",
+        "pulse" : "Slippery",
+        "pulse_id" : "8",
+        "tcd" : "Stomach not Harmonized",
+        "tcd_id" : "22",
+        "title" : "Greasy (Pulse: Slippery)",
+        "tongue" : "Greasy",
+        "tongue_id" : "18"
+      },
+      "23" : {
+        "disease_id" : "3",
+        "id" : "23",
+        "pulse" : "Wiry and strong",
+        "pulse_id" : "20",
+        "tcd" : "Liver Fire and Gall-bladder Fire",
+        "tcd_id" : "23",
+        "title" : "Red coated (Pulse: Wiry and strong)",
+        "tongue" : "Red coated",
+        "tongue_id" : "19"
+      }
+    },
+    "disease" : "Insomnia, Anxiety, Endogenous Depression",
+    "disease_id" : "3"
+  }, {
+    "details" : {
+      "24" : {
+        "disease_id" : "4",
+        "id" : "24",
+        "pulse" : "Thin and frail",
+        "pulse_id" : "21",
+        "tcd" : "Deficient Qi and Deficient Blood",
+        "tcd_id" : "24",
+        "title" : "Pale white coating (Pulse: Thin and frail)",
+        "tongue" : "Pale white coating",
+        "tongue_id" : "7"
+      },
+      "25" : {
+        "disease_id" : "4",
+        "id" : "25",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Kidney Yin",
+        "tcd_id" : "10",
+        "title" : "Reddish coating (Pulse: Thin and rapid)",
+        "tongue" : "Reddish coating",
+        "tongue_id" : "20"
+      },
+      "26" : {
+        "disease_id" : "4",
+        "id" : "26",
+        "pulse" : "Imperceptible",
+        "pulse_id" : "22",
+        "tcd" : "Deficient Kidney Yang",
+        "tcd_id" : "25",
+        "title" : "Pale, moist coating (Pulse: Imperceptible)",
+        "tongue" : "Pale, moist coating",
+        "tongue_id" : "21"
+      },
+      "27" : {
+        "disease_id" : "4",
+        "id" : "27",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Liver Wind",
+        "tcd_id" : "26",
+        "title" : "Red, scanty coating (Pulse: Wiry)",
+        "tongue" : "Red, scanty coating",
+        "tongue_id" : "22"
+      },
+      "28" : {
+        "disease_id" : "4",
+        "id" : "28",
+        "pulse" : "Slippery",
+        "pulse_id" : "8",
+        "tcd" : "Turbid Mucus in Excess",
+        "tcd_id" : "27",
+        "title" : "Greasy (Pulse: Slippery)",
+        "tongue" : "Greasy",
+        "tongue_id" : "18"
+      }
+    },
+    "disease" : "Tinnitis, Vertigo",
+    "disease_id" : "4"
+  }, {
+    "details" : {
+      "29" : {
+        "disease_id" : "5",
+        "id" : "29",
+        "pulse" : "Floating and tight",
+        "pulse_id" : "25",
+        "tcd" : "External Wind Pernicious Influences Collecting in Channels",
+        "tcd_id" : "40",
+        "title" : "Variable (Pulse: Floating and tight)",
+        "tongue" : "Variable",
+        "tongue_id" : "28"
+      },
+      "30" : {
+        "disease_id" : "5",
+        "id" : "30",
+        "pulse" : "Wiry and fast",
+        "pulse_id" : "31",
+        "tcd" : "External Heat Generating Wind",
+        "tcd_id" : "41",
+        "title" : "Red coating (Pulse: Wiry and fast)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "31" : {
+        "disease_id" : "5",
+        "id" : "31",
+        "pulse" : "Fragile and soft",
+        "pulse_id" : "32",
+        "tcd" : "Deficient Blood Generating Wind",
+        "tcd_id" : "42",
+        "title" : "Pale coating (Pulse: Fragile and soft)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "32" : {
+        "disease_id" : "5",
+        "id" : "32",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Yin Generating Wind",
+        "tcd_id" : "43",
+        "title" : "Red coating, little coating (Pulse: Thin and rapid)",
+        "tongue" : "Red coating, little coating",
+        "tongue_id" : "29"
+      },
+      "33" : {
+        "disease_id" : "5",
+        "id" : "33",
+        "pulse" : "Choppy and soft",
+        "pulse_id" : "33",
+        "tcd" : "Excess Sputum Obstructing and Generating Wind",
+        "tcd_id" : "44",
+        "title" : "Darkish coating with red and purple spots (Pulse: Choppy and soft)",
+        "tongue" : "Darkish coating with red and purple spots",
+        "tongue_id" : "30"
+      }
+    },
+    "disease" : "Epilepsy, Spasms, Tremors or Convulsions",
+    "disease_id" : "5"
+  }, {
+    "details" : {
+      "34" : {
+        "disease_id" : "6",
+        "id" : "34",
+        "pulse" : "Floating and tight",
+        "pulse_id" : "25",
+        "tcd" : "Wind Cold, Pernicious Influence",
+        "tcd_id" : "31",
+        "title" : "Thin, white coating (Pulse: Floating and tight)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      },
+      "35" : {
+        "disease_id" : "6",
+        "id" : "35",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "Wind Heat, Pernicious Influence",
+        "tcd_id" : "32",
+        "title" : "Thin, yellow coating (Pulse: Floating and Rapid)",
+        "tongue" : "Thin, yellow coating",
+        "tongue_id" : "25"
+      },
+      "36" : {
+        "disease_id" : "6",
+        "id" : "36",
+        "pulse" : "Soggy and slow",
+        "pulse_id" : "26",
+        "tcd" : "Wind Cold With Dampness, Pernicious Influence",
+        "tcd_id" : "33",
+        "title" : "Greasy, white coating (Pulse: Soggy and slow)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "37" : {
+        "disease_id" : "6",
+        "id" : "37",
+        "pulse" : "Soggy and rapid",
+        "pulse_id" : "27",
+        "tcd" : "Summer Heat, Dampness, Pernicious Influence",
+        "tcd_id" : "34",
+        "title" : "Greasy, yellow coating (Pulse: Soggy and rapid)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "38" : {
+        "disease_id" : "6",
+        "id" : "38",
+        "pulse" : "Floating thin and rapid",
+        "pulse_id" : "28",
+        "tcd" : "Dryness, Pernicious Influence",
+        "tcd_id" : "35",
+        "title" : "Redy, dry coating (Pulse: Floating thin and rapid)",
+        "tongue" : "Redy, dry coating",
+        "tongue_id" : "26"
+      }
+    },
+    "disease" : "The Common Cold (Coryza), Rhinitis",
+    "disease_id" : "6"
+  }, {
+    "details" : {
+      "39" : {
+        "disease_id" : "7",
+        "id" : "39",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "Lung Heat Injuring Meridians",
+        "tcd_id" : "36",
+        "title" : "Red, yellow coating (Pulse: Floating and Rapid)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "40" : {
+        "disease_id" : "7",
+        "id" : "40",
+        "pulse" : "Slippery and flooding",
+        "pulse_id" : "29",
+        "tcd" : "Stomach, Fire Rebelling Upwards",
+        "tcd_id" : "37",
+        "title" : "Red, yellow coating (Pulse: Slippery and flooding)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "41" : {
+        "disease_id" : "7",
+        "id" : "41",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Liver, Fire, Ascending",
+        "tcd_id" : "38",
+        "title" : "Red, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "42" : {
+        "disease_id" : "7",
+        "id" : "42",
+        "pulse" : "Thin and rapid with little strength",
+        "pulse_id" : "30",
+        "tcd" : "Deficient Yin Empty Fire",
+        "tcd_id" : "39",
+        "title" : "Thin red coating (Pulse: Thin and rapid with little strength)",
+        "tongue" : "Thin red coating",
+        "tongue_id" : "27"
+      }
+    },
+    "disease" : "Epistaxis (Nose-Bleed)",
+    "disease_id" : "7"
+  }, {
+    "details" : {
+      "43" : {
+        "disease_id" : "8",
+        "id" : "43",
+        "pulse" : "Full and rapid or floating",
+        "pulse_id" : "34",
+        "tcd" : "Excess Dryness and Heat in Lungs and Stomach",
+        "tcd_id" : "45",
+        "title" : "Red coating (Pulse: Full and rapid or floating)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "44" : {
+        "disease_id" : "8",
+        "id" : "44",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Yin",
+        "tcd_id" : "46",
+        "title" : "Reddish, no coating (Pulse: Thin and rapid)",
+        "tongue" : "Reddish, no coating",
+        "tongue_id" : "31"
+      },
+      "45" : {
+        "disease_id" : "8",
+        "id" : "45",
+        "pulse" : "Empty or soggy",
+        "pulse_id" : "35",
+        "tcd" : "Deficient Spleen Qi and Dampness Acumulation",
+        "tcd_id" : "47",
+        "title" : "Pale, greasy, scanty coating (Pulse: Empty or soggy)",
+        "tongue" : "Pale, greasy, scanty coating",
+        "tongue_id" : "32"
+      },
+      "46" : {
+        "disease_id" : "8",
+        "id" : "46",
+        "pulse" : "Fragile",
+        "pulse_id" : "36",
+        "tcd" : "Kidney Yang Insufficient to Transform Water",
+        "tcd_id" : "48",
+        "title" : "Swollen, pale, scanty coating (Pulse: Fragile)",
+        "tongue" : "Swollen, pale, scanty coating",
+        "tongue_id" : "33"
+      },
+      "47" : {
+        "disease_id" : "8",
+        "id" : "47",
+        "pulse" : "Choppy and rapid",
+        "pulse_id" : "37",
+        "tcd" : "Congealed Blood",
+        "tcd_id" : "12",
+        "title" : "Darkish purple coating (Pulse: Choppy and rapid)",
+        "tongue" : "Darkish purple coating",
+        "tongue_id" : "34"
+      }
+    },
+    "disease" : "Shock, Collapse, Dehydration, Sunstroke",
+    "disease_id" : "8"
+  }, {
+    "details" : {
+      "48" : {
+        "disease_id" : "9",
+        "id" : "48",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Constrained Liver Qi",
+        "tcd_id" : "4",
+        "title" : "Thin, white coating (Pulse: Wiry)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      },
+      "49" : {
+        "disease_id" : "9",
+        "id" : "49",
+        "pulse" : "Wiry and rapid with force",
+        "pulse_id" : "38",
+        "tcd" : "Liver Fire Blazing and Heart Fire Ascending",
+        "tcd_id" : "49",
+        "title" : "Red coating (Pulse: Wiry and rapid with force)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "50" : {
+        "disease_id" : "9",
+        "id" : "50",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Heart Yin",
+        "tcd_id" : "50",
+        "title" : "Reddish, thin coating (Pulse: Thin and rapid)",
+        "tongue" : "Reddish, thin coating",
+        "tongue_id" : "35"
+      },
+      "51" : {
+        "disease_id" : "9",
+        "id" : "51",
+        "pulse" : "Soggy or slippery",
+        "pulse_id" : "39",
+        "tcd" : "Mucus, Dampness Obstructing Neck",
+        "tcd_id" : "51",
+        "title" : "Thin, greasy coating (Pulse: Soggy or slippery)",
+        "tongue" : "Thin, greasy coating",
+        "tongue_id" : "36"
+      },
+      "52" : {
+        "disease_id" : "9",
+        "id" : "52",
+        "pulse" : "Sinking, wiry, thin, and rapid",
+        "pulse_id" : "40",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red, scanty coating (Pulse: Sinking, wiry, thin, and rapid)",
+        "tongue" : "Red, scanty coating",
+        "tongue_id" : "22"
+      },
+      "53" : {
+        "disease_id" : "9",
+        "id" : "53",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Kidney Yang",
+        "tcd_id" : "25",
+        "title" : "Swollen, pale accretions (Pulse: Frail)",
+        "tongue" : "Swollen, pale accretions",
+        "tongue_id" : "37"
+      }
+    },
+    "disease" : "Hyperthyroidism - Hypothyriodism",
+    "disease_id" : "9"
+  }, {
+    "details" : {
+      "54" : {
+        "disease_id" : "10",
+        "id" : "54",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Lung Yin",
+        "tcd_id" : "52",
+        "title" : "Red, scanty coating (Pulse: Thin and rapid)",
+        "tongue" : "Red, scanty coating",
+        "tongue_id" : "22"
+      },
+      "55" : {
+        "disease_id" : "10",
+        "id" : "55",
+        "pulse" : "Empty or frail",
+        "pulse_id" : "42",
+        "tcd" : "Deficient Lung Qi",
+        "tcd_id" : "53",
+        "title" : "Pale, moist coating (Pulse: Empty or frail)",
+        "tongue" : "Pale, moist coating",
+        "tongue_id" : "21"
+      },
+      "56" : {
+        "disease_id" : "10",
+        "id" : "56",
+        "pulse" : "Soggy or slippery",
+        "pulse_id" : "39",
+        "tcd" : "Mucus and Dampness Hindering the Lungs",
+        "tcd_id" : "54",
+        "title" : "Greasy, white coating (Pulse: Soggy or slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "57" : {
+        "disease_id" : "10",
+        "id" : "57",
+        "pulse" : "Slippery and rapid",
+        "pulse_id" : "43",
+        "tcd" : "Mucus Heat Collecting in Lungs",
+        "tcd_id" : "55",
+        "title" : "Greasy, yellow coating (Pulse: Slippery and rapid)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "58" : {
+        "disease_id" : "10",
+        "id" : "58",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Liver Fire Invading Lungs",
+        "tcd_id" : "56",
+        "title" : "Thin, dry, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Thin, dry, yellow coating",
+        "tongue_id" : "38"
+      },
+      "59" : {
+        "disease_id" : "10",
+        "id" : "59",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Kidney Yan Unable to Absorb Lung Qi",
+        "tcd_id" : "57",
+        "title" : "Pale, swollen, moist coating (Pulse: Frail)",
+        "tongue" : "Pale, swollen, moist coating",
+        "tongue_id" : "39"
+      }
+    },
+    "disease" : "Bronchitis, Bronchial Asthma, Emphysema",
+    "disease_id" : "10"
+  }, {
+    "details" : {
+      "60" : {
+        "disease_id" : "11",
+        "id" : "60",
+        "pulse" : "Floating",
+        "pulse_id" : "44",
+        "tcd" : "Wind Heat Invading Lungs",
+        "tcd_id" : "58",
+        "title" : "Thin, white or thin, yellow coating (Pulse: Floating)",
+        "tongue" : "Thin, white or thin, yellow coating",
+        "tongue_id" : "40"
+      },
+      "61" : {
+        "disease_id" : "11",
+        "id" : "61",
+        "pulse" : "Rapid and slippery",
+        "pulse_id" : "45",
+        "tcd" : "Heat Obstructing Lung Qi",
+        "tcd_id" : "59",
+        "title" : "Red, yellow coating (Pulse: Rapid and slippery)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "62" : {
+        "disease_id" : "11",
+        "id" : "62",
+        "pulse" : "Deep, thin and rapid",
+        "pulse_id" : "46",
+        "tcd" : "Deficient Lung Qi and Deficient Lung Yin",
+        "tcd_id" : "60",
+        "title" : "Red or scarlet or yellow peeled coating (Pulse: Deep, thin and rapid)",
+        "tongue" : "Red or scarlet or yellow peeled coating",
+        "tongue_id" : "41"
+      },
+      "63" : {
+        "disease_id" : "11",
+        "id" : "63",
+        "pulse" : "Sinking, wiry, thin and rapid",
+        "pulse_id" : "47",
+        "tcd" : "Excess Heat Collapsing into Yin",
+        "tcd_id" : "61",
+        "title" : "Scarlet or dry grayesh coating (Pulse: Sinking, wiry, thin and rapid)",
+        "tongue" : "Scarlet or dry grayesh coating",
+        "tongue_id" : "42"
+      },
+      "64" : {
+        "disease_id" : "11",
+        "id" : "64",
+        "pulse" : "Frail and weak",
+        "pulse_id" : "48",
+        "tcd" : "Collapsed Qi",
+        "tcd_id" : "62",
+        "title" : "Pale coating (Pulse: Frail and weak)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      }
+    },
+    "disease" : "Pnemonia, Pleurisy",
+    "disease_id" : "11"
+  }, {
+    "details" : {
+      "65" : {
+        "disease_id" : "12",
+        "id" : "65",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "External Heat Invading Lungs",
+        "tcd_id" : "63",
+        "title" : "Yellow red tip (Pulse: Floating and Rapid)",
+        "tongue" : "Yellow red tip",
+        "tongue_id" : "43"
+      },
+      "66" : {
+        "disease_id" : "12",
+        "id" : "66",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "External Dryness, Scorching Lungs",
+        "tcd_id" : "64",
+        "title" : "Red, dry coating (Pulse: Rapid)",
+        "tongue" : "Red, dry coating",
+        "tongue_id" : "44"
+      },
+      "67" : {
+        "disease_id" : "12",
+        "id" : "67",
+        "pulse" : "Wiry and Slippery",
+        "pulse_id" : "12",
+        "tcd" : "Mucus Obstructing the Chest",
+        "tcd_id" : "65",
+        "title" : "Greasy, white coating (Pulse: Wiry and Slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "68" : {
+        "disease_id" : "12",
+        "id" : "68",
+        "pulse" : "Choppy",
+        "pulse_id" : "11",
+        "tcd" : "Deficient Heart Yang with Congealed Heart Blood",
+        "tcd_id" : "66",
+        "title" : "Darkish Coating or red spots (Pulse: Choppy)",
+        "tongue" : "Darkish Coating or red spots",
+        "tongue_id" : "45"
+      },
+      "69" : {
+        "disease_id" : "12",
+        "id" : "69",
+        "pulse" : "Slippery",
+        "pulse_id" : "8",
+        "tcd" : "Deficient Heart Yang with Mucus Dampness Obstructing Lungs",
+        "tcd_id" : "67",
+        "title" : "Pale, greasy, white coating (Pulse: Slippery)",
+        "tongue" : "Pale, greasy, white coating",
+        "tongue_id" : "46"
+      },
+      "70" : {
+        "disease_id" : "12",
+        "id" : "70",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Damp Heat of Liver and Gall-bladder",
+        "tcd_id" : "68",
+        "title" : "Red, greasy, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Red, greasy, yellow coating",
+        "tongue_id" : "47"
+      },
+      "71" : {
+        "disease_id" : "12",
+        "id" : "71",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Constrained Liver Qi",
+        "tcd_id" : "4",
+        "title" : "Thin, white or yellow coating (Pulse: Wiry)",
+        "tongue" : "Thin, white or yellow coating",
+        "tongue_id" : "48"
+      },
+      "72" : {
+        "disease_id" : "12",
+        "id" : "72",
+        "pulse" : "Wiry and choppy",
+        "pulse_id" : "50",
+        "tcd" : "Congealed Liver Blood",
+        "tcd_id" : "69",
+        "title" : "Purple, darkish coating (Pulse: Wiry and choppy)",
+        "tongue" : "Purple, darkish coating",
+        "tongue_id" : "49"
+      },
+      "73" : {
+        "disease_id" : "12",
+        "id" : "73",
+        "pulse" : "Wiry and thin",
+        "pulse_id" : "19",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red, scanty coating (Pulse: Wiry and thin)",
+        "tongue" : "Red, scanty coating",
+        "tongue_id" : "22"
+      }
+    },
+    "disease" : "Pneumonitis due to Heart, Liver or Kidney Disorders",
+    "disease_id" : "12"
+  }, {
+    "details" : {
+      "74" : {
+        "disease_id" : "13",
+        "id" : "74",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "Wind and Heat Dryness, Pernicious Sieqi Injuring Lungs",
+        "tcd_id" : "121",
+        "title" : "Red, yellow coating (Pulse: Floating and Rapid)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "75" : {
+        "disease_id" : "13",
+        "id" : "75",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Yin Empty Fire Injuring Lungs",
+        "tcd_id" : "122",
+        "title" : "Red, scanty coating (Pulse: Thin and rapid)",
+        "tongue" : "Red, scanty coating",
+        "tongue_id" : "22"
+      },
+      "76" : {
+        "disease_id" : "13",
+        "id" : "76",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Liver Fire Invading Lungs",
+        "tcd_id" : "56",
+        "title" : "Red, thin yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Red, thin yellow coating",
+        "tongue_id" : "84"
+      },
+      "77" : {
+        "disease_id" : "13",
+        "id" : "77",
+        "pulse" : "Intermittent or wiry and slow or choppy",
+        "pulse_id" : "80",
+        "tcd" : "Congealed Blood Obstructing Chest",
+        "tcd_id" : "123",
+        "title" : "Darkish or red spots on tongue (Pulse: Intermittent or wiry and slow or choppy)",
+        "tongue" : "Darkish or red spots on tongue",
+        "tongue_id" : "85"
+      }
+    },
+    "disease" : "Hemoptysis (Lung Abscess)",
+    "disease_id" : "13"
+  }, {
+    "details" : {
+      "78" : {
+        "disease_id" : "14",
+        "id" : "78",
+        "pulse" : "Wiry and full or rapid",
+        "pulse_id" : "81",
+        "tcd" : "Liver Fire Blazing",
+        "tcd_id" : "124",
+        "title" : "Red or scarlet yellow coating (Pulse: Wiry and full or rapid)",
+        "tongue" : "Red or scarlet yellow coating",
+        "tongue_id" : "86"
+      },
+      "79" : {
+        "disease_id" : "14",
+        "id" : "79",
+        "pulse" : "Soggy or slippery",
+        "pulse_id" : "39",
+        "tcd" : "Turbid Mucus Obstructing Middle Burner (Spleen)",
+        "tcd_id" : "125",
+        "title" : "Thick, greasy coating (Pulse: Soggy or slippery)",
+        "tongue" : "Thick, greasy coating",
+        "tongue_id" : "87"
+      },
+      "80" : {
+        "disease_id" : "14",
+        "id" : "80",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Aberrant Liver Yang Ascending",
+        "tcd_id" : "6",
+        "title" : "Reddish, yellow coating (Pulse: Wiry)",
+        "tongue" : "Reddish, yellow coating",
+        "tongue_id" : "88"
+      }
+    },
+    "disease" : "Essential Hypertension",
+    "disease_id" : "14"
+  }, {
+    "details" : {
+      "81" : {
+        "disease_id" : "15",
+        "id" : "81",
+        "pulse" : "Slippery and wiry or soggy and moderate",
+        "pulse_id" : "82",
+        "tcd" : "Turbid Mucus Obstructing Heat",
+        "tcd_id" : "126",
+        "title" : "Pale, greasy coating (Pulse: Slippery and wiry or soggy and moderate)",
+        "tongue" : "Pale, greasy coating",
+        "tongue_id" : "89"
+      },
+      "82" : {
+        "disease_id" : "15",
+        "id" : "82",
+        "pulse" : "Sinking, choppy",
+        "pulse_id" : "83",
+        "tcd" : "Congealed Hear Blood",
+        "tcd_id" : "127",
+        "title" : "Darkish red or purple coating (Pulse: Sinking, choppy)",
+        "tongue" : "Darkish red or purple coating",
+        "tongue_id" : "90"
+      },
+      "83" : {
+        "disease_id" : "15",
+        "id" : "83",
+        "pulse" : "Frail, slow or empty",
+        "pulse_id" : "84",
+        "tcd" : "Deficient Heart Yang",
+        "tcd_id" : "128",
+        "title" : "Pale, white coating (Pulse: Frail, slow or empty)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "84" : {
+        "disease_id" : "15",
+        "id" : "84",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Heart Yin",
+        "tcd_id" : "50",
+        "title" : "Red tip of tongue with little coating (Pulse: Thin and rapid)",
+        "tongue" : "Red tip of tongue with little coating",
+        "tongue_id" : "91"
+      },
+      "85" : {
+        "disease_id" : "15",
+        "id" : "85",
+        "pulse" : "Thin, wiry or rapid",
+        "pulse_id" : "85",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red, scanty, coating (Pulse: Thin, wiry or rapid)",
+        "tongue" : "Red, scanty, coating",
+        "tongue_id" : "92"
+      }
+    },
+    "disease" : "Coronary Artery Disease (Arteriosclerosis, Atherosclerosis)",
+    "disease_id" : "15"
+  }, {
+    "details" : {
+      "86" : {
+        "disease_id" : "16",
+        "id" : "86",
+        "pulse" : "Thin or frail and knotted",
+        "pulse_id" : "86",
+        "tcd" : "Deficient Heart Qi and Deficient Spleen Qi",
+        "tcd_id" : "129",
+        "title" : "Pale, thin, white coating (Pulse: Thin or frail and knotted)",
+        "tongue" : "Pale, thin, white coating",
+        "tongue_id" : "78"
+      },
+      "87" : {
+        "disease_id" : "16",
+        "id" : "87",
+        "pulse" : "Thin and frail or knotted or intermittent",
+        "pulse_id" : "87",
+        "tcd" : "Deficient Heart Yang and Deficient Kidney Yang",
+        "tcd_id" : "130",
+        "title" : "Swollen, pale, white coating (Pulse: Thin and frail or knotted or intermittent)",
+        "tongue" : "Swollen, pale, white coating",
+        "tongue_id" : "67"
+      },
+      "88" : {
+        "disease_id" : "16",
+        "id" : "88",
+        "pulse" : "Thin and choppy or knotted or intermittent",
+        "pulse_id" : "88",
+        "tcd" : "Deficient Heart Yang and Congealed Heart Blood",
+        "tcd_id" : "131",
+        "title" : "Purple, darkish or purple coating with red spots (Pulse: Thin and choppy or knotted or intermittent)",
+        "tongue" : "Purple, darkish or purple coating with red spots",
+        "tongue_id" : "93"
+      },
+      "89" : {
+        "disease_id" : "16",
+        "id" : "89",
+        "pulse" : "Intermittent",
+        "pulse_id" : "89",
+        "tcd" : "Deficient Kidney Yang with Water Radiating to Lungs",
+        "tcd_id" : "132",
+        "title" : "Pale, greasy, white coating (Pulse: Intermittent)",
+        "tongue" : "Pale, greasy, white coating",
+        "tongue_id" : "46"
+      }
+    },
+    "disease" : "Cardiac Insufficiency (Cardiac Failure), Cor Pulmonale",
+    "disease_id" : "16"
+  }, {
+    "details" : {
+      "90" : {
+        "disease_id" : "17",
+        "id" : "90",
+        "pulse" : "Frail, soft",
+        "pulse_id" : "90",
+        "tcd" : "Deficient Heart Qi and Deficient Lung Qi",
+        "tcd_id" : "133",
+        "title" : "Pale (Pulse: Frail, soft)",
+        "tongue" : "Pale",
+        "tongue_id" : "94"
+      },
+      "91" : {
+        "disease_id" : "17",
+        "id" : "91",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Heart Blood and Deficient Spleen Qi",
+        "tcd_id" : "134",
+        "title" : "Pale, thin (Pulse: Empty)",
+        "tongue" : "Pale, thin",
+        "tongue_id" : "95"
+      },
+      "92" : {
+        "disease_id" : "17",
+        "id" : "92",
+        "pulse" : "Thin, rapid, sinking",
+        "pulse_id" : "91",
+        "tcd" : "Heart and Kidney lose Communication (Heart Yin and Kidney Yin both Deficient)",
+        "tcd_id" : "135",
+        "title" : "Reddish, dry scanty coating (Pulse: Thin, rapid, sinking)",
+        "tongue" : "Reddish, dry scanty coating",
+        "tongue_id" : "96"
+      },
+      "93" : {
+        "disease_id" : "17",
+        "id" : "93",
+        "pulse" : "Sinking and feeble",
+        "pulse_id" : "92",
+        "tcd" : "Heart Yang and Kidney Yang both Deficient",
+        "tcd_id" : "136",
+        "title" : "Pale, swollen, moist, white coating (Pulse: Sinking and feeble)",
+        "tongue" : "Pale, swollen, moist, white coating",
+        "tongue_id" : "97"
+      },
+      "94" : {
+        "disease_id" : "17",
+        "id" : "94",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "Lung Yin and Kidney Yin both Deficient",
+        "tcd_id" : "137",
+        "title" : "Red, scanty coating (Pulse: Rapid)",
+        "tongue" : "Red, scanty coating",
+        "tongue_id" : "22"
+      }
+    },
+    "disease" : "Cardiac and Renal Failure (Uremia)",
+    "disease_id" : "17"
+  }, {
+    "details" : {
+      "95" : {
+        "disease_id" : "18",
+        "id" : "95",
+        "pulse" : "Tight",
+        "pulse_id" : "51",
+        "tcd" : "External Cold Wind Invading Stomach",
+        "tcd_id" : "138",
+        "title" : "White coating (Pulse: Tight)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "96" : {
+        "disease_id" : "18",
+        "id" : "96",
+        "pulse" : "Rapid and wiry or soggy",
+        "pulse_id" : "93",
+        "tcd" : "External Heat or Summer Heat Invading Stomach",
+        "tcd_id" : "139",
+        "title" : "Red-yellow coating (Pulse: Rapid and wiry or soggy)",
+        "tongue" : "Red-yellow coating",
+        "tongue_id" : "51"
+      },
+      "97" : {
+        "disease_id" : "18",
+        "id" : "97",
+        "pulse" : "Slippery",
+        "pulse_id" : "8",
+        "tcd" : "Mucus Obstructing Stomach",
+        "tcd_id" : "140",
+        "title" : "Greasy, white coating (Pulse: Slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "98" : {
+        "disease_id" : "18",
+        "id" : "98",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Liver Invading Stomach",
+        "tcd_id" : "141",
+        "title" : "Thin, white coating (Pulse: Wiry)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      },
+      "99" : {
+        "disease_id" : "18",
+        "id" : "99",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Heat Generating Liver Wind which Invades Stomach",
+        "tcd_id" : "142",
+        "title" : "Red or scarlet coating (Pulse: Wiry and rapid)",
+        "tongue" : "Red or scarlet coating",
+        "tongue_id" : "53"
+      },
+      "100" : {
+        "disease_id" : "18",
+        "id" : "100",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Stomach Yin",
+        "tcd_id" : "143",
+        "title" : "Red coating (Pulse: Thin and rapid)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "101" : {
+        "disease_id" : "18",
+        "id" : "101",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Spleen and Stomach Qi",
+        "tcd_id" : "144",
+        "title" : "Pale coating (Pulse: Empty)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "102" : {
+        "disease_id" : "18",
+        "id" : "102",
+        "pulse" : "Slippery and full",
+        "pulse_id" : "94",
+        "tcd" : "Stagnant Food (Stagnant Food Vecomes Sieqi)",
+        "tcd_id" : "145",
+        "title" : "Greasy Coating (Pulse: Slippery and full)",
+        "tongue" : "Greasy Coating",
+        "tongue_id" : "50"
+      },
+      "103" : {
+        "disease_id" : "18",
+        "id" : "103",
+        "pulse" : "Variable",
+        "pulse_id" : "95",
+        "tcd" : "Worms Invading Stomach",
+        "tcd_id" : "146",
+        "title" : "Thick coating (Pulse: Variable)",
+        "tongue" : "Thick coating",
+        "tongue_id" : "98"
+      }
+    },
+    "disease" : "Nausea, Vomiting (Including Morning Sickness)",
+    "disease_id" : "18"
+  }, {
+    "details" : {
+      "104" : {
+        "disease_id" : "19",
+        "id" : "104",
+        "pulse" : "Flooding or rapid and full",
+        "pulse_id" : "96",
+        "tcd" : "Stomach Fire Blazing",
+        "tcd_id" : "147",
+        "title" : "Red coating (Pulse: Flooding or rapid and full)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "105" : {
+        "disease_id" : "19",
+        "id" : "105",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Stomach Qi",
+        "tcd_id" : "148",
+        "title" : "Peeled, reddish coating (Pulse: Thin and rapid)",
+        "tongue" : "Peeled, reddish coating",
+        "tongue_id" : "99"
+      },
+      "106" : {
+        "disease_id" : "19",
+        "id" : "106",
+        "pulse" : "Wiry and deep",
+        "pulse_id" : "97",
+        "tcd" : "Stagnant Stomach Qi",
+        "tcd_id" : "149",
+        "title" : "Darkish coating (Pulse: Wiry and deep)",
+        "tongue" : "Darkish coating",
+        "tongue_id" : "100"
+      },
+      "107" : {
+        "disease_id" : "19",
+        "id" : "107",
+        "pulse" : "Wiry and choppy",
+        "pulse_id" : "50",
+        "tcd" : "Congealed Blood in Stomach",
+        "tcd_id" : "150",
+        "title" : "Darker areas with red dots; (and / or) thin yellow coating (Pulse: Wiry and choppy)",
+        "tongue" : "Darker areas with red dots; (and / or) thin yellow coating",
+        "tongue_id" : "101"
+      },
+      "108" : {
+        "disease_id" : "19",
+        "id" : "108",
+        "pulse" : "Deep or moderate without strength",
+        "pulse_id" : "98",
+        "tcd" : "Deficient Cold in Stomach",
+        "tcd_id" : "151",
+        "title" : "Pale, moist white coating (Pulse: Deep or moderate without strength)",
+        "tongue" : "Pale, moist white coating",
+        "tongue_id" : "102"
+      }
+    },
+    "disease" : "Acute Gastritis",
+    "disease_id" : "19"
+  }, {
+    "details" : {
+      "109" : {
+        "disease_id" : "20",
+        "id" : "109",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Liver Invading Spleen and Stomach",
+        "tcd_id" : "152",
+        "title" : "Thin coating (Pulse: Wiry)",
+        "tongue" : "Thin coating",
+        "tongue_id" : "103"
+      },
+      "110" : {
+        "disease_id" : "20",
+        "id" : "110",
+        "pulse" : "Slow and empty",
+        "pulse_id" : "99",
+        "tcd" : "Deficient Cold in Spleen and Stomach",
+        "tcd_id" : "153",
+        "title" : "Pale, sticky, thin, white, coating (Pulse: Slow and empty)",
+        "tongue" : "Pale, sticky, thin, white, coating",
+        "tongue_id" : "104"
+      },
+      "111" : {
+        "disease_id" : "20",
+        "id" : "111",
+        "pulse" : "Soggy",
+        "pulse_id" : "52",
+        "tcd" : "Dampness Distressing Spleen",
+        "tcd_id" : "77",
+        "title" : "Greasy, white coating (Pulse: Soggy)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      }
+    },
+    "disease" : "Chronic Gastritis, Anorexia",
+    "disease_id" : "20"
+  }, {
+    "details" : {
+      "112" : {
+        "disease_id" : "21",
+        "id" : "112",
+        "pulse" : "Soggy and rapid",
+        "pulse_id" : "27",
+        "tcd" : "Damp Heat",
+        "tcd_id" : "154",
+        "title" : "Yellow, greasy coating (Pulse: Soggy and rapid)",
+        "tongue" : "Yellow, greasy coating",
+        "tongue_id" : "105"
+      },
+      "113" : {
+        "disease_id" : "21",
+        "id" : "113",
+        "pulse" : "Soggy",
+        "pulse_id" : "52",
+        "tcd" : "Damp Cold",
+        "tcd_id" : "155",
+        "title" : "Greasy, white coating (Pulse: Soggy)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "114" : {
+        "disease_id" : "21",
+        "id" : "114",
+        "pulse" : "Slippery",
+        "pulse_id" : "8",
+        "tcd" : "Stagnant Food",
+        "tcd_id" : "156",
+        "title" : "Greasy Coating (Pulse: Slippery)",
+        "tongue" : "Greasy Coating",
+        "tongue_id" : "50"
+      },
+      "115" : {
+        "disease_id" : "21",
+        "id" : "115",
+        "pulse" : "Frail and thin",
+        "pulse_id" : "100",
+        "tcd" : "Deficient Spleen Qi",
+        "tcd_id" : "7",
+        "title" : "Pale, white coating (Pulse: Frail and thin)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "116" : {
+        "disease_id" : "21",
+        "id" : "116",
+        "pulse" : "Deep and thin",
+        "pulse_id" : "101",
+        "tcd" : "Deficient Kidney Yang",
+        "tcd_id" : "25",
+        "title" : "Pale coating (Pulse: Deep and thin)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "117" : {
+        "disease_id" : "21",
+        "id" : "117",
+        "pulse" : "Wiry and small",
+        "pulse_id" : "102",
+        "tcd" : "Constrained Liver",
+        "tcd_id" : "157",
+        "title" : "Thin coating (Pulse: Wiry and small)",
+        "tongue" : "Thin coating",
+        "tongue_id" : "103"
+      }
+    },
+    "disease" : "Gastroenteritis, Diarrhea",
+    "disease_id" : "21"
+  }, {
+    "details" : {
+      "118" : {
+        "disease_id" : "22",
+        "id" : "118",
+        "pulse" : "Deep and tight",
+        "pulse_id" : "103",
+        "tcd" : "Cold Obstructing Abdomen",
+        "tcd_id" : "158",
+        "title" : "Pale, white coating (Pulse: Deep and tight)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "119" : {
+        "disease_id" : "22",
+        "id" : "119",
+        "pulse" : "Deep and wiry",
+        "pulse_id" : "104",
+        "tcd" : "Cold Obstructing Liver Meridian",
+        "tcd_id" : "159",
+        "title" : "White coating (Pulse: Deep and wiry)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "120" : {
+        "disease_id" : "22",
+        "id" : "120",
+        "pulse" : "Rapid and full",
+        "pulse_id" : "74",
+        "tcd" : "Heat Constructing the Abdomen",
+        "tcd_id" : "160",
+        "title" : "Yellow coating (Pulse: Rapid and full)",
+        "tongue" : "Yellow coating",
+        "tongue_id" : "68"
+      },
+      "121" : {
+        "disease_id" : "22",
+        "id" : "121",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Damp Heat in Liver and Gall Bladder",
+        "tcd_id" : "161",
+        "title" : "Greasy yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Greasy yellow coating",
+        "tongue_id" : "106"
+      },
+      "122" : {
+        "disease_id" : "22",
+        "id" : "122",
+        "pulse" : "Slippery and rapid",
+        "pulse_id" : "43",
+        "tcd" : "Damp Heat in Stomach and Intestines",
+        "tcd_id" : "162",
+        "title" : "Greasy yellow coating (Pulse: Slippery and rapid)",
+        "tongue" : "Greasy yellow coating",
+        "tongue_id" : "106"
+      },
+      "123" : {
+        "disease_id" : "22",
+        "id" : "123",
+        "pulse" : "Rapid and deep",
+        "pulse_id" : "105",
+        "tcd" : "Intestinal Sieqi",
+        "tcd_id" : "163",
+        "title" : "Greasy, yellow coating (Pulse: Rapid and deep)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "124" : {
+        "disease_id" : "22",
+        "id" : "124",
+        "pulse" : "Rapid and slow",
+        "pulse_id" : "106",
+        "tcd" : "Damp Heat in Bladder",
+        "tcd_id" : "164",
+        "title" : "Yellow, thin coating (Pulse: Rapid and slow)",
+        "tongue" : "Yellow, thin coating",
+        "tongue_id" : "107"
+      }
+    },
+    "disease" : "Acute Abdominal Pain (Acute Abdomen)",
+    "disease_id" : "22"
+  }, {
+    "details" : {
+      "125" : {
+        "disease_id" : "23",
+        "id" : "125",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Constrained Liver Qi",
+        "tcd_id" : "4",
+        "title" : "Thin coating (Pulse: Wiry)",
+        "tongue" : "Thin coating",
+        "tongue_id" : "103"
+      },
+      "126" : {
+        "disease_id" : "23",
+        "id" : "126",
+        "pulse" : "Choppy",
+        "pulse_id" : "11",
+        "tcd" : "Congealed Blood in Abdomen",
+        "tcd_id" : "165",
+        "title" : "Purplish tongue (Pulse: Choppy)",
+        "tongue" : "Purplish tongue",
+        "tongue_id" : "108"
+      },
+      "127" : {
+        "disease_id" : "23",
+        "id" : "127",
+        "pulse" : "Frail, soft",
+        "pulse_id" : "90",
+        "tcd" : "Deficient Cold Sieqi",
+        "tcd_id" : "166",
+        "title" : "Pale, white coating (Pulse: Frail, soft)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "128" : {
+        "disease_id" : "23",
+        "id" : "128",
+        "pulse" : "Slippery or deep and full",
+        "pulse_id" : "107",
+        "tcd" : "Stagnant Food Sieqi",
+        "tcd_id" : "167",
+        "title" : "Greasy Coating (Pulse: Slippery or deep and full)",
+        "tongue" : "Greasy Coating",
+        "tongue_id" : "50"
+      },
+      "129" : {
+        "disease_id" : "23",
+        "id" : "129",
+        "pulse" : "Variable",
+        "pulse_id" : "95",
+        "tcd" : "Worm Infestation",
+        "tcd_id" : "168",
+        "title" : "Thick coating (Pulse: Variable)",
+        "tongue" : "Thick coating",
+        "tongue_id" : "98"
+      }
+    },
+    "disease" : "Chronic Abdominal Pain",
+    "disease_id" : "23"
+  }, {
+    "details" : {
+      "130" : {
+        "disease_id" : "24",
+        "id" : "130",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Cold of Small Intestine",
+        "tcd_id" : "169",
+        "title" : "Pale, thin, white coating (Pulse: Empty)",
+        "tongue" : "Pale, thin, white coating",
+        "tongue_id" : "78"
+      },
+      "131" : {
+        "disease_id" : "24",
+        "id" : "131",
+        "pulse" : "Deep and wiry or deep and tight",
+        "pulse_id" : "108",
+        "tcd" : "Stagnant Qi of Small Intestine",
+        "tcd_id" : "170",
+        "title" : "White coating (Pulse: Deep and wiry or deep and tight)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "132" : {
+        "disease_id" : "24",
+        "id" : "132",
+        "pulse" : "Rapid and slippery",
+        "pulse_id" : "45",
+        "tcd" : "Excess Heat of Small Intestines",
+        "tcd_id" : "171",
+        "title" : "Red, dry, yellow coating (Pulse: Rapid and slippery)",
+        "tongue" : "Red, dry, yellow coating",
+        "tongue_id" : "63"
+      },
+      "133" : {
+        "disease_id" : "24",
+        "id" : "133",
+        "pulse" : "Wiry and full",
+        "pulse_id" : "109",
+        "tcd" : "Obstructed Qi of Small Intestine",
+        "tcd_id" : "172",
+        "title" : "Greasy, yellow coating (Pulse: Wiry and full)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      }
+    },
+    "disease" : "Enteritis - Upper Bowel Disorders",
+    "disease_id" : "24"
+  }, {
+    "details" : {
+      "134" : {
+        "disease_id" : "25",
+        "id" : "134",
+        "pulse" : "Slippery and rapid",
+        "pulse_id" : "43",
+        "tcd" : "Damp Heat Invading Large Intestine",
+        "tcd_id" : "173",
+        "title" : "Red, greasy, yellow coating (Pulse: Slippery and rapid)",
+        "tongue" : "Red, greasy, yellow coating",
+        "tongue_id" : "47"
+      },
+      "135" : {
+        "disease_id" : "25",
+        "id" : "135",
+        "pulse" : "Thin",
+        "pulse_id" : "110",
+        "tcd" : "Exhausted Fluid of Large Intestine Disorder",
+        "tcd_id" : "174",
+        "title" : "Red, dry coating (Pulse: Thin)",
+        "tongue" : "Red, dry coating",
+        "tongue_id" : "44"
+      },
+      "136" : {
+        "disease_id" : "25",
+        "id" : "136",
+        "pulse" : "Deep and slippery",
+        "pulse_id" : "111",
+        "tcd" : "Cold Dampness in Large Intestine",
+        "tcd_id" : "175",
+        "title" : "Moist, greasy, white coating (Pulse: Deep and slippery)",
+        "tongue" : "Moist, greasy, white coating",
+        "tongue_id" : "109"
+      },
+      "137" : {
+        "disease_id" : "25",
+        "id" : "137",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Qi of Large Intestine",
+        "tcd_id" : "176",
+        "title" : "Pale, white coating (Pulse: Frail)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      }
+    },
+    "disease" : "Colitis (Acute or Chronic) - Large Bowel Disorders",
+    "disease_id" : "25"
+  }, {
+    "details" : {
+      "138" : {
+        "disease_id" : "26",
+        "id" : "138",
+        "pulse" : "Slippery and full",
+        "pulse_id" : "94",
+        "tcd" : "Dry Heat Collecting Internally",
+        "tcd_id" : "179",
+        "title" : "Thin Yellow Coating (Pulse: Slippery and full)",
+        "tongue" : "Thin Yellow Coating",
+        "tongue_id" : "2"
+      },
+      "139" : {
+        "disease_id" : "26",
+        "id" : "139",
+        "pulse" : "Wiry and deep",
+        "pulse_id" : "97",
+        "tcd" : "Stagnant Qi",
+        "tcd_id" : "118",
+        "title" : "Thin, greasy coating (Pulse: Wiry and deep)",
+        "tongue" : "Thin, greasy coating",
+        "tongue_id" : "36"
+      },
+      "140" : {
+        "disease_id" : "26",
+        "id" : "140",
+        "pulse" : "Thin",
+        "pulse_id" : "110",
+        "tcd" : "Deficient Blood",
+        "tcd_id" : "8",
+        "title" : "White coating (Pulse: Thin)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "141" : {
+        "disease_id" : "26",
+        "id" : "141",
+        "pulse" : "Deep and slow",
+        "pulse_id" : "113",
+        "tcd" : "Cold Obstructing the Qi",
+        "tcd_id" : "180",
+        "title" : "White coating (Pulse: Deep and slow)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "142" : {
+        "disease_id" : "26",
+        "id" : "142",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Qi",
+        "tcd_id" : "11",
+        "title" : "Pale and swollen (Pulse: Empty)",
+        "tongue" : "Pale and swollen",
+        "tongue_id" : "110"
+      }
+    },
+    "disease" : "Constipation (Hemorrhoids)",
+    "disease_id" : "26"
+  }, {
+    "details" : {
+      "143" : {
+        "disease_id" : "27",
+        "id" : "143",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "Heat Entering Large Intestine",
+        "tcd_id" : "177",
+        "title" : "Yellow coating (Pulse: Rapid)",
+        "tongue" : "Yellow coating",
+        "tongue_id" : "68"
+      },
+      "144" : {
+        "disease_id" : "27",
+        "id" : "144",
+        "pulse" : "Sinking and thin",
+        "pulse_id" : "112",
+        "tcd" : "Deficient Cold with Blood in Stools",
+        "tcd_id" : "178",
+        "title" : "Pale, white coating (Pulse: Sinking and thin)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      }
+    },
+    "disease" : "Melena (& Hemorrhoids)",
+    "disease_id" : "27"
+  }, {
+    "details" : {
+      "145" : {
+        "disease_id" : "28",
+        "id" : "145",
+        "pulse" : "Wiry and choppy",
+        "pulse_id" : "50",
+        "tcd" : "Constrained Liver Qi and Congealed Blood",
+        "tcd_id" : "181",
+        "title" : "Darkish coating or coating with red or purple spots (Pulse: Wiry and choppy)",
+        "tongue" : "Darkish coating or coating with red or purple spots",
+        "tongue_id" : "111"
+      },
+      "146" : {
+        "disease_id" : "28",
+        "id" : "146",
+        "pulse" : "Wiry and soggy",
+        "pulse_id" : "114",
+        "tcd" : "Liver Invading Spleen",
+        "tcd_id" : "82",
+        "title" : "Thick coating (Pulse: Wiry and soggy)",
+        "tongue" : "Thick coating",
+        "tongue_id" : "98"
+      },
+      "147" : {
+        "disease_id" : "28",
+        "id" : "147",
+        "pulse" : "Wiry and thin",
+        "pulse_id" : "19",
+        "tcd" : "Deficient Liver Yin",
+        "tcd_id" : "182",
+        "title" : "Red, dry coating (Pulse: Wiry and thin)",
+        "tongue" : "Red, dry coating",
+        "tongue_id" : "44"
+      },
+      "148" : {
+        "disease_id" : "28",
+        "id" : "148",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Speen Qi",
+        "tcd_id" : "183",
+        "title" : "Pale, white coating (Pulse: Empty)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      }
+    },
+    "disease" : "Acute (Infective) Hepatitis",
+    "disease_id" : "28"
+  }, {
+    "details" : {
+      "149" : {
+        "disease_id" : "29",
+        "id" : "149",
+        "pulse" : "Slippery and rapid",
+        "pulse_id" : "43",
+        "tcd" : "Damp Heat in Spleen and Gall Bladder",
+        "tcd_id" : "184",
+        "title" : "Greasy, yellow coating (Pulse: Slippery and rapid)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "150" : {
+        "disease_id" : "29",
+        "id" : "150",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Heat Toxicity",
+        "tcd_id" : "185",
+        "title" : "Scarlet, thick, greasy, yellow or black coating (Pulse: Wiry and rapid)",
+        "tongue" : "Scarlet, thick, greasy, yellow or black coating",
+        "tongue_id" : "112"
+      },
+      "151" : {
+        "disease_id" : "29",
+        "id" : "151",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Constrained Liver Qi",
+        "tcd_id" : "4",
+        "title" : "Thin coating (Pulse: Wiry)",
+        "tongue" : "Thin coating",
+        "tongue_id" : "103"
+      }
+    },
+    "disease" : "Toxic Hepatitis",
+    "disease_id" : "29"
+  }, {
+    "details" : {
+      "152" : {
+        "disease_id" : "30",
+        "id" : "152",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Heat Poison in Liver and Gall Bladder",
+        "tcd_id" : "186",
+        "title" : "Greasy, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "153" : {
+        "disease_id" : "30",
+        "id" : "153",
+        "pulse" : "Choppy",
+        "pulse_id" : "11",
+        "tcd" : "Congealed Liver Blood",
+        "tcd_id" : "69",
+        "title" : "Grey coating (Pulse: Choppy)",
+        "tongue" : "Grey coating",
+        "tongue_id" : "113"
+      },
+      "154" : {
+        "disease_id" : "30",
+        "id" : "154",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Liver Invading Spleen",
+        "tcd_id" : "82",
+        "title" : "Greasy, white coating (Pulse: Wiry)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "155" : {
+        "disease_id" : "30",
+        "id" : "155",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Spleen Yang and Deficient Kidney Yang",
+        "tcd_id" : "106",
+        "title" : "Pale, dry, white coating (Pulse: Frail)",
+        "tongue" : "Pale, dry, white coating",
+        "tongue_id" : "114"
+      }
+    },
+    "disease" : "Chronic Hepatitis (Cirrhosis) - Alcoholic Hepatitis",
+    "disease_id" : "30"
+  }, {
+    "details" : {
+      "156" : {
+        "disease_id" : "31",
+        "id" : "156",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red with little coating (Pulse: Thin and rapid)",
+        "tongue" : "Red with little coating",
+        "tongue_id" : "115"
+      }
+    },
+    "disease" : "Liver and Kidney Failure (Uremia)",
+    "disease_id" : "31"
+  }, {
+    "details" : {
+      "157" : {
+        "disease_id" : "32",
+        "id" : "157",
+        "pulse" : "Wiry, rapid and full",
+        "pulse_id" : "23",
+        "tcd" : "Excess Gall Bladder Heat",
+        "tcd_id" : "28",
+        "title" : "Red, yellow coating (Pulse: Wiry, rapid and full)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "158" : {
+        "disease_id" : "32",
+        "id" : "158",
+        "pulse" : "Wiry, rapid and slippery",
+        "pulse_id" : "24",
+        "tcd" : "Damp Heat in both Gall-bladder and liver",
+        "tcd_id" : "29",
+        "title" : "Greasy, yellow coating (Pulse: Wiry, rapid and slippery)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "159" : {
+        "disease_id" : "32",
+        "id" : "159",
+        "pulse" : "Wiry and thin",
+        "pulse_id" : "19",
+        "tcd" : "Deficient Gall-bladder Heat",
+        "tcd_id" : "30",
+        "title" : "Thin, white coating (Pulse: Wiry and thin)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      }
+    },
+    "disease" : "Cholecystitis (Acute & Chronic)",
+    "disease_id" : "32"
+  }, {
+    "details" : {
+      "160" : {
+        "disease_id" : "33",
+        "id" : "160",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Constrained Liver Qi",
+        "tcd_id" : "4",
+        "title" : "Normal (Pulse: Wiry)",
+        "tongue" : "Normal",
+        "tongue_id" : "75"
+      },
+      "161" : {
+        "disease_id" : "33",
+        "id" : "161",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Liver Fire and Gall-bladder Fire",
+        "tcd_id" : "23",
+        "title" : "Cracked, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Cracked, yellow coating",
+        "tongue_id" : "116"
+      },
+      "162" : {
+        "disease_id" : "33",
+        "id" : "162",
+        "pulse" : "Slippery, rapid and wiry",
+        "pulse_id" : "115",
+        "tcd" : "Damp Heat in Liver and Spleen",
+        "tcd_id" : "187",
+        "title" : "Red, greasy coating (Pulse: Slippery, rapid and wiry)",
+        "tongue" : "Red, greasy coating",
+        "tongue_id" : "52"
+      }
+    },
+    "disease" : "Hepatic Cholangitis",
+    "disease_id" : "33"
+  }, {
+    "details" : {
+      "163" : {
+        "disease_id" : "34",
+        "id" : "163",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Constrained Liver Qi",
+        "tcd_id" : "4",
+        "title" : "Thin, white or yellow coating (Pulse: Wiry)",
+        "tongue" : "Thin, white or yellow coating",
+        "tongue_id" : "48"
+      },
+      "164" : {
+        "disease_id" : "34",
+        "id" : "164",
+        "pulse" : "Wiry, slippery and rapid",
+        "pulse_id" : "116",
+        "tcd" : "Damp Heat in Spleen, Stomach, and Liver",
+        "tcd_id" : "188",
+        "title" : "Greasy, yellow coating (Pulse: Wiry, slippery and rapid)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "165" : {
+        "disease_id" : "34",
+        "id" : "165",
+        "pulse" : "Floating, rapid, wiry and full",
+        "pulse_id" : "117",
+        "tcd" : "Excess Fire in Liver and Gall-bladder",
+        "tcd_id" : "189",
+        "title" : "Red, yellow coating (Pulse: Floating, rapid, wiry and full)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      }
+    },
+    "disease" : "Acute Pancreatitis",
+    "disease_id" : "34"
+  }, null, {
+    "details" : {
+      "166" : {
+        "disease_id" : "36",
+        "id" : "166",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "Lung Fire (Upper Diabetes)",
+        "tcd_id" : "190",
+        "title" : "Red-yellow coating (Pulse: Floating and Rapid)",
+        "tongue" : "Red-yellow coating",
+        "tongue_id" : "51"
+      },
+      "167" : {
+        "disease_id" : "36",
+        "id" : "167",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "Stomach Fire (Middle Diabetes)",
+        "tcd_id" : "191",
+        "title" : "Red-yellow coating (Pulse: Rapid)",
+        "tongue" : "Red-yellow coating",
+        "tongue_id" : "51"
+      },
+      "168" : {
+        "disease_id" : "36",
+        "id" : "168",
+        "pulse" : "Thin and sinking",
+        "pulse_id" : "118",
+        "tcd" : "Kidney Fire (Lower Diabetes)",
+        "tcd_id" : "192",
+        "title" : "Red coating (Pulse: Thin and sinking)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      }
+    },
+    "disease" : "Diabetes Mellitus",
+    "disease_id" : "36"
+  }, {
+    "details" : {
+      "169" : {
+        "disease_id" : "37",
+        "id" : "169",
+        "pulse" : "Deep and slippery",
+        "pulse_id" : "111",
+        "tcd" : "Damp Cold",
+        "tcd_id" : "155",
+        "title" : "Greasy, white coating (Pulse: Deep and slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "170" : {
+        "disease_id" : "37",
+        "id" : "170",
+        "pulse" : "Slippery and wiry",
+        "pulse_id" : "119",
+        "tcd" : "Damp Heat",
+        "tcd_id" : "154",
+        "title" : "Greasy, yellow coating (Pulse: Slippery and wiry)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "171" : {
+        "disease_id" : "37",
+        "id" : "171",
+        "pulse" : "Rapid and wiry",
+        "pulse_id" : "120",
+        "tcd" : "Damp Heat Filing Bladder",
+        "tcd_id" : "193",
+        "title" : "Yellow coating (Pulse: Rapid and wiry)",
+        "tongue" : "Yellow coating",
+        "tongue_id" : "68"
+      },
+      "172" : {
+        "disease_id" : "37",
+        "id" : "172",
+        "pulse" : "Moderate",
+        "pulse_id" : "121",
+        "tcd" : "Dry Cold",
+        "tcd_id" : "194",
+        "title" : "Thin, white coating (Flabby Tongue) (Pulse: Moderate)",
+        "tongue" : "Thin, white coating (Flabby Tongue)",
+        "tongue_id" : "117"
+      },
+      "173" : {
+        "disease_id" : "37",
+        "id" : "173",
+        "pulse" : "Choppy",
+        "pulse_id" : "11",
+        "tcd" : "Congealed Blood",
+        "tcd_id" : "12",
+        "title" : "Darkish coating (Pulse: Choppy)",
+        "tongue" : "Darkish coating",
+        "tongue_id" : "100"
+      },
+      "174" : {
+        "disease_id" : "37",
+        "id" : "174",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Kidney Yang",
+        "tcd_id" : "25",
+        "title" : "Pale coating (Pulse: Frail)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "175" : {
+        "disease_id" : "37",
+        "id" : "175",
+        "pulse" : "Rapid and thin",
+        "pulse_id" : "18",
+        "tcd" : "Deficient Kidney Yin",
+        "tcd_id" : "10",
+        "title" : "Red coating (Pulse: Rapid and thin)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      }
+    },
+    "disease" : "Genito-Urinary Disorders",
+    "disease_id" : "37"
+  }, {
+    "details" : {
+      "176" : {
+        "disease_id" : "38",
+        "id" : "176",
+        "pulse" : "Sinking and thin, or empty",
+        "pulse_id" : "122",
+        "tcd" : "Deficient Blood and Qi",
+        "tcd_id" : "120",
+        "title" : "Thin, white coating (Pulse: Sinking and thin, or empty)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      },
+      "177" : {
+        "disease_id" : "38",
+        "id" : "177",
+        "pulse" : "Wiry or choppy",
+        "pulse_id" : "77",
+        "tcd" : "Stagnant Qi Congealed Blood",
+        "tcd_id" : "117",
+        "title" : "Darkish or purple tongue (Pulse: Wiry or choppy)",
+        "tongue" : "Darkish or purple tongue",
+        "tongue_id" : "118"
+      },
+      "178" : {
+        "disease_id" : "38",
+        "id" : "178",
+        "pulse" : "Thin and slightly rapid",
+        "pulse_id" : "123",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red or scarlet, scanty coating (Pulse: Thin and slightly rapid)",
+        "tongue" : "Red or scarlet, scanty coating",
+        "tongue_id" : "119"
+      },
+      "179" : {
+        "disease_id" : "38",
+        "id" : "179",
+        "pulse" : "Slippery",
+        "pulse_id" : "8",
+        "tcd" : "Mucus Dampness Obstructing Menses flow",
+        "tcd_id" : "195",
+        "title" : "Greasy, white coating (Pulse: Slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      }
+    },
+    "disease" : "Amenorrhea",
+    "disease_id" : "38"
+  }, {
+    "details" : {
+      "180" : {
+        "disease_id" : "39",
+        "id" : "180",
+        "pulse" : "Wiry or choppy",
+        "pulse_id" : "77",
+        "tcd" : "Stagnant Qi",
+        "tcd_id" : "118",
+        "title" : "Purple, dark or normal coating (Pulse: Wiry or choppy)",
+        "tongue" : "Purple, dark or normal coating",
+        "tongue_id" : "81"
+      },
+      "181" : {
+        "disease_id" : "39",
+        "id" : "181",
+        "pulse" : "Sinking, tight or slow",
+        "pulse_id" : "78",
+        "tcd" : "Cold Damp Obstructing Menses",
+        "tcd_id" : "119",
+        "title" : "Pale material moist coating (Pulse: Sinking, tight or slow)",
+        "tongue" : "Pale material moist coating",
+        "tongue_id" : "82"
+      },
+      "182" : {
+        "disease_id" : "39",
+        "id" : "182",
+        "pulse" : "Empty or thin",
+        "pulse_id" : "79",
+        "tcd" : "Deficient Blood and Qi",
+        "tcd_id" : "120",
+        "title" : "Pale material white coating (Pulse: Empty or thin)",
+        "tongue" : "Pale material white coating",
+        "tongue_id" : "83"
+      }
+    },
+    "disease" : "Dysmenorrhoea (PMT Syndrome)",
+    "disease_id" : "39"
+  }, {
+    "details" : {
+      "183" : {
+        "disease_id" : "40",
+        "id" : "183",
+        "pulse" : "Rapid and full",
+        "pulse_id" : "74",
+        "tcd" : "Heat in Blood",
+        "tcd_id" : "115",
+        "title" : "Red tongue (Pulse: Rapid and full)",
+        "tongue" : "Red tongue",
+        "tongue_id" : "77"
+      },
+      "184" : {
+        "disease_id" : "40",
+        "id" : "184",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Spleen Qi Unable to Govern Blood",
+        "tcd_id" : "116",
+        "title" : "Pale, thin, white coating (Pulse: Empty)",
+        "tongue" : "Pale, thin, white coating",
+        "tongue_id" : "78"
+      },
+      "185" : {
+        "disease_id" : "40",
+        "id" : "185",
+        "pulse" : "Sinking and wiry or choppy",
+        "pulse_id" : "75",
+        "tcd" : "Stagnant Qi Congealed Blood",
+        "tcd_id" : "117",
+        "title" : "Darkish color of tongue (Pulse: Sinking and wiry or choppy)",
+        "tongue" : "Darkish color of tongue",
+        "tongue_id" : "79"
+      },
+      "186" : {
+        "disease_id" : "40",
+        "id" : "186",
+        "pulse" : "Rapid, thin and wiry",
+        "pulse_id" : "76",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red, scarlet and small, glossy tongue (Pulse: Rapid, thin and wiry)",
+        "tongue" : "Red, scarlet and small, glossy tongue",
+        "tongue_id" : "80"
+      }
+    },
+    "disease" : "Abnormal Uterine Bleeding",
+    "disease_id" : "40"
+  }, {
+    "details" : {
+      "187" : {
+        "disease_id" : "41",
+        "id" : "187",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Fire Heat, Toxins Collecting in Lower Burner",
+        "tcd_id" : "112",
+        "title" : "Red, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Red, yellow coating",
+        "tongue_id" : "23"
+      },
+      "188" : {
+        "disease_id" : "41",
+        "id" : "188",
+        "pulse" : "Wiry and choppy",
+        "pulse_id" : "50",
+        "tcd" : "Stagnant Qi and Congealed Blood in Lower Burner",
+        "tcd_id" : "113",
+        "title" : "Pale, dark, white coating or red dots (Pulse: Wiry and choppy)",
+        "tongue" : "Pale, dark, white coating or red dots",
+        "tongue_id" : "76"
+      },
+      "189" : {
+        "disease_id" : "41",
+        "id" : "189",
+        "pulse" : "Frail and soggy",
+        "pulse_id" : "73",
+        "tcd" : "Deficient Qi and Deficient Kidney Qi",
+        "tcd_id" : "114",
+        "title" : "Pale, white coating (Pulse: Frail and soggy)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      }
+    },
+    "disease" : "Pelvic Inflammatory Disorders",
+    "disease_id" : "41"
+  }, {
+    "details" : {
+      "190" : {
+        "disease_id" : "42",
+        "id" : "190",
+        "pulse" : "Slippery and rapid",
+        "pulse_id" : "43",
+        "tcd" : "Damp Heat Filling Bladder (Lower Burner Damp Heat)",
+        "tcd_id" : "108",
+        "title" : "Red, greasy coating (Pulse: Slippery and rapid)",
+        "tongue" : "Red, greasy coating",
+        "tongue_id" : "52"
+      },
+      "191" : {
+        "disease_id" : "42",
+        "id" : "191",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Kidney Yin and Residual Damp Heat",
+        "tcd_id" : "109",
+        "title" : "Red coating, greasy at root of tongue (Pulse: Thin and rapid)",
+        "tongue" : "Red coating, greasy at root of tongue",
+        "tongue_id" : "74"
+      },
+      "192" : {
+        "disease_id" : "42",
+        "id" : "192",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Qi and Deficient Yin with Residual Damp Heat",
+        "tcd_id" : "110",
+        "title" : "Normal (Pulse: Empty)",
+        "tongue" : "Normal",
+        "tongue_id" : "75"
+      },
+      "193" : {
+        "disease_id" : "42",
+        "id" : "193",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Spleen and Deficient Kidney",
+        "tcd_id" : "111",
+        "title" : "Thin, white coating (Pulse: Frail)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      }
+    },
+    "disease" : "Genito-Urinary Infections",
+    "disease_id" : "42"
+  }, {
+    "details" : {
+      "194" : {
+        "disease_id" : "43",
+        "id" : "194",
+        "pulse" : "Flating rapid",
+        "pulse_id" : "68",
+        "tcd" : "Wind and Water in Conflict (Pernicious Influence Invading Lungs)",
+        "tcd_id" : "104",
+        "title" : "Thin, yellow coating (Pulse: Flating rapid)",
+        "tongue" : "Thin, yellow coating",
+        "tongue_id" : "25"
+      },
+      "195" : {
+        "disease_id" : "43",
+        "id" : "195",
+        "pulse" : "Wiry, slippery, full",
+        "pulse_id" : "69",
+        "tcd" : "Damp Heat Casing Sieqi",
+        "tcd_id" : "105",
+        "title" : "Greasy, yellow coating (Pulse: Wiry, slippery, full)",
+        "tongue" : "Greasy, yellow coating",
+        "tongue_id" : "13"
+      },
+      "196" : {
+        "disease_id" : "43",
+        "id" : "196",
+        "pulse" : "Soggy or frail",
+        "pulse_id" : "70",
+        "tcd" : "Deficient Spleen Yang and Deficient Kidney Yang",
+        "tcd_id" : "106",
+        "title" : "Pale, white coating (Pulse: Soggy or frail)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "197" : {
+        "disease_id" : "43",
+        "id" : "197",
+        "pulse" : "Sinking, slippery",
+        "pulse_id" : "71",
+        "tcd" : "Dampness Distressing Spleen",
+        "tcd_id" : "77",
+        "title" : "Greasy, white coating (Pulse: Sinking, slippery)",
+        "tongue" : "Greasy, white coating",
+        "tongue_id" : "3"
+      },
+      "198" : {
+        "disease_id" : "43",
+        "id" : "198",
+        "pulse" : "Soggy, empty or slow",
+        "pulse_id" : "72",
+        "tcd" : "Deficient Spleen Yang",
+        "tcd_id" : "107",
+        "title" : "Pale, white coating (Pulse: Soggy, empty or slow)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "199" : {
+        "disease_id" : "43",
+        "id" : "199",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Spleen Yang and Deficient Kidney Yang",
+        "tcd_id" : "106",
+        "title" : "Pale, swollen, moist tongue (Pulse: Frail)",
+        "tongue" : "Pale, swollen, moist tongue",
+        "tongue_id" : "72"
+      },
+      "200" : {
+        "disease_id" : "43",
+        "id" : "200",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Reddish, dry coating (Pulse: Thin and rapid)",
+        "tongue" : "Reddish, dry coating",
+        "tongue_id" : "73"
+      }
+    },
+    "disease" : "Acute and Chronic Glomerulo-Nephritis",
+    "disease_id" : "43"
+  }, {
+    "details" : {
+      "201" : {
+        "disease_id" : "44",
+        "id" : "201",
+        "pulse" : "Wiry and rapid or slippery and rapid",
+        "pulse_id" : "63",
+        "tcd" : "Damp Heat Seeping Downwards into Bladder",
+        "tcd_id" : "100",
+        "title" : "Red, greasy coating (Pulse: Wiry and rapid or slippery and rapid)",
+        "tongue" : "Red, greasy coating",
+        "tongue_id" : "52"
+      },
+      "202" : {
+        "disease_id" : "44",
+        "id" : "202",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "Damp Heat Accumulating and Crystalizing in Bladder",
+        "tcd_id" : "101",
+        "title" : "Normal coating (Pulse: Rapid)",
+        "tongue" : "Normal coating",
+        "tongue_id" : "70"
+      },
+      "203" : {
+        "disease_id" : "44",
+        "id" : "203",
+        "pulse" : "Soggy and rapid",
+        "pulse_id" : "27",
+        "tcd" : "Turbid Damp Heat Obstructing Bladder",
+        "tcd_id" : "102",
+        "title" : "Red, greasy coating (Pulse: Soggy and rapid)",
+        "tongue" : "Red, greasy coating",
+        "tongue_id" : "52"
+      },
+      "204" : {
+        "disease_id" : "44",
+        "id" : "204",
+        "pulse" : "Deep and frail",
+        "pulse_id" : "67",
+        "tcd" : "Deficient Bladder Qi",
+        "tcd_id" : "103",
+        "title" : "Moist, white coating (Pulse: Deep and frail)",
+        "tongue" : "Moist, white coating",
+        "tongue_id" : "71"
+      }
+    },
+    "disease" : "Cystitis, Pyelitis, Prostatitis (Renal Lithiasis)",
+    "disease_id" : "44"
+  }, {
+    "details" : {
+      "205" : {
+        "disease_id" : "45",
+        "id" : "205",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "Hear Violates Lungs, Obstructing Water's Descent",
+        "tcd_id" : "94",
+        "title" : "Thin, yellow coating (Pulse: Rapid)",
+        "tongue" : "Thin, yellow coating",
+        "tongue_id" : "25"
+      },
+      "206" : {
+        "disease_id" : "45",
+        "id" : "206",
+        "pulse" : "Soggy and slippery",
+        "pulse_id" : "64",
+        "tcd" : "Damp Heat Obstructing",
+        "tcd_id" : "95",
+        "title" : "Greasy Coating (Pulse: Soggy and slippery)",
+        "tongue" : "Greasy Coating",
+        "tongue_id" : "50"
+      },
+      "207" : {
+        "disease_id" : "45",
+        "id" : "207",
+        "pulse" : "Soggy and weak",
+        "pulse_id" : "65",
+        "tcd" : "Deficient Middle Burner (spleen) Qi",
+        "tcd_id" : "96",
+        "title" : "Pale coating (Pulse: Soggy and weak)",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "208" : {
+        "disease_id" : "45",
+        "id" : "208",
+        "pulse" : "Frail (especially proximal position)",
+        "pulse_id" : "66",
+        "tcd" : "Weak Life Gate Fire",
+        "tcd_id" : "97",
+        "title" : "Pale coating (Pulse: Frail (especially proximal position))",
+        "tongue" : "Pale coating",
+        "tongue_id" : "17"
+      },
+      "209" : {
+        "disease_id" : "45",
+        "id" : "209",
+        "pulse" : "Rapid and slippery",
+        "pulse_id" : "45",
+        "tcd" : "Bladder Heat Collecting",
+        "tcd_id" : "98",
+        "title" : "Red coating (Pulse: Rapid and slippery)",
+        "tongue" : "Red coating",
+        "tongue_id" : "16"
+      },
+      "210" : {
+        "disease_id" : "45",
+        "id" : "210",
+        "pulse" : "Choppy",
+        "pulse_id" : "11",
+        "tcd" : "Bladder Obstructed",
+        "tcd_id" : "99",
+        "title" : "Dark purple coating (Pulse: Choppy)",
+        "tongue" : "Dark purple coating",
+        "tongue_id" : "69"
+      }
+    },
+    "disease" : "Incontinence of Urine",
+    "disease_id" : "45"
+  }, {
+    "details" : {
+      "211" : {
+        "disease_id" : "46",
+        "id" : "211",
+        "pulse" : "Wiry and rapid or slippery and rapid",
+        "pulse_id" : "63",
+        "tcd" : "DAmp Heat Radiating Downwards into bladder",
+        "tcd_id" : "91",
+        "title" : "Red, greasy, yellow coating (Pulse: Wiry and rapid or slippery and rapid)",
+        "tongue" : "Red, greasy, yellow coating",
+        "tongue_id" : "47"
+      },
+      "212" : {
+        "disease_id" : "46",
+        "id" : "212",
+        "pulse" : "Rapid",
+        "pulse_id" : "49",
+        "tcd" : "Small Intestine Fire Excess",
+        "tcd_id" : "92",
+        "title" : "Yellow coating (Pulse: Rapid)",
+        "tongue" : "Yellow coating",
+        "tongue_id" : "68"
+      },
+      "213" : {
+        "disease_id" : "46",
+        "id" : "213",
+        "pulse" : "Empty or frail",
+        "pulse_id" : "42",
+        "tcd" : "Spleen and Kidneys Exhausted",
+        "tcd_id" : "93",
+        "title" : "Pale, white coating (Pulse: Empty or frail)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      }
+    },
+    "disease" : "Hematuria",
+    "disease_id" : "46"
+  }, {
+    "details" : {
+      "214" : {
+        "disease_id" : "47",
+        "id" : "214",
+        "pulse" : "Tight and Floating",
+        "pulse_id" : "1",
+        "tcd" : "External Influence with Lung Qi not Circulating",
+        "tcd_id" : "88",
+        "title" : "Thin, white coating (Pulse: Tight and Floating)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      },
+      "215" : {
+        "disease_id" : "47",
+        "id" : "215",
+        "pulse" : "Sinking, moderate or empty",
+        "pulse_id" : "62",
+        "tcd" : "Spleen Losing Transforming Ability",
+        "tcd_id" : "89",
+        "title" : "Pale, moist coating (Pulse: Sinking, moderate or empty)",
+        "tongue" : "Pale, moist coating",
+        "tongue_id" : "21"
+      },
+      "216" : {
+        "disease_id" : "47",
+        "id" : "216",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Kidney Yang Exhausted",
+        "tcd_id" : "90",
+        "title" : "Swollen, pale, white coating (Pulse: Frail)",
+        "tongue" : "Swollen, pale, white coating",
+        "tongue_id" : "67"
+      }
+    },
+    "disease" : "Oedema, Ascites",
+    "disease_id" : "47"
+  }, {
+    "details" : {
+      "217" : {
+        "disease_id" : "48",
+        "id" : "217",
+        "pulse" : "Floating and tight or floating and moderate",
+        "pulse_id" : "59",
+        "tcd" : "Exterior Wind Cold",
+        "tcd_id" : "83",
+        "title" : "Thin, white coating (Pulse: Floating and tight or floating and moderate)",
+        "tongue" : "Thin, white coating",
+        "tongue_id" : "24"
+      },
+      "218" : {
+        "disease_id" : "48",
+        "id" : "218",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "Exterior Wind Heat",
+        "tcd_id" : "84",
+        "title" : "Tip of the tongue is red, slightly yellow coating (Pulse: Floating and Rapid)",
+        "tongue" : "Tip of the tongue is red, slightly yellow coating",
+        "tongue_id" : "60"
+      },
+      "219" : {
+        "disease_id" : "48",
+        "id" : "219",
+        "pulse" : "Feeble",
+        "pulse_id" : "60",
+        "tcd" : "External Cold and Interior Deficient Yang Simultaneously",
+        "tcd_id" : "85",
+        "title" : "Pale, moist, coating (Pulse: Feeble)",
+        "tongue" : "Pale, moist, coating",
+        "tongue_id" : "61"
+      },
+      "220" : {
+        "disease_id" : "48",
+        "id" : "220",
+        "pulse" : "Wiry",
+        "pulse_id" : "4",
+        "tcd" : "Sieqi Influence in Shao Yang Stage",
+        "tcd_id" : "86",
+        "title" : "Thin and white or yellow and white coating (Pulse: Wiry)",
+        "tongue" : "Thin and white or yellow and white coating",
+        "tongue_id" : "62"
+      },
+      "221" : {
+        "disease_id" : "48",
+        "id" : "221",
+        "pulse" : "Flooding with strength or slippery and rapid",
+        "pulse_id" : "61",
+        "tcd" : "Sieqi Influence in Yang Ming Stage",
+        "tcd_id" : "87",
+        "title" : "Red, dry, yellow coating (Pulse: Flooding with strength or slippery and rapid)",
+        "tongue" : "Red, dry, yellow coating",
+        "tongue_id" : "63"
+      },
+      "222" : {
+        "disease_id" : "48",
+        "id" : "222",
+        "pulse" : "Thin and rapid",
+        "pulse_id" : "9",
+        "tcd" : "Deficient Yin",
+        "tcd_id" : "46",
+        "title" : "Reddish thin coating (Pulse: Thin and rapid)",
+        "tongue" : "Reddish thin coating",
+        "tongue_id" : "64"
+      },
+      "223" : {
+        "disease_id" : "48",
+        "id" : "223",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Qi",
+        "tcd_id" : "11",
+        "title" : "Pale thin, white coating (Pulse: Frail)",
+        "tongue" : "Pale thin, white coating",
+        "tongue_id" : "65"
+      },
+      "224" : {
+        "disease_id" : "48",
+        "id" : "224",
+        "pulse" : "Choppy",
+        "pulse_id" : "11",
+        "tcd" : "Congealed Blood",
+        "tcd_id" : "12",
+        "title" : "Dark purple coating or red pimples on surface (Pulse: Choppy)",
+        "tongue" : "Dark purple coating or red pimples on surface",
+        "tongue_id" : "66"
+      }
+    },
+    "disease" : "Fevers, Infections",
+    "disease_id" : "48"
+  }, {
+    "details" : {
+      "225" : {
+        "disease_id" : "49",
+        "id" : "225",
+        "pulse" : "Frail or empty",
+        "pulse_id" : "56",
+        "tcd" : "Deficient Lung Qi and Deficient Kidney Yang, Kidney unable to Absorb Qi",
+        "tcd_id" : "79",
+        "title" : "Pale, moist, swollen tongue (Pulse: Frail or empty)",
+        "tongue" : "Pale, moist, swollen tongue",
+        "tongue_id" : "55"
+      },
+      "226" : {
+        "disease_id" : "49",
+        "id" : "226",
+        "pulse" : "Empty",
+        "pulse_id" : "6",
+        "tcd" : "Deficient Spleen Qi and Deficient Lung Qi",
+        "tcd_id" : "80",
+        "title" : "Pale with white coating (Pulse: Empty)",
+        "tongue" : "Pale with white coating",
+        "tongue_id" : "56"
+      },
+      "227" : {
+        "disease_id" : "49",
+        "id" : "227",
+        "pulse" : "Frail and especially sinking",
+        "pulse_id" : "57",
+        "tcd" : "Deficient Spleen Qi and Deficient Kidney Yang",
+        "tcd_id" : "81",
+        "title" : "Pale, moist, swollen with white coating (Pulse: Frail and especially sinking)",
+        "tongue" : "Pale, moist, swollen with white coating",
+        "tongue_id" : "57"
+      },
+      "228" : {
+        "disease_id" : "49",
+        "id" : "228",
+        "pulse" : "Wiry, taut",
+        "pulse_id" : "58",
+        "tcd" : "Liver Invading Spleen",
+        "tcd_id" : "82",
+        "title" : "Dark or normal white coating (Pulse: Wiry, taut)",
+        "tongue" : "Dark or normal white coating",
+        "tongue_id" : "58"
+      },
+      "229" : {
+        "disease_id" : "49",
+        "id" : "229",
+        "pulse" : "Wiry and rapid",
+        "pulse_id" : "5",
+        "tcd" : "Liver Fire Invading Lungs",
+        "tcd_id" : "56",
+        "title" : "Red tongue with thin, yellow coating (Pulse: Wiry and rapid)",
+        "tongue" : "Red tongue with thin, yellow coating",
+        "tongue_id" : "59"
+      }
+    },
+    "disease" : "Infestations & Infections of Internal Organs",
+    "disease_id" : "49"
+  }, {
+    "details" : {
+      "230" : {
+        "disease_id" : "50",
+        "id" : "230",
+        "pulse" : "Empty, frail or thin",
+        "pulse_id" : "53",
+        "tcd" : "Deficient Qi and Deficient Blood of Heart and Spleen",
+        "tcd_id" : "76",
+        "title" : "Pale, white coating (Pulse: Empty, frail or thin)",
+        "tongue" : "Pale, white coating",
+        "tongue_id" : "8"
+      },
+      "231" : {
+        "disease_id" : "50",
+        "id" : "231",
+        "pulse" : "Soggy, slippery or thin",
+        "pulse_id" : "54",
+        "tcd" : "Dampness Distressing Spleen",
+        "tcd_id" : "77",
+        "title" : "Pale, greasy, white coating (Pulse: Soggy, slippery or thin)",
+        "tongue" : "Pale, greasy, white coating",
+        "tongue_id" : "46"
+      },
+      "232" : {
+        "disease_id" : "50",
+        "id" : "232",
+        "pulse" : "Sinking, thin and rapid",
+        "pulse_id" : "55",
+        "tcd" : "Deficient Liver Yin and Deficient Kidney Yin",
+        "tcd_id" : "18",
+        "title" : "Red or scarlet coating (Pulse: Sinking, thin and rapid)",
+        "tongue" : "Red or scarlet coating",
+        "tongue_id" : "53"
+      },
+      "233" : {
+        "disease_id" : "50",
+        "id" : "233",
+        "pulse" : "Frail",
+        "pulse_id" : "41",
+        "tcd" : "Deficient Spleen Yand and Deficient Kidney Yang",
+        "tcd_id" : "78",
+        "title" : "Pale, swollen white coating (Pulse: Frail)",
+        "tongue" : "Pale, swollen white coating",
+        "tongue_id" : "54"
+      }
+    },
+    "disease" : "Anemia",
+    "disease_id" : "50"
+  }, {
+    "details" : {
+      "234" : {
+        "disease_id" : "51",
+        "id" : "234",
+        "pulse" : "Floating",
+        "pulse_id" : "44",
+        "tcd" : "Wind Obstructing Channels",
+        "tcd_id" : "70",
+        "title" : "White coating (Pulse: Floating)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "235" : {
+        "disease_id" : "51",
+        "id" : "235",
+        "pulse" : "Tight",
+        "pulse_id" : "51",
+        "tcd" : "Cold Obstructing Channels",
+        "tcd_id" : "71",
+        "title" : "White coating (Pulse: Tight)",
+        "tongue" : "White coating",
+        "tongue_id" : "4"
+      },
+      "236" : {
+        "disease_id" : "51",
+        "id" : "236",
+        "pulse" : "Soggy",
+        "pulse_id" : "52",
+        "tcd" : "Dampness Obstructing Channels",
+        "tcd_id" : "72",
+        "title" : "Greasy Coating (Pulse: Soggy)",
+        "tongue" : "Greasy Coating",
+        "tongue_id" : "50"
+      },
+      "237" : {
+        "disease_id" : "51",
+        "id" : "237",
+        "pulse" : "Soggy",
+        "pulse_id" : "52",
+        "tcd" : "Wind Cold and Dampness Obstructing Channels",
+        "tcd_id" : "73",
+        "title" : "Greasy Coating (Pulse: Soggy)",
+        "tongue" : "Greasy Coating",
+        "tongue_id" : "50"
+      },
+      "238" : {
+        "disease_id" : "51",
+        "id" : "238",
+        "pulse" : "Floating and Rapid",
+        "pulse_id" : "2",
+        "tcd" : "Wind Heat Obstructing Chennals",
+        "tcd_id" : "74",
+        "title" : "Red-yellow coating (Pulse: Floating and Rapid)",
+        "tongue" : "Red-yellow coating",
+        "tongue_id" : "51"
+      },
+      "239" : {
+        "disease_id" : "51",
+        "id" : "239",
+        "pulse" : "Rapid and slippery",
+        "pulse_id" : "45",
+        "tcd" : "Damp Heat Obstructing Channels",
+        "tcd_id" : "75",
+        "title" : "Red, greasy coating (Pulse: Rapid and slippery)",
+        "tongue" : "Red, greasy coating",
+        "tongue_id" : "52"
+      }
+    },
+    "disease" : "Locomotor Disorders (Bi & Wei Syndromes)",
+    "disease_id" : "51"
+  } ],
+  "remedies" : [ null, [ null, [ "Apis Mellifica" ], [ "Aconitum Napellus" ], [ "Gelsemium Sempervirens" ], [ "Pulsatilla Nigricans" ], [ "Bryonia Alba" ], [ "Belladonna", "Nux Vomica" ], [ "Hydrastis Canadensis" ], [ "Ferrum Phosphoricum" ], [ "Bryonia Alba", "Nux Vomica" ], [ "Phosphorus" ], [ "Natrum Muriaticum" ], [ "Lachesis" ] ], {
+    "13" : [ "Opium" ],
+    "14" : [ "Opium" ],
+    "15" : [ "Camphora Officinarum" ],
+    "16" : [ "Veratrum Album" ],
+    "17" : [ "Causticum" ],
+    "18" : [ "Pyrogenium" ]
+  }, {
+    "19" : [ "Coffea Cruda" ],
+    "20" : [ "Sulphur" ],
+    "21" : [ "Lycopodium Clavatum", "Phosphorus" ],
+    "22" : [ "Argentum Nitricum", "Nux Vomica" ],
+    "23" : [ "Bryonia Alba" ]
+  }, {
+    "24" : [ "Chininum Sulphuricum", "Phosphorus" ],
+    "25" : [ "Sulphur" ],
+    "26" : [ "Lycopodium Clavatum" ],
+    "27" : [ "Chamomilla" ],
+    "28" : [ "China Officinalis" ]
+  }, {
+    "29" : [ "Nux Vomica" ],
+    "30" : [ "Belladonna" ],
+    "31" : [ "Gelsemium Sempervirens" ],
+    "32" : [ "Sulphur" ],
+    "33" : [ "Argentum Nitricum" ]
+  }, {
+    "34" : [ "Gelsemium Sempervirens" ],
+    "35" : [ "Bryonia Alba" ],
+    "36" : [ "Gelsemium Sempervirens" ],
+    "37" : [ "Gelsemium Sempervirens" ],
+    "38" : [ "Natrum Muriaticum" ]
+  }, {
+    "39" : [ "Pulsatilla Nigricans" ],
+    "40" : [ "Phosphorus", "Sulphur" ],
+    "41" : [ "Nux Vomica" ],
+    "42" : [ "Phosphorus" ]
+  }, {
+    "43" : [ "Bryonia Alba" ],
+    "44" : [ "Arsenicum Album" ],
+    "45" : [ "Arsenicum Album" ],
+    "46" : [ "Arsenicum Album", "Bryonia Alba" ],
+    "47" : [ "Opium" ]
+  }, {
+    "48" : [ "Bryonia Alba" ],
+    "49" : [ "Belladonna", "Iodium" ],
+    "50" : [ "Pulsatilla Nigricans" ],
+    "51" : [ "Natrum Muriaticum" ],
+    "52" : [ "Iodium", "Phosphorus" ],
+    "53" : [ "Mercurius Vivus", "Nitricum Acidum" ]
+  }, {
+    "54" : [ "Ferrum Metallicum" ],
+    "55" : [ "Silicea" ],
+    "56" : [ "Lycopodium Clavatum" ],
+    "57" : [ "Chelidonium Majus", "Mercurius Vivus" ],
+    "58" : [ "Nux Vomica", "Pulsatilla Nigricans" ],
+    "59" : [ "Mercurius Vivus" ]
+  }, {
+    "60" : [ "Pulsatilla Nigricans" ],
+    "61" : [ "Belladonna" ],
+    "62" : [ "Lycopodium Clavatum" ],
+    "63" : [ "Pulsatilla Nigricans" ],
+    "64" : [ "Carbo Vegetabilis" ]
+  }, {
+    "65" : [ "Rhus Toxicodendron" ],
+    "66" : [ "Arsenicum Album", "Belladonna" ],
+    "67" : [ "Arsenicum Album", "Pulsatilla Nigricans" ],
+    "68" : [ "Phosphorus" ],
+    "69" : [ "Crotalus Cascavella" ],
+    "70" : [ "Lycopodium Clavatum", "Nux Vomica" ],
+    "71" : [ "Staphysagria" ],
+    "72" : [ "Lachesis", "Petroleum" ],
+    "73" : [ "Bryonia Alba" ]
+  }, {
+    "74" : [ "Phosphorus" ],
+    "75" : [ "Pulsatilla Nigricans" ],
+    "76" : [ "Bryonia Alba" ],
+    "77" : [ "Pulsatilla Nigricans" ]
+  }, {
+    "78" : [ "Belladonna" ],
+    "79" : [ "Gelsemium Sempervirens", "Nux Vomica" ],
+    "80" : [ "China Officinalis" ]
+  }, {
+    "81" : [ "Rhus Toxicodendron" ],
+    "82" : [ "Mercurius Vivus", "Phosphorus" ],
+    "83" : [ "Sepia" ],
+    "84" : [ "Rhus Toxicodendron" ],
+    "85" : [ "Lycopodium Clavatum", "Sulphuricum Acidum" ]
+  }, {
+    "86" : [ "Arsenicum Album" ],
+    "87" : [ "Digitalis Purpurea" ],
+    "88" : [ "China Officinalis" ],
+    "89" : [ "Lycopodium Clavatum" ]
+  }, {
+    "90" : [ "Calcarea Carbonica" ],
+    "91" : [ "China Officinalis" ],
+    "92" : [ "Phosphorus" ],
+    "93" : [ "Arsenicum Album", "China Officinalis" ],
+    "94" : [ "Pulsatilla Nigricans" ]
+  }, {
+    "95" : [ "Nux Vomica" ],
+    "96" : [ "Bryonia Alba" ],
+    "97" : [ "Pulsatilla Nigricans" ],
+    "98" : [ "Nux Vomica" ],
+    "99" : [ "Belladonna" ],
+    "100" : [ "Pulsatilla Nigricans" ],
+    "101" : [ "Nux Vomica" ],
+    "102" : [ "Nux Vomica" ],
+    "103" : [ "Cina" ]
+  }, {
+    "104" : [ "Belladonna" ],
+    "105" : [ "Pulsatilla Nigricans" ],
+    "106" : [ "Nux Vomica" ],
+    "107" : [ "Arsenicum Album" ],
+    "108" : [ "Magnesia Phosphorica" ]
+  }, {
+    "109" : [ "Nux Vomica" ],
+    "110" : [ "Natrum Muriaticum", "Phosphorus" ],
+    "111" : [ "Pulsatilla Nigricans" ]
+  }, {
+    "112" : [ "Arsenicum Album", "Pulsatilla Nigricans" ],
+    "113" : [ "Sulphur" ],
+    "114" : [ "Nux Vomica" ],
+    "115" : [ "Arsenicum Album" ],
+    "116" : [ "Nux Vomica" ],
+    "117" : [ "Nux Vomica" ]
+  }, {
+    "118" : [ "Magnesia Phosphorica" ],
+    "119" : [ "Pulsatilla Nigricans" ],
+    "120" : [ "Chelidonium Majus" ],
+    "121" : [ "Sulphur" ],
+    "122" : [ "Sulphur" ],
+    "123" : [ "Colocynthis" ],
+    "124" : [ "Cantharis", "Lycopodium Clavatum" ]
+  }, {
+    "125" : [ "Chelidonium Majus" ],
+    "126" : [ "Arsenicum Album", "Lycopodium Clavatum" ],
+    "127" : [ "Magnesia Phosphorica" ],
+    "128" : [ "Colchicum Autumnale", "Nux Vomica" ],
+    "129" : [ "Cina" ]
+  }, {
+    "130" : [ "Pulsatilla Nigricans" ],
+    "131" : [ "Colocynthis", "Lycopodium Clavatum" ],
+    "132" : [ "Lycopodium Clavatum", "Nitricum Acidum" ],
+    "133" : [ "Podophyllum Peltatum", "Sulphur" ]
+  }, {
+    "134" : [ "Arsenicum Album", "Mercurius Corrosivus" ],
+    "135" : [ "Bryonia Alba", "Natrum Muriaticum" ],
+    "136" : [ "Pulsatilla Nigricans" ],
+    "137" : [ "Colocynthis" ]
+  }, {
+    "138" : [ "Arsenicum Album", "Natrum Muriaticum", "Nitricum Acidum", "Nux Vomica" ],
+    "139" : [ "Nux Vomica" ],
+    "140" : [ "Ferrum Muriaticum" ],
+    "141" : [ "Magnesia Phosphorica" ],
+    "142" : [ "Arsenicum Album", "Hamamelis Virginica" ]
+  }, {
+    "143" : [ "Phosphorus" ],
+    "144" : [ "Carbo Vegetabilis" ]
+  }, {
+    "145" : [ "China Officinalis", "Lachesis" ],
+    "146" : [ "Lycopodium Clavatum", "Phosphorus" ],
+    "147" : [ "Lycopodium Clavatum", "Sulphur" ],
+    "148" : [ "Arsenicum Album" ]
+  }, {
+    "149" : [ "Nux Vomica" ],
+    "150" : [ "Belladonna" ],
+    "151" : [ "Nux Vomica" ]
+  }, {
+    "152" : [ "Nux Vomica" ],
+    "153" : [ "Arsenicum Album", "Lycopodium Clavatum", "Phosphorus" ],
+    "154" : [ "Pulsatilla Nigricans" ],
+    "155" : [ "Arsenicum Album" ]
+  }, {
+    "156" : [ "Phosphorus", "Sulphur" ]
+  }, {
+    "157" : [ "Nux Vomica" ],
+    "158" : [ "Plumbum Metallicum", "Sepia" ],
+    "159" : [ "Calcarea Carbonica", "Sulphur" ]
+  }, {
+    "160" : [ "Bryonia Alba" ],
+    "161" : [ "Chelidonium Majus", "Mercurius Vivus" ],
+    "162" : [ "Lycopodium Clavatum" ]
+  }, {
+    "163" : [ "Nux Vomica", "Pulsatilla Nigricans" ],
+    "164" : [ "Spongia Tosta" ],
+    "165" : [ "Bryonia Alba" ]
+  }, null, {
+    "166" : [ "Bryonia Alba", "Phosphorus" ],
+    "167" : [ "Iodium", "Natrum Muriaticum" ],
+    "168" : [ "Mercurius Vivus", "Phosphorus" ]
+  }, {
+    "169" : [ "Rhus Toxicodendron" ],
+    "170" : [ "Mercurius Vivus", "Phosphorus" ],
+    "171" : [ "Bryonia Alba" ],
+    "172" : [ "Bryonia Alba" ],
+    "173" : [ "Plumbum Metallicum" ],
+    "174" : [ "Natrum Muriaticum", "Rhus Toxicodendron" ],
+    "175" : [ "Nux Vomica", "Sulphur" ]
+  }, {
+    "176" : [ "Natrum Muriaticum" ],
+    "177" : [ "Zincum Metallicum" ],
+    "178" : [ "Pulsatilla Nigricans" ],
+    "179" : [ "Graphites", "Silicea" ]
+  }, {
+    "180" : [ "Belladonna", "Lachesis", "Lycopodium Clavatum", "Sulphur" ],
+    "181" : [ "Magnesia Phosphorica" ],
+    "182" : [ "Sepia" ]
+  }, {
+    "183" : [ "Phosphorus" ],
+    "184" : [ "Calcarea Carbonica", "China Officinalis", "Phosphorus" ],
+    "185" : [ "China Officinalis" ],
+    "186" : [ "China Officinalis" ]
+  }, {
+    "187" : [ "Nux Vomica" ],
+    "188" : [ "Nux Vomica" ],
+    "189" : [ "Calcarea Carbonica", "Causticum" ]
+  }, {
+    "190" : [ "Belladonna", "Cantharis" ],
+    "191" : [ "Lycopodium Clavatum" ],
+    "192" : [ "China Officinalis" ],
+    "193" : [ "Silicea" ]
+  }, {
+    "194" : [ "Belladonna", "Hepar Sulphuris Calcareum" ],
+    "195" : [ "Apis Mellifica", "Bryonia Alba" ],
+    "196" : [ "Digitalis Purpurea" ],
+    "197" : [ "Arsenicum Album" ],
+    "198" : [ "Natrum Muriaticum" ],
+    "199" : [ "Nux Vomica" ],
+    "200" : [ "Lachesis", "Pulsatilla Nigricans" ]
+  }, {
+    "201" : [ "Berberis Vulgaris", "Cantharis" ],
+    "202" : [ "Lycopodium Clavatum" ],
+    "203" : [ "Sepia" ],
+    "204" : [ "Sepia" ]
+  }, {
+    "205" : [ "Bryonia Alba" ],
+    "206" : [ "Mercurius Vivus" ],
+    "207" : [ "Gelsemium Sempervirens", "Natrum Muriaticum" ],
+    "208" : [ "Phosphorus" ],
+    "209" : [ "Cantharis" ],
+    "210" : [ "Mercurius Vivus" ]
+  }, {
+    "211" : [ "Cantharis" ],
+    "212" : [ "Apis Mellifica" ],
+    "213" : [ "Sepia" ]
+  }, {
+    "214" : [ "Hepar Sulphuris Calcareum" ],
+    "215" : [ "Arsenicum Album", "Digitalis Purpurea" ],
+    "216" : [ "Lycopodium Clavatum" ]
+  }, {
+    "217" : [ "Belladonna", "Pyrogenium" ],
+    "218" : [ "Rhus Toxicodendron" ],
+    "219" : [ "Nux Vomica" ],
+    "220" : [ "Calcarea Carbonica" ],
+    "221" : [ "Bryonia Alba" ],
+    "222" : [ "Sulphur" ],
+    "223" : [ "Nux Vomica" ],
+    "224" : [ "Nux Vomica", "Tuberculinum" ]
+  }, {
+    "225" : [ "Calcarea Carbonica" ],
+    "226" : [ "Arsenicum Album" ],
+    "227" : [ "Pulsatilla Nigricans" ],
+    "228" : [ "Ignatia Amara" ],
+    "229" : [ "Nux Vomica" ]
+  }, {
+    "230" : [ "China Officinalis" ],
+    "231" : [ "Sepia" ],
+    "232" : [ "Ferrum Metallicum" ],
+    "233" : [ "China Officinalis" ]
+  }, {
+    "234" : [ "Pulsatilla Nigricans" ],
+    "235" : [ "Bryonia Alba" ],
+    "236" : [ "Rhus Toxicodendron" ],
+    "237" : [ "Dulcamara" ],
+    "238" : [ "Bryonia Alba" ],
+    "239" : [ "Sulphur" ]
+  } ]
+}

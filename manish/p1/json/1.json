@@ -1,0 +1,11 @@
+{
+    "result": [
+        {"name": "john", "lastName": "Mango", "age": 18, "gender": "male", "phone": "4085052721"},
+        {"name": "Sumi", "lastName": "Parchuri", "age": 24, "gender": "female", "phone": "6502824143"},
+        {"name": "Aruna", "lastName": "Bajaj", "age": 32, "gender": "female", "phone": "4152835667"},
+        {"name": "Aruna", "lastName": "Bajaj", "age": 32, "gender": "female", "phone": "4152835667"},
+        {"name": "Aruna", "lastName": "Bajaj", "age": 32, "gender": "female", "phone": "4152835667"},
+        {"name": "Aruna", "lastName": "Bajaj", "age": 32, "gender": "female", "phone": "4152835667"},
+        {"name": "Aruna", "lastName": "Bajaj", "age": 32, "gender": "female", "phone": "4152835667"}
+    ]
+}

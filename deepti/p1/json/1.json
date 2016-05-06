@@ -1,0 +1,9 @@
+{
+    "result":[
+        {"name":"priya","lastname":"arora","age":20,"gender":"female","phone":"5875743333"},
+        {"name":"ritu","lastname":"sharma","age":33,"gender":"female","phone":"4567777777"},
+        {"name":"rahul","lastname":"bhatt","age":29,"gender":"male","phone":"4154444444"}
+    
+    ]
+    
+}

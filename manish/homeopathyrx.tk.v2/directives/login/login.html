@@ -1,0 +1,17 @@
+<li class="dropdown" ng-if="!userData">
+  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Auth <span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="" ng-click="google()">Google Login</a></li>
+    <li><a href="" ng-click="facebook()">Facebook Login</a></li>
+    <li><a href="" ng-click="github()">GitHub Login</a></li>
+    <li><a href="" ng-click="annonymous()">Annonymous Login</a></li>
+  </ul>
+</li>
+<li class="dropdown" ng-if="userData">
+  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userData.displayName}} <span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li class="dropdown-header" ng-if="userData.email">({{userData.email}})</li>
+    <li><a href="myProfile">My Profiles</a></li>
+    <li><a href="" ng-click="logout();">Logout</a></li>
+  </ul>
+</li>
