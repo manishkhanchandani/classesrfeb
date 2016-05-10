@@ -1,0 +1,105 @@
+<style type="text/css">
+  .repertory .points_2 {
+    color: #3805CB;
+    font-style: italic;    
+  }
+  .repertory .points_1 {
+     
+  }
+  .repertory .points_3 {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  .repertory .media-sub {
+    padding-left: 20px;  
+  }
+  .repertory .media-list {
+    font-size: 11px;  
+  }
+  .repertory .media {
+    margin-top: 0px; 
+  }
+  .repertory h4 {
+    font-size: 16px;
+  }
+  .repertory .chain {
+    font-size: 10px;  
+  }
+</style>
+<div class="container repertory">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Repertorization</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-3">
+      
+      <h3>Chapters</h3>
+      
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="val in chapters | orderBy: 'priority'"><a href="repertory/{{val.symptom}}/{{val.$id}}">{{val.symptom}}</a></li>
+      </ul>
+      
+      
+      
+      
+    </div>
+    
+    
+    <div class="col-md-9">
+        <div class="table-responsive" style="overflow:auto;" ng-if="recordedSymptoms.length > 0">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Symptom</th>
+                        <th>Table heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="syms in recordedSymptoms">
+                        <td scope="row"><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span>{{syms.symptom}} (<a href="" ng-click="delSym(syms.$id)">-</a>)</td>
+                        <td>Table cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      
+      <h3>Symptoms</h3>
+      
+      <!-- start -->
+      <ul class="media-list">
+        <li class="media" ng-repeat="val in records | orderBy: 'priority'">
+          <div class="media-left"></div>
+          <div class="media-body">
+            <h4 class="media-heading">{{val.symptom}} 
+              <span><a href="" ng-click="addsym(val)">+</a></span>
+            </h4>
+            <p><span ng-repeat="remedy in val.remedies" ng-if="val.remedies" class="points_{{remedy.points}}">{{remedy.remedy}}, </span></p>
+            <!-- Nested media object -->
+            <div class="media" ng-if="val.child"  ng-repeat="val2 in val.child | orderBy: 'priority'">
+              <div class="media-left"></div>
+              <div class="media-body media-sub">
+                <h4 class="media-heading">{{val2.symptom}} <span><a href="" ng-click="addsym(val2)">+</a></span></h4>
+                <p><span ng-repeat="remedy in val2.remedies" ng-if="val2.remedies" class="points_{{remedy.points}}">{{remedy.remedy}}, </span></p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+<!-- end -->
+      
+    </div>
+    
+    
+    
+    
+    
+  </div>
+  
+  
+</div>

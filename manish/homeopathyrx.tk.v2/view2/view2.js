@@ -13,7 +13,116 @@ angular.module('myApp.view2', ['ngRoute'])
     templateUrl: 'view2/repertory.html',
     controller: 'ViewRepertoryCtrl'
   })
+  
+  
+  .when('/repertory/:chapter/:parent', {
+    templateUrl: 'view2/view2.html',
+    controller: 'RepertoryCtrl'
+  })
+  .when('/repertory', {
+    templateUrl: 'view2/view2.html',
+    controller: 'RepertoryCtrl'
+  })
   ;
+}])
+
+
+.controller('RepertoryCtrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', function($scope, $firebaseArray, $filter, $routeParams) {
+  console.log($routeParams);
+  
+  //record symptoms
+  
+  //get the chain
+  $scope.recordedSymptoms = null;
+  
+  /*function rFindSymptom(key, reference) {
+    $scope.ref.child('repertory').child('symptoms').child(key).once("value", function(snapshot) {
+      var res = snapshot.val();
+      res.id = snapshot.key();
+      $scope.recordedSymptoms[reference].chain.push(res);
+      if (res.parent == 0) {
+        $scope.recordedSymptoms[reference].chain.reverse();
+        return;
+      } else {
+        rFindSymptom(res.parent, reference);
+      }
+    });
+  }*/
+  
+  //$scope.recordedSymptoms = $firebaseArray($scope.ref.child('repertory').child('tempCase').child($scope.userData.uid));
+  
+  $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).on('value', function(snapshot) {
+    console.log(snapshot.val());
+    if (!snapshot.val()) return;
+    $scope.recordedSymptoms = [];
+    $scope.recordedRemedies = {};
+    angular.forEach(snapshot.val(), function(value, key) {
+      if (value.remedies) {
+        angular.forEach(value.remedies, function(remedyDetails, keyDetails) {
+          if (!$scope.recordedRemedies[keyDetails]) {
+            $scope.recordedRemedies[keyDetails] = {};
+            $scope.recordedRemedies[keyDetails].remedy = remedyDetails.remedy;
+            $scope.recordedRemedies[keyDetails].points = 0;
+          }
+          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + remedyDetails.points;
+        });
+      }
+      $scope.recordedSymptoms.push(value);
+    });
+  });
+  /*
+  $scope.recordedSymptoms.$loaded().then(function (arrR) {
+    angular.forEach(arrR, function(value, key) {
+      $scope.recordedSymptoms[key] = value;
+      $scope.recordedSymptoms[key].chain = [];
+      rFindSymptom(value.parent, key);
+    });
+    console.log($scope.recordedSymptoms);
+    if(!$scope.$$phase) $scope.$apply();
+  });*/
+  
+  
+  $scope.addsym = function(rec)
+  {
+    if (!$scope.userData) return;
+    var id = rec.$id;
+    var data = {symptom: rec.symptom, parent: rec.parent, id: rec.$id, remedies: rec.remedies};
+    $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).set(data);
+  };
+  
+  $scope.delSym = function(id) {
+    if (!$scope.userData) return;
+    $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).remove();
+    if(!$scope.$$phase) $scope.$apply();
+  };
+  //record ends
+  
+  $scope.records = null;
+  if ($routeParams.chapter && $routeParams.parent) {
+    var records = $firebaseArray($scope.ref.child('repertory').child('symptoms').orderByChild('chapter').equalTo($routeParams.chapter));
+    var returnRec = {};
+    records.$loaded().then(function (arrR) {
+      angular.forEach(arrR, function(value) {
+        if (!returnRec[value.parent]) {
+          returnRec[value.parent] = [];  
+        }
+        returnRec[value.parent].push(value);  
+      });
+      
+      angular.forEach(returnRec[$routeParams.parent], function(value, key) {
+        if (returnRec[value.$id]) {
+          returnRec[$routeParams.parent][key].child = returnRec[value.$id];
+        }
+      });
+      
+      $scope.records = returnRec[$routeParams.parent];
+      //console.log($scope.records);
+    });
+  }
+  
+  //chapters
+  var chapterId = 0;
+  $scope.chapters = $firebaseArray($scope.ref.child('repertory').child('symptoms').orderByChild('parent').equalTo(chapterId));
 }])
 
 .controller('ViewRepertoryCtrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', function($scope, $firebaseArray, $filter, $routeParams) {
