@@ -16,7 +16,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope','$http',function($scope,$http) {
     
-    
+    $scope.mydata=null;
     function success(response){
     console.log('success',response);
         $scope.mydata=response.data.result;
@@ -29,7 +29,7 @@ function failure(response){
 }
     $http({
         url:'json/templates.json',
-        method:'GET',
+        method:'GET'
     }).then (success,failure);
     
 
