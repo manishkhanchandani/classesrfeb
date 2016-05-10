@@ -16,8 +16,17 @@ h1, h2, h3 {
   font-family: 'Oswald', sans-serif; 
 }
 
-.jumbotron {
+#lessons .jumbotron {
   background-image: url(images/logo.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 450px;
+  margin-bottom: 0px !important;
+  color: #000;
+}
+
+#massage .jumbotron {
+  background-image: url(images/massage.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   min-height: 450px;
@@ -38,6 +47,17 @@ section {
 
 .section-gray {
   background: #f4f4f4; 
+}
+
+
+.section-title {
+  padding: 10px;
+  background: #0383c0;
+  color: #fff; 
+}
+
+.section-title small {
+  color: #ccc; 
 }
 
 

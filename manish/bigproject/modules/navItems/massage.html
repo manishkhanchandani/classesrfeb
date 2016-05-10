@@ -16,17 +16,30 @@
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professionals <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="massage">Search/Browse Massage Professionals</a></li>
-            <li ng-if="userData && userData.provider != 'anonymous'"><a href="massage/create">Create New Massage Professional</a></li>
-            <li ng-if="userData && userData.provider != 'anonymous'"><a href="massage/my">My Massage Profiles</a></li>
+            <li ng-if="userData"><a href="massage/create">Create New Massage Professional</a></li>
+            <li ng-if="userData"><a href="massage/my">My Massage Profiles</a></li>
           </ul>
         </li>
-        <li><a href="messages">Messages <span messages-counter user-data="userData"></span></a></li>
+        <li ng-if="userData && userData.provider != 'anonymous'"><a href="messages">Messages <span messages-counter user-data="userData"></span></a></li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="myMoney" ng-if="userData && userData.provider != 'anonymous'">My Money</a></li>
+            <!--<li><a href="withdraw" ng-if="userData && userData.provider != 'anonymous'">Withdraw Money</a></li>-->
+            <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
             <li ng-if="userData && userData.provider != 'anonymous'"><a href="manager/county">Become County Manager</a></li>
-            <li><a href="about">About Us</a></li>
-            <li><a href="contact">Contact Us</a></li>
+            <!--<li ng-if="userData && userData.provider != 'anonymous'"><a href="manager/myCounty">My County</a></li>-->
+            <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
+            <li ng-if="userData && userData.provider != 'anonymous'"><a href="http://ineedmassage.us/?refBy={{userData.uid}}">Referrer Link</a></li>
+            <li role="separator" class="divider" ng-if="userData && userData.provider != 'anonymous'"></li>
+            <li><a href="massage/about">About Us</a></li>
+            <li><a href="massage/contact">Contact Us</a></li>
+            <li role="separator" class="divider"></li>
+            <li ng-if="ipDetails.lat && ipDetails.lng"><a href="http://maps.google.com/maps?q=loc:{{ipDetails.lat}},{{ipDetails.lng}}" target="_blank">{{ipDetails.lat}}, {{ipDetails.lng}}</a></li>
+            <li class="dropdown-header" ng-if="ipDetails.city">{{ipDetails.city}}<span ng-if="ipDetails.region">, {{ipDetails.region}}</span><span ng-if="ipDetails.postal">, {{ipDetails.postal}}</span><span ng-if="ipDetails.country">, {{ipDetails.country}}</span></li>
+            <li class="dropdown-header" ng-if="ipDetails.ip">{{ipDetails.ip}}</li>
+            <li role="separator" class="divider"></li>
+            <li ng-if="ipDetails.nearby" ng-repeat="nearby in ipDetails.nearby | orderBy: distance"><a href="">{{nearby.name}} ({{nearby.distance}} miles)</a></li>
           </ul>
         </li>
       </ul>
@@ -34,3 +47,4 @@
     </div><!--/.nav-collapse -->
   </div>
 </nav>
+

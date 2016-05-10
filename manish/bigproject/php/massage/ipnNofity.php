@@ -2,6 +2,7 @@
 
 
 try {
+  define("LOG_FILE", "./ipn_".date('Y-m-d').".log");
   include_once('../firebase/firebaseLib.php');
   define('DEFAULT_URL', 'https://mkgxy.firebaseio.com/projects');
   define('DEFAULT_TOKEN', 'vIthuXgIYof6rBxZknp2Y5XR0fLRwKT5ZFIclunM');
@@ -10,132 +11,8 @@ try {
   define('DEFAULT_PATH_CANCELLED', '/massage/massageCancelled');
   define('DEFAULT_PATH', '/massage/massage');
   $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
-  
-  if (!function_exists('curlget')) {
-      function curlget($url, $post=0, $POSTFIELDS='') {
-          $https = 0;
-          if (substr($url, 0, 5) === 'https') {
-              $https = 1;
-          }
-  
-          $ch = curl_init();
-          curl_setopt($ch, CURLOPT_URL, $url);  
-          if (!empty($post)) {
-              curl_setopt($ch, CURLOPT_POST, 1); 
-              curl_setopt($ch, CURLOPT_POSTFIELDS,$POSTFIELDS);
-          }
-  
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-          curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-          curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE_PATH);
-          curl_setopt($ch, CURLOPT_COOKIEJAR,COOKIE_FILE_PATH);
-          if (!empty($https)) {
-              curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-              curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-          }
-  
-          $result = curl_exec($ch); 
-          curl_close($ch);
-          return $result;
-      }
-  }
-  
-  if (!function_exists('pr')) {
-        function pr($d){
-            echo '<pre>';
-            print_r($d);
-            echo '</pre>';
-        }
-    }
-
-  function save_data($id, $user_id, $data) {
-    global $firebase;
-    $data['mdate'] = date('r');
-    $data['mtime'] = time();
-    $path = MAIN_PATH . '/payments/all';
-    $sid = $firebase->push($path, $data);
-    $arr = json_decode($sid, 1);
-    $pathID = $arr['name'];
-    $path = MAIN_PATH . '/payments/users/'.$user_id.'/'.$id.'/'.$pathID;
-    $firebase->set($path, time());
-  }
-  
-  function getDetails($id) {
-    $path = DEFAULT_PATH_TMP . '/records/'.$id;
-    $rec = $firebase->get($path);
-    $record = json_decode($rec, 1);
-    if (empty($record)) {
-      $path = DEFAULT_PATH . '/records/'.$id;
-      $rec = $firebase->get($path);
-      $record = json_decode($rec, 1);
-      $record['path'] = 'massage';
-    } else {
-      $record['path'] = 'massageTmp';
-    }
-    error_log(date('[Y-m-d H:i e] '). "record: ".var_export($record, 1). PHP_EOL, 3, LOG_FILE);
-    return $record;  
-  }
-
-  function subscr_cancel($id, $user_id, $data) {
-    global $firebase;
-    error_log(date('[Y-m-d H:i e] '). "subscr_cancel started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
-    if (empty($record)) {
-      throw new Exception('empty posting data');
-    }
-    foreach ($record['paths'] as $v) {
-      $path = DEFAULT_PATH. '/' . $v;
-      $r = json_decode($firebase->get($path), 1);
-      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path1: ".$path. PHP_EOL, 3, LOG_FILE);
-      $path = DEFAULT_PATH_CANCELLED . '/' . $v;
-      $firebase->set($path, $r);
-      error_log(date('[Y-m-d H:i e] '). "subscr_cancel path2: ".$path. PHP_EOL, 3, LOG_FILE);
-    }
-    error_log(date('[Y-m-d H:i e] '). "subscr_cancel ended". PHP_EOL, 3, LOG_FILE);
-  }
-
-  function subscr_payment($id, $user_id, $data) {
-    global $firebase;
-    error_log(date('[Y-m-d H:i e] '). "subscr_payment started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
-    if (empty($record)) {
-      throw new Exception('empty posting data');
-    }
-    $exp = strtotime("+1 month", time());
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
-    $firebase->set($path, $exp);
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
-    $firebase->set($path, date('r', $exp));
-    error_log(date('[Y-m-d H:i e] '). "subscr_payment ended". PHP_EOL, 3, LOG_FILE);
-  }
-
-  function subscr_signup($id, $user_id, $data) {
-    global $firebase;
-    error_log(date('[Y-m-d H:i e] '). "subscr_signup started". PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH_TMP . '/records/'.$id;
-    $record = json_decode($firebase->get($path), 1);
-    if (empty($record)) {
-      throw new Exception('empty posting data');
-    }
-    foreach ($record['paths'] as $v) {
-      $path = DEFAULT_PATH_TMP. '/' . $v;
-      $r = json_decode($firebase->get($path), 1);
-      $firebase->delete($path);
-      error_log(date('[Y-m-d H:i e] '). "subscr_signup path1: ".$path. PHP_EOL, 3, LOG_FILE);
-      $path = DEFAULT_PATH . '/' . $v;
-      $firebase->set($path, $r);
-      error_log(date('[Y-m-d H:i e] '). "subscr_signup path2: ".$path. PHP_EOL, 3, LOG_FILE);
-    }
-    $exp = strtotime("+3 months", time());
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration';
-    $firebase->set($path, $exp);
-    $path = DEFAULT_PATH . '/records/'. $id. '/expiration_format';
-    $firebase->set($path, date('r', $exp));
-    error_log(date('[Y-m-d H:i e] '). "subscr_signup ended". PHP_EOL, 3, LOG_FILE);
-    //custom logic ends here
-  }
+  include_once('../functions.php');
+  include_once('config.php');
 
 // CONFIG: Enable debug mode. This means we'll log requests into 'ipn.log' in the same directory.
 // Especially useful if you encounter network errors or other intermittent problems with IPN (validation).
@@ -143,7 +20,6 @@ try {
 define("DEBUG", 1);
 // Set to 0 once you're ready to go live
 define("USE_SANDBOX", 0);
-define("LOG_FILE", "./ipn.log");
 // Read POST data
 // reading posted data directly from $_POST causes serialization
 // issues with array data in POST. Reading raw POST data from input stream instead.

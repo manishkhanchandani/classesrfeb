@@ -11,7 +11,10 @@ angular.module('myApp', [
   'myApp.lessons',
   'myApp.students',
   'myApp.massage',
+  'myApp.mkt',
+  'myApp.food',
   'myApp.manager',
+  'advertisementModule',
   'firebase'
   //'ui.bootstrap'
 ])
@@ -37,6 +40,28 @@ angular.module('myApp', [
     tid: 3,
     homePage: 'modulesFB/massage/massage.html',
     apiUrl: 'http://api.mkgalaxy.com/'
+  },
+  '24hr-market.tk': {
+    siteUrl: 'mkt',
+    clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
+    clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
+    apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
+    title: '24hr Market',
+    firebaseUrl: 'https://mkgxy.firebaseio.com/projects/mkt',
+    tid: 'mkt',
+    homePage: 'modulesFB/mkt/mkt.html',
+    apiUrl: 'http://api.mkgalaxy.com/'
+  },
+  '24hr-food.tk': {
+    siteUrl: 'food',
+    clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
+    clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
+    apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
+    title: '24hr Food',
+    firebaseUrl: 'https://mkgxy.firebaseio.com/projects/food',
+    tid: 'food',
+    homePage: 'modulesFB/food/food.html',
+    apiUrl: 'http://api.mkgalaxy.com/'
   }
 })
 
@@ -48,6 +73,11 @@ angular.module('myApp', [
   .when('/', {
     templateUrl: homePage,
     controller: 'homePageController'
+  })
+  
+  .when('/myProfile', {
+    templateUrl: 'modules/myProfile.html',
+    controller: 'ViewMyProfileCtrl'
   })
   .otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
@@ -88,28 +118,11 @@ angular.module('myApp', [
 })
 
 
-//http://gonzalo123.com/2014/09/08/sharing-scope-between-controllers-with-angularjs/
-.factory('Scopes', function ($rootScope) {
-    var mem = {};
- 
-    return {
-        store: function (key, value) {
-            $rootScope.$emit('scope.stored', key);
-            mem[key] = value;
-        },
-        get: function (key) {
-            return mem[key];
-        }
-    };
-})
-
-
-
 .controller('mainController', ['$scope', '$location', '$firebaseArray', 'dataService', '$timeout', function($scope, $location, $firebaseArray, dataService, $timeout) {
-  
   //config
   $scope.config = dataService.config();
   $scope.templateUrl = 'modules/navItems/'+$scope.config.siteUrl+'.html';
+  $scope.footerUrl = 'modules/navItems/footer_'+$scope.config.siteUrl+'.html';
  
   document.title = $scope.config.title;
   //firebase functionality, remove if you want api
@@ -178,10 +191,54 @@ angular.module('myApp', [
       $scope.userData = JSON.parse(userProfile);
   }
   
+  //ip
+  $scope.ipDetails = null;
+  function getIpDetails(res) {
+    $scope.ipDetails = res.data.data.result;
+    dataService.get('http://api.mkgalaxy.com/api.php?action=nearby&lat='+$scope.ipDetails.lat+'&lng='+$scope.ipDetails.lng, function(response) {
+      $scope.ipDetails.nearby = [];
+      angular.forEach(response.data.data, function (value, key) {
+        value.distance = parseFloat(value.distance);
+        $scope.ipDetails.nearby.push(value);
+      });
+    }, function(error) {console.log('error: ', error);}, true);
+  }
+  dataService.ip(getIpDetails);
+  //end ip
+  
+  function failurelocation(error) {
+		console.log(error);
+	}
+  
+  /*if(navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position){
+      console.log(position);
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			var latLng = new google.maps.LatLng(latitude,longitude);
+			var geocoder;
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'latLng': latLng}, function(results, status) {
+        console.log(results);
+        console.log(results[0]);
+        console.log(results[0].formatted_address);
+				$('#address').html(results[0].formatted_address);
+				$.get('http://wc5.org/ci/pages/nearbyloc.php?lat='+latitude+'&lon='+longitude+'&address='+encodeURIComponent(results[0].formatted_address), function(data) {
+					console.log(data);
+				});
+			});
+		}, failurelocation, {maximumAge:600000});
+  }//end if*/
 }])
 
 .controller('homePageController', ['$scope', function($scope) {
   
 }])
+
+
+
+.controller('ViewMyProfileCtrl', ['$scope', function($scope) {
+}])
+
 
 ;

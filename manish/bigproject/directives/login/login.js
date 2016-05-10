@@ -10,7 +10,8 @@
   }
   
   module
-    .directive('login', ['loginTemplate', 'loginService', 'dataService', '$timeout', login])
+    .directive('login', ['loginTemplate', 'loginService', 'dataService', '$timeout', '$location', login])
+    .directive('myProfile', ['dataService', '$timeout', myProfile])
     .provider('loginTemplate', loginTemplate)
     .service('loginService', [loginService])
     ;
@@ -25,7 +26,20 @@
     };
   }
   
-  function login(loginTemplate, loginService, dataService, $timeout) {
+  
+  function myProfile(dataService, $timeout) {
+    return {
+          scope: {
+            userData: '='
+          },
+          templateUrl: 'directives/login/myProfile.html',
+          link: function(scope, elem, attrs) {
+            console.log(scope.userData);
+          }
+    }//end return
+  }//end function
+  
+  function login(loginTemplate, loginService, dataService, $timeout, $location) {
     return {
           scope: {
             userData: '='
@@ -144,6 +158,7 @@
                 scope.$parent.$parent.userData = null;
                 scope.$parent.userData = null;
                 localStorage.removeItem('userData');
+                $location.path('/');
               }
               
           }//end link

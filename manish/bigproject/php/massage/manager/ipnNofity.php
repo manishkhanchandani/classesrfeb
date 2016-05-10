@@ -9,24 +9,30 @@ try {
   define('DEFAULT_PATH_TMP', '/massage/manager/countyPending');
   define('DEFAULT_PATH_CANCELLED', '/massage/manager/countyCancelled');
   define('DEFAULT_PATH', '/massage/manager/county');
+  define('ROOT_PATH', '/massage');
   $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
   include_once('../../functions.php');
   
-  function save_data($customArr, $data) {
+  
+  function save_data($uid, $uPath, $data) {
     global $firebase;
-    $user_id = $customArr['uid'];
-    $upath = $customArr['path'];
+    error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
     $data['mdate'] = date('r');
     $data['mtime'] = time();
     $path = MAIN_PATH . '/payments/all';
     $sid = $firebase->push($path, $data);
     $arr = json_decode($sid, 1);
     $pathID = $arr['name'];
-    $path = MAIN_PATH . '/payments/users/'.$user_id.'/'.$upath.'/'.$pathID;
+    error_log(date('[Y-m-d H:i e] '). "payment data saved in: ".MAIN_PATH . '/payments/all/'.$pathID. PHP_EOL, 3, LOG_FILE);
+    $path = MAIN_PATH . '/payments/users/'.$uid.'/'.$uPath.'/'.$pathID;
     $firebase->set($path, time());
+    error_log(date('[Y-m-d H:i e] '). "payment user data saved in: ".MAIN_PATH . '/payments/users/'.$uid.'/'.$uPath.'/'.$pathID. PHP_EOL, 3, LOG_FILE);
   }
   
   function getDetails($uPath) {
+    global $firebase;
+    error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
+    error_log(date('[Y-m-d H:i e] '). "uPath is: ".var_export($uPath, 1). PHP_EOL, 3, LOG_FILE);
     $path = DEFAULT_PATH_TMP . '/'.$uPath;
     $rec = $firebase->get($path);
     $record = json_decode($rec, 1);
@@ -38,58 +44,96 @@ try {
         $path = DEFAULT_PATH_CANCELLED . '/'.$uPath;
         $rec = $firebase->get($path);
         $record = json_decode($rec, 1);
-        $record['path'] = 'countyCancelled';
+        $record['sourcePath'] = 'countyCancelled';
       } else {
-        $record['path'] = 'county';
+        $record['sourcePath'] = 'county';
       }
     } else {
-      $record['path'] = 'countyPending';
+      $record['sourcePath'] = 'countyPending';
     }
     error_log(date('[Y-m-d H:i e] '). "record: ".var_export($record, 1). PHP_EOL, 3, LOG_FILE);
     return $record;  
   }
 
-  function subscr_cancel($customArr, $data) {
+
+  function subscr_refunded($uid, $uPath, $data) {
     global $firebase;
-    error_log(date('[Y-m-d H:i e] '). "subscr_cancel started". PHP_EOL, 3, LOG_FILE);
-    $record = getDetails($customArr['path']);
+    return;
+    /*
+    error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
+    error_log(date('[Y-m-d H:i e] '). "subscr_refunded started". PHP_EOL, 3, LOG_FILE);
+    $record = getDetails($uPath);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    error_log(date('[Y-m-d H:i e] '). "subscr_cancel path: ".$customArr['path']. PHP_EOL, 3, LOG_FILE);
-    $path = DEFAULT_PATH_CANCELLED . '/' . $customArr['path'];
+    
+    $path = ROOT_PATH.'/amountReceived/txn_id/'.$data['parent_txn_id'];
+    $txnIdPath = json_decode($firebase->get($path), 1);
+    $path = ROOT_PATH . '/amountReceived/all/'.$txnIdPath;
+    $txnIdRec = json_decode($firebase->get($path), 1);
+    $txnIdRec['refunded'] = 1;
+    $path = ROOT_PATH . '/amountReceived/all/'.$txnIdPath;
+    $firebase->update($path, $txnIdRec);
+   
+    error_log(date('[Y-m-d H:i e] '). "subscr_refunded path: ".$uPath. PHP_EOL, 3, LOG_FILE);
+    $path = DEFAULT_PATH_CANCELLED . '/' . $uPath;
+    $firebase->set($path, $record);
+    
+    $path = DEFAULT_PATH . '/' . $uPath;
+    $firebase->delete($path);
+    error_log(date('[Y-m-d H:i e] '). "subscr_refunded ended". PHP_EOL, 3, LOG_FILE);*/
+  }
+  
+  function subscr_cancel($uid, $uPath) {
+    global $firebase;
+    error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
+    error_log(date('[Y-m-d H:i e] '). "subscr_cancel started". PHP_EOL, 3, LOG_FILE);
+    $record = getDetails($uPath);
+    if (empty($record)) {
+      throw new Exception('empty posting data');
+    }
+    error_log(date('[Y-m-d H:i e] '). "subscr_cancel path: ".$uPath. PHP_EOL, 3, LOG_FILE);
+    $path = DEFAULT_PATH_CANCELLED . '/' . $uPath;
     $firebase->set($path, $record);
     error_log(date('[Y-m-d H:i e] '). "subscr_cancel ended". PHP_EOL, 3, LOG_FILE);
   }
 
-  function subscr_payment($customArr, $data) {
+  function subscr_payment($uid, $uPath, $data) {
     global $firebase;
+    error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
     error_log(date('[Y-m-d H:i e] '). "subscr_payment started". PHP_EOL, 3, LOG_FILE);
-    $record = getDetails($customArr['path']);
+    $record = getDetails($uPath);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    $path = DEFAULT_PATH . '/' . $customArr['path'];
-    $firebase->set($path, $record);
+    $path = DEFAULT_PATH . '/' . $uPath;
+    $firebase->update($path, $record);
     $exp = strtotime("+1 year", time());
-    $path = DEFAULT_PATH . '/'. $customArr['path']. '/expiration';
+    $path = DEFAULT_PATH . '/'. $uPath. '/expiration';
     $firebase->set($path, $exp);
-    $path = DEFAULT_PATH . '/'. $customArr['path']. '/expiration_format';
+    $path = DEFAULT_PATH . '/'. $uPath. '/expiration_format';
     $firebase->set($path, date('r', $exp));
+    
+    //error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin". PHP_EOL, 3, LOG_FILE);
+    $totalAmount = $data['mc_gross'] - $data['mc_fee'];
+    addAmountInUserAccount($firebase, ADMIN_USER, $totalAmount, 100, $data['txn_id'], array('type' => addCounty, 'title' => 'For County: '.$record['county']['county'].', '.$record['county']['state'].', '.$record['county']['country'], 'path' => $record['path'], 'txn_id' => $data['txn_id']), '/massage');
+    error_log(date('[Y-m-d H:i e] '). "subscr_payment adding amount to admin ends". PHP_EOL, 3, LOG_FILE);
+    
     error_log(date('[Y-m-d H:i e] '). "subscr_payment ended". PHP_EOL, 3, LOG_FILE);
   }
 
-  function subscr_signup($customArr, $data) {
+  function subscr_signup($uid, $uPath) {
     global $firebase;
+    error_log(PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
     error_log(date('[Y-m-d H:i e] '). "subscr_signup started". PHP_EOL, 3, LOG_FILE);
-    $record = getDetails($customArr['path']);
+    $record = getDetails($uPath);
     if (empty($record)) {
       throw new Exception('empty posting data');
     }
-    $path = DEFAULT_PATH_TMP . '/' . $customArr['path'];
-    $firebase->remove($path);
-    $path = DEFAULT_PATH . '/' . $customArr['path'];
-    $firebase->set($path, $record);
+    $path = DEFAULT_PATH_TMP . '/' . $uPath;
+    $firebase->delete($path);
+    $path = DEFAULT_PATH . '/' . $uPath;
+    $firebase->update($path, $record);
     error_log(date('[Y-m-d H:i e] '). "subscr_signup ended". PHP_EOL, 3, LOG_FILE);
     //custom logic ends here
   }
@@ -161,6 +205,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Connection: Close'));
 // This is mandatory for some environments.
 //$cert = __DIR__ . "./cacert.pem";
 //curl_setopt($ch, CURLOPT_CAINFO, $cert);
+
+error_log(date('[Y-m-d H:i e] '). PHP_EOL.PHP_EOL.PHP_EOL.PHP_EOL.PHP_EOL, 3, LOG_FILE);
+error_log(date('[Y-m-d H:i e] '). 'STARTING NEW TRANSACTION'.PHP_EOL, 3, LOG_FILE);
+    
 $res = curl_exec($ch);
 if (curl_errno($ch) != 0) // cURL error
 	{
@@ -205,26 +253,32 @@ if (strcmp ($res, "VERIFIED") == 0) {
   error_log(date('[Y-m-d H:i e] '). "custom: $custom ". PHP_EOL, 3, LOG_FILE);
   $customArr = json_decode($custom, 1);
   error_log(date('[Y-m-d H:i e] '). "customArr: ". var_export($customArr, 1). PHP_EOL, 3, LOG_FILE);
+  $uid = $customArr['uid'];
+  $uPath = $customArr['path'];
+  error_log(date('[Y-m-d H:i e] '). "uid: ". var_export($uid, 1). PHP_EOL, 3, LOG_FILE);
+  error_log(date('[Y-m-d H:i e] '). "uPath: ". var_export($uPath, 1). PHP_EOL, 3, LOG_FILE);
   $data = $_POST;
   error_log(date('[Y-m-d H:i e] '). "post: ".var_export($_POST, 1). PHP_EOL, 3, LOG_FILE);
   //custom logic comes here
   //checking data and setting it in record
-  save_data($customArr, $data);
+  save_data($uid, $uPath, $data);
   
   if (!empty($_POST['txn_type'])) {
     switch ($_POST['txn_type']) {
       case 'subscr_signup':
-        subscr_signup($customArr, $data);
+        subscr_signup($uid, $uPath);
         break;
       case 'subscr_payment';
-        subscr_payment($customArr, $data);
+        subscr_payment($uid, $uPath, $data);
         break;
       case 'subscr_cancel';
-        subscr_cancel($customArr, $data);
+        subscr_cancel($uid, $uPath);
         break;
       default:
         break;
     }
+  } else if (!empty($_POST['payment_status']) && $_POST['payment_status'] === 'Refunded') {
+    subscr_refunded($uid, $uPath, $data);
   }
 
 	
@@ -242,4 +296,6 @@ if (strcmp ($res, "VERIFIED") == 0) {
 } catch (Exception $e) {
   error_log(date('[Y-m-d H:i e] '). "Error in Catch: " . $e->getMessage() . PHP_EOL, 3, LOG_FILE);
 }
+
+error_log(date('[Y-m-d H:i e] '). 'ENDING TRANSACTION'.PHP_EOL, 3, LOG_FILE);
 ?>

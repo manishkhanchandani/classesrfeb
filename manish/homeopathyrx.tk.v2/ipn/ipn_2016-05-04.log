@@ -1,0 +1,106 @@
+[2016-05-04 04:42 UTC] customArr: array (
+  'uid' => 'google:112913147917981568678',
+  'id' => '-KGu3cQtqN7AoEu4ClTy',
+)
+[2016-05-04 04:42 UTC] path: '/homeopathyClassical/cases/google:112913147917981568678/-KGu3cQtqN7AoEu4ClTy'
+[2016-05-04 04:42 UTC] r: array (
+  'amount' => 
+  array (
+    'gross' => '0.05',
+    'fees' => '0.05',
+    'net' => 0,
+  ),
+)
+[2016-05-04 04:42 UTC] record: array (
+  'age' => 13,
+  'amount' => 
+  array (
+    'fees' => '0.05',
+    'gross' => '0.05',
+    'net' => 0,
+  ),
+  'attitude' => 'k',
+  'description' => 'dfd',
+  'details' => 
+  array (
+    'disease' => 'Nausea, Vomiting (Including Morning Sickness)',
+    'disease_id' => '18',
+    'id' => '102',
+    'pulse' => 'Slippery and full',
+    'pulse_id' => '94',
+    'tcd' => 'Stagnant Food (Stagnant Food Vecomes Sieqi)',
+    'tcd_id' => '145',
+    'title' => 'Greasy Coating (Pulse: Slippery and full)',
+    'tongue' => 'Greasy Coating',
+    'tongue_id' => '50',
+  ),
+  'dowholeday' => 'k',
+  'email' => 'manishkk74@gmail.com',
+  'food' => 'k',
+  'modalities' => 'df',
+  'name' => 'mango',
+  'reactions' => 'k',
+)
+[2016-05-04 04:42 UTC] remedyPath: '/homeopathyRx/remedies/did_18/rid_102'
+[2016-05-04 04:42 UTC] remedyRecord: array (
+  'age' => 13,
+  'amount' => 
+  array (
+    'fees' => '0.05',
+    'gross' => '0.05',
+    'net' => 0,
+  ),
+  'attitude' => 'k',
+  'description' => 'dfd',
+  'details' => 
+  array (
+    'disease' => 'Nausea, Vomiting (Including Morning Sickness)',
+    'disease_id' => '18',
+    'id' => '102',
+    'pulse' => 'Slippery and full',
+    'pulse_id' => '94',
+    'tcd' => 'Stagnant Food (Stagnant Food Vecomes Sieqi)',
+    'tcd_id' => '145',
+    'title' => 'Greasy Coating (Pulse: Slippery and full)',
+    'tongue' => 'Greasy Coating',
+    'tongue_id' => '50',
+  ),
+  'dowholeday' => 'k',
+  'email' => 'manishkk74@gmail.com',
+  'food' => 'k',
+  'modalities' => 'df',
+  'name' => 'mango',
+  'reactions' => 'k',
+)
+[2016-05-04 04:42 UTC] prescription: Dear mango,
+Your prescription for this month is array (
+  'age' => 13,
+  'amount' => 
+  array (
+    'fees' => '0.05',
+    'gross' => '0.05',
+    'net' => 0,
+  ),
+  'attitude' => 'k',
+  'description' => 'dfd',
+  'details' => 
+  array (
+    'disease' => 'Nausea, Vomiting (Including Morning Sickness)',
+    'disease_id' => '18',
+    'id' => '102',
+    'pulse' => 'Slippery and full',
+    'pulse_id' => '94',
+    'tcd' => 'Stagnant Food (Stagnant Food Vecomes Sieqi)',
+    'tcd_id' => '145',
+    'title' => 'Greasy Coating (Pulse: Slippery and full)',
+    'tongue' => 'Greasy Coating',
+    'tongue_id' => '50',
+  ),
+  'dowholeday' => 'k',
+  'email' => 'manishkk74@gmail.com',
+  'food' => 'k',
+  'modalities' => 'df',
+  'name' => 'mango',
+  'reactions' => 'k',
+)
+    

@@ -19,8 +19,8 @@
             <textarea class="form-control" id="description" placeholder="Enter posting body" ng-model="frm.description" rows="5" required></textarea>
         </div>
         <div class="form-group">
-            <label for="tags">Tags (Comma separated tags for search) *</label>
-            <input type="text" class="form-control" id="tags" placeholder="Enter search tags" ng-model="frm.tags" required>
+            <label for="tags">Massage Types and Tags (Comma separated massage types or tags for search) *</label>
+            <input type="text" class="form-control" id="tags" placeholder="E.g. Thai, Swedish, Hot Stone, Deep Tissue, etc." ng-model="frm.tags" required>
         </div>
         <h3>Coupons & Discounts</h3>
         <div class="form-group">
@@ -28,22 +28,24 @@
             <textarea class="form-control" id="coupon_info" placeholder="Enter coupon / discount information, e.g. 20% off if you buy 6 passes" ng-model="frm.coupon_info"></textarea>
         </div>
         <div class="form-group">
-            <label for="grossprice">Regular Price (in $)</label>
-            <input type="text" class="form-control" id="grossprice" placeholder="Enter regular price e.g. $ 60.00" ng-model="frm.grossprice">
+            <label for="grossprice">Regular Price (in $) *</label>
+            <input type="number" class="form-control" id="grossprice" placeholder="Enter regular price e.g. 60.00 (in US dollars)" ng-model="frm.grossprice" ng-change="changePrice()" required>
         </div>
         <div class="form-group">
             <label for="discount">Discount Price (in $)</label>
-            <input type="text" class="form-control" id="discount" placeholder="Enter discount percent or amount e.g. $ 5.00" ng-model="frm.discount">
+            <input type="number" class="form-control" id="discount" placeholder="Enter discounted amount e.g. 5.00 (in US dollars)" ng-model="frm.discount" ng-change="changePrice()">
         </div>
         <div class="form-group">
-            <label for="netprice">Net Price (in $)</label>
-            <input type="text" class="form-control" id="netprice" placeholder="Enter final net price e.g. $ 55.00" ng-model="frm.netprice">
+            <label for="admin_fees">Admin Fees (Amount to be paid to admin): {{frm.admin_fees | currency}}</label>
+        </div>
+        <div class="form-group">
+            <label for="netprice">Net Price To You {{frm.netprice | currency}} and User Pays {{frm.userprice | currency}}</label>
+        </div>
+        <div class="form-group">
+            <label for="paypal_email">Your Paypal Email * </label>
+            <input type="email" class="form-control" id="paypal_email" placeholder="Enter Paypal Email" ng-model="frm.paypal_email" required>
         </div>
         <h3>Contact & Person Information</h3>
-        <div class="form-group">
-            <label for="paypal_email">Paypal Email (This is where you will get the money)</label>
-            <input type="email" class="form-control" id="paypal_email" placeholder="Enter paypal email" ng-model="frm.paypal_email">
-        </div>
         <div class="form-group">
             <label for="email">{{meta.titleHeading}}'s Email</label>
             <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="frm.email">

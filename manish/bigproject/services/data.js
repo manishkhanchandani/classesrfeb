@@ -59,10 +59,50 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
       return dist;
   };
   
+  this.ip = function(callback) {
+    var url = 'http://api.mkgalaxy.com/ip.php';
+    $http({
+      method: 'GET',
+      url: url
+    }).then(function successCallback(response) {
+        callback(response);
+      }, function errorCallback(response) {
+        console.log('error call back for ip');
+        console.log(response);
+      });
+  };
+  
   this.setFirebase = function(type, ref) {
     var obj = {};
     var theme = '';
     switch (type) {
+      case 'food':
+        theme = 'food';
+        obj.owsRecord = ref.child(theme).child('records');
+        obj.owsLocation = ref.child(theme).child('location');
+        obj.owsTags = ref.child(theme).child('tags');
+        obj.owsOnlyTags = ref.child(theme).child('onlyTags');
+        obj.owsMy = ref.child(theme).child('my');
+        obj.owsArr = $firebaseArray(obj.owsRecord);
+        obj.meta = {
+          title: '24hr-Market',
+          titleHeading: '24hr-Market',
+          redirectUrl: 'mkt'
+        };
+      case 'mkt':
+        theme = 'mkt';
+        obj.owsRecord = ref.child(theme).child('records');
+        obj.owsLocation = ref.child(theme).child('location');
+        obj.owsTags = ref.child(theme).child('tags');
+        obj.owsOnlyTags = ref.child(theme).child('onlyTags');
+        obj.owsMy = ref.child(theme).child('my');
+        obj.owsArr = $firebaseArray(obj.owsRecord);
+        obj.meta = {
+          title: '24hr-Market',
+          titleHeading: '24hr-Market',
+          redirectUrl: 'mkt'
+        };
+        break;
       case 'tutors':
         theme = 'tutors';
         obj.owsRecord = ref.child(theme).child('records');
@@ -139,7 +179,19 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
         
         obj.meta = {
           redirectUrl: 'massage',
-          titleHeading: 'Contact Person'
+          titleHeading: 'Contact Person',
+          amountSharing: {
+            admin: 20,
+            owner: 40,
+            ref1_level1: 10,
+            ref1_level2: 5,
+            ref1_level3: 3,
+            ref1_level4: 2,
+            ref2_level1: 5,
+            ref2_level2: 5,
+            ref2_level3: 5,
+            ref2_level4: 5,
+          }
         };
         
         break;  
@@ -156,6 +208,12 @@ angular.module('myApp').service('dataService', ['$http', 'configs', '$location',
   };
   this.massageSetFirebase = function(ref) {
     return this.setFirebase('massage', ref);
+  };
+  this.mktSetFirebase = function(ref) {
+    return this.setFirebase('mkt', ref);
+  };
+  this.foodSetFirebase = function(ref) {
+    return this.setFirebase('food', ref);
   };
   
   this.refChainList = [];

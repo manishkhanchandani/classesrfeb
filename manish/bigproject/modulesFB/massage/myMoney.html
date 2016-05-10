@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>My Money</h1>
+      <p>Refer someone and get some referral bonus too! Here is your referral link: <br><br>
+      <a href="http://ineedmassage.us/?refBy={{userData.uid}}">http://ineedmassage.us/?refBy={{userData.uid}}</a>
+      </p>
+    </div>
+  </div>
+  <div class="row" ng-if="results.length > 0">
+    <div class="col-md-9">
+      <div class="table-responsive">
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>#Number</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Description</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr dir-paginate="item in results | orderBy: '-mtime' | itemsPerPage: pageSize">
+                      <th scope="row">{{item.$id}}</th>
+                      <td>{{item.mtime | customDate}}</td>
+                      <td>{{item.amount | currency}}</td>
+                      <td><span ng-if="item.type === 'addMassageRecord'">Referral Bonus</span>
+                        <span ng-if="item.type === 'addCounty'">County Fees ({{item.title}})</span>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      
+      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="js/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+    <div class="col-md-3">
+      <p><strong>Total:</strong> {{resultsTotal | currency}}</p>
+      <p><strong>Withdraw: </strong> $0.00</p>
+      <p><strong>Net Balance: </strong> {{resultsTotal | currency}}</p>
+    </div>
+  </div>
+</div>

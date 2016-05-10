@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'])
+angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed', 'angularUtils.directives.dirPagination'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/massage', {
@@ -38,6 +38,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   .when('/massage/create/imagesUpload/:id', {
     templateUrl: 'modulesFB/massage/imageUpload.html',
     controller: 'ViewImageUploadMassageCtrlFB'
+  })
+  .when('/massage/create/img/:id', {
+    templateUrl: 'modulesFB/massage/img.html',
+    controller: 'ViewImgMassageCtrlFB'
   }).when('/massage/create/youtube/:id', {
     templateUrl: 'modulesFB/massage/youtube.html',
     controller: 'ViewYoutubeMassageCtrlFB'
@@ -94,22 +98,64 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     templateUrl: 'modulesFB/massage/my.html',
     controller: 'ViewMyProfileMassageCtrlFB'
   })
+  .when('/myMoney', {
+    templateUrl: 'modulesFB/massage/myMoney.html',
+    controller: 'ViewMyMoneyCtrlFB'
+  })
+  .when('/massage/contact', {
+    templateUrl: 'modulesFB/massage/contact.html',
+    controller: 'ViewContactMassageCtrlFB'
+  })
+  .when('/massage/about', {
+    templateUrl: 'modulesFB/massage/about.html',
+    controller: 'ViewAboutMassageCtrlFB'
+  })
   
   ;
 }])
 
+.controller('ViewDemoMassageCtrlFB', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  
+}])
+
+
+
+.controller('ViewAboutMassageCtrlFB', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  
+}])
+.controller('ViewContactMassageCtrlFB', ['$scope', 'dataService', '$location', function($scope, dataService, $location) {
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  
+}])
 .controller('ViewPaypalMassageCtrlFB', ['$scope', '$routeParams', 'dataService', '$location', function($scope, $routeParams, dataService, $location) {
   var obj = dataService.massageSetFirebase($scope.ref);
   $scope.meta = obj.meta;
   $scope.id = $routeParams.id;
   
   $scope.current = null;
-  obj.owsArrTmp.$loaded().then(function (arrR) {
-    $scope.current = obj.owsArrTmp.$getRecord($scope.id);
-    $scope.current.custom = {id: $scope.current.$id, uid: $scope.current.uid};
+  $scope.settings = function(arr)
+  {
+    $scope.current.custom = {id: $scope.current.id, uid: $scope.userData.uid};
     $scope.current.confirmURL = 'http://ineedmassage.us/massage/paypal/confirm/' + $scope.current.$id;
 		$scope.current.cancelURL = 'http://ineedmassage.us/massage/paypal/cancel/' + $scope.current.$id;
 		$scope.current.notifyURL = 'http://ineedmassage.us/php/massage/ipnNofity.php';
+  };
+  
+  obj.owsArrTmp.$loaded().then(function (arrR) {
+    $scope.current = obj.owsArrTmp.$getRecord($scope.id);
+    if (!$scope.current) {
+      obj.owsArr.$loaded().then(function (arrR) {
+        $scope.current = obj.owsArr.$getRecord($scope.id); 
+        $scope.settings($scope.current);
+      });
+    } else { 
+      $scope.settings($scope.current);
+    }
   });
 }])
 
@@ -122,6 +168,11 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.current = null;
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
+    if (!$scope.current) {
+      obj.owsArr.$loaded().then(function (arrR) {
+        $scope.current = obj.owsArr.$getRecord($scope.id); 
+      });
+    }
   });
 }])
 
@@ -134,7 +185,109 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   $scope.current = null;
   obj.owsArrTmp.$loaded().then(function (arrR) {
     $scope.current = obj.owsArrTmp.$getRecord($scope.id);
+    if (!$scope.current) {
+      obj.owsArr.$loaded().then(function (arrR) {
+        $scope.current = obj.owsArr.$getRecord($scope.id); 
+        $scope.settings($scope.current);
+      });
+    } else { 
+      $scope.settings($scope.current);
+    }
   });
+}])
+
+
+.controller('ViewImgMassageCtrlFB', ['$scope', 'dataService', '$location', '$routeParams', 'FileUploader', function($scope, dataService, $location, $routeParams, FileUploader) {
+  
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  $scope.id = $routeParams.id;
+  
+  $scope.current = null;
+  $scope.images = null;
+  
+  $scope.resetData = function() {
+    $scope.current = obj.owsArr.$getRecord($scope.id);
+    $scope.images = $scope.current.details.images;
+  };
+  
+  obj.owsArr.$loaded().then(function (arrR) {
+    $scope.resetData();
+  });
+  
+  $scope.addImage = function() {
+      obj.owsRecord.child($scope.id).child('details').child('images').child(md5($scope.frm.image)).set($scope.frm.image);
+      $scope.resetData();
+      $scope.frm.image = '';
+  };//add image function ends
+  //ends add Image in database
+  
+  
+  $scope.deleteImage = function(k) {
+    var a = confirm('Do you really want to delete this image');
+    if (!a) return;
+    
+    obj.owsRecord.child($scope.id).child('details').child('images').child(k).remove();
+    $scope.resetData();
+    //do api call
+  };
+  
+  $scope.makeDefaultImage = function(img) {
+    obj.owsRecord.child($scope.id).child('details').child('defaultImage').set(img);
+  };
+  
+  //upload image
+  var requestUrl = $scope.config.apiUrl + 'records.php?action=uploadOnlyNoAuth&uid='+$scope.userData.uid+'&id='+$routeParams.id;
+  var uploader = $scope.uploader = new FileUploader({
+      url: requestUrl
+  });
+  // FILTERS
+
+  uploader.filters.push({
+      name: 'imageFilter',
+      fn: function(item /*{File|FileLikeObject}*/, options) {
+          var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+          return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
+      }
+  });
+
+  // CALLBACKS
+
+  uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
+      console.info('onWhenAddingFileFailed', item, filter, options);
+  };
+  uploader.onAfterAddingFile = function(fileItem) {
+      console.info('onAfterAddingFile', fileItem);
+  };
+  uploader.onAfterAddingAll = function(addedFileItems) {
+      console.info('onAfterAddingAll', addedFileItems);
+  };
+  uploader.onBeforeUploadItem = function(item) {
+      console.info('onBeforeUploadItem', item);
+  };
+  uploader.onProgressItem = function(fileItem, progress) {
+      console.info('onProgressItem', fileItem, progress);
+  };
+  uploader.onProgressAll = function(progress) {
+      console.info('onProgressAll', progress);
+  };
+  uploader.onSuccessItem = function(fileItem, response, status, headers) {
+      console.info('onSuccessItem', fileItem, response, status, headers);
+  };
+  uploader.onErrorItem = function(fileItem, response, status, headers) {
+      console.info('onErrorItem', fileItem, response, status, headers);
+  };
+  uploader.onCancelItem = function(fileItem, response, status, headers) {
+      console.info('onCancelItem', fileItem, response, status, headers);
+  };
+  uploader.onCompleteItem = function(fileItem, response, status, headers) {
+      console.info('onCompleteItem', fileItem, response, status, headers);
+      obj.owsRecord.child($scope.id).child('details').child('images').child(response.data.paramsKey).set(response.data.param);
+  };
+  uploader.onCompleteAll = function() {
+      console.info('onCompleteAll');
+  };
+  
 }])
 
 
@@ -588,13 +741,22 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   if ($scope.userData.provider === 'anonymous') {
-    alert('You are not authorized to post new data');
-    $location.path('/');
-    return;
+    //alert('You are not authorized to post new data');
+    //$location.path('/');
+    //return;
   }
   
   var obj = dataService.massageSetFirebase($scope.ref);
   $scope.meta = obj.meta;
+  
+  
+  $scope.changePrice = function() {
+    $scope.frm.admin_fees = $scope.frm.grossprice * (10 / 100);
+    if (!$scope.frm.discount) $scope.frm.discount = 0.00;
+    $scope.frm.netprice = $scope.frm.grossprice - $scope.frm.discount - $scope.frm.admin_fees;
+    $scope.frm.userprice =  $scope.frm.grossprice - $scope.frm.discount;
+  };
+  
   
   //location starts
   $scope.mapOptions = {
@@ -624,6 +786,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
         $scope.createStatus = 'Please enter tags';
         return; 
       }
+      if (!$scope.frm.agree) {
+        $scope.createStatus = 'Please agree to terms and conditions';
+        return; 
+      }
  
     var postData = {};
     postData.title = $scope.frm.title;
@@ -633,7 +799,6 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.grossprice = ($scope.frm.grossprice) ? $scope.frm.grossprice : '';
     postData.discount = ($scope.frm.discount) ? $scope.frm.discount : '';
     postData.netprice = ($scope.frm.netprice) ? $scope.frm.netprice : '';
-    postData.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
     postData.location = {};
     postData.location.latitude = $scope.frm.details.components.lat;
     postData.location.longitude = $scope.frm.details.components.lng;
@@ -644,7 +809,24 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.location.place_id = $scope.frm.details.place_id;
     postData.location.county = ($scope.frm.details.components.county) ? $scope.frm.details.components.county : '';
     postData.location.formatted_addr = $scope.frm.details.formatted_address;
+    
+    postData.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
+    postData.userprice = ($scope.frm.userprice) ? $scope.frm.userprice : '';
+    postData.admin_fees = ($scope.frm.admin_fees) ? $scope.frm.admin_fees : '';
+    
     postData.tags = $scope.frm.tags;
+    postData.tags2 = postData.tags;
+    postData.tags2 = postData.tags2 + ',' + postData.title;
+    var tmp1 = postData.title.split(' ');
+    angular.forEach(tmp1, function(value, key) {
+        var val = value.replace(/^\s+|\s+$/g, '');
+        if (!val) {
+          return; 
+        }//end if
+        val = val.toLowerCase();
+        postData.tags2 = postData.tags2 + ',' + val;
+    });
+      
     postData.details = {};
     postData.details.profileImage = $scope.userData.image;
     postData.details.postedBy = $scope.userData.displayName;
@@ -656,41 +838,67 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     postData.details.location = $scope.frm.location;
     postData.uid = $scope.userData.uid;
     postData.timestamp = Firebase.ServerValue.TIMESTAMP;
+    postData.createdLocation = $scope.ipDetails;
 
-    obj.owsArrTmp.$add(postData).then(function(response) {
+    var currentObj = {};
+    /*currentObj.owsArr = obj.owsArrTmp;
+    currentObj.owsRecord = obj.owsRecordTmp;
+    currentObj.owsMy = obj.owsMyTmp;
+    currentObj.owsLocation = obj.owsLocationTmp;
+    currentObj.owsTags = obj.owsTagsTmp;
+    currentObj.owsOnlyTags = obj.owsOnlyTagsTmp;*/
+    
+    //if ($scope.userData.provider === 'anonymous') {
+      currentObj.owsArr = obj.owsArr;
+      currentObj.owsRecord = obj.owsRecord;
+      currentObj.owsMy = obj.owsMy;
+      currentObj.owsLocation = obj.owsLocation;
+      currentObj.owsTags = obj.owsTags;
+      currentObj.owsOnlyTags = obj.owsOnlyTags;
+    //}
+
+    currentObj.owsArr.$add(postData).then(function(response) {
       var id = response.key();
       console.log('id: ', id);
-      
+      currentObj.owsRecord.child(id).child('id').set(id);
       //setting path
-      obj.owsRecordTmp.child(id).child('paths').push('records/' + id);
+      currentObj.owsRecord.child(id).child('paths').push('records/' + id);
       //save location
-      obj.owsMyTmp.child($scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
+      currentObj.owsMy.child($scope.userData.uid).child(id).set(Firebase.ServerValue.TIMESTAMP);
       //setting path
-      obj.owsRecordTmp.child(id).child('paths').push('my/' + $scope.userData.uid + '/' + id);
+      currentObj.owsRecord.child(id).child('paths').push('my/' + $scope.userData.uid + '/' + id);
       if (postData.location.county) {
-        obj.owsLocationTmp.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+        currentObj.owsLocation.child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
         //setting path
-        obj.owsRecordTmp.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
+        currentObj.owsRecord.child(id).child('paths').push('location/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
       }
-      if (postData.tags) {
-        var tmp = postData.tags.split(',');
+      
+      if (postData.tags2) {
+        var tmp = postData.tags2.split(',');
         angular.forEach(tmp, function(value, key) {
           var val = value.replace(/^\s+|\s+$/g, '');
+          if (!val) {
+            return; 
+          }//end if
           val = val.toLowerCase();
           if (postData.location.county) {
-            obj.owsTagsTmp.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+            currentObj.owsTags.child(btoa(val)).child(btoa(postData.location.country)).child(btoa(postData.location.state)).child(btoa(postData.location.county)).child(id).set(Firebase.ServerValue.TIMESTAMP);
             //setting path
-            obj.owsRecordTmp.child(id).child('paths').push('tags/' + btoa(val) + '/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
+            currentObj.owsRecord.child(id).child('paths').push('tags/' + btoa(val) + '/' + btoa(postData.location.country) + '/' + btoa(postData.location.state) + '/' + btoa(postData.location.county) + '/' + id);
           }
           
-          obj.owsOnlyTagsTmp.child(btoa(val)).child(id).set(Firebase.ServerValue.TIMESTAMP);
+          currentObj.owsOnlyTags.child(btoa(val)).child(id).set(Firebase.ServerValue.TIMESTAMP);
           //setting path
-          obj.owsRecordTmp.child(id).child('paths').push('onlyTags/' + btoa(val) + '/' + id);
+          currentObj.owsRecord.child(id).child('paths').push('onlyTags/' + btoa(val) + '/' + id);
         });
       }//end if
         //location ends
        $scope.frm = {};
-       $location.path('/massage/paypal/'+id);
+       //if ($scope.userData.provider === 'anonymous') {
+          $location.path('/massage/create/img/'+id);
+       //} else {
+          //$location.path('/massage/paypal/'+id);
+       //}
     });
   };
 }])
@@ -703,9 +911,9 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
   }
   
   if ($scope.userData.provider === 'anonymous') {
-    alert('You are not authorized to post new data');
-    $location.path('/');
-    return;
+    //alert('You are not authorized to post edit data');
+    //$location.path('/');
+    //return;
   }
   
   var obj = dataService.massageSetFirebase($scope.ref);
@@ -740,6 +948,8 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.frm.discount = $scope.current.discount;
     $scope.frm.netprice = $scope.current.netprice;
     $scope.frm.paypal_email = $scope.current.paypal_email;
+    $scope.frm.userprice = $scope.current.userprice;
+    $scope.frm.admin_fees = $scope.current.admin_fees;
     
     $scope.frm.tags = $scope.current.tags;
     $scope.frm.email = $scope.current.details.email;
@@ -765,6 +975,11 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.resetData();
   });
   
+  $scope.changePrice = function() {
+    $scope.frm.admin_fees = $scope.frm.grossprice * (10 / 100);
+    $scope.frm.netprice = $scope.frm.grossprice - $scope.frm.discount - $scope.frm.admin_fees; 
+  };
+  
   
   $scope.submitCreateForm = function() {
     if (!$scope.frm.location) {
@@ -781,6 +996,10 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
       }
       if (!$scope.frm.tags) {
         $scope.createStatus = 'Please enter tags';
+        return; 
+      }
+      if (!$scope.frm.agree) {
+        $scope.createStatus = 'Please agree to terms and conditions';
         return; 
       }
 
@@ -813,6 +1032,8 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.discount = ($scope.frm.discount) ? $scope.frm.discount : '';
     $scope.current.netprice = ($scope.frm.netprice) ? $scope.frm.netprice : '';
     $scope.current.paypal_email = ($scope.frm.paypal_email) ? $scope.frm.paypal_email : '';
+    $scope.current.userprice = ($scope.frm.userprice) ? $scope.frm.userprice : '';
+    $scope.current.admin_fees = ($scope.frm.admin_fees) ? $scope.frm.admin_fees : '';
     
     $scope.current.location.latitude = $scope.frm.details.components.lat;
     $scope.current.location.longitude = $scope.frm.details.components.lng;
@@ -824,6 +1045,20 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     $scope.current.location.county = ($scope.frm.details.components.county) ? $scope.frm.details.components.county : '';
     $scope.current.location.formatted_addr = $scope.frm.details.formatted_address;
     $scope.current.tags = $scope.frm.tags;
+    
+    $scope.current.tags2 = $scope.current.tags;
+    $scope.current.tags2 = $scope.current.tags2 + ',' + $scope.current.title;
+    var tmp1 = $scope.current.title.split(' ');
+    angular.forEach(tmp1, function(value, key) {
+        var val = value.replace(/^\s+|\s+$/g, '');
+        if (!val) {
+          return; 
+        }//end if
+        val = val.toLowerCase();
+        $scope.current.tags2 = $scope.current.tags2 + ',' + val;
+    });
+      
+      
     $scope.current.details.profileImage = $scope.userData.image;
     $scope.current.details.postedBy = $scope.userData.displayName;
     $scope.current.details.email = ($scope.frm.email) ? $scope.frm.email : '';
@@ -834,15 +1069,22 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     
     $scope.current.details.location = $scope.frm.location;
     $scope.current.updated = Firebase.ServerValue.TIMESTAMP;
+    $scope.current.updatedLocation = $scope.ipDetails;
+    console.log($scope.current);
     obj.owsArr.$save($scope.current).then(function(response) {
+        
+        obj.owsRecord.child($scope.id).child('id').set($scope.id);
         //save location
         if ($scope.current.location.county) {
           obj.owsLocation.child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);
         }
-        if ($scope.current.tags) {
-          var tmp = $scope.current.tags.split(',');
+        if ($scope.current.tags2) {
+          var tmp = $scope.current.tags2.split(',');
           angular.forEach(tmp, function(value, key) {
             var val = value.replace(/^\s+|\s+$/g, '');
+            if (!val) {
+              return; 
+            }//end if
             val = val.toLowerCase();
             if ($scope.current.location.county) {
             obj.owsTags.child(btoa(val)).child(btoa($scope.current.location.country)).child(btoa($scope.current.location.state)).child(btoa($scope.current.location.county)).child($scope.id).set(Firebase.ServerValue.TIMESTAMP);
@@ -896,5 +1138,28 @@ angular.module('myApp.massage', ['ngRoute', 'angularFileUpload', 'youtube-embed'
     obj.owsRecord.child($scope.id).child('details').child('defaultImage').set(img);
   };
   
+}])
+
+
+.controller('ViewMyMoneyCtrlFB', ['$scope', '$location', 'dataService', '$routeParams', '$firebaseArray', function($scope, $location, dataService, $routeParams, $firebaseArray) {
+  if (!$scope.userData) {
+   $location.path('/');
+   return; 
+  }
+  
+  var obj = dataService.massageSetFirebase($scope.ref);
+  $scope.meta = obj.meta;
+  $scope.pageSize = 25;
+  $scope.itemCount = 0;
+  $scope.pageChangeHandler = function(num) {
+      console.log('groups page changed to ' + num);
+  };
+  
+    
+  $scope.results = $firebaseArray($scope.ref.child('amountReceived').child('users').child($scope.userData.uid).orderByChild("mtime").limitToLast(500));
+  $scope.ref.child('amountReceived').child('totalAmount').child('users').child($scope.userData.uid).on('value', function(snapshot) {
+    $scope.resultsTotal = snapshot.val();
+    if(!$scope.$$phase) $scope.$apply();
+  });
 }])
 ;

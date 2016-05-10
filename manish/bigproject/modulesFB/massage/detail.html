@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-12">
+      <h1>Details of "{{results.title}}"</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
       <div ng-if="results.mainImage"><img ng-src="{{results.mainImage}}" class="img-responsive img-thumbnail"></div>
       <div class="row">
         <div class="col-md-3" ng-repeat="image in images" style="min-height: 120px;">
@@ -8,16 +13,21 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="pull-right"><a href="" ng-click="goBack()">Go Back</a><span ng-if="userData.uid !== results.uid"> | <a href="messages/{{results.uid}}">Send Message</a></span></div>
+    <div class="col-md-5">
+      <div class="pull-right"><a href="" ng-click="goBack()">Go Back</a><span ng-if="userData.uid !== results.uid && results.details.postedBy !== 'Anonymous' && userData.displayName !== 'Anonymous' && userData.uid"> | <a href="messages/{{results.uid}}">Send Message</a></span></div>
       <h3>{{results.title}}</h3>
       <p>{{results.description}}</p>
+      <div>
       <p ng-if="results.grossprice"><strong>Regular Price:</strong> 
-                <span ng-if="!results.discount">{{results.grossprice}}</span> 
-                <span ng-if="results.discount"><s style="color:red;">{{results.grossprice}}</s> ({{results.netprice}})</span>
-                </p>
+      <span ng-if="!results.discount">{{results.grossprice | currency}}</span> 
+      <span ng-if="results.discount"><s style="color:red;">{{results.grossprice | currency}}</s> ({{results.userprice | currency}}, <strong>Discount of</strong> {{results.discount | currency}})</span> 
+      </p>
+      <p ng-if="results.coupon_info"><strong>Info:</strong> {{results.coupon_info}}</p>
+      </div>
       <p><a href="http://maps.google.com/maps?q=loc:{{results.location.latitude}},{{results.location.longitude}}" target="_blank">{{results.details.location}}</a></p>
       <p><strong>Created on:</strong> {{results.timestamp | customDate}}</p>
+      <p><strong>Massage Type:</strong> {{results.tags}}<br></p>
+      <p ng-if="item.details.postedBy !== 'Anonymous'"><strong>Posted By: </strong>{{results.details.postedBy}}</p>
       <p ng-if="results.details.gender"><strong>Gender:</strong> {{results.details.gender}}</p>
       <p ng-if="results.details.age"><strong>Age:</strong> {{results.details.age}}</p>
       <p ng-if="results.details.email"><strong>Email:</strong> {{results.details.email}}</p>
@@ -26,9 +36,9 @@
       <p ng-if="results.details.pref_phone_text"><strong>Contact By:</strong> <span>Phone Messaging</span></p>
       <p ng-if="results.details.pref_phone_call"><strong>Contact By:</strong> <span>Phone Call</span></p>
       <p><strong>Share:</strong> <span>
-                    <a href="http://twitter.com/intent/tweet?status={{results.title}} {{results.tags}} Tutor {{results.details.location}}%20http://ineedtutor.us/{{meta.redirectUrl}}/detail/{{results.$id}}" id="share_tw" onclick="share('tw');return false" rel="nofollow"><img src="images/twitter.png" alt="twitter"></a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://ineedtutor.us/{{meta.redirectUrl}}/detail/{{results.$id}}" id="share_fb" onclick="share('fb');return false" rel="nofollow"><img src="images/facebook.png" alt="facebook"></a>
-                    <a href="https://plus.google.com/share?url=http://ineedtutor.us/{{meta.redirectUrl}}/detail/{{results.$id}}" id="share_gp" onclick="share('gp');return false" rel="nofollow"><img src="images/google_plus.png" alt="facebook"></a>
+                    <a href="http://twitter.com/intent/tweet?status={{results.title}} {{results.tags}} Tutor {{results.details.location}}%20http://ineedmassage.us/{{meta.redirectUrl}}/detail/{{results.$id}}" id="share_tw" onclick="share('tw');return false" rel="nofollow"><img src="images/twitter.png" alt="twitter"></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://ineedmassage.us/{{meta.redirectUrl}}/detail/{{results.$id}}" id="share_fb" onclick="share('fb');return false" rel="nofollow"><img src="images/facebook.png" alt="facebook"></a>
+                    <a href="https://plus.google.com/share?url=http://ineedmassage.us/{{meta.redirectUrl}}/detail/{{results.$id}}" id="share_gp" onclick="share('gp');return false" rel="nofollow"><img src="images/google_plus.png" alt="facebook"></a>
 				</span></p>
       
       <!-- youtube urls -->
@@ -44,17 +54,22 @@
       
       <!-- links -->
       <div class="row" ng-if="linkUrls">
-        <h3 class="text-center">External Link's</h3>
+        <h3 class="text-center">Link's & PDF's</h3>
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="url in linkUrls"><a href="{{url}}" target="_blank">{{url}}</a></li>
         </ul>
       </div>
       <!-- links -->
       
+      <!-- Extra -->
+      <div class="row pull-right" ng-if="userData.displayName !== 'Anonymous' && results.details.postedBy === 'Anonymous' && userData.uid">
+        <a href="massage/paypal/{{results.id}}">Claim This Profile</a>
+      </div>
+      <!-- Extra -->
       
     </div>
     <div class="col-md-3">
-    
+      <div advertisment user-data="userData" namespace="massage" ref="ref" num-of-rows="5"></div>
     </div>
   </div>
 </div>

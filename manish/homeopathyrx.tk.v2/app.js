@@ -1,0 +1,87 @@
+'use strict';
+
+// Declare app level module which depends on views, and components
+angular.module('myApp', [
+  'ngRoute',
+  'loginModule',
+  'messagesModule',
+  'myApp.view1',
+  'myApp.view2',
+  'firebase'
+  //'ui.bootstrap'
+]).
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $routeProvider.otherwise({redirectTo: '/'});
+  $locationProvider.html5Mode(true);
+}])
+
+.filter('customDate', function($filter) {
+ return function(input) {
+  if(input == null){ return ""; }
+  var _date = $filter('date')(new Date(input), 'MMM dd yyyy');
+  return _date;
+ };
+})
+
+.filter('orderObjectBy', function() {
+  return function(items, field, reverse) {
+    var filtered = [];
+    angular.forEach(items, function(item) {
+      filtered.push(item);
+    });
+    filtered.sort(function (a, b) {
+      return (a[field] > b[field] ? 1 : -1);
+    });
+    if(reverse) filtered.reverse();
+    return filtered;
+  };
+})
+
+
+.filter('objectAsArray', function() {
+  return function(items) {
+    var filtered = [];
+    angular.forEach(items, function(item) {
+      filtered.push(item);
+    });
+    return filtered;
+  };
+})
+
+.controller('mainController', ['$scope', 'dataService', '$timeout', function($scope, dataService, $timeout) {
+  $scope.config = dataService.config();
+  $scope.ref = new Firebase($scope.config.firebaseUrl);
+  $scope.userData = null;
+  
+   //onAuth
+	function authDataCallback(authData) {
+		//console.log('authdata', authData);
+		if (authData) {
+		  //console.log("User is logged in", authData);
+      $scope.ref.child('users').child(authData.uid).once("value", function(snapshot) {
+        var a = snapshot.exists();
+        if (!a) {
+          return;
+        }
+        $scope.userData = snapshot.val();
+        localStorage.setItem('userData', JSON.stringify($scope.userData));
+        console.log('udata: ', $scope.userData);
+        $timeout(function(){
+          if(!$scope.$$phase) $scope.$apply();
+        });
+      });
+		} else {
+		  console.log("User is logged out", authData);
+		  $scope.userData = null;
+		}
+	}
+	
+	$scope.ref.onAuth(authDataCallback);
+  
+  //getting the details form localStorage
+  var userProfile = localStorage.getItem('userData');
+  if (userProfile) {
+      $scope.userData = JSON.parse(userProfile);
+  }
+  
+}])
