@@ -6,11 +6,12 @@ angular.module('myApp', [
   'loginModule',
   'messagesModule',
   'myApp.view1',
+  'myApp.view2',
   'firebase'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
 }])
 
@@ -20,6 +21,31 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
   var _date = $filter('date')(new Date(input), 'MMM dd yyyy');
   return _date;
  };
+})
+
+.filter('orderObjectBy', function() {
+  return function(items, field, reverse) {
+    var filtered = [];
+    angular.forEach(items, function(item) {
+      filtered.push(item);
+    });
+    filtered.sort(function (a, b) {
+      return (a[field] > b[field] ? 1 : -1);
+    });
+    if(reverse) filtered.reverse();
+    return filtered;
+  };
+})
+
+
+.filter('objectAsArray', function() {
+  return function(items) {
+    var filtered = [];
+    angular.forEach(items, function(item) {
+      filtered.push(item);
+    });
+    return filtered;
+  };
 })
 
 .controller('mainController', ['$scope', 'dataService', '$timeout', function($scope, dataService, $timeout) {

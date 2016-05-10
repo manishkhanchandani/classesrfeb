@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <h3>Completed Cases</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="rec in records | orderBy: '-timestamp'" ng-if="rec.prescription">
+        <li class="list-group-item" ng-repeat="rec in records | orderBy: '-timestamp'" ng-if="rec.prescription && !rec.deleted">
           <div class="row">
             <div class="col-md-4">
               <h3>{{rec.name}}</h3>
@@ -17,6 +17,7 @@
               <p><strong>Tongue:</strong> {{rec.details.tongue}}</p>
               <p ng-if="rec.description"><strong>Describe your problem in detail?</strong><br>{{rec.description}}</p>
               <p ng-if="rec.modalities"><strong>When your problem increases/decreases?</strong><br>{{rec.modalities}}</p>
+              <p><a href="" class="btn btn-primary" ng-click="deleteRecord(rec)">Delete</a></p>
             </div>
             <div class="col-md-4">
               <p ng-if="rec.dowholeday"><strong>What you do whole day?</strong><br>{{rec.dowholeday}}</p>
@@ -33,7 +34,7 @@
       
       <h3>Pending Cases</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="rec in records | orderBy: '-timestamp'" ng-if="!rec.prescription">
+        <li class="list-group-item" ng-repeat="rec in records | orderBy: '-timestamp'" ng-if="!rec.prescription && !rec.deleted">
           <div class="row">
             <div class="col-md-4">
               <h3>{{rec.name}}</h3>
@@ -42,6 +43,7 @@
               <p><strong>Tongue:</strong> {{rec.details.tongue}}</p>
               <p ng-if="rec.description"><strong>Describe your problem in detail?</strong><br>{{rec.description}}</p>
               <p ng-if="rec.modalities"><strong>When your problem increases/decreases?</strong><br>{{rec.modalities}}</p>
+              <p><a href="" class="btn btn-primary" ng-click="deleteRecord(rec)">Delete</a></p>
             </div>
             <div class="col-md-4">
               <p ng-if="rec.dowholeday"><strong>What you do whole day?</strong><br>{{rec.dowholeday}}</p>
@@ -50,6 +52,31 @@
               <p ng-if="rec.food"><strong>Your desire in food, your hatrance in food, etc.?</strong><br>{{rec.food}}</p>
             </div>
             <div class="col-md-4"><p><a href="paypal/{{rec.$id}}">Pay Now</a></p></div>
+          </div>
+        </li>
+      </ul>
+      
+      
+      <h3>Deleted Cases</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="rec in records | orderBy: '-timestamp'" ng-if="rec.deleted">
+          <div class="row">
+            <div class="col-md-4">
+              <h3>{{rec.name}}</h3>
+              <p ng-if="rec.timestamp">{{rec.timestamp | customDate}}</p>
+              <p><strong>Disease:</strong> {{rec.details.disease}}</p>
+              <p><strong>Tongue:</strong> {{rec.details.tongue}}</p>
+              <p ng-if="rec.description"><strong>Describe your problem in detail?</strong><br>{{rec.description}}</p>
+              <p ng-if="rec.modalities"><strong>When your problem increases/decreases?</strong><br>{{rec.modalities}}</p>
+              <p><a href="" class="btn btn-primary" ng-click="deletePermanantly(rec)">Delete Permanantly</a> <a href="" class="btn btn-primary" ng-click="undo(rec)">Undo</a></p>
+            </div>
+            <div class="col-md-4">
+              <p ng-if="rec.dowholeday"><strong>What you do whole day?</strong><br>{{rec.dowholeday}}</p>
+              <p ng-if="rec.reactions"><strong>Your reactions in different situations like in anger, fear, anxiety, sadness, crying?</strong><br>{{rec.reactions}}</p>
+              <p ng-if="rec.attitude"><strong>Your attitude towards your friends, families, outsiders, etc.?</strong><br>{{rec.attitude}}</p>
+              <p ng-if="rec.food"><strong>Your desire in food, your hatrance in food, etc.?</strong><br>{{rec.food}}</p>
+            </div>
+            <div class="col-md-4"><p><strong>PRESCRIPTION</strong></p><p>{{rec.prescription}}</p><p><strong>REMEDIES</strong></p><p>{{rec.remedies}}</p></div>
           </div>
         </li>
       </ul>

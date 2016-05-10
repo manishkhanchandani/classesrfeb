@@ -3,7 +3,7 @@
 angular.module('myApp.view1', ['ngRoute', 'firebase'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
+  $routeProvider.when('/', {
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl'
   }).when('/rx', {
@@ -40,18 +40,37 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
 
 }])
 
-.controller('ViewMyCasesCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+.controller('ViewMyCasesCtrl', ['$scope', '$firebaseArray', '$location', function($scope, $firebaseArray, $location) {
   if (!$scope.userData) {
+    alert('Please login first');
     $location.path('/');
     return;
   }//end if
   $scope.records = $firebaseArray($scope.ref.child('cases').child($scope.userData.uid));
   
+  
+  $scope.deleteRecord = function(record) {
+    $scope.ref.child('cases').child($scope.userData.uid).child(record.$id).child('deleted').set(true);
+  };
+  $scope.undo = function(record) {
+    $scope.ref.child('cases').child($scope.userData.uid).child(record.$id).child('deleted').set(false);
+  };
+  
+  $scope.deletePermanantly = function(record) {
+    var a = confirm('are you sure you want to delete this record, you cannot undo this');
+    if (!a) {
+      return false;  
+    }
+    
+    $scope.ref.child('cases').child($scope.userData.uid).child(record.$id).remove();
+    
+  };
 }])
 
 .controller('ViewPaypalCtrl', ['$scope', '$routeParams', '$location', function($scope, $routeParams, $location) {
   if (!$scope.userData) {
-    $location.path('/rx'); 
+    alert('Please login first');
+    $location.path('/'); 
     return;
   }
   $scope.id = $routeParams.id;
@@ -74,6 +93,7 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
 
 .controller('ViewRxCtrl', ['$scope', '$firebaseArray', '$routeParams', '$location', function($scope, $firebaseArray, $routeParams, $location) {
   if (!$scope.userData) {
+    alert('Please login first');
     $location.path('/');
     return;
   }//end if

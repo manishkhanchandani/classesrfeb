@@ -2,7 +2,7 @@
   <div class="row" ng-if="paypal === 1">
     <div class="col-md-12">
       <h2>Homeopathic Treatment: Paypal</h2>
-        <p>Cost for Finding Homeopathic Remedy Through Our Software is $5</p>
+        <p>Cost for Finding Homeopathic Remedy Through Our Software is $1.00</p>
         <!--https://www.paypal.com/cgi-bin/webscr-->
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
           <input type="hidden" name="cmd" value="_xclick">
@@ -10,7 +10,7 @@
           <input type="hidden" name="item_name" value="Payment for Finding Homeopathic Remedy Through Our Software">
           <input type="hidden" name="custom" id="custom" ng-value='current.custom | json' >
           <input type="hidden" name="item_number" value="{{id}}">
-          <input type="hidden" name="amount" value="5">
+          <input type="hidden" name="amount" value="1.00">
           <input type="hidden" name="return" ng-value="current.confirmURL">
           <input type="hidden" name="cancel_return" ng-value="current.cancelURL">
           <input type="hidden" name="notify_url" ng-value="current.notifyURL">
@@ -23,11 +23,13 @@
   <div class="row" ng-if="paypal === 2">
     <div class="col-md-12">
       <h2>Homeopathic Treatment: Paypal Confirmation</h2>
+      <p>You have successfully paid the software fees. Software will generate remedy for you and it will be right in your inbox or you can go to my cases and check the remedy.</p>
     </div>
   </div>
   <div class="row" ng-if="paypal === 3">
     <div class="col-md-12">
       <h2>Homeopathic Treatment: Paypal Cancellation</h2>
+      <p>Sorry, your payment was cancelled. Try again later.</p>
     </div>
   </div>
 </div>
