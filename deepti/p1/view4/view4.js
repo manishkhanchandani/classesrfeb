@@ -12,10 +12,21 @@ angular.module('myApp.view4', ['ngRoute'])
     controller: 'View4aCtrl'
   });
 }])
-
-.controller('View4Ctrl', [function() {
-
-}])
+.controller('View4Ctrl', ['$scope', '$http', function($scope, $http) {
+   
+   function success(response) {
+       console.log('success', response);
+  }
+  
+  function failure(response) {
+       console.log('failure', response);
+   }
+    
+    $http({
+        url: 'json/templates.json',
+        method: 'GET'
+   }).then(success, failure);
+  }])
 .controller('View4aCtrl', [function() {
-
-}]);
+ 
+ }]);
