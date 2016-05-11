@@ -53,9 +53,9 @@ angular.module('myApp.view2', ['ngRoute'])
   
   $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).on('value', function(snapshot) {
     console.log(snapshot.val());
-    if (!snapshot.val()) return;
     $scope.recordedSymptoms = [];
     $scope.recordedRemedies = {};
+    if (!snapshot.val()) return;
     angular.forEach(snapshot.val(), function(value, key) {
       if (value.remedies) {
         angular.forEach(value.remedies, function(remedyDetails, keyDetails) {
@@ -63,6 +63,7 @@ angular.module('myApp.view2', ['ngRoute'])
             $scope.recordedRemedies[keyDetails] = {};
             $scope.recordedRemedies[keyDetails].remedy = remedyDetails.remedy;
             $scope.recordedRemedies[keyDetails].points = 0;
+            $scope.recordedRemedies[keyDetails].id = keyDetails;
           }
           $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + remedyDetails.points;
         });
@@ -86,12 +87,22 @@ angular.module('myApp.view2', ['ngRoute'])
   {
     if (!$scope.userData) return;
     var id = rec.$id;
-    var data = {symptom: rec.symptom, parent: rec.parent, id: rec.$id, remedies: rec.remedies};
+    var data = {symptom: rec.symptom, parent: rec.parent, id: rec.$id, chain: rec.chain};
+    
+    //saving remedies
+    data.remedies = {};
+    if (rec.remedies) {
+      angular.forEach(rec.remedies, function (v, k) {
+        data.remedies[k] = {remedy: v.remedy, points: v.points};
+      });
+    }//get remedy
+    
     $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).set(data);
   };
   
   $scope.delSym = function(id) {
     if (!$scope.userData) return;
+    console.log(id);
     $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).remove();
     if(!$scope.$$phase) $scope.$apply();
   };
@@ -142,10 +153,12 @@ angular.module('myApp.view2', ['ngRoute'])
         $scope.addFrmEdit = snapshot.val();
       });
     }
+    
   }
   
   //get the chain
   $scope.chain = null;
+  $scope.addFrm.chain = [];
   function rFindSymptom(key) {
     $scope.ref.child('repertory').child('symptoms').child(key).once("value", function(snapshot) {
       var res = snapshot.val();
@@ -153,6 +166,16 @@ angular.module('myApp.view2', ['ngRoute'])
       $scope.chain.push(res);
       if (res.parent == 0) {
         $scope.chain.reverse();
+        
+        //adding chain for page
+        if ($scope.chain) {
+          angular.forEach($scope.chain, function(value, key) {
+            var chain = {id: value.id, parent: value.parent, symptom: value.symptom, priority: value.priority};
+            $scope.addFrm.chain.push(chain);
+          });
+        }
+    
+    
         $scope.addFrm.chapter = $scope.chain[0].symptom;
         $scope.addFrmEdit.chapter = $scope.chain[0].symptom;
         return;
@@ -175,23 +198,24 @@ angular.module('myApp.view2', ['ngRoute'])
     var arr = reference.raw.split(/,/g);
     angular.forEach(arr, function(value, key) {
       value = value.toLowerCase().trim();
-      //console.log(value);
       var regexp = new RegExp(/<i><font color=\"#0000ff\">(.*)</, 'g');
       var matchRec2 = regexp.exec(value);
       
       var regexp = new RegExp(/<b><font color="#ff0000">(.*)</, 'g');
       var matchRec3 = regexp.exec(value);
+      var cleanText;
       if (matchRec2) {
-        obj[btoa(matchRec2[1])] = {remedy: matchRec2[1], points: 2};
+        cleanText = matchRec2[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 2};
       } else if (matchRec3) {
-        obj[btoa(matchRec3[1])] = {remedy: matchRec3[1], points: 3};
+        cleanText = matchRec3[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 3};
       } else {
-        var cleanText = value.replace(/<\/?[^>]+(>|$)/g, "");
+        cleanText = value.replace(/<\/?[^>]+(>|$)/g, "");
         obj[btoa(cleanText)] = {remedy: cleanText, points: 1};
       }
     });
     reference.remedies = obj;
-    console.log(obj);
     return obj;
   }
   
@@ -245,7 +269,6 @@ angular.module('myApp.view2', ['ngRoute'])
   //add new symptom
   $scope.addSymptom = function()
   {
-    console.log($scope.addFrm);
     if (!$scope.addFrm.symptom) return;
     if (!$scope.addFrm.priority) $scope.addFrm.priority = 0;
     $scope.addFrm.priority = parseInt($scope.addFrm.priority);
@@ -260,7 +283,15 @@ angular.module('myApp.view2', ['ngRoute'])
       $scope.addFrm.symptom = $scope.addFrm.symptom.toLowerCase().trim();
     }
     
-    $scope.addFrm.raw = '';
+    $scope.addFrm.chain = [];
+    if ($scope.chain) {
+      angular.forEach($scope.chain, function(value, key) {
+        var chain = {id: value.id, parent: value.parent, symptom: value.symptom, priority: value.priority};
+        $scope.addFrm.chain.push(chain);
+      });
+    }
+    
+    delete $scope.addFrm.raw;
     $scope.ref.child('repertory').child('symptoms').push($scope.addFrm);
     
     $scope.addFrm.symptom = '';
@@ -284,11 +315,81 @@ angular.module('myApp.view2', ['ngRoute'])
     if ($scope.addFrmEdit.parent != 0) {
       $scope.addFrmEdit.symptom = $scope.addFrmEdit.symptom.toLowerCase().trim();
     }
-    $scope.addFrmEdit.raw = '';
+    
+    delete $scope.addFrmEdit.raw;
     $scope.ref.child('repertory').child('symptoms').child(id).update($scope.addFrmEdit);
     
   }//end addSymptom
   
+  
+  $scope.mainSymptoms = function()
+  {
+    return;
+    var text = $scope.frm.page;
+    //console.log(text);
+    //type 1
+    /*
+    <p><a NAME="VERTIGO">VERTIGO</b> </a>: remedies</p>
+    */
+    var counter = 1;
+    var matchPattern;
+    var matches = [];
+    var regexp = new RegExp(/<p>(.*)<\/b>(.*): (.*)<\/p>/, 'g');
+    while (matchPattern = regexp.exec(text)) {
+      var data = {};
+      data.symptom = matchPattern[1] + matchPattern[2];
+      data.symptom = data.symptom.replace(/<\/?[^>]+(>|$)/g, "");
+      data.symptom = data.symptom.toLowerCase().trim();
+      data.raw = matchPattern[3];
+      data.remedies = analyseThis(data);
+      data.parent = $routeParams.parent;
+      data.priority = counter;
+      data.chapter = $scope.addFrm.chapter;
+      delete data.raw;
+      console.log(data);
+      $scope.ref.child('repertory').child('symptoms').push(data);
+      
+      counter++;
+      matches.push(matchPattern);
+    }
+    console.log(matches);
+  };
+  
+  
+  
+  $scope.subSymptoms = function()
+  {
+    var text = $scope.frm.page;
+    console.log(text);
+    //type 1
+    /*
+    <p><a NAME="VERTIGO">VERTIGO</b> </a>: remedies</p>
+    */
+    var counter = 1;
+    var matchPattern;
+    var matches = [];
+    var regexp = new RegExp(/<p>(.*): (.*)<\/p>/, 'g');
+    while (matchPattern = regexp.exec(text)) {
+      console.log(matchPattern);
+      var data = {};
+      data.symptom = matchPattern[1];
+      data.symptom = data.symptom.replace(/<\/?[^>]+(>|$)/g, "");
+      data.symptom = data.symptom.toLowerCase().trim();
+      data.raw = matchPattern[2];
+      data.remedies = analyseThis(data);
+      data.parent = $routeParams.parent;
+      data.priority = counter;
+      data.chapter = $scope.addFrm.chapter;
+      data.chain = $scope.addFrm.chain;
+      delete data.raw;
+      console.log(data);
+      $scope.ref.child('repertory').child('symptoms').push(data);
+      
+      counter++;
+      matches.push(matchPattern);
+    }
+    console.log(matches);
+  };
   
   
   $scope.parsePage = function()

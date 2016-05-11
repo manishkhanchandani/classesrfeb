@@ -1,7 +1,8 @@
 <style type="text/css">
   .repertory .points_2 {
     color: #3805CB;
-    font-style: italic;    
+    font-style: italic;  
+    font-weight: bold;  
   }
   .repertory .points_1 {
      
@@ -27,11 +28,45 @@
   .repertory .chain {
     font-size: 10px;  
   }
+  
+  .repertory .tblSymptoms {
+    min-width: 300px;
+  }
+  .repertory .tblRemedies {
+    min-width: 75px;
+  }
 </style>
 <div class="container repertory">
   <div class="row">
     <div class="col-md-12">
       <h1>Repertorization</h1>
+    </div>
+  </div>
+  <div class="row" ng-if="recordedSymptoms.length > 0">
+    <div class="col-md-12">
+      <div class="table-responsive" style="overflow:auto;">
+            <table class="table table-bordered table-striped">
+            <caption>Repertory</caption>
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Symptom</th>
+                        <th class="tblRemedies" ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.remedy}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(k, syms) in recordedSymptoms">
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. <span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span>{{syms.symptom}} (<a href="" ng-click="delSym(syms.id)">-</a>)</td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td scope="row"><strong>Total:</strong> </td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.points}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
   </div>
   
@@ -52,34 +87,22 @@
     
     
     <div class="col-md-9">
-        <div class="table-responsive" style="overflow:auto;" ng-if="recordedSymptoms.length > 0">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Symptom</th>
-                        <th>Table heading</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="syms in recordedSymptoms">
-                        <td scope="row"><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span>{{syms.symptom}} (<a href="" ng-click="delSym(syms.$id)">-</a>)</td>
-                        <td>Table cell</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        
+      
+      
+      
       
       <h3>Symptoms</h3>
-      
+      <input type="search" class="form-control" ng-model="q" placeholder="filter symptoms..." aria-label="filter symptoms" /><br><br>
       <!-- start -->
       <ul class="media-list">
-        <li class="media" ng-repeat="val in records | orderBy: 'priority'">
+        <li class="media" ng-repeat="val in records | orderBy: 'priority' | filter:q as results">
           <div class="media-left"></div>
           <div class="media-body">
             <h4 class="media-heading">{{val.symptom}} 
               <span><a href="" ng-click="addsym(val)">+</a></span>
             </h4>
-            <p><span ng-repeat="remedy in val.remedies" ng-if="val.remedies" class="points_{{remedy.points}}">{{remedy.remedy}}, </span></p>
+            <p><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}">{{remedy.remedy}}, </span></p>
             <!-- Nested media object -->
             <div class="media" ng-if="val.child"  ng-repeat="val2 in val.child | orderBy: 'priority'">
               <div class="media-left"></div>
@@ -89,6 +112,11 @@
               </div>
             </div>
           </div>
+        </li>
+        
+        
+        <li class="animate-repeat" ng-if="results.length == 0">
+          <strong>No results found...</strong>
         </li>
       </ul>
 <!-- end -->
