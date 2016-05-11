@@ -88,7 +88,7 @@
             <div  ng-if="addFrmEdit.remedies">
             <h3>Remedies</h3>
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="remedy in addFrmEdit.remedies">{{remedy.remedy}} ({{remedy.points}})</li>
+              <li class="list-group-item" ng-repeat="(key, remedy) in addFrmEdit.remedies"><input type="text" ng-model="addFrmEdit.remedies[key].remedy"> <input type="text" ng-model="addFrmEdit.remedies[key].points"></li>
             </ul>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>

@@ -123,11 +123,24 @@ angular.module('myApp.view2', ['ngRoute'])
       angular.forEach(returnRec[$routeParams.parent], function(value, key) {
         if (returnRec[value.$id]) {
           returnRec[$routeParams.parent][key].child = returnRec[value.$id];
+          angular.forEach(returnRec[$routeParams.parent][key].child, function(v2, k2) {
+            if (returnRec[v2.$id]) {
+              returnRec[$routeParams.parent][key].child[k2].child = returnRec[v2.$id];
+              
+              angular.forEach(returnRec[$routeParams.parent][key].child[k2].child, function(v3, k3) {
+                if (returnRec[v3.$id]) {
+                  returnRec[$routeParams.parent][key].child[k2].child[k3].child = returnRec[v3.$id];
+                }
+              });
+              
+              
+            }
+          });
         }
       });
       
       $scope.records = returnRec[$routeParams.parent];
-      //console.log($scope.records);
+      console.log('records: ', $scope.records);
     });
   }
   
@@ -200,6 +213,8 @@ angular.module('myApp.view2', ['ngRoute'])
       value = value.toLowerCase().trim();
       var regexp = new RegExp(/<i><font color=\"#0000ff\">(.*)</, 'g');
       var matchRec2 = regexp.exec(value);
+      var regexp = new RegExp(/<font color=\"#0000ff\">(.*)<\/font>/, 'g');
+      var matchRec2a = regexp.exec(value);
       
       var regexp = new RegExp(/<b><font color="#ff0000">(.*)</, 'g');
       var matchRec3 = regexp.exec(value);
@@ -210,6 +225,9 @@ angular.module('myApp.view2', ['ngRoute'])
       } else if (matchRec3) {
         cleanText = matchRec3[1].replace(/<\/?[^>]+(>|$)/g, "");
         obj[btoa(cleanText)] = {remedy: cleanText, points: 3};
+      } else if (matchRec2a) {
+        cleanText = matchRec2a[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 2};
       } else {
         cleanText = value.replace(/<\/?[^>]+(>|$)/g, "");
         obj[btoa(cleanText)] = {remedy: cleanText, points: 1};
@@ -293,7 +311,7 @@ angular.module('myApp.view2', ['ngRoute'])
     
     delete $scope.addFrm.raw;
     $scope.ref.child('repertory').child('symptoms').push($scope.addFrm);
-    
+    $scope.addFrm.remedies = '';
     $scope.addFrm.symptom = '';
     
   }//end addSymptom
