@@ -27,8 +27,32 @@ angular.module('myApp.view2', ['ngRoute'])
 }])
 
 
-.controller('RepertoryCtrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', function($scope, $firebaseArray, $filter, $routeParams) {
-  console.log($routeParams);
+.controller('RepertoryCtrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', '$location', function($scope, $firebaseArray, $filter, $routeParams, $location) {
+  //console.log($routeParams);
+  
+  
+  //chapters
+  var chapterId = 0;
+  $scope.chapters = $firebaseArray($scope.ref.child('repertory').child('symptoms').orderByChild('parent').equalTo(chapterId));
+  
+  $scope.frm = {};
+  $scope.chapters.$loaded().then(function (arrR) {
+    if ($routeParams.chapter && $routeParams.parent) {
+      angular.forEach(arrR, function(value, key) {
+        if ($scope.frm.chapter) return;
+        if (value.$id === $routeParams.parent) {
+          $scope.frm.chapter = value;
+        }
+      });
+    }
+  });
+  
+  $scope.updateChapter = function()
+  {
+    $location.path('repertory/'+encodeURIComponent($scope.frm.chapter.symptom)+'/'+$scope.frm.chapter.$id);
+  }
+  
+  //end chapters
   
   //record symptoms
   
@@ -52,7 +76,7 @@ angular.module('myApp.view2', ['ngRoute'])
   //$scope.recordedSymptoms = $firebaseArray($scope.ref.child('repertory').child('tempCase').child($scope.userData.uid));
   
   $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).on('value', function(snapshot) {
-    console.log(snapshot.val());
+    //console.log(snapshot.val());
     $scope.recordedSymptoms = [];
     $scope.recordedRemedies = {};
     if (!snapshot.val()) return;
@@ -65,7 +89,7 @@ angular.module('myApp.view2', ['ngRoute'])
             $scope.recordedRemedies[keyDetails].points = 0;
             $scope.recordedRemedies[keyDetails].id = keyDetails;
           }
-          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + remedyDetails.points;
+          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + parseInt(remedyDetails.points);
         });
       }
       $scope.recordedSymptoms.push(value);
@@ -102,14 +126,18 @@ angular.module('myApp.view2', ['ngRoute'])
   
   $scope.delSym = function(id) {
     if (!$scope.userData) return;
-    console.log(id);
+    //console.log(id);
     $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).remove();
     if(!$scope.$$phase) $scope.$apply();
   };
   //record ends
   
+  //showing repertory
   $scope.records = null;
   if ($routeParams.chapter && $routeParams.parent) {
+    //$scope.records = JSON.parse(localStorage.getItem($routeParams.chapter));
+  
+
     var records = $firebaseArray($scope.ref.child('repertory').child('symptoms').orderByChild('chapter').equalTo($routeParams.chapter));
     var returnRec = {};
     records.$loaded().then(function (arrR) {
@@ -140,13 +168,17 @@ angular.module('myApp.view2', ['ngRoute'])
       });
       
       $scope.records = returnRec[$routeParams.parent];
-      console.log('records: ', $scope.records);
+      //console.log('records: ', $scope.records);
+
+      //use this after repertory is complete
+      if ($routeParams.chapter) {
+        //localStorage.setItem($routeParams.chapter, JSON.stringify($scope.records));
+        //console.log(JSON.parse(localStorage.getItem($routeParams.chapter)));
+      }
     });
-  }
+  }//end if
+  //end showing repertory
   
-  //chapters
-  var chapterId = 0;
-  $scope.chapters = $firebaseArray($scope.ref.child('repertory').child('symptoms').orderByChild('parent').equalTo(chapterId));
 }])
 
 .controller('ViewRepertoryCtrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', function($scope, $firebaseArray, $filter, $routeParams) {
@@ -179,7 +211,6 @@ angular.module('myApp.view2', ['ngRoute'])
       $scope.chain.push(res);
       if (res.parent == 0) {
         $scope.chain.reverse();
-        
         //adding chain for page
         if ($scope.chain) {
           angular.forEach($scope.chain, function(value, key) {
@@ -191,6 +222,7 @@ angular.module('myApp.view2', ['ngRoute'])
     
         $scope.addFrm.chapter = $scope.chain[0].symptom;
         $scope.addFrmEdit.chapter = $scope.chain[0].symptom;
+        if(!$scope.$$phase) $scope.$apply();
         return;
       } else {
         rFindSymptom(res.parent);
@@ -280,7 +312,7 @@ angular.module('myApp.view2', ['ngRoute'])
       $scope.repertory.push(item);
     });
     $scope.addFrm.priority = $scope.repertory.length + 1;
-    console.log($scope.repertory);
+    //console.log($scope.repertory);
     if(!$scope.$$phase) $scope.$apply();
   });
   
@@ -373,22 +405,46 @@ angular.module('myApp.view2', ['ngRoute'])
     console.log(matches);
   };
   
+  function recDelete(id) {
+    //delete id
+    console.log('deleting id: ', id);
+    $scope.ref.child('repertory').child('symptoms').child(id).remove();
+    
+    //delete ends
+    $scope.ref.child('repertory').child('symptoms').orderByChild('parent').equalTo(id).once('value', function(snapshot) {
+      if (!snapshot.exists()) {
+         return;
+      }
+      angular.forEach(snapshot.val(), function(value, key) {
+        console.log(key, ', ', value);
+        recDelete(key);
+      });
+    });
+  }
   
+  $scope.deleteSymptom = function(id)
+  {
+    var a = confirm('do you really want to delete this symptom, all symptoms under it will also get removed?');
+    if (!a) return;
+    recDelete(id);
+    //$scope.ref.child('repertory').child('symptoms').child(id).remove();
+  };
   
   $scope.subSymptoms = function()
   {
     var text = $scope.frm.page;
-    console.log(text);
+    //console.log(text);
     //type 1
     /*
     <p><a NAME="VERTIGO">VERTIGO</b> </a>: remedies</p>
     */
-    var counter = 1;
+    var counter = $scope.addFrm.priority;
+    console.log('counter starts from ', counter);
     var matchPattern;
     var matches = [];
     var regexp = new RegExp(/<p>(.*): (.*)<\/p>/, 'g');
     while (matchPattern = regexp.exec(text)) {
-      console.log(matchPattern);
+      //console.log(matchPattern);
       var data = {};
       data.symptom = matchPattern[1];
       data.symptom = data.symptom.replace(/<\/?[^>]+(>|$)/g, "");
@@ -407,6 +463,7 @@ angular.module('myApp.view2', ['ngRoute'])
       matches.push(matchPattern);
     }
     console.log(matches);
+    $scope.frm.page = '';
   };
   
   

@@ -76,10 +76,9 @@
       
       <h3>Chapters</h3>
       
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="val in chapters | orderBy: 'priority'"><a href="repertory/{{val.symptom}}/{{val.$id}}">{{val.symptom}}</a></li>
-      </ul>
-      
+      <select ng-model="frm.chapter" class="form-control" ng-options="val.symptom for val in chapters" ng-change="updateChapter();">
+        <option value="">Choose Chapter:</option>
+      </select>
       
       
       
@@ -101,6 +100,7 @@
           <div class="media-body">
             <h4 class="media-heading">{{val.symptom}} 
               <span ng-if="val.remedies"><a href="" ng-click="addsym(val)">+</a></span>
+              <a name="{{val.$id}}"></a>
             </h4>
             <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}">{{remedy.remedy}}, </span></p>
             <!-- Nested media object -->
