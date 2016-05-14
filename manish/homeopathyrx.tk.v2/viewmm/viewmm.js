@@ -9,6 +9,12 @@ angular.module('myApp.viewmm', ['ngRoute'])
   }).when('/mm', {
     templateUrl: 'viewmm/viewmm.html',
     controller: 'ViewMMCtrl'
+  }).when('/mm/:remedy/:author', {
+    templateUrl: 'viewmm/viewmmdetail.html',
+    controller: 'ViewMMDetailCtrl'
+  }).when('/mm/:remedy', {
+    templateUrl: 'viewmm/viewmmdetail.html',
+    controller: 'ViewMMDetailCtrl'
   });
 }])
 
@@ -18,4 +24,14 @@ angular.module('myApp.viewmm', ['ngRoute'])
 
 .controller('ViewAddMMCtrl', ['$scope', function($scope) {
   
+}])
+
+.controller('ViewMMDetailCtrl', ['$scope', '$routeParams', '$location', function($scope, $routeParams, $location) {
+  $scope.error = null;
+  if (!$routeParams.remedy) {
+    $location.path('/mm');
+    return;  
+  }
+  
+  $scope.remedy = $routeParams.remedy;
 }]);
