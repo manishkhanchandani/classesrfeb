@@ -65,7 +65,17 @@ section {
   list-style: none;
   font-size: 18px;
   line-height: 2em;
+  font-weight:bold;
 }
+.feature-list li p, .slogan p {
+  font-weight:normal;
+}
+.slogan p {
+  font-size: 14px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 
 footer {
   text-align:center;

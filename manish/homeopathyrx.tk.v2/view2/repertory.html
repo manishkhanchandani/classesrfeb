@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Repertorization</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Add Symptom</h3>
+      <form ng-submit="addSymptom()">
+          <div class="form-group">
+              <label for="symptom">Symptom</label>
+              <input type="text" class="form-control" ng-model="addFrm.symptom" id="symptom" placeholder="Enter symptom">
+          </div>
+          <div class="form-group" ng-if="addFrm.parent">
+              <label for="parent">Parent Symptom </label>
+              <input type="text" class="form-control" ng-model="addFrm.parent" id="parent" placeholder="Enter Parent Symptom" readonly>
+          </div>
+          <div class="form-group">
+              <label for="priority">Priority</label>
+              <input type="text" class="form-control" ng-model="addFrm.priority" id="priority" placeholder="Enter Priority">
+          </div>
+            <div class="form-group">
+                <label for="priority">Temp Remedies</label>
+                <textarea class="form-control" ng-model="addFrm.raw" id="remedies" placeholder="Enter Remedies"></textarea>
+                <button type="button" class="btn btn-default" ng-click="analyse('add')">Analyse</button>
+            </div>
+            
+            <div  ng-if="addFrm.remedies">
+            <h3>Remedies</h3>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="remedy in addFrm.remedies">{{remedy.remedy}} ({{remedy.points}})</li>
+            </ul>
+            </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    <div class="col-md-4">
+      <h3>Symptoms</h3>
+      <p>(<span><a href="addRepertory"><strong>Home</strong></a></span><span ng-repeat="ch in chain" ng-if="chain"> | <a href="addRepertory/{{ch.id}}">{{ch.symptom}}</a></span>)</p>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="val in repertory | orderBy: 'priority'"><a href="addRepertory/{{val.id}}">{{val.symptom}}</a> <a href="" ng-click="deleteSymptom(val.id)" class="pull-right">Delete</a></li>
+      </ul>
+      
+      
+      
+      <textarea ng-model="frm.page" class="form-control"></textarea>
+      <button type="button" class="btn btn-default" ng-click="subSymptoms()">Sub Symptoms</button>
+    </div>
+    
+    
+    
+    <div class="col-md-4">
+      <div ng-if="addFrmEdit">
+        <h3>Edit Symptom</h3>
+        <form ng-submit="editSymptom(id)">
+            <div class="form-group">
+                <label for="symptom">Symptom</label>
+                <input type="text" class="form-control" ng-model="addFrmEdit.symptom" id="symptom" placeholder="Enter symptom">
+            </div>
+            <div class="form-group" ng-if="addFrmEdit.parent">
+                <label for="parent">Parent Symptom</label>
+                <input type="text" class="form-control" ng-model="addFrmEdit.parent" id="parent" placeholder="Enter Parent Symptom" readonly>
+            </div>
+            <div class="form-group">
+                <label for="priority">Priority</label>
+                <input type="text" class="form-control" ng-model="addFrmEdit.priority" id="priority" placeholder="Enter Priority">
+            </div>
+            <div class="form-group">
+                <label for="priority">Temp Remedies</label>
+                <textarea class="form-control" ng-model="addFrmEdit.raw" id="remedies" placeholder="Enter Remedies"></textarea>
+                <button type="button" class="btn btn-default" ng-click="analyse('edit')">Analyse</button>
+            </div>
+            
+            <div  ng-if="addFrmEdit.remedies">
+            <h3>Remedies</h3>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="(key, remedy) in addFrmEdit.remedies"><input type="text" ng-model="addFrmEdit.remedies[key].remedy"> <input type="text" ng-model="addFrmEdit.remedies[key].points"></li>
+            </ul>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>

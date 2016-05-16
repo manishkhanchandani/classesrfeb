@@ -139,7 +139,7 @@ function processData($firebase, $id, $user_id, $data) {
       
     }//end if
     
-    $remedy .= "\n\nIn chronic cases, You have to take this remedy till you get change in your problem. If your problem decreases or increases, then it means medicine has started working and so don't take any further doses for 3 more months. After 3 months come back on the website to create a follow-up case. In acute case, one dose will cure your problem.";
+    $remedy .= "\n\nIn chronic cases, You have to take this remedy till you get change in your problem. If your problem decreases or increases, then it means medicine has started working and so don't take any further doses for 3 more months. After 3 months come back on the website to create a follow-up case. In acute case, one dose will cure your problem. You can use this remedy with potency 200. If you have any queries, email us at support@homeopathyrx.tk";
     $prescription = "Dear ".$record['name'].",
 Your prescription for this month is: ".$remedy."
     ";
