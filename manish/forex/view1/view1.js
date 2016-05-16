@@ -10,5 +10,11 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
-
+  $scope.ref = new Firebase('https://mkgxy.firebaseio.com/projects/forex2');
+  $scope.records = $firebaseArray($scope.ref);
+  console.log($scope.records);
+  /*var returnRec = {};
+  records.$loaded().then(function (arrR) {
+    
+  });*/
 }]);

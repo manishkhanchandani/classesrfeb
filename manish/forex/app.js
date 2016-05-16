@@ -13,6 +13,17 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
   $locationProvider.html5Mode(true);
 }])
 
+
+.filter('arrayAsObject', function() {
+  return function(items) {
+    var filtered = {};
+    angular.forEach(items, function(item, key) {
+      filtered[key + '_key'] = {strategy: key, total: item};
+    });
+    return filtered;
+  };
+})
+
 .controller('mainController', ['$scope', function($scope) {
   
 }])

@@ -79,7 +79,7 @@ angular.module('myApp.view2', ['ngRoute'])
     //console.log(snapshot.val());
     $scope.recordedSymptoms = [];
     $scope.recordedRemedies = {};
-    if (!snapshot.val()) return;
+    if (!snapshot.exists()) return;
     angular.forEach(snapshot.val(), function(value, key) {
       if (value.remedies) {
         angular.forEach(value.remedies, function(remedyDetails, keyDetails) {
@@ -93,6 +93,7 @@ angular.module('myApp.view2', ['ngRoute'])
         });
       }
       $scope.recordedSymptoms.push(value);
+      if(!$scope.$$phase) $scope.$apply();
     });
   });
   /*
@@ -134,10 +135,11 @@ angular.module('myApp.view2', ['ngRoute'])
   
   //showing repertory
   $scope.records = null;
+  $scope.loading = false;
   if ($routeParams.chapter && $routeParams.parent) {
     //$scope.records = JSON.parse(localStorage.getItem($routeParams.chapter));
   
-
+    $scope.loading = true;
     var records = $firebaseArray($scope.ref.child('repertory').child('symptoms').orderByChild('chapter').equalTo($routeParams.chapter));
     var returnRec = {};
     records.$loaded().then(function (arrR) {
@@ -158,6 +160,12 @@ angular.module('myApp.view2', ['ngRoute'])
               angular.forEach(returnRec[$routeParams.parent][key].child[k2].child, function(v3, k3) {
                 if (returnRec[v3.$id]) {
                   returnRec[$routeParams.parent][key].child[k2].child[k3].child = returnRec[v3.$id];
+                  
+                  angular.forEach(returnRec[$routeParams.parent][key].child[k2].child[k3].child, function(v4, k4) {
+                    if (returnRec[v4.$id]) {
+                      returnRec[$routeParams.parent][key].child[k2].child[k3].child[k4].child = returnRec[v4.$id];
+                    }
+                  });
                 }
               });
               
@@ -175,6 +183,8 @@ angular.module('myApp.view2', ['ngRoute'])
         //localStorage.setItem($routeParams.chapter, JSON.stringify($scope.records));
         //console.log(JSON.parse(localStorage.getItem($routeParams.chapter)));
       }
+      
+      $scope.loading = false;
     });
   }//end if
   //end showing repertory
