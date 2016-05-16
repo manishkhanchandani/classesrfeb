@@ -28,13 +28,55 @@ angular.module('myApp.lessons', ['ngRoute'])
 	
 }])
 
-.controller('ViewLessonsSearchCtrl', ['$scope', function($scope) {
-	
-}])
-
-.controller('ViewCreateCtrl', ['$scope', '$location', 'dataService',function($scope, $location, dataService) {
+.controller('ViewLessonsSearchCtrl', ['$scope', 'dataService', function($scope, dataService) {
 	$scope.mapOptions = {
 		types: 'geocode'
+	};
+	$scope.details = {};
+	
+	function successGetData(response) {
+		console.log('getData Query Success!');
+		$scope.results = response.data.data.results;
+		console.log($scope.results);
+	}
+	function failureGetData(response) {
+		console.log('getData Query Failed!');
+		console.log(response);
+	}
+	
+	/*
+	http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&q=keyword&lat=121.1&lon=71.2&r=10&path=/test
+	
+http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&q=%24scope.frm.keyword&lat=%24scope.details.components.lat&lon=%24scope.details.components.lng&r=%24scope.frm.radius&path=/raghu/lesson
+
+http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1&path=/raghu/lesson	
+	*/
+	$scope.getData = function() {
+		var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php?action=getAll&showLocation=1';
+		if ($scope.frm) {
+			if($scope.frm.keyword) {
+				url = url + '&q=' + encodeURIComponent($scope.frm.keyword);
+			}
+			if ($scope.location) {
+				url = url + '&lat=' + encodeURIComponent($scope.details.components.lat);
+				url = url + '&lon=' + encodeURIComponent($scope.details.components.lng);
+				if($scope.frm.radius) {
+					url = url + '&r=' + encodeURIComponent($scope.frm.radius);
+				} else {
+					url = url + '&r=' + encodeURIComponent('30');
+				}
+			}
+		}
+		url = url + '&path=/raghu/lesson';
+		dataService.get(url, successGetData, failureGetData, true);
+		};
+		
+	$scope.getData();
+	}])
+	
+	.controller('ViewCreateCtrl', ['$scope', '$location', 'dataService',function($scope, $location, dataService) {
+		$scope.mapOptions = {
+			types: 'geocode'
 	};
 	$scope.details = {};	
 	

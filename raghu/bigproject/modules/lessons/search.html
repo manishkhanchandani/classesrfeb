@@ -1,1 +1,39 @@
-<h1>Leasons Search HTML</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Lessons</h3>
+		</div>
+		<div class="alert alert-danger" role="alert" ng-if="searchStatus">
+			{{searchStatus}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<form ng-submit="getData()">
+				<div class="form-group">
+					<label for="Keyword">Keyword</label>
+					<input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+				</div>
+				<div class="form-group">
+					<label for="location">Location</label>
+					<input type="text" class="form-control addressBox" id="location" placeholder="Enter Location" ng-model="location" ng-autocomplete options="mapOptions" details="details">
+				</div>
+				<div class="form-group">
+					<label for="radius"></label>
+					<input type="text" class="form-control" id="radius" placeholder="Enter radius in miles" ng-model="frm.radius">
+				</div>
+				<button type="submit" class="btn btn-primary foem-control">Search</button>
+			</form>
+		</div> <!-- Search Box goes here -->
+		<div class="col-md-9">
+			<div class="list-group">
+				<div class="list-group-item" ng-repeat="item in results">
+					<h4 class="list-group-item-heading">{{item.title}}</h4>
+					<p class="list-group-item-text">	{{item.description}}</p>
+					<p class="list-group-item-text">	{{item.ago}}</p>
+					<p class="list-group-item-text" ng-if="item.distance">	{{item.distance}} miles away</p>
+				</div>
+			</div>
+		</div> <!-- Search result goes here -->
+	</div>
+</div>
