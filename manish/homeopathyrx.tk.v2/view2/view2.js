@@ -13,6 +13,18 @@ angular.module('myApp.view2', ['ngRoute'])
     templateUrl: 'view2/repertory.html',
     controller: 'ViewRepertoryCtrl'
   })
+  .when('/addRepertory2/:chapter/:parent', {
+    templateUrl: 'view2/repertory2.html',
+    controller: 'ViewRepertory2Ctrl'
+  })
+  .when('/addRepertory2/:chapter/', {
+    templateUrl: 'view2/repertory2.html',
+    controller: 'ViewRepertory2Ctrl'
+  })
+  .when('/addRepertory2', {
+    templateUrl: 'view2/repertory2.html',
+    controller: 'ViewRepertory2Ctrl'
+  })
   
   
   .when('/repertory/:chapter/:parent', {
@@ -492,4 +504,222 @@ angular.module('myApp.view2', ['ngRoute'])
     console.log(matches);
   };
   
-}]);
+}])
+
+
+.controller('ViewRepertory2Ctrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', function($scope, $firebaseArray, $filter, $routeParams) {
+  console.log('routeparams: ', $routeParams);
+  //adding new chapter if not exists
+  $scope.chapter = null;
+  if ($routeParams.chapter) {
+    $scope.chapter = decodeURIComponent($routeParams.chapter);
+    $scope.chapter = $scope.chapter.toLowerCase().trim();
+    $scope.ref.child('repertory2').child('kent').child('chapters').child(btoa($scope.chapter)).once("value", function(snapshot) {
+      console.log('chapter: ', snapshot.val());
+      if (!snapshot.exists()) {
+        console.log('adding chapter');
+        var arr = {chapter: $scope.chapter, timestamp: Firebase.ServerValue.TIMESTAMP, priority: 0};
+        $scope.ref.child('repertory2').child('kent').child('chapters').child(btoa($scope.chapter)).set(arr);
+      }
+    });
+  }
+  //end adding new chapter if not exists
+  
+  //getting all chapters
+  $scope.chapters = $firebaseArray($scope.ref.child('repertory2').child('kent').child('chapters'));
+  console.log('chapters: ', $scope.chapters);
+  //end getting all chapters
+  
+  //setting priority and getting list
+  $scope.repertory = null;
+  $scope.parent = ($routeParams.parent) ? $routeParams.parent : 0;
+  $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('parent').equalTo($scope.parent).on("value", function(snapshot) {
+    $scope.repertory = [];
+    angular.forEach(snapshot.val(), function(item, key) {
+      item.id = key;
+      $scope.repertory.push(item);
+    });
+    $scope.priority = $scope.repertory.length + 1;
+    //console.log('repertory: ', $scope.repertory);
+    //console.log('priority: ', $scope.priority);
+    if(!$scope.$$phase) $scope.$apply();
+  });
+  //end
+  
+  //adding symptoms
+  //analyse remedy
+  function analyseThis(reference)
+  {
+    
+    var obj = {};
+    var arr = reference.split(/,/g);
+    var regexp;
+    angular.forEach(arr, function(value, key) {
+      value = value.toLowerCase().trim();
+      regexp = new RegExp(/<i><font color=\"#0000ff\">(.*)</, 'g');
+      var matchRec2 = regexp.exec(value);
+      
+      regexp = new RegExp(/<font color=\"#0000ff\">(.*)<\/font>/, 'g');
+      var matchRec2a = regexp.exec(value);
+      
+      regexp = new RegExp(/<b><font color="#ff0000">(.*)</, 'g');
+      var matchRec3 = regexp.exec(value);
+      
+      regexp = new RegExp(/<b><font color="#ff0000">(.*)<\/b>/, 'g');
+      var matchRec4 = regexp.exec(value);
+      
+      regexp = new RegExp(/<font color=\"#0000ff\">(.*)$/, 'g');
+      var matchRec5 = regexp.exec(value);
+      
+      regexp = new RegExp(/<b><font color="#ff0000">(.*)$/, 'g');
+      var matchRec6 = regexp.exec(value);
+      
+      var cleanText;
+      if (matchRec2) {
+        cleanText = matchRec2[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 2};
+        console.log('inside matchRec2', obj[btoa(cleanText)]);
+      } else if (matchRec3) {
+        cleanText = matchRec3[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 3};
+        console.log('inside matchRec3', obj[btoa(cleanText)]);
+      } else if (matchRec2a) {
+        cleanText = matchRec2a[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 2};
+        console.log('inside matchRec2a', obj[btoa(cleanText)]);
+      } else if (matchRec4) {
+        cleanText = matchRec4[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 3};
+        console.log('inside matchRec4', obj[btoa(cleanText)]);
+      } else if (matchRec5) {
+        cleanText = matchRec5[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 2};
+        console.log('inside matchRec5', obj[btoa(cleanText)]);
+      } else if (matchRec6) {
+        cleanText = matchRec6[1].replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 3};
+        console.log('inside matchRec6', obj[btoa(cleanText)]);
+      } else {
+        cleanText = value.replace(/<\/?[^>]+(>|$)/g, "");
+        obj[btoa(cleanText)] = {remedy: cleanText, points: 1};
+        console.log('inside raw', obj[btoa(cleanText)]);
+      }
+    });
+    return obj;
+  }
+  
+  $scope.parseSymptoms = function() {
+    var text = $scope.frm.page;
+    var counter = $scope.priority;
+    console.log('counter starts from ', counter);
+    var matchPattern;
+    var matches = [];
+    var regexp = new RegExp(/<p>(.*)<\/p>/, 'g');
+    while (matchPattern = regexp.exec(text)) {
+      if (matchPattern[1] === '----------') {
+        continue;
+      }
+      if (matchPattern[1].substr(0, 7) === '<a HREF') {
+        continue;  
+      }
+      if (matchPattern[1].substr(0, 9) === 'Copyright') {
+        continue;  
+      }
+      if (matchPattern[1].substr(0, 10) === '----------') {
+        continue;  
+      }
+      console.log('matchPattern: ', matchPattern);
+      var data = {};
+      //split on :
+      var tmp = matchPattern[1].split(':');
+      console.log('Length: ', tmp.length);
+      if (tmp.length == 2) {
+        console.log(tmp);
+        data.symptom = tmp[0];
+        var remedy = analyseThis(tmp[1]);
+        console.log('remedies: ', remedy);
+        data.remedies = remedy;
+      } else {
+        data.symptom = matchPattern[1];
+        data.remedies = -1;
+      }
+      
+      data.symptom = data.symptom.replace(/<\/?[^>]+(>|$)/g, "");
+      data.symptom = data.symptom.toLowerCase().trim();
+      data.parent = 0;
+      data.priority = counter;
+      data.chain = -1;
+      console.log('data: ', data);
+      $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).push(data);
+      counter++;
+      matches.push(matchPattern);
+    }//end while
+    $scope.frm.page = '';
+  };
+  
+  //deleting
+  function recDelete(id) {
+    //delete id
+    console.log('deleting id: ', id);
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).child(id).remove();
+    
+    //delete ends
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('parent').equalTo(id).once('value', function(snapshot) {
+      console.log('delete child: ', snapshot.exists());
+      if (!snapshot.exists()) {
+         return;
+      }
+      angular.forEach(snapshot.val(), function(value, key) {
+        console.log('delete keys: ', key, ', ', value);
+        recDelete(key);
+      });
+    });
+  }
+  
+  $scope.deleteSymptom = function(id)
+  {
+    //var a = confirm('do you really want to delete this symptom, all symptoms under it will also get removed?');
+    //if (!a) return;
+    recDelete(id);
+  };
+  
+  //reset priority
+  $scope.resetPriority = function()
+  {
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('priority').once('value', function(snapshot) {
+      if (!snapshot.exists()) {
+         return;
+      }
+      console.log('reset data: ', snapshot.val());
+      var counter = 1;
+      angular.forEach(snapshot.val(), function(value, key) {
+        console.log('reset keys: ', key, ', ', value);
+        $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).child(key).child('priority').set(counter);
+        counter++;
+      });
+    });
+  };
+  
+  
+  $scope.resetPrioritySpecific = function(id, priority)
+  {
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('priority').startAt(id).once('value', function(snapshot) {
+      console.log(snapshot.val());
+      if (!snapshot.exists()) {
+         return;
+      }
+      var counter = priority + 1
+      console.log(counter);
+      return;
+      angular.forEach(snapshot.val(), function(value, key) {
+        console.log('reset keys: ', key, ', ', value);
+        $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).child(key).child('priority').set(counter);
+        counter++;
+      });
+    });
+  };
+  
+}])
+
+;
+

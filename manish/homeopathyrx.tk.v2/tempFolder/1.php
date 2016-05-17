@@ -75,10 +75,10 @@ function check($string) {
 
 function calculate($input)
 {
-  echo htmlentities($input);
+  echo $input;
   echo '<br><br><br>';  
-    echo '<hr>';
-  $regexp = '<p>(.*):(.*)<\/p><dir>(.*)<\/dir>';
+  echo '<hr>';
+  $regexp = '<dir>(.*)<\/dir>';
   $matches = regexp($input, $regexp);
   foreach ($matches as $v) {
     foreach ($v as $v2) {
@@ -87,7 +87,6 @@ function calculate($input)
     }
     echo '<hr>';
   }
-  exit;
 }
 
 /*
