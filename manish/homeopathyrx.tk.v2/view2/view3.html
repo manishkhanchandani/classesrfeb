@@ -107,6 +107,9 @@
       
       <h3>Symptoms</h3>
       <div ng-if="loading"><img src="img/loading.gif"></div>
+      <div class="alert alert-warning" role="alert" ng-if="!records && !loading">
+        No Record Found.
+      </div>
       <div ng-if="records && !loading">
           <input type="search" class="form-control" ng-model="q" placeholder="filter symptoms..." aria-label="filter symptoms" /><br><br>
           <!-- start -->
@@ -171,7 +174,7 @@
                 <nav>
                   <ul class="pager">
                     <li ng-if="start > 100"><a href="repertory/{{chapter}}/{{start-100}}">Previous</a></li>
-                    <li><a href="repertory/{{chapter}}/{{start+100}}">Next</a></li>
+                    <li><a href="repertory/{{chapter}}/{{start+50}}">Next</a></li>
                   </ul>
                 </nav>
               </div>

@@ -535,6 +535,7 @@ angular.module('myApp.view2', ['ngRoute'])
   if ($routeParams.end) $scope.end = parseInt($routeParams.end);
   
   //adding new chapter if not exists
+  $scope.chapterPriority = 1;
   $scope.chapter = null;
   if ($routeParams.chapter) {
     $scope.chapter = decodeURIComponent($routeParams.chapter);
@@ -548,6 +549,16 @@ angular.module('myApp.view2', ['ngRoute'])
       }
     });
   }
+  
+  $scope.addChapter = function()
+  {
+     if (!$scope.frm.chapterName) return;
+     $scope.frm.chapterName = $scope.frm.chapterName.toLowerCase().trim();
+     var arr = {chapter: $scope.frm.chapterName, timestamp: Firebase.ServerValue.TIMESTAMP, priority: $scope.chapterPriority};
+     console.log('chapter: ', arr);
+     $scope.ref.child('repertory2').child('kent').child('chapters').child(btoa($scope.frm.chapterName)).set(arr);
+     $scope.frm.chapterName = '';
+  };
   //end adding new chapter if not exists
   
   //chain
@@ -581,8 +592,22 @@ angular.module('myApp.view2', ['ngRoute'])
   //chain
   
   //getting all chapters
-  $scope.chapters = $firebaseArray($scope.ref.child('repertory2').child('kent').child('chapters'));
-  console.log('chapters: ', $scope.chapters);
+  $scope.chapters = [];
+  $scope.ref.child('repertory2').child('kent').child('chapters').on('value', function(snapshot) {
+    console.log(snapshot.val());
+    var c = 0;
+    $scope.chapters = [];
+    angular.forEach(snapshot.val(), function(value, key) {
+      value.id = key;
+      $scope.chapters.push(value);
+      c++;
+    });
+    $scope.chapterPriority = c + 1;
+    console.log('len: ', $scope.chapterPriority);
+    console.log('chapters: ', $scope.chapters);
+  });
+  
+  
   //end getting all chapters
 
   $scope.repertory = null;
@@ -735,6 +760,12 @@ angular.module('myApp.view2', ['ngRoute'])
     $scope.frm.page = '';
   };
   
+  $scope.deleteAll = function()
+  {
+    var a = confirm('do you want to delete all records in this chapter?');
+    if (!a) return;
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).remove();
+  }
   //deleting
   function recDelete(id) {
     //delete id
@@ -907,13 +938,11 @@ angular.module('myApp.view2', ['ngRoute'])
     var profile = '';
     if (profile) {
       document.body.scrollTop;
-      console.log('profile');
       $scope.records = JSON.parse(profile);
       $scope.loading = false;
       if(!$scope.$$phase) $scope.$apply();
       return;
     }//end if profile
-      console.log('no profile');
     
     var returnRec = {};
     $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('priority').startAt(startNum).endAt(endNum).once("value", function(snapshot) {
@@ -928,7 +957,11 @@ angular.module('myApp.view2', ['ngRoute'])
       //console.log('2. returnRec: ', returnRec);
       //start
       var rootParent = 0;
-      if (!returnRec[rootParent]) return;
+      if (!returnRec[rootParent]) {
+        $scope.loading = false;
+        if(!$scope.$$phase) $scope.$apply();
+        return;
+      }
       
       angular.forEach(returnRec[rootParent], function(value, key) {
         if (returnRec[value.id]) {
