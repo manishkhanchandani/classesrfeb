@@ -13,7 +13,7 @@ angular.module('myApp.view2', ['ngRoute'])
     templateUrl: 'view2/repertory.html',
     controller: 'ViewRepertoryCtrl'
   })
-  .when('/addRepertory2/:chapter/:parent', {
+  .when('/addRepertory2/:chapter/:start/:end', {
     templateUrl: 'view2/repertory2.html',
     controller: 'ViewRepertory2Ctrl'
   })
@@ -27,14 +27,31 @@ angular.module('myApp.view2', ['ngRoute'])
   })
   
   
-  .when('/repertory/:chapter/:parent', {
-    templateUrl: 'view2/view2.html',
-    controller: 'RepertoryCtrl'
+  .when('/repertory/:chapter/:start', {
+    templateUrl: 'view2/view3.html',
+    controller: 'RepertoryNewCtrl'
+  })
+  .when('/repertory/:chapter', {
+    templateUrl: 'view2/view3.html',
+    controller: 'RepertoryNewCtrl'
   })
   .when('/repertory', {
+    templateUrl: 'view2/view3.html',
+    controller: 'RepertoryNewCtrl'
+  })
+  
+  .when('/repertoryOld/:chapter/:parent', {
     templateUrl: 'view2/view2.html',
     controller: 'RepertoryCtrl'
   })
+  .when('/repertoryOld', {
+    templateUrl: 'view2/view2.html',
+    controller: 'RepertoryCtrl'
+  })
+  /*.when('/eg', {
+    templateUrl: 'view2/eg.html',
+    controller: 'BasicExampleCtrl'
+  })*/
   ;
 }])
 
@@ -509,6 +526,14 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('ViewRepertory2Ctrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', function($scope, $firebaseArray, $filter, $routeParams) {
   console.log('routeparams: ', $routeParams);
+  $scope.frm = {};
+  $scope.frm.sym = {parent: {}, symptom: {}, img: {}, ref: {}, refId: {}};
+  
+  $scope.start = 1;
+  $scope.end = 10;
+  if ($routeParams.start) $scope.start = parseInt($routeParams.start);
+  if ($routeParams.end) $scope.end = parseInt($routeParams.end);
+  
   //adding new chapter if not exists
   $scope.chapter = null;
   if ($routeParams.chapter) {
@@ -525,26 +550,79 @@ angular.module('myApp.view2', ['ngRoute'])
   }
   //end adding new chapter if not exists
   
+  //chain
+  //get the chain
+  $scope.chain = null;
+  $scope.mainChain = [];
+  function saveChain(id, parent, key) {
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).child(key).once("value", function(snapshot) {
+      var res = snapshot.val();
+      res.id = snapshot.key();
+      $scope.chain.push(res);
+      if (res.parent == 0) {
+        $scope.chain.reverse();
+        //adding chain for page
+        if ($scope.chain) {
+          angular.forEach($scope.chain, function(value, key) {
+            var chain = {id: value.id, parent: value.parent, symptom: value.symptom};
+            $scope.mainChain.push(chain);
+          });
+          console.log('mainChain: ', id, ', ', $scope.mainChain);
+          $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).child(id).update({chain: $scope.mainChain, parent: parent});
+        }
+    
+        if(!$scope.$$phase) $scope.$apply();
+        return;
+      } else {
+        saveChain(id, parent, res.parent);
+      }
+    });
+  }
+  //chain
+  
   //getting all chapters
   $scope.chapters = $firebaseArray($scope.ref.child('repertory2').child('kent').child('chapters'));
   console.log('chapters: ', $scope.chapters);
   //end getting all chapters
-  
-  //setting priority and getting list
+
   $scope.repertory = null;
   $scope.parent = ($routeParams.parent) ? $routeParams.parent : 0;
-  $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('parent').equalTo($scope.parent).on("value", function(snapshot) {
+  $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('priority').startAt($scope.start).endAt($scope.end).on("value", function(snapshot) {
     $scope.repertory = [];
     angular.forEach(snapshot.val(), function(item, key) {
       item.id = key;
       $scope.repertory.push(item);
+      $scope.frm.sym.parent[key] = item.parent;
+      $scope.frm.sym.symptom[key] = item.symptom;
+      $scope.frm.sym.img[key] = item.img;
+      $scope.frm.sym.ref[key] = item.ref;
+      $scope.frm.sym.refId[key] = item.refId;
     });
     $scope.priority = $scope.repertory.length + 1;
-    //console.log('repertory: ', $scope.repertory);
-    //console.log('priority: ', $scope.priority);
+    console.log('repertory: ', $scope.repertory);
+    console.log('priority: ', $scope.priority);
     if(!$scope.$$phase) $scope.$apply();
   });
   //end
+  
+  $scope.updateRecord = function(it) {
+    console.log('it: ', it);
+    console.log('id: ', it.id);
+    console.log('parent: ', $scope.frm.sym.parent[it.id]);
+    $scope.chain = [];
+    $scope.mainChain = [];
+    saveChain(it.id, $scope.frm.sym.parent[it.id], $scope.frm.sym.parent[it.id]);
+  };
+  
+  $scope.updateSymptom = function(it) {
+    console.log('it: ', it);
+    console.log('symptom: ', $scope.frm.sym.symptom[it.id]);
+    var data = {symptom: $scope.frm.sym.symptom[it.id], img: ($scope.frm.sym.img[it.id] ? $scope.frm.sym.img[it.id] : ''), ref: ($scope.frm.sym.ref[it.id] ? $scope.frm.sym.ref[it.id] : ''), refId: ($scope.frm.sym.refId[it.id] ? $scope.frm.sym.refId[it.id] : '')};
+    console.log('data: ', data);
+    if ($scope.frm.sym.symptom[it.id]) {
+      $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).child(it.id).update(data);
+    }
+  };
   
   //adding symptoms
   //analyse remedy
@@ -720,6 +798,269 @@ angular.module('myApp.view2', ['ngRoute'])
   };
   
 }])
+
+
+.controller('RepertoryNewCtrl', ['$scope', '$firebaseArray', '$filter', '$routeParams', '$location', function($scope, $firebaseArray, $filter, $routeParams, $location) {
+  //console.log($routeParams);
+  
+  //adding new chapter if not exists
+  $scope.chapter = null;
+  if ($routeParams.chapter) {
+    $scope.chapter = decodeURIComponent($routeParams.chapter);
+    $scope.chapter = $scope.chapter.toLowerCase().trim();
+  }
+  
+  //chapters
+  var chapterId = 0;
+  $scope.chapters = $firebaseArray($scope.ref.child('repertory2').child('kent').child('chapters').orderByChild('priority'));
+  
+  $scope.frm = {};
+  $scope.showChapters = {};
+  $scope.chapters.$loaded().then(function (arrR) {
+      angular.forEach(arrR, function(value, key) {
+        $scope.showChapters[key] = value;
+        $scope.showChapters[key].chapter = $filter('capitalize')(value.chapter, true);
+        if ($routeParams.chapter) {
+          if ($scope.frm.chapter) return;
+          if (value.chapter.toLowerCase().trim() === $scope.chapter) {
+            $scope.frm.chapter = value;
+            console.log('frm.chapter: ', $scope.frm.chapter);
+          }
+        }
+      });
+  });
+  
+  $scope.updateChapter = function()
+  {
+    $location.path('repertory/'+encodeURIComponent($scope.frm.chapter.chapter));
+  }
+  
+  //end chapters
+  
+  //record symptoms
+  
+  //get the chain
+  $scope.recordedSymptoms = null;
+  
+  $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).on('value', function(snapshot) {
+    //console.log(snapshot.val());
+    $scope.recordedSymptoms = [];
+    $scope.recordedRemedies = {};
+    if (!snapshot.exists()) return;
+    angular.forEach(snapshot.val(), function(value, key) {
+      if (value.remedies) {
+        angular.forEach(value.remedies, function(remedyDetails, keyDetails) {
+          if (!$scope.recordedRemedies[keyDetails]) {
+            $scope.recordedRemedies[keyDetails] = {};
+            $scope.recordedRemedies[keyDetails].remedy = remedyDetails.remedy;
+            $scope.recordedRemedies[keyDetails].points = 0;
+            $scope.recordedRemedies[keyDetails].id = keyDetails;
+          }
+          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + parseInt(remedyDetails.points);
+        });
+      }
+      $scope.recordedSymptoms.push(value);
+      if(!$scope.$$phase) $scope.$apply();
+    });
+  });
+  
+  $scope.addsym = function(rec)
+  {
+    if (!$scope.userData) return;
+    var id = rec.id;
+    var data = {symptom: rec.symptom, parent: rec.parent, id: rec.id, chain: rec.chain, chapter: $scope.chapter};
+    
+    //saving remedies
+    data.remedies = {};
+    if (rec.remedies) {
+      angular.forEach(rec.remedies, function (v, k) {
+        data.remedies[k] = {remedy: v.remedy, points: v.points};
+      });
+    }//get remedy
+    $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).set(data);
+    if(!$scope.$$phase) $scope.$apply();
+  };
+  
+  $scope.delSym = function(id) {
+    if (!$scope.userData) return;
+    //console.log(id);
+    $scope.ref.child('repertory').child('tempCase').child($scope.userData.uid).child(id).remove();
+    if(!$scope.$$phase) $scope.$apply();
+  };
+  //record ends
+  
+  //showing repertory
+  $scope.start = 1;
+  if ($routeParams.start) {
+    $scope.start = parseInt($routeParams.start);
+  }
+  $scope.end = $scope.start + 99;
+  var bigCounter = 2;
+  
+  $scope.refreshData = function(startNum, endNum) {
+    if (!$scope.chapter) return;
+    $scope.loading = true;
+    //console.log('st: ', startNum, ', en: ', endNum);
+    var storageKey = 'repertory'+bigCounter+'_'+$scope.start+'_'+btoa($scope.chapter);
+    //console.log('storage key: ', storageKey);
+    //var profile = localStorage.getItem(storageKey);
+    var profile = '';
+    if (profile) {
+      document.body.scrollTop;
+      console.log('profile');
+      $scope.records = JSON.parse(profile);
+      $scope.loading = false;
+      if(!$scope.$$phase) $scope.$apply();
+      return;
+    }//end if profile
+      console.log('no profile');
+    
+    var returnRec = {};
+    $scope.ref.child('repertory2').child('kent').child('symptoms').child(btoa($scope.chapter)).orderByChild('priority').startAt(startNum).endAt(endNum).once("value", function(snapshot) {
+      //console.log('1. snapshot: ', snapshot.val());
+      angular.forEach(snapshot.val(), function(value, key) {
+        value.id = key;
+        if (!returnRec[value.parent]) {
+          returnRec[value.parent] = [];  
+        }
+        returnRec[value.parent].push(value);  
+      });
+      //console.log('2. returnRec: ', returnRec);
+      //start
+      var rootParent = 0;
+      if (!returnRec[rootParent]) return;
+      
+      angular.forEach(returnRec[rootParent], function(value, key) {
+        if (returnRec[value.id]) {
+          returnRec[rootParent][key].child = returnRec[value.id];
+          angular.forEach(returnRec[rootParent][key].child, function(v2, k2) {
+            if (returnRec[v2.id]) {
+              returnRec[rootParent][key].child[k2].child = returnRec[v2.id];
+              
+              angular.forEach(returnRec[rootParent][key].child[k2].child, function(v3, k3) {
+                if (returnRec[v3.id]) {
+                  returnRec[rootParent][key].child[k2].child[k3].child = returnRec[v3.id];
+                  
+                  angular.forEach(returnRec[rootParent][key].child[k2].child[k3].child, function(v4, k4) {
+                    if (returnRec[v4.id]) {
+                      returnRec[rootParent][key].child[k2].child[k3].child[k4].child = returnRec[v4.id];
+                    }//end if returnRec[v4.id]
+                  });//end foreach returnRec[rootParent][key].child[k2].child[k3].child
+                }//end if returnRec[v3.id]
+              });//end foreach returnRec[rootParent][key].child[k2].child
+              
+              
+            }//end if returnRec[v2.id]
+          });//end foreach returnRec[rootParent][key].child
+        }//end if returnRec[value.id]
+      });//end foreach returnRec[0]
+      //end
+      
+      $scope.records = returnRec[rootParent];
+      //console.log('3. records: ', $scope.records);
+      localStorage.setItem(storageKey, JSON.stringify($scope.records));
+        
+      $scope.loading = false;
+      if(!$scope.$$phase) $scope.$apply();
+    });
+  };
+  
+  $scope.refreshData($scope.start, $scope.end);
+  
+}])
+
+/*
+.controller('BasicExampleCtrl', ['$scope', function ($scope) {
+      $scope.remove = function (scope) {
+        scope.remove();
+      };
+
+      $scope.toggle = function (scope) {
+        scope.toggle();
+      };
+
+      $scope.moveLastToTheBeginning = function () {
+        var a = $scope.data.pop();
+        $scope.data.splice(0, 0, a);
+      };
+
+      $scope.newSubItem = function (scope) {
+        var nodeData = scope.$modelValue;
+        nodeData.nodes.push({
+          id: nodeData.id * 10 + nodeData.nodes.length,
+          title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+          nodes: []
+        });
+      };
+
+      $scope.collapseAll = function () {
+        $scope.$broadcast('angular-ui-tree:collapse-all');
+      };
+
+      $scope.expandAll = function () {
+        $scope.$broadcast('angular-ui-tree:expand-all');
+      };
+
+      $scope.data = [{
+        'id': 1,
+        'title': 'node1',
+        'nodes': [
+          {
+            'id': 11,
+            'title': 'node1.1',
+            'nodes': [
+              {
+                'id': 111,
+                'title': 'node1.1.1',
+                'nodes': []
+              }
+            ]
+          },
+          {
+            'id': 12,
+            'title': 'node1.2',
+            'nodes': []
+          }
+        ]
+      }, {
+        'id': 2,
+        'title': 'node2',
+        'nodrop': true, // An arbitrary property to check in custom template for nodrop-enabled
+        'nodes': [
+          {
+            'id': 21,
+            'title': 'node2.1',
+            'nodes': []
+          },
+          {
+            'id': 22,
+            'title': 'node2.2',
+            'nodes': []
+          }
+        ]
+      }, {
+        'id': 3,
+        'title': 'node3',
+        'nodes': [
+          {
+            'id': 31,
+            'title': 'node3.1',
+            'nodes': []
+          }
+        ]
+      }];
+      
+      //drop confirmation
+      $scope.treeOptions = {
+        beforeDrop : function (e) {
+          console.log('source: ', e.source.nodeScope.$modelValue);
+          console.log('destination: ', e.source.nodeScope.$modelValue);
+          
+          
+
+        }//end beforedrop
+      };//end treeOptions
+    }])*/
 
 ;
 

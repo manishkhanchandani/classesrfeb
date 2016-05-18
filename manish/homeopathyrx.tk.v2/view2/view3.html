@@ -1,0 +1,195 @@
+<style type="text/css">
+  .repertory .points_2 {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+  }
+  .repertory .points_1 {
+     color: black;
+  }
+  .repertory .points_3 {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  .repertory .points_2 a {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+  }
+  .repertory .points_1 a {
+     color: black;
+  }
+  .repertory .points_3 a {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  .repertory .media-sub {
+    padding-left: 20px;  
+  }
+  .repertory .media-list {
+    font-size: 11px;  
+  }
+  .repertory .media {
+    margin-top: 0px; 
+  }
+  .repertory h4 {
+    font-size: 16px;
+  }
+  .repertory .chain {
+    font-size: 10px;  
+  }
+  
+  .repertory .tblSymptoms {
+    min-width: 300px;
+  }
+  .repertory .tblRemedies {
+    min-width: 75px;
+  }
+</style>
+<div class="container repertory">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Repertorization</h1>
+    </div>
+  </div>
+  <div class="row" ng-if="recordedSymptoms.length > 0">
+    <div class="col-md-12">
+      <div class="table-responsive" style="overflow:auto;">
+            <table class="table table-bordered table-striped">
+            <caption>Repertory</caption>
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Symptom</th>
+                        <th class="tblRemedies" ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.remedy}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(k, syms) in recordedSymptoms">
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. <span class="chain">{{syms.chapter | capitalize:true}} | </span><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span>{{syms.symptom}} (<a href="" ng-click="delSym(syms.id)">-</a>)</td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td scope="row"><strong>Total:</strong> </td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.points}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-3">
+      
+      <h3>Chapters</h3>
+      
+      <select ng-model="frm.chapter" class="form-control" ng-options="val.chapter for val in showChapters" ng-change="updateChapter();">
+        <option value="">Choose Chapter:</option>
+      </select>
+      
+      
+      
+    </div>
+    
+    
+    <div class="col-md-9">
+        
+      
+      
+      
+      
+      <h3>Symptoms</h3>
+      <div ng-if="loading"><img src="img/loading.gif"></div>
+      <div ng-if="records && !loading">
+          <input type="search" class="form-control" ng-model="q" placeholder="filter symptoms..." aria-label="filter symptoms" /><br><br>
+          <!-- start -->
+          <ul class="media-list">
+            <li class="media" ng-repeat="val in records | orderBy: 'priority' | filter:q as results track by $index">
+              <div class="media-left"></div>
+              <div class="media-body">
+                <h4 class="media-heading">{{val.symptom}} 
+                  <span ng-if="val.remedies"><a href="" ng-click="addsym(val)">+</a></span>
+                  <a name="{{val.$id}}"></a>
+                </h4>
+                <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+                <!-- Nested media object -->
+                <div class="media" ng-if="val.child"  ng-repeat="val2 in val.child | orderBy: 'priority' track by $index">
+                  <div class="media-left"></div>
+                  <div class="media-body media-sub">
+                    <h4 class="media-heading">{{val2.symptom}} <span><a href="" ng-click="addsym(val2)">+</a></span></h4>
+                    <p><span ng-repeat="remedy in val2.remedies | orderObjectBy: 'remedy'" ng-if="val2.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+                    <!-- Nested media object -->
+                    <div class="media" ng-if="val2.child"  ng-repeat="val3 in val2.child | orderBy: 'priority' track by $index">
+                      <div class="media-left"></div>
+                      <div class="media-body media-sub">
+                        <h4 class="media-heading">{{val3.symptom}} <span><a href="" ng-click="addsym(val3)">+</a></span></h4>
+                        <p><span ng-repeat="remedy in val3.remedies | orderObjectBy: 'remedy'" ng-if="val3.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+                        <!-- Nested media object -->
+                        <div class="media" ng-if="val3.child"  ng-repeat="val4 in val3.child | orderBy: 'priority' track by $index">
+                          <div class="media-left"></div>
+                          <div class="media-body media-sub">
+                            <h4 class="media-heading">{{val4.symptom}} <span><a href="" ng-click="addsym(val4)">+</a></span></h4>
+                            <p><span ng-repeat="remedy in val4.remedies | orderObjectBy: 'remedy'" ng-if="val4.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+                            <!-- Nested media object -->
+                            <div class="media" ng-if="val4.child"  ng-repeat="val5 in val4.child | orderBy: 'priority' track by $index">
+                              <div class="media-left"></div>
+                              <div class="media-body media-sub">
+                                <h4 class="media-heading">{{val5.symptom}} <span><a href="" ng-click="addsym(val5)">+</a></span></h4>
+                                <p><span ng-repeat="remedy in val5.remedies | orderObjectBy: 'remedy'" ng-if="val4.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+                              </div>
+                            </div><!-- Nested media object -->
+                          </div>
+                        </div><!-- Nested media object -->
+                        
+                        
+                      </div>
+                    </div><!-- Nested media object -->
+                    
+                  </div>
+                </div><!-- Nested media object -->
+              </div>
+            </li>
+            
+            
+            <li class="animate-repeat" ng-if="results.length == 0">
+              <strong>No results found...</strong>
+            </li>
+          </ul>
+          <!-- end -->
+          <!--pagination start -->
+          <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <p class="text-center"> Records <strong>{{start}}</strong> to <strong>{{end}}</strong></p>
+                <nav>
+                  <ul class="pager">
+                    <li ng-if="start > 100"><a href="repertory/{{chapter}}/{{start-100}}">Previous</a></li>
+                    <li><a href="repertory/{{chapter}}/{{start+100}}">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- pagination end
+    
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+  </div>
+  
+  
+</div>

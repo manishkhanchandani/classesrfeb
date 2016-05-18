@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.view2',
   'myApp.viewmm',
   'firebase'
+  //'ui.tree'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
