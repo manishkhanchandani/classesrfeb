@@ -35,5 +35,10 @@ angular.module('myApp').service('dataService', ['$http', function($http) {
     return config;
   };//end config
   
+  this.getChapters = function(callback, callbackFailed)
+  {
+    this.get('http://homeopathyrx.tk/php2/repertory/record.php?action=kent_repertory_chapters', callback, callbackFailed, true); 
+  };
+  
 }]);
 

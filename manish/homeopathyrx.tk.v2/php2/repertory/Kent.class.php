@@ -25,7 +25,7 @@ class repertory_Kent
     $queryTotalRows = sprintf('select count(*) as cnt from hom_kent_repertory where chapter = %s', GetSQLValueString($chapter, 'int'));
     $rowCountResult = $Models_General->fetchRow($queryTotalRows, array(), $cacheTime);
     $sql2 = $Models_General->sql;
-    $totalRows_rsView = $rowCountResult['cnt'];
+    $totalRows_rsView = (int) $rowCountResult['cnt'];
     $totalPages_rsView = ceil($totalRows_rsView/$maxRows_rsView)-1;
     $return['sql2'] = $sql2;
     $return['totalRows'] = $totalRows_rsView;

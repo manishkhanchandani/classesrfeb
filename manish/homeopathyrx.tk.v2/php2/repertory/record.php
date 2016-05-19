@@ -4,6 +4,10 @@ $action = !empty($_GET['action']) ? $_GET['action'] : '';
 $record = array('success' => 1);
 try {
 switch ($action) {
+  case 'kent_repertory_chapters':
+    //http://homeopathyrx.tk/php2/repertory/record.php?action=kent_repertory_chapters
+    $record['data'] = array_values($chapters);
+    break;
   case 'kent_repertory_getAll':
     //http://homeopathyrx.tk/php2/repertory/record.php?action=kent_repertory_getAll&chapter=38&page=0&cacheTime=0
     if (empty($_GET['chapter'])) {
