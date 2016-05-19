@@ -530,7 +530,7 @@ angular.module('myApp.view2', ['ngRoute'])
   $scope.frm.sym = {parent: {}, symptom: {}, img: {}, ref: {}, refId: {}};
   
   $scope.start = 1;
-  $scope.end = 10;
+  $scope.end = 100;
   if ($routeParams.start) $scope.start = parseInt($routeParams.start);
   if ($routeParams.end) $scope.end = parseInt($routeParams.end);
   
