@@ -1,23 +1,27 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Login</h1>
-        <div class="alert alert-warning" role="alert" ng-if="errorMessage">
+      <h1>Create New User</h1>
+       
+    <div class="alert alert-warning" role="alert" ng-if="errorMessage">
         {{errorMessage}}
     </div>
-      <form ng-submit="login()">
+ 
+        <form ng-submit="createNewuser()">
           <div class="form-group">
               <label for="email">Email address</label>
               <input type="email" class="form-control" id="email" ng-model="frm.email" placeholder="Enter email">
-              
           </div>
           <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" ng-model="frm.password" placeholder="Password">
-             
           </div>
-          
-          <button type="submit" class="btn btn-default">Login</button>
+          <div class="form-group">
+              <label for="cpassword">Confirm Password</label>
+              <input type="password" class="form-control" id="cpassword" 
+              ng-model="frm.cpassword" placeholder="Confirm Password">
+          </div>
+          <button type="submit" class="btn btn-default">Create New User</button>
       </form>
     </div>
   </div>

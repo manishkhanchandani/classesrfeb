@@ -13,7 +13,7 @@ config(['$routeProvider', function($routeProvider) {
 
 .controller('mainController', ['$scope', function($scope) {
     var ref = new Firebase("https://amber-torch-2130.firebaseio.com");
-    ref.createUser({
+    /*ref.createUser({
       email    : "a4@mkgalaxy.com",
       password : "password"
     }, function(error, userData) {
@@ -22,6 +22,6 @@ config(['$routeProvider', function($routeProvider) {
       } else {
         console.log("Successfully created user account with uid:", userData.uid);
       }
-    });
+    });*/
   
 }])
