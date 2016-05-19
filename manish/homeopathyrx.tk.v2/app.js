@@ -7,7 +7,9 @@ angular.module('myApp', [
   'messagesModule',
   'myApp.view1',
   'myApp.view2',
+  'myApp.viewmm',
   'firebase'
+  //'ui.tree'
   //'ui.bootstrap'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -46,6 +48,13 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
     });
     return filtered;
   };
+})
+
+.filter('capitalize', function() {
+  return function(input, all) {
+    var reg = (all) ? /([^\W_]+[^\s-]*) */g : /([^\W_]+[^\s-]*)/;
+    return (!!input) ? input.replace(reg, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
+  }
 })
 
 .controller('mainController', ['$scope', 'dataService', '$timeout', function($scope, dataService, $timeout) {

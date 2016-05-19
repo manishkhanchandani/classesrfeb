@@ -4,11 +4,13 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
-  'ngAutocomplete'
+  'ngAutocomplete',
+  'firebase'
   //'ui.bootstrap'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $routeProvider.otherwise({redirectTo: '/'});
+  $locationProvider.html5Mode(true);
 }])
 
 .controller('mainController', ['$scope', function($scope) {

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Forex</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="(key, item) in records">{{item.$id}}
+          <br><br>
+          <ul class="list-group" ng-repeat="(key1, date) in item">
+            <li class="list-group-item">{{key1}}
+              <br><br>
+              <ul class="list-group" ng-repeat="(key2, days) in date">
+                <li class="list-group-item">{{key2}} days
+                  <br><br>
+                  <ul class="list-group" ng-repeat="(key3, period) in days">
+                    <li class="list-group-item">{{key3}} TimeFrame</li>
+                      <br><br>
+                      <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="(strategy, total) in period track by $index" ng-if="strategy != 0">Strategy: {{strategy}}, Total: {{total}}</li>
+                      </ul>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

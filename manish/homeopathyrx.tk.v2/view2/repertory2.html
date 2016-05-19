@@ -1,0 +1,97 @@
+<style type="text/css">
+  .repertory .points_2 {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+  }
+  .repertory .points_1 {
+     color: black;
+  }
+  .repertory .points_3 {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  .repertory .points_2 a {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+  }
+  .repertory .points_1 a {
+     color: black;
+  }
+  .repertory .points_3 a {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  
+</style>
+<div class="container repertory">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Repertorization</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Chapters</h3>
+      <form ng-submit="addChapter()">
+          <div class="form-group">
+              <label for="chapter">Chapter</label>
+              <input type="text" class="form-control" id="chapter" ng-model="frm.chapterName" placeholder="Enter chapter">
+          </div>
+          <button type="submit" class="btn btn-default">Add Chapter</button>
+      </form>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="ch in chapters | orderBy: 'priority'"><a href="addRepertory2/{{ch.chapter}}">{{ch.chapter | capitalize:true}}</a>
+        </li>
+      </ul>
+      
+      
+    </div>
+    
+    
+    <div class="col-md-8">
+      <h3>Chapter: {{chapter}}</h3>
+      <textarea ng-model="frm.page" class="form-control" rows="10"></textarea>
+      <button type="button" class="btn btn-default" ng-click="parseSymptoms()">Sub Symptoms</button>
+      <h3>Symptoms (<a href="" ng-click="deleteAll()">Delete All</a>)</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="val in repertory | orderBy: 'priority'"><a href="addRepertory/{{val.id}}">{{val.symptom}}</a> ({{val.priority}})<a href="" ng-click="deleteSymptom(val.id)" class="pull-right">Delete</a>
+        <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+        <p>Parent: {{val.parent}}</p>
+        <p>ID: {{val.id}}</p>
+        <p><input type="text" class="" ng-model="frm.sym.parent[val.id]" ng-value="val.parent"> <button type="button" class="btn btn-default" ng-click="updateRecord(val)">Update Parent</button></p>
+        <p><input type="text" class="" ng-model="frm.sym.symptom[val.id]" ng-value="val.symptom">
+        <br> <input type="text" class="" ng-model="frm.sym.ref[val.id]" ng-value="val.ref" placeholder="Reference">
+        <br> <input type="text" class="" ng-model="frm.sym.refId[val.id]" ng-value="val.refId" placeholder="Reference ID"> 
+        <br> <input type="text" class="" ng-model="frm.sym.img[val.id]" ng-value="val.img" placeholder="Image"> <button type="button" class="btn btn-default" ng-click="updateSymptom(val)">Update Symptom</button></p>
+        </li>
+      </ul>
+      
+      <div class="row" ng-if="repertory.length > 0">
+        <div class="col-md-12">
+          <hr>
+          <p class="text-center"> Records <strong>{{start}}</strong> to <strong>{{end}}</strong></p>
+          <nav>
+            <ul class="pager">
+              <li ng-if="start > 100"><a href="addRepertory2/{{chapter}}/{{start-100}}/{{end-100}}">Previous</a></li>
+              <li><a href="addRepertory2/{{chapter}}/{{start+100}}/{{end+100}}">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    
+  </div>
+  
+  
+</div>
