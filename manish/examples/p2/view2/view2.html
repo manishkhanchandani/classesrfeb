@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-4">
       <h1>Add a record</h1>
-      <form>
+      <form ng-submit="addRecord()">
           <div class="form-group">
               <label for="firstname">First Name</label>
               <input type="text" class="form-control" id="firstname" placeholder="Enter first name" ng-model="frm.firstname">
@@ -18,14 +18,12 @@
     <div class="col-md-4">
       <h1>View Records</h1>
       <ul class="list-group">
-        <li class="list-group-item">Manish k (Edit / Delete / View Detail)</li>
-        <li class="list-group-item">Deepti L (Edit / Delete / View Detail)</li>
-        <li class="list-group-item">Jeetu H (Edit / Delete / View Detail)</li>
+        <li class="list-group-item" ng-repeat="item in records">{{item.firstname}} {{item.lastname}} (<a href="" ng-click="editRecord(item)">Edit</a> / <a href="" ng-click="deleteRecord(item)">Delete</a> / <a href="" ng-click="viewDetail(item)">View Detail</a>)</li>
       </ul>
     </div>
     <div class="col-md-4">
       <h1>Edit Record</h1>
-      <form>
+      <form ng-submit="submitEditForm()">
           <div class="form-group">
               <label for="firstname">First Name</label>
               <input type="text" class="form-control" id="firstname" placeholder="Enter first name" ng-model="editFrm.firstname">
@@ -38,8 +36,8 @@
       </form>
       
       <h1>View Details</h1>
-      <p><strong>First Name:</strong> Manish</p>
-      <p><strong>Last Name:</strong> K</p>
+      <p><strong>First Name:</strong> {{firstname}}</p>
+      <p><strong>Last Name:</strong> {{lastname}}</p>
     </div>
   </div>
 </div>

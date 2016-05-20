@@ -41,13 +41,13 @@ class Models_General extends App_base
           throw new Exception('could not update');
       }
       $updateSQL = $this->_connMain->AutoExecute($tableName, $data, 'UPDATE', $where);
-      return true;
+      return $updateSQL;
     }
 
     public function deleteDetails($query, $params=array())
     {
       $delete = $this->_connMain->Execute($query, $params);
-      return true;
+      return $delete;
     }
 
   public function getDetails($tableName, $cache=1, $params=array(), $cacheTime=900)

@@ -1,22 +1,28 @@
 <?php
 class repertory_Kent
 {
-  public function getAll($Models_General, $chapter='', $max=100, $page=0, $cacheTime=0)
+  public function getAll($Models_General, $chapter='', $max=100, $start=0, $cacheTime=0)
   {
     $return = array();
     $maxRows_rsView = (int) $max;
-    $pageNum_rsView = (int) $page;
-    $startRow_rsView = $pageNum_rsView * $maxRows_rsView;
+    $startRow_rsView = (int) $start;
+    $pageNum_rsView = floor($startRow_rsView / $maxRows_rsView);
     $return['max'] = $maxRows_rsView;
     $return['page'] = $pageNum_rsView;
     $return['start'] = $startRow_rsView;
-    $query_rsView = sprintf('select * from hom_kent_repertory where chapter = %s', GetSQLValueString($chapter, 'int'));
+    $query_rsView = sprintf('select * from hom_kent_repertory where chapter = %s order by id', GetSQLValueString($chapter, 'int'));
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
     if (!empty($results)) {
       foreach ($results as $k => $v) {
         if (!empty($v['remedies'])) {
           $results[$k]['remedies'] = json_decode($v['remedies'], 1);  
+        }
+        if (!empty($v['chain'])) {
+          $results[$k]['chain'] = json_decode($v['chain'], 1);  
+        }
+        if (!empty($v['reference'])) {
+          $results[$k]['reference'] = json_decode($v['reference'], 1);  
         }
       }
     }
@@ -33,4 +39,18 @@ class repertory_Kent
     $return['results'] = $results;
     return $return;
   }
+  
+  public function deleteRecord($Models_General, $id)
+  {
+    $q = 'delete from hom_kent_repertory WHERE id = ?';
+    $res = $Models_General->deleteDetails($q, array($id));
+    $query_rsView = 'select * from hom_kent_repertory where parent_id = ?';
+    $results = $Models_General->fetchAll($query_rsView, array($id), 0);
+    if (!empty($results)) {
+      foreach ($results as $result) {
+        $this->deleteRecord($Models_General, $result['id']);
+      }
+    }
+  }//end deleteRecord
+  
 }//end class

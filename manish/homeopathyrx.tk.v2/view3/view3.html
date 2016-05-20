@@ -1,55 +1,3 @@
-<style type="text/css">
-  .repertory .points_2 {
-    color: #3805CB;
-    font-style: italic;  
-    font-weight: bold;  
-  }
-  .repertory .points_1 {
-     color: black;
-  }
-  .repertory .points_3 {
-  color: #EA090D;
-  font-weight: bold;
-  text-transform: uppercase;
-  }
-  
-  .repertory .points_2 a {
-    color: #3805CB;
-    font-style: italic;  
-    font-weight: bold;  
-  }
-  .repertory .points_1 a {
-     color: black;
-  }
-  .repertory .points_3 a {
-  color: #EA090D;
-  font-weight: bold;
-  text-transform: uppercase;
-  }
-  
-  .repertory .media-sub {
-    padding-left: 20px;  
-  }
-  .repertory .media-list {
-    font-size: 11px;  
-  }
-  .repertory .media {
-    margin-top: 0px; 
-  }
-  .repertory h4 {
-    font-size: 16px;
-  }
-  .repertory .chain {
-    font-size: 10px;  
-  }
-  
-  .repertory .tblSymptoms {
-    min-width: 300px;
-  }
-  .repertory .tblRemedies {
-    min-width: 75px;
-  }
-</style>
 <div class="container repertory">
   <div class="row">
     <div class="col-md-12">
@@ -90,7 +38,7 @@
       
       <h3>Chapters</h3>
       
-      <select ng-model="frm.chapter" class="form-control" ng-options="val.chapter for val in showChapters" ng-change="updateChapter();">
+      <select ng-model="chapter" class="form-control" ng-options="val.chapter for val in chapters" ng-change="updateChapter();">
         <option value="">Choose Chapter:</option>
       </select>
       
@@ -119,7 +67,7 @@
               <div class="media-body">
                 <h4 class="media-heading">{{val.symptom}} 
                   <span ng-if="val.remedies"><a href="" ng-click="addsym(val)">+</a></span>
-                  <a name="{{val.$id}}"></a>
+                  <a name="{{val.id}}"></a>
                 </h4>
                 <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
                 <!-- Nested media object -->
@@ -166,22 +114,22 @@
             </li>
           </ul>
           <!-- end -->
+          
           <!--pagination start -->
-          <div class="row">
+          <div class="row" ng-if="data.totalRows > 0">
               <div class="col-md-12">
                 <hr>
-                <p class="text-center"> Records <strong>{{start}}</strong> to <strong>{{end}}</strong></p>
+                <p class="text-center"> Records <strong>{{data.start + 1}}</strong> to <strong>{{data.minRows}}</strong> of <strong>{{data.totalRows}}</strong></p>
                 <nav>
                   <ul class="pager">
-                    <li ng-if="start > 100"><a href="repertory/{{chapter}}/{{start-100}}">Previous</a></li>
-                    <li><a href="repertory/{{chapter}}/{{start+50}}">Next</a></li>
+                    <li><a href="rep/kent/{{chapter.id}}/{{data.prevPage}}">Previous</a></li>
+                    <li><a href="rep/kent/{{chapter.id}}/{{data.nextPage}}">Next</a></li>
                   </ul>
                 </nav>
               </div>
-            </div>
-            
           </div>
-          
+
+      
           <!-- pagination end
     
       </div>

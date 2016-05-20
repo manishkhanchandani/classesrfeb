@@ -114,3 +114,25 @@ footer {
   text-transform: uppercase;
   }
   
+  .repertory .media-sub {
+    padding-left: 20px;  
+  }
+  .repertory .media-list {
+    font-size: 11px;  
+  }
+  .repertory .media {
+    margin-top: 0px; 
+  }
+  .repertory h4 {
+    font-size: 16px;
+  }
+  .repertory .chain {
+    font-size: 10px;  
+  }
+  
+  .repertory .tblSymptoms {
+    min-width: 300px;
+  }
+  .repertory .tblRemedies {
+    min-width: 75px;
+  }
