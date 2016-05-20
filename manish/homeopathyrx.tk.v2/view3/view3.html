@@ -62,7 +62,7 @@
           <input type="search" class="form-control" ng-model="q" placeholder="filter symptoms..." aria-label="filter symptoms" /><br><br>
           <!-- start -->
           <ul class="media-list">
-            <li class="media" ng-repeat="val in records | orderBy: 'priority' | filter:q as results track by $index">
+            <li class="media" ng-repeat="val in records | orderBy: 'id' | filter:q as results track by $index">
               <div class="media-left"></div>
               <div class="media-body">
                 <h4 class="media-heading">{{val.symptom}} 
@@ -71,25 +71,25 @@
                 </h4>
                 <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
                 <!-- Nested media object -->
-                <div class="media" ng-if="val.child"  ng-repeat="val2 in val.child | orderBy: 'priority' track by $index">
+                <div class="media" ng-if="val.child"  ng-repeat="val2 in val.child | orderBy: 'id' track by $index">
                   <div class="media-left"></div>
                   <div class="media-body media-sub">
                     <h4 class="media-heading">{{val2.symptom}} <span><a href="" ng-click="addsym(val2)">+</a></span></h4>
                     <p><span ng-repeat="remedy in val2.remedies | orderObjectBy: 'remedy'" ng-if="val2.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
                     <!-- Nested media object -->
-                    <div class="media" ng-if="val2.child"  ng-repeat="val3 in val2.child | orderBy: 'priority' track by $index">
+                    <div class="media" ng-if="val2.child"  ng-repeat="val3 in val2.child | orderBy: 'id' track by $index">
                       <div class="media-left"></div>
                       <div class="media-body media-sub">
                         <h4 class="media-heading">{{val3.symptom}} <span><a href="" ng-click="addsym(val3)">+</a></span></h4>
                         <p><span ng-repeat="remedy in val3.remedies | orderObjectBy: 'remedy'" ng-if="val3.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
                         <!-- Nested media object -->
-                        <div class="media" ng-if="val3.child"  ng-repeat="val4 in val3.child | orderBy: 'priority' track by $index">
+                        <div class="media" ng-if="val3.child"  ng-repeat="val4 in val3.child | orderBy: 'id' track by $index">
                           <div class="media-left"></div>
                           <div class="media-body media-sub">
                             <h4 class="media-heading">{{val4.symptom}} <span><a href="" ng-click="addsym(val4)">+</a></span></h4>
                             <p><span ng-repeat="remedy in val4.remedies | orderObjectBy: 'remedy'" ng-if="val4.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
                             <!-- Nested media object -->
-                            <div class="media" ng-if="val4.child"  ng-repeat="val5 in val4.child | orderBy: 'priority' track by $index">
+                            <div class="media" ng-if="val4.child"  ng-repeat="val5 in val4.child | orderBy: 'id' track by $index">
                               <div class="media-left"></div>
                               <div class="media-body media-sub">
                                 <h4 class="media-heading">{{val5.symptom}} <span><a href="" ng-click="addsym(val5)">+</a></span></h4>

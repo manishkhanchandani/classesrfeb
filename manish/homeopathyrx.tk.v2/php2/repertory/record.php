@@ -44,6 +44,44 @@ switch ($action) {
     $kent->deleteRecord($Models_General, $_GET['id']);
     $record['res'] = true;
     break;
+  case 'my_repertory_getAll':
+    //http://homeopathyrx.tk/php2/repertory/record.php?action=my_repertory_getAll&uid=xyz&cacheTime=0
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    $query = 'select * from my_repertory as m LEFT JOIN hom_kent_repertory as r ON m.id = r.id WHERE m.uid = ?';
+    $result = $Models_General->fetchAll($query, array($_GET['uid']), $_GET['cacheTime']);
+    
+    $record['data'] = $result;
+    break;
+  case 'my_repertory_add':
+    //http://homeopathyrx.tk/php2/repertory/record.php?action=my_repertory_add&id=1&uid=xyz
+    if (empty($_GET['id'])) {
+      throw new Exception('missing id');  
+    }
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    
+    $data = array();
+    $data['id'] = $_GET['id'];
+    $data['uid'] = $_GET['uid'];
+    $res = $Models_General->addDetails('my_repertory', $data);
+    $record['res'] = $res;
+    break;
+  case 'my_repertory_delete':
+    //http://homeopathyrx.tk/php2/repertory/record.php?action=my_repertory_delete&rid=5199&uid=xyz
+    if (empty($_GET['rid'])) {
+      throw new Exception('missing rid');  
+    }
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    
+    $q = 'delete from my_repertory WHERE rid = ? AND uid = ?';
+    $res = $Models_General->deleteDetails($q, array($_GET['rid'], $_GET['uid']));
+    $record['res'] = $res;
+    break;
   default:
     break;
 }

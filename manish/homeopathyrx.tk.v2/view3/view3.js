@@ -231,8 +231,40 @@ angular.module('myApp.view3', ['ngRoute'])
   
   
   //add symptom to repertory
+  $scope.addsym = function(rec)
+  {
+    if (!$scope.userData) return;
+    var url = '/php2/repertory/record.php?action=my_repertory_add&id='+rec.id+'&uid='+$scope.userData.id;
+    dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
+  };
   
+  $scope.recordedSymptoms = [];
+  $scope.recordedRemedies = {};
   //show symptom from repertory
+  function successMySymptoms(response)
+  {
+    $scope.recordedSymptoms = [];
+    $scope.recordedRemedies = {};
+    console.log(response);
+  }
+  
+  function getAllMySymptoms(uid, cacheTime, cache) {
+    
+    var url = '/php2/repertory/record.php?action=my_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
+    dataService.get(url, successMySymptoms, function(r) {console.log('err getAllMySymptoms: ', r);}, cache);
+  }
+  
+  //get data
+  if ($scope.userData) {
+    getAllMySymptoms($scope.userData.id, 30, true);
+  }
+  
+  
+  $scope.delSym = function(id) {
+    if (!$scope.userData) return;
+    var url = '/php2/repertory/record.php?action=my_repertory_delete&rid='+id+'&uid='+uid;
+    dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
+  };
 }])
 ;
 
