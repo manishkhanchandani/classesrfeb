@@ -83,3 +83,56 @@ footer {
   background:#f4f4f4;
   padding-top: 20px; 
 }
+
+
+
+  .repertory .points_2 {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+  }
+  .repertory .points_1 {
+     color: black;
+  }
+  .repertory .points_3 {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  .repertory .points_2 a {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+  }
+  .repertory .points_1 a {
+     color: black;
+  }
+  .repertory .points_3 a {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  
+  .repertory .media-sub {
+    padding-left: 20px;  
+  }
+  .repertory .media-list {
+    font-size: 11px;  
+  }
+  .repertory .media {
+    margin-top: 0px; 
+  }
+  .repertory h4 {
+    font-size: 16px;
+  }
+  .repertory .chain {
+    font-size: 10px;  
+  }
+  
+  .repertory .tblSymptoms {
+    min-width: 300px;
+  }
+  .repertory .tblRemedies {
+    min-width: 75px;
+  }

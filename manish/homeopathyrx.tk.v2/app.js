@@ -7,7 +7,7 @@ angular.module('myApp', [
   'messagesModule',
   'myApp.view1',
   'myApp.view2',
-  'myApp.viewmm',
+  'myApp.view3',
   'firebase'
   //'ui.tree'
   //'ui.bootstrap'

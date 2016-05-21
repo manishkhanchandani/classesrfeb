@@ -1,0 +1,60 @@
+
+<div class="container repertory">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Repertorization</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Chapters</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="ch in chapters | orderBy: 'id'"><a href="addRep/kent/{{ch.id}}">{{ch.chapter | capitalize:true}}</a>
+        </li>
+      </ul>
+      
+      
+    </div>
+    
+    
+    <div class="col-md-8">
+      <h3>Chapter: {{chapter.chapter}}</h3>
+      <h3>Symptoms</h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="val in repertory | orderBy: 'id'"><a href="addRepertory/{{val.id}}">{{val.symptom}}</a> ({{val.priority}})<a href="" ng-click="deleteSymptom(val.id)" class="pull-right">Delete</a>
+        <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+        <p>Parent: {{val.parent_id}}</p>
+        <p>ID: {{val.id}}</p>
+        <form ng-submit="updateSymptom(val)">
+        <p>Parent: <input type="text" class="" ng-model="frm.sym[val.id].parent_id" ng-value="val.parent_id"> </p>
+        <p>Symptom: <input type="text" class="" ng-model="frm.sym[val.id].symptom" ng-value="val.symptom">
+        <br>Ref: <input type="text" class="" ng-model="frm.sym[val.id].ref" ng-value="val.ref" placeholder="Reference"><button type="submit" class="btn btn-default">Update Symptom</button></p>
+        </form>
+        </li>
+      </ul>
+      <div class="row" ng-if="data.totalRows > 0">
+          <div class="col-md-12">
+            <hr>
+            <p class="text-center"> Records <strong>{{data.start + 1}}</strong> to <strong>{{data.minRows}}</strong> of <strong>{{data.totalRows}}</strong></p>
+            <nav>
+              <ul class="pager">
+                <li ng-if="data.start - data.max >= 0"><a href="addRep/kent/{{chapter.id}}">First</a></li>
+                <li ng-if="data.start - data.max >= 0"><a href="addRep/kent/{{chapter.id}}/{{data.prevPage}}">Previous</a></li>
+                <li ng-if="data.nextPage < data.totalRows"><a href="addRep/kent/{{chapter.id}}/{{data.nextPage}}">Next</a></li>
+                <li ng-if="data.nextPage < data.totalRows"><a href="addRep/kent/{{chapter.id}}/{{data.totalRows - data.max}}">Last</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+      
+    </div>
+    
+    
+    
+  </div>
+  
+  
+</div>
