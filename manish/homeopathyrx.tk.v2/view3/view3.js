@@ -200,11 +200,11 @@ angular.module('myApp.view3', ['ngRoute'])
       $scope.data.minRows = ($scope.data.start + $scope.data.max);
     }
     
-    $scope.data.prevPage = $scope.data.start - $scope.data.max;
+    $scope.data.prevPage = $scope.data.start - $scope.data.max + 50;
     if (($scope.data.start - $scope.data.max) < 0) {
       $scope.data.prevPage = 0;
     }
-    if ($scope.data.nextPage < 0) $scope.data.prevPage = 0;
+    if ($scope.data.prevPage < 0) $scope.data.prevPage = 0;
     
     $scope.data.nextPage = $scope.data.start + $scope.data.max - 50;
     if ($scope.data.totalRows < ($scope.data.start + $scope.data.max)) {
@@ -245,7 +245,27 @@ angular.module('myApp.view3', ['ngRoute'])
   {
     $scope.recordedSymptoms = [];
     $scope.recordedRemedies = {};
-    console.log(response);
+    var snapshot = response.data.data;
+    //console.log('snapshot: ', snapshot);
+    angular.forEach(snapshot, function(value, key) {
+      if (value.remedies) {
+        //console.log('remedies: ', value.remedies);
+        angular.forEach(value.remedies, function(remedyDetails, keyDetails) {
+          //console.log(keyDetails, ', ', remedyDetails, ', ', remedyDetails.remedy, ', ', remedyDetails.points);
+          if (!$scope.recordedRemedies[keyDetails]) {
+            $scope.recordedRemedies[keyDetails] = {};
+            $scope.recordedRemedies[keyDetails].remedy = remedyDetails.remedy;
+            $scope.recordedRemedies[keyDetails].points = 0;
+            $scope.recordedRemedies[keyDetails].id = keyDetails;
+          }
+          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + parseInt(remedyDetails.points);
+          //console.log('det: ', keyDetails, ', remedydetails: ', $scope.recordedRemedies[keyDetails]);
+        });
+      }
+      $scope.recordedSymptoms.push(value);
+    });
+    console.log('sym: ', $scope.recordedSymptoms);
+    console.log('rem: ', $scope.recordedRemedies);
   }
   
   function getAllMySymptoms(uid, cacheTime, cache) {
@@ -260,9 +280,9 @@ angular.module('myApp.view3', ['ngRoute'])
   }
   
   
-  $scope.delSym = function(id) {
+  $scope.delSym = function(rid) {
     if (!$scope.userData) return;
-    var url = '/php2/repertory/record.php?action=my_repertory_delete&rid='+id+'&uid='+uid;
+    var url = '/php2/repertory/record.php?action=my_repertory_delete&rid='+rid+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
 }])

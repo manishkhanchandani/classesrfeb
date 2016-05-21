@@ -26,8 +26,15 @@ switch ($action) {
       throw new Exception('missing id');  
     }
     
+    $kent = new repertory_Kent();
     $json = file_get_contents('php://input');
     $content = json_decode($json, 1);
+    if (!empty($content['parent_id'])) {
+      $kent->chain = array();
+      $kent->createChain($Models_General, $content['parent_id']); 
+      $kent->chain = array_reverse($kent->chain); 
+      $content['chain'] = json_encode($kent->chain);
+    }
     $record['data'] = $content;
     $where = sprintf('id=%s', GetSQLValueString($_GET['id'], 'int'));
     $record['where'] = $where;
@@ -50,9 +57,22 @@ switch ($action) {
       throw new Exception('missing uid');  
     }
     $query = 'select * from my_repertory as m LEFT JOIN hom_kent_repertory as r ON m.id = r.id WHERE m.uid = ?';
-    $result = $Models_General->fetchAll($query, array($_GET['uid']), $_GET['cacheTime']);
-    
-    $record['data'] = $result;
+    $results = $Models_General->fetchAll($query, array($_GET['uid']), $_GET['cacheTime']);
+    if (!empty($results)) {
+      foreach ($results as $k => $v) {
+        $results[$k]['chapterName'] = $chapters[$v['chapter']]['chapter'];
+        if (!empty($v['remedies'])) {
+          $results[$k]['remedies'] = json_decode($v['remedies'], 1);  
+        }
+        if (!empty($v['chain'])) {
+          $results[$k]['chain'] = json_decode($v['chain'], 1);  
+        }
+        if (!empty($v['reference'])) {
+          $results[$k]['reference'] = json_decode($v['reference'], 1);  
+        }
+      }
+    }
+    $record['data'] = $results;
     break;
   case 'my_repertory_add':
     //http://homeopathyrx.tk/php2/repertory/record.php?action=my_repertory_add&id=1&uid=xyz
@@ -80,7 +100,6 @@ switch ($action) {
     
     $q = 'delete from my_repertory WHERE rid = ? AND uid = ?';
     $res = $Models_General->deleteDetails($q, array($_GET['rid'], $_GET['uid']));
-    $record['res'] = $res;
     break;
   default:
     break;

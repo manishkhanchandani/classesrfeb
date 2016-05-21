@@ -1,6 +1,8 @@
 <?php
 class repertory_Kent
 {
+  public $chain = array();
+  
   public function getAll($Models_General, $chapter='', $max=100, $start=0, $cacheTime=0)
   {
     $return = array();
@@ -51,6 +53,16 @@ class repertory_Kent
         $this->deleteRecord($Models_General, $result['id']);
       }
     }
+  }//end deleteRecord
+  
+  
+  public function createChain($Models_General, $id)
+  {
+    if ($id == 0) return;
+    $q = 'select * from hom_kent_repertory WHERE id = ?';
+    $rec = $Models_General->fetchRow($q, array($id), 0);
+    $this->chain[] = array('symptom' => $rec['symptom'], 'id' => $rec['id'], 'parent_id' => $rec['parent_id']); 
+    $this->createChain($Models_General, $rec['parent_id'], $chain);
   }//end deleteRecord
   
 }//end class

@@ -17,7 +17,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="(k, syms) in recordedSymptoms">
-                        <td scope="row" class="tblSymptoms">{{k + 1}}. <span class="chain">{{syms.chapter | capitalize:true}} | </span><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span>{{syms.symptom}} (<a href="" ng-click="delSym(syms.id)">-</a>)</td>
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. <span class="chain">{{syms.chapterName | capitalize:true}} | </span><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span>{{syms.symptom}} (<a href="" ng-click="delSym(syms.rid)">-</a>)</td>
                         <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
                     </tr>
                 </tbody>

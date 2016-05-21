@@ -3,14 +3,14 @@ include('../conn.php');
 include('../functions.php');
 include('../general.php');
 
-$chapter = 'generalities';
+$chapter = 'mind';
 $chapterNum = 0;
 foreach ($chapters as $k => $v) {
   if ($v['chapter'] === $chapter) {
     $chapterNum = $k;  
   }
 }
-$filename = '../../tempFolder/rawdata/generalities.html';
+$filename = '../../tempFolder/rawdata/mind.html';
 echo $filename;
 echo '<br>';
 echo $chapterNum;
@@ -97,6 +97,7 @@ foreach ($matches as $match) {
   $data['chapter'] = $chapterNum;
   $data['parent_id'] = 0;
   $data['priority'] = $priority;
+  pr($data);
   $homeopathy->addDetails('hom_kent_repertory', $data);
   $priority++;
 }
