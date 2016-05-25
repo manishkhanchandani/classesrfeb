@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
+    'myApp.view2',
   'ngAutocomplete'
   //'ui.bootstrap'
 ]).
@@ -12,7 +13,7 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 .controller('mainController', ['$scope', function($scope) {
-    var ref = new Firebase("https://amber-torch-2130.firebaseio.com");
+     $scope.ref = new Firebase("https://amber-torch-2130.firebaseio.com");
     /*ref.createUser({
       email    : "a4@mkgalaxy.com",
       password : "password"
@@ -24,4 +25,4 @@ config(['$routeProvider', function($routeProvider) {
       }
     });*/
   
-}])
+}]);

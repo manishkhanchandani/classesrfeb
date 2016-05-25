@@ -49,8 +49,10 @@ angular.module('myApp.view1', ['ngRoute'])
         }
         $scope.errorMessage=null;
         
-     var ref = new Firebase("https://amber-torch-2130.firebaseio.com");
-    ref.createUser({
+     
+     
+     
+    $scope.ref.createUser({
       email    : $scope.frm.email,
       password : $scope.frm.password
     }, function(error, userData) {
@@ -87,9 +89,9 @@ angular.module('myApp.view1', ['ngRoute'])
         
  $scope.errorMessage=null;
         
- var ref = new Firebase("https://amber-torch-2130.firebaseio.com");
+ 
         
-ref.authWithPassword({
+$scope.ref.authWithPassword({
   email    : $scope.frm.email,
   password : $scope.frm.password}, 
  function(error, authData) {
