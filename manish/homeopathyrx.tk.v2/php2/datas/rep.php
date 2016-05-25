@@ -3,19 +3,20 @@ include('../conn.php');
 include('../functions.php');
 include('../general.php');
 
-$chapter = 'mind';
+$chapter = 'extrimities';
 $chapterNum = 0;
 foreach ($chapters as $k => $v) {
   if ($v['chapter'] === $chapter) {
     $chapterNum = $k;  
   }
 }
-$filename = '../../tempFolder/rawdata/mind.html';
+$filename = '../../tempFolder/rawdata/extremities4.html';
 echo $filename;
 echo '<br>';
+exit;
 echo $chapterNum;
 pr($chapters);
-exit;
+
 function analyseThis($reference)
   {
     $obj = array();
@@ -63,7 +64,7 @@ function analyseThis($reference)
     return $obj;
   }
 
-$priority = 1;
+$priority = 10387;
 $homeopathy = new Models_General($connMainAdodb);
 
 $content = file_get_contents($filename);
