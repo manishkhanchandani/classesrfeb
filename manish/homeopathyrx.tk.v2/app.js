@@ -3,16 +3,25 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'loginModule',
+  'ngAutocomplete',
   'messagesModule',
   'myApp.view1',
   'myApp.view2',
   'myApp.view3',
-  'firebase'
-  //'ui.tree'
-  //'ui.bootstrap'
-]).
-config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  'firebase',
+  'googleLoginModule'
+])
+
+.constant('configs', {
+    clientId: '754890700194-je7kh2gv91st19no73hf358u631uidh8.apps.googleusercontent.com',
+    clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
+    apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
+    tid: 'homeopathyCase',
+    apiUrl: 'http://api.mkgalaxy.com/',
+    projectName: 'Homeopathy'
+})
+
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
 }])

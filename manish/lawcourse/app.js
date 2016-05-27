@@ -14,7 +14,8 @@ angular.module('myApp', [
     clientSecret: '3P-qhjGsheVQgNYronZ3Xxwz',
     apiKey: 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs',
     tid: 'lawcourse',
-    apiUrl: 'http://api.mkgalaxy.com/'
+    apiUrl: 'http://api.mkgalaxy.com/',
+    projectName: 'Law Course'
 })
 
 
@@ -23,7 +24,9 @@ angular.module('myApp', [
   $locationProvider.html5Mode(true);
 }])
 
-.controller('mainController', ['$scope', function($scope) {
+.controller('mainController', ['$scope', 'configs', function($scope, configs) {
+  
+  $scope.projectName = configs.projectName;
   
   $scope.userData = null;
   

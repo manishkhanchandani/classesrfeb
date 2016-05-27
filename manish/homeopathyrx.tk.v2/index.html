@@ -22,6 +22,7 @@
 <![endif]-->
   <link rel="stylesheet" href="app.css">
 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
 <!-- Firebase -->
@@ -35,13 +36,13 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<!--<link rel="stylesheet" href="js/tree/angular-ui-tree.min.css">
-<script type="text/javascript" src="js/tree/angular-ui-tree.js"></script>-->
+
+<script type="text/javascript" src="js/ngAutocomplete.js"></script>
   <script src="app.js"></script>
   <script src="services/data.js"></script>
   
 <!-- login module -->
-<script type="text/javascript" src="directives/login/login.js?v=1.1"></script>
+<script type="text/javascript" src="directives/googleLogin/googleLogin.js?v=1.1"></script>
 <!-- login module ends -->
 
 
@@ -105,12 +106,12 @@ $(document).on("keypress", 'form', function (e) {
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Treatment <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="rx">New Case</a></li>
-            <li><a href="cases/my">My Cases</a></li>
+            <!--<li><a href="rx">New Case</a></li>
+            <li><a href="cases/my">My Cases</a></li>-->
           </ul>
         </li>
       </ul>
-      <ul login user-data="userData" class="nav navbar-nav navbar-right"></ul>
+      <ul google-login user-data="userData" class="nav navbar-nav navbar-right"></ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>

@@ -40,9 +40,29 @@ angular.module('myApp.view3', ['ngRoute'])
     controller: 'RepKentCtrl'
   })
   
+  
+  .when('/hcase/:id', {
+    templateUrl: 'view3/case.html',
+    controller: 'CaseCtrl'
+  })
+  .when('/hcase', {
+    templateUrl: 'view3/case.html',
+    controller: 'CaseCtrl'
+  })
+  
   ;
 }])
 
+
+.controller('CaseCtrl', ['$scope', 'dataService', '$filter', '$routeParams', function($scope, dataService, $filter, $routeParams) {
+    //location starts
+    $scope.mapOptions = {
+      types: 'geocode'
+    };
+
+    $scope.details = {};
+    //location ends
+}])
 
 .controller('AddRepKentCtrl', ['$scope', 'dataService', '$filter', '$routeParams', function($scope, dataService, $filter, $routeParams) {
   console.log('routeparams: ', $routeParams);
