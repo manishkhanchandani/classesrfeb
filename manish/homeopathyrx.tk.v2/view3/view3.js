@@ -305,6 +305,15 @@ angular.module('myApp.view3', ['ngRoute'])
     var url = '/php2/repertory/record.php?action=my_repertory_delete&rid='+rid+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
+  
+  $scope.searchSymptom = function()
+  {
+    if (!$scope.frm.searchTerm) return;
+    $scope.searchResults = null;
+    console.log($scope.frm.searchTerm);
+    var url = '/php2/repertory/record.php?action=kent_repertory_search&q='+encodeURIComponent($scope.frm.searchTerm);
+    dataService.get(url, function(r) {console.log(r); $scope.searchResults = r.data.data.results;}, function(r) {console.log('err: ', r);}, true);
+  };
 }])
 ;
 

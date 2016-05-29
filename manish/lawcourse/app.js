@@ -6,7 +6,9 @@ angular.module('myApp', [
   'myApp.view1',
   'ngAutocomplete',
   'ui.bootstrap',
-  'googleLoginModule'
+  'googleLoginModule',
+  'rawModule',
+  'paginationModule'
 ])
 
 .constant('configs', {
@@ -17,7 +19,19 @@ angular.module('myApp', [
     apiUrl: 'http://api.mkgalaxy.com/',
     projectName: 'Law Course'
 })
+.config(function($sceProvider) {
+  // Completely disable SCE.  For demonstration purposes only!
+  // Do not use in new projects.
+  $sceProvider.enabled(false);
+})
 
+.filter('stripSlashes', function() {
+ return function(input) {
+  if(input == null){ return ""; }
+  var _data = input.replace(new RegExp("\\\\", "g"), "");
+  return _data;
+ };
+})
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/'});

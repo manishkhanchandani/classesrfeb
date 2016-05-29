@@ -42,6 +42,34 @@ class repertory_Kent
     return $return;
   }
   
+  
+  public function search($Models_General, $q)
+  {
+    global $chapters;
+    $return = array();
+    $query_rsView = sprintf('select * from hom_kent_repertory where symptom LIKE %s order by chapter, priority', GetSQLValueString('%'.$q.'%', 'text'));
+    $results = $Models_General->fetchAll($query_rsView, array(), TIMESMALL);
+    if (!empty($results)) {
+      foreach ($results as $k => $v) {
+        $results[$k]['chapterName'] = $chapters[$v['chapter']]['chapter'];
+        if (!empty($v['remedies'])) {
+          $results[$k]['remedies'] = json_decode($v['remedies'], 1);  
+        }
+        if (!empty($v['chain'])) {
+          $results[$k]['chain'] = json_decode($v['chain'], 1);  
+        }
+        if (!empty($v['reference'])) {
+          $results[$k]['reference'] = json_decode($v['reference'], 1);  
+        }
+      }
+    }
+    $sql1 = $Models_General->sql;
+    $return['sql'] = $sql1;
+    $return['totalRows'] = count($results);
+    $return['results'] = $results;
+    return $return;
+  }
+  
   public function deleteRecord($Models_General, $id)
   {
     $q = 'delete from hom_kent_repertory WHERE id = ?';

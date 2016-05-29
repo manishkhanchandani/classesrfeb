@@ -20,6 +20,15 @@ switch ($action) {
     $data = $kent->getAll($Models_General, $_GET['chapter'], $max, $start, $cacheTime);
     $record['data'] = $data;
     break;  
+  case 'kent_repertory_search':
+    //http://homeopathyrx.tk/php2/repertory/record.php?action=kent_repertory_search&q=muscle
+    if (empty($_GET['q'])) {
+      throw new Exception('empty query');
+    }
+    $kent = new repertory_Kent();
+    $data = $kent->search($Models_General, $_GET['q']);
+    $record['data'] = $data;
+    break;  
   case 'kent_repertory_update':
     //http://homeopathyrx.tk/php2/repertory/record.php?action=kent_repertory_update&id=1
     if (empty($_GET['id'])) {

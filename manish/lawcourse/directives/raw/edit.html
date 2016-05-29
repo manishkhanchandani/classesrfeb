@@ -4,4 +4,28 @@
       <h1>Edit Record</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+          <div class="form-group">
+              <label for="topic">Topic</label>
+              <input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="frm.topic">
+          </div>
+          <div class="form-group">
+              <label for="reference_id">Category</label>
+              <select ng-model="frm.reference_id" class="form-control" id="reference_id">
+                <option value="1">Legal Writings</option>
+                <option value="2">Contracts</option>
+                <option value="3">Criminal Law</option>
+                <option value="4">Torts</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="description">Details</label>
+              <textarea class="form-control" id="description" placeholder="Enter Description" ng-model="frm.description" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>
