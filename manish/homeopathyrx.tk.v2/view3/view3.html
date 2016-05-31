@@ -151,7 +151,7 @@
                 
             </div>
             <div class="media-body">
-                <h4 class="media-heading"><small><span class="chain">{{syms.chapterName | capitalize:true}} | </span><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span></small>{{syms.symptom}}<span ng-if="syms.remedies"><a href="" ng-click="addsym(syms)">+</a></span></h4>
+                <h4 class="media-heading"><small><span class="chain">{{syms.chapterName | capitalize:true}} | </span><span ng-repeat="ch in syms.chain" class="chain">{{ch.symptom}} | </span></small>{{syms.symptom}} <span ng-if="syms.remedies"><a href="" ng-click="addsym(syms)">+</a></span></h4>
                 <p ng-if="syms.remedies"><span ng-repeat="remedy in syms.remedies | orderObjectBy: 'remedy'" ng-if="syms.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
             </div>
         </div>

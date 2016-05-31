@@ -35,7 +35,8 @@
     <div class="col-md-12">
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="item in results">
-          <h3><a href="detail/{{item.id}}">{{item.title | stripSlashes}}</a></h3>
+          <span class="pull-right"><small><strong>Book:</strong> {{item.vc2 | stripSlashes}}</small></span>
+          <h3 style="margin-top:0px;"><a href="detail/{{item.id}}">{{item.title | stripSlashes}}</a></h3>
           <p ng-bind-html="item.description | stripSlashes"></p>
           <p class="pull-right"><small>{{frm.subjects[item.reference_id]}} ({{item.vc1}})</small></p>
           <br class="clear" />

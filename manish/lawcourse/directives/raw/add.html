@@ -8,6 +8,10 @@
     <div class="col-md-12">
       <form ng-submit="addRecord()">
           <div class="form-group">
+              <label for="chapter">Book</label>
+              <input type="text" class="form-control" id="book" placeholder="Enter Book" ng-model="frm.book">
+          </div>
+          <div class="form-group">
               <label for="chapter">Chapter</label>
               <input type="text" class="form-control" id="chapter" placeholder="Enter Chapter" ng-model="frm.chapter">
           </div>

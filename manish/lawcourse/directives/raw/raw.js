@@ -54,24 +54,7 @@
               submitData = submitData + '&description='+encodeURIComponent(scope.frm.description);
               submitData = submitData + '&reference_id='+encodeURIComponent(scope.frm.reference_id);
               submitData = submitData + '&vc1='+encodeURIComponent(scope.frm.chapter);
-              
-              /*
-              //tags
-              var tmpTags = scope.frm.title.split(' ');
-              var tmpTags2 = scope.frm.description.split(' ');
-              var tags = [];
-              angular.forEach(tmpTags, function(value) {
-                tags.push(value);
-              });
-              angular.forEach(tmpTags2, function(value) {
-                tags.push(value);
-              });
-              
-              // usage example:
-              var uniqueTags = tags.filter(onlyUnique);
-              var addTags = uniqueTags.join();
-              submitData = submitData + '&tags='+(addTags ? encodeURIComponent(addTags) : '');
-              */
+              submitData = submitData + '&vc2='+encodeURIComponent(scope.frm.book);
               //url
               var access_token = scope.userData.token;
               var path = '/manish/lawCourse';
@@ -169,7 +152,7 @@
               }
               
               if ($routeParams.keyword) {
-                url = url + '&q='+$routeParams.keyword;
+                url = url + '&q='+$routeParams.keyword+'&vc1='+$routeParams.keyword;
                 scope.frm.keyword = decodeURIComponent($routeParams.keyword);
                 scope.frm.urlSufix = scope.frm.urlSufix + '/k_' + $routeParams.keyword;
               }
