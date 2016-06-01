@@ -4,10 +4,10 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAutocomplete',
-  'messagesModule',
   'myApp.view1',
   'myApp.view2',
   'myApp.view3',
+  'myApp.doctors',
   'firebase',
   'googleLoginModule'
 ])
