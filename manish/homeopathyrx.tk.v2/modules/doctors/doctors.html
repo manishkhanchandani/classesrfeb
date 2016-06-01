@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Register as Practitioner</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <h3>Rules, Terms & Privacy</h3>
+      <ul>
+        <li>You must be registered homeopathic practitioner      </li>
+        <li>You must be practicing classical homeopathy</li>
+        <li>You must follow single remedy single dose fundamentals</li>
+        <li>In acute case, single dose is sufficient to cure the disease.</li>
+        <li>Repertory is guide to find the remedy, but ultimate tool is materia medica in selection of the remedy.</li>
+        <li>In this website, patient will join the site, and then patient will be automatically assigned to one of the doctors.</li>
+        <li>For each patient, there will be total 4 doctors to analyse the case. One of the doctor is the main doctor who is primarily assigned, and there will be 3 more doctors who will help in the case. If other doctors are not available then their fees will be assigned to administrator of the website.</li>
+        <li>Main doctor has responsibility to find the simillimum though he will get advise of other 3 doctors too. Main doctor will take all the symptoms of the patient and then share those symptoms with 3 other doctors who will help him in finding the simillimum.</li>
+        <li>Privacy: Your data will not be shared with anyone.</li>
+        <li>Once you register your name here, we will contact you and see if you are really capable of treating patients as per our rules. Once you are approved by our admin then you will start receiving patients from this website.</li>
+        <li>There is small fee of $10.00/- per year which you have to pay through paypal once we approve you.</li>
+        <li>You should not practice any other treatment method except classical homeopathy.</li>
+        <li>Each patient will pay $100 per year. Doctor has to take case when patient is registered and follow-up every month. There will be 12 follow-up in one year i.e. one for each month. Doctor has to manage case in acute conditions whenever needed. In case of emergency, doctor can send patient to hospitals. Here is break down of $100:
+          <ul>
+            <li>Main Doctor: $60</li>
+            <li>3 other Doctors who will assist: $5 per doctor</li>
+            <li>Administrator of website: $25</li>
+          </ul>
+        </li>
+        <li>You can also assist other doctors in their cases and you will get $5 for that.</li>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <form ng-submit="submitDoctorFrm()">
+        <div class="form-group">
+          <label for="email">Email address</label>
+            <input type="email" required class="form-control" id="email" placeholder="Enter email" ng-model="frm.email">
+          </div>
+        <div class="form-group">
+          <label for="name">Name of Doctor</label>
+            <input type="text" required class="form-control" id="name" placeholder="Enter name" ng-model="frm.name">
+          </div>
+          <div class="form-group">
+            <label for="name">Degree</label>
+            <input type="text" required class="form-control" id="name" placeholder="Enter degree" ng-model="frm.name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" required class="form-control" id="phone" placeholder="Enter phone" ng-model="frm.phone">
+          </div>
+          <div class="form-group">
+            <label for="address">Address, City, State, Country</label>
+            <textarea required class="form-control" id="address" placeholder="Enter address" ng-model="frm.address" rows="5"></textarea>
+          </div>
+          <div class="form-group">
+              <input type="checkbox" id="terms" ng-model="frm.terms"> I agree to terms and privacy statement of homeopathyrx.tk and I agree that whatever I said is true to best of my understanding.
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
