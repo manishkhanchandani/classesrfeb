@@ -1,0 +1,28 @@
+<div class="row" ng-if="recordedSymptoms.length > 0">
+    <div class="col-md-12">
+      <div class="table-responsive" style="overflow:auto;">
+            <table class="table table-bordered table-striped">
+            <caption>Repertory</caption>
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Symptom</th>
+                        <th class="tblRemedies" ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.remedy}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(k, syms) in recordedSymptoms">
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}} (<a href="" ng-click="delSym(syms.rid)">-</a>)</td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td scope="row"><strong>Total:</strong> </td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.points}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+  

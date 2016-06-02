@@ -10,5 +10,7 @@ angular.module('myApp.doctors', ['ngRoute'])
 }])
 
 .controller('DoctorsRegisterCtrl', ['$scope', function($scope) {
-  console.log($scope);
+  $scope.submitDoctorFrm = function() {
+    console.log($scope.frm);
+  };
 }]);

@@ -100,6 +100,11 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   }
+  .repertory .points_4 {
+  color: #014B15;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
   
   .repertory .points_2 a {
     color: #3805CB;
@@ -111,6 +116,11 @@ footer {
   }
   .repertory .points_3 a {
   color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+  .repertory .points_4 a {
+  color: #014B15;
   font-weight: bold;
   text-transform: uppercase;
   }
