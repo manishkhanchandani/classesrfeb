@@ -113,4 +113,26 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   return $theValue;
 }
 }
+
+
+
+function guid()
+{
+    mt_srand((double) microtime() * 10000);
+    $charid = strtoupper(md5(uniqid(rand(), true)));
+    $guid = substr($charid, 0, 8) . '-' .
+            substr($charid, 8, 4) . '-' .
+            substr($charid, 12, 4) . '-' .
+            substr($charid, 16, 4) . '-' .
+            substr($charid, 20, 12);
+   return $guid;
+}
+
+
+function validateAccessToken($model, $token) {
+    $q = 'select * from consultl_classes.access_tokens WHERE token = ?';
+    $res = $model->fetchRow($q, array($token), TIMESMALL);
+    if (empty($res)) return false;
+    return $res;
+  }
 ?>

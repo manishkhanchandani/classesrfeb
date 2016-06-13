@@ -7,6 +7,9 @@
   
   <div class="row" ng-if="recordedSymptoms.length > 0">
     <div class="col-md-12">
+    
+    
+    
       <div class="table-responsive" style="overflow:auto;">
             <table class="table table-bordered table-striped">
             <caption>Repertory</caption>
@@ -18,7 +21,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="(k, syms) in recordedSymptoms">
-                        <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}} (<a href="" ng-click="delSym(syms.rid)">-</a>)</td>
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}} (<a href="" ng-click="delSym(syms.rid, recordedType, syms.trace_id)">-</a>)</td>
                         <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
                     </tr>
                 </tbody>
@@ -30,6 +33,30 @@
                 </tbody>
             </table>
         </div>
+        
+        
+        
+        
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-if="userData">
+        <div><span ng-if="recordedSymptoms.length > 0"><a href="" ng-click="showSaveFields()">Save this case</a> | </span><a href="" ng-click="getSavedCases(userData.id, 0, false);">Show Saved List</a>
+          <br></div>
+        <form ng-submit="saveCase()">
+          <div ng-if="save"><b>Title: </b><input type="text" required ng-model="frm.name" size="45"> <input type="submit" value="Save"></div>
+          <br>
+        </form>
+        <div class="alert alert-success" role="alert" ng-if="recordedSymptomStatus">
+          {{recordedSymptomStatus}}
+        </div>
+        <ul class="list-group" ng-if="showSavedList && savedListResults">
+          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a> | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a></li>
+        </ul>
+      </div>
+  
     </div>
   </div>
   
@@ -46,10 +73,9 @@
       </form>
       <br><br>
       <div ng-if="records">
-          <input type="search" class="form-control" ng-model="q" placeholder="filter symptoms..." aria-label="filter symptoms" /><br><br>
           <!-- start -->
           <ul class="media-list">
-            <li class="media" ng-repeat="val in records | filter:q as results track by $index">
+            <li class="media" ng-repeat="val in records">
               <div class="media-left"></div>
               <div class="media-body">
                 <h4 class="media-heading">{{val.path}} 
@@ -68,7 +94,7 @@
           <!-- end -->
           
           <!--pagination start -->
-          <div class="col-md-12" ng-if="results.length > 0">
+          <div class="col-md-12" ng-if="records.length > 0">
             <div my-pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
           </div>
 

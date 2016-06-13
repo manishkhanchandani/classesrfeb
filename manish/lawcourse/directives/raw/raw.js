@@ -96,13 +96,17 @@
           },
           templateUrl: 'directives/raw/list.html',
           link: function(scope, elem, attrs) {
-            console.log($routeParams);
+            //console.log($routeParams);
             scope.frm = {};
             scope.frm.subjects = {};
             scope.frm.subjects[1] = 'Introduction to Law & Legal Writings';
             scope.frm.subjects[2] = 'Contracts';
             scope.frm.subjects[3] = 'Criminal Law';
             scope.frm.subjects[4] = 'Torts';
+            scope.frm.reference_id = '';
+            scope.frm.keyword = '';
+            scope.frm.chapter = '';
+            scope.frm.book = '';
             
             scope.frm.page = 0;
             if ($routeParams.page) {
@@ -115,22 +119,21 @@
             
             scope.search = function() {
               var url = '/search/p_0';
-              if (scope.frm.reference_id) {
-                url = url + '/c_' + scope.frm.reference_id;
-              }
-              if (scope.frm.keyword) {
-                url = url + '/k_' + encodeURIComponent(scope.frm.keyword);
-              }
+              url = url + '/r_' + (scope.frm.reference_id ? scope.frm.reference_id : 'undefined');
+              url = url + '/k_' + (encodeURIComponent(scope.frm.keyword) ? encodeURIComponent(scope.frm.keyword) : 'undefined');
+              url = url + '/c_' + (encodeURIComponent(scope.frm.chapter) ? encodeURIComponent(scope.frm.chapter) : 'undefined');
+              url = url + '/b_' + (encodeURIComponent(scope.frm.book) ? encodeURIComponent(scope.frm.book) : 'undefined');
+              console.log(url);
               $location.path(url);  
             };
     
             function getSuccess(response) {
               scope.showLoading = false;
-              console.log('success: ', response);
+              //console.log('success: ', response);
               scope.results = response.data.data.results;
               scope.data = response.data.data;
-              console.log(scope.results);
-              console.log(scope.data);
+              //console.log(scope.results);
+              //console.log(scope.data);
               if (scope.results.length == 0) {
                 scope.listStatus = 'No Result Found';  
               }
@@ -145,17 +148,41 @@
               scope.showLoading = true;
               var url = configs.apiUrl+'records.php?action=getAll&tid='+configs.tid;
               
+              console.log($routeParams);
               if ($routeParams.cat_id) {
-                url = url + '&reference_id='+$routeParams.cat_id;
-                scope.frm.reference_id = decodeURIComponent($routeParams.cat_id);
-                scope.frm.urlSufix = scope.frm.urlSufix + '/c_' + $routeParams.cat_id;
+                if ($routeParams.cat_id !== 'undefined') {
+                  url = url + '&reference_id='+$routeParams.cat_id;
+                  scope.frm.reference_id = decodeURIComponent($routeParams.cat_id);
+                }
+                scope.frm.urlSufix = scope.frm.urlSufix + '/r_' + $routeParams.cat_id;
               }
               
               if ($routeParams.keyword) {
-                url = url + '&q='+$routeParams.keyword+'&vc1='+$routeParams.keyword;
-                scope.frm.keyword = decodeURIComponent($routeParams.keyword);
+                if ($routeParams.keyword !== 'undefined') {
+                  url = url + '&q='+$routeParams.keyword;
+                  scope.frm.keyword = decodeURIComponent($routeParams.keyword);
+                }
                 scope.frm.urlSufix = scope.frm.urlSufix + '/k_' + $routeParams.keyword;
               }
+              
+              
+              if ($routeParams.chapter) {
+                if ($routeParams.chapter !== 'undefined') {
+                  url = url + '&vc1='+$routeParams.chapter;
+                  scope.frm.chapter = decodeURIComponent($routeParams.chapter);
+                }
+                scope.frm.urlSufix = scope.frm.urlSufix + '/c_' + $routeParams.chapter;
+              }
+              
+              if ($routeParams.book) {
+                if ($routeParams.book !== 'undefined') {
+                  url = url + '&vc2='+$routeParams.book;
+                  scope.frm.book = decodeURIComponent($routeParams.book);
+                }
+                scope.frm.urlSufix = scope.frm.urlSufix + '/b_' + $routeParams.book;
+              }
+              
+              console.log(url);
               
               
               

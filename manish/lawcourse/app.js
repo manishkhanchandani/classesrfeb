@@ -33,6 +33,16 @@ angular.module('myApp', [
  };
 })
 
+
+.filter('customChanges', function() {
+ return function(input) {
+  if(input == null){ return ""; }
+  var _data = input.replace(new RegExp(" ", "g"), "&nbsp; ");
+  _data = _data.replace(new RegExp("\n", "g"), "<br />");
+  return _data;
+ };
+})
+
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);

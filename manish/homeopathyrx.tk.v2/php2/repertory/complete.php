@@ -3,6 +3,15 @@ include('../init.php');
 $action = !empty($_GET['action']) ? $_GET['action'] : '';
 $record = array('success' => 1);
 try {
+  if (!empty($_REQUEST['access_token'])) {
+    $res = validateAccessToken($modelClasses, $_REQUEST['access_token']);
+    //$_GET['uid'] = '';
+    if (!empty($res)) {
+      define('UID', $res['uid']);
+      $_GET['uid'] = $res['uid']; 
+    }
+  }
+  
 switch ($action) {
   case 'complete_search':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_search&keyword=skin&start=0&maxData=100
@@ -13,7 +22,6 @@ switch ($action) {
     $max = !empty($_GET['max']) ? $_GET['max'] : 100;
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
     $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIMESMALL;
-    
     $keyword = $_GET['keyword'];
     $data = $Complete->getAllSearch($Models_General, $keyword, $max, $page, $cacheTime);
     $record['data'] = $data;
@@ -46,7 +54,7 @@ switch ($action) {
     $data['parent'] = null;
     $data['parentMd5'] = null;
     
-    $query = 'select * from complete_repertory where path_md5 = ?';
+    $query = 'select * from consultl_homeopathy.complete_repertory where path_md5 = ?';
     $results = $Models_General->fetchRow($query, array($data['path_md5']), 0);
     if (!empty($results)) {
       throw new Exception('symptom already present');  
@@ -88,7 +96,7 @@ switch ($action) {
       
       $data['remedies'] = json_encode($rem);
     }
-    $res = $Models_General->addDetails('complete_repertory', $data);
+    $res = $Models_General->addDetails('consultl_homeopathy.complete_repertory', $data);
     $record['data'] = $data;
     $record['result'] = $res;
     break;
@@ -98,7 +106,7 @@ switch ($action) {
     if (empty($_GET['uid'])) {
       throw new Exception('missing uid');  
     }
-    $query = 'select * from my_complete_repertory as m LEFT JOIN complete_repertory
+    $query = 'select * from consultl_homeopathy.my_complete_repertory as m LEFT JOIN consultl_homeopathy.complete_repertory
  as r ON m.id = r.id WHERE m.uid = ?';
     $results = $Models_General->fetchAll($query, array($_GET['uid']), $_GET['cacheTime']);
     if (!empty($results)) {
@@ -123,11 +131,11 @@ switch ($action) {
     $data['id'] = $_GET['id'];
     $data['uid'] = $_GET['uid'];
     
-    $query = 'select * from my_complete_repertory as m WHERE m.uid = ? AND m.id = ?';
+    $query = 'select * from consultl_homeopathy.my_complete_repertory as m WHERE m.uid = ? AND m.id = ?';
     $results = $Models_General->fetchRow($query, array($_GET['uid'], $_GET['id']), 0);
     $record['res'] = 0;
     if (empty($results)) {
-      $res = $Models_General->addDetails('my_complete_repertory', $data);
+      $res = $Models_General->addDetails('consultl_homeopathy.my_complete_repertory', $data);
       $record['res'] = $res;
     }
     break;
@@ -140,8 +148,132 @@ switch ($action) {
       throw new Exception('missing uid');  
     }
     
-    $q = 'delete from my_complete_repertory WHERE rid = ? AND uid = ?';
+    $q = 'delete from consultl_homeopathy.my_complete_repertory WHERE rid = ? AND uid = ?';
     $res = $Models_General->deleteDetails($q, array($_GET['rid'], $_GET['uid']));
+    break;
+  
+  case 'save_complete_repertory':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=save_complete_repertory
+    //post &id=1&uid=xyz&name=
+    
+    $json = file_get_contents('php://input');
+    $content = json_decode($json, 1);
+    if (empty($content['uid'])) {
+      throw new Exception('uid is missing');  
+    }
+    if (empty($content['ids'])) {
+      throw new Exception('ids is missing');  
+    }
+    if (empty($content['name'])) {
+      throw new Exception('name is missing');  
+    }
+    $data = array();
+    $data['uid'] = $content['uid'];
+    $data['name'] = $content['name'];
+    $data['trace_id'] = guid();
+    foreach ($content['ids'] as $v) {
+      $data['id'] = $v;
+      $res = $Models_General->addDetails('consultl_homeopathy.save_complete_repertory', $data);
+    }
+    
+    $record['res'] = 1;
+    break;
+  
+  case 'saved_complete_repertory':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=saved_complete_repertory&uid=xyz&cacheTime=0
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    $ct = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : 1500;
+    $query = 'select DISTINCT trace_id, name, createdOn from consultl_homeopathy.save_complete_repertory WHERE uid = ?';
+    $results = $Models_General->fetchAll($query, array($_GET['uid']), $ct);
+    $record['data'] = $results;
+    break;
+    
+  case 'savedOne_complete_repertory':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id=xyz&cacheTime=1
+    if (empty($_GET['trace_id'])) {
+      throw new Exception('missing trace_id');  
+    }
+    $ct = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : 1500;
+    $query = 'select * from consultl_homeopathy.save_complete_repertory as m LEFT JOIN consultl_homeopathy.complete_repertory
+ as r ON m.id = r.id WHERE m.trace_id = ?';
+    $results = $Models_General->fetchAll($query, array($_GET['trace_id']), $ct);
+    if (!empty($results)) {
+      foreach ($results as $k => $v) {
+        if (!empty($v['remedies'])) {
+          $results[$k]['remedies'] = json_decode($v['remedies'], 1);  
+        }
+      }
+    }
+    $record['data'] = $results;
+    break;
+  case 'saved_complete_repertory_delete':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=saved_complete_repertory_delete&rid=5199&access_token=xyz
+    if (empty($_GET['rid'])) {
+      throw new Exception('missing rid');  
+    }
+    if (empty($_GET['access_token'])) {
+      throw new Exception('missing access_token');  
+    }
+    if (empty($_GET['uid'])) {
+      throw new Exception('token expired, login again');  
+    }
+    $q = 'delete from consultl_homeopathy.save_complete_repertory WHERE rid = ? AND uid = ?';
+    $res = $Models_General->deleteDetails($q, array($_GET['rid'], $_GET['uid']));
+    break;
+  case 'deleteSavedCase':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=deleteSavedCase&trace_id=xyz&access_token=xyz
+    if (empty($_GET['trace_id'])) {
+      throw new Exception('missing trace_id');  
+    }
+    if (empty($_GET['access_token'])) {
+      throw new Exception('missing access_token');  
+    }
+    if (empty($_GET['uid'])) {
+      throw new Exception('token expired, login again');  
+    }
+    $q = 'delete from consultl_homeopathy.save_complete_repertory WHERE trace_id = ? AND uid = ?';
+    $res = $Models_General->deleteDetails($q, array($_GET['trace_id'], $_GET['uid']));
+    $q = 'delete from consultl_homeopathy.save_prescription WHERE trace_id = ? AND uid = ?';
+    $res = $Models_General->deleteDetails($q, array($_GET['trace_id'], $_GET['uid']));
+    break;
+  
+  case 'savePrescription':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=savePrescription&access_token=xyz&trace_id=xyz&remedy=xyz&prescription_date=xyz
+    
+    if (empty($_GET['access_token'])) {
+      throw new Exception('missing access_token');  
+    }
+    if (empty($_GET['uid'])) {
+      throw new Exception('uid is missing');  
+    }
+    if (empty($_GET['remedy'])) {
+      throw new Exception('remedy is missing');  
+    }
+    if (empty($_GET['trace_id'])) {
+      throw new Exception('trace_id is missing');  
+    }
+    if (empty($_GET['prescription_date'])) {
+      throw new Exception('prescription_date is missing');  
+    }
+    $data = array();
+    $data['uid'] = $content['uid'];
+    $data['remedy'] = $_GET['remedy'];
+    $data['trace_id'] = $_GET['trace_id'];
+    $data['prescription_date'] = $_GET['prescription_date'];
+    $record['res'] = $Models_General->addDetails('consultl_homeopathy.save_prescription', $data);
+    break;
+  
+  case 'saved_complete_repertory':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=saved_complete_repertory&uid=xyz&cacheTime=0
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    $ct = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : 1500;
+    $query = 'select DISTINCT trace_id, name, createdOn from consultl_homeopathy.save_complete_repertory WHERE uid = ?';
+    $results = $Models_General->fetchAll($query, array($_GET['uid']), $ct);
+    $record['data'] = $results;
     break;
   default:
     break;

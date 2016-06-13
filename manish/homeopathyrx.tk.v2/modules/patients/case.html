@@ -1,0 +1,263 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Detail Case Taking Form</h1>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <form>
+    <div><a href="" ng-click="clearForm();" class="btn btn-default pull-right">Clear Form</a><br><br></div>
+    <div class="col-md-7">
+        <div class="form-group">
+          <label for="email">Email address</label>
+            <input type="email" required class="form-control" id="email" placeholder="Enter email" ng-model="frm.details.email">
+          </div>
+        <div class="form-group">
+          <label for="name">Name of Patient</label>
+            <input type="text" required class="form-control" id="name" placeholder="Enter name" ng-model="frm.details.name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" required class="form-control" id="phone" placeholder="Enter phone" ng-model="frm.details.phone">
+          </div>
+          <div class="form-group">
+            <label for="address">Address, City, State, Country</label>
+            <textarea required class="form-control" id="address" placeholder="Enter address" ng-model="frm.details.address" rows="5"></textarea>
+          </div>
+          <button type="button" class="btn btn-default" ng-click="updateDetails()">Update your details</button>
+          <br><br>
+          <p><strong>Note: </strong> If you have multiple complaints, you can fill details about one complaint and then click save and then you can add another complaint and hit save, this way you can save multiple complaints.</p>
+        <div class="form-group">
+          <label for="complaint">Complaint *</label>
+          <input type="text" required class="form-control" id="complaint" placeholder="Enter complaint" ng-model="frm.complaint.description">
+        </div>
+        <div class="form-group">
+          <label for="how_long">Since How Long?</label>
+          <input type="text" class="form-control" id="how_long" placeholder="Enter period e.g. 1 year or 2 year etc." ng-model="frm.complaint.how_long">
+        </div>
+        <div class="form-group">
+          <label for="parts">Parts Affected?</label>
+          <input type="text" class="form-control" id="parts" placeholder="Enter parts affected" ng-model="frm.complaint.parts">
+        </div>
+        <div class="form-group">
+          <label for="sensation">Any Sensation / Appearance of problem, if yes what?</label>
+          <input type="text" class="form-control" id="sensation" placeholder="Enter sensation" ng-model="frm.complaint.sensation">
+        </div>
+        <h3>When it is Increased/Decreased?</h3>
+        
+        <div class="row" style="height:200px; overflow:auto;">
+          <div class="col-md-12">
+          
+          
+              <div class="table-responsive">
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th>Modality</th>
+                              <th>Increased/Decreased</th>
+                              <th>Intensity</th>
+                          </tr>
+                      </thead>
+                      <tbody >
+                          <tr ng-repeat="items in frm.data.modalities">
+                              <th scope="row"><strong>{{items.label}}</strong></th>
+                              <td><input type="radio" ng-model="frm.complaint.modalities[items.name].condition" value="1"> Increased <input type="radio" ng-model="frm.complaint.modalities[items.name].condition" value="-1"> Decreased  <input type="radio" ng-model="frm.complaint.modalities[items.name].condition" value="0"> None</td>
+                              <td><input type="radio" ng-model="frm.complaint.modalities[items.name].intensity" value="0"> 0 <input type="radio" ng-model="frm.complaint.modalities[items.name].intensity" value="1"> 1 <input type="radio" ng-model="frm.complaint.modalities[items.name].intensity" value="2"> 2 <input type="radio" ng-model="frm.complaint.modalities[items.name].intensity" value="3"> 3 <input type="radio" ng-model="frm.complaint.modalities[items.name].intensity" value="4"> 4 </span></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+              
+              
+          </div>
+        </div>
+        
+        <button type="button" class="btn btn-default" ng-click="addComplaint()">Save Complaint</button>
+        <br><br>
+        <div class="form-group" ng-repeat="(key, item) in frm.data.mind">
+          <label for="{{key}}">{{item}}</label>
+          <textarea rows="3" class="form-control" id="{{key}}" ng-model="frm.mentalSymptoms[key]"></textarea>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="addMind()">Save Mind Symptoms</button>
+      
+        <h3>Food: Likes, Dislikes or Increases, Decreases Problems</h3>
+        
+        
+        <div class="row" style="height:200px; overflow:auto;">
+          <div class="col-md-12">
+          
+              <div class="table-responsive">
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th>Food</th>
+                              <th>Likes</th>
+                              <th>Dislikes</th>
+                              <th>Increase Problem</th>
+                              <th>Decrease Problem</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="item in frm.data.foods">
+                              <th scope="row"><strong>{{item.label}}</strong></th>
+                              <td><input type="checkbox" ng-model="frm.foods[item.name].likes" value="1"></td>
+                              <td><input type="checkbox" ng-model="frm.foods[item.name].dislikes" value="1"></td>
+                              <td><input type="checkbox" ng-model="frm.foods[item.name].increases" value="1"></td>
+                              <td><input type="checkbox" ng-model="frm.foods[item.name].decreases" value="1"></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+              
+              
+          </div>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="addFood()">Save Food Habits</button>
+        <br><br>
+        <!-- food ends -->
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    <div class="col-md-5">
+      <div id="mainContent">
+          <div ng-if="completeFrm.details">
+            <p><strong>Name: </strong> {{completeFrm.details.name}}</p>
+            <p><strong>Email: </strong> {{completeFrm.details.email}}</p>
+            <p><strong>Phone: </strong> {{completeFrm.details.phone}}</p>
+            <p><strong>Address: </strong> {{completeFrm.details.address}}</p>
+          </div>
+          <div ng-if="completeFrm.complaints.length > 0">
+          <h3>Complaints</h3>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="item in completeFrm.complaints track by $index">
+                <p class="text-center"><strong>{{item.description}}</strong></p>
+                <p><strong>Since:</strong> {{item.how_long}}</p>
+                <p><strong>Parts Affected:</strong> {{item.parts}}</p>
+                <p><strong>Sensation / Appearance:</strong> {{item.sensation}}</p>
+                <ul>
+                  <li ng-repeat="(key, mods) in item.modalities" ng-if="mods.condition != 0"><strong>{{mods.label}}</strong> <span ng-if="mods.condition == 1"> - Increases</span><span ng-if="mods.condition == -1"> - Decreases</span><span ng-if="mods.intensity > 0"> ({{mods.intensity}})</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div ng-if="completeFrm.mind">
+          <h3>Mind</h3>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="(key, item) in completeFrm.mind track by $index">
+                <strong>{{frm.data.mind[key]}}</strong><br>{{item}}
+              </li>
+            </ul>
+          </div>
+          <div ng-if="completeFrm.foods">
+          <h3>Food Habits</h3>
+            <ul class="list-group">
+              <li class="list-group-item" ng-repeat="(key, item) in completeFrm.foods track by $index" ng-if="item.likes || item.dislikes || item.increases ||  item.decreases">
+                <p ><strong>{{item.label}}</strong>: <span ng-if="item.likes">Likes, </span> <span ng-if="item.dislikes">Dislikes, </span> <span ng-if="item.increases">Increases, </span> <span ng-if="item.decreases">Decreases, </span></p>
+              </li>
+            </ul>
+          </div>
+      </div>
+    
+    
+    <!-- export -->
+    
+    
+        <div id="exportable" style="display:none;">
+          <h1>Personal Details</h1>
+          <table width="100%" ng-if="completeFrm.details" border="1" cellpadding="5" cellspacing="0">
+              <tbody>
+                  <tr>
+                      <th valign="top">Name</th>
+                      <td valign="top">{{completeFrm.details.name}}</td>
+                  </tr>
+                  <tr>
+                      <th valign="top">Email</th>
+                      <td valign="top">{{completeFrm.details.email}}</td>
+                  </tr>
+                  <tr>
+                      <th valign="top">Phone</th>
+                      <td valign="top">{{completeFrm.details.phone}}</td>
+                  </tr>
+                  <tr>
+                      <th valign="top">Address</th>
+                      <td valign="top">{{completeFrm.details.address}}</td>
+                  </tr>
+              </tbody>
+          </table>
+          <h1>Complaints</h1>
+          <table width="100%" ng-if="completeFrm.complaints.length > 0" border="1" cellpadding="5" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th valign="top">Description</th>
+                      <th valign="top">Since How Long</th>
+                      <th valign="top">Parts Affected</th>
+                      <th valign="top">Sensation / Appearance</th>
+                      <th valign="top">Modalities</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="item in completeFrm.complaints track by $index">
+                      <td valign="top">{{item.description}}</td>
+                      <td valign="top">{{item.how_long}}</td>
+                      <td valign="top">{{item.parts}}</td>
+                      <td valign="top">{{item.sensation}}</td>
+                      <td valign="top">
+                        <ul>
+                          <li ng-repeat="(key, mods) in item.modalities" ng-if="mods.condition != 0"><strong>{{mods.label}}</strong> <span ng-if="mods.condition == 1"> - Increases</span><span ng-if="mods.condition == -1"> - Decreases</span><span ng-if="mods.intensity > 0"> ({{mods.intensity}})</span></li>
+                        </ul>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+          <h1>Mind Symptoms</h1>
+          <table width="100%" ng-if="completeFrm.mind" border="1" cellpadding="5" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th valign="top">Mind</th>
+                      <th valign="top">Value</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="(key, item) in completeFrm.mind track by $index">
+                      <td valign="top">{{frm.data.mind[key]}}</td>
+                      <td valign="top">{{item}}</td>
+                  </tr>
+              </tbody>
+          </table>
+          <h1>Food Habits</h1>
+        
+          <table width="100%" ng-if="completeFrm.foods" border="1" cellpadding="5" cellspacing="0">
+              <thead>
+                  <tr>
+                      <th valign="top">Food</th>
+                      <th valign="top">Value</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="(key, item) in completeFrm.foods track by $index" ng-if="item.likes || item.dislikes || item.increases ||  item.decreases">
+                      <td valign="top">{{item.label}}</td>
+                      <td valign="top"><span ng-if="item.likes">Likes, </span> <span ng-if="item.dislikes">Dislikes, </span> <span ng-if="item.increases">Increases, </span> <span ng-if="item.decreases">Decreases, </span></td>
+                  </tr>
+              </tbody>
+          </table>
+          </div>
+        <div ng-if="completeFrm.details"><a href="" ng-click="exportData(completeFrm.details.name);" class="btn btn-primary">Export to xls</a> <a href="" ng-click="copy();" data-clipboard-action="copy" class="btn btn-primary copyToClipboard" data-clipboard-target="#mainContent">Copy to Clipboard</a></div>
+    <!-- export ends -->
+    
+    
+    </div>
+    
+    </form>
+    
+  </div>
+</div>

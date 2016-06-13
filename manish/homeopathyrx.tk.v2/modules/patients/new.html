@@ -24,22 +24,14 @@
       </ul>
     </div>
     <div class="col-md-7">
-      <form ng-submit="submitDoctorFrm()">
+      <form ng-submit="submitPatientFrm()">
         <div class="form-group">
           <label for="email">Email address</label>
-            <input type="email" required class="form-control" id="email" placeholder="Enter email" ng-model="frm.email">
+            <input type="email" required class="form-control" id="email" placeholder="Enter email" ng-model="frm.email" ng-value="userData.email">
           </div>
         <div class="form-group">
-          <label for="name">Name of Doctor</label>
+          <label for="name">Name of Patient</label>
             <input type="text" required class="form-control" id="name" placeholder="Enter name" ng-model="frm.name">
-          </div>
-          <div class="form-group">
-            <label for="degree">Degree</label>
-            <input type="text" required class="form-control" id="degree" placeholder="Enter degree" ng-model="frm.degree">
-          </div>
-          <div class="form-group">
-            <label for="experience">Experience in Years</label>
-            <input type="text" required class="form-control" id="experience" placeholder="Enter degree" ng-model="frm.experience">
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
@@ -50,17 +42,9 @@
             <textarea required class="form-control" id="address" placeholder="Enter address" ng-model="frm.address" rows="5"></textarea>
           </div>
           <div class="form-group">
-            <label for="simillimum">How will you find a simillimum in a case, explain?</label>
-            <textarea required class="form-control" id="simillimum" placeholder="Enter simillimum process" ng-model="frm.simillimum" rows="5"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="repetition">What dose of remedy and repetition will you follow, explain?</label>
-            <textarea required class="form-control" id="repetition" placeholder="Enter dose and repetition" ng-model="frm.repetition" rows="5"></textarea>
-          </div>
-          <div class="form-group">
               <input type="checkbox" id="terms" ng-model="frm.terms" required> I agree to terms and privacy statement of homeopathyrx.tk and I agree that whatever I said is true to best of my understanding.
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Proceed To Payment for First Consultation</button>
       </form>
     </div>
   </div>

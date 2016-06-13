@@ -15,26 +15,24 @@ angular.module('myApp.view1', ['ngRoute'])
     templateUrl: 'modules/view1/edit.html',
     controller: 'EditCtrl'
   })
-  .when('/search/p_:page/c_:cat_id/k_:keyword', {
+  
+  
+  .when('/search/p_:page/r_:cat_id/k_:keyword/c_:chapter/b_:book', {
     templateUrl: 'modules/view1/list.html',
     controller: 'ListCtrl'
   })
-  .when('/search/p_:page/c_:cat_id', {
-    templateUrl: 'modules/view1/list.html',
-    controller: 'ListCtrl'
-  })
-  .when('/search/p_:page/k_:keyword', {
-    templateUrl: 'modules/view1/list.html',
-    controller: 'ListCtrl'
-  })
+  
   .when('/search/p_:page', {
     templateUrl: 'modules/view1/list.html',
     controller: 'ListCtrl'
   })
+  
   .when('/search', {
     templateUrl: 'modules/view1/list.html',
     controller: 'ListCtrl'
   })
+  
+  
   .when('/detail/:id', {
     templateUrl: 'modules/view1/detail.html',
     controller: 'DetailCtrl'

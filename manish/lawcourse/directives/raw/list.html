@@ -15,7 +15,13 @@
               </select>
           </div>
           <div class="form-group">
-              <input type="search" class="form-control" id="kw" ng-model="frm.keyword" placeholder="Enter keyword">
+              <input type="text" class="form-control" id="book" ng-model="frm.book" placeholder="Enter book">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="chapter" ng-model="frm.chapter" placeholder="Enter chapter">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="kw" ng-model="frm.keyword" placeholder="Enter keyword">
           </div>
           <button type="submit" class="btn btn-primary form-control">Search</button>
           <br><br>
@@ -37,7 +43,7 @@
         <li class="list-group-item" ng-repeat="item in results">
           <span class="pull-right"><small><strong>Book:</strong> {{item.vc2 | stripSlashes}}</small></span>
           <h3 style="margin-top:0px;"><a href="detail/{{item.id}}">{{item.title | stripSlashes}}</a></h3>
-          <p ng-bind-html="item.description | stripSlashes"></p>
+          <p ng-bind-html="item.description | stripSlashes | customChanges"></p>
           <p class="pull-right"><small>{{frm.subjects[item.reference_id]}} ({{item.vc1}})</small></p>
           <br class="clear" />
         </li>

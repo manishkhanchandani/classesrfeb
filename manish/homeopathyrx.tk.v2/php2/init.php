@@ -11,8 +11,10 @@ define('ROOTDIR', dirname(__FILE__));
 include(ROOTDIR.'/conn.php');
 include(ROOTDIR.'/functions.php');
 include(ROOTDIR.'/general.php');
+include_once(ROOTDIR.'/connClasses.php');
 
 $Models_General = new Models_General($connMainAdodb);
+$modelClasses = new Models_General($connClassesMainAdodb);
 
 //my autoloader
 function myautoload($class_name) {
