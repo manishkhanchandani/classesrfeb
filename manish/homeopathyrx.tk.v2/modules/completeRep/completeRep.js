@@ -41,7 +41,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   $scope.frm.urlSufix = '';
             
   console.log($routeParams);
-  
+  /*
   //Save Case Functionality
   //show save fields
   $scope.save = false;
@@ -79,17 +79,21 @@ angular.module('myApp.completeRep', ['ngRoute'])
     dataService.get(url, function(r) { successMySymptoms(r, 2); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
   };
   //Save Case Functionality
+  */
   
+  if ($routeParams.page) {
+    $scope.frm.page = parseInt($routeParams.page);
+  }
   if ($routeParams.keyword) {
     $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
     $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + $routeParams.keyword;
-    if ($routeParams.page) {
-      $scope.frm.page = parseInt($routeParams.page);
-    }
     
     var keyword = encodeURIComponent($scope.frm.keyword);
     var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
     dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
+  } else {
+    //var url = '/php2/repertory/complete.php?action=complete_search&start=0&max=100&page='+$scope.frm.page;
+    //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);  
   }
   
   $scope.searchRep = function()
@@ -98,6 +102,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     $location.path('/completeRep/p_0/k_' + encodeURIComponent($scope.frm.keyword));
   };
   
+  /*
   //delete my symptoms
   $scope.recordedSymptomStatus = '';
   $scope.delSym = function(rid, type, trace_id) {
@@ -111,15 +116,30 @@ angular.module('myApp.completeRep', ['ngRoute'])
       dataService.get(url, function(r) { if (r.data.error) {$scope.recordedSymptomStatus = r.data.error; return;} $scope.viewSavedList(trace_id, false, 0); }, function(r) {console.log('err delSym: ', r);}, false);
     }
   };
+  */
   
   //add my symptom to repertory
   $scope.addsym = function(rec)
   {
-    if (!$scope.userData) return;
-    var url = '/php2/repertory/complete.php?action=complete_repertory_add&id='+rec.id+'&uid='+$scope.userData.id;
+    if (!$scope.userData) {
+      alert('please login first to add symptom');
+      return;  
+    }
+    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
   
+  $scope.addsymSpecific = function(rec, intensity) {
+    
+    if (!$scope.userData) {
+      alert('please login first to add symptom');
+      return;  
+    }
+    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
+    dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
+  };
+  
+  /*
   $scope.recordedSymptoms = [];
   $scope.recordedRemedies = {};
   $scope.recordedType = null;
@@ -132,6 +152,9 @@ angular.module('myApp.completeRep', ['ngRoute'])
     var snapshot = response.data.data;
     //console.log('snapshot: ', snapshot);
     angular.forEach(snapshot, function(value, key) {
+      //console.log('val is ', value);
+      var intensity = parseInt(value.intensity);
+      //console.log('intensity is ', intensity);
       if (value.remedies) {
         var tmp = {};
         //console.log('remedies: ', value.remedies);
@@ -145,7 +168,9 @@ angular.module('myApp.completeRep', ['ngRoute'])
             $scope.recordedRemedies[keyDetails].points = 0;
             $scope.recordedRemedies[keyDetails].id = keyDetails;
           }
-          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + parseInt(remedyDetails.points);
+          var points = (parseFloat(remedyDetails.points) * intensity);
+          tmp[keyDetails].points = points;
+          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + points;
           //console.log('det: ', keyDetails, ', remedydetails: ', $scope.recordedRemedies[keyDetails]);
         });
         value.remedies = tmp;
@@ -167,6 +192,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   if ($scope.userData) {
     getAllMySymptoms($scope.userData.id, 30, true);
   }
+  */
 }])
 
 
@@ -210,7 +236,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     
   };
   
-  
+  /*
   //delete my symptoms
   
   $scope.delSym = function(rid) {
@@ -222,8 +248,23 @@ angular.module('myApp.completeRep', ['ngRoute'])
   //add my symptom to repertory
   $scope.addsym = function(rec)
   {
-    if (!$scope.userData) return;
+    if (!$scope.userData) {
+      alert('please login first to add symptom');
+      return;  
+    }
     var url = '/php2/repertory/complete.php?action=complete_repertory_add&id='+rec.id+'&uid='+$scope.userData.id;
+    dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
+  };
+  
+  
+  
+  $scope.addsymSpecific = function(rec, intensity) {
+    
+    if (!$scope.userData) {
+      alert('please login first to add symptom');
+      return;  
+    }
+    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
   
@@ -237,6 +278,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     var snapshot = response.data.data;
     //console.log('snapshot: ', snapshot);
     angular.forEach(snapshot, function(value, key) {
+      var intensity = parseInt(value.intensity);
       if (value.remedies) {
         var tmp = {};
         //console.log('remedies: ', value.remedies);
@@ -250,7 +292,10 @@ angular.module('myApp.completeRep', ['ngRoute'])
             $scope.recordedRemedies[keyDetails].points = 0;
             $scope.recordedRemedies[keyDetails].id = keyDetails;
           }
-          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + parseInt(remedyDetails.points);
+          var points = (parseFloat(remedyDetails.points) * intensity);
+          tmp[keyDetails].points = points;
+          $scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + points;
+          //$scope.recordedRemedies[keyDetails].points = $scope.recordedRemedies[keyDetails].points + parseInt(remedyDetails.points);
           //console.log('det: ', keyDetails, ', remedydetails: ', $scope.recordedRemedies[keyDetails]);
         });
         value.remedies = tmp;
@@ -271,6 +316,6 @@ angular.module('myApp.completeRep', ['ngRoute'])
   //get data
   if ($scope.userData) {
     getAllMySymptoms($scope.userData.id, 30, true);
-  }
+  }*/
 }])
 ;

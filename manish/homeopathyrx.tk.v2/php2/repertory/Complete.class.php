@@ -46,7 +46,14 @@ class repertory_Complete
     $return['max'] = $maxRows_rsView;
     $return['page'] = $pageNum_rsView;
     $return['start'] = $startRow_rsView;
-    $query_rsView = sprintf('select * from consultl_homeopathy.complete_repertory WHERE path LIKE %s AND remedies is NOT NULL order by path ASC', GetSQLValueString('%'.$keyword.'%', 'text'));
+    
+    $keyword = urldecode($keyword);
+    $tmp = explode(' ', $keyword);
+    $string = '';
+    foreach ($tmp as $v) {
+      $string .= ' AND path like '.GetSQLValueString('%'.trim($v).'%', 'text');
+    }
+    $query_rsView = 'select * from consultl_homeopathy.complete_repertory WHERE remedies is NOT NULL '.$string.' order by path ASC';
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
     if (!empty($results)) {
@@ -58,7 +65,7 @@ class repertory_Complete
     }
     $sql1 = $Models_General->sql;
     $return['sql1'] = $sql1;
-    $queryTotalRows = sprintf('select count(*) as cnt from consultl_homeopathy.complete_repertory WHERE path LIKE %s AND remedies is NOT NULL', GetSQLValueString('%'.$keyword.'%', 'text'));
+    $queryTotalRows = 'select count(*) as cnt from consultl_homeopathy.complete_repertory WHERE remedies is NOT NULL '.$string;
     $rowCountResult = $Models_General->fetchRow($queryTotalRows, array(), $cacheTime);
     $sql2 = $Models_General->sql;
     $totalRows_rsView = (int) $rowCountResult['cnt'];

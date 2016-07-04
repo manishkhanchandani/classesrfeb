@@ -10,9 +10,11 @@ angular.module('myApp', [
   'myApp.completeRep',
   'myApp.doctors',
   'myApp.patients',
+  'myApp.learn',
   'firebase',
   'googleLoginModule',
-  'paginationModule'
+  'paginationModule',
+  'mySymptomsModule'
 ])
 
 .constant('configs', {

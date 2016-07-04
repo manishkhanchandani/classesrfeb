@@ -118,6 +118,32 @@ switch ($action) {
     }
     $record['data'] = $results;
     break;
+  case 'complete_repertory_add_specific':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_repertory_add_specific&id=1&uid=xyz&intensity=4
+    if (empty($_GET['id'])) {
+      throw new Exception('missing id');  
+    }
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    
+    $data = array();
+    $data['id'] = $_GET['id'];
+    $data['uid'] = $_GET['uid'];
+    $data['intensity'] = !empty($_GET['intensity']) ? $_GET['intensity'] : 1;
+    
+    $query = 'select * from consultl_homeopathy.my_complete_repertory as m WHERE m.uid = ? AND m.id = ?';
+    $results = $Models_General->fetchRow($query, array($_GET['uid'], $_GET['id']), 0);
+    $record['res'] = 0;
+    if (empty($results)) {
+      $res = $Models_General->addDetails('consultl_homeopathy.my_complete_repertory', $data);
+      $record['res'] = $res;
+    } else {
+      $where = sprintf('rid=%s', GetSQLValueString($results['rid'], 'int'));
+      $record['results'] = $results;
+      $res = $Models_General->updateDetails('consultl_homeopathy.my_complete_repertory', $data, $where);
+    }
+    break;
   case 'complete_repertory_add':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_repertory_add&id=1&uid=xyz
     if (empty($_GET['id'])) {
