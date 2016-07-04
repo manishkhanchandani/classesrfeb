@@ -31,7 +31,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   ;
 }])
 
-.controller('CompleteRepCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('CompleteRepCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
   
   $scope.frm = {};
   $scope.frm.page = 0;
@@ -96,10 +96,23 @@ angular.module('myApp.completeRep', ['ngRoute'])
     //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);  
   }
   
+  $scope.frm.page = 0;
+  
   $scope.searchRep = function()
   {
     if (!$scope.frm.keyword) return;
     $location.path('/completeRep/p_0/k_' + encodeURIComponent($scope.frm.keyword));
+    /*var keyword = encodeURIComponent($scope.frm.keyword);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + keyword;
+    var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
+    dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);*/
+  };
+  
+  $scope.pagNextPrev = function(page)
+  {
+    if (!$scope.frm.keyword) return;
+    $scope.frm.page = page;
+    $scope.searchRep();
   };
   
   /*
@@ -119,7 +132,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   */
   
   //add my symptom to repertory
-  $scope.addsym = function(rec)
+  /*$scope.addsym = function(rec)
   {
     if (!$scope.userData) {
       alert('please login first to add symptom');
@@ -127,7 +140,11 @@ angular.module('myApp.completeRep', ['ngRoute'])
     }
     var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
-  };
+  };*/
+  
+  function getAllMySymptoms(uid, cacheTime, cache) {
+    $rootScope.$broadcast("getAllMySymptoms", {uid: uid, cacheTime: cacheTime, cache: cache});
+  }
   
   $scope.addsymSpecific = function(rec, intensity) {
     
@@ -196,7 +213,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
 }])
 
 
-.controller('CompleteAddRepCtrl', ['$scope', '$location', 'dataService', '$routeParams', function($scope, $location, dataService, $routeParams) {
+.controller('CompleteAddRepCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
   
   $scope.frm = {};
   $scope.frm.showStatus = null;
@@ -236,6 +253,22 @@ angular.module('myApp.completeRep', ['ngRoute'])
     
   };
   
+  
+  function getAllMySymptoms(uid, cacheTime, cache) {
+    $rootScope.$broadcast("getAllMySymptoms", {uid: uid, cacheTime: cacheTime, cache: cache});
+  }
+  
+  
+  $scope.addsymSpecific = function(rec, intensity) {
+    
+    if (!$scope.userData) {
+      alert('please login first to add symptom');
+      return;  
+    }
+    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
+    dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
+  };
+  
   /*
   //delete my symptoms
   
@@ -257,16 +290,6 @@ angular.module('myApp.completeRep', ['ngRoute'])
   };
   
   
-  
-  $scope.addsymSpecific = function(rec, intensity) {
-    
-    if (!$scope.userData) {
-      alert('please login first to add symptom');
-      return;  
-    }
-    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
-    dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
-  };
   
   $scope.recordedSymptoms = [];
   $scope.recordedRemedies = {};

@@ -9,10 +9,10 @@
   }
   
   module
-    .directive('mySymptoms', ['dataService', mySymptoms]);
+    .directive('mySymptoms', ['dataService', '$rootScope', mySymptoms]);
     
 
-  function mySymptoms(dataService) {
+  function mySymptoms(dataService, $rootScope) {
     return {
           scope: {
             userData:'='
@@ -76,6 +76,8 @@
             
             scope.recordedSymptomStatus = '';
             scope.delSym = function(rid, type, trace_id) {
+              if (!type) type = 1;
+              console.log('del: ', rid, type, trace_id);
               scope.recordedSymptomStatus = '';
               if (!scope.userData) return;
               if (type == 1) {
@@ -133,6 +135,11 @@
               dataService.get(url, function(r) { successMySymptoms(r, 2); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
             };
             //Save Case Functionality
+            
+            //broadcast
+            $rootScope.$on("getAllMySymptoms", function(event, args){
+                getAllMySymptoms(args.uid, args.cacheTime, args.cache)
+            });
             
           }//end link
     };//end return
