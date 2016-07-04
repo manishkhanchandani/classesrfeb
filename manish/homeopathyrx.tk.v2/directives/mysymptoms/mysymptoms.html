@@ -1,0 +1,55 @@
+<div class="row" ng-if="recordedSymptoms.length > 0">
+    <div class="col-md-12">
+    
+    
+    
+      <div class="table-responsive" style="overflow:auto;">
+            <table class="table table-bordered table-striped">
+            <caption>Repertory</caption>
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Symptom</th>
+                        <th class="tblRemedies" ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.remedy}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(k, syms) in recordedSymptoms">
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}} (<a href="" ng-click="delSym(syms.rid, recordedType, syms.trace_id)">-</a>)</td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td scope="row"><strong>Total:</strong> </td>
+                        <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true">{{remedy.points}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+        
+        
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-if="userData">
+        <div><span ng-if="recordedSymptoms.length > 0"><a href="" ng-click="showSaveFields()">Save this case</a> | </span><a href="" ng-click="getSavedCases(userData.id, 0, false);">Show Saved List</a>
+          <br></div>
+        <form ng-submit="saveCase()">
+          <div ng-if="save"><b>Title: </b><input type="text" required ng-model="frm.name" size="45"> <input type="submit" value="Save"></div>
+          <br>
+        </form>
+        <div class="alert alert-success" role="alert" ng-if="recordedSymptomStatus">
+          {{recordedSymptomStatus}}
+        </div>
+        <ul class="list-group" ng-if="showSavedList && savedListResults">
+          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a> | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  </div>

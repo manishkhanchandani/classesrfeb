@@ -1,0 +1,116 @@
+/* CSS Document */
+
+body {
+  padding-top: 90px;
+}
+
+.navbar {
+  min-height: 90px;
+}
+
+.navbar-nav li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar-nav li a {
+  padding: 20px;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif; 
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+  text-transform: uppercase;
+}
+
+.navbar-nav li a span {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: none;
+  font-family: arial;
+  display: block;
+  margin: 5px 0 0 0;
+}
+
+.navbar-default .navbar-brand {
+    color: #1A98D5 !important;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    padding-top: 35px;
+}
+
+.navbar-nav a:hover, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #fff !important;
+  background: #0383c0 !important;
+}
+
+
+.jumbotron {
+  min-height: 450px;
+  margin-bottom: 0px !important;
+}
+
+.jumbotron h1 {
+  font-size: 55px; 
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif; 
+}
+
+
+.fa-color {
+  color: #0383c0; 
+}
+
+section {
+  padding: 30px 0; 
+}
+
+.section-gray {
+  background: #f4f4f4; 
+}
+
+.section-secondary {
+  background: #e44d26;
+  color: #fff;
+  padding: 60px 0; 
+}
+
+.slogan {
+  text-align: center; 
+}
+
+.slogan h1 {
+  font-size: 50px;
+  margin-bottom: 25px; 
+}
+
+.slogan p {
+  font-size: 20px;
+}
+
+.slogan a {
+  margin-top: 20px;
+}
+
+.section-primary {
+  background: #0383c0;
+  color: #fff;
+  padding: 60px 0; 
+}
+
+
+.feature-list li {
+  list-style: none;
+  font-size: 18px;
+  line-height: 2em;
+}
+
+footer {
+  text-align:center;
+  min-height:60px;
+  background:#f4f4f4;
+  padding-top: 20px; 
+}

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>List Record</h1>
+      <form ng-submit="search()">
+          
+          <div class="form-group">
+              <label for="reference_id">Category</label>
+              <select ng-model="frm.reference_id" class="form-control" id="reference_id">
+                <option value="">All</option>
+                <option value="1">Legal Writings</option>
+                <option value="2">Contracts</option>
+                <option value="3">Criminal Law</option>
+                <option value="4">Torts</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="book" ng-model="frm.book" placeholder="Enter book">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="chapter" ng-model="frm.chapter" placeholder="Enter chapter">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="kw" ng-model="frm.keyword" placeholder="Enter keyword">
+          </div>
+          <button type="submit" class="btn btn-primary form-control">Search</button>
+          <br><br>
+      </form>
+    </div>
+  </div>
+  
+  <div class="row" ng-if="listStatus">
+    <div class="col-md-12">
+      <div class="alert alert-warning" role="alert">
+        {{listStatus}}
+      </div>
+    </div>
+  </div>
+    
+  <div class="row" ng-if="results.length > 0">
+    <div class="col-md-12">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in results">
+          <span class="pull-right"><small><strong>Book:</strong> {{item.vc2 | stripSlashes}}</small></span>
+          <h3 style="margin-top:0px;"><a href="detail/{{item.id}}">{{item.title | stripSlashes}}</a></h3>
+          <p ng-bind-html="item.description | stripSlashes | customChanges"></p>
+          <p class="pull-right"><small>{{frm.subjects[item.reference_id]}} ({{item.vc1}})</small></p>
+          <br class="clear" />
+        </li>
+      </ul>
+    </div>
+    
+    <div class="col-md-12" ng-if="results.length > 0">
+      <div my-pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
+    </div>
+  </div>
+</div>

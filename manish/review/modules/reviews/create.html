@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Enter Main Details</h1>
+      
+      <form ng-submit="submitCreateForm()">
+        <div class="form-group">
+            <label for="description">Rating</label>
+            <div ng-init="rating = star.rating + 1"></div><div class="star-rating" star-rating rating-value="frm.rating" data-max="10" on-rating-selected="rateFunction(rating)"></div>
+        </div>
+        <div class="form-group">
+            <label for="location">Location *</label>
+            <input type="text" class="form-control addressBox" id="location" ng-model="location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details" required>
+        </div>
+          <div class="form-group">
+              <label for="title">Review for Name of Person / Business / Entity</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter Name" ng-model="frm.title" required>
+          </div>
+          <div class="form-group">
+              <label for="phone">Review for Phone Number</label>
+              <input type="text" class="form-control" id="phone" placeholder="Enter Phone" ng-model="frm.phone">
+          </div>
+          <div class="form-group">
+              <label for="email">Review for Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter Email" ng-model="frm.email" >
+          </div>
+          <div class="form-group">
+              <label for="website">Review for Website</label>
+              <input type="text" class="form-control" id="website" placeholder="Enter Website" ng-model="frm.website">
+          </div>
+          <div class="form-group">
+              <label for="reference_id">Category</label>
+              <select ng-model="frm.reference_id" class="form-control" id="reference_id" required>
+                <option value="1">Product</option>
+                <option value="2">Services</option>
+                <option value="3">Person</option>
+                <option value="4">Business</option>
+              </select>
+          </div>
+        <div class="form-group">
+            <label for="description">Posting Description *</label>
+            <textarea class="form-control" id="description" placeholder="Enter posting body" ng-model="frm.description" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+      
+    </div>
+  </div>
+</div>
