@@ -26,6 +26,19 @@ switch ($action) {
     $data = $Complete->getAllSearch($Models_General, $keyword, $max, $page, $cacheTime);
     $record['data'] = $data;
     break;  
+  case 'complete_browse':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_browse&chapter=1&start=0&maxData=100
+    if (empty($_GET['chapter'])) {
+      throw new Exception('empty chapter');
+    }
+    $Complete = new repertory_Complete();
+    $max = !empty($_GET['max']) ? $_GET['max'] : 100;
+    $page = !empty($_GET['page']) ? $_GET['page'] : 0;
+    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIMESMALL;
+    $chapter = $_GET['chapter'];
+    $data = $Complete->browseByChapter($Models_General, $chapter, $max, $page, $cacheTime);
+    $record['data'] = $data;
+    break;  
   case 'complete_getAll':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_getAll&start=0&maxData=100&cacheTime=0
     $Complete = new repertory_Complete();

@@ -47,7 +47,7 @@
           {{recordedSymptomStatus}}
         </div>
         <ul class="list-group" ng-if="showSavedList && savedListResults">
-          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a> | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a></li>
+          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a><!-- | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a>--></li>
         </ul>
       </div>
   

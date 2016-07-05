@@ -15,6 +15,10 @@
               <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
+          
+          <div class="alert alert-warning" role="alert" ng-if="frm.resultStatus" style="margin-top:20px;">
+            {{frm.resultStatus}}
+          </div>
       </form>
       <br><br>
       <div ng-if="records">

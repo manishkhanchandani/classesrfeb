@@ -84,13 +84,15 @@ angular.module('myApp.completeRep', ['ngRoute'])
   if ($routeParams.page) {
     $scope.frm.page = parseInt($routeParams.page);
   }
+  $scope.frm.resultStatus = '';
   if ($routeParams.keyword) {
+    $scope.frm.resultStatus = 'Loading......';
     $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
     $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + $routeParams.keyword;
     
     var keyword = encodeURIComponent($scope.frm.keyword);
     var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
-    dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
+    dataService.get(url, function (r) { console.log(r); if (r.data.data.totalRows == 0) {$scope.frm.resultStatus = 'No Result Found. Send email to manishkk74@gmail.com and ask him to add rubrics related to word "' + $scope.frm.keyword + '"'; return}; $scope.frm.resultStatus = ''; $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
   } else {
     //var url = '/php2/repertory/complete.php?action=complete_search&start=0&max=100&page='+$scope.frm.page;
     //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);  
