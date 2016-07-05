@@ -9,10 +9,10 @@
   }
   
   module
-    .directive('mySymptoms', ['dataService', '$rootScope', mySymptoms]);
+    .directive('mySymptoms', ['dataService', '$rootScope', '$routeParams', mySymptoms]);
     
 
-  function mySymptoms(dataService, $rootScope) {
+  function mySymptoms(dataService, $rootScope, $routeParams) {
     return {
           scope: {
             userData:'='
@@ -58,8 +58,8 @@
                 }
                 scope.recordedSymptoms.push(value);
               });
-              //console.log('sym: ', scope.recordedSymptoms);
-              //console.log('rem: ', scope.recordedRemedies);
+              console.log('sym: ', scope.recordedSymptoms);
+              console.log('rem: ', scope.recordedRemedies);
             }
             
             
@@ -69,10 +69,6 @@
               dataService.get(url, successMySymptoms, function(r) {console.log('err getAllMySymptoms: ', r);}, cache);
             }
             
-            //get data
-            if (scope.userData) {
-              getAllMySymptoms(scope.userData.id, 30, true);
-            }
             
             scope.recordedSymptomStatus = '';
             scope.delSym = function(rid, type, trace_id) {
@@ -110,15 +106,15 @@
               console.log('frim : ', scope.frm);
               if (scope.recordedSymptoms.length <= 0) return;
               if (!scope.userData) return;
-              var tmp = [];
+              var tmp = {};
               angular.forEach(scope.recordedSymptoms, function(value) {
-                tmp.push(parseInt(value.id));  
+                //tmp.push(parseInt(value.id));  
+                tmp[parseInt(value.id)] = parseInt(value.intensity);
               });
               var data = {};
               data.uid = scope.userData.id;
               data.ids = tmp;
               data.name = scope.frm.name;
-              console.log(data);
               dataService.postJson('/php2/repertory/complete.php?action=save_complete_repertory', data, function(r) { scope.frm.name = '';}, function(err) {console.log('err: ', err); });
             };
             
@@ -134,7 +130,24 @@
               var url = '/php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id='+trace_id+'&cacheTime='+cacheTime;
               dataService.get(url, function(r) { successMySymptoms(r, 2); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
             };
+            
+            
+            scope.viewListBasedOnUrl = function(trace_id, cache, cacheTime) {
+              var url = '/php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id='+trace_id+'&cacheTime='+cacheTime;
+              dataService.get(url, function(r) { successMySymptoms(r, 3); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
+            };
+            
+            console.log($routeParams);
             //Save Case Functionality
+            
+            
+            //get data
+            if ($routeParams.trace_id) {
+              scope.recordedType = 3;
+              scope.viewListBasedOnUrl($routeParams.trace_id, true, 30);
+            } else if (scope.userData) {
+              getAllMySymptoms(scope.userData.id, 30, true);
+            }
             
             //broadcast
             $rootScope.$on("getAllMySymptoms", function(event, args){

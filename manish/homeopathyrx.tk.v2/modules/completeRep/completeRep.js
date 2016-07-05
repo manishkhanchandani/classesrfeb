@@ -28,9 +28,17 @@ angular.module('myApp.completeRep', ['ngRoute'])
     templateUrl: 'modules/completeRep/completeRepAdd.html',
     controller: 'CompleteAddRepCtrl'
   })
+  
+  .when('/completeRep/trace/:trace_id', {
+    templateUrl: 'modules/completeRep/completeTrace.html',
+    controller: 'CompleteTraceCtrl'
+  })
   ;
 }])
 
+.controller('CompleteTraceCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
+  
+}])
 .controller('CompleteRepCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
   
   $scope.frm = {};

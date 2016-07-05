@@ -210,8 +210,9 @@ switch ($action) {
     $data['uid'] = $content['uid'];
     $data['name'] = $content['name'];
     $data['trace_id'] = guid();
-    foreach ($content['ids'] as $v) {
-      $data['id'] = $v;
+    foreach ($content['ids'] as $k => $v) {
+      $data['id'] = $k;
+      $data['intensity'] = $v;
       $res = $Models_General->addDetails('consultl_homeopathy.save_complete_repertory', $data);
     }
     

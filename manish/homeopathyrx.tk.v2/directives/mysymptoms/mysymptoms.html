@@ -14,7 +14,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="(k, syms) in recordedSymptoms">
-                        <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}} (<a href="" ng-click="delSym(syms.rid, recordedType, syms.trace_id)">-</a>)</td>
+                        <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}} x {{syms.intensity}} <span ng-if="recordedType != 3">(<a href="" ng-click="delSym(syms.rid, recordedType, syms.trace_id)">-</a>)</span></td>
                         <td ng-repeat="remedy in recordedRemedies | orderObjectBy: 'points' : true"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
                     </tr>
                 </tbody>
@@ -33,8 +33,7 @@
     </div>
   </div>
   
-  
-  <div class="row">
+  <div class="row" ng-if="recordedType != 3">
     <div class="col-md-12">
       <div ng-if="userData">
         <div><span ng-if="recordedSymptoms.length > 0"><a href="" ng-click="showSaveFields()">Save this case</a> | </span><a href="" ng-click="getSavedCases(userData.id, 0, false);">Show Saved List</a>
@@ -47,7 +46,7 @@
           {{recordedSymptomStatus}}
         </div>
         <ul class="list-group" ng-if="showSavedList && savedListResults">
-          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a><!-- | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a>--></li>
+          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a> | <a href="completeRep/trace/{{item.trace_id}}" target="_blank">Public Link</a><!-- | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a>--></li>
         </ul>
       </div>
   

@@ -1,9 +1,14 @@
+<?php
+include_once('init.php');
+$jsVersion = '1.1';
+
+?>
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Homeopathy</title>
+  <title>Homeopathy :: <?php echo $title; ?></title>
   <base href="/">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,6 +97,12 @@ $(document).on("keypress", 'form', function (e) {
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Repertory <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="completeRep">Symptoms / Analysis</a></li>
+          </ul>
+        </li>
         <!--<li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -131,6 +142,6 @@ $(document).on("keypress", 'form', function (e) {
   </div>
 </nav>
 
-  <div ng-view></div>
+  <div ng-view><?php echo $content; ?></div>
 </body>
 </html>
