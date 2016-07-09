@@ -21,7 +21,8 @@
             totalPages: '@',
             totalRows: '@',
             urlPrefix: '@',
-            urlSuffix: '@'
+            urlSuffix: '@',
+            pagNextPrevDir: '&'
           },
           templateUrl: 'directives/pagination/pagination.html',
           link: function(scope, elem, attrs) {

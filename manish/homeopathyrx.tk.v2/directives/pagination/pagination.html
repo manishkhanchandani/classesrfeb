@@ -3,14 +3,24 @@
 <div class="row" ng-if="totalRows > 0">
   <div class="col-md-12">
     <hr>
+    <div class="">
     <p class="text-center"> Records <strong>{{startRowsPlus}}</strong> to <strong>{{minRows}}</strong> of <strong>{{totalRows}}</strong></p>
     <nav>
-      <ul class="pager">
+      <!--<ul class="pager">
         <li ng-if="pageNum > 0"><a href="{{urlPrefix}}0{{urlSuffix}}">First</a></li>
         <li ng-if="pageNum > 0"><a href="{{urlPrefix}}{{prevPage}}{{urlSuffix}}">Previous</a></li>
         <li ng-if="pageNum < totalPages"><a href="{{urlPrefix}}{{nextPage}}{{urlSuffix}}">Next</a></li>
         <li ng-if="pageNum < totalPages"><a href="{{urlPrefix}}{{totalPages}}{{urlSuffix}}">Last</a></li>
       </ul>
+      -->
+      <ul class="pager">
+        <li ng-if="pageNum > 0"><a ng-click="pagNextPrevDir()(0)" style="cursor:pointer">First</a></li>
+        <li ng-if="pageNum > 0"><a ng-click="pagNextPrevDir()(prevPage)" style="cursor:pointer">Previous</a></li>
+        <li ng-if="pageNum < totalPages"><a ng-click="pagNextPrevDir()(nextPage)" style="cursor:pointer">Next</a></li>
+        <li ng-if="pageNum < totalPages"><a ng-click="pagNextPrevDir()(totalPages)" style="cursor:pointer">Last</a></li>
+      </ul>
     </nav>
+    </div>
+    <hr style="clear:both;">
   </div>
 </div>

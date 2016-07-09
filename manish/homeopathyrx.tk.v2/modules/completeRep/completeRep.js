@@ -100,28 +100,52 @@ angular.module('myApp.completeRep', ['ngRoute'])
     
     var keyword = encodeURIComponent($scope.frm.keyword);
     var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
-    dataService.get(url, function (r) { console.log(r); if (r.data.data.totalRows == 0) {$scope.frm.resultStatus = 'No Result Found. Send email to manishkk74@gmail.com and ask him to add rubrics related to word "' + $scope.frm.keyword + '"'; return}; $scope.frm.resultStatus = ''; $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
+    dataService.get(url, function (r) { if (r.data.data.totalRows == 0) {$scope.frm.resultStatus = 'No Result Found. Send email to manishkk74@gmail.com and ask him to add rubrics related to word "' + $scope.frm.keyword + '"'; return}; $scope.frm.resultStatus = ''; $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
   } else {
     //var url = '/php2/repertory/complete.php?action=complete_search&start=0&max=100&page='+$scope.frm.page;
-    //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);  
+    //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true); 
+    var url = '/php2/repertory/complete.php?action=getAllChapters';
+    dataService.get(url, function (r) { $scope.chapters = r.data.data;}, function (r) { console.log('failed: ', r)}, true);  
   }
   
   $scope.frm.page = 0;
   
   $scope.searchRep = function()
   {
-    if (!$scope.frm.keyword) return;
-    $location.path('/completeRep/p_0/k_' + encodeURIComponent($scope.frm.keyword));
-    /*var keyword = encodeURIComponent($scope.frm.keyword);
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + keyword;
-    var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
-    dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);*/
+    if (!$scope.frm.keyword && !$scope.frm.chapter) return;
+    //$location.path('/completeRep/p_0/k_' + encodeURIComponent($scope.frm.keyword));
+    document.body.scrollTop = 0;
+    $scope.records = '';
+    $scope.data = '';
+    if ($scope.frm.keyword) {
+      //$scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + keyword;
+      var keyword = encodeURIComponent($scope.frm.keyword);
+      var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&max=25&page='+$scope.frm.page;
+    } else if ($scope.frm.chapter) {
+      var url = 'php2/repertory/complete.php?action=complete_browse&chapter='+$scope.frm.chapter+'&max=25&page='+$scope.frm.page;
+      console.log(url);
+    }
+    dataService.get(url, function (r) { 
+      if (r.data.data.totalRows == 0) {
+        $scope.frm.resultStatus = 'No Result Found.'; 
+        return
+      }; 
+      $scope.frm.resultStatus = '';
+      $scope.records = r.data.data.results; $scope.data = r.data.data;
+    }, function (r) { console.log('failed: ', r)}, true);
   };
   
   $scope.pagNextPrev = function(page)
   {
-    if (!$scope.frm.keyword) return;
+    if (!$scope.frm.keyword && !$scope.frm.chapter) return;
     $scope.frm.page = page;
+    $scope.searchRep();
+  };
+  
+  $scope.browse = function(chapter)
+  {
+    $scope.frm.chapter = chapter;
+    $scope.frm.page = 0;
     $scope.searchRep();
   };
   

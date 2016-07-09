@@ -13,8 +13,14 @@ try {
   }
   
 switch ($action) {
+  case 'getAllChapters':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=getAllChapters
+    $query = 'select * from consultl_homeopathy.complete_repertory where chapter = 0 order by id';
+    $results = $Models_General->fetchAll($query, array(), 0);
+    $record['data'] = $results;
+    break;
   case 'complete_search':
-    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_search&keyword=skin&start=0&maxData=100
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_search&keyword=skin&page=0&max=100
     if (empty($_GET['keyword'])) {
       throw new Exception('empty keyword');
     }
@@ -27,7 +33,7 @@ switch ($action) {
     $record['data'] = $data;
     break;  
   case 'complete_browse':
-    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_browse&chapter=1&start=0&maxData=100
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_browse&chapter=1&page=0&max=100
     if (empty($_GET['chapter'])) {
       throw new Exception('empty chapter');
     }
@@ -60,6 +66,9 @@ switch ($action) {
     $remedies = $content['remedies'];
     $tmp = explode(';', $symptoms);
     
+    $chapter = $tmp[0];
+    
+    
     $data = array();
     $data['symptom'] = $tmp[(count($tmp) - 1)];
     $data['path'] = trim(strtolower($symptoms));
@@ -89,6 +98,10 @@ switch ($action) {
       }
     }
     
+    $query = 'select * from consultl_homeopathy.complete_repertory where path = ?';
+    $chapterResults = $Models_General->fetchRow($query, array($chapter), 3000);
+    
+    $data['chapter'] = $chapterResults['id'];
     $data['remedies'] = null;
     $rem = array();
     if (!empty($remedies)) {

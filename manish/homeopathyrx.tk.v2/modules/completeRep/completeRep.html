@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-12">
       <h3>View Symptoms</h3>
-      <form ng-submit="searchRep()">
+      <form ng-submit="pagNextPrev(0)">
           <div class="form-group">
               <label for="keyword">Keyword</label>
               <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
@@ -44,17 +44,28 @@
           
           <!--pagination start -->
           <div class="col-md-12" ng-if="records.length > 0">
-            <div my-pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
+            <div my-pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}" pag-next-prev-dir="pagNextPrev"></div>
           </div>
 
       
           <!-- pagination end -->
     
       </div>
+      
+      
+      <div ng-if="chapters">
+        <div class="row">
+          <div class="col-md-3" ng-repeat="cha in chapters">
+            <a href="" ng-click="browse(cha.id)">{{cha.symptom}}</a>
+          </div>
+        </div>
+      </div>
+      
+      
     </div>
     <div class="col-md-12">
-      
-  <div my-symptoms user-data="userData"></div>
+      <hr>
+      <div my-symptoms user-data="userData"></div>
     </div>
   </div>
 </div>

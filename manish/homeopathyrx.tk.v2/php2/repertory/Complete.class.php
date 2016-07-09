@@ -93,12 +93,6 @@ class repertory_Complete
     $return['page'] = $pageNum_rsView;
     $return['start'] = $startRow_rsView;
     
-    $keyword = urldecode($keyword);
-    $tmp = explode(' ', $keyword);
-    $string = '';
-    foreach ($tmp as $v) {
-      $string .= ' AND path like '.GetSQLValueString('%'.trim($v).'%', 'text');
-    }
     $query_rsView = sprintf('select * from consultl_homeopathy.complete_repertory WHERE remedies is NOT NULL AND chapter = %s order by path ASC', GetSQLValueString($chapter, 'int'));
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
