@@ -27,7 +27,7 @@ switch ($action) {
     $Complete = new repertory_Complete();
     $max = !empty($_GET['max']) ? $_GET['max'] : 100;
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
-    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIMESMALL;
+    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME24hr;
     $keyword = $_GET['keyword'];
     $data = $Complete->getAllSearch($Models_General, $keyword, $max, $page, $cacheTime);
     $record['data'] = $data;
@@ -40,7 +40,7 @@ switch ($action) {
     $Complete = new repertory_Complete();
     $max = !empty($_GET['max']) ? $_GET['max'] : 100;
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
-    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIMESMALL;
+    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME24hr;
     $chapter = $_GET['chapter'];
     $data = $Complete->browseByChapter($Models_General, $chapter, $max, $page, $cacheTime);
     $record['data'] = $data;
@@ -101,7 +101,7 @@ switch ($action) {
     $query = 'select * from consultl_homeopathy.complete_repertory where path = ?';
     $chapterResults = $Models_General->fetchRow($query, array($chapter), 3000);
     
-    $data['chapter'] = $chapterResults['id'];
+    $data['chapter'] = !empty($chapterResults['id']) ? $chapterResults['id'] : 1000;
     $data['remedies'] = null;
     $rem = array();
     if (!empty($remedies)) {

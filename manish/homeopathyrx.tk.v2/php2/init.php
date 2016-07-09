@@ -4,6 +4,11 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json'); 
 define('TIMESMALL', 900);
+define('TIME1hr', (60*60));
+define('TIME4hr', (60*60*4));
+define('TIME8hr', (60*60*8));
+define('TIME16hr', (60*60*16));
+define('TIME24hr', (60*60*24));
 define('TIMEBIG', (60*60*24*365));
 
 define('ROOTDIR', dirname(__FILE__));

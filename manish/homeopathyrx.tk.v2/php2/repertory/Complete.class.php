@@ -12,6 +12,7 @@ class repertory_Complete
     $return['max'] = $maxRows_rsView;
     $return['page'] = $pageNum_rsView;
     $return['start'] = $startRow_rsView;
+    $return['cacheTime'] = $cacheTime;
     $query_rsView = 'select * from consultl_homeopathy.complete_repertory order by id DESC';
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
@@ -46,6 +47,7 @@ class repertory_Complete
     $return['max'] = $maxRows_rsView;
     $return['page'] = $pageNum_rsView;
     $return['start'] = $startRow_rsView;
+    $return['cacheTime'] = $cacheTime;
     //search term
     $tmp = array();
     $tmp['search_term'] = $keyword;
@@ -92,6 +94,7 @@ class repertory_Complete
     $return['max'] = $maxRows_rsView;
     $return['page'] = $pageNum_rsView;
     $return['start'] = $startRow_rsView;
+    $return['cacheTime'] = $cacheTime;
     
     $query_rsView = sprintf('select * from consultl_homeopathy.complete_repertory WHERE remedies is NOT NULL AND chapter = %s order by path ASC', GetSQLValueString($chapter, 'int'));
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
