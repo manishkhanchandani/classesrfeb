@@ -1,0 +1,10 @@
+<?php
+# FileName="Connection_php_mysql.htm"
+# Type="MYSQL"
+# HTTP="true"
+$hostname_connClassesMain = "localhost";
+$database_connClassesMain = "consultl_classes";
+$username_connClassesMain = "consultl_user";
+$password_connClassesMain = "passwords123";
+$connClassesMain = mysql_pconnect($hostname_connClassesMain, $username_connClassesMain, $password_connClassesMain) or trigger_error(mysql_error(),E_USER_ERROR); 
+?>
