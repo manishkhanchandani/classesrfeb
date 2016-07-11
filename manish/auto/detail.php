@@ -10,5 +10,5 @@ if (empty($_GET['id'])) {
 
 $data = $auto->details($_GET['module_id'], $_GET['id']);
 $result['data'] = $data['rowResult'];
-$result['meta'] = $data
+$result['meta'] = $data;
 ?>
