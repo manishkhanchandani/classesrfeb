@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       MkGalaxy Test 1
  * Plugin URI:        http://mkgalaxy.com
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       My Sample Plugin. 
  * Version:           1.0.0
  * Author:            Manish Khanchandani
  * Author URI:        http://horo.wc5.org
