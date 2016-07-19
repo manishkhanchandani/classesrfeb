@@ -239,6 +239,12 @@ angular.module('myApp.patients', ['ngRoute'])
         $scope.completeFrm.foods[key].label = getLabelObject.foods[key];
       });
     }
+    
+    $scope.frm.details = $scope.completeFrm.details;
+    $scope.frm.foods = $scope.completeFrm.foods;
+    $scope.frm.mentalSymptoms = $scope.completeFrm.mind;
+    localStorage.setItem('myCase', JSON.stringify($scope.completeFrm));
+    $scope.caseRecord = JSON.stringify($scope.completeFrm);
   });
   
   var myCase = localStorage.getItem('myCase');
@@ -282,6 +288,15 @@ angular.module('myApp.patients', ['ngRoute'])
     alert('food details saved');
   };
   
+  $scope.deleteComplatin = function(rec, i)
+  {
+    var a = confirm('are you sure you want to delete this?');
+    if (!a) return;
+    $scope.completeFrm.complaints.splice(i, 1);
+    localStorage.setItem('myCase', JSON.stringify($scope.completeFrm));
+    $rootScope.$broadcast('completeFrmChanged');
+  }
+  
   $scope.clearForm = function()
   {
     $scope.completeFrm = {};
@@ -315,6 +330,11 @@ angular.module('myApp.patients', ['ngRoute'])
         });
         saveAs(blob, nm+".xls");
     };
+  $scope.importCase = function()
+  {
+    $scope.completeFrm = JSON.parse($scope.caseRecord);
+    $rootScope.$broadcast('completeFrmChanged');
+  }
   
 }])
 

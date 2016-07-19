@@ -141,6 +141,7 @@
             <ul class="list-group">
               <li class="list-group-item" ng-repeat="item in completeFrm.complaints track by $index">
                 <p class="text-center"><strong>{{item.description}}</strong></p>
+                <p class="pull-right"><a href="" ng-click="deleteComplatin(item, $index)">Delete</a></p>
                 <p><strong>Since:</strong> {{item.how_long}}</p>
                 <p><strong>Parts Affected:</strong> {{item.parts}}</p>
                 <p><strong>Sensation / Appearance:</strong> {{item.sensation}}</p>
@@ -253,11 +254,16 @@
           </div>
         <div ng-if="completeFrm.details"><a href="" ng-click="exportData(completeFrm.details.name);" class="btn btn-primary">Export to xls</a> <a href="" ng-click="copy();" data-clipboard-action="copy" class="btn btn-primary copyToClipboard" data-clipboard-target="#mainContent">Copy to Clipboard</a></div>
     <!-- export ends -->
+    <!-- load case -->
+    <div>
+      <br><br>
+      <textarea ng-model="caseRecord" style="width:100%" rows="5"></textarea>
+    <a href="" ng-click="importCase();" class="btn btn-primary">Import Case</a></div>
+    <!-- load case ends -->
     
     
     </div>
     
     </form>
-    
   </div>
 </div>

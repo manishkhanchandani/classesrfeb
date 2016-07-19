@@ -3,6 +3,7 @@
 //header and include files
 define('TIMESMALL', 900);
 define('TIMEBIG', (60*60*24*365));
+ini_set("include_path", '/home/consultlawyers/php:' . ini_get("include_path") );
 
 define('ROOTDIR', dirname(__FILE__));
 

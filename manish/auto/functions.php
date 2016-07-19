@@ -120,4 +120,52 @@ function guid()
             substr($charid, 20, 12);
    return $guid;
 }
-?>
+
+
+
+function getString($array) {
+  $get = $_GET;
+  if (isset($get['locationFind'])) unset($get['locationFind']);
+  if (isset($get['city_id'])) unset($get['city_id']);
+  if (isset($get['q'])) unset($get['q']);
+  if (isset($get['p'])) unset($get['p']);
+  if (!empty($array)) {
+    foreach ($array as $ele) {
+      if (isset($get[$ele])) unset($get[$ele]);
+    }
+  }
+  $newparam = array();
+  if (!empty($get)) {
+    foreach ($get as $k => $v) {
+      if (is_array($v)) {
+          foreach ($v as $k1 => $v1) {
+            $newparam[] = $k.'['.$k1.']='.urlencode($v1);
+          }
+      } else {
+        $newparam[] = $k.'='.urlencode($v);
+      }
+    }
+  }
+  $query = '';
+  if (count($newparam) != 0) {
+    $query = "&" . htmlentities(implode("&", $newparam));
+  }
+  return $query;
+}
+
+
+function encryptText($text)
+{
+  require_once 'Crypt/Blowfish.php';
+  $bf = new Crypt_Blowfish(ENCRYPTKEY);
+  $encrypted = $bf->encrypt($text);
+  return bin2hex($encrypted);
+}
+
+function decryptText($text)
+{
+  require_once 'Crypt/Blowfish.php';
+  $bf = new Crypt_Blowfish(ENCRYPTKEY);
+  $plaintext = $bf->decrypt(convertString(trim($text)));
+  return trim($plaintext);
+}

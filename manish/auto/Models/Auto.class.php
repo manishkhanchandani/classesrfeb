@@ -64,6 +64,45 @@ class Models_Auto extends Models_General
     if (empty($rowResult)) {
       throw new Exception('could not find the record');
     }
+    
+    //decryption
+    foreach ($resultModuleFields as $k => $v) {
+      if (!empty($rowResultEdit[$v['field_name']]) && $v['encrypted'] == 1) {
+        $rowResultEdit[$v['field_name']] = decryptText($rowResultEdit[$v['field_name']]);
+      }
+      if ($v['field_type'] == 'images') {
+        if (!empty($this->data['rowResult'][$v['field_name']])) {
+          $images = json_decode($this->data['rowResult'][$v['field_name']], 1);
+          $this->data['rowResult']['images'] = $images;
+          if (!empty($images)) {
+            $this->data['rowResult']['image'] = $images[0];
+          }
+        }
+      }
+      if ($v['field_type'] == 'videos') {
+        if (!empty($this->data['rowResult'][$v['field_name']])) {
+          $videos = json_decode($this->data['rowResult'][$v['field_name']], 1);
+          $this->data['rowResult']['videos'] = $videos;
+        }
+      }
+      if ($v['field_type'] == 'urls') {
+        if (!empty($this->data['rowResult'][$v['field_name']])) {
+          $urls = json_decode($this->data['rowResult'][$v['field_name']], 1);
+          $this->data['rowResult']['urls'] = $urls;
+        }
+      }
+    }
+    //decryption
+    
+    $queryEditTags = "SELECT * FROM auto_pre_tags WHERE id = ?";
+    $rowResultEditTags = $this->fetchAll($queryEditTags, array($id), 0);
+    if (!empty($rowResultEditTags)) {
+      $tmp = array();
+      foreach ($rowResultEditTags as $tags) {
+        $tmp[] = $tags['tag'];
+      }
+      $this->data['rowResult']['tags'] = implode(', ', $tmp);
+    }
     return $rowResult;
   }
   
@@ -257,4 +296,222 @@ class Models_Auto extends Models_General
     return $this->data;
   }//end if detail
 
+
+  public function save($module_id, $id='', $uid='', $post=array())
+  {
+    if (empty($module_id)) {
+      return false;  
+    }
+    if (empty($uid)) {
+      throw new Exception('user not logged in');
+    }
+    $this->data['module_id'] = $module_id;
+    $this->data['id'] = $id;
+    
+    
+    $t = (3600*24);
+    $this->data['t'] = $t;
+    
+    $resultModule = $this->getModuleDetail($module_id);
+    $resultModuleFields = $this->getFields($module_id, $resultModule['module_name']);
+    
+    $resultModuleFields2 = array();
+    foreach ($resultModuleFields as $k => $v) {
+      $resultModuleFields2[$v['field_name']] = $v;
+    }
+    $this->data['resultModuleFields2'] = $resultModuleFields2;
+    
+    if (!empty($id)) {
+      $return = $this->update($module_id, $id, $uid, $post);
+    } else {
+      $return = $this->insert($module_id, $uid, $post);
+    }
+    
+    $this->data['return'] = $return;
+    return $this->data;
+  }//end save()
+  
+  public function update($module_id, $id, $uid='', $post=array()) {
+    $latitude = !empty($post['lat']) ? $post['lat'] : null;
+    $longitude = !empty($post['lng']) ? $post['lng'] : null;
+    $data = $post;
+    if (isset($data['MM_Insert'])) unset($data['MM_Insert']);
+    if (isset($data['MM_Update'])) unset($data['MM_Update']);
+    if (isset($data['submit'])) unset($data['submit']);
+    
+    $data['rc_updated_dt'] = date('Y-m-d H:i:s');
+    
+    $data['id'] = $id;
+    $data['uid'] = $uid;
+    
+    $data['city_id'] = !empty($post['city_id']) ? $post['city_id'] : null;
+    $data['module_id'] = $module_id;
+    $data['rc_updated_dt'] = date('Y-m-d H:i:s');
+    if (!empty($post['lat'])) {
+        $data['clatitude'] = $latitude;
+        unset($data['lat']);
+    }
+    if (!empty($post['lng'])) {
+        $data['clongitude'] = $longitude;
+        unset($data['lng']);
+    }
+    //encryption
+    foreach ($this->data['resultModuleFields'] as $k => $v) {
+      if (isset($data[$v['field_name']]) && $v['encrypted'] == 1) {
+        $data[$v['field_name']] = encryptText($data[$v['field_name']]);
+      }
+    }
+    //encryption
+    foreach ($post as $k => $v) {
+      if (is_array($v)) {
+        $post[$k] = !empty($post[$k]) ? array_filter($post[$k]) : array();
+        $data[$k] = json_encode($post[$k]);
+      }
+    }
+    
+    
+    $data['rc_approved'] = 0;
+    if ($resultModule['approval_needed'] == 0) {
+        $data['rc_approved'] = 1;
+    }
+    $where = sprintf('uid = %s AND id=%s', $this->qstr($uid), $this->qstr($id));
+    $result = $this->updateDetails($this->data['tablename'], $data, $where);
+    //tag start
+    
+    //deleting from tags table
+    $query = "delete from auto_pre_tags where id = ".$this->qstr($id);
+    $this->deleteDetails($query);
+      
+    if (!empty($post['tags'])) {
+      $tmp = explode(',', $_POST['tags']);
+      foreach ($tmp as $v) {
+        $v = trim($v);
+        $d = array();
+        $d['id'] = $id;
+        $d['tag'] = $v;
+        $d['module_id'] = $module_id;
+        $this->addDetails('auto_pre_tags', $d);
+      }
+    }
+    //tag ends
+    //multiselect
+    foreach ($this->data['resultModuleFields'] as $k => $v) {
+      if ($v['field_type'] === 'multipleselectbox') {
+        //deleting from multiselect category table
+        $query = "delete from auto_pre_multiselectcats where id = ".$modelGeneral->qstr($id);
+        $this->deleteDetails($query);
+        //adding category
+        if (!empty($post[$v['field_name']])) {
+          foreach ($post[$v['field_name']] as $v1) {
+            $v1 = trim($v1);
+            $d = array();
+            $d['id'] = $id;
+            $d['category_id'] = $v1;
+            $d['col_name'] = $v['field_name'];
+            $d['module_id'] = $module_id;
+            $this->addDetails('auto_pre_multiselectcats', $d);
+          }
+        }
+      }
+    }
+    //multiselect
+    return $data;
+  }//end update()
+  
+  public function insert($module_id, $uid='', $post=array()) {
+    $latitude = !empty($post['lat']) ? $post['lat'] : null;
+    $longitude = !empty($post['lng']) ? $post['lng'] : null;
+    $data = $post;
+    if (isset($data['MM_Insert'])) unset($data['MM_Insert']);
+    if (isset($data['MM_Update'])) unset($data['MM_Update']);
+    if (isset($data['submit'])) unset($data['submit']);
+    
+    $data['id'] = guid();
+    $data['uid'] = $uid;
+    
+    $data['city_id'] = !empty($post['city_id']) ? $post['city_id'] : null;
+    $data['module_id'] = $module_id;
+    $data['rc_created_dt'] = date('Y-m-d H:i:s');
+    $data['rc_updated_dt'] = date('Y-m-d H:i:s');
+    if (!empty($post['lat'])) {
+        $data['clatitude'] = $latitude;
+        unset($data['lat']);
+    }
+    if (!empty($post['lng'])) {
+        $data['clongitude'] = $longitude;
+        unset($data['lng']);
+    }
+    //encryption
+    foreach ($this->data['resultModuleFields'] as $k => $v) {
+
+      //if field is not show then calculate on bases of default value
+      if ($v['field_type'] == 'noshow') {
+        if (empty($data[$v['field_name']])) {
+          if ($v['field_default_value'] === 'current_date_time') {
+            $data[$v['field_name']] = date('Y-m-d H:i:s');
+          }
+        }
+      }
+
+      if (isset($data[$v['field_name']]) && $v['encrypted'] == 1) {
+        $data[$v['field_name']] = encryptText($data[$v['field_name']]);
+      }
+    }
+    //encryption
+    foreach ($post as $k => $v) {
+      if (is_array($v)) {
+        $post[$k] = !empty($post[$k]) ? array_filter($post[$k]) : array();
+        $data[$k] = json_encode($post[$k]);
+      }
+    }
+    if ($approved == 1) {
+      $data['rc_approved'] = 1;
+    } else {
+      $data['rc_approved'] = 0;
+      if ($resultModule['paid_module'] == 1 && $resultModule['paid_posting'] == 1) {
+          $data['rc_approved'] = 0;
+      } else {
+        if ($resultModule['approval_needed'] == 0) {
+            $data['rc_approved'] = 1;
+        }
+      }
+    }
+    
+    $result = $this->addDetails($this->data['tablename'], $data);
+    //tag start
+    if (!empty($post['title'])) {
+      $tmp1 = !empty($post['tags']) ? explode(',', $post['tags']) : array();
+      $tmp2 = explode(' ', $post['title']);
+      $tmp = array_merge($tmp1, $tmp2);
+      $tmp = array_unique($tmp);
+      foreach ($tmp as $v) {
+        $v = trim($v);
+        $d = array();
+        $d['id'] = $data['id'];
+        $d['tag'] = $v;
+        $d['module_id'] = $module_id;
+        $this->addDetails('auto_pre_tags', $d);
+      }
+    }
+    //tag ends
+    //multiselect
+    foreach ($this->data['resultModuleFields'] as $k => $v) {
+      if ($v['field_type'] === 'multipleselectbox') {
+        //adding category
+        if (!empty($post[$v['field_name']])) {
+          foreach ($post[$v['field_name']] as $v1) {
+            $v1 = trim($v1);
+            $d = array();
+            $d['id'] = $data['id'];
+            $d['category_id'] = $v1;
+            $d['col_name'] = $v['field_name'];
+            $d['module_id'] = $module_id;
+            $this->addDetails('auto_pre_multiselectcats', $d);
+          }
+        }
+      }
+    }
+    //multiselect
+    return $data;
+  }//end insert()
 }

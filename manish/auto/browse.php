@@ -1,4 +1,7 @@
 <?php
+/*urls
+http://core.mkgalaxy.com/projects/classesrfeb/manish/auto/browse?module_id=34&keyword=torts
+*/
 $auto = new Models_Auto($connMainAdodb);
 if (empty($_GET['module_id'])) {
   throw new Exception('Incorrect Module');
