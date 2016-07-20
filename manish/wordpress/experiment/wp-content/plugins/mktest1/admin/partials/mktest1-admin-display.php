@@ -22,7 +22,7 @@
     
     <?php
         //Grab all options
-        $options = get_option($this->plugin_name);
+            $options = get_option($this->plugin_name);
 
         // Cleanup
         $cleanup = $options['cleanup'];
