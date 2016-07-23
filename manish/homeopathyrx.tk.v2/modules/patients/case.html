@@ -252,18 +252,25 @@
               </tbody>
           </table>
           </div>
-        <div ng-if="completeFrm.details"><a href="" ng-click="exportData(completeFrm.details.name);" class="btn btn-primary">Export to xls</a> <a href="" ng-click="copy();" data-clipboard-action="copy" class="btn btn-primary copyToClipboard" data-clipboard-target="#mainContent">Copy to Clipboard</a></div>
+        <div ng-if="completeFrm.details"><a href="" ng-click="exportData(completeFrm.details.name);" class="btn btn-primary">Export to xls</a> <!--<a href="" ng-click="copy();" data-clipboard-action="copy" class="btn btn-primary copyToClipboard" data-clipboard-target="#mainContent">Copy to Clipboard</a>--></div>
     <!-- export ends -->
+    
+    
     <!-- load case -->
-    <div>
-      <br><br>
-      <textarea ng-model="caseRecord" style="width:100%" rows="5"></textarea>
-    <a href="" ng-click="importCase();" class="btn btn-primary">Import Case</a></div>
+      <div>
+        <br><br>
+        <p><strong>Copy Following text and send it to your doctor:</strong></p>
+        <textarea ng-model="caseRecord" style="width:100%" rows="5" id="caseRecord"></textarea>
+      <a href="" ng-click="importCase();" class="btn btn-primary">Import Case</a> <a href="" ng-click="copy();" data-clipboard-action="copy" class="btn btn-primary copyToClipboard" data-clipboard-target="#caseRecord">Copy to Clipboard</a>
+      </div>
     <!-- load case ends -->
     
     
     </div>
     
     </form>
+    
   </div>
+  
+  
 </div>

@@ -27,6 +27,7 @@ angular.module('myApp.patients', ['ngRoute'])
   };
 }])
 .controller('PatientsCaseCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+  var myFirebaseRef = new Firebase("https://mkgxy.firebaseio.com/projects/homeopathyCases");
   $scope.frm = {};
   
   $scope.frm.data = {};
@@ -245,6 +246,12 @@ angular.module('myApp.patients', ['ngRoute'])
     $scope.frm.mentalSymptoms = $scope.completeFrm.mind;
     localStorage.setItem('myCase', JSON.stringify($scope.completeFrm));
     $scope.caseRecord = JSON.stringify($scope.completeFrm);
+    
+    var name = '';
+    if ($scope.frm.details) {
+      name = btoa(JSON.stringify($scope.frm.details));
+      myFirebaseRef.child(name).set($scope.completeFrm); 
+    }
   });
   
   var myCase = localStorage.getItem('myCase');
