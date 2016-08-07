@@ -1,0 +1,1287 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Remedy Finder</title>
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+<script src="../../../js/angular.min.js"></script>
+<script src="../../../js/angular-route.js"></script>
+<!-- Firebase -->
+<script src="../../../js/firebase.js"></script>
+<!-- AngularFire -->
+<script src="../../../js/angularfire.min.js"></script>
+<!-- jquery -->
+<script src="../../../js/jquery-1.11.3.min.js"></script>
+<script src="../../../js/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="../../../js/bootstrap.min.js"></script>
+
+<script>
+// Declare app level module which depends on views, and components
+angular.module('myApp', [
+  'firebase'
+])
+.controller('mainController', ['$scope', function($scope) {
+  $scope.frm = {};
+  $scope.frm.data = {};
+  $scope.frm.data.remedy = 'aco';
+  $scope.frm.data.suggestedRemedies = {};
+  
+  $scope.clearForm = function() {
+    $scope.frm.data = {};
+  };
+  
+  $scope.saveData = function() {
+    localStorage.setItem('remedyFinder', JSON.stringify($scope.frm.data)); 
+  };
+  
+  function setParams() {
+    $scope.frm.params = {};
+    $scope.frm.params.allsymptoms = {
+      anaemic: 'Anaemic',
+      animalslove: 'LOVES ANIMALS',
+      betterduringsleep: 'Better During Sleep',
+      change: 'Desiring Change',
+      chorea: 'Chorea',
+      coitionagg: 'Worse From Coition',
+      companyaverse: 'Aversion to company. Prefers to be alone.',
+      confusion: 'Confusion. Fast mind with abundant ideas. Inability to recall any thought or event on account of other thoughts intrude and crowd around each other in his brain.',
+      confusionofidentity: 'Confusion as to his Identity',
+      congestion: 'CONGESTION',
+      consolationagg: 'Consolation Aggravates',
+      constipation: 'Constipation',
+      depression: 'With Depression',
+      drycoldairexposure: 'Exposure to dry cold air',
+      emaciated: 'Emaciated',
+      enlargedfeelings: 'Objects or distances are enlarged, head is out of the body etc. Sensation that single limbs are floating.',
+      excited: 'Excited',
+      fataverse: 'FAT aversion',
+      fearcancer: 'Fear of Cancer',
+      feardeath: 'Fear of Death',
+      fearinsanity: 'FEAR OF INSANITY, OF LOSING SELF-CONTROL',
+      forgetful: 'Very forgetful',
+      frightcreatesailment: 'Ailments from fright',
+      grief: 'Ailments from Grief',
+      griefsleeplessness: 'Sleeplessness from grief or thoughts of past disagreeable occurrences.',
+      grindingteeth: 'Grinding of Teeth',
+      growthtendency: 'Tendency to Growths',
+      hawking: 'Constant disposition to swallow and to hawk. Ineffectual hawking. Sensation in throat as if there is mucus which he must swallow.',
+      impotency: 'Impotency',
+      injurytohead: 'AFTER INJURIES TO HEAD OR SPINE',
+      injustice: 'Sensitive to Injustice',
+      intensity: 'Great intensity of Symptoms',
+      jerkingtwitching: 'Jerking and Twitching',
+      loquacity: 'Loquacity',
+      manipulative: 'Manipulative',
+      milkintolerance: 'INTOLERANCE TO MILK',
+      neurological: 'Neurological Complaints. The neurological system is mostly affected on this remedy like paralysis, involuntary urination, sudden loss of voice.',
+      overdeveloped: 'The mental abilities are over developed. We see too clever children, with skills beyond their age.',
+      overactivity: 'Overactivity',
+      oversensitive: 'Oversensitive. They are sensitive and easily affected by the environment.',
+      pale: 'Pale',
+      prematureoldage: 'Premature old age',
+      passionate: 'Passionate',
+      punishmentagg: 'Punishment Aggravates',
+      rectumpainneedles: 'Pain in rectum as if filled with needles (dryFeeling)',
+      redfaceColdExtremities: 'RED FACE WITH COLD EXTREMITIES',
+      reserved: 'Reserved',
+      restlessness: 'Restlessness',
+      saltdesire: 'Salt desire',
+      secretive: 'Secretive',
+      sexualexcessabuse: 'From abuse of sexual power, after sexual excesses',
+      slowingfunc: 'Slowing Down of Functions',
+      socialposition: 'Never happy with social position, feel they deserve better.',
+      stasis: 'Stasis',
+      stoolbetter: 'CHEERFUL AFTER STOOL',
+      suicidalthoughtsbygrief: 'Loathing life, SUICIDAL THOUGHTS by shooting but restrains himself because of grief given to relatives.',
+      sunaverse: 'Sun aversion',
+      sympathetic: 'Sympathetic',
+      //sympatheticToAnimals: 'Sympathetic towards animals. They cannot see an animal suffering.',
+      thirsty: 'Thirsty',
+      timepassesslow: 'DELUSIONS: Time passes too slowly, a few seconds seem ages.',
+      timidity: 'Timidity',
+      venouscongestion: 'Venous Congestion',
+      wasted: 'Wasted',
+      warmwetweatheragg: 'WORSE IN WARM WET WEATHER',
+      wetweatheragg: 'WORSE WET WEATHER'
+    };
+    
+    $scope.frm.params.remedies = [
+      { key: 'acet_ac', name: 'Acetic Acid', url: 'acet-ac.html',  symptoms: ['pale', 'thirsty', 'anaemic', 'emaciated', 'wasted'] },
+      { key: 'aco', name: 'Aconite', url: 'acon.html',  symptoms: ['feardeath', 'frightcreatesailment', 'drycoldairexposure'], shortDesc: 'All ailments acute or chronic are attended by fear of impending death and the feeling that death is imminent or near. Ailments that arise from fright that threatened the life of the person.' },
+      { key: 'aesc', name: 'Aesculus', url: 'aesc.html',  symptoms: ['venouscongestion', 'stasis', 'slowingfunc', 'rectumpainneedles'] },
+      { key: 'aeth', name: 'Aethusa Cynapium', url: 'aeth.html',  symptoms: ['animalslove', 'milkintolerance'] },
+      { key: 'agar', name: 'Agaricus', url: 'agar.html',  symptoms: ['fearcancer', 'jerkingtwitching', 'chorea', 'betterduringsleep', 'coitionagg', 'punishmentagg'] },
+      { key: 'ambr', name: 'Ambra Grisea', url: 'ambr.html',  symptoms: ['timidity', 'constipation'] },
+      { key: 'agn', name: 'Agnus Castus', url: 'agn.html', symptoms: ['impotency', 'depression', 'prematureoldage', 'sexualexcessabuse', 'feardeath'] },
+      { key: 'bell', name: 'Belladonna', url: 'bell.html',  symptoms: ['intensity', 'congestion', 'redfaceColdExtremities'] },
+      { key: 'cann_i', name: 'Cannabis Indica', url: 'cann-i.html',  symptoms: ['timepassesslow', 'enlargedfeelings', 'fearinsanity', 'feardeath', 'loquacity', 'confusion', 'forgetful'], shortDesc: 'Usually these patients have a history of cannabis abuse or they can be so sensitive to cannabis that they can get ailments even after slight use.  It activates (quick mind, many ideas, loquacity, theorizing) but also confuses the mind (gullible, no critical thinking, no discrimination) reaching to even delusional states. The clarity of mental faculties is affected for many years after stopping the use of cannabis. However we should remember that the abuse of cannabis can produce the picture of any remedy if the symptoms match.' },
+      { key: 'caust', name: 'Causticum', url: 'caust.html', symptoms: ['injustice', 'sympathetic', 'oversensitive', 'neurological', 'hawking'] },
+      { key: 'nat_m', name: 'Natrum Mur', url: 'nat-m.html', symptoms: ['reserved', 'grief', 'companyaverse', 'consolationagg', 'saltdesire', 'fataverse', 'sunaverse', 'griefsleeplessness']},
+      { key: 'nat_s', name: 'Natrum Sulph', url: 'nat-s.html', symptoms: ['warmwetweatheragg', 'stoolbetter', 'injurytohead', 'wetweatheragg', 'suicidalthoughtsbygrief']},
+      { key: 'thuja', name: 'Thuja', url: 'thuja.html', symptoms: ['secretive', 'growthtendency', 'reserved', 'manipulative']},
+      { key: 'tub', name: 'Tub', url: 'tub.html', symptoms: ['passionate', 'excited', 'change', 'grindingteeth']},
+      { key: 'verat', name: 'Veratrum Album', url: 'verat.html', symptoms: ['restlessness', 'overactivity', 'confusionofidentity', 'overdeveloped', 'socialposition']}
+    ];
+  }
+  
+  setParams();
+  
+  $scope.process = function(data) {
+    $scope.frm.data.suggestedRemedies = {};
+    angular.forEach($scope.frm.params.remedies, function(value, key) {
+      $scope.frm.params.remedies[key].counter = 0;
+      $scope.frm.params.remedies[key].totalCount = value.symptoms.length;
+      angular.forEach(value.symptoms, function(value1, key1) {
+        angular.forEach(data, function(value2, key2) {
+          if (value2 && key2 == value1) {
+            $scope.frm.params.remedies[key].counter++;
+          }
+        });
+      });
+      if ($scope.frm.params.remedies[key].counter == $scope.frm.params.remedies[key].totalCount) {
+        $scope.frm.data.suggestedRemedies[value.key] = value;
+      }
+    });
+    $scope.frm.data.suggestedRemedyCount = Object.keys($scope.frm.data.suggestedRemedies).length;
+  };
+  
+  var data = JSON.parse(localStorage.getItem('remedyFinder'));
+  if (data) {
+    $scope.frm.data = data;
+    if ($scope.frm.data.symptoms) {
+      $scope.process($scope.frm.data.symptoms);  
+    }
+  }
+  
+  //var myFirebaseRef = new Firebase("https://mkgxy.firebaseio.com/projects/remedyFinder");
+  //myFirebaseRef.child(name).set($scope.completeFrm); 
+}]);
+</script>
+</head>
+
+<body ng-controller="mainController">
+<h1>Remedies</h1>
+<form id="form1" name="form1" method="post">
+
+<a href="" ng-click="clearForm()" class="btn btn-default">Clear All Fields</a> 
+<a href="" ng-click="saveData()" class="btn btn-default">Save Data</a><br><br>
+<div class="row">
+  <div class="col-md-8">
+    <div class="table-responsive">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th valign="top"><strong>Remedy</strong></th>
+      <th valign="top"><strong>Impotant Symptoms</strong></th>
+      <th valign="top"><strong>Important Questions</strong></th>
+      <th valign="top"><strong>Choose Remedy</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="remedy in frm.params.remedies">
+      <td valign="top"><a href="{{remedy.url}}" target="_blank">{{remedy.name}}</a></td>
+      <td valign="top">
+          <span ng-repeat="symptom in remedy.symptoms">
+            {{frm.params.allsymptoms[symptom]}}, 
+          </span>
+          <p ng-if="remedy.shortDesc"><br><small><b>Short Description:</b> {{remedy.shortDesc}}</small></p>
+      </td>
+      <td valign="top">
+        <div class="row">
+          <div class="col-md-12" ng-repeat="symptom in remedy.symptoms">
+            <input type="checkbox" ng-model="frm.data.symptoms[symptom]" ng-click="process(frm.data.symptoms)">
+            {{frm.params.allsymptoms[symptom]}}
+          </div>
+        </div>
+      </td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" ng-value="remedy.key"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+  </div>
+  <div class="col-md-4">
+  
+  
+    <div class="row">
+      <div class="col-md-12" ng-if="frm.data.suggestedRemedyCount > 0">
+        <h3>Suggested Remedies</h3>
+        <ul>
+          <li ng-repeat="suggestedRemedy in frm.data.suggestedRemedies">
+            <strong>{{suggestedRemedy.name}}</strong>
+          </li>
+        </ul>
+      </div>
+      
+      
+      <div class="col-md-12">
+        <ol>
+          <li ng-repeat="(key, value) in frm.params.allsymptoms">
+            <input type="checkbox" ng-model="frm.data.symptoms[key]" ng-click="process(frm.data.symptoms)">
+            {{value}}
+            <input type="text" ng-model="frm.data.description[key]" ng-if="frm.data.symptoms[key]">
+          </li>
+        </ol>
+      </div>
+    </div>
+    
+    {{frm.data|json}}<br><br>
+    
+    
+  </div>
+</div>
+ 
+<!--
+<div class="table-responsive">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th valign="top"><strong>Remedy</strong></th>
+      <th valign="top"><strong>Impotant Symptoms</strong></th>
+      <th valign="top"><strong>Important Questions</strong></th>
+      <th valign="top"><strong>Choose Remedy</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top"><a href="acet-ac.html">Acet-Ac</a></td>
+      <td valign="top">PALE, THIRSTY, ANAEMIC, EMACIATED, WASTED</td>
+      <td valign="top"><input type="checkbox" name="symptom[pale]" ng-model="frm.data.pale">
+        Pale<br>
+          <input type="checkbox" name="symptom[thirsty]" ng-model="frm.data.thirsty">
+        Thirsty<br>
+        <input type="checkbox" name="symptom[anaemic]" ng-model="frm.data.anaemic">
+        Anaemic<br>
+        <input type="checkbox" name="symptom[emaciated]" ng-model="frm.data.emaciated">
+        Emaciated<br>
+        <input type="checkbox" name="symptom[wasted]" ng-model="frm.data.wasted">
+        Wasted    </td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="acet-ac"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="acon.html">Aco</a></td>
+      <td valign="top"><span class="csD6E0E13D">FEAR OF IMPENDING DEATH</span>, <span class="csB86C8CFE">AILMENTS FROM FRIGHT</span>, <span class="csB86C8CFE">EXPOSURE TO DRY COLD AIR or WIND</span></td>
+      <td valign="top"><input type="checkbox" name="symptom[feardeath]" ng-model="frm.data.feardeath">
+        Fear of Death<br>
+          <input type="checkbox" name="symptom[ailmentfromfright]" ng-model="frm.data.ailmentfromfright">
+        Ailments from fright<br>
+        <input type="checkbox" name="symptom[drycoldair]" ng-model="frm.data.drycoldair">
+        Exposure to dry cold air</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="aco"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="aesc.html">Aesc</a></td>
+      <td valign="top">VENOUS CONGESTION - STASIS - SLOWING DOWN OF FUNCTIONS<br>
+        Pain in rectum as if filled with needles, dry feeling. </td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="aesc"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="aeth.html">Aeth</a></td>
+      <td valign="top">LOVES ANIMALS, INTOLERANCE TO MILK</td>
+      <td valign="top"><input type="checkbox" name="symptom[lovesanimal]" ng-model="frm.data.lovesanimal">
+        Loves Animals<br><input type="checkbox" name="symptom[intolerancetomilk]" ng-model="frm.data.intolerancetomilk">
+        Intolerance to Milk<br></td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="aeth"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="agar.html">Agar</a></td>
+      <td valign="top">FEAR OF CANCER WITH JERKING AND TWITCHING<br>
+        Chorea is better during sleep and worse from coition and may arise after punishment.</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="agar"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="agn.html">Agn</a></td>
+      <td valign="top">IMPOTENCY WITH DEPRESSION<br>
+        Premature old age from abuse of sexual power, after sexual excesses. Fears she will die soon <br></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="agn"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="all-c.html">All-c</a></td>
+      <td valign="top">EXCORIATING DISCHARGE FROM NOSE, LETHARGY<br>
+        EXCORIATING DISCHARGE FROM NOSE WITH BLAND DISCHARGE FROM EYES.</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="all-c"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="alloe.html">Alloe</a></td>
+      <td valign="top">INVOLUNTARY STOOL, HAEMORRHOIDS, DIARRHOEA<br>
+        Dissatisfied and angry with themselves. Discontent &gt;evening<br>
+        Haemorrhoids: external, strangulated, congested, large, like bunch of grapes, ameliorated by cold bathing.</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="aloe"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="alum.html">Alum</a></td>
+      <td valign="top">DRYNESS, SLOWNESS OF ALL LEVELS PROGRESSING TO A STATE OF PARALYSIS<br>Confusion of identity, "who am I?" Everything seems unreal.
+Time passes very slowly for them.</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="alum"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="am-c.html">Am-c</a></td>
+      <td valign="top">CIRCULATORY AND RESPIRATORY PROBLEMS<br>
+        TIMID PEOPLE, Obstinate. Irritable, unfriendly, malicious and abusive.<br>
+        Sad, morose and dissatisfied especially in cloudy and wet weather.<br>
+        Asthma &lt; in warm room, with slight exertion. <br>
+        Aversion to bathing or to anything wet on skin <br>
+        </td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="am-c"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="am-m.html">Am-m</a></td>
+      <td valign="top"><span class="csD6E0E13D">AFFECTIONS OF CIRCULATION, MUSCLES AND MUCOUS MEMBRANES<br>
+        <span class="csA62DFD6A">Reserved, timid and closed.</span>      </span></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="am-m"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="ambr.html">Ambr</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="ambr"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="anac.html">Anac</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="anac"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="ant-c.html">Ant-c</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="ant-c"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="ant-t.html">Ant-t</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value="ant-t"></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="apis.html">Apis</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="arg-met.html">Arg-met</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="arg-n.html">Arg-n</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="arn.html">Arn</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="ars-i.html">Ars-i</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="ars.html">Ars</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="arum-t.html">Arum-t</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="asar.html">Asaf</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="aur-m.html">Aur-m</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="aur.html">Aur</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bad.html">Bad</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bapt.html">Bapt</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bar-c.html">Bar-c</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bell-p.html">Bell-p</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bell.html">Bell</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="berb.html">Berb</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="borx.html">Borax</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bov.html">Bov</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="brom.html">Brom</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="bry.html">Bry</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="cact.html">Cact</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="calad.html">Calad</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="calc-f.html">Calc-f</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="calc-p.html">Calc-p</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="calc-s.html">Calc-s</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="calc.html">Calc</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="calen.html">Calen</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="camph.html">Camph</a></td>
+      <td valign="top">COLLAPSE - EXTREMELY COLD BUT WANTS TO BE UNCOVERED</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="cann-i.html">Cann-i</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="canth.html">Canth</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="caps.html">Caps</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="carb-an.html">Carb-an</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="carb-v.html">Carb-v</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="carc.html">Carc</a></td>
+      <td valign="top">VERY SENSITIVE TO CRITICISM, PLEASING OTHERS, FAMILY HISTORY OF CANCER</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="caul.html">Caul</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="caust.html">Caust</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="cham.html">Cham</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="chel.html">Chel</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="chin.html">Chin</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="cic.html">Cic</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="cimic.html">Cimic</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="cina.html">Cina</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Coc-c</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Cocc</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Coff</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Colch</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Coloc</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Con</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Croc</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Crot-h</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Cupr</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Cycl</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Dig</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Dros</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Dulc</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Elaps</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Equis</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Eup-per</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Euphr</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ferr-p</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ferr</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Fl-ac</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Gamb</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Gels</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Glon</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Graph</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ham</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Hell</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Hep</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Hydr</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Hyper</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ign</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Iod</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ip</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Iris</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kali-ar</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kali-bi</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kali-c</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kali-p</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kali-s</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kalm</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Kreos</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Lac-c</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Lach</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Led</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Lil-t</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Lob</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Lyc</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Mag-c</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Mag-m</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Mag-p</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Manc</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Med</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Meny</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Merc-c</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Merc-i-f</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Merc-i-r</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Mez</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Mur-ac</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Nat-c</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="nat-m.html">Nat-m</a></td>
+      <td valign="top">INTROVERTED, VULNERABLE, AILMENTS FROM GRIEF<br>
+        Aversion to company. CONSOLATION AGGRAVATES. Prefers to be alone.<br>
+        SALT desire. FAT aversion. SUN aversion.<br>
+        Sleeplessness from grief or thoughts of past disagreeable occurrences. </td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="nat-s.html">Nat-s</a></td>
+      <td valign="top">WORSE IN WARM WET WEATHER - CHEERFUL AFTER STOOL<br>
+        AFTER INJURIES TO HEAD OR SPINE<br>
+        &lt;WET WEATHER <br>
+        Loathing life, SUICIDAL THOUGHTS by shooting but restrains himself because of grief given to relatives. <br></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="nit-ac.html">Nit-ac</a></td>
+      <td valign="top">MISERABLE, ANXIOUS WITH STITCHING PAINS AND OFFENSIVE DISCHARGES<br>
+        The Nit-ac. patient is miserable, in a state of constant dissatisfaction. They are never pleased by anything.<br>
+        The characteristic on the physical level is the sluggish circulation, the splinter-like pains and the offensiveness of the discharges.</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Nux-m</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Nux-v</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Op</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Pall</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Petr</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ph-ac</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Phos</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Phys</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Phyt</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Pic-ac</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Plat</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Plb</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Podo</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Psor</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Puls</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Pyrog</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ran-b</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Rat</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Rhod</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Rhus-t</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Rumex</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Ruta</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sabad</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sabin</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Samb</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sang</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sanic</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sars</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sec</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sel</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="sep.html">Sep</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sil</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Spig</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Spong</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Stann</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Staph</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Stram</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top">Sulph</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="tab.html">Tab</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="tarent-c.html">Tarent-c</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+      </tr>
+    <tr>
+      <td valign="top"><a href="tarent.html">Tarent</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="ter.html">Ter</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="thuja.html">Thuja</a></td>
+      <td valign="top">SECRETIVE - TENDENCY TO GROWTHS - RESERVED - Manipulative</td>
+      <td valign="top">
+        <input type="checkbox" name="symptom[secretive]" ng-model="frm.data.secretive">
+        Secretive<br>
+          <input type="checkbox" name="symptom[growthtendency]" ng-model="frm.data.growthtendency">
+        Tendency to growths<br>
+        <input type="checkbox" name="symptom[reserved]" ng-model="frm.data.reserved">
+        Reserved<br>
+        <input type="checkbox" name="symptom[manipulative]" ng-model="frm.data.manipulative">
+        Manipulative
+      </td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="tub.html">Tub</a></td>
+      <td valign="top">PASSIONATE, EXCITED, DESIRING CHANGE - GRINDING OF TEETH</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="verat.html">Verat</a></td>
+      <td valign="top">RESTLESSNESS - MENTAL &amp; PHYSICAL, overactivity, CONFUSION AS TO HIS IDENTITY<br>
+      The mental abilities are over developed. We see too clever children, with skills beyond their age.
+        <br>
+        Never happy with social position, feel they deserve better.</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+    <tr>
+      <td valign="top"><a href="zinc.html">Zinc</a></td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top">&nbsp;</td>
+      <td valign="top"><input type="radio" name="remedy" ng-model="frm.data.remedy" value=""></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+-->
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

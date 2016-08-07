@@ -15,7 +15,7 @@
               <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
-          
+          <p ng-if="frm.loading"><img src="img/loading.gif"</p>
           <div class="alert alert-warning" role="alert" ng-if="frm.resultStatus" style="margin-top:20px;">
             {{frm.resultStatus}}
           </div>

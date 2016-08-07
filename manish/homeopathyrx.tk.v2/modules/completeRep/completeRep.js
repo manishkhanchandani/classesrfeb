@@ -115,17 +115,19 @@ angular.module('myApp.completeRep', ['ngRoute'])
     if (!$scope.frm.keyword && !$scope.frm.chapter) return;
     //$location.path('/completeRep/p_0/k_' + encodeURIComponent($scope.frm.keyword));
     document.body.scrollTop = 0;
+    $scope.frm.loading = true;
     $scope.records = '';
     $scope.data = '';
     if ($scope.frm.keyword) {
       //$scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + keyword;
       var keyword = encodeURIComponent($scope.frm.keyword);
-      var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&max=25&page='+$scope.frm.page;
+      var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&max=100&page='+$scope.frm.page;
     } else if ($scope.frm.chapter) {
-      var url = 'php2/repertory/complete.php?action=complete_browse&chapter='+$scope.frm.chapter+'&max=25&page='+$scope.frm.page;
+      var url = 'php2/repertory/complete.php?action=complete_browse&chapter='+$scope.frm.chapter+'&max=100&page='+$scope.frm.page;
       console.log(url);
     }
     dataService.get(url, function (r) { 
+      $scope.frm.loading = false;
       if (r.data.data.totalRows == 0) {
         $scope.frm.resultStatus = 'No Result Found.'; 
         return
@@ -144,6 +146,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   
   $scope.browse = function(chapter)
   {
+    $scope.frm.keyword = '';
     $scope.frm.chapter = chapter;
     $scope.frm.page = 0;
     $scope.searchRep();
