@@ -5,8 +5,13 @@
     </div>
   </div>
   
-  
   <div class="row">
+  
+    <div class="col-md-12">
+      <div my-symptoms user-data="userData"></div>
+    </div>
+    
+    
     <div class="col-md-12">
       <h3>View Symptoms</h3>
       <form ng-submit="pagNextPrev(0)">
@@ -15,7 +20,7 @@
               <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
-          <p ng-if="frm.loading"><img src="img/loading.gif"</p>
+          <p ng-if="frm.loading"><img src="img/loading.gif"></p>
           <div class="alert alert-warning" role="alert" ng-if="frm.resultStatus" style="margin-top:20px;">
             {{frm.resultStatus}}
           </div>
@@ -56,17 +61,15 @@
       <div ng-if="chapters">
         <div class="row">
           <div class="col-md-3" ng-repeat="cha in chapters">
-            <a href="" ng-click="browse(cha.id)">{{cha.symptom}}</a>
+            <a href="" ng-click="browse(cha.id)">{{cha.path}}</a>
           </div>
         </div>
       </div>
       
       
     </div>
-    <div class="col-md-12">
-      <hr>
-      <div my-symptoms user-data="userData"></div>
-    </div>
+    
+    
   </div>
 </div>
 

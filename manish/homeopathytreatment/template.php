@@ -48,17 +48,17 @@ angular.module('myApp', [
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Patients <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Add New Case</a></li>
-                <li><a href="#">All My Cases</a></li>
-                <li><a href="#">My Account Info</a></li>
+                <li><a href="patients/new_case">Add New Case</a></li>
+                <li><a href="patients/all_cases">All My Cases</a></li>
+                <li><a href="patients/account">My Account Info</a></li>
               </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Update Profile</a></li>
-                <li><a href="#">My Patients</a></li>
-                <li><a href="#">My Account</a></li>
+                <li><a href="doctor/profile">Update Profile</a></li>
+                <li><a href="doctor/patients">My Patients</a></li>
+                <li><a href="doctor/account">My Account</a></li>
               </ul>
             </li>
           </ul>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Remedy Finder</title>
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+<script src="../../../js/angular.min.js"></script>
+<script src="../../../js/angular-route.js"></script>
+<!-- Firebase -->
+<script src="../../../js/firebase.js"></script>
+<!-- AngularFire -->
+<script src="../../../js/angularfire.min.js"></script>
+<!-- jquery -->
+<script src="../../../js/jquery-1.11.3.min.js"></script>
+<script src="../../../js/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="../../../js/bootstrap.min.js"></script>
+
+<script>
+// Declare app level module which depends on views, and components
+angular.module('myApp', [
+  'firebase'
+])
+.controller('mainController', ['$scope', function($scope) {
+}]);
+</script>
+</head>
+
+<body ng-controller="mainController">
+<h1>Remedies</h1>
+<h3>Gelsemium</h3>
+<p>1. What are the characteristic mental/emotional symptoms of this remedy?</p>
+<p>2. How do the arms and legs, or body in general feel?</p>
+<p>3. What is the main better for modality?</p>
+<p>4. What are the main keynotes for this remedy?</p>
+<p>5. What are the main headache symptoms for this remedy?</p>
+<p>6. What are the main worse for modalities?</p>
+<p><strong>Answers</strong></p>
+<p>1. Confusion of mind.</p>
+<p>Fear of falling - child being carried will grab the person, grabbing the sides of the cot or bed</p>
+<p>Fear of appearing in public - stage fright (Arg nit also)</p>
+<p>Anticipatory anxiety - especially of any performance or the spotlight being on them, brings on diarrhoea</p>
+<p>Fears that if they stop moving the heart will stop beating (compare with Digitalis - if they move the heart will stop beating)</p>
+<p>Dullness of the mind - feels drowsy a lot of the time</p>
+<p>2. They feel very heavy, all movement is an effort. There may be lack of coordination of movement or a degree of paralysis of the limbs. The head can feel heavy too - holding it up is an effort. They might seem intoxicated as they move.</p>
+<p>3. Better for profuse urination, especailly the headache.</p>
+<p>4. Paralysis, dullness, numbness.</p>
+<p>5. Headache starts in the occiput or nape of the neck.</p>
+<p>Headache progresses of the top of the head to settle over the eye (often the right)</p>
+<p>Headache with blurred vision and dizziness.</p>
+<p>&lt; 10 am</p>
+<p>Headache &gt; profuse urination</p>
+<p>6. Heat of sun or summer - e.g summar 'flu'</p>
+<p>Talking about ailments or focus drawn to their problems</p>
+<p>Mental activity and emotional upsets</p>
+<p>Tobacco smoke</p>
+<p>Before a thunderstorm.</p>
+</body>
+</html>

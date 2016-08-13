@@ -252,15 +252,23 @@ angular.module('myApp.completeRep', ['ngRoute'])
 
 .controller('CompleteAddRepCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
   
+  if (!$scope.userData) {
+    $location.path('/');
+    return;
+  }//end if
+  
   $scope.frm = {};
   $scope.frm.showStatus = null;
-
   //add new symptom
   function addSymptoms(symptoms, remedies) {
     $scope.frm.showStatus = null;
-    var data = {symptoms: symptoms, remedies: remedies};
+    var uid = null;
+    if ($scope.userData) {
+      uid = $scope.userData.id;
+    }//end if
+    var data = {symptoms: symptoms, remedies: remedies, uid: uid};
     var url = '/php2/repertory/complete.php?action=add';
-    dataService.postJson(url, data, function (r) { console.log('success: ', r); $scope.frm.data = ''; if (r.data.error) { $scope.frm.showStatus = r.data.error; } else { $scope.viewSymptoms();}}, function (r) { console.log('failed: ', r)});
+    dataService.postJson(url, data, function (r) { console.log('success: ', r); $scope.frm.data = ''; if (r.data.error) { $scope.frm.showStatus = r.data.error; $scope.viewSymptoms(); } else { $scope.viewSymptoms();}}, function (r) { console.log('failed: ', r)});
   }
   
   $scope.addSymptomData = function() {
@@ -280,8 +288,8 @@ angular.module('myApp.completeRep', ['ngRoute'])
     if ($routeParams.page) {
       $scope.frm.page = parseInt($routeParams.page);
     }
-    var url = '/php2/repertory/complete.php?action=complete_getAll&start=0&max=10&cacheTime=0&page='+$scope.frm.page;
-    dataService.get(url, function (r) { console.log('success: ', r); $scope.records = r.data.data.results; console.log($scope.records);}, function (r) { console.log('failed: ', r)});
+    var url = '/php2/repertory/complete.php?action=complete_getAll&start=0&max=25&cacheTime=0&page='+$scope.frm.page;
+    dataService.get(url, function (r) { console.log('success: ', r); $scope.records = r.data.data.results; /*console.log($scope.records); */}, function (r) { console.log('failed: ', r)});
   };
   $scope.viewSymptoms();
   

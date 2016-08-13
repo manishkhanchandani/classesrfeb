@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Remedy Finder</title>
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+<script src="../../../js/angular.min.js"></script>
+<script src="../../../js/angular-route.js"></script>
+<!-- Firebase -->
+<script src="../../../js/firebase.js"></script>
+<!-- AngularFire -->
+<script src="../../../js/angularfire.min.js"></script>
+<!-- jquery -->
+<script src="../../../js/jquery-1.11.3.min.js"></script>
+<script src="../../../js/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="../../../js/bootstrap.min.js"></script>
+
+<script>
+// Declare app level module which depends on views, and components
+angular.module('myApp', [
+  'firebase'
+])
+.controller('mainController', ['$scope', function($scope) {
+}]);
+</script>
+</head>
+
+<body ng-controller="mainController">
+<h1>Remedies</h1>
+<h3>Digitalis</h3>
+<p>1. This is a major heart remedy. What are the common heart indications?</p>
+<p>2. What are the main worse for modalities of this remedy?</p>
+<p>3. Describe how the urinary symptoms might present.</p>
+<p><strong>Answers</strong></p>
+<p>1. Pulse is feeble, SLOW, intermittent and irregular</p>
+<p>Any motion can cause the pulse to become rapid and irregular</p>
+<p>Movement leads to syncope (fainting) in heart disease.</p>
+<p>Sudden sensation as if the heart stood still</p>
+<p>Least movement = palpitations</p>
+<p>Cyanosis (bluishness) of the face</p>
+<p>Any dropsy caused by heart problems</p>
+<p>2. Exertion and movement</p>
+<p>Night and first thing in the morning</p>
+<p>Raising up</p>
+<p>Lying on the left side</p>
+<p>3. Urination is difficult with sensations of burning and constriction as if the urethra was too narrow.</p>
+<p>Constant urge to urinate and dribbling of urine.</p>
+<p>Throbbing pain at the neck of the bladder as if a straw were pushed up and down the urethra &lt; night.</p>
+<p>Retains a sensation of a full bladder even after urination.</p>
+</body>
+</html>

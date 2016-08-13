@@ -2,8 +2,8 @@
 <html ng-app="myApp">
 <head>
 <meta charset="UTF-8">
-<title>Remedy Finder</title>
-  <base href="<?php echo $dir; ?>">
+<title><?php echo $pageTitle; ?></title>
+<base href="<?php echo $dir; ?>">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/angular.min.js"></script>
@@ -31,7 +31,7 @@ angular.module('myApp', [
 </head>
 
 <body ng-controller="mainController">
-
+<!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -41,18 +41,38 @@ angular.module('myApp', [
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="main">Classical Homeopathic Treatment</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Patients <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Add New Case</a></li>
+                <li><a href="#">All My Cases</a></li>
+                <li><a href="#">My Account Info</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Doctors <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Update Profile</a></li>
+                <li><a href="#">My Patients</a></li>
+                <li><a href="#">My Account</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <?php if (!empty($_SESSION['user'])) { ?>
+              <li><a href="users/login"><?php echo $_SESSION['user']['name']; ?></a></li>
+              <li <?php if ($p === 'users/login') { ?>class="active"<?php } ?>><a href="users/login?logout=1">Logout</a></li>
+            <?php } else { ?>
+            <li <?php if ($p === 'users/login') { ?>class="active"<?php } ?>><a href="users/login">Login</a></li>
+            <?php } ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
     <div class="container">
 
       

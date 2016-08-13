@@ -21,10 +21,10 @@
   module
     .directive('googleLogin', ['googleLoginTemplate', 'googleLoginService', 'configs', '$location', googleLogin])
     .provider('googleLoginTemplate', googleLoginTemplateProvider)
-    .service('googleLoginService', ['$http', googleLoginService])
+    .service('googleLoginService', ['$http', '$location', googleLoginService])
     ;
     
-  function googleLoginService($http) {
+  function googleLoginService($http, $location) {
     this.base_url = 'http://api.mkgalaxy.com/records.php';
     this.login = function(uid, token, details) {
       var url = this.base_url + '?action=login&saveIP=1&id='+uid+'&access_token='+token;
@@ -36,6 +36,7 @@
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       }).then(function successCallback(response) {
           //callback(response);
+          window.location.href = $location.path();
         }, function errorCallback(response) {
           console.log('error call back');
           console.log(response);
@@ -49,6 +50,7 @@
         url: url
       }).then(function successCallback(response) {
           //callback(response);
+          window.location.href = $location.path();
         }, function errorCallback(response) {
           console.log('error call back');
           console.log(response);

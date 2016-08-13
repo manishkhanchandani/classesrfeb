@@ -33,7 +33,7 @@
     </div>
   </div>
   
-  <!--<div class="row" ng-if="recordedType != 3">
+  <div class="row" ng-if="recordedType != 3">
     <div class="col-md-12">
       <div ng-if="userData">
         <div><span ng-if="recordedSymptoms.length > 0"><a href="" ng-click="showSaveFields()">Save this case</a> | </span><a href="" ng-click="getSavedCases(userData.id, 0, false);">Show Saved List</a>
@@ -46,9 +46,9 @@
           {{recordedSymptomStatus}}
         </div>
         <ul class="list-group" ng-if="showSavedList && savedListResults">
-          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a> | <a href="completeRep/trace/{{item.trace_id}}" target="_blank">Public Link</a>| <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a></li>
+          <li class="list-group-item" ng-repeat="item in savedListResults"><strong>{{item.name}}</strong> created on <small>{{item.createdOn}}</small> | <a href="" ng-click="viewSavedList(item.trace_id, true, 1500)">View</a> | <a href="completeRep/trace/{{item.trace_id}}" target="_blank">Public Link</a><!-- | <a href="" ng-click="copySavedList(item.trace_id)">Copy To Current List</a>--></li>
         </ul>
       </div>
   
-    </div>-->
+    </div>
   </div>

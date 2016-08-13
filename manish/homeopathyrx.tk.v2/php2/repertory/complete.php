@@ -15,7 +15,7 @@ try {
 switch ($action) {
   case 'getAllChapters':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=getAllChapters
-    $query = 'select * from consultl_homeopathy.complete_repertory where chapter = 0 order by id';
+    $query = 'select * from '.repertory_Complete::$tableCompleteRepertory.' where chapter = 0 order by id';
     $results = $Models_General->fetchAll($query, array(), 0);
     $record['data'] = $results;
     break;
@@ -64,50 +64,26 @@ switch ($action) {
     //parse the content 
     $symptoms = $content['symptoms'];
     $remedies = $content['remedies'];
+    $uid = !empty($content['uid']) ? $content['uid'] : null;
     $tmp = explode(';', $symptoms);
     
     $chapter = $tmp[0];
     
     
     $data = array();
-    $data['symptom'] = $tmp[(count($tmp) - 1)];
+    //$data['symptom'] = $tmp[(count($tmp) - 1)];
     $data['path'] = trim(strtolower($symptoms));
     $data['path_md5'] = md5($data['path']);
-    $data['parent'] = null;
-    $data['parentMd5'] = null;
+    //$data['parent'] = null;
+    //$data['parentMd5'] = null;
     
-    $query = 'select * from consultl_homeopathy.complete_repertory where path_md5 = ?';
-    $results = $Models_General->fetchRow($query, array($data['path_md5']), 0);
-    if (!empty($results)) {
-      throw new Exception('symptom already present');  
-    }
-    
-    if (!empty($tmp)) {
-      $tmp2 = array();
-      //finding parent
-      $max = count($tmp) - 2;
-      foreach ($tmp as $k => $v) {
-        if ($k > $max) break;
-        array_push($tmp2, $v);
-      }
-      if (!empty($tmp2)) {
-        $data['parent'] = trim(strtolower(implode(';', $tmp2)));
-      }
-      if (!empty($data['parent'])) {
-        $data['parentMd5'] = md5($data['parent']);
-      }
-    }
-    
-    $query = 'select * from consultl_homeopathy.complete_repertory where path = ?';
-    $chapterResults = $Models_General->fetchRow($query, array($chapter), 3000);
-    
-    $data['chapter'] = !empty($chapterResults['id']) ? $chapterResults['id'] : 1000;
+    //remedies
     $data['remedies'] = null;
     $rem = array();
     if (!empty($remedies)) {
-      $tmp = explode(' ', $remedies);
-      if (!empty($tmp)) {
-        foreach ($tmp as $k => $v) {
+      $tmpRemedies = explode(' ', $remedies);
+      if (!empty($tmpRemedies)) {
+        foreach ($tmpRemedies as $k => $v) {
           if (empty($v)) continue;
           
           $regexp = '^(.*)\((.*)\)$';
@@ -122,7 +98,46 @@ switch ($action) {
       
       $data['remedies'] = json_encode($rem);
     }
-    $res = $Models_General->addDetails('consultl_homeopathy.complete_repertory', $data);
+    //remedies
+    $query = 'select * from '.repertory_Complete::$tableCompleteRepertory.' where path_md5 = ?';
+    $results = $Models_General->fetchRow($query, array($data['path_md5']), 0);
+
+    if (!empty($results)) {
+      if (!empty($data['remedies'])) {
+        $d = array();
+        $d['update_uid'] = $uid;
+        $d['updated_dt'] = date('Y-m-d H:i:s');
+        $d['remedies'] = $data['remedies'];
+        $d['remedies_backup'] = $results['remedies'];
+        $where = sprintf('id=%s', GetSQLValueString($results['id'], 'int'));
+        $res = $Models_General->updateDetails(''.repertory_Complete::$tableCompleteRepertory.'', $d, $where);
+      }
+      throw new Exception('symptom already present');  
+    }
+    
+    /*if (!empty($tmp)) {
+      $tmp2 = array();
+      //finding parent
+      $max = count($tmp) - 2;
+      foreach ($tmp as $k => $v) {
+        if ($k > $max) break;
+        array_push($tmp2, $v);
+      }
+      if (!empty($tmp2)) {
+        $data['parent'] = trim(strtolower(implode(';', $tmp2)));
+      }
+      if (!empty($data['parent'])) {
+        $data['parentMd5'] = md5($data['parent']);
+      }
+    }*/
+    
+    $query = 'select * from '.repertory_Complete::$tableCompleteRepertory.' where path = ?';
+    $chapterResults = $Models_General->fetchRow($query, array($chapter), 3000);
+    
+    $data['chapter'] = !empty($chapterResults['id']) ? $chapterResults['id'] : 0;
+    $data['updated_dt'] = date('Y-m-d H:i:s');
+    $data['uid'] = $uid;
+    $res = $Models_General->addDetails(repertory_Complete::$tableCompleteRepertory, $data);
     $record['data'] = $data;
     $record['result'] = $res;
     break;
@@ -132,7 +147,7 @@ switch ($action) {
     if (empty($_GET['uid'])) {
       throw new Exception('missing uid');  
     }
-    $query = 'select * from consultl_homeopathy.my_complete_repertory as m LEFT JOIN consultl_homeopathy.complete_repertory
+    $query = 'select * from consultl_homeopathy.my_complete_repertory as m LEFT JOIN '.repertory_Complete::$tableCompleteRepertory.'
  as r ON m.id = r.id WHERE m.uid = ?';
     $results = $Models_General->fetchAll($query, array($_GET['uid']), $_GET['cacheTime']);
     if (!empty($results)) {
@@ -249,7 +264,7 @@ switch ($action) {
       throw new Exception('missing trace_id');  
     }
     $ct = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : 1500;
-    $query = 'select * from consultl_homeopathy.save_complete_repertory as m LEFT JOIN consultl_homeopathy.complete_repertory
+    $query = 'select * from consultl_homeopathy.save_complete_repertory as m LEFT JOIN '.repertory_Complete::$tableCompleteRepertory.'
  as r ON m.id = r.id WHERE m.trace_id = ?';
     $results = $Models_General->fetchAll($query, array($_GET['trace_id']), $ct);
     if (!empty($results)) {
