@@ -9,7 +9,9 @@ class App_base
     {
         $this->_connMain = $c;
         $this->_connMain->SetFetchMode(ADODB_FETCH_ASSOC);
-        //$this->_connMain->debug = true;
+        if (isset($_GET['debug'])) {
+          $this->_connMain->debug = true;
+        }
     }
 
     public function qstr($value)

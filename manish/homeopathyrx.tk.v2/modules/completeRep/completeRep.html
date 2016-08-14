@@ -15,40 +15,42 @@
     <div class="col-md-12">
       <h3>View Symptoms</h3>
       <form ng-submit="pagNextPrev(0)">
-          <div class="form-group">
-              <label for="keyword">Keyword</label>
-              <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
-          </div>
-          <button type="submit" class="btn btn-default">Search</button>
-          <p ng-if="frm.loading"><img src="img/loading.gif"></p>
-          <div class="alert alert-warning" role="alert" ng-if="frm.resultStatus" style="margin-top:20px;">
-            {{frm.resultStatus}}
-          </div>
+      <div class="form-group">
+          <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+      <p ng-if="frm.loading"><img src="img/loading.gif"></p>
+      <div class="alert alert-warning" role="alert" ng-if="frm.resultStatus" style="margin-top:20px;">
+        {{frm.resultStatus}}
+      </div>
       </form>
+          
+          
+          
       <br><br>
-      <div ng-if="records">
+      <div ng-if="data.totalRows > 0">
           <!-- start -->
-          <ul class="media-list">
-            <li class="media" ng-repeat="val in records">
-              <div class="media-left"></div>
-              <div class="media-body">
-                <h4 class="media-heading">{{val.path}} 
-                  <span ng-if="val.remedies">({{val.remedies.length}}) (<strong>Intensity:</strong> <a href="" ng-click="addsymSpecific(val, 4)">4</a> | <a href="" ng-click="addsymSpecific(val, 3)">3</a> | <a href="" ng-click="addsymSpecific(val, 2)">2</a> | <a href="" ng-click="addsymSpecific(val, 1)">1</a>)</span>
-                  <a name="{{val.id}}"></a>
-                </h4>
-                <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
-              </div>
-            </li>
-            
-            
-            <li class="animate-repeat" ng-if="results.length == 0">
-              <strong>No results found...</strong>
-            </li>
-          </ul>
+          <div ng-repeat="(group, recs) in recordsGroup">
+            <h3>{{group}}</h3>
+            <ul class="media-list">
+              <li class="media" ng-repeat="val in recs">
+                <div class="media-left"></div>
+                <div class="media-body">
+                  <h4 class="media-heading">{{val.path}} 
+                    <span ng-if="val.remedies">({{val.remedies.length}}) (<strong>Intensity:</strong> <a href="" ng-click="addsymSpecific(val, 4)">4</a> | <a href="" ng-click="addsymSpecific(val, 3)">3</a> | <a href="" ng-click="addsymSpecific(val, 2)">2</a> | <a href="" ng-click="addsymSpecific(val, 1)">1</a>)</span>
+                    <a name="{{val.id}}"></a>
+                  </h4>
+                  <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
+                </div>
+              </li>
+              
+              
+            </ul>
+          </div>
           <!-- end -->
           
           <!--pagination start -->
-          <div class="col-md-12" ng-if="records.length > 0">
+          <div class="col-md-12" ng-if="data.totalRows > 0">
             <div my-pagination max-rows="{{data.max}}", page-num="{{data.page}}" start-rows="{{data.start}}" total-pages="{{data.totalPages}}" total-rows="{{data.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}" pag-next-prev-dir="pagNextPrev"></div>
           </div>
 

@@ -16,7 +16,7 @@ switch ($action) {
   case 'getAllChapters':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=getAllChapters
     $query = 'select * from '.repertory_Complete::$tableCompleteRepertory.' where chapter = 0 order by id';
-    $results = $Models_General->fetchAll($query, array(), 0);
+    $results = $Models_General->fetchAll($query, array(), TIMEBIG);
     $record['data'] = $results;
     break;
   case 'complete_search':
@@ -27,7 +27,7 @@ switch ($action) {
     $Complete = new repertory_Complete();
     $max = !empty($_GET['max']) ? $_GET['max'] : 100;
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
-    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME24hr;
+    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME4hr;
     $keyword = $_GET['keyword'];
     $data = $Complete->getAllSearch($Models_General, $keyword, $max, $page, $cacheTime);
     $record['data'] = $data;

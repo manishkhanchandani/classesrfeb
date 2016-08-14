@@ -40,6 +40,20 @@ class repertory_Complete
     return $return;
   }
   
+  public function formatData($results)
+  {
+    if (empty($results)) {
+      return $results;  
+    }
+    
+    $results2 = array();
+    foreach ($results as $k => $v) {
+      $results2[ucwords($v['bpath'])][] = $v;
+    }
+    
+    return $results2;
+  }//end formatData
+  
   
   public function getAllSearch($Models_General, $keyword, $max=100, $page=0, $cacheTime=0)
   {
@@ -61,9 +75,9 @@ class repertory_Complete
     $tmp = explode(' ', $keyword);
     $string = '';
     foreach ($tmp as $v) {
-      $string .= ' AND path like '.GetSQLValueString('%'.trim($v).'%', 'text');
+      $string .= ' AND a.path like '.GetSQLValueString('%'.trim($v).'%', 'text');
     }
-    $query_rsView = 'select * from '.self::$tableCompleteRepertory.' WHERE remedies is NOT NULL '.$string.' order by path ASC';
+    $query_rsView = 'select a.*, b.id as bid, b.path as bpath from '.self::$tableCompleteRepertory.' as a LEFT JOIN '.self::$tableCompleteRepertory.' as b ON a.chapter = b.id WHERE a.remedies is NOT NULL '.$string.' order by b.id, a.path ASC';
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
     if (!empty($results)) {
@@ -75,7 +89,7 @@ class repertory_Complete
     }
     $sql1 = $Models_General->sql;
     $return['sql1'] = $sql1;
-    $queryTotalRows = 'select count(*) as cnt from '.self::$tableCompleteRepertory.' WHERE remedies is NOT NULL '.$string;
+    $queryTotalRows = 'select count(*) as cnt from '.self::$tableCompleteRepertory.' as a LEFT JOIN '.self::$tableCompleteRepertory.' as b ON a.chapter = b.id WHERE a.remedies is NOT NULL '.$string;
     $rowCountResult = $Models_General->fetchRow($queryTotalRows, array(), $cacheTime);
     $sql2 = $Models_General->sql;
     $totalRows_rsView = (int) $rowCountResult['cnt'];
@@ -83,7 +97,8 @@ class repertory_Complete
     $return['sql2'] = $sql2;
     $return['totalRows'] = $totalRows_rsView;
     $return['totalPages'] = $totalPages_rsView;
-    $return['results'] = $results;
+    //$return['results'] = $results;
+    $return['resultsGroup'] = $this->formatData($results);
     return $return;
   }
   
@@ -99,7 +114,7 @@ class repertory_Complete
     $return['start'] = $startRow_rsView;
     $return['cacheTime'] = $cacheTime;
     
-    $query_rsView = sprintf('select * from '.self::$tableCompleteRepertory.' WHERE remedies is NOT NULL AND chapter = %s order by path ASC', GetSQLValueString($chapter, 'int'));
+    $query_rsView = sprintf('select a.*, b.id as bid, b.path as bpath from '.self::$tableCompleteRepertory.' as a LEFT JOIN '.self::$tableCompleteRepertory.' as b ON a.chapter = b.id WHERE a.remedies is NOT NULL AND a.chapter = %s order by path ASC', GetSQLValueString($chapter, 'int'));
     $query_limit_rsView = sprintf("%s LIMIT %d, %d", $query_rsView, $startRow_rsView, $maxRows_rsView);
     $results = $Models_General->fetchAll($query_limit_rsView, array(), $cacheTime);
     if (!empty($results)) {
@@ -111,7 +126,7 @@ class repertory_Complete
     }
     $sql1 = $Models_General->sql;
     $return['sql1'] = $sql1;
-    $queryTotalRows = sprintf('select count(*) as cnt from '.self::$tableCompleteRepertory.' WHERE remedies is NOT NULL AND chapter = %s', GetSQLValueString($chapter, 'int'));
+    $queryTotalRows = sprintf('select count(*) as cnt from '.self::$tableCompleteRepertory.' as a LEFT JOIN '.self::$tableCompleteRepertory.' as b ON a.chapter = b.id WHERE a.remedies is NOT NULL AND a.chapter = %s', GetSQLValueString($chapter, 'int'));
     $rowCountResult = $Models_General->fetchRow($queryTotalRows, array(), $cacheTime);
     $sql2 = $Models_General->sql;
     $totalRows_rsView = (int) $rowCountResult['cnt'];
@@ -119,7 +134,8 @@ class repertory_Complete
     $return['sql2'] = $sql2;
     $return['totalRows'] = $totalRows_rsView;
     $return['totalPages'] = $totalPages_rsView;
-    $return['results'] = $results;
+    //$return['results'] = $results;
+    $return['resultsGroup'] = $this->formatData($results);
     return $return;
   }
   

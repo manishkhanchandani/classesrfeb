@@ -20,26 +20,89 @@
           templateUrl: 'directives/mysymptoms/mysymptoms.html',
           link: function(scope, elem, attrs) {
             scope.frm = {};
+            scope.frm.combine = {};
+            scope.frm.cross = {};
+            scope.frm.combineResults = null;
+            scope.frm.crossResults = null;
             
             scope.recordedSymptoms = [];
             scope.recordedRemedies = {};
             scope.recordedType = null;
+            
+            scope.clearResults = function() {
+              scope.frm.combine = {};
+              scope.frm.cross = {};
+              scope.frm.combineResults = null;
+              scope.frm.crossResults = null;
+              successMySymptoms(scope.response, scope.type);
+            };
+            
+            scope.updateResults = function() {
+              if (scope.frm.combine) {
+                scope.frm.combineResults = null;
+                angular.forEach(scope.frm.combine, function(value, key) {
+                  if (!value) return;
+                  if (!scope.frm.combineResults) {
+                    scope.frm.combineResults = {};
+                  }//end if
+                  scope.frm.combineResults[key] = value;
+                });
+              } else {
+                scope.frm.combineResults = null;
+              }
+              
+              
+              if (scope.frm.cross) {
+                scope.frm.crossResults = null;
+                angular.forEach(scope.frm.cross, function(value, key) {
+                  if (!value) return;
+                  if (!scope.frm.crossResults) {
+                    scope.frm.crossResults = {};
+                  }//end if
+                  scope.frm.crossResults[key] = value;
+                });
+              } else {
+                scope.frm.crossResults = null;
+              }
+              
+              //console.log(scope.frm);
+              successMySymptoms(scope.response, scope.type);
+            };
+            
             //show symptom from repertory
             function successMySymptoms(response, type)
             {
+              //console.log('type: ', type, ', response: ', response);
               scope.recordedType = type;
+              scope.response = response;
               scope.recordedSymptoms = [];
               scope.recordedRemedies = {};
+              scope.symptomTotalCount = 0;
+              scope.remedyCount = 0;
               var snapshot = response.data.data;
               //console.log('snapshot: ', snapshot);
               angular.forEach(snapshot, function(value, key) {
+                if (scope.frm.combineResults) {
+                  if (!scope.frm.combineResults[value.id]) {
+                    return;
+                  }
+                }//end if , checking combine results
+                
+                if (scope.frm.crossResults) {
+                  if (!scope.frm.crossResults[value.id]) {
+                    return;
+                  }
+                }//end if , checking cross results
                 //console.log('val is ', value);
+                
+                
                 var intensity = (value.intensity) ? parseInt(value.intensity) : 1;
                 //console.log('intensity is ', intensity);
                 if (value.remedies) {
                   var tmp = {};
                   //console.log('remedies: ', value.remedies);
                   angular.forEach(value.remedies, function(remedyDetails) {
+                    
                     var keyDetails = btoa(remedyDetails.remedy);
                     tmp[keyDetails] = remedyDetails;
                     //console.log('sl ', keyDetails, ', ', remedyDetails, ', ', remedyDetails.remedy, ', ', remedyDetails.points);
@@ -47,19 +110,38 @@
                       scope.recordedRemedies[keyDetails] = {};
                       scope.recordedRemedies[keyDetails].remedy = remedyDetails.remedy;
                       scope.recordedRemedies[keyDetails].points = 0;
+                      scope.recordedRemedies[keyDetails].count = 0;
                       scope.recordedRemedies[keyDetails].id = keyDetails;
                     }
                     var points = (parseFloat(remedyDetails.points) * intensity);
                     tmp[keyDetails].points = points;
                     scope.recordedRemedies[keyDetails].points = scope.recordedRemedies[keyDetails].points + points;
+                    scope.recordedRemedies[keyDetails].count++;
                     //console.log('det: ', keyDetails, ', remedydetails: ', scope.recordedRemedies[keyDetails]);
                   });
                   value.remedies = tmp;
                 }
                 scope.recordedSymptoms.push(value);
               });
-              console.log('sym: ', scope.recordedSymptoms);
-              console.log('rem: ', scope.recordedRemedies);
+              
+              scope.symptomTotalCount = scope.recordedSymptoms.length;
+              angular.forEach(scope.recordedRemedies, function(value, key) {
+                scope.recordedRemedies[key].show = false;
+                if (!scope.frm.crossResults) {
+                  scope.recordedRemedies[key].show = true;
+                  scope.remedyCount++;
+                  return;
+                }
+                
+                if (scope.symptomTotalCount === value.count) {
+                  scope.recordedRemedies[key].show = true;
+                  scope.remedyCount++;
+                  return;
+                }
+              });
+              //console.log('sym: ', scope.recordedSymptoms);
+              //console.log('rem: ', scope.recordedRemedies);
+              //scope.remedyCount = Object.keys(scope.recordedRemedies).length;
             }
             
             
@@ -73,7 +155,7 @@
             scope.recordedSymptomStatus = '';
             scope.delSym = function(rid, type, trace_id) {
               if (!type) type = 1;
-              console.log('del: ', rid, type, trace_id);
+              //console.log('del: ', rid, type, trace_id);
               scope.recordedSymptomStatus = '';
               if (!scope.userData) return;
               if (type == 1) {
@@ -103,7 +185,7 @@
             //save ends
             
             scope.saveCase = function() {
-              console.log('frim : ', scope.frm);
+              //console.log('frim : ', scope.frm);
               if (scope.recordedSymptoms.length <= 0) return;
               if (!scope.userData) return;
               var tmp = {};
@@ -137,7 +219,7 @@
               dataService.get(url, function(r) { successMySymptoms(r, 3); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
             };
             
-            console.log($routeParams);
+            //console.log($routeParams);
             //Save Case Functionality
             
             
