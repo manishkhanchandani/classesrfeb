@@ -9,7 +9,10 @@ define('TIME4hr', (60*60*4));
 define('TIME8hr', (60*60*8));
 define('TIME16hr', (60*60*16));
 define('TIME24hr', (60*60*24));
+define('TIMEWEEK', (60*60*24*7));
+define('TIMEMONTH', (60*60*24*30));
 define('TIMEBIG', (60*60*24*365));
+define('TIMEBIGTEN', (60*60*24*365*10));
 
 define('ROOTDIR', dirname(__FILE__));
 

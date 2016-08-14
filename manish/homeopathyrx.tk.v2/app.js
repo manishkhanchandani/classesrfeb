@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.doctors',
   'myApp.patients',
   'myApp.learn',
+  'myApp.mm',
   'firebase',
   'googleLoginModule',
   'paginationModule',

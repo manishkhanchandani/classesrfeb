@@ -48,6 +48,17 @@ class repertory_Complete
     
     $results2 = array();
     foreach ($results as $k => $v) {
+      $tmp = explode(';', $v['path']);
+      $tmp2 = array();
+      if (!empty($tmp)) {
+        $tmp[1] = ucwords($tmp[1]);
+        foreach ($tmp as $k1 => $v1) {
+          if ($k1 === 0) continue;
+          $v1 = trim($v1);
+          $tmp2[] = $v1;
+        }
+        $v['symptom'] = implode('; ', $tmp2);
+      }
       $results2[ucwords($v['bpath'])][] = $v;
     }
     

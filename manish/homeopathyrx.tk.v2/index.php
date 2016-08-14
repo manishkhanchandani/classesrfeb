@@ -66,6 +66,7 @@ $jsVersion = '1.1';
   <script src="modules/doctors/doctors.js"></script>
   <script src="modules/patients/patients.js"></script>
   <script src="modules/learn/learn.js"></script>
+  <script src="modules/mm/mm.js"></script>
   <script>
   
 $(document).on("keypress", 'form', function (e) {

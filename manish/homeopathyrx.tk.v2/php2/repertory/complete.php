@@ -29,7 +29,16 @@ switch ($action) {
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
     $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME4hr;
     $keyword = $_GET['keyword'];
-    $data = $Complete->getAllSearch($Models_General, $keyword, $max, $page, $cacheTime);
+    $string = $keyword.$max.$page;
+    $md5 = md5($string);
+    //if (file_exists('../cacheFiles/'.$md5.'.txt')) {
+      //$tmp = file_get_contents('../cacheFiles/'.$md5.'.txt');
+      //$data = json_decode($tmp, 1);
+    //} else {
+      $data = $Complete->getAllSearch($Models_General, $keyword, $max, $page, $cacheTime);
+      //file_put_contents('../cacheFiles/'.$md5.'.txt', json_encode($data));
+    //}
+    
     $record['data'] = $data;
     break;  
   case 'complete_browse':
