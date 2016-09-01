@@ -37,7 +37,7 @@
                 <div class="media-body">
                   <h4 class="media-heading">{{val.symptom}} 
                     <span ng-if="val.remedies">({{val.remedies.length}}) (<strong>Intensity:</strong> <a href="" ng-click="addsymSpecific(val, 4)">4</a> | <a href="" ng-click="addsymSpecific(val, 3)">3</a> | <a href="" ng-click="addsymSpecific(val, 2)">2</a> | <a href="" ng-click="addsymSpecific(val, 1)">1</a>)</span>
-                    <a name="{{val.id}}"></a>
+                    <a name="{{val.id}}" id="id_{{val.id}}"></a>
                   </h4>
                   <p ng-if="val.remedies"><span ng-repeat="remedy in val.remedies | orderObjectBy: 'remedy'" ng-if="val.remedies" class="points_{{remedy.points}}"><a href="mm/{{remedy.remedy}}" target="_blank">{{remedy.remedy}}</a>, </span></p>
                 </div>
@@ -59,15 +59,19 @@
       </div>
       
       
-      <div ng-if="chapters">
-        <div class="row">
+      <div class="row" ng-if="chapters">
+        <div class="col-md-12">
           <h3>Chapters</h3>
-          <div class="col-md-3" ng-repeat="cha in chapters">
-            <a href="" ng-click="browse(cha.id)">{{cha.path | capitalize:true}}</a>
-          </div>
+        </div>
+        <div class="col-md-3" ng-repeat="cha in chapters">
+          <a href="" ng-click="browse(cha.id, 0)">{{cha.path | capitalize:true}}</a> ({{cha.cnt}})<!-- completeRep/chapter/{{cha.id}}/pg/0 -->
+        </div>
+        <div class="col-md-3">
+          <a href="" ng-click="browse(0, 0)"><strong>All Chapters</strong></a>
         </div>
       </div>
       
+      <div find-my-remedy user-data="userData" chapters="chapters"></div>
       
     </div>
     

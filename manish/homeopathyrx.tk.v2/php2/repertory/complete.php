@@ -12,11 +12,13 @@ try {
     }
   }
   
+  
 switch ($action) {
   case 'getAllChapters':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=getAllChapters
-    $query = 'select * from '.repertory_Complete::$tableCompleteRepertory.' where chapter = 0 order by id';
-    $results = $Models_General->fetchAll($query, array(), TIMEBIG);
+    //$query = 'select * from '.repertory_Complete::$tableCompleteRepertory.' where chapter = 0 order by id';
+    $query = 'select count(b.chapter) cnt, a.* from '.repertory_Complete::$tableCompleteRepertory.' as a LEFT JOIN '.repertory_Complete::$tableCompleteRepertory.' as b ON a.id = b.chapter  where a.chapter = 0 AND b.remedies is not null group by a.id order by a.id';
+    $results = $Models_General->fetchAll($query, array(), TIME4hr);
     $record['data'] = $results;
     break;
   case 'complete_search':
@@ -27,7 +29,7 @@ switch ($action) {
     $Complete = new repertory_Complete();
     $max = !empty($_GET['max']) ? $_GET['max'] : 100;
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
-    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME4hr;
+    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : 10;//TIMESMALL
     $keyword = $_GET['keyword'];
     $string = $keyword.$max.$page;
     $md5 = md5($string);
@@ -43,13 +45,13 @@ switch ($action) {
     break;  
   case 'complete_browse':
     //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_browse&chapter=1&page=0&max=100
-    if (empty($_GET['chapter'])) {
+    if (!isset($_GET['chapter'])) {
       throw new Exception('empty chapter');
     }
     $Complete = new repertory_Complete();
     $max = !empty($_GET['max']) ? $_GET['max'] : 100;
     $page = !empty($_GET['page']) ? $_GET['page'] : 0;
-    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : TIME24hr;
+    $cacheTime = isset($_GET['cacheTime']) ? $_GET['cacheTime'] : 10;//TIMESMALL
     $chapter = $_GET['chapter'];
     $data = $Complete->browseByChapter($Models_General, $chapter, $max, $page, $cacheTime);
     $record['data'] = $data;
@@ -70,10 +72,22 @@ switch ($action) {
     if (empty($content)) {
       throw new Exception('empty content'); 
     }
+  
     //parse the content 
     $symptoms = $content['symptoms'];
     $remedies = $content['remedies'];
     $uid = !empty($content['uid']) ? $content['uid'] : null;
+    //logs
+    $x = array();
+    $x['url'] = $_SERVER['REQUEST_URI'];
+    $x['description'] = json_encode($_POST);
+    $x['content'] = $json;
+    $x['getRequest'] = json_encode($_GET);
+    $x['ip'] = $_SERVER['REMOTE_ADDR'];
+    $x['uid'] = $uid;
+    $res = $Models_General->addDetails('consultl_homeopathy.logs', $x);
+    //logs ends
+    
     $tmp = explode(';', $symptoms);
     
     $chapter = $tmp[0];
@@ -226,6 +240,16 @@ switch ($action) {
     
     $q = 'delete from consultl_homeopathy.my_complete_repertory WHERE rid = ? AND uid = ?';
     $res = $Models_General->deleteDetails($q, array($_GET['rid'], $_GET['uid']));
+    break;
+  
+  case 'complete_repertory_delete_all':
+    //http://homeopathyrx.tk/php2/repertory/complete.php?action=complete_repertory_delete_all&access_token=ya29.CjNBAysntKyp31O4OoS58Y94S9IHvBFrH6CBMAQby_a_8e0zsQkEP4JGCtHqI0ORNrYUmno
+    if (empty($_GET['uid'])) {
+      throw new Exception('missing uid');  
+    }
+    
+    $q = 'delete from consultl_homeopathy.my_complete_repertory WHERE uid = ?';
+    $res = $Models_General->deleteDetails($q, array($_GET['uid']));
     break;
   
   case 'save_complete_repertory':

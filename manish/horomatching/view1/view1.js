@@ -182,14 +182,18 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   };
   
   
-  var stop = $interval(function() {
+  var d = new Date();
+  $scope.matchCurrentVar.curDate = d.getFullYear() + '-' + pad(d.getMonth() + 1, 2) + '-' + pad(d.getDate(), 2) + ' ' + pad(d.getHours(), 2) + ':' + pad(d.getMinutes(), 2) + ':' + pad(d.getSeconds(), 2);
+  
+  /*var stop = $interval(function() {
      var d = new Date();
      $scope.matchCurrentVar.curDate = d.getFullYear() + '-' + pad(d.getMonth() + 1, 2) + '-' + pad(d.getDate(), 2) + ' ' + pad(d.getHours(), 2) + ':' + pad(d.getMinutes(), 2) + ':' + pad(d.getSeconds(), 2);
   }, 1000);
-  
+  */
   
   function matchCurrentSuccess(response) {
     console.log(response);
+    $scope.matchCurrentResultStatus = '';
     if (response.data.success != 1) {
      //show alert 
     }
@@ -202,13 +206,16 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
     console.log('error: ', response);
   }
   
-  $scope.matchCurrent = function() {
+  $scope.matchCurrent = function(details) {
+    $scope.details = details;
+    $scope.matchCurrentResultStatus = 'Loading...';
     var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/api.php?action=continuityLatLng&noOfDays='+$scope.matchCurrentVar.noOfDays+'&from[dob]='+$scope.matchCurrentVar.profileCurrent.year+'-'+pad($scope.matchCurrentVar.profileCurrent.month, 2)+'-'+pad($scope.matchCurrentVar.profileCurrent.day, 2)+'+'+pad($scope.matchCurrentVar.profileCurrent.hour, 2)+':'+pad($scope.matchCurrentVar.profileCurrent.minute, 2)+':00&from[lat]='+$scope.matchCurrentVar.profileCurrent.lat+'&from[lng]='+$scope.matchCurrentVar.profileCurrent.lng+'&to[dob]='+encodeURIComponent($scope.matchCurrentVar.curDate)+'&to[lat]='+$scope.details.components.lat+'&to[lng]='+$scope.details.components.lng;
     dataService.get(url, matchCurrentSuccess, matchCurrentFailure, 1);
   };
   
   
   $scope.setCurrentLocation = function() {
+    return;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var geocoder = new google.maps.Geocoder;

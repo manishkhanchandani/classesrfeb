@@ -11,7 +11,7 @@
     <div class="col-md-12">
       
         <ul class="list-group" ng-if="matchCurrentResult">
-          <li class="list-group-item" ng-repeat="item in matchCurrentResult">
+          <li class="list-group-item horo_{{item.result.points}}" ng-repeat="item in matchCurrentResult">
             <strong>Date:</strong> {{item.date}}
             <br />
             <strong>Points:</strong> {{item.result.points}} (<strong>{{item.result.results}}</strong>)

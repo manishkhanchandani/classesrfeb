@@ -5,6 +5,18 @@ angular.module('myApp.completeRep', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
   
+  
+  .when('/completeRep/chapter/:chapter/pg/:page', {
+    templateUrl: 'modules/completeRep/completeRep.html',
+    controller: 'CompleteRepCtrl'
+  })
+  
+  .when('/completeRep/chapter/:chapter', {
+    templateUrl: 'modules/completeRep/completeRep.html',
+    controller: 'CompleteRepCtrl'
+  })
+  
+  
   .when('/completeRep/p_:page/k_:keyword', {
     templateUrl: 'modules/completeRep/completeRep.html',
     controller: 'CompleteRepCtrl'
@@ -20,11 +32,16 @@ angular.module('myApp.completeRep', ['ngRoute'])
     controller: 'CompleteRepCtrl'
   })
   
-  .when('/completeRep/add', {
+  .when('/completeRep/my', {
+    templateUrl: 'modules/completeRep/completeRepMy.html',
+    controller: 'CompleteRepMyCtrl'
+  })
+  
+  .when('/completeRep/add2', {
     templateUrl: 'modules/completeRep/completeRepAdd.html',
     controller: 'CompleteAddRepCtrl'
   })
-  .when('/completeRep/add/:page', {
+  .when('/completeRep/add2/:page', {
     templateUrl: 'modules/completeRep/completeRepAdd.html',
     controller: 'CompleteAddRepCtrl'
   })
@@ -34,6 +51,11 @@ angular.module('myApp.completeRep', ['ngRoute'])
     controller: 'CompleteTraceCtrl'
   })
   ;
+}])
+
+
+.controller('CompleteRepMyCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
+  
 }])
 
 .controller('CompleteTraceCtrl', ['$scope', '$location', 'dataService', '$routeParams', '$rootScope', function($scope, $location, dataService, $routeParams, $rootScope) {
@@ -93,26 +115,11 @@ angular.module('myApp.completeRep', ['ngRoute'])
     $scope.frm.page = parseInt($routeParams.page);
   }
   $scope.frm.resultStatus = '';
-  if ($routeParams.keyword) {
-    $scope.frm.resultStatus = 'Loading......';
-    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
-    $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + $routeParams.keyword;
-    
-    var keyword = encodeURIComponent($scope.frm.keyword);
-    var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
-    dataService.get(url, function (r) { if (r.data.data.totalRows == 0) {$scope.frm.resultStatus = 'No Result Found. Send email to manishkk74@gmail.com and ask him to add rubrics related to word "' + $scope.frm.keyword + '"'; return}; $scope.frm.resultStatus = ''; $scope.recordsGroup = r.data.data.resultsGroup;  $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
-  } else {
-    //var url = '/php2/repertory/complete.php?action=complete_search&start=0&max=100&page='+$scope.frm.page;
-    //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true); 
-    var url = '/php2/repertory/complete.php?action=getAllChapters';
-    dataService.get(url, function (r) { $scope.chapters = r.data.data;}, function (r) { console.log('failed: ', r)}, true);  
-  }
-  
-  $scope.frm.page = 0;
+  //$scope.frm.page = 0;
   
   $scope.searchRep = function()
   {
-    if (!$scope.frm.keyword && !$scope.frm.chapter) return;
+    if (!$scope.frm.keyword && ($scope.frm.chapter == null)) return;
     //$location.path('/completeRep/p_0/k_' + encodeURIComponent($scope.frm.keyword));
     document.body.scrollTop = 0;
     $scope.frm.loading = true;
@@ -122,7 +129,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
       //$scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + keyword;
       var keyword = encodeURIComponent($scope.frm.keyword);
       var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&max=100&page='+$scope.frm.page;
-    } else if ($scope.frm.chapter) {
+    } else if ($scope.frm.chapter >= 0) {
       var url = 'php2/repertory/complete.php?action=complete_browse&chapter='+$scope.frm.chapter+'&max=25&page='+$scope.frm.page;
       console.log(url);
     }
@@ -141,18 +148,46 @@ angular.module('myApp.completeRep', ['ngRoute'])
   
   $scope.pagNextPrev = function(page)
   {
-    if (!$scope.frm.keyword && !$scope.frm.chapter) return;
+    if (!$scope.frm.keyword && ($scope.frm.chapter == null)) return;
+    console.log('page: ', page);
     $scope.frm.page = page;
     $scope.searchRep();
   };
   
-  $scope.browse = function(chapter)
+  $scope.browse = function(chapter, page)
   {
     $scope.frm.keyword = '';
     $scope.frm.chapter = chapter;
-    $scope.frm.page = 0;
+    $scope.frm.page = page;
     $scope.searchRep();
+    return false;
   };
+  
+  console.log($routeParams);
+  if ($routeParams.chapter) {
+    var pg = 0;
+    if ($routeParams.page) {
+      pg = parseInt($routeParams.page);  
+    }
+    $scope.browse($routeParams.chapter, pg);
+  } else if ($routeParams.keyword) {
+    $scope.frm.resultStatus = 'Loading......';
+    $scope.frm.keyword = decodeURIComponent($routeParams.keyword);
+    $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + $routeParams.keyword;
+    
+    var keyword = encodeURIComponent($scope.frm.keyword);
+    var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
+    dataService.get(url, function (r) { if (r.data.data.totalRows == 0) {$scope.frm.resultStatus = 'No Result Found. Send email to manishkk74@gmail.com and ask him to add rubrics related to word "' + $scope.frm.keyword + '"'; return}; $scope.frm.resultStatus = ''; $scope.recordsGroup = r.data.data.resultsGroup;  $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
+  } else {
+    //var url = '/php2/repertory/complete.php?action=complete_search&start=0&max=100&page='+$scope.frm.page;
+    //dataService.get(url, function (r) { $scope.records = r.data.data.results; $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true); 
+    
+  }
+  
+  var url = '/php2/repertory/complete.php?action=getAllChapters';
+  dataService.get(url, function (r) { $scope.chapters = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
+  
+  
   
   /*
   //delete my symptoms
@@ -290,7 +325,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     if ($routeParams.page) {
       $scope.frm.page = parseInt($routeParams.page);
     }
-    var url = '/php2/repertory/complete.php?action=complete_getAll&start=0&max=25&cacheTime=0&page='+$scope.frm.page;
+    var url = '/php2/repertory/complete.php?action=complete_getAll&start=0&max=5&cacheTime=0&page='+$scope.frm.page;
     dataService.get(url, function (r) { console.log('success: ', r); $scope.records = r.data.data.results; /*console.log($scope.records); */}, function (r) { console.log('failed: ', r)});
   };
   $scope.viewSymptoms();

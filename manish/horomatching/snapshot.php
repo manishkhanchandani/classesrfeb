@@ -70,6 +70,7 @@ if (!empty($_GET['q'])) {
 <meta property="og:url" content="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>" />
 <meta property="og:description" content="<?php echo $data['description']; ?>" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="/app.css">
 
 <meta name="description" content="<?php echo $data['description']; ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,7 +94,7 @@ if (!empty($_GET['q'])) {
       
         <ul class="list-group">
           <?php foreach ($data['results'] as $v) { ?>
-          <li class="list-group-item">
+          <li class="list-group-item horo_<?php echo $v['result']['points']; ?>">
             <strong>Date:</strong> <?php echo $v['date']; ?>
             <br />
             <strong>Points:</strong> <?php echo $v['result']['points']; ?> (<strong><?php echo $v['result']['results']; ?></strong>)

@@ -24,10 +24,19 @@
             scope.frm.cross = {};
             scope.frm.combineResults = null;
             scope.frm.crossResults = null;
+            scope.sorting = 'points';
             
             scope.recordedSymptoms = [];
             scope.recordedRemedies = {};
             scope.recordedType = null;
+            
+            scope.sortByPoints = function() {
+              scope.sorting = 'points';
+            };
+            
+            scope.sortByCount = function() {
+              scope.sorting = 'count';
+            };
             
             scope.clearResults = function() {
               scope.frm.combine = {};
@@ -69,18 +78,32 @@
               successMySymptoms(scope.response, scope.type);
             };
             
+            console.log(scope.userData);
             //show symptom from repertory
             function successMySymptoms(response, type)
             {
               //console.log('type: ', type, ', response: ', response);
               scope.recordedType = type;
-              scope.response = response;
+              scope.response = angular.copy(response);
               scope.recordedSymptoms = [];
               scope.recordedRemedies = {};
               scope.symptomTotalCount = 0;
               scope.remedyCount = 0;
               var snapshot = response.data.data;
               //console.log('snapshot: ', snapshot);
+              //clearing the values
+              angular.forEach(snapshot, function(value, key) {
+                if (value.remedies) {
+                  angular.forEach(value.remedies, function(remedyDetails) {
+                    var keyDetails = btoa(remedyDetails.remedy);
+                    scope.recordedRemedies[keyDetails] = {};
+                    scope.recordedRemedies[keyDetails].remedy = remedyDetails.remedy;
+                    scope.recordedRemedies[keyDetails].points = 0;
+                    scope.recordedRemedies[keyDetails].count = 0;
+                    scope.recordedRemedies[keyDetails].id = keyDetails;
+                  });
+                }
+              });
               angular.forEach(snapshot, function(value, key) {
                 if (scope.frm.combineResults) {
                   if (!scope.frm.combineResults[value.id]) {
@@ -153,6 +176,22 @@
             
             
             scope.recordedSymptomStatus = '';
+            
+            scope.deleteAllByTraceId = function(trace_id) {
+              console.log('trace id: ', trace_id);
+              var a = confirm('do you want to delete this saved list?');
+              if (!a) return;
+              var url = 'php2/repertory/complete.php?action=deleteSavedCase&trace_id='+trace_id+'&access_token='+scope.userData.access_token;
+              dataService.get(url, function(r) { scope.getSavedCases(scope.userData.id, 0, false); }, function(r) {console.log('err deleteAll: ', r);}, false);
+            };
+            
+            scope.deleteAll = function() {
+              var a = confirm('do you want to delete all symptoms?');
+              if (!a) return;
+              var url = '/php2/repertory/complete.php?action=complete_repertory_delete_all&access_token='+scope.userData.access_token;
+              dataService.get(url, function(r) { getAllMySymptoms(scope.userData.id, 0, false); }, function(r) {console.log('err deleteAll: ', r);}, false);
+            };
+            
             scope.delSym = function(rid, type, trace_id) {
               if (!type) type = 1;
               //console.log('del: ', rid, type, trace_id);

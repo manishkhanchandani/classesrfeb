@@ -15,7 +15,8 @@ angular.module('myApp', [
   'firebase',
   'googleLoginModule',
   'paginationModule',
-  'mySymptomsModule'
+  'mySymptomsModule',
+  'findmyremedyModule'
 ])
 
 .constant('configs', {

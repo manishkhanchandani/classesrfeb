@@ -27,7 +27,20 @@
     </div>
     
     
-    
+    <div class="row">
+      <div class="col-md-12">
+      <h3>All Profile</h3>
+      </div>
+    </div>
+      <div class="alert alert-info" role="alert" ng-if="allProfilesCount <= 0">
+        No Profiles in your list.
+      </div>
+      <ul class="list-group" ng-if="allProfilesCount > 0">
+        <li class="list-group-item" ng-repeat="item in allProfiles">
+        <strong>{{item.name}}</strong><br>{{item.location}}<br>
+          {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
+        </li>
+      </ul>
 
   </div>
   <div class="col-md-4">
@@ -85,7 +98,7 @@
     </div>
     <div class="row" ng-if="allProfilesCount > 0">
       <div class="col-md-12">
-        <form ng-submit="matchCurrent()">
+        <form ng-submit="matchCurrent(details)">
         <div class="form-group">
             <label for="profileCurrent">Profile Of User</label>
             <select ng-model="matchCurrentVar.profileCurrent" id="profileCurrent" class="form-control" ng-options="item.name for item in allProfiles" required>
@@ -108,13 +121,16 @@
       </div>
     </div>
     <div class="row" ng-if="allProfilesCount > 0">
+      <div class="col-md-12" ng-if="matchCurrentResultStatus">
+        {{matchCurrentResultStatus}}
+      </div>
       <div class="col-md-12">
         <ul class="list-group" ng-if="matchCurrentResult">
           
           <li class="list-group-item"><a href="" ng-click="MM_openBrWindow('newrt','status=yes,scrollbars=yes,resizable=yes,width=400,height=300')">Share This Link</a> 
           </li>
-          <li class="list-group-item" ng-repeat="item in matchCurrentResult">
-            <strong>Date:</strong> {{item.date}}
+          <li class="list-group-item horo_{{item.result.points}}" ng-repeat="item in matchCurrentResult">
+            <strong>Date:</strong> {{item.formatted}}
             <br />
             <strong>Points:</strong> {{item.result.points}} (<strong>{{item.result.results}}</strong>)
           </li>
@@ -126,20 +142,7 @@
     
     
     
-    <div class="row">
-      <div class="col-md-12">
-      <h3>All Profile</h3>
-      </div>
-    </div>
-      <div class="alert alert-info" role="alert" ng-if="allProfilesCount <= 0">
-        No Profiles in your list.
-      </div>
-      <ul class="list-group" ng-if="allProfilesCount > 0">
-        <li class="list-group-item" ng-repeat="item in allProfiles">
-        <strong>{{item.name}}</strong><br>{{item.location}}<br>
-          {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
-        </li>
-      </ul>
+    
       
       
       

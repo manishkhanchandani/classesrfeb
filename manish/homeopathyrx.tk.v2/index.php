@@ -58,6 +58,9 @@ $jsVersion = '1.1';
 <!-- mysymptoms module -->
 <script type="text/javascript" src="directives/mysymptoms/mysymptoms.js?v=1.1"></script>
 <!-- mysymptoms module ends -->
+<!-- findmyremedyModule module -->
+<script type="text/javascript" src="directives/findmyremedy/findmyremedy.js?v=1.1"></script>
+<!-- findmyremedyModule module ends -->
 
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
@@ -98,11 +101,20 @@ $(document).on("keypress", 'form', function (e) {
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="learn">Learn Classical Homeopathy</a></li>
+        <li><a href="learn">Classical Homeopathy</a></li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Diseases <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="learn/diseaseAsthma">Asthma</a></li>
+            <li><a href="learn/diseaseAvascularNecrosis">Avascular Necrosis</a></li>
+            <li><a href="learn/diseaseMuscularDystrophy">Muscular Dystrophy</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Repertory <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="completeRep">Symptoms / Analysis</a></li>
+            <li><a href="patients/case">Case Taking Form</a></li>
           </ul>
         </li>
         <!--<li class="dropdown">

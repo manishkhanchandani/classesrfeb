@@ -5,3 +5,33 @@ body {
 .alert-success {
   margin-top: 20px;
 }
+
+.horo_verybad, .horo_1, .horo_2, .horo_3, .horo_4, .horo_5, .horo_6, .horo_7, .horo_8, .horo_9, .horo_10 {
+    color: red;
+    font-style: italic;  
+    font-weight: bold;  
+}
+
+.horo_bad, .horo_11, .horo_12, .horo_13, .horo_14, .horo_15, .horo_16, .horo_17 {
+    color: #3805CB;
+    font-style: italic;  
+    font-weight: bold;  
+}
+
+
+.horo_normal, .horo_18, .horo_19, .horo_20, .horo_21, .horo_22, .horo_23, .horo_24 {
+  color: black;
+}
+
+horo_good, .horo_25, .horo_26, .horo_27, .horo_28, .horo_29 {
+  color: #EA090D;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+horo_verygood, .horo_30, .horo_31, .horo_32, .horo_33, .horo_34, .horo_35, .horo_36 {
+  
+  color: #014B15;
+  font-weight: bold;
+  text-transform: uppercase;
+}
