@@ -63,10 +63,10 @@
         <div class="col-md-12">
           <h3>Chapters</h3>
         </div>
-        <div class="col-md-3" ng-repeat="cha in chapters">
+        <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="cha in chapters">
           <a href="" ng-click="browse(cha.id, 0)">{{cha.path | capitalize:true}}</a> ({{cha.cnt}})<!-- completeRep/chapter/{{cha.id}}/pg/0 -->
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-3">
           <a href="" ng-click="browse(0, 0)"><strong>All Chapters</strong></a>
         </div>
       </div>

@@ -3,29 +3,29 @@
     
     
     
-      <div class="table-responsive" style="overflow:auto;">
+      <div id="exportable" class="table-responsive" style="overflow:auto;">
             <table class="table table-bordered table-striped">
             <caption>Repertory</caption>
                 <thead class="thead-inverse">
                     <tr>
-                      <th>Combine</th>
-                      <th>Cross</th>
+                      <th ng-if="recordedType != 3">Combine</th>
+                      <th ng-if="recordedType != 3">Cross</th>
                         <th>Symptom</th>
                         <th class="tblRemedies" ng-repeat="remedy in recordedRemedies | orderObjectBy: sorting : true" ng-if="remedy.show"><small>{{$index + 1}}. {{remedy.remedy}}<br>({{remedy.count}} / {{symptomTotalCount}})</small></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="(k, syms) in recordedSymptoms">
-                      <td scope="row" class="combine"><input type="checkbox" ng-model="frm.combine[syms.id]"></td>
-                      <td scope="row" class="cross"><input type="checkbox" ng-model="frm.cross[syms.id]"></td>
+                      <td ng-if="recordedType != 3" scope="row" class="combine"><input type="checkbox" ng-model="frm.combine[syms.id]"></td>
+                      <td ng-if="recordedType != 3" scope="row" class="cross"><input type="checkbox" ng-model="frm.cross[syms.id]"></td>
                         <td scope="row" class="tblSymptoms">{{k + 1}}. {{syms.path}}<strong> x {{syms.intensity}}</strong> <span ng-if="recordedType != 3">(<a href="" ng-click="delSym(syms.rid, recordedType, syms.trace_id)">-</a>)</span></td>
                         <td ng-repeat="remedy in recordedRemedies | orderObjectBy: sorting : true" ng-if="remedy.show"><span ng-if="syms.remedies[remedy.id]">{{syms.remedies[remedy.id].points}}</span>&nbsp;</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
-                      <td scope="row">&nbsp;</td>
-                      <td scope="row">&nbsp;</td>
+                      <td ng-if="recordedType != 3" scope="row">&nbsp;</td>
+                      <td ng-if="recordedType != 3" scope="row">&nbsp;</td>
                         <td scope="row"><strong>Total:</strong> </td>
                         <td ng-repeat="remedy in recordedRemedies | orderObjectBy: sorting : true" ng-if="remedy.show">{{remedy.points}}</td>
                     </tr>
@@ -34,12 +34,15 @@
             <div class="row"><div class="col-md-12">
               <strong>Symptoms:</strong> {{symptomTotalCount}}, <strong>Remedies:</strong> {{remedyCount}}
             </div></div>
+            <div ng-if="recordedType != 3">
             <button type="button" class="btn btn-default btn-sm" ng-click="updateResults()">Update Results</button>
             <button type="button" class="btn btn-default btn-sm" ng-click="clearResults()">Clear Results</button>
             <button type="button" class="btn btn-default btn-sm" ng-click="deleteAll()">Delete All</button>
             <button type="button" class="btn btn-default btn-sm" ng-click="sortByPoints()">Sort By Points</button>
             <button type="button" class="btn btn-default btn-sm" ng-click="sortByCount()">Sort By Count</button>
+            </div>
         </div>
+        <button type="button" class="btn btn-default btn-sm" ng-click="exportData(trace_id)">Export to xls</button>
         
         
         

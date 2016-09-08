@@ -264,11 +264,18 @@
             
             //get data
             if ($routeParams.trace_id) {
+              scope.trace_id = $routeParams.trace_id;
               scope.recordedType = 3;
               scope.viewListBasedOnUrl($routeParams.trace_id, true, 30);
             } else if (scope.userData) {
               getAllMySymptoms(scope.userData.id, 30, true);
             }
+            scope.exportData = function(nm) {
+                var blob = new Blob([document.getElementById('exportable').innerHTML], {
+                    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"
+                });
+                saveAs(blob, nm+".xls");
+            };
             
             //broadcast
             $rootScope.$on("getAllMySymptoms", function(event, args){

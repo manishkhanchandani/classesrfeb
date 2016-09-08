@@ -20,6 +20,7 @@
           },
           templateUrl: 'directives/findmyremedy/findmyremedy.html',
           link: function(scope, elem, attrs) {
+            return;
             scope.frm = {};
             scope.frm.step1 = true;
             scope.frm.input = {};
