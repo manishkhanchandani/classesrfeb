@@ -61,7 +61,7 @@ angular.module('myApp', [
                   <li class="dropdown-header"><?php echo $_SESSION['location']['ipDetails']['ip']; ?></li>
                   <li role="separator" class="divider"></li>
                   <?php foreach ($_SESSION['location']['nearby'] as $nearby) { ?>
-                  <li><a href=""><?php echo $nearby['name']; ?> (<?php echo $nearby['distance'];?> miles)</a></li>
+                  <li><a href="location\<?php echo $nearby['name']; ?>\<?php echo $nearby['latitude']; ?>\<?php echo $nearby['longitude']; ?>"><?php echo $nearby['name']; ?> (<?php echo $nearby['distance']; ?> miles)</a></li>
                   <?php } ?>
               </ul>
             </li>

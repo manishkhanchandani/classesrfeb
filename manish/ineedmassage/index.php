@@ -77,6 +77,7 @@ function log_warn($message, $key='')
 }
 
 include_once('functions.php');
+include_once('general.php');
 
 if (isset($_GET['clearSession'])) {
   $_SESSION['location'] = '';
@@ -98,12 +99,11 @@ if (empty($_SESSION['location']['nearby'])) {
   }
 }
 log_log($_SESSION['location']);
-include_once('general.php');
-
 $modelGeneral = new Models_General($connMainAdodb);
 
 log_log(__FILE__.' on line number '.__LINE__);
-
+pr($_GET);
+exit;
 
 $defaultPage = 'home';
 $page = $defaultPage;
