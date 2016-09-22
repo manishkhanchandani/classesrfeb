@@ -92,3 +92,43 @@ if (!function_exists('regexp')) {
 	}
 }
 
+
+function postJson($uri, $postFields) {
+		$https = 0;
+		if (substr($uri, 0, 5) === 'https') {
+			$https = 1;
+		}
+
+		$ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $uri);  
+    if (is_array($postFields)) {
+        $postFields = json_encode($postFields);    
+    }
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST"); 
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields );
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(                          
+        'Content-Type: application/json',                                
+        'Content-Length: ' . strlen($postFields))                    
+    );
+		curl_setopt($ch, CURLOPT_COOKIEFILE, COOKIE_FILE_PATH);
+		curl_setopt($ch, CURLOPT_COOKIEJAR,COOKIE_FILE_PATH);
+		if (!empty($https)) {
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		}                                                                                                                      $return = array();
+    $return['uri'] = $uri;
+    $return['request'] = $postFields;
+		$return['result'] = curl_exec ( $ch );
+
+		$return['http_code'] = curl_getinfo ( $ch, CURLINFO_HTTP_CODE );
+		$return['errNo'] = curl_errno($ch);
+		$return['errMsg'] = curl_error($ch);
+		$return['returnheaders'] = curl_getinfo($ch);
+
+
+		curl_close ( $ch );
+
+		return $return;
+}

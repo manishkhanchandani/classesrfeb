@@ -17,7 +17,24 @@
 <script src="js/jquery-migrate-1.2.1.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
+<!-- google place and autocomplete-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs&libraries=places"></script>
+<script>
+  
+$(document).on("keypress", 'form', function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        var str = e.target.className;
+        var n = str.indexOf("addressBox");
+        if (n === -1) {
+          return true;
+        } else {
+          return false;
+        }
+        return true;
+    }
+});
+  </script>
 <script>
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
@@ -46,9 +63,9 @@ angular.module('myApp', [
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View1 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="view1/view1">View1</a></li>
+                <li><a href="admin/new">New Profile</a></li>
               </ul>
             </li>
           </ul>

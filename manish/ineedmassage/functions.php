@@ -132,4 +132,10 @@ function btstots($bts)
     return $bts / 1000;
 }
 
-?>
+function is_login()
+{
+  if (empty($_SESSION['user'])) {
+    header("Location: ".HTTPPATH.'users/login');
+    exit;
+  }
+}
