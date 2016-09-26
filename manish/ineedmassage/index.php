@@ -17,8 +17,9 @@ define('SITENAME', ucwords('MKGalaxy.com'));
 define('ROOTDOMAIN', $host);
 define('HTTPPATH', 'http://'.$host.$dir);
 define('ROOTHTTPPATH', $dir);
-define('APIDIR', $dir.'/api');
+define('APIDIR', $dir.'api');
 define('APIHTTPPATH', 'http://'.$host.APIDIR);
+
 define('ADMIN_EMAIL', 'mkgxy@mkgalaxy.com');
 define('LOGINURL', 'users/login');
 define('PLACESAPIKEY', 'AIzaSyBvXqWIcqyTVRgjXsVjDbdORcNaXHVjtOw');
