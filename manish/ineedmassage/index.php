@@ -146,6 +146,7 @@ if (empty($_SESSION['location']['nearby'])) {
     $_SESSION['location']['nearby'] = !empty($tmp['data']) ? $tmp['data'] : '';
   }
 }
+
 log_log($_SESSION['location']);
 $modelGeneral = new Models_General($connMainAdodb);
 

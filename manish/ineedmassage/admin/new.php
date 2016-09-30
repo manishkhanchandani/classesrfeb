@@ -29,7 +29,6 @@ if (!empty($_POST)) {
     $data['urls'] = json_encode(array_filter($_POST['urls']));
     $data['id'] = guid();
     $data['uid'] = $_SESSION['user']['id'];
-    $data['email'] = $_SESSION['user']['email'];
     $data['created_on'] = date('Y-m-d H:i:s');
     postNewProfile($data);
   } catch (Exception $e) {
@@ -167,9 +166,9 @@ if (!empty($_POST)) {
                 <input type="hidden" class="field" id="administrative_area_level_2">
                 <input type="hidden" class="field" id="postal_code">
                 <input type="hidden" class="field" id="country">
-                <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($_POST['lat']) ? $_POST['name'] : ''; ?>">
-                <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($_POST['lng']) ? $_POST['name'] : ''; ?>">
-                <input type="hidden" class="field" id="address" name="address" value="<?php echo isset($_POST['address']) ? $_POST['name'] : ''; ?>">
+                <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($_POST['lat']) ? $_POST['lat'] : ''; ?>">
+                <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($_POST['lng']) ? $_POST['lng'] : ''; ?>">
+                <input type="hidden" class="field" id="address" name="address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : ''; ?>">
                 <input type="submit" class="btn btn-default" value="Submit">
             </form>
         </div>
