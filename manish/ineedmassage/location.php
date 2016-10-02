@@ -1,11 +1,14 @@
 <?php 
 log_log(__FILE__.' on line number '.__LINE__);
-function getMassageList($max=100, $start=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $cacheTime=900) {
+function getMassageList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $cacheTime=900) {
   global $modelGeneral;
   $return = array();
   $maxRows_rsView = (int) $max;
-  $startRow_rsView = (int) $start;
-  $pageNum_rsView = floor($startRow_rsView / $maxRows_rsView);
+  $startRow_rsView = (int) $page * $maxRows_rsView;
+  $pageNum_rsView = $page;
+  //$maxRows_rsView = (int) $max;
+  //$startRow_rsView = (int) $start;
+  //$pageNum_rsView = floor($startRow_rsView / $maxRows_rsView);
   $return['max'] = $maxRows_rsView;
   $return['page'] = $pageNum_rsView;
   $return['start'] = $startRow_rsView;
@@ -43,9 +46,11 @@ function getMassageList($max=100, $start=0, $keyword='', $lat='', $lon='', $radi
   $data = $modelGeneral->fetchAll($sql_limit_rsView, array(), $cacheTime);
 
   $queryTotalRows = 'select count(*) as cnt '.$sql;
-  $rowCountResult = $modelGeneral->fetchRow($queryTotalRows, array(), $cacheTime);
+  if (empty($totalRows_rsView)) {
+    $rowCountResult = $modelGeneral->fetchRow($queryTotalRows, array(), $cacheTime);
+    $totalRows_rsView = (int) $rowCountResult['cnt'];
+  }
   $sql2 = $queryTotalRows;
-  $totalRows_rsView = (int) $rowCountResult['cnt'];
   $totalPages_rsView = ceil($totalRows_rsView/$maxRows_rsView)-1;
   $return['totalRows'] = $totalRows_rsView;
   $return['totalPages'] = $totalPages_rsView;
@@ -76,7 +81,11 @@ if (!empty($_GET['q']['lng'])) {
  $_GET['lng'] = $lng;
 } else if (!empty($_GET['lng'])) {
  $lng = $_GET['lng'];
+ 
+ updateLocation($lat, $lng);//update location
+ 
 }
+
 
 if (!empty($_GET['q']['city'])) {
   $_GET['location'] = $_GET['q']['city'];
@@ -100,7 +109,32 @@ if (!empty($_GET['params'])) {
  $params = array_filter($params);
 }
 
-$return = getMassageList(100, $start=0, $keyword, $lat, $lng, 100000, $params);
+
+$max = !empty($_GET['max']) ? $_GET['max'] : 2;
+$pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
+$totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
+    
+$return = getMassageList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, 100000, $params);
+$totalPages_rsView = $return['totalPages'];
+$totalRows_rsView = $return['totalRows'];
+
+
+$queryString = "";
+if (!empty($_SERVER['QUERY_STRING'])) {
+  $params = explode("&", $_SERVER['QUERY_STRING']);
+  $newParams = array();
+  foreach ($params as $param) {
+    if (stristr($param, "pageNum_rsView") == false && 
+        stristr($param, "totalRows_rsView") == false) {
+      array_push($newParams, $param);
+    }
+  }
+  if (count($newParams) != 0) {
+    $queryString = "&" . htmlentities(implode("&", $newParams));
+  }
+}
+$queryString = sprintf("&totalRows_rsView=%d%s", $totalRows_rsView, $queryString);
+
 define('DEFAULT_IMAGE', 'http://bento.cdn.pbs.org/hostedbento-prod/filer_public/_bento_media/img/no-image-available.jpg');
 ?>
 <script>
@@ -144,7 +178,12 @@ function submitSearch()
       </form>
     </div>
     <div class="col-md-8">
-      <h3>Results</h3>
+      <h3>Results <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></h3>
+      <?php if ($return['totalRows'] == 0) { ?>
+        <div class="alert alert-warning" role="alert">
+          No Record Found.
+        </div>
+      <?php } ?>
       <?php if ($return['totalRows'] > 0 && !empty($return['data'])) { ?>
         <?php foreach ($return['data'] as $k => $v) { ?>
         <?php $images = json_decode($v['images']); $mainImage = !empty($images[0]) ? $images[0] : DEFAULT_IMAGE; ?>
@@ -184,6 +223,25 @@ function submitSearch()
               </div>
           </div>
         <?php } ?>
+        
+
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+            <div class="">
+            <p class="text-center"> Records <strong><?php echo ($return['start'] + 1) ?></strong> to <strong><?php echo min($return['start'] + $return['max'], $return['totalRows']) ?></strong> of <strong><?php echo $return['totalRows'] ?></strong></p>
+            <nav>
+              <ul class="pager">
+                <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", 0, $queryString); ?>" style="cursor:pointer">First</a></li><?php } ?>
+                <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", max(0, $pageNum_rsView - 1), $queryString); ?>" style="cursor:pointer">Previous</a></li><?php } ?>
+                <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", min($totalPages_rsView, $pageNum_rsView + 1), $queryString); ?>" style="cursor:pointer">Next</a></li><?php } ?>
+                <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", $totalPages_rsView, $queryString); ?>" style="cursor:pointer">Last</a></li><?php } ?>
+              </ul>
+            </nav>
+            </div>
+          </div>
+        </div>
+        
       <?php } ?>
       
       

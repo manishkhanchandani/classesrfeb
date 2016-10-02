@@ -147,7 +147,8 @@ if (empty($_SESSION['location']['nearby'])) {
   }
 }
 
-log_log($_SESSION['location']);
+log_log($_SESSION['location']);  
+
 $modelGeneral = new Models_General($connMainAdodb);
 
 log_log(__FILE__.' on line number '.__LINE__);

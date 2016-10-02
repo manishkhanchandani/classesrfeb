@@ -139,3 +139,10 @@ function is_login()
     exit;
   }
 }
+
+function updateLocation($inputLat, $inputLng)
+{
+  $location = curlget('http://api.mkgalaxy.com/api.php?action=nearby&lat='.$inputLat.'&lng='.$inputLng);
+  $tmp = json_decode($location, true);
+  $_SESSION['location']['nearby'] = !empty($tmp['data']) ? $tmp['data'] : '';
+}
