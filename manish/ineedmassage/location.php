@@ -1,6 +1,6 @@
 <?php 
 log_log(__FILE__.' on line number '.__LINE__);
-function getMassageList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $cacheTime=900) {
+function getList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $uid='', $cacheTime=900) {
   global $modelGeneral;
   $return = array();
   $maxRows_rsView = (int) $max;
@@ -29,6 +29,11 @@ function getMassageList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $la
   if (!empty($keyword)) {
     $sql .= " AND (m.name like ".GetSQLValueString('%'.$keyword.'%', 'text')." OR m.description like ".GetSQLValueString('%'.$keyword.'%', 'text').")";
   }
+  //end keyword
+  
+  if (!empty($uid)) {
+    $sql .= " AND (m.uid = ".GetSQLValueString($uid, 'text').")";
+  }//end uid
   
   if (!empty($params)) {
     $sql .= " AND (";
@@ -60,9 +65,11 @@ function getMassageList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $la
   return $return;
 }
 
-function getMassageDetail() {
-  
-}
+function editDeleteLink($uid1, $uid2, $id, $is_admin='')
+{
+  if (!($uid1 === $uid2 || $is_admin)) return;
+  return '<div><small><a href="'.HTTPPATH.'admin/new?id='.$id.'">Edit</a> | <a href="'.HTTPPATH.'admin/delete?id='.$id.'">Delete</a></small></div>';
+}//end editDeleteLink()
 
 $keyword = '';
 if (!empty($_GET['kw'])) {
@@ -103,21 +110,24 @@ if (empty($_GET['location'])) {
   }
 }
 
-$params = array();
+$paramsType = array();
 if (!empty($_GET['params'])) {
- $params = $_GET['params'];
- $params = array_filter($params);
+ $paramsType = $_GET['params'];
+ $paramsType = array_filter($paramsType);
 }
 
+$uid = '';
+if (!empty($_GET['myPost']) && !empty($_SESSION['user']['id'])) {
+  $uid = $_SESSION['user']['id'];
+}
 
-$max = !empty($_GET['max']) ? $_GET['max'] : 2;
+$max = !empty($_GET['max']) ? $_GET['max'] : 25;
 $pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
 $totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
     
-$return = getMassageList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, 100000, $params);
+$return = getList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, 100000, $paramsType, $uid, 900);
 $totalPages_rsView = $return['totalPages'];
 $totalRows_rsView = $return['totalRows'];
-
 
 $queryString = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
@@ -167,10 +177,15 @@ function submitSearch()
                 <option value="">Select</option>
                 <?php foreach ($massageTypes as $key => $types) { 
                       ?>
-                <option value="<?php echo $key; ?>" <?php if (in_array($key, $params)) { ?>selected<?php } ?>><small><?php echo $types['name']; ?></small></option>
+                <option value="<?php echo $key; ?>" <?php if (in_array($key, $paramsType)) { ?>selected<?php } ?>><small><?php echo $types['name']; ?></small></option>
                       <?php
                     } ?>
               </select>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" name="myPost" value="1" <?php if (!empty($_GET['myPost'])) { echo 'checked'; } ?>>Created By Me
+              </label>
           </div>
           <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($_GET['lat']) ? $_GET['lat'] : ''; ?>">
           <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($_GET['lng']) ? $_GET['lng'] : ''; ?>">
@@ -184,45 +199,24 @@ function submitSearch()
           No Record Found.
         </div>
       <?php } ?>
+      <?php $type = 2; ?>
       <?php if ($return['totalRows'] > 0 && !empty($return['data'])) { ?>
+      <div class="row">
         <?php foreach ($return['data'] as $k => $v) { ?>
         <?php $images = json_decode($v['images']); $mainImage = !empty($images[0]) ? $images[0] : DEFAULT_IMAGE; ?>
-          <div class="row">
-              <div class="col-md-3">
-                  <a href="details/<?php echo $v['id']; ?>">
-                      <img class="img-thumbnail img-responsive" src="<?php echo $mainImage; ?>" alt="...">
-                  </a>
-              </div>
-              <div class="col-md-5">
-                <h4 class="media-heading"><a href="details/<?php echo $v['id']; ?>"><?php echo $v['name']; ?></a></h4>
-                  <p><?php echo $v['description']; ?></p>
-                  <p><small><?php echo $v['location']; ?>
-                    <?php if (!empty($v['distance'])) { ?>
-                  <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
-                    <?php } ?></small></p>
-                  <p><small><b>Massage Types:</b> 
-                    <?php foreach ($massageTypes as $key => $types) { 
-                      if (empty($v[$key])) continue;
-                      echo $types['name'].', ';
-                    } ?>
-                  </small></p>
-              </div>
-              <div class="col-md-4">
-                  <?php if (!empty($v['min30_charges'])) { ?>
-                  <span class="chargeHead">30 Min Charges:</span>  <span class="" style="text-decoration:line-through">$<?php echo $v['min30_charges']; ?></span> <span class="">$<?php echo $v['min30_charges'] - ($v['min30_charges'] / $v['discount_perc']); ?></span><br>
-                  <?php } ?>
-                  <?php if (!empty($v['min60_charges'])) { ?>
-                  <span class="chargeHead">60 Min Charges:</span> <span class="" style="text-decoration:line-through">$<?php echo $v['min60_charges']; ?></span> <span class="">$<?php echo $v['min60_charges'] - ($v['min60_charges'] / $v['discount_perc']); ?></span><br>
-                  <?php } ?>
-                  <?php if (!empty($v['min90_charges'])) { ?>
-                  <span class="chargeHead">90 Min Charges:</span> <span class="" style="text-decoration:line-through">$<?php echo $v['min90_charges']; ?></span> <span class="">$<?php echo $v['min90_charges'] - ($v['min90_charges'] / $v['discount_perc']); ?></span><br>
-                  <?php } ?>
-                  <?php if (!empty($v['min120_charges'])) { ?>
-                  <span class="chargeHead">120 Min Charges:</span> <span class="" style="text-decoration:line-through">$<?php echo $v['min120_charges']; ?></span> <span class="">$<?php echo $v['min120_charges'] - ($v['min120_charges'] / $v['discount_perc']); ?></span><br>
-                  <?php } ?>
-              </div>
-          </div>
+          <?php 
+            switch ($type) {
+              case 2:
+                include('view2.php');
+                break;
+              case 1:
+              default:
+                include('view1.php');
+                break;
+            }
+          ?>
         <?php } ?>
+      </div>
         
 
         <div class="row">

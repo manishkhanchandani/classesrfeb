@@ -52,6 +52,7 @@ try {
     //select from table if user exists
     $query = "select * from users where uid = ?";
     $existed = $modelGeneral->fetchRow($query, array($user['id']), 0);
+
     if (empty($existed)) {
       //insert record
       $data = array();
@@ -67,6 +68,11 @@ try {
       unset($data);
     }
     $_SESSION['user'] = $user;
+    
+    if (!empty($existed['is_admin'])) {
+      $_SESSION['user']['is_admin'] = $existed['is_admin'];
+    }
+
     // The access token may have been updated lazily.
     $_SESSION['access_token'] 		= $client->getAccessToken();
     $email 							= filter_var($user['email'], FILTER_SANITIZE_EMAIL); // get the USER EMAIL ADDRESS using OAuth2

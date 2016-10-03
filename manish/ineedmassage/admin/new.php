@@ -17,8 +17,31 @@ function postNewProfile($data) {
   exit;
 }
 
+
+function postUpdateProfile($data) {
+  global $modelGeneral, $massageTypes;
+  if (empty($data['name'])) {
+      throw new Exception('missing name');
+  }
+  if (empty($data['location'])) {
+      throw new Exception('missing address');
+  }
+  foreach ($massageTypes as $massage=> $types) {
+    if (!isset($data[$massage])) {
+      $data[$massage] = 0;
+    }
+  }//end foreach
+  
+  unset($data['uid']);
+  $where = sprintf('id = %s', $modelGeneral->qstr($data['id']));
+  $modelGeneral->updateDetails('massage', $data, $where);
+  header("Location: ".HTTPPATH.'admin/updateConfirm?id='.$data['id']);
+  exit;
+}
+
 if (!empty($_POST)) {
   try {
+
     $images = isset($_POST['images']) ? array_filter($_POST['images']) : array();
     $videos = isset($_POST['videos']) ? array_filter($_POST['videos']) : array();
     $urls = isset($_POST['urls']) ? array_filter($_POST['urls']) : array();
@@ -27,14 +50,32 @@ if (!empty($_POST)) {
     $data['images'] = json_encode(array_filter($_POST['images']));
     $data['videos'] = json_encode(array_filter($_POST['videos']));
     $data['urls'] = json_encode(array_filter($_POST['urls']));
-    $data['id'] = guid();
     $data['uid'] = $_SESSION['user']['id'];
     $data['created_on'] = date('Y-m-d H:i:s');
-    postNewProfile($data);
+    if (empty($_POST['id'])) {
+      $data['id'] = guid();
+      postNewProfile($data);
+    } else {
+      postUpdateProfile($data);
+    }
   } catch (Exception $e) {
     $error = $e->getMessage();
   }
 }
+
+
+if (!empty($_GET['id'])) {
+  $id = $_GET['id'];
+  $query = "select * from massage WHERE id = ?";
+  $currentData = $modelGeneral->fetchRow($query, array($id), 0);
+  $check = (!empty($_SESSION['user']['is_admin']) || ($_SESSION['user']['id'] === $currentData['uid']));
+  if (!$check) {
+    header("Location: /");
+    exit;  
+  }
+  $_POST = $currentData;
+}
+
 ?>
 <div class="container">
     <div class="row">
@@ -154,7 +195,7 @@ if (!empty($_POST)) {
                   <?php foreach ($massageTypes as $massage=> $types) { ?>
                   <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                      
-                          <input type="checkbox" name="<?php echo $massage; ?>" value="1"> <strong><?php echo $types['name']; ?> Massage</strong><br><small><?php echo $types['description']; ?></small>
+                          <input type="checkbox" name="<?php echo $massage; ?>" value="1" <?php echo !empty($_POST[$massage]) ? 'checked' : ''; ?>> <strong><?php echo $types['name']; ?> Massage</strong><br><small><?php echo $types['description']; ?></small>
                       
                   </div>
                   <?php } ?>
@@ -168,7 +209,8 @@ if (!empty($_POST)) {
                 <input type="hidden" class="field" id="country">
                 <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($_POST['lat']) ? $_POST['lat'] : ''; ?>">
                 <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($_POST['lng']) ? $_POST['lng'] : ''; ?>">
-                <input type="hidden" class="field" id="address" name="address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : ''; ?>">
+                <input type="hidden" class="field" id="address" name="address" value="<?php echo isset($_POST['address']) ? htmlspecialchars($_POST['address']) : ''; ?>">
+                <input type="hidden" class="field" id="id" name="id" value="<?php echo isset($_POST['id']) ? $_POST['id'] : ''; ?>">
                 <input type="submit" class="btn btn-default" value="Submit">
             </form>
         </div>

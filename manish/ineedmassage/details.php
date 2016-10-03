@@ -1,5 +1,13 @@
 <?php 
 log_log(__FILE__.' on line number '.__LINE__);
+if (empty($_GET['id'])) {
+  header("Location: /");
+  exit;  
+}
+$id = $_GET['id'];
+$query = "select * from massage WHERE id = ?";
+$data = $modelGeneral->fetchRow($query, array($id), 0);
+pr($data);
 pr($_GET);
 ?>
 <div class="starter-template">

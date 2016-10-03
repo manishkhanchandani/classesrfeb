@@ -27,6 +27,10 @@ class App_base
 class Models_General extends App_base
 {
     public $sql;
+    /*
+    
+    $ins = $modelGeneral->addDetails('massage', $data);
+    */
     public function addDetails($tableName, $data=array())
     {
       $insertSQL = $this->_connMain->AutoExecute($tableName, $data, 'INSERT');
@@ -34,6 +38,10 @@ class Models_General extends App_base
       return $id;
     }
 
+    /*
+    $where = sprintf('id = %s', $modelGeneral->qstr($data['id']));
+    $modelGeneral->updateDetails('massage', $data, $where);
+    */
     public function updateDetails($tableName, $data=array(), $where='')
     {
       if (empty($where)) {
