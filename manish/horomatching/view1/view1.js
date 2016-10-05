@@ -198,6 +198,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
      //show alert 
     }
     $scope.matchCurrentResult = response.data.data;
+    localStorage.setItem('currentResult', JSON.stringify($scope.matchCurrentResult));
     
     
   }
@@ -208,11 +209,25 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   
   $scope.matchCurrent = function(details) {
     $scope.details = details;
+    localStorage.setItem('currentLocation', JSON.stringify($scope.details));
+    localStorage.setItem('currentPlace', $scope.matchCurrentVar.currentPlace);
     $scope.matchCurrentResultStatus = 'Loading...';
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/api.php?action=continuityLatLng&noOfDays='+$scope.matchCurrentVar.noOfDays+'&from[dob]='+$scope.matchCurrentVar.profileCurrent.year+'-'+pad($scope.matchCurrentVar.profileCurrent.month, 2)+'-'+pad($scope.matchCurrentVar.profileCurrent.day, 2)+'+'+pad($scope.matchCurrentVar.profileCurrent.hour, 2)+':'+pad($scope.matchCurrentVar.profileCurrent.minute, 2)+':00&from[lat]='+$scope.matchCurrentVar.profileCurrent.lat+'&from[lng]='+$scope.matchCurrentVar.profileCurrent.lng+'&to[dob]='+encodeURIComponent($scope.matchCurrentVar.curDate)+'&to[lat]='+$scope.details.components.lat+'&to[lng]='+$scope.details.components.lng;
+    var url = 'http://api.mkgalaxy.com/api.php?action=continuityLatLng&noOfDays='+$scope.matchCurrentVar.noOfDays+'&from[dob]='+$scope.matchCurrentVar.profileCurrent.year+'-'+pad($scope.matchCurrentVar.profileCurrent.month, 2)+'-'+pad($scope.matchCurrentVar.profileCurrent.day, 2)+'+'+pad($scope.matchCurrentVar.profileCurrent.hour, 2)+':'+pad($scope.matchCurrentVar.profileCurrent.minute, 2)+':00&from[lat]='+$scope.matchCurrentVar.profileCurrent.lat+'&from[lng]='+$scope.matchCurrentVar.profileCurrent.lng+'&to[dob]='+encodeURIComponent($scope.matchCurrentVar.curDate)+'&to[lat]='+$scope.details.components.lat+'&to[lng]='+$scope.details.components.lng;
     dataService.get(url, matchCurrentSuccess, matchCurrentFailure, 1);
   };
+  //getting from localstorage
+  var currentLocation = localStorage.getItem('currentLocation');
+  if (currentLocation) {
+      $scope.details = JSON.parse(currentLocation);
+  }
+  var currentPlace = localStorage.getItem('currentPlace');
+  $scope.matchCurrentVar.currentPlace = currentPlace;
   
+  var currentResult = localStorage.getItem('currentResult');
+  if (currentResult) {
+      $scope.matchCurrentResult = JSON.parse(currentResult);
+  }
+  //getting from localstorage
   
   $scope.setCurrentLocation = function() {
     return;

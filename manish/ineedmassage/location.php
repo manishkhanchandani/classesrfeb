@@ -199,7 +199,7 @@ function submitSearch()
           No Record Found.
         </div>
       <?php } ?>
-      <?php $type = 2; ?>
+      <?php $type = 1; ?>
       <?php if ($return['totalRows'] > 0 && !empty($return['data'])) { ?>
       <div class="row">
         <?php foreach ($return['data'] as $k => $v) { ?>

@@ -132,7 +132,9 @@
           <li class="list-group-item horo_{{item.result.points}}" ng-repeat="item in matchCurrentResult">
             <strong>Date:</strong> {{item.formatted}}
             <br />
-            <strong>Points:</strong> {{item.result.points}} (<strong>{{item.result.results}}</strong>)
+            Points:</strong> {{item.result.points}} (<strong>{{item.result.results}}</strong>)<br>
+            <div style="font-size:10px; font-style:none; color:black;">Nakshtra: {{item.naks}}<br>
+            Baby Names: {{item.names}}</div>
           </li>
         </ul>
       </div>

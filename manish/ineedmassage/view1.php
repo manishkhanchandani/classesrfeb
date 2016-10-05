@@ -1,4 +1,4 @@
-
+<div class="row" style="padding-bottom:20px">
   <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
       <a href="details/<?php echo $v['id']; ?>">
           <img class="img-thumbnail img-responsive" src="<?php echo $mainImage; ?>" alt="...">
@@ -11,13 +11,12 @@
         <?php if (!empty($v['distance'])) { ?>
       <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
         <?php } ?></small></p>
-      <p><small><b>Massage Types:</b> 
-        <?php foreach ($massageTypes as $key => $types) { 
+      <!--<p><small><b>Massage Types:</b> 
+        <?php /*foreach ($massageTypes as $key => $types) { 
           if (empty($v[$key])) continue;
           echo $types['name'].', ';
-        } ?>
-      </small></p>
-      <?php echo editDeleteLink((!empty($_SESSION['user']['id']) ? $_SESSION['user']['uid']: ''), $v['uid'], $v['id'], (!empty($_SESSION['user']['is_admin']) ? $_SESSION['user']['is_admin'] : '')); ?>
+        }*/ ?>
+      </small></p>-->
   </div>
   <div class="col-md-4 col-xs-4 col-lg-4 col-sm-4">
       <?php if (!empty($v['min30_charges'])) { ?>
@@ -32,4 +31,6 @@
       <?php if (!empty($v['min120_charges'])) { ?>
       <span class="chargeHead">120 Min Charges:</span> <span class="" style="text-decoration:line-through">$<?php echo $v['min120_charges']; ?></span> <span class="">$<?php echo $v['min120_charges'] - ($v['min120_charges'] / $v['discount_perc']); ?></span><br>
       <?php } ?>
+      <?php echo editDeleteLink((!empty($_SESSION['user']['id']) ? $_SESSION['user']['uid']: ''), $v['uid'], $v['id'], (!empty($_SESSION['user']['is_admin']) ? $_SESSION['user']['is_admin'] : '')); ?>
   </div>
+</div>

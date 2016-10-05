@@ -124,7 +124,7 @@ angular.module( "ngAutocomplete", [])
                  scope.details.components['lat'] = result.geometry.location.lat();
                  scope.details.components['lng'] = result.geometry.location.lng();
                 //custom ends
-
+                
                 controller.$setViewValue(element.val());
               });
             }

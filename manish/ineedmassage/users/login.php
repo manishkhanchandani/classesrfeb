@@ -53,19 +53,22 @@ try {
     $query = "select * from users where uid = ?";
     $existed = $modelGeneral->fetchRow($query, array($user['id']), 0);
 
+    $data = array();
+    $data['uid'] = $user['id'];
+    $data['email'] = $user['email'];
+    $data['name'] = $user['name'];
+    $data['first_name'] = $user['given_name'];
+    $data['last_name'] = $user['family_name'];
+    $data['link'] = $user['link'];
+    $data['image'] = $user['picture'];  
+    $data['gender'] = !empty($user['gender']) ? $user['gender'] : '';
     if (empty($existed)) {
       //insert record
-      $data = array();
-      $data['uid'] = $user['id'];
-      $data['email'] = $user['email'];
-      $data['name'] = $user['name'];
-      $data['first_name'] = $user['given_name'];
-      $data['last_name'] = $user['family_name'];
-      $data['link'] = $user['link'];
-      $data['image'] = $user['picture'];  
-      $data['gender'] = !empty($user['gender']) ? $user['gender'] : '';
       $modelGeneral->addDetails('users', $data);
       unset($data);
+    } else {
+      $where = sprintf('id = %s', $modelGeneral->qstr($user['id']));
+      $modelGeneral->updateDetails('users', $data, $where);
     }
     $_SESSION['user'] = $user;
     
