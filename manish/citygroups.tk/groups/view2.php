@@ -10,6 +10,6 @@
         <?php if (!empty($v['distance'])) { ?>
         <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
         <?php } ?></small>
-        <?php echo editDeleteLink((!empty($_SESSION['user']['id']) ? $_SESSION['user']['id'] : ''), $v['uid'], $v['id'], (!empty($_SESSION['user']['is_admin']) ? $_SESSION['user']['is_admin'] : '')); ?>
+        <?php echo $Groups->editDeleteLink((!empty($_SESSION['user']['id']) ? $_SESSION['user']['id'] : ''), $v['uid'], $v['id'], (!empty($_SESSION['user']['is_admin']) ? $_SESSION['user']['is_admin'] : '')); ?>
       </div>
   </div>

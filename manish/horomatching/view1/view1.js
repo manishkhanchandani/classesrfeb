@@ -48,7 +48,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
     console.log('error: ', response);
   }
   
-  var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/api.php?action=continuityLatLng&noOfDays='+$routeParams.days+'&from[dob]='+$routeParams.dob+'&from[lat]='+$routeParams.lat+'&from[lng]='+$routeParams.lng+'&to[dob]='+$routeParams.date+'&to[lat]='+$routeParams.lat2+'&to[lng]='+$routeParams.lng2;
+  var url = 'http://api.mkgalaxy.com/api.php?action=continuityLatLng&noOfDays='+$routeParams.days+'&from[dob]='+$routeParams.dob+'&from[lat]='+$routeParams.lat+'&from[lng]='+$routeParams.lng+'&to[dob]='+$routeParams.date+'&to[lat]='+$routeParams.lat2+'&to[lng]='+$routeParams.lng2;
  dataService.get(url, matchCurrentSuccess, matchCurrentFailure, 1);
 }])
 
@@ -145,7 +145,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   }
   
   function buildUrl(year1, month1, day1, hour1, minute1, lat1, lng1, year2, month2, day2, hour2, minute2, lat2, lng2) {
-    var url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/api.php?action=matchLatLng&from[dob]='+year1+'-'+month1+'-'+day1+'+'+hour1+':'+minute1+':00&from[lat]='+lat1+'&from[lng]='+lng1+'&to[dob]='+year2+'-'+month2+'-'+day2+'+'+hour2+':'+minute2+':00&to[lat]='+lat2+'&to[lng]='+lng2;
+    var url = 'http://api.mkgalaxy.com/api.php?action=matchLatLng&from[dob]='+year1+'-'+month1+'-'+day1+'+'+hour1+':'+minute1+':00&from[lat]='+lat1+'&from[lng]='+lng1+'&to[dob]='+year2+'-'+month2+'-'+day2+'+'+hour2+':'+minute2+':00&to[lat]='+lat2+'&to[lng]='+lng2;
     return url;
   };
   
@@ -162,7 +162,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
       return;
     }
     $scope.matchError = null;
-    var url = buildUrl($scope.data.profile1.year, $scope.data.profile1.month, $scope.data.profile1.day, $scope.data.profile1.hour, $scope.data.profile1.minute, $scope.data.profile1.lat, $scope.data.profile1.lng, $scope.data.profile2.year, $scope.data.profile2.month, $scope.data.profile2.day, $scope.data.profile2.hour, $scope.data.profile2.minute, $scope.data.profile2.lat, $scope.data.profile2.lng); //'http://bootstrap.mkgalaxy.com/svnprojects/horo/api.php?action=matchLatLng&from[dob]='+$scope.data.profile1.year+'-'+$scope.data.profile1.month+'-'+$scope.data.profile1.day+'+'+$scope.data.profile1.hour+':'+$scope.data.profile1.minute+':00&from[lat]='+$scope.data.profile1.lat+'&from[lng]='+$scope.data.profile1.lng+'&to[dob]='+$scope.data.profile2.year+'-'+$scope.data.profile2.month+'-'+$scope.data.profile2.day+'+'+$scope.data.profile2.hour+':'+$scope.data.profile2.minute+':00&to[lat]='+$scope.data.profile2.lat+'&to[lng]='+$scope.data.profile2.lng;
+    var url = buildUrl($scope.data.profile1.year, $scope.data.profile1.month, $scope.data.profile1.day, $scope.data.profile1.hour, $scope.data.profile1.minute, $scope.data.profile1.lat, $scope.data.profile1.lng, $scope.data.profile2.year, $scope.data.profile2.month, $scope.data.profile2.day, $scope.data.profile2.hour, $scope.data.profile2.minute, $scope.data.profile2.lat, $scope.data.profile2.lng); //'http://api.mkgalaxy.com/api.php?action=matchLatLng&from[dob]='+$scope.data.profile1.year+'-'+$scope.data.profile1.month+'-'+$scope.data.profile1.day+'+'+$scope.data.profile1.hour+':'+$scope.data.profile1.minute+':00&from[lat]='+$scope.data.profile1.lat+'&from[lng]='+$scope.data.profile1.lng+'&to[dob]='+$scope.data.profile2.year+'-'+$scope.data.profile2.month+'-'+$scope.data.profile2.day+'+'+$scope.data.profile2.hour+':'+$scope.data.profile2.minute+':00&to[lat]='+$scope.data.profile2.lat+'&to[lng]='+$scope.data.profile2.lng;
     dataService.get(url, matchProfileSuccess, matchProfileFailure, 1);
   };
   

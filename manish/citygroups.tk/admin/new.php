@@ -4,59 +4,18 @@ is_login();
 
 $pageTitle = 'New Profile';
 
-function postNewProfile($data) {
-  global $modelGeneral;
-  if (empty($data['name'])) {
-      throw new Exception('missing name');
-  }
-  if (empty($data['location'])) {
-      throw new Exception('missing address');
-  }
-  $ins = $modelGeneral->addDetails('massage', $data);
-  header("Location: ".HTTPPATH.'admin/newConfirm');
-  exit;
-}
-
-
-function postUpdateProfile($data) {
-  global $modelGeneral, $massageTypes;
-  if (empty($data['name'])) {
-      throw new Exception('missing name');
-  }
-  if (empty($data['location'])) {
-      throw new Exception('missing address');
-  }
-  foreach ($massageTypes as $massage=> $types) {
-    if (!isset($data[$massage])) {
-      $data[$massage] = 0;
-    }
-  }//end foreach
-  
-  unset($data['uid']);
-  $where = sprintf('id = %s', $modelGeneral->qstr($data['id']));
-  $modelGeneral->updateDetails('massage', $data, $where);
-  header("Location: ".HTTPPATH.'admin/updateConfirm?id='.$data['id']);
-  exit;
-}
+$Groups = new Groups();
 
 if (!empty($_POST)) {
   try {
-
     $images = isset($_POST['images']) ? array_filter($_POST['images']) : array();
     $videos = isset($_POST['videos']) ? array_filter($_POST['videos']) : array();
     $urls = isset($_POST['urls']) ? array_filter($_POST['urls']) : array();
     $data = $_POST;
-    $data['address'] = stripslashes($data['address']);
-    $data['images'] = json_encode(array_filter($_POST['images']));
-    $data['videos'] = json_encode(array_filter($_POST['videos']));
-    $data['urls'] = json_encode(array_filter($_POST['urls']));
-    $data['uid'] = $_SESSION['user']['id'];
-    $data['created_on'] = date('Y-m-d H:i:s');
     if (empty($_POST['id'])) {
-      $data['id'] = guid();
-      postNewProfile($data);
+      $Groups->postNewProfile($_SESSION['user']['id'], $data);
     } else {
-      postUpdateProfile($data);
+      $Groups->postUpdateProfile($data);
     }
   } catch (Exception $e) {
     $error = $e->getMessage();
@@ -80,20 +39,16 @@ if (!empty($_GET['id'])) {
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h3>Create Massage Profile</h3>
+            <h3>Create New Group</h3>
             <?php if (!empty($error)) { ?>
             <div class="alert alert-warning" role="alert">
               <?php echo $error; ?>
             </div>
             <?php } ?>
             <form method="post" name="form1" id="form1" action="admin/new">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>" required>
-                </div>
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12">
-                    <label for="location">Location</label>
+                    <label for="location">Choose City</label>
                     <input type="text" class="form-control addressBox" id="location" name="location" placeholder="Enter Location" value="<?php echo isset($_POST['location']) ? $_POST['location'] : ''; ?>" required>
                   </div>
                 </div>
@@ -148,57 +103,9 @@ if (!empty($_GET['id'])) {
                 </div>
                 <div id="tmpURLS" style="display:none;"><input type="text" name="urls[]" class="form-control" placeholder="Enter Web URL" value="" /></div>
                 
-                <div class="form-group">
-                    <label for="min30_charges">Charges For 30 min Massage</label>
-                    <input type="text" class="form-control" id="min30_charges" name="min30_charges" placeholder="Enter 30 min charge" value="<?php echo isset($_POST['min30_charges']) ? $_POST['min30_charges'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="min60_charges">Charges For 60 min Massage</label>
-                    <input type="text" class="form-control" id="min60_charges" name="min60_charges" placeholder="Enter 60 min charge" value="<?php echo isset($_POST['min60_charges']) ? $_POST['min60_charges'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="min90_charges">Charges For 90 min Massage</label>
-                    <input type="text" class="form-control" id="min90_charges" name="min90_charges" placeholder="Enter 90 min charge" value="<?php echo isset($_POST['min90_charges']) ? $_POST['min90_charges'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="min90_charges">Charges For 120 min Massage</label>
-                    <input type="text" class="form-control" id="min120_charges" name="min120_charges" placeholder="Enter 120 min charge" value="<?php echo isset($_POST['min120_charges']) ? $_POST['min120_charges'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="charges_explanation">Comment on Charges</label>
-                    <input type="text" class="form-control" id="charges_explanation" name="charges_explanation" placeholder="Enter Comment on Charges" value="<?php echo isset($_POST['charges_explanation']) ? $_POST['charges_explanation'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="	discount_perc">Discount in percentage</label>
-                    <input type="text" class="form-control" id="	discount_perc" name="discount_perc" placeholder="Enter Discount provided to customer" value="<?php echo isset($_POST['discount_perc']) ? $_POST['discount_perc'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="	admin_fees_perc">Admin Fee in percentage</label>
-                    <input type="text" class="form-control" id="admin_fees_perc" name="admin_fees_perc" placeholder="Enter Admin Fees" value="<?php echo isset($_POST['admin_fees_perc']) ? $_POST['	admin_fees_perc'] : ''; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="	payment_email_id">Payment Email ID</label>
-                    <input type="text" class="form-control" id="payment_email_id" name="payment_email_id" placeholder="Enter Payment Email ID" value="<?php echo isset($_POST['payment_email_id']) ? $_POST['payment_email_id'] : ''; ?>">
-                </div>
-                
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" required>I agree to terms and conditions
-                    </label>
-                </div>
-                <div class="row">
-                  <h3>Massage Types Offered</h3>
-                  <?php foreach ($massageTypes as $massage=> $types) { ?>
-                  <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                     
-                          <input type="checkbox" name="<?php echo $massage; ?>" value="1" <?php echo !empty($_POST[$massage]) ? 'checked' : ''; ?>> <strong><?php echo $types['name']; ?> Massage</strong><br><small><?php echo $types['description']; ?></small>
-                      
-                  </div>
-                  <?php } ?>
-                </div>
                 <input type="hidden" class="field" id="street_number">
                 <input type="hidden" class="field" id="route">
-                <input type="hidden" class="field" id="locality">
+                <input type="hidden" class="field" id="locality" name="name" placeholder="Enter name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>">
                 <input type="hidden" class="field" id="administrative_area_level_1">
                 <input type="hidden" class="field" id="administrative_area_level_2">
                 <input type="hidden" class="field" id="postal_code">
@@ -238,7 +145,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */(document.getElementById('location')),
-      {types: ['geocode']});
+      {types: '(cities)'});
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.

@@ -1,75 +1,9 @@
 <?php 
 log_log(__FILE__.' on line number '.__LINE__);
-function getList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $uid='', $cacheTime=900) {
-  global $modelGeneral;
-  $return = array();
-  $maxRows_rsView = (int) $max;
-  $startRow_rsView = (int) $page * $maxRows_rsView;
-  $pageNum_rsView = $page;
-  //$maxRows_rsView = (int) $max;
-  //$startRow_rsView = (int) $start;
-  //$pageNum_rsView = floor($startRow_rsView / $maxRows_rsView);
-  $return['max'] = $maxRows_rsView;
-  $return['page'] = $pageNum_rsView;
-  $return['start'] = $startRow_rsView;
-  $return['cacheTime'] = $cacheTime;
-  $distance = '';
-  $distanceWhere = '';
-  $orderBy = ' ORDER BY m.created_on DESC';
-  if (!empty($lat) && !empty($lon) && !empty($radius)) {
-    $distance = ", (ROUND(
-    DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(m.lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(m.lng)))))*60*1.1515,2)) as distance";
-    $distanceWhere = " AND (ROUND(
-    DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(m.lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(m.lng)))))*60*1.1515,2)) <= ".GetSQLValueString($radius, 'int');
-    $orderBy = ' ORDER BY distance ASC, m.created_on DESC';
-  }
-  
-  $mainSql = "select * $distance";
-  $sql = " from massage as m WHERE 1 $distanceWhere AND m.status = 1 AND m.deleted = 0";
-  if (!empty($keyword)) {
-    $sql .= " AND (m.name like ".GetSQLValueString('%'.$keyword.'%', 'text')." OR m.description like ".GetSQLValueString('%'.$keyword.'%', 'text').")";
-  }
-  //end keyword
-  
-  if (!empty($uid)) {
-    $sql .= " AND (m.uid = ".GetSQLValueString($uid, 'text').")";
-  }//end uid
-  
-  if (!empty($params)) {
-    $sql .= " AND (";
-    $tmp = array();
-    foreach ($params as $k => $v) {
-      $tmp[] = "m.".$v." = 1";
-    }
-    $tmpString = implode(' OR ', $tmp);
-    $sql .= $tmpString;
-    $sql .= ")";
-  }
-  
-  $sql_limit_rsView = sprintf("%s LIMIT %d, %d", $mainSql.$sql.$orderBy, $startRow_rsView, $maxRows_rsView);
 
-  $data = $modelGeneral->fetchAll($sql_limit_rsView, array(), $cacheTime);
+$type = 1; 
 
-  $queryTotalRows = 'select count(*) as cnt '.$sql;
-  if (empty($totalRows_rsView)) {
-    $rowCountResult = $modelGeneral->fetchRow($queryTotalRows, array(), $cacheTime);
-    $totalRows_rsView = (int) $rowCountResult['cnt'];
-  }
-  $sql2 = $queryTotalRows;
-  $totalPages_rsView = ceil($totalRows_rsView/$maxRows_rsView)-1;
-  $return['totalRows'] = $totalRows_rsView;
-  $return['totalPages'] = $totalPages_rsView;
-  $return['data'] = $data;
-  $return['sql1'] = $sql_limit_rsView;
-  $return['sql2'] = $sql2;
-  return $return;
-}
-
-function editDeleteLink($uid1, $uid2, $id, $is_admin='')
-{
-  if (!($uid1 === $uid2 || $is_admin)) return;
-  return '<div><small><a href="'.HTTPPATH.'admin/new?id='.$id.'">Edit</a> | <a href="'.HTTPPATH.'admin/delete?id='.$id.'">Delete</a></small></div>';
-}//end editDeleteLink()
+$Groups = new Groups();
 
 $keyword = '';
 if (!empty($_GET['kw'])) {
@@ -125,10 +59,11 @@ $max = !empty($_GET['max']) ? $_GET['max'] : 25;
 $pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
 $totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
     
-$return = getList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, 100000, $paramsType, $uid, 900);
+$return = $Groups->getList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, 100000, $paramsType, $uid, 900);
 $totalPages_rsView = $return['totalPages'];
 $totalRows_rsView = $return['totalRows'];
 
+//generating queryString
 $queryString = "";
 if (!empty($_SERVER['QUERY_STRING'])) {
   $params = explode("&", $_SERVER['QUERY_STRING']);
@@ -144,6 +79,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
   }
 }
 $queryString = sprintf("&totalRows_rsView=%d%s", $totalRows_rsView, $queryString);
+//generating queryString
 
 define('DEFAULT_IMAGE', 'http://bento.cdn.pbs.org/hostedbento-prod/filer_public/_bento_media/img/no-image-available.jpg');
 ?>
@@ -156,7 +92,7 @@ function submitSearch()
 
   <div class="row">
     <div class="col-md-12">
-      <h1>Massage Professionals</h1>
+      <h1>City Groups</h1>
     </div>
   </div>
   <div class="row">
@@ -171,17 +107,6 @@ function submitSearch()
             <label for="location">Location</label>
             <input type="text" class="form-control addressBox" id="location" name="location" placeholder="Enter Location" value="<?php echo isset($_GET['location']) ? $_GET['location'] : ''; ?>">
           </div>
-          <div class="form-group">
-              <label for="type">Massage Type</label>
-              <select class="form-control" id="params" name="params[]" multiple size="5">
-                <option value="">Select</option>
-                <?php foreach ($massageTypes as $key => $types) { 
-                      ?>
-                <option value="<?php echo $key; ?>" <?php if (in_array($key, $paramsType)) { ?>selected<?php } ?>><small><?php echo $types['name']; ?></small></option>
-                      <?php
-                    } ?>
-              </select>
-          </div>
           <div class="checkbox">
               <label>
                   <input type="checkbox" name="myPost" value="1" <?php if (!empty($_GET['myPost'])) { echo 'checked'; } ?>>Created By Me
@@ -192,14 +117,18 @@ function submitSearch()
           <button type="submit" class="btn btn-default">Search</button>
       </form>
     </div>
-    <div class="col-md-8">
-      <h3>Results <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></h3>
+    <div class="col-md-4">
+      <p><strong>Events <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></strong></p>
+    </div>
+    <div class="col-md-4">
+      
+      <p><strong>Groups <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></strong></p>
+      
       <?php if ($return['totalRows'] == 0) { ?>
         <div class="alert alert-warning" role="alert">
-          No Record Found.
+          No Group Found.
         </div>
       <?php } ?>
-      <?php $type = 1; ?>
       <?php if ($return['totalRows'] > 0 && !empty($return['data'])) { ?>
       <div class="row">
         <?php foreach ($return['data'] as $k => $v) { ?>
@@ -207,11 +136,11 @@ function submitSearch()
           <?php 
             switch ($type) {
               case 2:
-                include('view2.php');
+                include('groups/view2.php');
                 break;
               case 1:
               default:
-                include('view1.php');
+                include('groups/view1.php');
                 break;
             }
           ?>
@@ -219,22 +148,22 @@ function submitSearch()
       </div>
         
 
-        <div class="row">
-          <div class="col-md-12">
-            <hr>
-            <div class="">
-            <p class="text-center"> Records <strong><?php echo ($return['start'] + 1) ?></strong> to <strong><?php echo min($return['start'] + $return['max'], $return['totalRows']) ?></strong> of <strong><?php echo $return['totalRows'] ?></strong></p>
-            <nav>
-              <ul class="pager">
-                <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", 0, $queryString); ?>" style="cursor:pointer">First</a></li><?php } ?>
-                <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", max(0, $pageNum_rsView - 1), $queryString); ?>" style="cursor:pointer">Previous</a></li><?php } ?>
-                <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", min($totalPages_rsView, $pageNum_rsView + 1), $queryString); ?>" style="cursor:pointer">Next</a></li><?php } ?>
-                <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", $totalPages_rsView, $queryString); ?>" style="cursor:pointer">Last</a></li><?php } ?>
-              </ul>
-            </nav>
-            </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <div class="">
+          <p class="text-center"> Records <strong><?php echo ($return['start'] + 1) ?></strong> to <strong><?php echo min($return['start'] + $return['max'], $return['totalRows']) ?></strong> of <strong><?php echo $return['totalRows'] ?></strong></p>
+          <nav>
+            <ul class="pager">
+              <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", 0, $queryString); ?>" style="cursor:pointer">First</a></li><?php } ?>
+              <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", max(0, $pageNum_rsView - 1), $queryString); ?>" style="cursor:pointer">Previous</a></li><?php } ?>
+              <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", min($totalPages_rsView, $pageNum_rsView + 1), $queryString); ?>" style="cursor:pointer">Next</a></li><?php } ?>
+              <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", $totalPages_rsView, $queryString); ?>" style="cursor:pointer">Last</a></li><?php } ?>
+            </ul>
+          </nav>
           </div>
         </div>
+      </div>
         
       <?php } ?>
       

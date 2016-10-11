@@ -146,3 +146,22 @@ function updateLocation($inputLat, $inputLng)
   $tmp = json_decode($location, true);
   $_SESSION['location']['nearby'] = !empty($tmp['data']) ? $tmp['data'] : '';
 }
+
+function url_name_v2($name='')
+{
+	if (empty($name)) {
+		return $name;
+	}
+
+	$patterns = array();
+	$patterns[0] = "/\s+/";
+	$patterns[1] = '/[^A-Za-z0-9]+/';
+	$replacements = array();
+	$replacements[0] = "-";
+	$replacements[1] = '-';
+	ksort($patterns);
+	ksort($replacements);
+	$output = preg_replace($patterns, $replacements, $name);
+	$output = strtolower($output);
+	return $output;
+}//end list_name_url()
