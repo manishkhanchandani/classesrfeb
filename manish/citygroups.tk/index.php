@@ -13,14 +13,16 @@ if ($dir == '/') $dir = '';
 $dir = $dir .'/';
 
 $host = str_replace('www.', '', $_SERVER['HTTP_HOST']);
-define('SITENAME', ucwords('citygroups.tk'));
+define('SITENAME', 'citygroups.tk');
+
 define('ROOTDOMAIN', $host);
 define('HTTPPATH', 'http://'.$host.$dir);
 define('ROOTHTTPPATH', $dir);
 define('APIDIR', $dir.'api');
 define('APIHTTPPATH', 'http://'.$host.APIDIR);
 
-define('ADMIN_EMAIL', 'mkgxy@mkgalaxy.com');
+define('ADMIN_USER', '112913147917981568678');
+define('ADMIN_EMAIL', 'manishkk74@gmail.com');
 define('LOGINURL', 'users/login');
 define('PLACESAPIKEY', 'AIzaSyBvXqWIcqyTVRgjXsVjDbdORcNaXHVjtOw');
 define('DEFAULT_LATITUDE', 37.3867);
@@ -34,6 +36,8 @@ include_once(SITEDIR.'/config.php');
 define('CLIENTID', '754890700194-4p5reil092esbpr9p3kk46pf31vkl3ub.apps.googleusercontent.com');
 define('CLIENTSECRET', '8uvHeE3vQU1HQU0JoA1mRQTK');
 define('DEVELOPERKEY', 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs');
+
+$projectTitle = 'City Groups';
 
 ini_set("include_path", '/home/consultlawyers/php:/home/consultlawyers/public_html/libraries:' . ini_get("include_path") );
 
@@ -112,16 +116,34 @@ $defaultPage = 'location';
 $page = $defaultPage;
 $p = $defaultPage;
 
+
 //override
 if (!empty($_GET['q']['action'])) {
   $_GET['p'] = $_GET['q']['action'];
 }
 //end override
 
+//p based on domain name
+$subdomain = false;
+if ($host !== SITENAME) {
+  $query = "select * from city_domains WHERE domain = ?";
+  $domainData = $modelGeneral->fetchRow($query, array($host), 1);
+  if (!empty($domainData)) {
+    $_GET['id'] = $domainData['group_id'];
+    $subdomain = true;
+    
+    if (empty($_GET['p'])) {
+      $_GET['p'] = 'details';
+    }
+  }
+}//end if
+//end domain name
+
 if (!empty($_GET['p'])) {
   $page = $_GET['p'];
   $p = $_GET['p'];
 }
+
 $page .= '.php';
 $pageTitle = 'Some Page Title';
 

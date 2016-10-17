@@ -13,7 +13,7 @@ if (!empty($_POST)) {
     $urls = isset($_POST['urls']) ? array_filter($_POST['urls']) : array();
     $data = $_POST;
     if (empty($_POST['id'])) {
-      $Groups->postNewProfile($_SESSION['user']['id'], $data);
+      $Groups->postNewProfile($data, $_SESSION['user']['id']);
     } else {
       $Groups->postUpdateProfile($data);
     }
@@ -25,7 +25,7 @@ if (!empty($_POST)) {
 
 if (!empty($_GET['id'])) {
   $id = $_GET['id'];
-  $query = "select * from massage WHERE id = ?";
+  $query = "select * from city_groups WHERE id = ?";
   $currentData = $modelGeneral->fetchRow($query, array($id), 0);
   $check = (!empty($_SESSION['user']['is_admin']) || ($_SESSION['user']['id'] === $currentData['uid']));
   if (!$check) {

@@ -49,7 +49,39 @@ try {
   if ($client->getAccessToken()) {
     $pageTitle = 'Login Successfull';
     $user 		= $oauth2->userinfo->get();
+    //select from table if user exists
+    $query = "select * from users where uid = ?";
+    $existed = $modelGeneral->fetchRow($query, array($user['id']), 0);
+
+    $currentDomain = $_SERVER['HTTP_HOST'];
+    $existedDomains = !empty($existed['domains']) ? json_decode($existed['domains'], 1) : array();
+    $existedDomains[$currentDomain] = 1;
+
+    $data = array();
+    $data['uid'] = $user['id'];
+    $data['email'] = $user['email'];
+    $data['name'] = $user['name'];
+    $data['first_name'] = $user['given_name'];
+    $data['last_name'] = $user['family_name'];
+    $data['link'] = $user['link'];
+    $data['image'] = $user['picture']; 
+    $data['domains'] = json_encode($existedDomains);  
+    $data['gender'] = !empty($user['gender']) ? $user['gender'] : '';
+
+    if (empty($existed)) {
+      //insert record
+      $modelGeneral->addDetails('users', $data);
+      unset($data);
+    } else {
+      $where = sprintf('uid = %s', $modelGeneral->qstr($user['id']));
+      $modelGeneral->updateDetails('users', $data, $where);
+    }
     $_SESSION['user'] = $user;
+    
+    if (!empty($existed['is_admin'])) {
+      $_SESSION['user']['is_admin'] = $existed['is_admin'];
+    }
+
     // The access token may have been updated lazily.
     $_SESSION['access_token'] 		= $client->getAccessToken();
     $email 							= filter_var($user['email'], FILTER_SANITIZE_EMAIL); // get the USER EMAIL ADDRESS using OAuth2

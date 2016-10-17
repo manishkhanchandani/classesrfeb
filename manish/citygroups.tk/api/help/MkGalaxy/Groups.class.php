@@ -2,7 +2,7 @@
 
 class Groups
 {
-  function postNewProfile($uid, $data) {
+  function postNewProfile($data, $uid='') {
     global $modelGeneral;
     if (empty($data['location'])) {
         throw new Exception('missing address');
@@ -36,6 +36,75 @@ class Groups
     header("Location: ".HTTPPATH.'admin/newConfirm');
     exit;
   }
+  
+  
+  function postNewEvent($data, $uid='') {
+    global $modelGeneral;
+    if (empty($data['event_location'])) {
+        throw new Exception('missing location');
+    }
+    if (empty($data['event_title'])) {
+        throw new Exception('missing event title');
+    }
+    
+    $arr = json_decode($data['event_address'], 1);
+    $data['event_uid'] = $uid;
+    $data['event_address'] = stripslashes($data['event_address']);
+    $data['event_images'] = json_encode(array_filter($_POST['event_images']));
+    $data['event_videos'] = json_encode(array_filter($_POST['event_videos']));
+    $data['event_urls'] = json_encode(array_filter($_POST['event_urls']));
+    $data['event_created_on'] = date('Y-m-d H:i:s');
+    $data['event_updated_on'] = date('Y-m-d H:i:s');
+    $data['event_id'] = guid();
+    //create group if empty
+    $location = $arr['ln']['city'].', '.$arr['sn']['state'].', '.$arr['ln']['country'];
+    $name = $arr['ln']['city'];
+    $url = url_name_v2($location);
+    $group_id = md5($url);
+    if (empty($data['group_id'])) {
+      $data['group_id'] = $group_id;
+    }//end if
+    
+    if (!empty($data['group_id'])) {
+      $query = "select * from city_groups where id = ?";
+      $existed = $modelGeneral->fetchRow($query, array($data['group_id']), 0);
+      if (empty($existed)) {
+        throw new Exception('Group "'.$location.'" does not exist. Please create this group before posting an event in this city.');
+      }
+    }//end if
+    
+    $query = "select * from city_events where event_id = ?";
+    $existedEvents = $modelGeneral->fetchRow($query, array($data['event_id']), 0);
+    if (!empty($existedEvents)) {
+      throw new Exception('Event already existed.');
+    }//end if
+    
+    if ($existed['url'] !== $url) {
+      throw new Exception('City name of Event is different from city name of Group, both should be in same city.');  
+    }
+ 
+    $ins = $modelGeneral->addDetails('city_events', $data);
+    
+    //insert into members
+    $this->postEventMembers($data['event_id'], $data['event_uid'], 'Organiser', 1);
+    //end into members
+    
+    header("Location: ".HTTPPATH.'events/newConfirm');
+    exit;
+  }
+  
+  public function postEventMembers($eventId, $memberId, $accessLevel, $is_owner)
+  {
+    global $modelGeneral;
+    $d = array();
+    $d['event_id'] = $eventId;
+    $d['event_member_id'] = $memberId;
+    $d['event_joined_on'] = date('Y-m-d H:i:s');
+    $d['event_accessLevel'] = $accessLevel;
+    $d['event_is_owner'] = $is_owner;
+    $modelGeneral->addDetails('city_event_members', $d);
+  }//end postEventMembers()
+  
   
   public function postGroupMembers($groupId, $memberId, $accessLevel, $is_owner)
   {
@@ -102,7 +171,6 @@ class Groups
       DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(m.lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(m.lng)))))*60*1.1515,2)) <= ".GetSQLValueString($radius, 'int');
       $orderBy = ' ORDER BY distance ASC, m.created_on DESC';
     }
-    
     $mainSql = "select * $distance";
     $mainSql .= ", (select count(*) from city_groups_members as gm WHERE gm.group_id = m.id) as members";
     
@@ -153,5 +221,20 @@ class Groups
     if (!($uid1 === $uid2 || $is_admin)) return;
     return '<div><small><a href="'.HTTPPATH.'admin/new?id='.$id.'">Edit</a> | <a href="'.HTTPPATH.'admin/delete?id='.$id.'">Delete</a></small></div>';
   }//end editDeleteLink()
+  
+  public function detail($id) {
+    global $modelGeneral;
+    $query = "select *, (select count(*) from city_groups_members as gm WHERE gm.group_id = m.id) as members from city_groups as m WHERE m.id = ?";
+    $data = $modelGeneral->fetchRow($query, array($id), 900);
+    return $data;
+  }//end detail
+  
+  public function detailMembers($id)
+  {
+    global $modelGeneral;
+    $query = "select * from city_groups_members as gm LEFT JOIN users as u ON gm.member_id = u.uid WHERE gm.group_id = ? ORDER BY gm.joined_on DESC";
+    $members = $modelGeneral->fetchAll($query, array($id), 900);
+    return $members;
+  }
 }
 ?>

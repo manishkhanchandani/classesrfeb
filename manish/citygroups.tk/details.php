@@ -4,11 +4,16 @@ if (empty($_GET['id'])) {
   header("Location: /");
   exit;  
 }
-$id = $_GET['id'];
-$query = "select * from massage WHERE id = ?";
-$data = $modelGeneral->fetchRow($query, array($id), 0);
-pr($data);
+
+$Groups = new Groups();
+$id = md5($_GET['id']);
+
+$groupData = $Groups->detail($id);
+$projectTitle = $groupData['name'];
+$members = $Groups->detailMembers($id);
 pr($_GET);
+pr($groupData);
+pr($members);
 ?>
 <div class="starter-template">
         <h1>Bootstrap starter template</h1>

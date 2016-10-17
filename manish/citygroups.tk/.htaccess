@@ -1,7 +1,14 @@
 RewriteEngine on
 Options +FollowSymLinks
 
-RewriteRule ^details/(.*)$ index.php?p=details&id=$1 [NC,L,QSA]
+
+#RewriteCond %{HTTP_HOST} ^(.*).citygroups.tk [NC] 
+#RewriteRule ^details$ index.php?p=details&id=%1 [NC,L,QSA]
+
+RewriteRule ^(.*)-(.*)-(.*)/details$ index.php?p=details&id=$1-$2-$3 [NC,L,QSA]
+RewriteRule ^(.*)-(.*)-(.*)/events/new$ index.php?p=events/new&group_id=$1-$2-$3 [NC,L,QSA]
+#RewriteRule ^(.*)-(.*)-(.*)$ index.php?p=details&id=$1-$2-$3 [NC,L,QSA]
+
 RewriteRule ^location/(.*)/(.*)/(.*)/(.*)$ index.php?q[action]=location&q[city]=$1&q[lat]=$2&q[lng]=$3&q[type]=$4 [NC,L,QSA]
 RewriteRule ^location/(.*)/(.*)/(.*)$ index.php?q[action]=location&q[city]=$1&q[lat]=$2&q[lng]=$3 [NC,L,QSA]
 

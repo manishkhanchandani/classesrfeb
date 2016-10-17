@@ -42,6 +42,17 @@
         </li>
       </ul>
 
+
+    <!--export and import-->
+    <form ng-submit="importAll()">
+        <div class="form-group">
+            <label for="importdata">Data For Import/Export</label>
+            <textarea ng-model="data.importdata" id="importdata" class="form-control" rows="5">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Import</button>
+    </form>
+    <!--export and import-->
   </div>
   <div class="col-md-4">
     <h3>Create Birth Profile</h3>

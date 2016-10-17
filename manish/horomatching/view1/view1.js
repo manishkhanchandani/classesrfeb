@@ -75,13 +75,59 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   $scope.matchCurrentVar = {};
   $scope.matchCurrentVar.noOfDays = 10;
   $scope.data = {};
+  $scope.data.importdata = {};
+  $scope.data.exportData = {};
+  $scope.data.importdata = JSON.stringify($scope.data.exportData);
   $scope.points = null;
   
+  function stripslashes (str) {
+
+    return (str + '').replace(/\\(.?)/g, function (s, n1) {
+      switch (n1) {
+      case '\\':
+        return '\\';
+      case '0':
+        return '\u0000';
+      case '':
+        return '';
+      default:
+        return n1;
+      }
+    });
+  }
+  function ss(str)
+	{
+		return str.replace(/\\/g, '');
+	}
+
+  function setExportData(key, value) {
+    $scope.data.exportData[key] = value;
+    $scope.data.importdata = JSON.stringify($scope.data.exportData);
+  }
+  
+  $scope.importAll = function() {
+    var d = JSON.parse($scope.data.importdata);
+    console.log(d);
+    localStorage.setItem('profiles', (JSON.stringify(d.profiles)));
+    localStorage.setItem('currentResult', (JSON.stringify(d.currentResult)));
+    localStorage.setItem('currentLocation', (JSON.stringify(d.currentLocation)));
+    localStorage.setItem('currentPlace', (d.currentPlace));
+    window.location.reload();
+    return;
+  };
   
   $scope.getAllProfiles = function() {
     var profiles = localStorage.getItem('profiles');
+    
+    
     if (profiles) {
       $scope.allProfiles = JSON.parse(profiles);
+      
+      //setting export data
+      setExportData('profiles', $scope.allProfiles);
+      //end setting export data
+    
+    
       $scope.allProfilesCount = Object.keys($scope.allProfiles).length;
       
       for (var key in $scope.allProfiles) {
@@ -200,6 +246,10 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
     $scope.matchCurrentResult = response.data.data;
     localStorage.setItem('currentResult', JSON.stringify($scope.matchCurrentResult));
     
+    //setting export data
+    //setExportData('currentResult', $scope.matchCurrentResult);
+    //end setting export data
+    
     
   }
   
@@ -219,13 +269,23 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
   var currentLocation = localStorage.getItem('currentLocation');
   if (currentLocation) {
       $scope.details = JSON.parse(currentLocation);
+      
+    //setting export data
+    setExportData('currentLocation', $scope.details);
+    //end setting export data
   }
   var currentPlace = localStorage.getItem('currentPlace');
+  //setting export data
+  setExportData('currentPlace', currentPlace);
+  //end setting export data
   $scope.matchCurrentVar.currentPlace = currentPlace;
   
   var currentResult = localStorage.getItem('currentResult');
   if (currentResult) {
       $scope.matchCurrentResult = JSON.parse(currentResult);
+    //setting export data
+    setExportData('currentResult', $scope.matchCurrentResult);
+    //end setting export data
   }
   //getting from localstorage
   
