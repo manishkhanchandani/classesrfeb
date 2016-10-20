@@ -38,7 +38,10 @@
       <ul class="list-group" ng-if="allProfilesCount > 0">
         <li class="list-group-item" ng-repeat="item in allProfiles">
         <strong>{{item.name}}</strong><br>{{item.location}}<br>
-          {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
+          {{item.year}}-{{item.month}}-{{item.day}} {{item.hour}}:{{item.minute}} 
+          <br />
+          <strong>Naks:</strong> {{item.naks[7]}} ({{item.naks[12]}})
+          <br /><a href="" ng-click="deleteProfile(item)" class="pull-right"><small>Delete This Profile</small></a><br class="clear" />
         </li>
       </ul>
 

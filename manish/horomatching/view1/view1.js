@@ -116,18 +116,17 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
     return;
   };
   
+  function getNaks(lat, lng, dob, key)
+  {
+    var url = 'http://api.mkgalaxy.com/api.php?action=naks&lat='+lat+'&lng='+lng+'&dob='+encodeURIComponent(dob);
+    dataService.get(url, function(s) { $scope.allProfiles[key].naks = s.data.data; localStorage.setItem('profiles', JSON.stringify($scope.allProfiles)); setExportData('profiles', $scope.allProfiles); }, function(err) {console.log('error', err);}, 1);
+  }
+  
   $scope.getAllProfiles = function() {
     var profiles = localStorage.getItem('profiles');
     
-    
     if (profiles) {
       $scope.allProfiles = JSON.parse(profiles);
-      
-      //setting export data
-      setExportData('profiles', $scope.allProfiles);
-      //end setting export data
-    
-    
       $scope.allProfilesCount = Object.keys($scope.allProfiles).length;
       
       for (var key in $scope.allProfiles) {
@@ -135,6 +134,15 @@ angular.module('myApp.view1', ['ngRoute', 'ngAutocomplete'])
         $scope.matchCurrentVar.profileCurrent = $scope.allProfiles[key];
         break;
       }
+      
+      for (var key in $scope.allProfiles) {
+        if ($scope.allProfiles[key].naks) continue;
+        var dob = $scope.allProfiles[key].year + '-' + $scope.allProfiles[key].month + '-'+$scope.allProfiles[key].day + ' ' + $scope.allProfiles[key].hour + ':' + $scope.allProfiles[key].minute;
+        getNaks($scope.allProfiles[key].lat, $scope.allProfiles[key].lng, dob, key);
+      }
+      //setting export data
+      setExportData('profiles', $scope.allProfiles);
+      //end setting export data
     }
   };
   $scope.getAllProfiles();
