@@ -162,15 +162,44 @@ function return_post_type_posts_mk_sitemap($post_type) {
 
 	if( !is_wp_error($posts) && !empty($posts) ){
 
+    $showArray = array();
+    $showCatArray = array();
+    $showPostArray = array();
+    foreach ( $posts as $post) {
+      $showPostArray[$post->ID] = $post;
+			$c = get_the_category();
+      if (!empty($c)) {
+        foreach ($c as $obj) {
+          $showArray[$obj->cat_ID][] = $post->ID;
+          $showCatArray[$obj->cat_ID] = $obj;
+        }
+      }
+    }
+    
+    //pr($showCatArray);
+    //pr($showArray);
+    //pr($showPostArray);
+    if (!empty($showCatArray)) {
+      foreach ($showCatArray as $catId => $cat) {
+        $return .= '<div><b>'.$cat->cat_name.'</b></div>';
+        if (!empty($showArray[$catId])) {
+          $return .= '<blockquote>';
+          foreach ($showArray[$catId] as $postId) {
+            $p = $showPostArray[$postId];
+            $the_title = ucwords(strtolower($p->post_title));
+            $the_url= get_the_permalink( $p->ID );
+            $return .= '<div><a href="'.$the_url.'" style="font-weight:100;" target="_blank">'.$the_title.'</a></div>';
+          }
+          $return .= '</blockquote>';
+        }
+      }
+    }
 
-
-		foreach ( $posts as $post) {
-
-			
+		/*foreach ( $posts as $post) {
 
 			//get the post values
 
-			$the_title = $post ->post_title;
+			$the_title = ucwords(strtolower($post ->post_title));
 
 			$the_url= get_the_permalink( $post->ID );
 
@@ -204,7 +233,7 @@ function return_post_type_posts_mk_sitemap($post_type) {
 
 			}
 
-		}
+		}*/
 
 
 
@@ -366,7 +395,7 @@ function create_shortcode_mk_sitemap( $atts ){
 
 			//feed in custom post types
 
-			$content .= '<h2>'.$name.'</h2><ul>'.return_post_type_posts_mk_sitemap($type).'</ul>';
+			$content .= '<h2>'.$name.'</h2>'.return_post_type_posts_mk_sitemap($type).'';
 
 
 

@@ -17,6 +17,7 @@ if(!empty($_POST['do'])) {
             check_admin_referer('wp-polls_add-poll');
             // Poll Question
             $pollq_question = wp_kses_post( trim( $_POST['pollq_question'] ) );
+
             if( ! empty( $pollq_question ) ) {
                 // Poll Start Date
                 $timestamp_sql = '';
