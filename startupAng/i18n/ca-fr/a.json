@@ -1,0 +1,11 @@
+{
+  "BUTTON_LANG_USEN": "US English CAFR",
+  "BUTTON_LANG_CAEN": "CA English CAFR",
+  "BUTTON_LANG_USES": "US Spanish CAFR",
+  "BUTTON_LANG_CAFR": "CA French CAFR",
+  "home": {
+    "hello": "worldcafr",
+    "hello2": "world2cafr"
+  },
+  "main" : "main4"
+}
