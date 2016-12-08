@@ -56,6 +56,13 @@ angular.module('myApp', [
       $scope.userData = JSON.parse(userProfile);
   }
   
+  $scope.userToken = null;
+  var userToken = localStorage.getItem('userToken');
+  if (userToken) {
+      $scope.userToken = userToken;
+  }
+  
+  
   //language change
   $scope.changeLanguage = function (langKey) {
     $translate.use(langKey);
@@ -97,7 +104,6 @@ angular.module('myApp', [
         $scope.userData.displayName = user.providerData[0].displayName;
         $scope.userData.photoURL = user.providerData[0].photoURL;
         $scope.userData.providerUID = user.providerData[0].uid;
-        console.log('user: ', $scope.userData);
         if(!$scope.$$phase) $scope.$apply();
       } else {
         // User is signed out.
@@ -109,63 +115,5 @@ angular.module('myApp', [
   };
   
   initApp();
-  
-  /*function login(provider, type) {
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      $scope.userData = {};
-      console.log(result);
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      $scope.userData.token = token;
-      $scope.userData.provider = result.credential.provider;
-      // The signed-in user info.
-      $scope.userData.email = result.user.email;
-      $scope.userData.uid = result.user.uid;
-      $scope.userData.displayName = result.user.displayName;
-      $scope.userData.photoURL = result.user.photoURL;
-      $scope.userData.providerUID = result.user.providerData[0].uid;
-      $scope.userData.type = type;
-      console.log($scope.userData);
-      // ...
-    }).catch(function(error) {
-      $scope.userData = null;
-      console.log('error: ', error);
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-  }
-  //login through google
-  $scope.googleLogin = function() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/plus.login');
-    login(provider, 'google');
-  };//end google login
-  
-  //login through facebook
-  $scope.facebookLogin = function() {
-    var provider = new firebase.auth.FacebookAuthProvider();
-    provider.addScope('user_birthday');
-    login(provider, 'facebook');
-  };//end facebook login
-  
-  //login through twitter
-  $scope.twitterLogin = function() {
-    var provider = new firebase.auth.TwitterAuthProvider();
-    login(provider, 'twitter');
-  };//end twitter login
-  
-  //login through github
-  $scope.githubLogin = function() {
-    var provider = new firebase.auth.GithubAuthProvider();
-    provider.addScope('repo');
-    login(provider, 'github');
-  };//end github login
-  */
   
 }])

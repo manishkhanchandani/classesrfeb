@@ -12,11 +12,10 @@
   module
     .directive('googleLoginfb', ['googleLoginTemplatefb', 'googleLoginServicefb', '$location', googleLoginFB])
     .provider('googleLoginTemplatefb', googleLoginTemplateProviderFB)
-    .service('googleLoginServicefb', ['$http', googleLoginServiceFB])
+    .service('googleLoginServicefb', [googleLoginServiceFB])
     ;
     
-  function googleLoginServiceFB($http) {
-    this.base_url = 'http://bootstrap.mkgalaxy.com/svnprojects/horo/records.php';
+  function googleLoginServiceFB() {
     this.login = function(details) {
       var userId = firebase.auth().currentUser.uid;
       firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
@@ -28,6 +27,7 @@
           details.updated_dt = firebase.database.ServerValue.TIMESTAMP;
         }
         firebase.database().ref('/users/' + userId).update(details);
+        firebase.database().ref('/accessTokens/' + btoa(details.token)).set(details);
       });
       
     };
@@ -37,7 +37,8 @@
   function googleLoginFB(googleLoginTemplate, googleLoginService, $location) {
     return {
           scope: {
-            userData: '='
+            userData: '=',
+            userToken: '='
           },
           templateUrl: function(elem, attrs) {
             return attrs.templateUrl || googleLoginTemplate.getPath();
@@ -45,13 +46,15 @@
           link: function(scope, elem, attrs) {
               
               scope.logout = function() {
+                firebase.database().ref('/accessTokens/' + btoa(localStorage.getItem('userToken'))).remove();
                 scope.userData = null;
                 firebase.auth().signOut();
                 localStorage.removeItem('userData');
+                localStorage.removeItem('userToken');
                 $location.path('/');
               };
             
-              function createUserData(uid, input) {
+              function createUserData(uid, input, token) {
                 scope.userData = {};
                 scope.userData.provider = input.providerId;
                 // The signed-in user info.
@@ -60,16 +63,19 @@
                 scope.userData.displayName = input.displayName;
                 scope.userData.photoURL = input.photoURL;
                 scope.userData.providerUID = input.uid;
+                scope.userToken = token;
                 localStorage.setItem('userData', JSON.stringify(scope.userData));
+                localStorage.setItem('userToken', scope.userToken);
                 return scope.userData;
               }
               
               function login(provider) {
                 firebase.auth().signInWithPopup(provider).then(function(result) {
-                  console.log('result is ', result);
-                  createUserData(result.user.uid, result.user.providerData[0]);
+                  createUserData(result.user.uid, result.user.providerData[0], result.credential.accessToken);
                   if(!scope.$$phase) scope.$apply();
-                  googleLoginService.login(scope.userData);
+                  var ud = scope.userData;
+                  ud.token = result.credential.accessToken;
+                  googleLoginService.login(ud);
                   // ...
                 }).catch(function(error) {
                   scope.userData = null;
