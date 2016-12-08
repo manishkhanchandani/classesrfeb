@@ -1,8 +1,9 @@
 {
-  "BUTTON_LANG_USEN": "US English",
-  "home": {
-    "hello": "world",
-    "hello2": "world2"
-  },
-  "main" : "main"
+  "BUTTON_LANG_US_EN": "US English",
+  "BUTTON_LANG_CN_CN": "Chinese Simplified",
+  "navigation": {
+    "my_profile": "My Profile",
+    "logout": "Logout",
+    "change_language": "Change Language"
+  }
 }
