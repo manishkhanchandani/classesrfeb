@@ -47,6 +47,8 @@
               scope.logout = function() {
                 scope.userData = null;
                 firebase.auth().signOut();
+                localStorage.removeItem('userData');
+                $location.path('/');
               };
             
               function createUserData(uid, input) {
@@ -58,11 +60,13 @@
                 scope.userData.displayName = input.displayName;
                 scope.userData.photoURL = input.photoURL;
                 scope.userData.providerUID = input.uid;
+                localStorage.setItem('userData', JSON.stringify(scope.userData));
                 return scope.userData;
               }
               
               function login(provider) {
                 firebase.auth().signInWithPopup(provider).then(function(result) {
+                  console.log('result is ', result);
                   createUserData(result.user.uid, result.user.providerData[0]);
                   if(!scope.$$phase) scope.$apply();
                   googleLoginService.login(scope.userData);

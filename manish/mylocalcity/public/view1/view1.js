@@ -12,7 +12,13 @@ angular.module('myApp.view1', ['ngRoute'])
   }).when('/view2', {
     templateUrl: 'view1/view2.html',
     controller: 'View2Ctrl'
-  });
+  })
+  .when('/examples/create', {
+    templateUrl: 'view1/examples/create.html',
+    controller: 'ExamplesCreate'
+  })
+  
+  ;
 }])
 
 .controller('View1Ctrl', ['$scope', function($scope) {
@@ -23,4 +29,28 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 .controller('ProfileCtrl', ['$scope', function($scope) {
   console.log($scope);
-}]);
+}])
+
+.controller('ExamplesCreate', ['$scope', '$location', function($scope, $location) {
+  if (!$scope.userData) {
+    console.log('user is not logged in so cannot post');
+    $location.path('/');
+    return;
+  }
+  
+  //location starts
+  $scope.mapOptions = {
+    types: 'geocode'
+  };
+  
+  //initializing
+  $scope.frm = {};
+  $scope.frm.details = {};
+  $scope.createStatus = null;
+  
+  $scope.submitCreateForm = function() {
+    console.log('frm is ', $scope.frm);
+  }
+  
+}])
+;

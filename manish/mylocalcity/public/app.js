@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
+  'ngAutocomplete',
   'pascalprecht.translate',
   'myApp.view1',
   'firebase',
@@ -48,6 +49,13 @@ angular.module('myApp', [
   firebase.initializeApp(config);
   //end firebase
   
+  $scope.userData = null;
+  //getting the details form localStorage
+  var userProfile = localStorage.getItem('userData');
+  if (userProfile) {
+      $scope.userData = JSON.parse(userProfile);
+  }
+  
   //language change
   $scope.changeLanguage = function (langKey) {
     $translate.use(langKey);
@@ -77,23 +85,6 @@ angular.module('myApp', [
     $scope.changeLanguage(langKey);
   };//end function checkLanguage
   
-  //ip
-  /*$scope.ipDetails = null;
-  function getIpDetails(res) {
-    $scope.ipDetails = res.data.data.result;
-    dataService.get('http://api.mkgalaxy.com/api.php?action=nearby&lat='+$scope.ipDetails.lat+'&lng='+$scope.ipDetails.lng, function(response) {
-      $scope.ipDetails.nearby = [];
-      angular.forEach(response.data.data, function (value, key) {
-        value.distance = parseFloat(value.distance);
-        $scope.ipDetails.nearby.push(value);
-      });
-    }, function(error) {console.log('error: ', error);}, true);
-  }
-  dataService.ip(getIpDetails);*/
-  //end ip
-  
-  
-  $scope.userData = null;
   
   function initApp() {
     firebase.auth().onAuthStateChanged(function(user) {
@@ -110,7 +101,7 @@ angular.module('myApp', [
         if(!$scope.$$phase) $scope.$apply();
       } else {
         // User is signed out.
-        console.log('signed out');
+        console.log('user is signed out');
       }
     }, function(error) {
       console.log('err: ', error);
