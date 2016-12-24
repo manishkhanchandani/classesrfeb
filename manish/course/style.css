@@ -1,0 +1,84 @@
+/* CSS Document */
+
+.bodytext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	padding-right: 3px;
+	padding-left: 3px;
+	line-height: normal;
+}
+.bodytextColor {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #006633; padding-right: 3px; padding-left: 3px}
+.bodytextEmph {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	padding-right: 3px;
+	padding-left: 3px;
+	text-decoration: underline;
+}
+.bodytextQuote {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #660000; padding-right: 3px; padding-left: 3px}
+.bodytextEmph {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	padding-right: 3px;
+	padding-left: 3px;
+	text-decoration: underline;
+}
+.bodytextItal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	padding-right: 3px;
+	padding-left: 3px;
+	font-style: italic;
+
+}
+.heading1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #660000; padding-right: 3px; padding-left: 3px; text-align: center}
+.heading2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; color: #666666; padding-right: 3px; padding-left: 3px}
+.heading3 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; color: #000000; padding-right: 3px; padding-left: 3px}
+.bodytextlink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #cc0000;
+	text-decoration: none;
+}
+
+a.bodytextlink:hover {
+	text-decoration: none;
+	color: #cc4000;
+	background-color: #999999;
+
+}
+a.bodytextlink:visited {
+	color: #cc0000;
+}
+
+.bodytextlink2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #000099;
+	text-decoration: none;
+}
+a.bodytextlink2:hover {
+	text-decoration: none;
+	color: #cc4000;
+	background-color: #999999;
+
+}
+a.bodytextlink2:visited {
+	color: #000099;
+}
+
+.listLetters {
+	list-style-type: lower-alpha;
+	font-family: Verdana;
+	font-size: 13px;
+	color: #000000;
+}
+.listSmallRoman {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	list-style-type: lower-roman;
+}

@@ -60,6 +60,30 @@ if(isset($_POST['fb']))
 
 
 	update_option('xyz_fbap_pages_ids',$fbap_pages_list_ids);
+  
+  //updating group
+  
+	if(isset($_POST['fbap_group_list']))
+	$ss=$_POST['fbap_group_list'];
+	
+	$fbap_group_list_ids="";
+
+
+	if($ss!="" && count($ss)>0)
+	{
+		for($i=0;$i<count($ss);$i++)
+		{
+			$fbap_group_list_ids.=$ss[$i].",";
+		}
+
+	}
+	else
+		$fbap_group_list_ids.=-1;
+
+	$fbap_group_list_ids=rtrim($fbap_group_list_ids,',');
+
+
+	update_option('xyz_fbap_group_ids',$fbap_group_list_ids);
 
 
 
@@ -378,9 +402,14 @@ function dethide(id)
 // 							break;
 // 					}while(array_key_exists("next", $pagearray1->paging));
 					}while(isset($pagearray1->paging->next));
+          
+          $groupsRaw=wp_remote_get("https://graph.facebook.com/".XYZ_FBAP_FB_API_VERSION."/me/groups?access_token=$xyz_acces_token&limit=$limit&offset=$offset");
+          if(is_array($groupsRaw))
+						{
+              $groupBody = json_decode($groupsRaw['body'], true);
+              $groupData = $groupBody['data'];
 
-
-
+            }
 					$count=count($data);
 					
 						$fbap_pages_ids1=get_option('xyz_fbap_pages_ids');
@@ -396,6 +425,17 @@ function dethide(id)
 						    else
 							$fbap_pages_ids[$i]=$fbap_pages_ids0[$i];
 						}
+          
+          //get groups
+          
+						$fbap_group_ids1=get_option('xyz_fbap_group_ids');
+          
+						$fbap_group_ids0=array();
+						$fbap_group_ids=array();
+						if($fbap_group_ids1!="")
+							$fbap_group_ids=explode(",",$fbap_group_ids1);
+						
+          
 						
 					//$data[$i]->id."-".$data[$i]->access_token
 						?>
@@ -423,30 +463,31 @@ function dethide(id)
 					</select>
 					</td>
 				</tr>
-				
+				<? if (!empty($groupData)) { ?>
 				<tr valign="top">
 					<td>Select facebook group for auto	publish
 					</td>
-					<td><pre><?php print_r($data); ?></pre><select name="fbap_group_list[]" multiple="multiple" style="height:auto !important;">
+					<td><select name="fbap_group_list[]" multiple="multiple" style="height:auto !important;">
 							<option value="-1"
-							<?php if(in_array(-1, $fbap_pages_ids)) echo "selected" ?>>Profile	Page</option>
+							<?php if(empty($fbap_group_ids)) echo "selected" ?>>Groups</option>
 							<?php 
-							for($i=0;$i<$count;$i++)
+							foreach ($groupData as $group)
 							{
 								?>
 							<option
-								value="<?php  echo $data[$i]->id."-".$data[$i]->access_token;?>"
+								value="<?php  echo $group['id'];?>"
 								<?php
 
 								
-								if(in_array($data[$i]->id, $fbap_pages_ids)) echo "selected" ?>>
+								if(in_array($group['id'], $fbap_group_ids)) echo "selected" ?>>
 
-								<?php echo $data[$i]->name; ?>
+								<?php echo $group['name']; ?>
 							</option>
 							<?php }?>
 					</select>
 					</td>
 				</tr>
+				<?php } ?>
 
 
 				<?php 

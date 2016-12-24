@@ -1,0 +1,7 @@
+[23-Dec-2016 18:00:10 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 27
+[23-Dec-2016 18:00:15 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 27
+[23-Dec-2016 18:02:07 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 27
+[23-Dec-2016 18:23:59 UTC] PHP Notice:  Undefined variable: subject4’s in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 29
+[23-Dec-2016 18:24:05 UTC] PHP Notice:  Undefined variable: subject4’s in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 29
+[23-Dec-2016 18:26:21 UTC] PHP Notice:  Undefined variable: subject4’s in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 29
+[23-Dec-2016 18:29:34 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/consultlawyers/public_html/projects/classesrfeb/manish/course/essays/criminal/october2011.php on line 23

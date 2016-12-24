@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Search or Browse {{title}}</h3>
+    </div>
+  </div>
+  <!-- title ends -->
+  
+  <div class="row">
+    <div class="col-md-3">
+      <form ng-submit="constructURL()">
+        <div class="form-group">
+            <label for="keyword">Keyword</label>
+            <input type="text" class="form-control" id="keyword" placeholder="Enter keyword" ng-model="frm.keyword">
+        </div>
+        <div class="form-group">
+            <label for="location">Near</label>
+            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details">
+        </div>
+        <div class="form-group">
+            <label for="radius">Radius</label>
+            <input type="text" class="form-control" id="radius" placeholder="Enter radius in miles" ng-model="frm.radius" value="10000">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Search</button>
+    </form>
+    </div><!-- form -->
+    <div class="col-md-9">
+      <div class="alert alert-danger" role="alert" ng-if="searchStatus">
+      {{searchStatus}}
+      </div>
+      <div class="alert alert-danger" role="alert" ng-if="completedData.totalRows == 0 && !loading">
+        No results found.
+      </div>
+      <div ng-if="loading">
+        <img src="images/loading.gif">
+      </div>
+       <div class="list-group" ng-if="completedData && !loading">
+          <div class="list-group-item" ng-repeat="item in completedData.results" ng-if="completedData.totalRows > 0">
+            <div class="row">
+              <div class="col-md-2">
+                <a href="lessons/detail/{{item.node_id}}"><img ng-src="{{item.mainImage}}" class="img-responsive img-thumbnail"></a>
+              </div>
+              <div class="col-md-10">
+                <h4 class="list-group-item-heading"><a href="#/examples/detail/{{item.node_id}}">{{item.node_title}}</a></h4>
+                <p class="list-group-item-text"><a href="http://maps.google.com/maps?q=loc:{{item.node_lat}},{{item.node_lng}}" target="_blank">{{item.node_data.location}}</a></p>
+                <p class="list-group-item-text"><strong>Created On:</strong> {{item.node_created}}</p>
+                <p class="list-group-item-text" ng-if="item.distance">{{item.distance}} miles away</p>
+              </div>
+            </div>
+          
+            
+          </div>
+          
+        </div>
+        
+        <div pagination max-rows="{{completedData.max}}", page-num="{{completedData.page}}" start-rows="{{completedData.start}}" total-pages="{{completedData.totalPages}}" total-rows="{{completedData.totalRows}}" url-prefix="{{frm.urlPrefix}}" url-suffix="{{frm.urlSufix}}"></div>
+        
+      
+      
+      
+    </div><!-- results -->
+  </div>
+</div>

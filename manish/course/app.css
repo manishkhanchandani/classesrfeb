@@ -1,0 +1,21 @@
+/* CSS Document */
+
+body {
+  
+}
+
+.selectedWord {
+  color: red;
+  font-weight: bold;
+}
+
+.subsection {
+  padding-top: 20px;
+}
+
+#solnSoln {
+  /*overflow: scroll;  
+  height: 300px;
+  width: 100%;
+  border: 1px solid black;*/
+}
