@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'ngAutocomplete',
+  'paginationModule',
   'pascalprecht.translate',
   'myApp.view1',
   'firebase',

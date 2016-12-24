@@ -8,19 +8,15 @@
       <form ng-submit="submitCreateForm()">
         <div class="form-group">
             <label for="location">Location *</label>
-            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="frm.details" >
+            <input type="text" class="form-control addressBox" id="location" ng-model="frm.location" placeholder="Enter Location" ng-autocomplete options="mapOptions" details="details" >
         </div>
         <div class="form-group">
             <label for="title">Posting Title *</label>
             <input type="text" class="form-control" id="title" placeholder="Enter posting title" ng-model="frm.title" required>
         </div>
         <div class="form-group">
-            <label for="description">Posting Body *</label>
-            <textarea class="form-control" id="description" placeholder="Enter posting body" ng-model="frm.description" rows="5" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="tags">Tags (Comma separated words for search) *</label>
-            <input type="text" class="form-control" id="tags" placeholder="Enter search tags" ng-model="frm.tags" required>
+            <label for="description">Posting Body</label>
+            <textarea class="form-control" id="description" placeholder="Enter posting body" ng-model="frm.description" rows="5"></textarea>
         </div>
         <h3>Contact & Person Information</h3>
         <div class="form-group">
@@ -46,6 +42,43 @@
             <input type="checkbox" ng-model="frm.pref_phone_text"> Phone Text &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="checkbox" ng-model="frm.pref_phone_call"> Phone Call
         </div>
+        
+        <!-- images -->
+        <h3>Enter Image URLS</h3>
+        <div class="form-group">
+            <label for="imageUrls">Image URL:</label>
+            <input type="text" class="form-control" id="imageUrls" placeholder="Enter image url" ng-model="imagetxt">
+            <br />
+            <button type="button" class="btn btn-primary" ng-click="addImage()">Add Image</button>
+            <br />
+            <div class="row"><div class="col-md-3" ng-if="frm.images.length > 0" ng-repeat="img in frm.images">
+              
+                <img ng-src="{{img}}" class="img-responsive img-thumbnail" /> 
+              
+            </div>
+            </div>
+        </div>
+        
+        
+        <!-- images -->
+        <h3>Enter Youtube URLS</h3>
+        <div class="form-group">
+            <label for="youtubeUrls">Image URL:</label>
+            <input type="text" class="form-control" id="youtubeUrls" placeholder="Enter youtube url" ng-model="youtubeTxt">
+            <br />
+            <button type="button" class="btn btn-primary" ng-click="addYoutube()">Add Youtube</button>
+            <br />
+            <div class="row" ng-if="youtubeUrls">
+              <div class="col-md-4 text-center" ng-repeat="(key, url) in frm.youtube">
+                <div class="embed-responsive embed-responsive-4by3">
+                  <youtube-video video-url="url"></youtube-video>
+                </div>
+                <a href="" ng-click="deleteYoutube(key)">Delete</a>
+              </div>
+            </div>
+            
+        </div>
+        
         <div class="alert alert-danger" role="alert" ng-if="createStatus">
           {{createStatus}}
         </div>

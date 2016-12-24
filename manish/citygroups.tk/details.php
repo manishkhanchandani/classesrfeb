@@ -5,17 +5,36 @@ if (empty($_GET['id'])) {
   exit;  
 }
 
-$Groups = new Groups();
-$id = md5($_GET['id']);
+include('groups/logic.php');
+$pageTitle = 'Group '.$groupData['name'];
+$activeMenu = 'home';
 
-$groupData = $Groups->detail($id);
-$projectTitle = $groupData['name'];
-$members = $Groups->detailMembers($id);
+$page = 0;
+if (!empty($_GET['page'])) {
+  $page = $_GET['page'];
+}
+$totalRows = 0;
+if (!empty($_GET['totalRows'])) {
+  $totalRows = $_GET['totalRows'];
+}
+
+$eventList = $Groups->getEventList(5, $page, $totalRows, $id);
+?>
+<?php
+ob_start();
+?>
+<div>
+  <h3>Welcome!</h3>
+  <p>+ <a href="/<?php echo $groupData['url']; ?>/events/new">Schedule a new event</a></p>
+  <p>Upcoming | Past | Calendar</p>
+  <hr>
+  <?php pr($eventList); ?>
+</div>
+<?php
+$content_for_group = ob_get_clean();
+include('groups/capsule.php');
+?>
+<?php
 pr($_GET);
 pr($groupData);
-pr($members);
 ?>
-<div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>

@@ -54,9 +54,21 @@
 <script type="text/javascript" src="directives/googleLoginFB/googleLoginFB.js"></script>
 <!-- login module ends -->
 
+<!-- pagination module -->
+<script type="text/javascript" src="directives/pagination/pagination.js"></script>
+<!-- pagination module ends -->
+
+
+<!-- Include YT library and youtube directive (https://github.com/brandly/angular-youtube-embed)-->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="js/angular-youtube-embed.js"></script>
+<!-- Include YT library and this directive -->
+
+
 <script src="js/ngAutocomplete.js"></script>
 
 <script src="view1/view1.js"></script>
+<script src="js/md5.js"></script>
 
 <script>
   
@@ -95,6 +107,7 @@ $(document).on("keypress", 'form', function (e) {
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Examples <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#/examples/create">Create Form</a></li>
+            <li><a href="#/examples/list">List</a></li>
           </ul>
         </li>
       </ul>

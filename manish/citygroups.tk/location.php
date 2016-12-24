@@ -55,11 +55,14 @@ if (!empty($_GET['myPost']) && !empty($_SESSION['user']['id'])) {
   $uid = $_SESSION['user']['id'];
 }
 
-$max = !empty($_GET['max']) ? $_GET['max'] : 25;
+$max = !empty($_GET['max']) ? $_GET['max'] : 3;
+$radius = !empty($_GET['radius']) ? $_GET['radius'] : 10000;
+
+//Group
 $pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
 $totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
     
-$return = $Groups->getList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, 100000, $paramsType, $uid, 900);
+$return = $Groups->getList($max, $pageNum_rsView, $totalRows_rsView, $keyword, $lat, $lng, $radius, $paramsType, $uid, 900);
 $totalPages_rsView = $return['totalPages'];
 $totalRows_rsView = $return['totalRows'];
 
@@ -81,6 +84,36 @@ if (!empty($_SERVER['QUERY_STRING'])) {
 $queryString = sprintf("&totalRows_rsView=%d%s", $totalRows_rsView, $queryString);
 //generating queryString
 
+
+
+
+//Events
+$pageNum_rsEvents = !empty($_GET['pageNum_rsEvents']) ? $_GET['pageNum_rsEvents'] : 0;
+$totalRows_rsEvents = !empty($_GET['totalRows_rsEvents']) ? $_GET['totalRows_rsEvents'] : 0;
+
+$eventList = $Groups->getEventList($max, $pageNum_rsEvents, $totalRows_rsEvents, '', $keyword, $lat, $lng, $radius, $uid, 900);
+$totalPages_rsEvents = $eventList['totalPages'];
+$totalRows_rsEvents = $eventList['totalRows'];
+
+//generating queryString
+$queryString_rsEvents = "";
+if (!empty($_SERVER['QUERY_STRING'])) {
+  $params = explode("&", $_SERVER['QUERY_STRING']);
+  $newParams = array();
+  foreach ($params as $param) {
+    if (stristr($param, "pageNum_rsEvents") == false && 
+        stristr($param, "totalRows_rsEvents") == false) {
+      array_push($newParams, $param);
+    }
+  }
+  if (count($newParams) != 0) {
+    $queryString_rsEvents = "&" . htmlentities(implode("&", $newParams));
+  }
+}
+$queryString_rsEvents = sprintf("&totalRows_rsEvents=%d%s", $totalRows_rsEvents, $queryString_rsEvents);
+//generating queryString
+
+
 define('DEFAULT_IMAGE', 'http://bento.cdn.pbs.org/hostedbento-prod/filer_public/_bento_media/img/no-image-available.jpg');
 ?>
 <script>
@@ -89,7 +122,6 @@ function submitSearch()
   return false; 
 }
 </script>
-  
   <div class="row">
     <div class="col-md-4">
       <h3>Search</h3>
@@ -101,6 +133,10 @@ function submitSearch()
           <div class="form-group">
             <label for="location">Location</label>
             <input type="text" class="form-control addressBox" id="location" name="location" placeholder="Enter Location" value="<?php echo isset($_GET['location']) ? $_GET['location'] : ''; ?>">
+          </div>
+          <div class="form-group">
+            <label for="radius">Radius</label>
+            <input type="number" class="form-control" id="radius" name="radius" placeholder="Enter Radius" value="<?php echo $radius; ?>">
           </div>
           <div class="checkbox">
               <label>
@@ -114,6 +150,32 @@ function submitSearch()
     </div>
     <div class="col-md-4">
       <p><strong>Events <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></strong></p>
+      
+      <?php if ($eventList['totalRows'] == 0) { ?>
+        <div class="alert alert-warning" role="alert">
+          No Event Found.
+        </div>
+      <?php } ?>
+      <?php if ($eventList['totalRows'] > 0 && !empty($eventList['data'])) { ?>
+      <div class="row">
+        <?php foreach ($eventList['data'] as $k => $v) { ?>
+        <?php $images = json_decode($v['images']); $eventMainImage = !empty($images[0]) ? $images[0] : DEFAULT_IMAGE; ?>
+          <?php
+            include('events/view1.php');
+          ?>
+        <?php } ?>
+      </div>
+      <?php
+      $pagination_start = $eventList['start'];
+      $pagination_totalRows = $eventList['totalRows'];
+      $pagination_max = $eventList['max'];
+      $pagination_pageNum = $pageNum_rsEvents;
+      $pagination_pageNumKey = 'pageNum_rsEvents';
+      $pagination_queryString = $queryString_rsEvents;
+      $pagination_totalPages = $totalPages_rsEvents;
+      include('includes/pagination.php');
+      ?>
+      <?php }//end if totalRows ?>
     </div>
     <div class="col-md-4">
       
@@ -128,7 +190,7 @@ function submitSearch()
       <div class="row">
         <?php foreach ($return['data'] as $k => $v) { ?>
         <?php $images = json_decode($v['images']); $mainImage = !empty($images[0]) ? $images[0] : DEFAULT_IMAGE; ?>
-          <?php 
+          <?php
             switch ($type) {
               case 2:
                 include('groups/view2.php');
@@ -142,23 +204,16 @@ function submitSearch()
         <?php } ?>
       </div>
         
-
-      <div class="row">
-        <div class="col-md-12">
-          <hr>
-          <div class="">
-          <p class="text-center"> Records <strong><?php echo ($return['start'] + 1) ?></strong> to <strong><?php echo min($return['start'] + $return['max'], $return['totalRows']) ?></strong> of <strong><?php echo $return['totalRows'] ?></strong></p>
-          <nav>
-            <ul class="pager">
-              <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", 0, $queryString); ?>" style="cursor:pointer">First</a></li><?php } ?>
-              <?php if ($pageNum_rsView > 0) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", max(0, $pageNum_rsView - 1), $queryString); ?>" style="cursor:pointer">Previous</a></li><?php } ?>
-              <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", min($totalPages_rsView, $pageNum_rsView + 1), $queryString); ?>" style="cursor:pointer">Next</a></li><?php } ?>
-              <?php if ($pageNum_rsView < $totalPages_rsView) { ?><li><a href="<?php printf("?pageNum_rsView=%d%s", $totalPages_rsView, $queryString); ?>" style="cursor:pointer">Last</a></li><?php } ?>
-            </ul>
-          </nav>
-          </div>
-        </div>
-      </div>
+      <?php
+      $pagination_start = $return['start'];
+      $pagination_totalRows = $return['totalRows'];
+      $pagination_max = $return['max'];
+      $pagination_pageNum = $pageNum_rsView;
+      $pagination_pageNumKey = 'pageNum_rsView';
+      $pagination_queryString = $queryString;
+      $pagination_totalPages = $totalPages_rsView;
+      include('includes/pagination.php');
+      ?>
         
       <?php } ?>
       

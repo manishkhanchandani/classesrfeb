@@ -1,6 +1,7 @@
 <?php
 session_name('my_session');
 session_start();
+include_once('constants.php');
 
 define('ROOTDIR', dirname(__FILE__));
 define('SITEDIR', ROOTDIR);

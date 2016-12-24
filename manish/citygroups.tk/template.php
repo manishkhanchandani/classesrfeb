@@ -88,25 +88,6 @@ angular.module('myApp', [
             </li>
           </ul>
           <?php } ?>
-          <?php if (!empty($groupData)) { ?>
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Group Activities <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  <li><a href="<?php echo $groupData['url']; ?>/details">Details</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="details">View Events</a></li>
-                  <li><a href="details">Create New Event</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="details">Group Members</a></li>
-                  <li><a href="details">Send Email To All Members</a></li>
-                  <li><a href="details">Send Message To All Members</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="details">Manage Group Settings</a></li>
-              </ul>
-            </li>
-          </ul>
-          <?php } ?>
           
           <ul class="nav navbar-nav navbar-right">
             <?php if (!empty($_SESSION['user'])) { ?>

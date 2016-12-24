@@ -89,7 +89,7 @@ class Groups
     $this->postEventMembers($data['event_id'], $data['event_uid'], 'Organiser', 1);
     //end into members
     
-    header("Location: ".HTTPPATH.'events/newConfirm');
+    header("Location: ".HTTPPATH.$existed['url'].'/events/newConfirm');
     exit;
   }
   
@@ -165,10 +165,13 @@ class Groups
     $distanceWhere = '';
     $orderBy = ' ORDER BY m.created_on DESC';
     if (!empty($lat) && !empty($lon) && !empty($radius)) {
+      $lat = (double) $lat;
+      $lon = (double) $lon;
+      $radius = (int) $radius;
       $distance = ", (ROUND(
-      DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(m.lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(m.lng)))))*60*1.1515,2)) as distance";
+      DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.lat)) * COS(RADIANS(".$lon." -(m.lng)))))*60*1.1515,2)) as distance";
       $distanceWhere = " AND (ROUND(
-      DEGREES(ACOS(SIN(RADIANS(".GetSQLValueString($lat, 'double').")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".GetSQLValueString($lat, 'double').")) * COS(RADIANS(m.lat)) * COS(RADIANS(".GetSQLValueString($lon, 'double')." -(m.lng)))))*60*1.1515,2)) <= ".GetSQLValueString($radius, 'int');
+      DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.lat)) * COS(RADIANS(".$lon." -(m.lng)))))*60*1.1515,2)) <= ".$radius;
       $orderBy = ' ORDER BY distance ASC, m.created_on DESC';
     }
     $mainSql = "select * $distance";
@@ -176,12 +179,12 @@ class Groups
     
     $sql = " from city_groups as m WHERE 1 $distanceWhere AND m.status = 1 AND m.deleted = 0";
     if (!empty($keyword)) {
-      $sql .= " AND (m.name like ".GetSQLValueString('%'.$keyword.'%', 'text')." OR m.description like ".GetSQLValueString('%'.$keyword.'%', 'text').")";
+      $sql .= " AND (m.name like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.description like ".$modelGeneral->qstr('%'.$keyword.'%').")";
     }
     //end keyword
     
     if (!empty($uid)) {
-      $sql .= " AND (m.uid = ".GetSQLValueString($uid, 'text').")";
+      $sql .= " AND (m.uid = ".$modelGeneral->qstr($uid).")";
     }//end uid
     
     if (!empty($params)) {
@@ -197,6 +200,68 @@ class Groups
     
     $sql_limit_rsView = sprintf("%s LIMIT %d, %d", $mainSql.$sql.$orderBy, $startRow_rsView, $maxRows_rsView);
   
+    $data = $modelGeneral->fetchAll($sql_limit_rsView, array(), $cacheTime);
+  
+    $queryTotalRows = 'select count(*) as cnt '.$sql;
+    if (empty($totalRows_rsView)) {
+      $rowCountResult = $modelGeneral->fetchRow($queryTotalRows, array(), $cacheTime);
+      $totalRows_rsView = (int) $rowCountResult['cnt'];
+    }
+    $sql2 = $queryTotalRows;
+    $totalPages_rsView = ceil($totalRows_rsView/$maxRows_rsView)-1;
+    $return['totalRows'] = $totalRows_rsView;
+    $return['totalPages'] = $totalPages_rsView;
+    $return['data'] = $data;
+    $return['sql1'] = $sql_limit_rsView;
+    $return['sql2'] = $sql2;
+    return $return;
+  }
+  
+  public function getEventList($max=100, $page=0, $totalRows_rsView=0, $group_id='', $keyword='', $lat='', $lon='', $radius='', $uid='', $cacheTime=900) {
+    global $modelGeneral;
+    $return = array();
+    $maxRows_rsView = (int) $max;
+    $startRow_rsView = (int) $page * $maxRows_rsView;
+    $pageNum_rsView = $page;
+    //$maxRows_rsView = (int) $max;
+    //$startRow_rsView = (int) $start;
+    //$pageNum_rsView = floor($startRow_rsView / $maxRows_rsView);
+    $return['max'] = $maxRows_rsView;
+    $return['page'] = $pageNum_rsView;
+    $return['start'] = $startRow_rsView;
+    $return['cacheTime'] = $cacheTime;
+    $distance = '';
+    $distanceWhere = '';
+    $orderBy = ' ORDER BY m.event_created_on DESC';
+    if (!empty($lat) && !empty($lon) && !empty($radius)) {
+      $lat = (double) $lat;
+      $lon = (double) $lon;
+      $radius = (int) $radius;
+      $distance = ", (ROUND(
+      DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.event_lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.event_lat)) * COS(RADIANS(".$lon." -(m.event_lng)))))*60*1.1515,2)) as distance";
+      $distanceWhere = " AND (ROUND(
+      DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.event_lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.event_lat)) * COS(RADIANS(".$lon." -(m.event_lng)))))*60*1.1515,2)) <= ".$radius;
+      $orderBy = ' ORDER BY distance ASC, m.event_created_on DESC';
+    }
+    $mainSql = "select * $distance";
+    $mainSql .= ", (select count(*) from city_event_members as em WHERE em.event_id = m.event_id) as members";
+    
+    $sql = " from city_events as m LEFT JOIN city_groups as g ON m.group_id = g.id WHERE 1 $distanceWhere AND m.event_status = 1 AND m.event_deleted = 0";
+    if (!empty($keyword)) {
+      $sql .= " AND (m.event_title like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.event_description like ".$modelGeneral->qstr('%'.$keyword.'%').")";
+    }
+    //end keyword
+    
+    if (!empty($uid)) {
+      $sql .= " AND (m.event_uid = ".$modelGeneral->qstr($uid).")";
+    }//end uid
+    
+    if (!empty($group_id)) {
+      $sql .= " AND (m.group_id = ".$modelGeneral->qstr($group_id).")";
+    }//end uid
+    
+
+    $sql_limit_rsView = sprintf("%s LIMIT %d, %d", $mainSql.$sql.$orderBy, $startRow_rsView, $maxRows_rsView);
     $data = $modelGeneral->fetchAll($sql_limit_rsView, array(), $cacheTime);
   
     $queryTotalRows = 'select count(*) as cnt '.$sql;
@@ -234,6 +299,22 @@ class Groups
     global $modelGeneral;
     $query = "select * from city_groups_members as gm LEFT JOIN users as u ON gm.member_id = u.uid WHERE gm.group_id = ? ORDER BY gm.joined_on DESC";
     $members = $modelGeneral->fetchAll($query, array($id), 900);
+    return $members;
+  }
+  
+  public function countMembers($id)
+  {
+    global $modelGeneral;
+    $query = "select count(gm.member_id) as cnt from city_groups_members as gm LEFT JOIN users as u ON gm.member_id = u.uid WHERE gm.group_id = ? ORDER BY gm.joined_on DESC";
+    $members = $modelGeneral->fetchRow($query, array($id), 900);
+    return $members;
+  }
+  
+  public function myGroupMemberShip($id, $uid)
+  {
+    global $modelGeneral;
+    $query = "select * from city_groups_members as gm LEFT JOIN users as u ON gm.member_id = u.uid WHERE gm.group_id = ? AND gm.member_id = ? ORDER BY gm.joined_on DESC";
+    $members = $modelGeneral->fetchRow($query, array($id, $uid), 900);
     return $members;
   }
 }

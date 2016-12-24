@@ -2,18 +2,9 @@
 log_log(__FILE__.' on line number '.__LINE__);
 is_login();
 
-$pageTitle = 'New Profile';
-$Groups = new Groups();
+$pageTitle = 'New Event';
 
-$gid = '';
-
-if (!empty($_GET['group_id'])) {
-  $group_id = $_GET['group_id'];
-  $gid = md5($_GET['group_id']);
-  
-  $groupData = $Groups->detail($gid);
-  $projectTitle = $groupData['name'];
-}
+include('groups/logic.php');
 
 if (!empty($_POST)) {
   try {
@@ -21,7 +12,7 @@ if (!empty($_POST)) {
     $videos = isset($_POST['videos']) ? array_filter($_POST['videos']) : array();
     $urls = isset($_POST['urls']) ? array_filter($_POST['urls']) : array();
     $data = $_POST;
-    if (empty($_POST['id'])) {
+    if (empty($_POST['event_id'])) {
       $Groups->postNewEvent($data, $_SESSION['user']['id']);
     } else {
       $Groups->postUpdateEvent($data);
@@ -32,10 +23,10 @@ if (!empty($_POST)) {
 }
 
 
-if (!empty($_GET['id'])) {
-  $id = $_GET['id'];
-  $query = "select * from city_events WHERE id = ?";
-  $currentData = $modelGeneral->fetchRow($query, array($id), 0);
+if (!empty($_GET['event_id'])) {
+  $event_id = $_GET['event_id'];
+  $query = "select * from city_events WHERE event_id = ?";
+  $currentData = $modelGeneral->fetchRow($query, array($event_id), 0);
   $check = (!empty($_SESSION['user']['is_admin']) || ($_SESSION['user']['id'] === $currentData['uid']));
   if (!$check) {
     header("Location: /");
@@ -45,8 +36,11 @@ if (!empty($_GET['id'])) {
 }
 
 ?>
-<div class="container">
-    <div class="row">
+<?php
+ob_start();
+?>
+<div>
+  <div class="row">
         <div class="col-md-12">
             <h3>Create New Event</h3>
             <?php if (!empty($error)) { ?>
@@ -56,20 +50,20 @@ if (!empty($_GET['id'])) {
             <?php } ?>
             <form method="post" name="form1" id="form1" action="">
                   <div class="form-group">
-                    <label for="location">Event Location</label>
+                    <label for="location">Where do we meet? (Event Location)</label>
                     <input type="text" class="form-control addressBox" id="location" name="event_location" placeholder="Enter Location" value="<?php echo isset($_POST['event_location']) ? $_POST['event_location'] : ''; ?>" required>
                   </div>
                 <div class="form-group">
-                    <label for="event_title">Event Title</label>
+                    <label for="event_title">What should we do? (Event Title)</label>
                     <input type="text" class="form-control" id="event_title" name="event_title" placeholder="Enter Event Title" value="<?php echo isset($_POST['event_title']) ? $_POST['event_title'] : ''; ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="event_title">Event Date's</label>
+                    <label for="event_title">When do we meet? (Event Date)</label>
                     <div>
                     <label for="from">From</label>
                     <input type="text" id="from" name="event_from_date" value="<?php echo !empty($_POST['event_from_date']) ? $_POST['event_from_date'] : date('Y-m-d H:i:s'); ?>">
                     <label for="to">to</label>
-                    <input type="text" id="to" name="event_end_date" value="<?php echo !empty($_POST['event_end_date']) ? $_POST['event_end_date'] : date('Y-m-d H:i:s'); ?>">
+                    <input type="text" id="to" name="event_end_date" value="<?php echo !empty($_POST['event_end_date']) ? $_POST['event_end_date'] : date('Y-m-d H:i:s', strtotime("+ 3 hour")); ?>">
                     </div>
                 </div>
                  <div class="checkbox">
@@ -78,11 +72,11 @@ if (!empty($_GET['id'])) {
                     </label>
                 </div>
                 <div class="form-group">
-                    <label for="event_description">Event Description</label>
-                    <textarea rows="5" class="form-control" id="event_description" name="event_description" placeholder="Enter description"><?php echo isset($_POST['event_description']) ? $_POST['event_description'] : ''; ?></textarea>
+                    <label for="event_description">More details: (Event Description)</label>
+                    <textarea rows="5" class="form-control" id="event_description" name="event_description" placeholder="Enter description"><?php echo isset($_POST['event_description']) ? htmlspecialchars($_POST['event_description']) : ''; ?></textarea>
                 </div>
                 <div class="form-group" id="imgs">
-                    <strong>Images</strong><br />
+                    <strong>Event Images</strong><br />
                     <?php if (!empty($images)) { ?>
                       <?php foreach ($images as $image) { ?>
                       <input type="text" name="event_images[]" class="form-control" value="<?php echo $image; ?>" placeholder="Enter Image URL" />
@@ -98,7 +92,7 @@ if (!empty($_GET['id'])) {
                 
                 
                 <div class="form-group" id="videos">
-                    <strong>Youtube URLS</strong><br />
+                    <strong>Event Youtube URLS</strong><br />
                     <?php if (!empty($videos)) { ?>
                       <?php foreach ($videos as $video) { ?>
                       <input type="text" name="event_videos[]" class="form-control" value="<?php echo $video; ?>" placeholder="Enter Youtube or Vimeo Video URL" />
@@ -114,7 +108,7 @@ if (!empty($_GET['id'])) {
                 
                 
                 <div class="form-group" id="urls">
-                    <strong>Web URLS or Links</strong> <br />
+                    <strong>Event Web URLS or Links</strong> <br />
                     <?php if (!empty($urls)) { ?>
                       <?php foreach ($urls as $url) { ?>
                       <input type="text" name="event_urls[]" class="form-control" value="<?php echo $url; ?>" placeholder="Enter Web URL" />
@@ -144,7 +138,10 @@ if (!empty($_GET['id'])) {
         </div>
     </div>
 </div>
-
+<?php
+$content_for_group = ob_get_clean();
+include('groups/capsule.php');
+?>
 <script>
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
@@ -170,7 +167,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */(document.getElementById('location')),
-      {types: ['geocode']});
+      {types: ['geocode', 'establishment']});
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
