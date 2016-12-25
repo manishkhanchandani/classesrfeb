@@ -8,6 +8,22 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source" : "/examples/create",
+        "destination" : "/#/examples/create"
+      },
+      {
+        "source" : "/examples/list/:lat/:lng/:radius/:loc/:q/:page",
+        "destination" : "/#/examples/list/:lat/:lng/:radius/:loc/:q/:page"
+      },
+      {
+        "source" : "/examples/list/:page",
+        "destination" : "/#/examples/list/:page"
+      },
+      {
+        "source" : "/examples/list",
+        "destination" : "/#/examples/list"
       }
     ]
   }

@@ -21,7 +21,7 @@ angular.module('myApp', [
 
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
-  //$locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 }])
 
 .config(['$translateProvider', '$translatePartialLoaderProvider', function($translateProvider, $translatePartialLoaderProvider) {
