@@ -13,7 +13,6 @@ $Biz = new Biz();
 $rs = $Biz->detailBiz($_GET['id'], 900);
 
 if (empty($rs['details']) && !empty($rs['place_id'])) {
-  echo $googleUrl;
   
   $res = curlget($googleUrl);
   $d = array();

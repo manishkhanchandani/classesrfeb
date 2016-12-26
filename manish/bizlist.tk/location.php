@@ -63,7 +63,8 @@ $cacheTime = 0;
 //Group
 $pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
 $totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
-    
+
+$pageTitle = 'Listings'.(!empty($_GET['location']) ? ' near '.$_GET['location'] : '');
 
 //fetch from google
 $googleUrl = '';
@@ -92,7 +93,6 @@ if (!empty($googleUrl)) {
       chmod('cacheFiles/'.$sdir, 0777);
     }
     if (!is_file('cacheFiles/'.$sdir.'/'.$eurl.'.txt')) {
-      echo '<!--'.$googleUrl.'-->';
       file_put_contents('cacheFiles/'.$sdir.'/'.$eurl.'.txt', $res);
       //cache ends
       $Biz->saveDataResults($results['results']);

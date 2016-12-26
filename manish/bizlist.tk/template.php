@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title><?php echo $pageTitle; ?></title>
+
+<meta property="og:title" content="<?php echo $pageTitle; ?>"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>"/>
+<meta property="og:image" content="http://bizlist.tk/images/businesses.jpg"/>
+<meta property="og:site_name" content="BizList"/>
+<meta property="og:description" content="Local Businesses, latest nearby deals, reviews and ratings of each business"/>
+<meta property="fb:app_id" content="356978964008"/>
+
 <base href="<?php echo $dir; ?>">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
