@@ -18,7 +18,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <!-- google place and autocomplete-->
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo PLACESAPIKEY; ?>&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo PLACESAPIKEY2; ?>&libraries=places"></script>
 <script>
   
 $(document).on("keypress", 'form', function (e) {

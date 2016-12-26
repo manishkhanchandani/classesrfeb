@@ -169,11 +169,26 @@ function url_name_v2($name='')
 	return $output;
 }//end list_name_url()
 
-function imgUrl($photoreference) {
+function imgUrl($photoreference, $id) {
   if (empty($photoreference)) return false;
+  
   
   $url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='.$photoreference.'&key='.PLACESAPIKEY;
   
-  return $url;
+  $sdir = substr($id, 0, 2);
+  if (!is_dir('images/'.$sdir)) {
+    mkdir('images/'.$sdir, 0777);
+    chmod('images/'.$sdir, 0777);
+  }
+  if (!is_file('images/'.$sdir.'/'.$id.'.jpg')) {
+    //Get the file
+    $content = file_get_contents($url);
+    //Store in the filesystem.
+    $fp = fopen('images/'.$sdir.'/'.$id.'.jpg', "w");
+    fwrite($fp, $content);
+    fclose($fp);
+    return 'images/'.$sdir.'/'.$id.'.jpg';
+  }
+  return 'images/'.$sdir.'/'.$id.'.jpg';
 }
 

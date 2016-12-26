@@ -26,6 +26,7 @@ define('ADMIN_USER', '112913147917981568678');
 define('ADMIN_EMAIL', 'manishkk74@gmail.com');
 define('LOGINURL', 'users/login');
 define('PLACESAPIKEY', 'AIzaSyD3i2D-kT8TYZ04YWEymLPLbRauJZzMJ5M');//AIzaSyBvXqWIcqyTVRgjXsVjDbdORcNaXHVjtOw
+define('PLACESAPIKEY2', 'AIzaSyBvXqWIcqyTVRgjXsVjDbdORcNaXHVjtOw');
 define('DEFAULT_LATITUDE', 37.3867);
 define('DEFAULT_LONGITUDE', -121.897);
 define('ENCRYPTKEY', 'JKjVXtFdY3NNT6Fp6U9uM3m5eeWbtqXWrR5qwWpyM9b8SFSdWVK2vruN');

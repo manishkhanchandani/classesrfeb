@@ -55,7 +55,7 @@ if (!empty($_GET['myPost']) && !empty($_SESSION['user']['id'])) {
   $uid = $_SESSION['user']['id'];
 }
 
-$max = !empty($_GET['max']) ? $_GET['max'] : 25;
+$max = !empty($_GET['max']) ? $_GET['max'] : 5;
 $radius = !empty($_GET['radius']) ? $_GET['radius'] : 100;
 
 $cacheTime = 0;
@@ -308,7 +308,7 @@ $( document ).ready(function() {
       <div class="row">
         <?php foreach ($eventList['data'] as $k => $v) { ?>
         <?php 
-        $mainImage = imgUrl($v['data']['photos'][0]['photo_reference']);
+        $mainImage = imgUrl($v['data']['photos'][0]['photo_reference'], $v['id']);
         if (empty($mainImage)) $mainImage = !empty($v['data']['icon']) ? $v['data']['icon'] : DEFAULT_IMAGE;  ?>
           <?php
             switch ($type) {
@@ -348,7 +348,7 @@ $( document ).ready(function() {
       <div class="row">
         <?php foreach ($return['data'] as $k => $v) { ?>
         <?php 
-        $mainImage = imgUrl($v['data']['photos'][0]['photo_reference']);
+        $mainImage = imgUrl($v['data']['photos'][0]['photo_reference'], $v['id']);
         if (empty($mainImage)) $mainImage = !empty($v['data']['icon']) ? $v['data']['icon'] : DEFAULT_IMAGE; 
         ?>
           <?php
@@ -407,7 +407,7 @@ function initAutocomplete() {
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */(document.getElementById('location')),
-      {types: ['geocode', 'establishment']});
+      {types: ['geocode']});
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.

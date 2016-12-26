@@ -13,7 +13,7 @@ $Biz = new Biz();
 $rs = $Biz->detailBiz($_GET['id'], 900);
 
 if (empty($rs['details']) && !empty($rs['place_id'])) {
-  echo '<!--'.$googleUrl.'-->';
+  echo $googleUrl;
   
   $res = curlget($googleUrl);
   $d = array();
@@ -27,7 +27,7 @@ if (empty($rs['details']) && !empty($rs['place_id'])) {
   $rs = $Biz->detailBiz($_GET['id'], 900);
 }
 
-$mainImage = imgUrl($rs['data']['photos'][0]['photo_reference']);
+$mainImage = imgUrl($rs['data']['photos'][0]['photo_reference'], $rs['id']);
 if (empty($mainImage)) $mainImage = !empty($rs['data']['icon']) ? $rs['data']['icon'] : DEFAULT_IMAGE;
 
 ?>
