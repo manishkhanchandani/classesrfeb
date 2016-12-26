@@ -42,7 +42,7 @@ class Biz
   }
   
   
-  public function getList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $uid='', $featured=0, $cacheTime=900) {
+  public function getList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $category='', $lat='', $lon='', $radius='', $params=array(), $uid='', $featured=0, $cacheTime=900) {
     global $modelGeneral;
     $return = array();
     $maxRows_rsView = (int) $max;
@@ -57,7 +57,7 @@ class Biz
     $return['cacheTime'] = $cacheTime;
     $distance = '';
     $distanceWhere = '';
-    $orderBy = ' ';
+    $orderBy = ' ORDER BY m.active_coupons DESC';
     if (!empty($lat) && !empty($lon) && !empty($radius)) {
       $lat = (double) $lat;
       $lon = (double) $lon;
@@ -66,15 +66,19 @@ class Biz
       DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.lat)) * COS(RADIANS(".$lon." -(m.lng)))))*60*1.1515,2)) as distance";
       $distanceWhere = " AND (ROUND(
       DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.lat)) * COS(RADIANS(".$lon." -(m.lng)))))*60*1.1515,2)) <= ".$radius;
-      $orderBy = ' ORDER BY distance ASC';
+      $orderBy = ' ORDER BY m.active_coupons DESC, distance ASC';
     }
     $mainSql = "select * $distance";
     
     $sql = " from bizlist_business as m WHERE 1 $distanceWhere AND m.status = 1 AND m.deleted = 0";
     if (!empty($keyword)) {
-      $sql .= " AND (m.name like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.data like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.details like ".$modelGeneral->qstr('%'.$keyword.'%').")";
+      $sql .= " AND (m.name like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.data like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.details like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.custom like ".$modelGeneral->qstr('%'.$keyword.'%').")";
     }
     //end keyword
+    
+    if (!empty($category)) {
+      $sql .= " AND (m.data like ".$modelGeneral->qstr('%'.$category.'%').")";
+    }//end category
     
     if (!empty($uid)) {
       $sql .= " AND (m.uid = ".$modelGeneral->qstr($uid).")";
@@ -89,12 +93,12 @@ class Biz
   
     $data = $modelGeneral->fetchAll($sql_limit_rsView, array(), $cacheTime);
     
-    if (!empty($data)) {
+    /*if (!empty($data)) {
       foreach ($data as $k => $v) {
         $data[$k]['data'] = json_decode($v['data'], true);
         $data[$k]['details'] = json_decode($v['details'], true);
       }
-    }
+    }*/
   
     $queryTotalRows = 'select count(*) as cnt '.$sql;
     if (empty($totalRows_rsView)) {

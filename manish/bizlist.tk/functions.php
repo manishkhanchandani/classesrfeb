@@ -169,3 +169,11 @@ function url_name_v2($name='')
 	return $output;
 }//end list_name_url()
 
+function imgUrl($photoreference) {
+  if (empty($photoreference)) return false;
+  
+  $url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='.$photoreference.'&key='.PLACESAPIKEY;
+  
+  return $url;
+}
+

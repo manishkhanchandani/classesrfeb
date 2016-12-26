@@ -13,6 +13,9 @@
         <?php } ?>
         <br>
         <strong>Category:</strong> <?php echo ucwords($v['data']['types'][0]); ?>
+        <?php if (!empty($v['active_coupons'])) { ?>
+          <br /><strong>Coupons Available!!</strong>
+        <?php } ?>
         </small></p>
   </div>
   

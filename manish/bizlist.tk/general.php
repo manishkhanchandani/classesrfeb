@@ -89,10 +89,12 @@ class Models_General extends App_base
     $return = array();
     while (!$result->EOF) {
         //special case;
-        if (isset($result->fields['details'])) {
-          $details = json_decode($result->fields['details'], 1);
-          $result->fields['detailsFull'] = $details;
-        }
+          $details = json_decode($result->fields['details'], true);
+          $result->fields['details'] = $details;
+          $data = json_decode($result->fields['data'], true);
+          $result->fields['data'] = $data;
+          $custom = json_decode($result->fields['custom'], true);
+          $result->fields['custom'] = $custom;
         $return[] = $result->fields;
         $result->MoveNext();
      }

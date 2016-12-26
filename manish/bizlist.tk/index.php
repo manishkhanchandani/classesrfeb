@@ -14,7 +14,7 @@ if ($dir == '/') $dir = '';
 $dir = $dir .'/';
 
 $host = str_replace('www.', '', $_SERVER['HTTP_HOST']);
-define('SITENAME', 'citygroups.tk');
+define('SITENAME', 'bizlist.tk');
 
 define('ROOTDOMAIN', $host);
 define('HTTPPATH', 'http://'.$host.$dir);
@@ -38,7 +38,7 @@ define('CLIENTID', '754890700194-4p5reil092esbpr9p3kk46pf31vkl3ub.apps.googleuse
 define('CLIENTSECRET', '8uvHeE3vQU1HQU0JoA1mRQTK');
 define('DEVELOPERKEY', 'AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs');
 
-$projectTitle = 'City Groups';
+$projectTitle = 'BizList';
 
 ini_set("include_path", '/home/consultlawyers/php:/home/consultlawyers/public_html/libraries:' . ini_get("include_path") );
 

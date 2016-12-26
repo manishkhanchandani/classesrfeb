@@ -18,7 +18,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <!-- google place and autocomplete-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo PLACESAPIKEY; ?>&libraries=places"></script>
 <script>
   
 $(document).on("keypress", 'form', function (e) {
@@ -61,18 +61,10 @@ angular.module('myApp', [
           <a class="navbar-brand" href="/"><?php echo $projectTitle; ?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <?php if (!$subdomain) { ?>
+          
           <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Groups <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="admin/new">Create New Group</a></li>
-                <li><a href="admin/manage">Manage My Group</a></li>
-              </ul>
-            </li>
+            
           </ul>
-          <?php } ?>
-          <?php if (!$subdomain) { ?>
           <ul class="nav navbar-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nearby <span class="caret"></span></a>
@@ -87,7 +79,6 @@ angular.module('myApp', [
               </ul>
             </li>
           </ul>
-          <?php } ?>
           
           <ul class="nav navbar-nav navbar-right">
             <?php if (!empty($_SESSION['user'])) { ?>
