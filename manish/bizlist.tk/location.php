@@ -189,7 +189,7 @@ function submitSearch()
           </div>
           <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" class="form-control addressBox" id="location" name="location" placeholder="Enter Location" value="<?php echo isset($_GET['location']) ? $_GET['location'] : ''; ?>">
+            <input type="text" class="form-control addressBox clearable" id="location" name="location" placeholder="Enter Location" value="<?php echo isset($_GET['location']) ? $_GET['location'] : ''; ?>">
           </div>
           <?php if (!empty($_SESSION['user'])) { ?>
           <div class="checkbox">
@@ -428,3 +428,35 @@ function fillInAddress() {
 }
 initAutocomplete();
 </script>
+
+
+<!-- clearable -->
+<script>
+// CLEARABLE INPUT
+function tog(v){return v?'addClass':'removeClass';} 
+$(document).on('input', '.clearable', function(){
+    $(this)[tog(this.value)]('x');
+}).on('mousemove', '.x', function( e ){
+    $(this)[tog(this.offsetWidth-18 < e.clientX-this.getBoundingClientRect().left)]('onX');
+}).on('touchstart click', '.onX', function( ev ){
+    ev.preventDefault();
+    $(this).removeClass('x onX').val('').change();
+});
+
+$('.clearable').trigger("input");
+// Uncomment the line above if you pre-fill values from LS or server
+</script>
+
+
+<style type="text/css">
+.clearable{
+  background: #fff url(http://i.stack.imgur.com/mJotv.gif) no-repeat right -10px center;
+  border: 1px solid #999;
+  padding: 3px 18px 3px 4px;     /* Use the same right padding (18) in jQ! */
+  border-radius: 3px;
+  transition: background 0.4s;
+}
+.clearable.x  { background-position: right 5px center; } /* (jQ) Show icon */
+.clearable.onX{ cursor: pointer; }              /* (jQ) hover cursor style */
+.clearable::-ms-clear {display: none; width:0; height:0;} /* Remove IE default X */
+</style>
