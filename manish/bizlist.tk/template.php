@@ -106,6 +106,6 @@ angular.module('myApp', [
       <?php echo $contentForTemplate; ?>
 
     </div><!-- /.container -->
-
+<?php include('analyticstracking.php'); ?>
 </body>
 </html>

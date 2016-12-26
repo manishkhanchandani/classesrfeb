@@ -176,7 +176,7 @@ function submitSearch()
       <form action="location" method="get" name="form1" id="form1">
           <div class="form-group">
               <label for="keyword">Keyword</label>
-              <input type="text" class="form-control" id="kw" name="kw" placeholder="Enter keyword" value="<?php echo isset($_GET['kw']) ? $_GET['kw'] : ''; ?>">
+              <input type="text" class="form-control clearable" id="kw" name="kw" placeholder="Enter keyword" value="<?php echo isset($_GET['kw']) ? $_GET['kw'] : ''; ?>">
           </div>
           <div class="form-group">
               <label for="category">Category</label>
@@ -297,45 +297,6 @@ $( document ).ready(function() {
       <!-- map ends -->
     </div>
     <div class="col-md-4">
-      <p><strong>Featured Listings</strong></p>
-      
-      <?php if ($eventList['totalRows'] == 0) { ?>
-        <div class="alert alert-warning" role="alert">
-          No Featured Listing Found.
-        </div>
-      <?php } ?>
-      <?php if ($eventList['totalRows'] > 0 && !empty($eventList['data'])) { ?>
-      <div class="row">
-        <?php foreach ($eventList['data'] as $k => $v) { ?>
-        <?php 
-        $mainImage = imgUrl($v['data']['photos'][0]['photo_reference'], $v['id']);
-        if (empty($mainImage)) $mainImage = !empty($v['data']['icon']) ? $v['data']['icon'] : DEFAULT_IMAGE;  ?>
-          <?php
-            switch ($type) {
-              case 2:
-                include('businesses/view2.php');
-                break;
-              case 1:
-              default:
-                include('businesses/view1.php');
-                break;
-            }
-          ?>
-        <?php } ?>
-      </div>
-      <?php
-      $pagination_start = $eventList['start'];
-      $pagination_totalRows = $eventList['totalRows'];
-      $pagination_max = $eventList['max'];
-      $pagination_pageNum = $pageNum_rsEvents;
-      $pagination_pageNumKey = 'pageNum_rsEvents';
-      $pagination_queryString = $queryString_rsEvents;
-      $pagination_totalPages = $totalPages_rsEvents;
-      include('includes/pagination.php');
-      ?>
-      <?php }//end if totalRows ?>
-    </div>
-    <div class="col-md-4">
       
       <p><strong>Listings <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></strong></p>
       
@@ -379,6 +340,45 @@ $( document ).ready(function() {
       <?php } ?>
       
       
+    </div>
+    <div class="col-md-4">
+      <p><strong>Featured Listings</strong></p>
+      
+      <?php if ($eventList['totalRows'] == 0) { ?>
+        <div class="alert alert-warning" role="alert">
+          No Featured Listing Found.
+        </div>
+      <?php } ?>
+      <?php if ($eventList['totalRows'] > 0 && !empty($eventList['data'])) { ?>
+      <div class="row">
+        <?php foreach ($eventList['data'] as $k => $v) { ?>
+        <?php 
+        $mainImage = imgUrl($v['data']['photos'][0]['photo_reference'], $v['id']);
+        if (empty($mainImage)) $mainImage = !empty($v['data']['icon']) ? $v['data']['icon'] : DEFAULT_IMAGE;  ?>
+          <?php
+            switch ($type) {
+              case 2:
+                include('businesses/view2.php');
+                break;
+              case 1:
+              default:
+                include('businesses/view1.php');
+                break;
+            }
+          ?>
+        <?php } ?>
+      </div>
+      <?php
+      $pagination_start = $eventList['start'];
+      $pagination_totalRows = $eventList['totalRows'];
+      $pagination_max = $eventList['max'];
+      $pagination_pageNum = $pageNum_rsEvents;
+      $pagination_pageNumKey = 'pageNum_rsEvents';
+      $pagination_queryString = $queryString_rsEvents;
+      $pagination_totalPages = $totalPages_rsEvents;
+      include('includes/pagination.php');
+      ?>
+      <?php }//end if totalRows ?>
     </div>
   </div>
 
