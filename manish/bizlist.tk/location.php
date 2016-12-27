@@ -137,7 +137,7 @@ $queryString = sprintf("&totalRows_rsView=%d%s", $totalRows_rsView, $queryString
 $pageNum_rsEvents = !empty($_GET['pageNum_rsEvents']) ? $_GET['pageNum_rsEvents'] : 0;
 $totalRows_rsEvents = !empty($_GET['totalRows_rsEvents']) ? $_GET['totalRows_rsEvents'] : 0;
 
-$featuredMax = 50;
+$featuredMax = 1;
 
 $eventList = $Biz->getList($featuredMax, $pageNum_rsEvents, $totalRows_rsEvents, $keyword, $category, $lat, $lng, $radius, $paramsType, $uid, 1, $cacheTime);
 $totalPages_rsEvents = $eventList['totalPages'];
@@ -296,6 +296,7 @@ $( document ).ready(function() {
 </script>
       <!-- map ends -->
     </div>
+    <?php ob_start(); ?>
     <div class="col-md-4">
       
       <p><strong>Listings <?php if (!empty($_GET['location'])) { echo ' near '.$_GET['location']; }?></strong></p>
@@ -341,6 +342,8 @@ $( document ).ready(function() {
       
       
     </div>
+    <?php $normalListing = ob_get_clean(); ?>
+    <?php ob_start(); ?>
     <div class="col-md-4">
       <p><strong>Featured Listings</strong></p>
       
@@ -380,6 +383,18 @@ $( document ).ready(function() {
       ?>
       <?php }//end if totalRows ?>
     </div>
+    <?php $featuredListing = ob_get_clean(); ?>
+    
+    <?php
+    //check if any featured listing is present, if yes, then show featured first
+    if ($eventList['totalRows'] > 0) {
+      echo $featuredListing;
+      echo $normalListing;
+    } else {
+      echo $normalListing;
+      echo $featuredListing;
+    }
+    ?>
   </div>
 
 <script>
