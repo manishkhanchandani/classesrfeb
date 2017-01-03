@@ -1,0 +1,9 @@
+{
+  "BUTTON_LANG_US_EN": "美国英语",
+  "BUTTON_LANG_CN_CN": "简体中文",
+  "navigation": {
+    "my_profile": "我的简历",
+    "logout": "登出",
+    "change_language": "改变语言"
+  }
+}

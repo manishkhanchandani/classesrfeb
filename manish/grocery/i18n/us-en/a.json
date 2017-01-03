@@ -1,0 +1,9 @@
+{
+  "BUTTON_LANG_US_EN": "US English",
+  "BUTTON_LANG_CN_CN": "Chinese Simplified",
+  "navigation": {
+    "my_profile": "My Profile",
+    "logout": "Logout",
+    "change_language": "Change Language"
+  }
+}
