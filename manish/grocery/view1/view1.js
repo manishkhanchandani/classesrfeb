@@ -42,6 +42,14 @@ angular.module('myApp.view1', ['ngRoute', 'firebase'])
   }
   var ref = firebase.database().ref().child('grocery').child($scope.userData.uid);
   
+  $scope.removeData = function(key) {
+    var a = confirm('do you really want to delete this?');
+    if (!a) {
+      return;
+    }
+    ref.child('saved').child(key).remove();
+  };
+  
   $scope.loadData = function(key) {
     clear();
     ref.child('saved').child(key).once('value').then(function(snapshot) {

@@ -52,7 +52,7 @@
     <div class="col-md-4">
       <h3>My Saved List</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="(key, record) in savedList">{{record.datetime}} (<strong>Total:</strong> {{record.total | currency}}) <a href="" ng-click="loadData(key)">Load</a></li>
+        <li class="list-group-item" ng-repeat="(key, record) in savedList">{{record.datetime}} (<strong>Total:</strong> {{record.total | currency}}) <a href="" ng-click="loadData(key)">Load</a> | <a href="" ng-click="removeData(key)">Remove</a></li>
       </ul>
     </div>
   </div>
