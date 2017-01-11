@@ -1,0 +1,14 @@
+<div ng-if="data" style="padding-top:15px;">
+  <p><strong>Logged In Users</strong></p>
+  <input type="search" class="form-control" ng-model="loggedInUsersFilter" placeholder="filter ..." aria-label="filter " />
+ <ul class="list-group"  style="padding-top:15px;">
+  <li class="list-group-item" ng-repeat="(key, value) in data | orderObjectBy: 'updated_dt' : true  | filter:loggedInUsersFilter as results"><strong>{{value.displayName}}</strong>
+  <br />
+  <small>{{value.updated_dt | timeAgo}}<br /><a href="{{url}}{{value.uid}}" ng-if="userData.uid !== value.uid">Send Message</a></small>
+  </li>
+  <li class="list-group-item" ng-if="results.length === 0">
+      <strong>No results found...</strong>
+    </li>
+</ul>
+  
+</div>

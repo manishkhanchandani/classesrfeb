@@ -1,0 +1,17 @@
+<?php
+$pageTitle = "Create New Profile";
+pr($_COOKIE);
+?>
+<h3>Create New Profile</h3>
+<form>
+    <div class="form-group">
+        <label for="title">Display Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter title">
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> I agree to terms & conditions
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

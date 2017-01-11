@@ -1,0 +1,19 @@
+RewriteEngine on
+Options +FollowSymLinks
+
+
+#RewriteCond %{HTTP_HOST} ^(.*).citygroups.tk [NC] 
+#RewriteRule ^details$ index.php?p=details&id=%1 [NC,L,QSA]
+#RewriteRule ^(.*)-(.*)-(.*)/details$ index.php?p=details&id=$1-$2-$3 [NC,L,QSA]
+#RewriteRule ^(.*)-(.*)-(.*)/events/(.*)/(.*)$ index.php?p=events/$5&event_id=$4&id=$1-$2-$3 [NC,L,QSA]
+#RewriteRule ^(.*)-(.*)-(.*)/events/(.*)$ index.php?p=events/$4&id=$1-$2-$3 [NC,L,QSA]
+#RewriteRule ^(.*)-(.*)-(.*)$ index.php?p=details&id=$1-$2-$3 [NC,L,QSA]
+
+#RewriteRule ^location/(.*)/(.*)/(.*)/(.*)$ index.php?q[action]=location&q[city]=$1&q[lat]=$2&q[lng]=$3&q[type]=$4 [NC,L,QSA]
+#RewriteRule ^location/(.*)/(.*)/(.*)$ index.php?q[action]=location&q[city]=$1&q[lat]=$2&q[lng]=$3 [NC,L,QSA]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !=/favicon.ico
+RewriteRule ^(.*)$ index.php?p=$1 [L,QSA]

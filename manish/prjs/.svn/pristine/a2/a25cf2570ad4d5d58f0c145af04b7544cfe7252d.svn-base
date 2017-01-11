@@ -1,0 +1,159 @@
+<?php
+$jsVersion = 1.1;
+?>
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title><?php echo $pageTitle; ?></title>
+<base href="<?php echo $dir; ?>">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- jquery -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- google place and autocomplete-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs&libraries=places"></script>
+
+<script src="js/angular.min.js?<?php echo $jsVersion; ?>"></script>
+<script src="js/angular-route.js?<?php echo $jsVersion; ?>"></script>
+<!-- Firebase -->
+<script src="js/firebase.js?<?php echo $jsVersion; ?>"></script>
+<!-- AngularFire -->
+<script src="js/angularfire.min.js?<?php echo $jsVersion; ?>"></script>
+
+
+
+<!-- login module -->
+<script type="text/javascript" src="directives/googleLoginFB/googleLoginFB.js?<?php echo $jsVersion; ?>"></script>
+<!-- login module ends -->
+
+
+<script>
+  
+$(document).on("keypress", 'form', function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        var str = e.target.className;
+        var n = str.indexOf("addressBox");
+        if (n === -1) {
+          return true;
+        } else {
+          return false;
+        }
+        return true;
+    }
+});
+  </script>
+<script>
+// Declare app level module which depends on views, and components
+angular.module('myApp', [
+  'firebase',
+  'googleLoginFBModule'
+])
+.controller('mainController', ['$scope', function($scope) {
+  // Initialize the Firebase SDK
+  var config = {
+    apiKey: 'AIzaSyDnERUhALUFNxWZsjaLpT4_nqIYW2i2jDU',
+    authDomain: 'mkgxy-3d7ce.firebaseapp.com',
+    databaseURL: 'https://mkgxy-3d7ce.firebaseio.com/',
+    storageBucket: 'mkgxy-3d7ce.appspot.com'
+  };
+  firebase.initializeApp(config);
+  //end firebase
+  
+  $scope.userData = null;
+  //getting the details form localStorage
+  var userProfile = localStorage.getItem('userData');
+  if (userProfile) {
+      $scope.userData = JSON.parse(userProfile);
+  }
+  
+  $scope.userToken = null;
+  var userToken = localStorage.getItem('userToken');
+  if (userToken) {
+      $scope.userToken = userToken;
+  }
+  
+  
+  function initApp() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('user: ', user);
+        $scope.userData = {};
+        $scope.userData.provider = user.providerData[0].providerId;
+        // The signed-in user info.
+        $scope.userData.email = user.providerData[0].email;
+        $scope.userData.uid = user.uid;
+        $scope.userData.displayName = user.providerData[0].displayName;
+        $scope.userData.photoURL = user.providerData[0].photoURL;
+        $scope.userData.providerUID = user.providerData[0].uid;
+        console.log($scope.userData);
+        if(!$scope.$$phase) $scope.$apply();
+      } else {
+        // User is signed out.
+        console.log('user is signed out');
+      }
+    }, function(error) {
+      console.log('err: ', error);
+    });
+  };
+  
+  initApp();
+  
+  
+}]);
+</script>
+</head>
+
+<body ng-controller="mainController">
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><?php echo $projectTitle; ?></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          
+          <ul class="nav navbar-nav">
+             <li><a href="users/login">Inside</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nearby <span class="caret"></span></a>
+              <?php if (!empty($_SESSION['location'])) { ?>
+              <ul class="dropdown-menu">
+                   <?php $lat = !empty($_SESSION['location']['ipDetails']['lat']) ? $_SESSION['location']['ipDetails']['lat']: '';
+                        $lng = !empty($_SESSION['location']['ipDetails']['lng']) ? $_SESSION['location']['ipDetails']['lng'] : '';?>
+                  <li><a href="http://maps.google.com/maps?q=loc:<?php echo $lat; ?>,<?php echo $lng; ?>" target="_blank"><?php echo $lat; ?>, <?php echo $lng; ?></a></li>
+                  <li class="dropdown-header"><?php echo $_SESSION['location']['ipDetails']['city']; ?><span>, <?php echo $_SESSION['location']['ipDetails']['region']; ?></span><span>, <?php echo $_SESSION['location']['ipDetails']['postal']; ?></span><span>, <?php echo $_SESSION['location']['ipDetails']['country']; ?></span></li>
+                  <li class="dropdown-header"><?php echo $_SESSION['location']['ipDetails']['ip']; ?></li>
+                  <li role="separator" class="divider"></li>
+                  <?php foreach ($_SESSION['location']['nearby'] as $nearby) { ?>
+                  <li><a href="location\<?php echo $nearby['name']; ?>\<?php echo $nearby['latitude']; ?>\<?php echo $nearby['longitude']; ?>"><?php echo $nearby['name']; ?> (<?php echo $nearby['distance']; ?> miles)</a></li>
+                  <?php } ?>
+              </ul>
+              <?php } ?>
+            </li>
+          </ul>
+          
+          <ul google-loginfb user-data="userData" user-token="userToken" class="nav navbar-nav navbar-right"></ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+
+      
+      <?php echo $contentForTemplate; ?>
+
+    </div><!-- /.container -->
+
+</body>
+</html>

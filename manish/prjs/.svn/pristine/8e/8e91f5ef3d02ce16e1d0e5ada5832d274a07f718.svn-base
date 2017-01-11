@@ -1,0 +1,245 @@
+(function() {
+
+  var moduleName = 'googleLoginFBModule';
+  var module;
+  try {
+      module = angular.module(moduleName);
+  } catch(err) {
+      // named module does not exist, so create one
+      module = angular.module(moduleName, ['firebase', 'ngCookies']);
+  }
+  
+  module
+    .directive('googleLoginfb', ['googleLoginTemplatefb', 'googleLoginServicefb', '$location', '$cookies', googleLoginFB])
+    .directive('googleLoginUserList', ['dataService', '$filter', googleLoginUserList])
+    .provider('googleLoginTemplatefb', googleLoginTemplateProviderFB)
+    .service('googleLoginServicefb', ['$cookies', googleLoginServiceFB])
+    ;
+    
+  function googleLoginServiceFB($cookies) {
+    this.login = function(details) {
+      var userId = firebase.auth().currentUser.uid;
+      firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+        var a = snapshot.exists();
+        if (!a) {
+          details.created_dt = firebase.database.ServerValue.TIMESTAMP;
+          details.updated_dt = firebase.database.ServerValue.TIMESTAMP;
+        } else {
+          details.updated_dt = firebase.database.ServerValue.TIMESTAMP;
+        }
+        var ipDetails = null;
+        if ($cookies.get('ipDetails')) {
+          ipDetails = JSON.parse($cookies.get('ipDetails'));
+        }
+        
+        details.ipDetails = ipDetails;
+        firebase.database().ref('/users/' + userId).update(details);
+        firebase.database().ref('/accessTokens/' + btoa(details.token)).set(details);
+      });
+      
+    };
+    
+  }
+  
+  function googleLoginUserList(dataService, $filter) {
+    return {
+          scope: {
+            userData: '=',
+            url: '@',
+            lat: '@',
+            lng: '@'
+          },
+          templateUrl: 'directives/googleLoginFB/loggedInUsers.html',
+          link: function(scope, elem, attrs) {
+            console.log('here: ', scope);
+            
+            var ref = firebase.database().ref('/connectedUsers');
+            scope.data = null;
+            ref.orderByValue().on('value', function(snapshot) {
+              if (snapshot.val()) {
+                scope.data = {};
+                angular.forEach(snapshot.val(), function(value, key) {
+                  var loggedInTime = value;
+                  var uid = key;
+                  firebase.database().ref('/users').child(uid).once('value', function (snapshotUser) {
+                    scope.data[uid] = {};
+                    scope.data[uid] = snapshotUser.val();
+                    scope.data[uid].loggedInTime = loggedInTime;
+                    var distance = null;
+                    if (scope.lat && scope.lng && scope.data[uid].ipDetails) {
+                      distance = dataService.distance(scope.lat, scope.lng, scope.data[uid].ipDetails.lat, scope.data[uid].ipDetails.lng);
+                      //distance = $filter('number')(distance, 2);
+                    }
+                    scope.data[uid].distance = distance;
+                    if(!scope.$$phase) scope.$apply();
+                  });
+                });
+              }
+            });
+                
+              
+          }//end link
+      };//end return
+  }
+  
+  function googleLoginFB(googleLoginTemplate, googleLoginService, $location, $cookies) {
+    return {
+          scope: {
+            userData: '=',
+            userToken: '=',
+            url: '@'
+          },
+          templateUrl: function(elem, attrs) {
+            return attrs.templateUrl || googleLoginTemplate.getPath();
+          },
+          link: function(scope, elem, attrs) {
+              
+              function setCookie()
+              {
+                  $cookies.put('provider', scope.userData.provider);
+                  $cookies.put('email', scope.userData.email);
+                  $cookies.put('uid', scope.userData.uid);
+                  $cookies.put('displayName', scope.userData.displayName);
+                  $cookies.put('photoURL', scope.userData.photoURL);
+                  $cookies.put('providerUID', scope.userData.providerUID);
+              }
+              
+              function removeCookie()
+              {
+                  $cookies.remove('userToken');
+                  $cookies.remove('provider');
+                  $cookies.remove('email');
+                  $cookies.remove('uid');
+                  $cookies.remove('displayName');
+                  $cookies.remove('photoURL');
+                  $cookies.remove('providerUID');
+                  $cookies.remove('provider');
+                  $cookies.remove('ipDetails')
+              }
+  
+              function initApp() {
+                firebase.auth().onAuthStateChanged(function(user) {
+                  if (user) {
+                    scope.userData = {};
+                    scope.userData.provider = user.providerData[0].providerId;
+                    // The signed-in user info.
+                    scope.userData.email = user.providerData[0].email;
+                    scope.userData.uid = user.uid;
+                    scope.userData.displayName = user.providerData[0].displayName;
+                    scope.userData.photoURL = user.providerData[0].photoURL;
+                    scope.userData.providerUID = user.providerData[0].uid;
+                    setCookie();
+                    console.log(scope.userData);
+                    
+                    scope.currentUser = scope.userData.uid; firebase.database().ref('/connectedUsers').child(scope.currentUser).set(firebase.database.ServerValue.TIMESTAMP);
+                    if(!scope.$$phase) scope.$apply();
+                  } else {
+                    // User is signed out.
+                    console.log('user is signed out');
+                    if (scope.currentUser) {
+                      firebase.database().ref('/connectedUsers').child(scope.currentUser).remove();
+                    }
+                    
+                  }
+                }, function(error) {
+                  console.log('err: ', error);
+                });
+              };
+
+              initApp();
+              
+              scope.logout = function() {
+                firebase.database().ref('/accessTokens/' + btoa(localStorage.getItem('userToken'))).remove();
+                scope.userData = null;
+                firebase.auth().signOut();
+                localStorage.removeItem('userData');
+                localStorage.removeItem('userToken');
+                removeCookie();
+                window.location.href = scope.url;
+                //$location.path('/');
+              };
+            
+              function createUserData(uid, input, token) {
+                scope.userData = {};
+                scope.userData.provider = input.providerId;
+                // The signed-in user info.
+                scope.userData.email = input.email;
+                scope.userData.uid = uid;
+                scope.userData.displayName = input.displayName;
+                scope.userData.photoURL = input.photoURL;
+                scope.userData.providerUID = input.uid;
+                scope.userToken = token;
+                $cookies.put('userToken', token);
+                setCookie();
+                localStorage.setItem('userData', JSON.stringify(scope.userData));
+                localStorage.setItem('userToken', scope.userToken);
+                return scope.userData;
+              }
+              
+              function login(provider) {
+                firebase.auth().signInWithPopup(provider).then(function(result) {
+                  createUserData(result.user.uid, result.user.providerData[0], result.credential.accessToken);
+                  if(!scope.$$phase) scope.$apply();
+                  var ud = scope.userData;
+                  ud.token = result.credential.accessToken;
+                  googleLoginService.login(ud);
+                  // ...
+                }).catch(function(error) {
+                  scope.userData = null;
+                  console.log('error: ', error);
+                });
+              }
+              //login through google
+              scope.googleLogin = function() {
+                var provider = new firebase.auth.GoogleAuthProvider();
+                provider.addScope('https://www.googleapis.com/auth/plus.login');
+                login(provider);
+              };//end google login
+
+              //login through facebook
+              scope.facebookLogin = function() {
+                var provider = new firebase.auth.FacebookAuthProvider();
+                provider.addScope('public_profile');
+                provider.addScope('email');
+                provider.addScope('user_likes');
+                provider.addScope('user_friends');
+                provider.addScope('user_birthday');
+                login(provider);
+              };//end facebook login
+
+              //login through twitter
+              scope.twitterLogin = function() {
+                var provider = new firebase.auth.TwitterAuthProvider();
+                login(provider);
+              };//end twitter login
+
+              //login through github
+              scope.githubLogin = function() {
+                var provider = new firebase.auth.GithubAuthProvider();
+                provider.addScope('repo');
+                login(provider);
+              };//end github login
+              
+          }//end link
+      };//end return
+  }
+  
+  
+    /**
+     * This provider allows global configuration of the template path used by the dir-pagination-controls directive.
+     */
+    function googleLoginTemplateProviderFB() {
+        var templatePath = 'directives/googleLoginFB/googleLoginFB.html';
+        this.setPath = function(path) {
+            templatePath = path;
+        };
+        this.$get = function() {
+            return {
+                getPath: function() {
+                    return templatePath;
+                }
+            };
+        };
+    }
+
+}());

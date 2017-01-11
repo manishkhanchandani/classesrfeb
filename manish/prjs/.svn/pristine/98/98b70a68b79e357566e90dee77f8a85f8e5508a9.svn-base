@@ -1,0 +1,11 @@
+<?php
+$siteConfig = array(
+  'SITENAME' => 'malejole.tk',
+  'PROJECT_TITLE' => 'MaleJole',
+  'TEMPLATE_FILE' => 'g/template.php'
+);
+
+$siteConfig = array_merge($siteConfigMain, $siteConfig);
+
+
+?>

@@ -1,0 +1,75 @@
+<style type="text/css">
+.selColor {
+  color: white; 
+}
+a.selColor:hover {
+  color: white;
+  text-decoration:none;
+}
+</style>
+  <div class="row">
+    <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3">
+      <h3>Users</h3>
+      
+      <ul class="list-group">
+        <li class="list-group-item" ng-class="(u.id==resultsToUser.uid) ? 'active' : ''" ng-repeat="u in usersFrom | orderBy: '-timestamp'" style="overflow:auto;">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+              <img ng-src="{{u.image}}" class="img-responsive img-thumbnail">
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8" style="padding-left:0px;">
+              <span class="badge pull-right" ng-if="badges[u.id].badge > 0">{{badges[u.id].badge}}</span>
+              <a href="{{url}}{{u.id}}" ng-class="(u.id==resultsToUser.uid) ? 'selColor' : ''"><strong>{{u.name}}</strong></a>
+              <br>
+              <a href="" ng-class="(u.id==resultsToUser.uid) ? 'selColor' : ''" ng-click="deleteMessageProfile(u.id)">Delete</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      
+      
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12 col-lg-9">
+      <div ng-if="!toUserId">
+      <h3>Messages</h3>
+        <div class="alert alert-success" role="alert">
+          Choose user to send message.
+        </div>
+      </div>
+      <div ng-if="resultsToUser">
+        <h3>Messages (To {{resultsToUser.displayName}})</h3>
+        <form ng-submit="sendMessage(userData.uid, resultsToUser.uid, userData.displayName, userData.photoURL)">
+          <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9" style="padding-right: 5px;">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="message" placeholder="Enter message" ng-model="frm.message" maxlength="255">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3" style="padding-left: 5px;">
+                <button type="submit" class="btn btn-default form-control">Send</button>
+            </div>
+          </div>
+        </form>
+        
+        <ul class="list-group" style="height: 500px; overflow:auto;">
+          <li class="list-group-item" ng-repeat="message in messages | orderBy: '-timestamp'" style="overflow:auto; font-size: 12px;">
+            <div class="row">
+              <div class="col-md-2 col-sm-3 col-xs-3 col-lg-2 text-center">
+                <img ng-src="{{message.image}}" class="img-responsive img-thumbnail">
+                <span>{{message.name}}</span>
+              </div>
+              <div class="col-md-10 col-sm-9 col-xs-9 col-lg-10">
+                <p class="pull-right"><a href="" ng-click="deleteMessage(message)"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a></p>
+                <p><div ng-bind-html="message.message | linky:'_blank'"></div></p>
+                <p>{{message.timestamp | mesDaysAgo}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        
+        
+        
+      </div>
+      
+    </div>
+  </div>

@@ -1,0 +1,21 @@
+<?php
+$siteConfig = array(
+  'SITENAME' => 'malejole.tk',
+  'PROJECT_TITLE' => 'MaleJole',
+  'TEMPLATE_FILE' => 'g/template.php',
+  'MESSAGE_URL' => 'g/messages?toId='
+);
+
+$siteConfig = array_merge($siteConfigMain, $siteConfig);
+
+$page = '';
+if (!empty($_GET['p'])) {
+  $page = $_GET['p'];
+  $page .= '.php';
+}
+
+
+if (!file_exists($page)) {
+  $_GET['p'] = 'g/home';
+}
+?>

@@ -1,0 +1,22 @@
+<div ng-if="data" style="padding-top:15px;">
+  <p><strong>Online Users Near {{city}}</strong></p>
+  <input type="search" class="form-control" ng-model="loggedInUsersFilter" placeholder="filter ..." aria-label="filter " />
+ <ul class="list-group"  style="padding-top:15px;" ng-if="userData.uid">
+  <li class="list-group-item" ng-repeat="(key, value) in data | orderObjectBy: 'distance' : false  | filter:loggedInUsersFilter as results"><strong>{{value.displayName}}</strong>
+  <br />
+  <small>
+    Online Since: {{value.updated_dt | timeAgo}}<br />
+    <span ng-if="value.distance !== null">Distance: {{value.distance | number:2}} mi ({{value.location}})</span><br />
+    <a href="{{url}}{{value.uid}}" ng-if="userData.uid !== value.uid">Send Message</a>
+  </small>
+  </li>
+  <li class="list-group-item" ng-if="results.length === 0">
+      <strong>No results found...</strong>
+    </li>
+</ul>
+  <div class="alert alert-warning" role="alert" ng-if="!userData.uid">
+    Login first, to see the online users.
+  </div>
+</div>
+
+
