@@ -1,9 +1,6 @@
 <?php
 
-//pr($_GET);
-$pageTitle = 'MaleJole: Friends';
-$g = new G();
-
+pr($_GET);
 $keyword = '';
 if (!empty($_GET['kw'])) {
  $keyword = $_GET['kw'];
@@ -30,23 +27,14 @@ if (!empty($_GET['location'])) {
   $homeCity = $_GET['location'] = $_GET['q']['city'];
 }
 
-if (empty($homeLat) && empty($homeLng) && !empty($_COOKIE['ipDetails'])) {
-  $tmp = json_decode($_COOKIE['ipDetails'], true);
-  $homeLat = $tmp['lat'];
-  $homeLng = $tmp['lng'];
-  $homeCity = $tmp['city'].', '.$tmp['region'];
-}
-
-$list = $g->getList($max=100, $page=0, $totalRows_rsView=0, $keyword, $homeLat, $homeLng, $radius=10000, $uid='', $status=1, $deleted=0, $approved=1, 0);
-
-
-$type = 1;
 ?>
+
+
 <div class="row">
   <div class="col-md-3">
     <h3>Search</h3>
     <form action="g/home" method="get" name="form1" id="form1">
-        <button type="submit" class="btn btn-primary form-control">Search</button>
+        <button type="submit" class="btn btn-default form-control">Search</button>
         <div class="form-group">
             <label for="keyword">Keyword</label>
             <input type="keyword" class="form-control" id="kw" name="kw" placeholder="Enter keyword" value="<?php echo isset($_GET['kw']) ? $_GET['kw'] : ''; ?>">
@@ -64,46 +52,19 @@ $type = 1;
         
         <div class="form-group">
             <label for="mia">Min Age</label>
-            <input type="number" min="18" class="form-control" name="mia" value="<?php echo isset($_GET['mia']) ? $_GET['mia'] : ''; ?>">
+            <input type="number" min="18" class="form-control" name="mia" value="<?php echo isset($_GET['mia']) ? $_GET['mia'] : ''; ?>" required>
         </div>
         <div class="form-group">
             <label for="maa">Max Age</label>
-            <input type="number" class="form-control" name="maa" value="<?php echo isset($_GET['maa']) ? $_GET['maa'] : ''; ?>">
+            <input type="number" class="form-control" name="maa" value="<?php echo isset($_GET['maa']) ? $_GET['maa'] : ''; ?>" required>
         </div>
         <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($_GET['lat']) ? $_GET['lat'] : ''; ?>">
         <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($_GET['lng']) ? $_GET['lng'] : ''; ?>">
-        <button type="submit" class="btn btn-primary form-control">Search</button>
+        <button type="submit" class="btn btn-default form-control">Search</button>
     </form>
   </div>
-  <div class="col-md-9">
-    <p><strong>Friends <?php if (!empty($homeCity)) { echo ' near '.$homeCity; }?></strong></p>
-      
-      <?php if ($list['totalRows'] == 0) { ?>
-        <div class="alert alert-warning" role="alert">
-          No Friend Found.
-        </div>
-      <?php } ?>
-      <?php if ($list['totalRows'] > 0 && !empty($list['data'])) { ?>
-      <div class="row">
-        <?php foreach ($list['data'] as $k => $v) { ?>
-        <?php 
-          $address = json_decode($v['address'], true);
-          $images = json_decode($v['images'], true); $mainImage = !empty($images[0]) ? $images[0] : DEFAULT_IMAGE; ?>
-          <?php
-            switch ($type) {
-              case 2:
-                //include('view2.php');
-                //break;
-              case 1:
-              default:
-                include('view1.php');
-                break;
-            }
-          ?>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      
+  <div class="col-md-6">
+    coming soon...
   </div>
 </div>
 

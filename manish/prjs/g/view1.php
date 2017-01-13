@@ -1,0 +1,24 @@
+<div class="row" style="padding-bottom:20px">
+  <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+      <a href="g/details?id=<?php echo $v['uid']; ?>">
+          <img class="img-thumbnail img-responsive" src="<?php echo $mainImage; ?>" alt="...">
+      </a>
+  </div>
+  <div class="col-md-9 col-xs-9 col-lg-9 col-sm-9">
+    <h4 class="media-heading"><a href="g/details?id=<?php echo $v['uid']; ?>"><?php echo $v['title']; ?></a></h4>
+      <p><small>
+        <br><strong>Location:</strong> <?php echo $address['sn']['city']; ?>, <?php echo $address['sn']['state']; ?>, <?php echo $address['sn']['country']; ?> (<?php echo $address['sn']['county']; ?>)
+        <br><?php if (!empty($v['nature'])) { echo $siteConfig['nature'][$v['nature']]; } ?> 
+        <?php if (!empty($v['birth_year'])) { echo yearToAge($v['birth_year']).' years'; } ?>
+        <?php if (!empty($v['height'])) { echo '<b>Ht</b>: '.$siteConfig['height'][$v['height']]; } ?> 
+        <?php if (!empty($v['weight'])) { echo '<b>Wt</b>: '.$siteConfig['weight'][$v['weight']]; } ?>
+        <?php if (!empty($v['distance'])) { ?>
+        <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
+        <?php } ?> 
+        
+        </small></p>
+      
+      
+  </div>
+  
+</div>

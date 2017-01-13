@@ -54,7 +54,7 @@
           link: function(scope, elem, attrs) {
             
             var ref = firebase.database().ref('/connectedUsers');
-            if (scope.userData && scope.userData.uid) {
+            if (scope.userData.uid) {
               ref.child(scope.userData.uid).onDisconnect().remove();
             }//end if ondisconnect
             scope.data = null;
@@ -65,40 +65,19 @@
                   var loggedInTime = value;
                   var uid = key;
                   firebase.database().ref('/users').child(uid).once('value', function (snapshotUser) {
-                    var a = snapshotUser.exists();
-                    if (!a) {
-                      return;
-                    }
                     scope.data[uid] = {};
                     scope.data[uid] = snapshotUser.val();
                     scope.data[uid].loggedInTime = loggedInTime;
-                    
-                    var lat = null;
-                    var lng = null;
-                    scope.data[uid].location = '';
-                    if (scope.data[uid].ipDetails) {
-                      lat = scope.data[uid].ipDetails.lat;
-                      lng = scope.data[uid].ipDetails.lng;
-                    }//end if lat and lng
-                    
-                    if (scope.data[uid].ipDetails) {
-                      scope.data[uid].location = scope.data[uid].ipDetails.city + ', ' + scope.data[uid].ipDetails.region;
-                    }//end if location
-                    
-                    //get lat lng location from profile
-                    if (scope.data[uid].profile) {
-                      var address = JSON.parse(scope.data[uid].profile.address);
-                      lat = scope.data[uid].profile.lat;
-                      lng = scope.data[uid].profile.lng;
-                      scope.data[uid].location = address.sn.city + ', ' + address.sn.state + ' - '+address.sn.county;
-                    }//end if
-                    
                     var distance = null;
-                    if (scope.lat && scope.lng && lat && lng) {
-                      distance = dataService.distance(scope.lat, scope.lng, lat, lng);
+                    if (scope.lat && scope.lng && scope.data[uid].ipDetails) {
+                      distance = dataService.distance(scope.lat, scope.lng, scope.data[uid].ipDetails.lat, scope.data[uid].ipDetails.lng);
                       //distance = $filter('number')(distance, 2);
                     }
                     scope.data[uid].distance = distance;
+                    scope.data[uid].location = '';
+                    if (scope.data[uid].ipDetails) {
+                      scope.data[uid].location = scope.data[uid].ipDetails.city + ', ' + scope.data[uid].ipDetails.region;
+                    }
                     if(!scope.$$phase) scope.$apply();
                   });
                 });
@@ -214,8 +193,7 @@
                   // ...
                 }).catch(function(error) {
                   scope.userData = null;
-                  console.log('error22: ', error);
-                  alert(error.message);
+                  console.log('error: ', error);
                 });
               }
               //login through google

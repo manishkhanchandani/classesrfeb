@@ -1,0 +1,73 @@
+<?php
+class G extends Models_General
+{
+  public function getList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lon='', $radius='', $params=array(), $uid='', $cacheTime=900) {
+    $return = array();
+    $maxRows_rsView = (int) $max;
+    $startRow_rsView = (int) $page * $maxRows_rsView;
+    $pageNum_rsView = $page;
+    //$maxRows_rsView = (int) $max;
+    //$startRow_rsView = (int) $start;
+    //$pageNum_rsView = floor($startRow_rsView / $maxRows_rsView);
+    $return['max'] = $maxRows_rsView;
+    $return['page'] = $pageNum_rsView;
+    $return['start'] = $startRow_rsView;
+    $return['cacheTime'] = $cacheTime;
+    $distance = '';
+    $distanceWhere = '';
+    $orderBy = ' ORDER BY m.created_on DESC';
+    if (!empty($lat) && !empty($lon) && !empty($radius)) {
+      $lat = (double) $lat;
+      $lon = (double) $lon;
+      $radius = (int) $radius;
+      $distance = ", (ROUND(
+      DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.lat)) * COS(RADIANS(".$lon." -(m.lng)))))*60*1.1515,2)) as distance";
+      $distanceWhere = " AND (ROUND(
+      DEGREES(ACOS(SIN(RADIANS(".$lat.")) * SIN(RADIANS(m.lat)) + COS(RADIANS(".$lat.")) * COS(RADIANS(m.lat)) * COS(RADIANS(".$lon." -(m.lng)))))*60*1.1515,2)) <= ".$radius;
+      $orderBy = ' ORDER BY distance ASC, m.created_on DESC';
+    }
+    $mainSql = "select * $distance";
+    $mainSql .= ", (select count(*) from city_groups_members as gm WHERE gm.group_id = m.id) as members";
+    
+    $sql = " from city_groups as m WHERE 1 $distanceWhere AND m.status = 1 AND m.deleted = 0";
+    if (!empty($keyword)) {
+      $sql .= " AND (m.name like ".$this->qstr('%'.$keyword.'%')." OR m.description like ".$this->qstr('%'.$keyword.'%').")";
+    }
+    //end keyword
+    
+    if (!empty($uid)) {
+      $sql .= " AND (m.uid = ".$this->qstr($uid).")";
+    }//end uid
+    
+    if (!empty($params)) {
+      $sql .= " AND (";
+      $tmp = array();
+      foreach ($params as $k => $v) {
+        $tmp[] = "m.".$v." = 1";
+      }
+      $tmpString = implode(' OR ', $tmp);
+      $sql .= $tmpString;
+      $sql .= ")";
+    }
+    
+    $sql_limit_rsView = sprintf("%s LIMIT %d, %d", $mainSql.$sql.$orderBy, $startRow_rsView, $maxRows_rsView);
+  
+    $data = $this->fetchAll($sql_limit_rsView, array(), $cacheTime);
+  
+    $queryTotalRows = 'select count(*) as cnt '.$sql;
+    if (empty($totalRows_rsView)) {
+      $rowCountResult = $this->fetchRow($queryTotalRows, array(), $cacheTime);
+      $totalRows_rsView = (int) $rowCountResult['cnt'];
+    }
+    $sql2 = $queryTotalRows;
+    $totalPages_rsView = ceil($totalRows_rsView/$maxRows_rsView)-1;
+    $return['totalRows'] = $totalRows_rsView;
+    $return['totalPages'] = $totalPages_rsView;
+    $return['data'] = $data;
+    $return['sql1'] = $sql_limit_rsView;
+    $return['sql2'] = $sql2;
+    return $return;
+  }
+  
+}
+?>

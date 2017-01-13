@@ -1,0 +1,69 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jan 12, 2017 at 07:35 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `prjs`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nodes`
+--
+
+CREATE TABLE `nodes` (
+  `node_id` varchar(50) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text,
+  `created_dt` timestamp NULL DEFAULT NULL,
+  `updated_dt` timestamp NULL DEFAULT NULL,
+  `deleted_dt` timestamp NULL DEFAULT NULL,
+  `deleted` int(1) NOT NULL DEFAULT '0',
+  `status` int(1) NOT NULL DEFAULT '1',
+  `approved` int(1) NOT NULL DEFAULT '1',
+  `lat` double DEFAULT NULL,
+  `lng` double DEFAULT NULL,
+  `featured` int(1) NOT NULL DEFAULT '0',
+  `featured_expiry` timestamp NULL DEFAULT NULL,
+  `uid` varchar(100) DEFAULT NULL,
+  `images` text,
+  `videos` text,
+  `urls` text,
+  `address` text
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `nodes`
+--
+
+INSERT INTO `nodes` (`node_id`, `title`, `description`, `created_dt`, `updated_dt`, `deleted_dt`, `deleted`, `status`, `approved`, `lat`, `lng`, `featured`, `featured_expiry`, `uid`, `images`, `videos`, `urls`, `address`) VALUES
+('2F36D893-CDFD-A6A4-1E7C-3B594892A242', 'title1', 'desc2', '2017-01-12 11:40:13', '2017-01-12 11:40:13', NULL, 1, 1, 0, 37.7974273, -121.21605260000001, 0, NULL, 'gixA78V1MFfGTGk4FLBdhOh8PD32', '["http:\\/\\/www.haemosexual.com\\/wp-content\\/uploads\\/2016\\/06\\/AD_Day1_039.jpg","http:\\/\\/www.haemosexual.com\\/wp-content\\/uploads\\/2016\\/06\\/AD_Day1_039.jpg"]', '["https:\\/\\/www.youtube.com\\/watch?v=cgY8w7DZhLU","https:\\/\\/www.youtube.com\\/watch?v=PhtCYZolNeI"]', '["http:\\/\\/facebook.com","http:\\/\\/google.com"]', '{"formatted_address":"Manteca, CA, USA","name":"Manteca","place_id":"ChIJCUWMJENAkIARjMxOe6Wp4p0","lat":37.7974273,"lng":-121.21605260000001,"adr_address":"<span class=\\"locality\\">Manteca</span>, <span class=\\"region\\">CA</span>, <span class=\\"country-name\\">USA</span>","url":"https://maps.google.com/?q=Manteca,+CA,+USA&ftid=0x80904043248c4509:0x9de2a9a57b4ecc8c","sn":{"city":"Manteca","county":"San Joaquin County","state":"CA","country":"US"},"ln":{"city":"Manteca","county":"San Joaquin County","state":"California","country":"United States"}}');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `nodes`
+--
+ALTER TABLE `nodes`
+  ADD PRIMARY KEY (`node_id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

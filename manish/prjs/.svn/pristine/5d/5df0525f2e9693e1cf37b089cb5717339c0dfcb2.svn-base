@@ -29,40 +29,36 @@ if (!empty($recordComplete['urls'])) {
 
 if (!empty($recordComplete['address'])) {
   $address = json_decode($recordComplete['address'], true);
+  
+  if (!empty($address['formatted_address'])) {
+    $recordComplete['location'] = $address['formatted_address'];
+  }
 }
-
-function saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray)
-{
-  $p = '/users/'.$_COOKIE['uid'].'/profile';
-  $arr = array_merge($nodesArray, $profileArray);
-  $firebase->update($defaultFirebasePath . $p, $arr);
-}
-
 
 if (!empty($_POST)) {
   if (empty($_COOKIE['uid'])) {
     header("Location: home");
     exit;
   }
+  pr($_POST);
   
   $nodesArray = array();
   
   $nodesArray['title'] = !empty($_POST['title']) ? $_POST['title'] : '';
   $nodesArray['description'] = !empty($_POST['description']) ? $_POST['description'] : '';
+  $nodesArray['created_dt'] = date('Y-m-d H:i:s');
   $nodesArray['updated_dt'] = date('Y-m-d H:i:s');
-  $nodesArray['deleted'] = 0;
+  $nodesArray['deleted'] = 1;
   $nodesArray['status'] = !empty($_POST['status']) ? $_POST['status'] : 0;
-  $nodesArray['approved'] = 1;
+  $nodesArray['approved'] = 0;
   $nodesArray['lat'] = !empty($_POST['lat']) ? $_POST['lat'] : '';
   $nodesArray['lng'] = !empty($_POST['lng']) ? $_POST['lng'] : '';
-  $nodesArray['location'] = !empty($_POST['location']) ? $_POST['location'] : '';
   $nodesArray['address'] = !empty($_POST['address']) ? $_POST['address'] : '';
   $nodesArray['images'] = !empty($_POST['images']) ? json_encode(array_filter($_POST['images'])) : '';
   $nodesArray['videos'] = !empty($_POST['videos']) ? json_encode(array_filter($_POST['videos'])) : '';
   $nodesArray['urls'] = !empty($_POST['urls']) ? json_encode(array_filter($_POST['urls'])) : '';
   $nodesArray['featured'] = 0;
   $nodesArray['uid'] = $_COOKIE['uid'];
-  $nodesArray['terms'] = !empty($_POST['terms']) ? $_POST['terms'] : 0;
   
   $profileArray = array();
   $profileArray['birth_year'] = !empty($_POST['birth_year']) ? $_POST['birth_year'] : '';
@@ -80,12 +76,6 @@ if (!empty($_POST)) {
   $profileArray['religion'] = !empty($_POST['religion']) ? $_POST['religion'] : '';
   $profileArray['profession'] = !empty($_POST['profession']) ? $_POST['profession'] : '';
   $profileArray['hosting'] = !empty($_POST['hosting']) ? $_POST['hosting'] : '';
-  $profileArray['smoking'] = !empty($_POST['smoking']) ? $_POST['smoking'] : '';
-  $profileArray['drinking'] = !empty($_POST['drinking']) ? $_POST['drinking'] : '';
-  $profileArray['height'] = !empty($_POST['height']) ? $_POST['height'] : '';
-  $profileArray['weight'] = !empty($_POST['weight']) ? $_POST['weight'] : '';
-  $profileArray['diet'] = !empty($_POST['diet']) ? $_POST['diet'] : '';
-  $profileArray['bodyType'] = !empty($_POST['bodyType']) ? $_POST['bodyType'] : '';
   
   if (!empty($record['node_id'])) {
     $nodesArray['node_id'] = $record['node_id'];
@@ -94,20 +84,16 @@ if (!empty($_POST)) {
     $where = sprintf('node_id = %s', $modelGeneral->qstr($nodesArray['node_id']));
     $modelGeneral->updateDetails('nodes', $nodesArray, $where);
     $modelGeneral->updateDetails('g_profile', $profileArray, $where);
-    saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
     header("Location: profile");
     exit;
   } else {
-    $nodesArray['created_dt'] = date('Y-m-d H:i:s');
     $nodesArray['node_id'] = guid();
     $profileArray['node_id'] = $nodesArray['node_id'];
     $modelGeneral->addDetails('nodes', $nodesArray);
     $modelGeneral->addDetails('g_profile', $profileArray);
-    saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
     header("Location: profile");
     exit;
   }//end if
-  
 }
 ?>
 <script>
@@ -131,7 +117,7 @@ angular.module('myApp')
         <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="<?php echo isset($recordComplete['title']) ? $recordComplete['title'] : ''; ?>" required>
     </div>
     <div class="form-group">
-        <label for="description">Description (Write about your personality and what you are looking for in your partner.)</label>
+        <label for="description">Description</label>
         <textarea rows="5" class="form-control" id="description" name="description" placeholder="Enter description"><?php echo isset($recordComplete['description']) ? $recordComplete['description'] : ''; ?></textarea>
     </div>
     <div class="form-group">
@@ -146,61 +132,34 @@ angular.module('myApp')
         
     </div>
     <div class="form-group">
-        <div class="row">
-          <div class="col-md-4">
-            <label for="nature">I am *: </label><br>
-            <input type="radio" id="nature" name="nature" value="1" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 1) ? 'checked' : ''; ?>> Top
-            <input type="radio" id="nature" name="nature" value="2" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 2) ? 'checked' : ''; ?>> Bottom
-            <input type="radio" id="nature" name="nature" value="3" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 3) ? 'checked' : ''; ?>> Versatile
-          </div>
-          <div class="col-md-4">
-            <label for="nature">Gender: </label><br>
-            <input type="radio" id="gender" name="gender" value="1" <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 1) ? 'checked' : ''; ?>> Male
-            <input type="radio" id="gender" name="gender" value="2" disabled  <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 2) ? 'checked' : ''; ?>> Female
-          </div>
-          <div class="col-md-4">
-            <label for="nature">Hosting: </label><br>
-            <input type="radio" id="hosting" name="hosting" value="1" <?php echo (isset($recordComplete['hosting']) && $recordComplete['hosting'] == 1) ? 'checked' : ''; ?>> I can host
-            <input type="radio" id="hosting" name="hosting" value="2" <?php echo (isset($recordComplete['hosting']) && $recordComplete['hosting'] == 2) ? 'checked' : ''; ?>> I cannot host
-          </div>
-        </div>
-    </div> 
+        <label for="nature">I am *: </label><br>
+        <input type="radio" id="nature" name="nature" value="1" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 1) ? 'checked' : ''; ?>> Top
+        <input type="radio" id="nature" name="nature" value="2" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 2) ? 'checked' : ''; ?>> Bottom
+        <input type="radio" id="nature" name="nature" value="3" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 3) ? 'checked' : ''; ?>> Versatile
+    </div>
     <div class="form-group">
-        <div class="row">
-          <div class="col-md-4">
-            <label for="nature">Show / Hide My Profile</label><br>
-            <input type="radio" id="status" name="status" value="1" <?php echo (!isset($recordComplete['status']) || (isset($recordComplete['status']) && $recordComplete['status'] == 1)) ? 'checked' : ''; ?>> Show
-            <input type="radio" id="status" name="status" value="0" <?php echo (isset($recordComplete['status']) && $recordComplete['status'] == 0) ? 'checked' : ''; ?>> Hide
-          </div>
-          <div class="col-md-4">
-            <label for="nature">Do you smoke?</label><br>
-            <input type="radio" id="smoking" name="smoking" value="1" <?php echo (isset($recordComplete['smoking']) && $recordComplete['smoking'] == 1) ? 'checked' : ''; ?>> No
-            <input type="radio" id="smoking" name="smoking" value="2" <?php echo (isset($recordComplete['smoking']) && $recordComplete['smoking'] == 2) ? 'checked' : ''; ?>> Occassionally
-            <input type="radio" id="smoking" name="smoking" value="3" <?php echo (isset($recordComplete['smoking']) && $recordComplete['smoking'] == 3) ? 'checked' : ''; ?>> Yes
-          </div>
-          <div class="col-md-4">
-            <label for="nature">Do you drink?</label><br>
-            <input type="radio" id="drinking" name="drinking" value="1" <?php echo (isset($recordComplete['drinking']) && $recordComplete['drinking'] == 1) ? 'checked' : ''; ?>> No
-            <input type="radio" id="drinking" name="drinking" value="2" <?php echo (isset($recordComplete['drinking']) && $recordComplete['drinking'] == 2) ? 'checked' : ''; ?>> Occassionally
-            <input type="radio" id="drinking" name="drinking" value="3" <?php echo (isset($recordComplete['drinking']) && $recordComplete['drinking'] == 3) ? 'checked' : ''; ?>> Yes
-          </div>
-        </div>
-    </div> 
-    <div class="form-group">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-        </div>
-    </div> 
-    <!--<div class="form-group">
         <label for="nature">I like: </label><br>
         <div class="row">
         <?php foreach ($siteConfig['HOBBIES'] as $field => $label) { ?>
          <div class="col-md-3"> <input type="checkbox" id="<?php echo $field; ?>" name="hobbies[<?php echo $field; ?>]" value="1" <?php if (isset($recordComplete[$field]) && $recordComplete[$field] == 1) { echo ' checked'; } ?>> <?php echo $label ; ?></div>
         <?php } ?>
         </div>
-    </div>-->
+    </div>
+    <div class="form-group">
+        <label for="nature">Gender: </label><br>
+        <input type="radio" id="gender" name="gender" value="1" <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 1) ? 'checked' : ''; ?>> Male
+        <input type="radio" id="gender" name="gender" value="2" disabled  <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 2) ? 'checked' : ''; ?>> Female
+    </div>
+    <div class="form-group">
+        <label for="nature">Hosting: </label><br>
+        <input type="radio" id="hosting" name="hosting" value="1" <?php echo (isset($recordComplete['hosting']) && $recordComplete['hosting'] == 1) ? 'checked' : ''; ?>> I can host
+        <input type="radio" id="hosting" name="hosting" value="2" <?php echo (isset($recordComplete['hosting']) && $recordComplete['hosting'] == 2) ? 'checked' : ''; ?>> I cannot host
+    </div>
+    <div class="form-group">
+        <label for="nature">Show / Hide My Profile</label><br>
+        <input type="radio" id="status" name="status" value="1" <?php echo (isset($recordComplete['status']) && $recordComplete['status'] == 1) ? 'checked' : ''; ?>> Show
+        <input type="radio" id="status" name="status" value="0" <?php echo (isset($recordComplete['status']) && $recordComplete['status'] == 0) ? 'checked' : ''; ?>> Hide
+    </div>
     <div class="form-group">
         <div class="row">
           <div class="col-md-4"><label for="marital_status">Marital Status</label>
@@ -232,7 +191,7 @@ angular.module('myApp')
     </div>
     <div class="form-group">
         <div class="row">
-          <div class="col-md-4"><label for="religion">Religion</label>
+          <div class="col-md-12"><label for="religion">Religion</label>
             <select name="religion" id="religion" class="form-control">
               <option value="">Select</option>
               <?php foreach ($siteConfig['religion'] as $field => $label) { ?>
@@ -240,50 +199,6 @@ angular.module('myApp')
               <?php } ?>
             </select>
           </div>
-          
-          <div class="col-md-4"><label for="height">Height</label>
-            <select name="height" id="height" class="form-control">
-              <option value="">Select</option>
-              <?php foreach ($siteConfig['height'] as $field => $label) { ?>
-                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['height']) && $recordComplete['height'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
-              <?php } ?>
-            </select>
-          </div>
-          
-          <div class="col-md-4"><label for="weight">Weight</label>
-            <select name="weight" id="weight" class="form-control">
-              <option value="">Select</option>
-              <?php foreach ($siteConfig['weight'] as $field => $label) { ?>
-                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['weight']) && $recordComplete['weight'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-        
-    </div>
-    
-    
-    <div class="form-group">
-        <div class="row">
-          
-          <div class="col-md-4"><label for="diet">Diet</label>
-            <select name="diet" id="diet" class="form-control">
-              <option value="">Select</option>
-              <?php foreach ($siteConfig['diet'] as $field => $label) { ?>
-                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['diet']) && $recordComplete['diet'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
-              <?php } ?>
-            </select>
-          </div>
-          
-          <div class="col-md-4"><label for="bodyType">Body Type</label>
-            <select name="bodyType" id="bodyType" class="form-control">
-              <option value="">Select</option>
-              <?php foreach ($siteConfig['bodyType'] as $field => $label) { ?>
-                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['bodyType']) && $recordComplete['bodyType'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
-              <?php } ?>
-            </select>
-          </div>
-          
         </div>
         
     </div>
@@ -338,7 +253,7 @@ angular.module('myApp')
     </fieldset>
     <div class="checkbox">
         <label>
-            <input type="checkbox" id="terms" name="terms" value="1" required <?php if (isset($recordComplete['terms']) && $recordComplete['terms'] == 1) { echo ' checked'; } ?>> I agree to <a href="g/terms" target="_blank">terms & conditions</a> and I agree that I am older than 18 years of age and I did not put any nude images.
+            <input type="checkbox" required> I agree to terms & conditions and I agree that I am older than 18 years of age.
         </label>
     </div>
     

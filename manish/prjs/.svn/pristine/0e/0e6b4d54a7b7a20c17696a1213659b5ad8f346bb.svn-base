@@ -37,8 +37,6 @@ function saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray)
   $arr = array_merge($nodesArray, $profileArray);
   $firebase->update($defaultFirebasePath . $p, $arr);
 }
-
-
 if (!empty($_POST)) {
   if (empty($_COOKIE['uid'])) {
     header("Location: home");

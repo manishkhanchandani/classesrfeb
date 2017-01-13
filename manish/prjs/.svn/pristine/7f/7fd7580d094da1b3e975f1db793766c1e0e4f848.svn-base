@@ -37,8 +37,6 @@ function saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray)
   $arr = array_merge($nodesArray, $profileArray);
   $firebase->update($defaultFirebasePath . $p, $arr);
 }
-
-
 if (!empty($_POST)) {
   if (empty($_COOKIE['uid'])) {
     header("Location: home");
@@ -49,8 +47,9 @@ if (!empty($_POST)) {
   
   $nodesArray['title'] = !empty($_POST['title']) ? $_POST['title'] : '';
   $nodesArray['description'] = !empty($_POST['description']) ? $_POST['description'] : '';
+  $nodesArray['created_dt'] = date('Y-m-d H:i:s');
   $nodesArray['updated_dt'] = date('Y-m-d H:i:s');
-  $nodesArray['deleted'] = 0;
+  $nodesArray['deleted'] = 1;
   $nodesArray['status'] = !empty($_POST['status']) ? $_POST['status'] : 0;
   $nodesArray['approved'] = 1;
   $nodesArray['lat'] = !empty($_POST['lat']) ? $_POST['lat'] : '';
@@ -98,7 +97,6 @@ if (!empty($_POST)) {
     header("Location: profile");
     exit;
   } else {
-    $nodesArray['created_dt'] = date('Y-m-d H:i:s');
     $nodesArray['node_id'] = guid();
     $profileArray['node_id'] = $nodesArray['node_id'];
     $modelGeneral->addDetails('nodes', $nodesArray);

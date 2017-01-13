@@ -8,7 +8,7 @@ function pr($value)
 	}
 	
 define('COOKIE_FILE_PATH', dirname(__FILE__).DIRECTORY_SEPARATOR.'cache');
-
+echo COOKIE_FILE_PATH;
 if (!function_exists('curlget')) {
 	function curlget($url, $post=0, $POSTFIELDS='') {
 		$https = 0;

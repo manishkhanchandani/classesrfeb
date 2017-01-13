@@ -50,7 +50,6 @@ $firephp->setEnabled(true);
 //my autoloader
 function myautoload($class_name) {
     $classPath = SITEDIR.'/api/help/MkGalaxy/'.implode('/', explode('_', $class_name));
-
    if (file_exists($classPath.'.class.php')) {
     include_once $classPath . '.class.php';
    }

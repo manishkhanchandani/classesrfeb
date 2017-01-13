@@ -2,7 +2,7 @@
   <p><strong>Online Users Near {{city}}</strong></p>
   <input type="search" class="form-control" ng-model="loggedInUsersFilter" placeholder="filter ..." aria-label="filter " />
  <ul class="list-group"  style="padding-top:15px;" ng-if="userData.uid">
-  <li class="list-group-item" ng-repeat="(key, value) in data | orderObjectBy: 'distance' : false  | filter:loggedInUsersFilter as results"><a href="g/details?id={{value.uid}}" target="_blank"><strong>{{value.displayName}}</strong></a>
+  <li class="list-group-item" ng-repeat="(key, value) in data | orderObjectBy: 'distance' : false  | filter:loggedInUsersFilter as results"><strong>{{value.displayName}}</strong>
   <br />
   <small>
     Online Since: {{value.updated_dt | timeAgo}}<br />
