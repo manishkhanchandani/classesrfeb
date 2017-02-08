@@ -2,8 +2,8 @@
 Essay Questions and
 Selected Answers
 October 2014
-
-October 2014 ESSAY QUESTIONS
+<br><br>
+October 2014 ESSAY QUESTIONS<br>
 California
 First-Year Law Students' Examination
 Answer all 4 questions.
@@ -25,8 +25,10 @@ The answers were assigned high grades and were written by applicants who passed 
 2. 3.
 4.
 Number
-Subject Contracts
-T orts Criminal Law
+Subject 
+Contracts
+Torts 
+Criminal Law
 Contracts
 ￼￼
 QUESTION 1

@@ -2,7 +2,7 @@
 
 class G
 {
-  public function getList($max=100, $page=0, $totalRows_rsView=0, $keyword='', $lat='', $lng='', $radius='', $uid='', $status=1, $deleted=0, $approved=1, $cacheTime=900) {
+  public function getList($tableName, $max=100, $page=0, $totalRows_rsView=0, $keyword='', $params=array(), $lat='', $lng='', $radius='', $uid='', $status=1, $deleted=0, $approved=1, $cacheTime=900) {
     global $modelGeneral;
     $return = array();
     $maxRows_rsView = (int) $max;
@@ -30,7 +30,7 @@ class G
     }
     $mainSql = "select * $distance";
     
-    $sql = " from nodes as m LEFT JOIN g_profile as p ON m.node_id = p.node_id WHERE 1 $distanceWhere AND m.status = $status AND m.deleted = $deleted AND m.approved = $approved ";
+    $sql = " from $tableName as p LEFT JOIN nodes as m ON m.node_id = p.node_id WHERE 1 $distanceWhere AND m.status = $status AND m.deleted = $deleted AND m.approved = $approved ";
 
     if (!empty($keyword)) {
       $sql .= " AND (m.title like ".$modelGeneral->qstr('%'.$keyword.'%')." OR m.description like ".$modelGeneral->qstr('%'.$keyword.'%').")";
@@ -41,10 +41,31 @@ class G
       $sql .= " AND (m.uid = ".$modelGeneral->qstr($uid).")";
     }//end uid
     
+    
+    if (!empty($params['mia'])) {
+      $minAge = date('Y') - $params['mia'];
+      $sql .= " AND (p.birth_year <= ".$minAge.")";
+    }//end mia
+    
+    if (!empty($params['maa'])) {
+      $maxAge = date('Y') - $params['maa'];
+      $sql .= " AND (p.birth_year >= ".$maxAge.")";
+    }//end maa
+    
+    if (!empty($params['n'])) {
+      $tmp = implode(', ', $params['n']);
+      $sql .= " AND (p.nature IN (".$tmp."))";
+    }//end n
+    
+    if (!empty($params['h'])) {
+      $tmp = implode(', ', $params['h']);
+      $sql .= " AND (p.hosting IN (".$tmp."))";
+    }//end h
+
     $sql_limit_rsView = sprintf("%s LIMIT %d, %d", $mainSql.$sql.$orderBy, $startRow_rsView, $maxRows_rsView);
 
     $data = $modelGeneral->fetchAll($sql_limit_rsView, array(), $cacheTime);
-  
+
     $queryTotalRows = 'select count(*) as cnt '.$sql;
     if (empty($totalRows_rsView)) {
       $rowCountResult = $modelGeneral->fetchRow($queryTotalRows, array(), $cacheTime);

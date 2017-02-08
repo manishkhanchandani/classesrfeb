@@ -1,11 +1,15 @@
 <?php
 
-function showHideText($id, $linkText, $content='') {
+function showHideText($id, $linkText, $content='', $link='') {
   $string = '<a data-toggle="collapse" href="#'.$id.'" aria-expanded="false" aria-controls="'.$id.'">
             '.$linkText.'
           </a>
           <div class="collapse" id="'.$id.'">
-            '.$content.'
+            '.$content;
+        if (!empty($link)) {
+          $string .= ' <a href="'.$link.'" target="_blank">More Info</a>';
+        }
+  $string .= '
           </div>';
   
   return $string;
@@ -105,9 +109,131 @@ function showHideText($id, $linkText, $content='') {
           </ol>
         </li>
       </ol>
-      <p>Criminal Checklist 2</p>
+      <p><strong>Criminal Checklist 2</strong></p>
       <ol>
-        <li></li>
+        <li>Formation
+          <ol>
+            <li>Actus Reus / Mens Rea / Concurrence</li>
+            <li>Accomplice Liability
+              <ol>
+                <li>Intent</li>
+                <li>Knowledge</li>
+                <li>Active Assistance</li>
+              </ol>
+            </li>
+            <li>Vicarious Liability</li>
+          </ol>
+        </li>
+        <li>Inchoate Crimes
+          <ol>
+            <li>Solicitation</li>
+            <li>Attempt</li>
+            <li>Conspiracy </li>
+          </ol>
+        </li>
+        <li>Crimes against the Person
+          <ol>
+            <li>Homicide
+              <ol>
+                <li>IRAC Homicide</li>
+                <li>Causation
+                  <ol>
+                    <li>Actual</li>
+                    <li>Proximate</li>
+                  </ol>
+                </li>
+                <li>Murder
+                  <ol>
+                    <li>Malice is the key</li>
+                  </ol>
+                </li>
+                <li>First Degree Murder</li>
+                <li>Second Degree Murder</li>
+                <li>Justification</li>
+                <li>Excuse (3 i's)</li>
+                <li>Mitigation
+                  <ol>
+                    <li>Voluntary Manslaughter</li>
+                  </ol>
+                </li>
+                <li>Involuntary Manslaughter</li>
+              </ol>
+            </li>
+            <li>Non-Homicide
+              <ol>
+                <li>Assault</li>
+                <li>Battery</li>
+                <li>False Imprisonment</li>
+                <li>Kidnapping</li>
+                <li>Mayhem</li>
+                <li>Rape</li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>Crimes against Habitation
+          <ol>
+            <li>Burglary
+              <ol>
+                <li>Common Law</li>
+                <li>Statutory</li>
+              </ol>
+            </li>
+            <li>Arson</li>
+          </ol>
+        </li>
+        <li>Crimes against Property
+          <ol>
+            <li>Larceny</li>
+            <li>Larceny by Trick</li>
+            <li>False Pretenses</li>
+            <li>Embezzlement</li>
+            <li>Robbery</li>
+            <li>Receiving Stolen Property</li>
+          </ol>
+        </li>
+        <li>Crimes against Property Interests
+          <ol>
+            <li>Forgery</li>
+            <li>Uttering</li>
+            <li>Extortion</li>
+          </ol>
+        </li>
+        <li>Miscellaneous Crimes
+          <ol>
+            <li>Misprision</li>
+            <li>Compounding</li>
+            <li>Riot</li>
+            <li>Rout</li>
+            <li>Unlawful Assembly</li>
+            <li>Malicious Mischief</li>
+            <li>Breach of Peace</li>
+          </ol>
+        </li>
+        <li>Defenses and Justifications
+          <ol>
+            <li>Defenses
+              <ol>
+                <li>Self Defense</li>
+                <li>Defense of Others</li>
+                <li>Defense of Property</li>
+                <li>Prevention of Crime</li>
+                <li>Public Authority</li>
+                <li>Domestic Authority</li>
+                <li>Necessity</li>
+              </ol>
+            </li>
+            <li>Justification
+              <ol>
+                <li>Mistake of Law</li>
+                <li>Mistake of Fact</li>
+                <li>Consent</li>
+                <li>Duress</li>
+                <li>Entrapment </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
       </ol>
     </div>
     <div class="col-md-4">
@@ -121,7 +247,9 @@ function showHideText($id, $linkText, $content='') {
                 <li>Assault</li>
                 <li>Battery</li>
                 <li>False Imprisonment</li>
-                <li>Intentional Infliction of Mental Distress</li>
+                <li>Intentional Infliction of Mental Distress
+                  <?php echo showHideText('IIOMD', '(Rule)', '<span class="rule">It’s the intentional outrageous conduct that intends to inflict emotional distress and does cause severe emotional distress.</span>'); ?>
+                </li>
                 <li>Trespass to Land</li>
                 <li>Trespass to Chattel</li>
                 <li>Conversion</li>
@@ -137,7 +265,9 @@ function showHideText($id, $linkText, $content='') {
                     <li>Reasonable Appearances Jurisdictions</li>
                   </ol>
                 </li>
-                <li>Defense of Property</li>
+                <li>Defense of Property
+                  <?php echo showHideText('DefenseOfProperty', '(Rule)', '<span class="rule">Defense of property allows the reasonable use of force to defend one\'s property.</span>'); ?>
+                </li>
                 <li>Prevention of Crime</li>
                 <li>Recapture of Property
                   <ol>
@@ -160,6 +290,7 @@ function showHideText($id, $linkText, $content='') {
         <li><strong>Negligence</strong>
 <ol>
             <li>Duty
+             <?php echo showHideText('Duty', '(Rule)', '<span class="rule">A duty is simply a legal obligation. In order to be sued for Negligence, the Defendant must have owed a duty to the Plaintiff.</span>'); ?>
               <ol>
                 <li>General</li>
                 <li>Special
@@ -176,20 +307,53 @@ function showHideText($id, $linkText, $content='') {
               </ol>
             </li>
             <li>Breach
+               <?php echo showHideText('Breach', '(Rule)', '<span class="rule">A breach is a violation of a law or duty. The Defendant must breach his duty in order to be liable for negligence.</span>'); ?>
+               <?php echo showHideText('Breach2', '(Rule 2)', '<span class="rule">A breach is the failure to perform one\'s duty.</span>'); ?>
               <ol>
-                <li>Direct / Circumstantial</li>
+                <li>Direct / Circumstantial
+                <?php echo showHideText('DirectEvidence', '(Rule Direct Evidence)', '<span class="rule">Breach is proved by direct or circumstantial evidence. Direct Evidence: Evidence which clearly shows that a negligent act took place.(more over Evidence which believe establishes that breach occured.)</span>', 'https://nationalparalegal.edu/public_documents/courseware_asp_files/torts/negligence1/breachOfDuty1.asp'); ?>
+               <?php echo showHideText('CircumstantialEvidence', '(Rule Circumstantial Evidence)', '<span class="rule">Breach is proved by direct or circumstantial evidence. Circumtantial evidence: Evidence which a jury can use to reasonably infer negligence on the part of the defendant. </span>', 'https://nationalparalegal.edu/public_documents/courseware_asp_files/torts/negligence1/breachOfDuty1.asp'); ?></li>
                 <li>Res Ipsa Loquitur</li>
               </ol>
             </li>
             <li>Causation
+               <?php echo showHideText('Cause', '(Rule)', '<span class="rule">The breach of duty must have caused harm to the Plaintiff.</span>'); ?>
               <ol>
                 <li>Actual
+                   <?php echo showHideText('ActualCause', '(Rule)', '<span class="rule">An act whose direct result is the plaintiff’s harm.</span>'); ?>
                   <ol>
-                    <li>&quot;But For&quot;</li>
-                    <li>Substantial Factor</li>
+                    <li>&quot;But For&quot;
+                      <?php echo showHideText('ButFor', '(Rule)', '<span class="rule">The method of determining the cause without which the plaintiff’s harm would not have occurred.</span>'); ?>
+                    </li>
+                    <li>Substantial Factor
+                      <?php echo showHideText('SubstantialFactor', '(Rule)', '<span class="rule">The principle by which two or more defendants will be liable if their joint actions caused the plaintiff’s harm but their individual actions alone would have resulted in the same harm. </span>'); ?>
+                    </li>
                   </ol>
                 </li>
+                <li>Other Terms
+                  <ol>
+                    <li>Concurrent Liability Rule
+                      <?php echo showHideText('ConcurrentLiabilityRule', '(Rule)', '<span class="rule">The rule establishing that separate negligent acts of more than one defendant that combine to cause a single injury will result in liability for both defendants.</span>'); ?>
+                    </li>
+                    <li>Tortfeasor
+                      <?php echo showHideText('Tortfeasor', '(Rule)', '<span class="rule">An individual who commits a tort.</span>'); ?>
+                    </li>
+                    <li>Alternative Liability
+                      <?php echo showHideText('AlternativeLiability', '(Rule)', '<span class="rule">Liability arising from the tortious acts of two or more people – when the plaintiff proves that one of the defendants has caused harm but cannot prove which one caused it – resulting in a shifting of the burden of proof to each defendant.</span>'); ?>
+                    </li>
+                  </ol>
+                </li>
+                
                 <li>Proximate
+                   <?php echo showHideText('Proximate', '(Rule)', '<span class="rule">Cause that is legally sufficient to result in liability.</span>'); ?><br>
+                    <strong>Foreseeability:</strong><br>
+                      An expected outcome of the defendant's acts. <br><br>
+
+                    <strong>Eggshell Plaintiff:</strong><br>
+                      A plaintiff who, either because of a physical ailment or extreme sensitivity, suffers harm that most people would not have suffered.<br><br>
+
+                    <strong>Contributing Factors:</strong><br>
+                      Factors which are already in operation when the defendant acts (a physical disability).<br>
                   <ol>
                     <li>Watch the time line!</li>
                     <li>Direct</li>
@@ -204,6 +368,7 @@ function showHideText($id, $linkText, $content='') {
               </ol>
             </li>
             <li>Damages
+               <?php echo showHideText('Damages', '(Rule)', '<span class="rule">The Plaintiff must suffer harm in order to sue for negligence. If he suffers no harm, he cannot sue.</span>'); ?>
               <ol>
                 <li>Physical Harm Needed</li>
                 <li>NIED</li>
@@ -211,10 +376,16 @@ function showHideText($id, $linkText, $content='') {
             </li>
             <li>Defenses
               <ol>
-                <li>Contributory Negligence</li>
-                <li>Comparative Negligence</li>
+                <li>Contributory Negligence
+                  <?php echo showHideText('ContributoryNegligence', '(Rule)', '<span class="rule">Conduct on the part of the plaintiff that contributes to the events leading to his injuries. <br><br> The basis for this defense is that everybody has a duty to avoid injury at the hands of another and, if you fail to protect your own safety, you may be barred from recovering for your injuries. Contributory negligence is a complete bar to recovery.</span>', 'https://nationalparalegal.edu/public_documents/courseware_asp_files/torts/defNegSpecDut/contributoryNegligence.asp'); ?>
+                </li>
+                <li>Comparative Negligence
+                  <?php echo showHideText('ComparativeNegligence', '(Rule)', '<span class="rule">The principle that reduces a plaintiff’s recovery proportionally to the plaintiff’s degree of fault in causing the damage.<br><br>There are two types of comparative negligence that are used when assessing liability: Pure comparative negligence and partial comparative negligence.<br><br>Pure comparative negligence allows the plaintiff to recover even if his negligence is greater than defendant’s negligence. For example, where plaintiff has suffered $100,000 worth of damage, but his own negligence contributed to 90% of his injuries, plaintiff will be allowed to collect $10,000 under a pure comparative negligence theory. <br><br>Partial comparative negligence, which most jurisdictions apply, completely bars recovery if plaintiff’s negligence exceeds a certain threshold.<br><br>Some states will deny the plaintiff recovery if his negligence is equal to or greater than the defendant’s negligence. Therefore, if a jury finds that the plaintiff is either 50% responsible for his injuries or more, the plaintiff will be completely barred from recovery. Anything less than 50% responsibility and the plaintiff will be entitled to recover that percentage of the damage. </span>', 'https://nationalparalegal.edu/public_documents/courseware_asp_files/torts/defNegSpecDut/ComparativeNegligence.asp'); ?>
+                </li>
                 <li>Last Clear Chance</li>
-                <li>Assumption of the Risk</li>
+                <li>Assumption of the Risk
+                <?php echo showHideText('AssumptionofRisk', '(Rule)', '<span class="rule">Where the plaintiff has either explicitly or implicitly consented to the actions for which he is suing the defendant.</span>'); ?>
+                </li>
               </ol>
             </li>
             <li>Multiple Defendant Issues
@@ -248,6 +419,7 @@ function showHideText($id, $linkText, $content='') {
           </ol>
         </li>
         <li><strong>Vicarious Liability</strong>
+        <?php echo showHideText('VicariousLiability', '(Rule)', '<span class="rule">Liability that a supervisory party bears for the actionable conduct of a subordinate or associate because of the relationship between the two parties.</span>'); ?>
 <ol>
             <li>Employment Relationship - Respondeat Superior
               <ol>
@@ -311,7 +483,7 @@ function showHideText($id, $linkText, $content='') {
             </li>
           </ol>
         </li>
-        <li><strong>Defamation</strong>
+        <li><strong>Defamation</strong> <?php echo showHideText('Defamation', '(Rule)', '<span class="rule">DEFAMATION is the publication to a third party of information "of and concerning the plaintiff" that is false and harms the plaintiff\'s reputation.</span>'); ?>
 <ol>
             <li>General Rule</li>
             <li>Slander / Slander per se</li>
@@ -356,7 +528,9 @@ function showHideText($id, $linkText, $content='') {
         </li>
         <li>Third Party Rights
           <ol>
-            <li>Third Party Beneficiary - Does Public Intercourse Cause V.D?</li>
+            <li>Third Party Beneficiary - Does Public Intercourse Cause V.D?
+            <?php echo showHideText('ThirdPartyBeneficiary', '(Rule)', '<span class="rule">A third party beneficiary contract is one wherein performance by a promissor will benefit a third party.</span>'); ?>
+            </li>
             <li>Assignments / Delegation</li>
           </ol>
         </li>
@@ -408,10 +582,15 @@ function showHideText($id, $linkText, $content='') {
                         <li>Rejection</li>
                       </ol>
                     </li>
-                    <li>Acceptance</li>
+                    <li>Acceptance
+                      <?php echo showHideText('Acceptance', '(Rule)', '<span class="rule">Acceptance is the manifest willingness to be presently bound to a valid offer. It can be express or implied. Under the UCC acceptance can occur by a means stipulated by the offer, or if no such means is provided, in any reasonable manner.</span>'); ?>
+                      <?php echo showHideText('Acceptance2', '(Rule 2)', '<span class="rule">An acceptance is unequivocal assent to the terms of an offer.</span>'); ?>
+                    </li>
                   </ol>
                 </li>
-                <li>Consideration</li>
+                <li>Consideration
+                <?php echo showHideText('Consideration', '(Rule)', '<span class="rule">Something of value (either a promise, an act or an object) that a promisor receives from a promisee in return for his promise. Essentially, consideration is simply what you give up in the deal for what you get out of the deal.</span>'); ?>
+                </li>
               </ol>
             </li>
             <li>Defenses of Formation (Pammi said fu)

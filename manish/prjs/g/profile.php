@@ -1,21 +1,13 @@
 <?php
-$pageTitle = "Create New Profile";
+$pageTitle = "My Profile";
 if (empty($_COOKIE['uid'])) {
   header("Location: home");
   exit;
 }
 
 $recordComplete = array();
-$query = "select * from nodes WHERE uid = ?";
-$record = $modelGeneral->fetchRow($query, array($_COOKIE['uid']), 0);
-
-$recordComplete = $record;
-
-if (!empty($record)) {
-  $query = "select * from g_profile WHERE node_id = ?";
-  $recordProfile = $modelGeneral->fetchRow($query, array($record['node_id']), 0);
-  $recordComplete = array_merge($record, $recordProfile);
-}
+$query = "select * from {$siteConfig['tableName']} LEFT JOIN nodes ON {$siteConfig['tableName']}.node_id = nodes.node_id WHERE nodes.uid = ?";
+$recordComplete = $modelGeneral->fetchRow($query, array($_COOKIE['uid']), 0);
 
 if (!empty($recordComplete['images'])) {
   $images = json_decode($recordComplete['images'], true);
@@ -45,69 +37,99 @@ if (!empty($_POST)) {
     exit;
   }
   
-  $nodesArray = array();
-  
-  $nodesArray['title'] = !empty($_POST['title']) ? $_POST['title'] : '';
-  $nodesArray['description'] = !empty($_POST['description']) ? $_POST['description'] : '';
-  $nodesArray['updated_dt'] = date('Y-m-d H:i:s');
-  $nodesArray['deleted'] = 0;
-  $nodesArray['status'] = !empty($_POST['status']) ? $_POST['status'] : 0;
-  $nodesArray['approved'] = 1;
-  $nodesArray['lat'] = !empty($_POST['lat']) ? $_POST['lat'] : '';
-  $nodesArray['lng'] = !empty($_POST['lng']) ? $_POST['lng'] : '';
-  $nodesArray['location'] = !empty($_POST['location']) ? $_POST['location'] : '';
-  $nodesArray['address'] = !empty($_POST['address']) ? $_POST['address'] : '';
-  $nodesArray['images'] = !empty($_POST['images']) ? json_encode(array_filter($_POST['images'])) : '';
-  $nodesArray['videos'] = !empty($_POST['videos']) ? json_encode(array_filter($_POST['videos'])) : '';
-  $nodesArray['urls'] = !empty($_POST['urls']) ? json_encode(array_filter($_POST['urls'])) : '';
-  $nodesArray['featured'] = 0;
-  $nodesArray['uid'] = $_COOKIE['uid'];
-  $nodesArray['terms'] = !empty($_POST['terms']) ? $_POST['terms'] : 0;
-  
-  $profileArray = array();
-  $profileArray['birth_year'] = !empty($_POST['birth_year']) ? $_POST['birth_year'] : '';
-  $profileArray['birth_month'] = !empty($_POST['birth_month']) ? $_POST['birth_month'] : '';
-  $profileArray['birth_day'] = !empty($_POST['birth_day']) ? $_POST['birth_day'] : '';
-  if (!empty($_POST['hobbies'])) {
-    foreach ($_POST['hobbies'] as $field => $value) {
-      $profileArray[$field] = $value;
-    }
-  }
-  $profileArray['gender'] = !empty($_POST['gender']) ? $_POST['gender'] : '';
-  $profileArray['nature'] = !empty($_POST['nature']) ? $_POST['nature'] : '';
-  $profileArray['education'] = !empty($_POST['education']) ? $_POST['education'] : '';
-  $profileArray['marital_status'] = !empty($_POST['marital_status']) ? $_POST['marital_status'] : '';
-  $profileArray['religion'] = !empty($_POST['religion']) ? $_POST['religion'] : '';
-  $profileArray['profession'] = !empty($_POST['profession']) ? $_POST['profession'] : '';
-  $profileArray['hosting'] = !empty($_POST['hosting']) ? $_POST['hosting'] : '';
-  $profileArray['smoking'] = !empty($_POST['smoking']) ? $_POST['smoking'] : '';
-  $profileArray['drinking'] = !empty($_POST['drinking']) ? $_POST['drinking'] : '';
-  $profileArray['height'] = !empty($_POST['height']) ? $_POST['height'] : '';
-  $profileArray['weight'] = !empty($_POST['weight']) ? $_POST['weight'] : '';
-  $profileArray['diet'] = !empty($_POST['diet']) ? $_POST['diet'] : '';
-  $profileArray['bodyType'] = !empty($_POST['bodyType']) ? $_POST['bodyType'] : '';
-  
-  if (!empty($record['node_id'])) {
-    $nodesArray['node_id'] = $record['node_id'];
-    $profileArray['node_id'] = $record['node_id'];
+  try {
     
-    $where = sprintf('node_id = %s', $modelGeneral->qstr($nodesArray['node_id']));
-    $modelGeneral->updateDetails('nodes', $nodesArray, $where);
-    $modelGeneral->updateDetails('g_profile', $profileArray, $where);
-    saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
-    header("Location: profile");
-    exit;
-  } else {
-    $nodesArray['created_dt'] = date('Y-m-d H:i:s');
-    $nodesArray['node_id'] = guid();
-    $profileArray['node_id'] = $nodesArray['node_id'];
-    $modelGeneral->addDetails('nodes', $nodesArray);
-    $modelGeneral->addDetails('g_profile', $profileArray);
-    saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
-    header("Location: profile");
-    exit;
-  }//end if
+    //validation
+    if (empty($_POST['title'])) {
+      throw new Exception('please fill the title');
+    }
+    
+    if (empty($_POST['birth_year'])) {
+      throw new Exception('please fill the birth year');
+    }
+    
+    if (empty($_POST['location'])) {
+      throw new Exception('please fill the location');
+    }
+    
+    if (empty($_POST['terms'])) {
+      throw new Exception('please check the terms');
+    }
   
+    $nodesArray = array();
+
+    $nodesArray['title'] = !empty($_POST['title']) ? $_POST['title'] : '';
+    $nodesArray['description'] = !empty($_POST['description']) ? $_POST['description'] : '';
+    $nodesArray['updated_dt'] = date('Y-m-d H:i:s');
+    $nodesArray['deleted'] = 0;
+    $nodesArray['status'] = !empty($_POST['status']) ? $_POST['status'] : 0;
+    $nodesArray['approved'] = 1;
+    $nodesArray['lat'] = !empty($_POST['lat']) ? $_POST['lat'] : '';
+    $nodesArray['lng'] = !empty($_POST['lng']) ? $_POST['lng'] : '';
+    $nodesArray['location'] = !empty($_POST['location']) ? $_POST['location'] : '';
+    $nodesArray['address'] = !empty($_POST['address']) ? $_POST['address'] : '';
+    $nodesArray['images'] = !empty($_POST['images']) ? json_encode(array_filter($_POST['images'])) : '';
+    $nodesArray['videos'] = !empty($_POST['videos']) ? json_encode(array_filter($_POST['videos'])) : '';
+    $nodesArray['urls'] = !empty($_POST['urls']) ? json_encode(array_filter($_POST['urls'])) : '';
+    $nodesArray['featured'] = 0;
+    $nodesArray['uid'] = $_COOKIE['uid'];
+    $nodesArray['terms'] = !empty($_POST['terms']) ? $_POST['terms'] : 0;
+
+    $profileArray = array();
+    $profileArray['birth_year'] = !empty($_POST['birth_year']) ? $_POST['birth_year'] : '';
+    if (date('Y') - $profileArray['birth_year'] < 18) {
+      throw new Exception('under age, age below 18 are not allowed');
+    }
+
+    $profileArray['birth_month'] = !empty($_POST['birth_month']) ? $_POST['birth_month'] : '';
+    $profileArray['birth_day'] = !empty($_POST['birth_day']) ? $_POST['birth_day'] : '';
+    if (!empty($_POST['hobbies'])) {
+      foreach ($_POST['hobbies'] as $field => $value) {
+        $profileArray[$field] = $value;
+      }
+    }
+    $profileArray['gender'] = !empty($_POST['gender']) ? $_POST['gender'] : '';
+    $profileArray['nature'] = !empty($_POST['nature']) ? $_POST['nature'] : '';
+    $profileArray['education'] = !empty($_POST['education']) ? $_POST['education'] : '';
+    $profileArray['marital_status'] = !empty($_POST['marital_status']) ? $_POST['marital_status'] : '';
+    $profileArray['religion'] = !empty($_POST['religion']) ? $_POST['religion'] : '';
+    $profileArray['profession'] = !empty($_POST['profession']) ? $_POST['profession'] : '';
+    $profileArray['hosting'] = !empty($_POST['hosting']) ? $_POST['hosting'] : '';
+    $profileArray['smoking'] = !empty($_POST['smoking']) ? $_POST['smoking'] : '';
+    $profileArray['drinking'] = !empty($_POST['drinking']) ? $_POST['drinking'] : '';
+    $profileArray['height'] = !empty($_POST['height']) ? $_POST['height'] : '';
+    $profileArray['weight'] = !empty($_POST['weight']) ? $_POST['weight'] : '';
+    $profileArray['diet'] = !empty($_POST['diet']) ? $_POST['diet'] : '';
+    $profileArray['bodyType'] = !empty($_POST['bodyType']) ? $_POST['bodyType'] : '';
+
+    if (!empty($recordComplete['node_id'])) {
+      $nodesArray['node_id'] = $recordComplete['node_id'];
+      $profileArray['node_id'] = $recordComplete['node_id'];
+
+      $where = sprintf('node_id = %s', $modelGeneral->qstr($nodesArray['node_id']));
+      $modelGeneral->updateDetails('nodes', $nodesArray, $where);
+      $modelGeneral->updateDetails($siteConfig['tableName'], $profileArray, $where);
+      saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
+      header("Location: profile");
+      exit;
+    } else {
+      $nodesArray['created_dt'] = date('Y-m-d H:i:s');
+      $nodesArray['node_id'] = guid();
+      $profileArray['node_id'] = $nodesArray['node_id'];
+      $modelGeneral->addDetails('nodes', $nodesArray);
+      $modelGeneral->addDetails($siteConfig['tableName'], $profileArray);
+      saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
+      header("Location: profile");
+      exit;
+    }//end if
+  } catch (Exception $e) {
+    $error = $e->getMessage();
+  }
+  
+}
+
+if (!empty($_POST)) {
+  $recordComplete = array_merge($recordComplete, $_POST);
 }
 ?>
 <script>
@@ -118,7 +140,13 @@ angular.module('myApp')
 }]);
 </script>
 <div ng-controller="profileController">
-<h3>Create New Profile</h3>
+<h3>My Profile</h3>
+<?php if (!empty($error)) { ?>
+
+<div class="alert alert-danger" role="alert">
+  <?php echo $error; ?>
+</div>
+<?php } ?>
 <form method="post" action="" name="form1" id="form1">
     
     <fieldset><legend>Personal</legend>
@@ -155,8 +183,12 @@ angular.module('myApp')
           </div>
           <div class="col-md-4">
             <label for="nature">Gender: </label><br>
+            <?php if ($siteConfig['showGender'] === 1) { ?>
             <input type="radio" id="gender" name="gender" value="1" <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 1) ? 'checked' : ''; ?>> Male
-            <input type="radio" id="gender" name="gender" value="2" disabled  <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 2) ? 'checked' : ''; ?>> Female
+            <?php } ?>
+            <?php if ($siteConfig['showGender'] === 2) { ?>
+            <input type="radio" id="gender" name="gender" value="2"  <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 2) ? 'checked' : ''; ?>> Female
+            <?php } ?>
           </div>
           <div class="col-md-4">
             <label for="nature">Hosting: </label><br>
@@ -193,14 +225,14 @@ angular.module('myApp')
           <div class="col-md-4"></div>
         </div>
     </div> 
-    <!--<div class="form-group">
+    <div class="form-group">
         <label for="nature">I like: </label><br>
         <div class="row">
         <?php foreach ($siteConfig['HOBBIES'] as $field => $label) { ?>
          <div class="col-md-3"> <input type="checkbox" id="<?php echo $field; ?>" name="hobbies[<?php echo $field; ?>]" value="1" <?php if (isset($recordComplete[$field]) && $recordComplete[$field] == 1) { echo ' checked'; } ?>> <?php echo $label ; ?></div>
         <?php } ?>
         </div>
-    </div>-->
+    </div>
     <div class="form-group">
         <div class="row">
           <div class="col-md-4"><label for="marital_status">Marital Status</label>

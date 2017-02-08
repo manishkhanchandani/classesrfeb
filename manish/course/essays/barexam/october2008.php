@@ -9,7 +9,11 @@ The answers received good grades and were written by applicants who passed the e
 Applicants were given four hours to answer four essay questions. Instructions for the essay examination appear on page 3.
 ￼￼Question Number 1.
 2. 3. 4.
-Subject Page Contracts 4 Torts 12 Criminal Law 28 Contracts 37
+Subject Page 
+Contracts 4 
+Torts 12 
+Criminal Law 28 
+Contracts 37
 ￼￼￼2
 
 ESSAY EXAMINATION INSTRUCTIONS

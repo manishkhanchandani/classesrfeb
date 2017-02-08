@@ -12,9 +12,10 @@ Applicants were given four hours to answer four essay questions. Instructions fo
 ￼￼Question Number
 1. 2. 3. 4.
 Subject Page
-Torts 4 Criminal Law 16 Contracts 23
-￼￼￼Torts
-32
+Torts 4 
+Criminal Law 16 
+Contracts 23
+￼￼￼Torts 32
 2
 
 ESSAY EXAMINATION INSTRUCTIONS

@@ -5,10 +5,13 @@ $jsVersion = 1.1;
 <html ng-app="myApp">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $pageTitle; ?></title>
 <base href="<?php echo $dir; ?>">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/login.css">
 
 <!-- jquery -->
 <script src="js/jquery-1.11.3.min.js"></script>
@@ -24,7 +27,18 @@ $jsVersion = 1.1;
 <script src="js/firebase.js?<?php echo $jsVersion; ?>"></script>
 <!-- AngularFire -->
 <script src="js/angularfire.min.js?<?php echo $jsVersion; ?>"></script>
+<script>
 
+  // Initialize the Firebase SDK
+  var config = {
+    apiKey: 'AIzaSyDnERUhALUFNxWZsjaLpT4_nqIYW2i2jDU',
+    authDomain: 'mkgxy-3d7ce.firebaseapp.com',
+    databaseURL: 'https://mkgxy-3d7ce.firebaseio.com/',
+    storageBucket: 'mkgxy-3d7ce.appspot.com'
+  };
+  firebase.initializeApp(config);
+  //end firebase  
+</script>
 <script src="js/angular-cookies.js"></script>
 <script src="js/angular-sanitize.min.js"></script>
 
@@ -39,6 +53,11 @@ $jsVersion = 1.1;
 
 <!-- messages module -->
 <script type="text/javascript" src="directives/messages/messages.js?v=<?php echo $jsVersion; ?>"></script>
+<!-- messages module ends -->
+
+
+<!-- messages module -->
+<script type="text/javascript" src="directives/favorite/favorite.js?v=<?php echo $jsVersion; ?>"></script>
 <!-- messages module ends -->
 
 <script>
@@ -63,8 +82,14 @@ angular.module('myApp', [
   'firebase',
   'googleLoginFBModule',
   'messagesModule',
-  'dataServiceFBModule'
+  'dataServiceFBModule',
+  'favoriteModule'
 ])
+
+.constant('configs', {
+    firebaseDirectory: '<?php echo $siteConfig['firebaseDirectory']; ?>'
+})
+
 
 .filter('customDate', function($filter) {
  return function(input) {
@@ -153,16 +178,9 @@ angular.module('myApp', [
 })
 
 
-.controller('mainController', ['$scope', function($scope) {
-  // Initialize the Firebase SDK
-  var config = {
-    apiKey: 'AIzaSyDnERUhALUFNxWZsjaLpT4_nqIYW2i2jDU',
-    authDomain: 'mkgxy-3d7ce.firebaseapp.com',
-    databaseURL: 'https://mkgxy-3d7ce.firebaseio.com/',
-    storageBucket: 'mkgxy-3d7ce.appspot.com'
-  };
-  firebase.initializeApp(config);
-  //end firebase
+.controller('mainController', ['$scope', 'configs', function($scope, configs) {
+                               
+  console.log('configs: ', configs);
   
   $scope.userData = null;
   //getting the details form localStorage
@@ -194,7 +212,7 @@ angular.module('myApp', [
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="g/home"><?php echo $projectTitle; ?></a>
+          <a class="navbar-brand" href="<?php echo $siteConfig['homeUrl']; ?>"><?php echo $projectTitle; ?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           
@@ -212,14 +230,14 @@ angular.module('myApp', [
                   <li class="dropdown-header"><?php echo $_SESSION['location']['ipDetails']['ip']; ?></li>
                   <li role="separator" class="divider"></li>
                   <?php foreach ($_SESSION['location']['nearby'] as $nearby) { ?>
-                  <li><a href="g/location/<?php echo $nearby['name']; ?>/<?php echo $nearby['latitude']; ?>/<?php echo $nearby['longitude']; ?>"><?php echo $nearby['name']; ?> (<?php echo $nearby['distance']; ?> miles)</a></li>
+                  <li><a href="<?php echo $siteConfig['homeUrl']; ?>?location=<?php echo urlencode($nearby['name']); ?>&lat=<?php echo $nearby['latitude']; ?>&lng=<?php echo $nearby['longitude']; ?>"><?php echo $nearby['name']; ?> (<?php echo $nearby['distance']; ?> miles)</a></li>
                   <?php } ?>
               </ul>
               <?php } ?>
             </li>
           </ul>
           
-          <ul google-loginfb user-data="userData" user-token="userToken" url="g/home" class="nav navbar-nav navbar-right"></ul>
+          <div google-loginfb user-data="userData" user-token="userToken" url="<?php echo $siteConfig['homeUrl']; ?>" ></div>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -247,5 +265,6 @@ angular.module('myApp', [
       </div>
     </div><!-- /.container -->
 
+<?php include(ROOTDIR.'/directives/googleLoginFB/login.php'); ?>
 </body>
 </html>

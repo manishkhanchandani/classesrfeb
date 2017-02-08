@@ -15,7 +15,9 @@
         <?php if (!empty($v['distance'])) { ?>
         <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
         <?php } ?> 
-        
+        <?php if (!empty($_COOKIE['uid'])) { ?>
+        <br><a href="<?php echo $siteConfig['MESSAGE_URL']; ?><?php echo $v['uid']; ?>" data-toggle="tooltip" data-placement="top" title="Message"><i class="fa fa-envelope fa-2x"></i></a>
+        <?php } ?>
         </small></p>
       
       

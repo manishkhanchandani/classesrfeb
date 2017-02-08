@@ -10,8 +10,8 @@
   }
   
   module
-    .directive('messages', ['messagesTemplate', '$firebaseArray', '$timeout', messages])
-    .directive('messagesCounter', ['$timeout', messagesCounter])
+    .directive('messages', ['messagesTemplate', '$firebaseArray', '$timeout', 'configs', messages])
+    .directive('messagesCounter', ['$timeout', 'configs', messagesCounter])
     .provider('messagesTemplate', messagesTemplateProvider)
     
     .filter('mesDaysAgo', function() {
@@ -44,7 +44,7 @@
     })
     ;
   
-  function messagesCounter($timeout) {
+  function messagesCounter($timeout, configs) {
     
     return {
           scope: {
@@ -52,8 +52,9 @@
           },
           templateUrl: 'directives/messages/messagesCounter.html',
           link: function(scope, elem, attrs) {
+            var MainRef = firebase.database().ref(configs.firebaseDirectory);
             if (!scope.userData) return;
-            var ref = firebase.database().ref('messages');
+            var ref = MainRef.child('messages');
             var badge = ref.child('messagesBadges').child(scope.userData.uid);
             scope.counter = 0;
             badge.on('value', function(snapshot) {
@@ -70,7 +71,7 @@
     };
   }
   
-  function messages(messagesTemplate, $firebaseArray, $timeout) {
+  function messages(messagesTemplate, $firebaseArray, $timeout, configs) {
     return {
           scope: {
             userData: '=',
@@ -79,6 +80,7 @@
           },
           templateUrl: 'directives/messages/messages.html',
           link: function(scope, elem, attrs) {
+            var MainRef = firebase.database().ref(configs.firebaseDirectory);
             var uid = scope.toUserId;
               if (!scope.userData) {
                  alert('Please login first to send message');
@@ -99,7 +101,7 @@
               
               //firebase reference
               var config = '';
-              var ref = firebase.database().ref('messages');
+              var ref = MainRef.child('messages');
               var badge = ref.child('messagesBadges');
   
               //reset badge
@@ -129,12 +131,13 @@
                 //adding from - to user
                 usersTo.child(scope.userData.uid).set({email: scope.userData.email, id: scope.userData.uid, name: scope.userData.displayName, image: scope.userData.photoURL, timestamp: firebase.database.ServerValue.TIMESTAMP});
                 
-                firebase.database().ref('users').child(uid).once("value", function(snapshot) {
+                MainRef.child('users').child(uid).once("value", function(snapshot) {
                   var a = snapshot.exists();
                   if (!a) {
                     return;
                   }
                   scope.resultsToUser = snapshot.val();
+                  
                   //adding from - to user
                   var d = {email: scope.resultsToUser.email, id: scope.resultsToUser.uid, name: scope.resultsToUser.displayName, image: scope.resultsToUser.photoURL, timestamp: firebase.database.ServerValue.TIMESTAMP};
                   usersFrom.child(uid).set(d);
@@ -150,6 +153,7 @@
               
               //messages
               var mes = ref.child('messages');
+              var mesBackup = ref.child('messagesBackup');
               scope.messages = null;
               if (uid) {
                 var queryMes = mes.child(scope.userData.uid).child(uid).orderByChild("timestamp").limitToLast(100);
@@ -174,6 +178,9 @@
                 var newPostRef = mes.child(tid).child(fid).push({message: scope.frm.message, timestamp: firebase.database.ServerValue.TIMESTAMP, type: 1, name: name, image: image, read: false});
                 var postID = newPostRef.key;
                 mes.child(fid).child(tid).child(postID).set({message: scope.frm.message, timestamp: firebase.database.ServerValue.TIMESTAMP, type: 2, name: name, image: image});
+                
+                mesBackup.child(tid).child(fid).child(postID).set({message: scope.frm.message, timestamp: firebase.database.ServerValue.TIMESTAMP, type: 1, name: name, image: image, read: false});
+                mesBackup.child(fid).child(tid).child(postID).set({message: scope.frm.message, timestamp: firebase.database.ServerValue.TIMESTAMP, type: 2, name: name, image: image});
                 
                 scope.frm.message = '';
                 //badge

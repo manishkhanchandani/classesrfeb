@@ -13,9 +13,9 @@ Options +FollowSymLinks
 #RewriteRule ^location/(.*)/(.*)/(.*)$ index.php?q[action]=location&q[city]=$1&q[lat]=$2&q[lng]=$3 [NC,L,QSA]
 #RewriteRule ^(.*)/users/login$ index.php?p=users/login&site=$1 [NC,L,QSA]
 
-RewriteRule ^g/location/(.*)/(.*)/(.*)/(.*)$ index.php?q[action]=g/home&q[city]=$1&q[lat]=$2&q[lng]=$3&q[type]=$4&site=g [NC,L,QSA]
-RewriteRule ^g/location/(.*)/(.*)/(.*)$ index.php?q[action]=g/home&q[city]=$1&q[lat]=$2&q[lng]=$3&site=g [NC,L,QSA]
-RewriteRule ^g/(.*)$ index.php?p=g/$1&site=g [NC,L,QSA]
+#RewriteRule ^g/location/(.*)/(.*)/(.*)/(.*)$ index.php?#q[action]=g/home&q[city]=$1&q[lat]=$2&q[lng]=$3&q[type]=$4&site=g [NC,L,QSA]
+#RewriteRule ^g/location/(.*)/(.*)/(.*)$ index.php?q[action]=g/home&q[city]=$1&q[lat]=$2&q[lng]=$3&site=g [NC,L,QSA]
+#RewriteRule ^g/(.*)$ index.php?p=g/$1&site=g [NC,L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

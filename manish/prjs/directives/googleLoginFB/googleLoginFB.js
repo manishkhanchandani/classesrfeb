@@ -10,16 +10,17 @@
   }
   
   module
-    .directive('googleLoginfb', ['googleLoginTemplatefb', 'googleLoginServicefb', '$location', '$cookies', googleLoginFB])
-    .directive('googleLoginUserList', ['dataService', '$filter', googleLoginUserList])
+    .directive('googleLoginfb', ['googleLoginTemplatefb', 'googleLoginServicefb', '$location', '$cookies', 'configs', googleLoginFB])
+    .directive('googleLoginUserList', ['dataService', '$filter', 'configs', googleLoginUserList])
     .provider('googleLoginTemplatefb', googleLoginTemplateProviderFB)
-    .service('googleLoginServicefb', ['$cookies', googleLoginServiceFB])
+    .service('googleLoginServicefb', ['$cookies', 'configs', googleLoginServiceFB])
     ;
     
-  function googleLoginServiceFB($cookies) {
+  function googleLoginServiceFB($cookies, configs) {
+    var MainRef = firebase.database().ref(configs.firebaseDirectory);
     this.login = function(details) {
       var userId = firebase.auth().currentUser.uid;
-      firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+      MainRef.child('/users/' + userId).once('value').then(function(snapshot) {
         var a = snapshot.exists();
         if (!a) {
           details.created_dt = firebase.database.ServerValue.TIMESTAMP;
@@ -33,15 +34,16 @@
         }
         
         details.ipDetails = ipDetails;
-        firebase.database().ref('/users/' + userId).update(details);
-        firebase.database().ref('/accessTokens/' + btoa(details.token)).set(details);
+        console.log(details);
+        MainRef.child('/users/' + userId).update(details);
+        MainRef.child('/accessTokens/' + btoa(details.token)).set(details);
       });
       
     };
     
   }
   
-  function googleLoginUserList(dataService, $filter) {
+  function googleLoginUserList(dataService, $filter, configs) {
     return {
           scope: {
             userData: '=',
@@ -52,8 +54,8 @@
           },
           templateUrl: 'directives/googleLoginFB/loggedInUsers.html',
           link: function(scope, elem, attrs) {
-            
-            var ref = firebase.database().ref('/connectedUsers');
+            var MainRef = firebase.database().ref(configs.firebaseDirectory);
+            var ref = MainRef.child('/connectedUsers');
             if (scope.userData && scope.userData.uid) {
               ref.child(scope.userData.uid).onDisconnect().remove();
             }//end if ondisconnect
@@ -64,7 +66,7 @@
                 angular.forEach(snapshot.val(), function(value, key) {
                   var loggedInTime = value;
                   var uid = key;
-                  firebase.database().ref('/users').child(uid).once('value', function (snapshotUser) {
+                  MainRef.child('/users').child(uid).once('value', function (snapshotUser) {
                     var a = snapshotUser.exists();
                     if (!a) {
                       return;
@@ -99,6 +101,8 @@
                       //distance = $filter('number')(distance, 2);
                     }
                     scope.data[uid].distance = distance;
+                    
+                    
                     if(!scope.$$phase) scope.$apply();
                   });
                 });
@@ -110,7 +114,7 @@
       };//end return
   }
   
-  function googleLoginFB(googleLoginTemplate, googleLoginService, $location, $cookies) {
+  function googleLoginFB(googleLoginTemplate, googleLoginService, $location, $cookies, configs) {
     return {
           scope: {
             userData: '=',
@@ -121,7 +125,7 @@
             return attrs.templateUrl || googleLoginTemplate.getPath();
           },
           link: function(scope, elem, attrs) {
-              
+              var MainRef = firebase.database().ref(configs.firebaseDirectory);
               function setCookie()
               {
                   $cookies.put('provider', scope.userData.provider);
@@ -148,24 +152,39 @@
               function initApp() {
                 firebase.auth().onAuthStateChanged(function(user) {
                   if (user) {
+                    console.log('user: ', user);
                     scope.userData = {};
-                    scope.userData.provider = user.providerData[0].providerId;
+                    
                     // The signed-in user info.
                     scope.userData.email = user.providerData[0].email;
                     scope.userData.uid = user.uid;
                     scope.userData.displayName = user.providerData[0].displayName;
                     scope.userData.photoURL = user.providerData[0].photoURL;
-                    scope.userData.providerUID = user.providerData[0].uid;
                     setCookie();
-                    console.log('userData: ', scope.userData);
                     
-                    scope.currentUser = scope.userData.uid; firebase.database().ref('/connectedUsers').child(scope.currentUser).set(firebase.database.ServerValue.TIMESTAMP);
+                    scope.currentUser = scope.userData.uid; MainRef.child('/connectedUsers').child(scope.currentUser).set(firebase.database.ServerValue.TIMESTAMP);
+                    if (!scope.userData.displayName) {
+                      MainRef.child('/users/' + scope.currentUser).once('value').then(function(snapshot) {
+                        var a = snapshot.exists();
+                        if (!a) {
+                          return;
+                        }
+                        var ud = snapshot.val();
+                        scope.userData.displayName = ud.displayName;
+                        scope.userData.provider = ud.provider;
+                        scope.userData.photoURL = ud.photoURL;
+                        scope.userData.providerUID = ud.providerUID;
+                        setCookie();
+                      });
+                    }//end if displayname is missing
+                    
                     if(!scope.$$phase) scope.$apply();
                   } else {
+                    scope.userData = null;
                     // User is signed out.
                     console.log('user is signed out');
                     if (scope.currentUser) {
-                      firebase.database().ref('/connectedUsers').child(scope.currentUser).remove();
+                      MainRef.child('/connectedUsers').child(scope.currentUser).remove();
                     }
                     
                   }
@@ -177,7 +196,7 @@
               initApp();
               
               scope.logout = function() {
-                firebase.database().ref('/accessTokens/' + btoa(localStorage.getItem('userToken'))).remove();
+                MainRef.child('/accessTokens/' + btoa(localStorage.getItem('userToken'))).remove();
                 scope.userData = null;
                 firebase.auth().signOut();
                 localStorage.removeItem('userData');
@@ -248,6 +267,7 @@
                 provider.addScope('repo');
                 login(provider);
               };//end github login
+            
               
           }//end link
       };//end return

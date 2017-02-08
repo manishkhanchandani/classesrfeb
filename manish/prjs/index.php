@@ -9,6 +9,7 @@ define('SITEDIR', ROOTDIR);
 define('ENV', 'dev');
 
 $dir = dirname($_SERVER['PHP_SELF']);
+$dir = '';
 if ($dir == '/') $dir = '';
 
 $dir = $dir .'/';
@@ -133,6 +134,18 @@ log_log($_SESSION['location']);
 $modelGeneral = new Models_General($connMainAdodb);
 log_log(__FILE__.' on line number '.__LINE__);
 
+switch ($host) {
+  case 'donationworld.tk':
+    $_GET['site'] = 'd';
+    break;
+  case 'femalejole.tk':
+    $_GET['site'] = 'f';
+    break;
+  case 'malejole.tk':
+    $_GET['site'] = 'g';
+    break;
+}
+
 if (!empty($_GET['site'])) {
   include_once(SITEDIR.DIRECTORY_SEPARATOR.$_GET['site'].DIRECTORY_SEPARATOR.'config.php');
 }
@@ -156,6 +169,7 @@ if (!empty($_GET['p'])) {
 }
 
 $page .= '.php';
+
 $pageTitle = 'Some Page Title';
 
 ob_start();

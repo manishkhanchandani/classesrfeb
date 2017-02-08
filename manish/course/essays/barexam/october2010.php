@@ -13,8 +13,11 @@ The answers received good grades and were written by applicants who passed the e
 Applicants were given four hours to answer four essay questions. Instructions for the essay examination appear on page ii.
 ￼￼￼Question Number 1.
 2. 3. 4.
-Subject Page Torts 1
-Contracts 16 Criminal Law 29 Torts 42
+Subject Page 
+Torts 1
+Contracts 16 
+Criminal Law 29 
+Torts 42
 ￼￼￼
 October 26, 2010
 California

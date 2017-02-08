@@ -1,8 +1,32 @@
 <?php
 
 //pr($_GET);
-$pageTitle = 'MaleJole: Friends';
+$pageTitle = $siteConfig['PROJECT_TITLE'].' Users';
 $g = new G();
+
+$params = array();
+$params['mia'] = '';
+if (!empty($_GET['mia']) && $_GET['mia'] < 18) {
+  echo 'bad age';
+  exit;
+} else if (!empty($_GET['mia'])) {
+  $params['mia'] = $_GET['mia'];
+}
+
+$params['maa'] = '';
+if (!empty($_GET['maa'])) {
+  $params['maa'] = $_GET['maa'];
+}
+
+$params['n'] = array();
+if (!empty($_GET['n'])) {
+  $params['n'] = $_GET['n'];
+}
+
+$params['h'] = array();
+if (!empty($_GET['h'])) {
+  $params['h'] = $_GET['h'];
+}
 
 $keyword = '';
 if (!empty($_GET['kw'])) {
@@ -37,8 +61,34 @@ if (empty($homeLat) && empty($homeLng) && !empty($_COOKIE['ipDetails'])) {
   $homeCity = $tmp['city'].', '.$tmp['region'];
 }
 
-$list = $g->getList($max=100, $page=0, $totalRows_rsView=0, $keyword, $homeLat, $homeLng, $radius=10000, $uid='', $status=1, $deleted=0, $approved=1, 0);
 
+$max = !empty($_GET['max']) ? $_GET['max'] : 25;
+$radius = !empty($_GET['radius']) ? $_GET['radius'] : 10000;
+
+//Group
+$pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
+$totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
+
+$list = $g->getList($siteConfig['tableName'], $max, $pageNum_rsView, $totalRows_rsView, $keyword, $params, $homeLat, $homeLng, $radius, '', 1, 0, 1, 0);
+
+
+$totalPages_rsView = $list['totalPages'];
+$totalRows_rsView = $list['totalRows'];
+
+//generating queryString
+$queryString = '';
+if (!empty($_GET)) {
+  $get = $_GET;
+  if (isset($get['pageNum_rsView'])) unset($get['pageNum_rsView']);
+  if (isset($get['totalRows_rsView'])) unset($get['totalRows_rsView']);
+  if (isset($get['p'])) unset($get['p']);
+  if (!empty($get)) {
+    $queryString = http_build_query($get);
+  }
+}
+$queryString = sprintf("&totalRows_rsView=%d&%s", $totalRows_rsView, $queryString);
+
+//generating queryString
 
 $type = 1;
 ?>
@@ -46,7 +96,6 @@ $type = 1;
   <div class="col-md-3">
     <h3>Search</h3>
     <form action="g/home" method="get" name="form1" id="form1">
-        <button type="submit" class="btn btn-primary form-control">Search</button>
         <div class="form-group">
             <label for="keyword">Keyword</label>
             <input type="keyword" class="form-control" id="kw" name="kw" placeholder="Enter keyword" value="<?php echo isset($_GET['kw']) ? $_GET['kw'] : ''; ?>">
@@ -63,12 +112,23 @@ $type = 1;
         </div>
         
         <div class="form-group">
-            <label for="mia">Min Age</label>
-            <input type="number" min="18" class="form-control" name="mia" value="<?php echo isset($_GET['mia']) ? $_GET['mia'] : ''; ?>">
+           <div class="row">
+             <div class="col-md-6">
+              <label for="mia">Min Age</label>
+              <input type="number" min="18" class="form-control" name="mia" value="<?php echo isset($_GET['mia']) ? $_GET['mia'] : ''; ?>">
+             </div>
+             <div class="col-md-6">
+              <label for="maa">Max Age</label>
+              <input type="number" class="form-control" name="maa" value="<?php echo isset($_GET['maa']) ? $_GET['maa'] : ''; ?>">
+             </div>
+           </div>
         </div>
+        
+        
         <div class="form-group">
-            <label for="maa">Max Age</label>
-            <input type="number" class="form-control" name="maa" value="<?php echo isset($_GET['maa']) ? $_GET['maa'] : ''; ?>">
+            <label for="hosting">Hosting?: </label><br>
+            <input type="checkbox" name="h[]" value="1" <?php echo (isset($_GET['h']) && in_array('1', $_GET['h'])) ? 'checked' : ''; ?>> Can Host
+            <input type="checkbox" name="h[]" value="2" <?php echo (isset($_GET['h']) && in_array('2', $_GET['h'])) ? 'checked' : ''; ?>> Can Not Host
         </div>
         <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($_GET['lat']) ? $_GET['lat'] : ''; ?>">
         <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($_GET['lng']) ? $_GET['lng'] : ''; ?>">
@@ -76,11 +136,11 @@ $type = 1;
     </form>
   </div>
   <div class="col-md-9">
-    <p><strong>Friends <?php if (!empty($homeCity)) { echo ' near '.$homeCity; }?></strong></p>
+    <p><strong>Users <?php if (!empty($homeCity)) { echo ' near '.$homeCity; }?></strong></p>
       
       <?php if ($list['totalRows'] == 0) { ?>
         <div class="alert alert-warning" role="alert">
-          No Friend Found.
+          No User Found.
         </div>
       <?php } ?>
       <?php if ($list['totalRows'] > 0 && !empty($list['data'])) { ?>
@@ -102,6 +162,17 @@ $type = 1;
           ?>
         <?php } ?>
       </div>
+      
+      <?php
+      $pagination_start = $list['start'];
+      $pagination_totalRows = $list['totalRows'];
+      $pagination_max = $list['max'];
+      $pagination_pageNum = $pageNum_rsView;
+      $pagination_pageNumKey = 'pageNum_rsView';
+      $pagination_queryString = $queryString;
+      $pagination_totalPages = $totalPages_rsView;
+      include(ROOTDIR.'/includes/pagination.php');
+      ?>
       <?php } ?>
       
   </div>

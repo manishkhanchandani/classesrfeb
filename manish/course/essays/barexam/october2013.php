@@ -11,8 +11,10 @@ This publication contains the four essay questions from the October 2013 Califor
 The answers received high grades and were written by applicants who passed the examination. The answers were produced as submitted by the applicant, except that minor corrections in spelling and punctuation were made for ease in reading. They are reproduced here with the consent of their authors.
 ￼￼￼Question Number 1.
 2. 3. 4.
-Subject Contracts
-Criminal Law Contracts
+Subject 
+Contracts
+Criminal Law 
+Contracts
 T orts
 ￼￼
 October 2013 ESSAY QUESTIONS

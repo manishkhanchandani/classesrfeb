@@ -10,8 +10,10 @@ The answers received good grades and were written by applicants who passed the e
 Applicants were given four hours to answer four essay questions. Instructions for the essay examination appear on page ii.
 Question Number 1.
 2. 3. 4.
-Subject Page Contracts 4
-Criminal Law 15 Contracts 27
+Subject Page 
+Contracts 4
+Criminal Law 15 
+Contracts 27
 ￼￼￼Torts
 39
 2
@@ -460,7 +462,7 @@ I. Polly v. Singer. Polly will bring an action in negligence against Singer. A n
 A. Duty. When a defendant affirmatively acts, he owes a duty of reasonable care to any foreseeable plaintiffs. Here, Singer yelled "Fire." This was an affirmative act, and since Polly was in the restaurant, she was a foreseeable plaintiff. Singer owes a duty of reasonable care to Polly.
 B. Breach of Duty. A breach of duty can be found to exist by employing the Learned Hand Calculus (LHC). The LHC (B<PL) states that if the probability of harm multiplied by the magnitude of the harm, outweighs the burden to make the act safer or the social value/utility of the act, then the defendant will have breached his duty of care. Here, it's going to be very difficult to find that Singer breached his duty of care to Polly. Singer saw a fire and reacted the way that most people would have reacted. He was afraid of burning to death, and he did not want to die or anyone else for that matter. However, if the court feels that he was negligent by yelling fire, which causes most people to panic (probability) and that this would cause most people to abandon the restaurant, preventing Polly from receiving help (magnitude), and that he should have pulled a fire alarm or notified the manager or called 911, then Singer will be found to have breached his duty of care to Polly.
 C. Actual Cause. Actual cause exists if the defendant's acts are the but-for cause of the plaintiff's injury. Here, but for Singer yelling "Fire," the restaurant patrons would not have become scared and would not have rushed toward the exits.
-D. Proximate Cause. Proximate cause exists if the plaintiff's injuries are a foreseeable consequence of the negligent act, and there are no intervening, superseding events that take place between the negligent act and the harm suffered by
+D. Proximate Cause. Proximate cause exists if the plaintiffs injuries are a foreseeable consequence of the negligent act, and there are no intervening, superseding events that take place between the negligent act and the harm suffered by
 ￼45
 
 the plaintiff. Here, this will be another analysis that a court could use to determine that Singer was not liable for Polly's injuries. Even if Singer was negligent in yelling "Fire," Polly's injuries may be seen as unforeseeable, due to the fact that a blind person shouldn't be going to a crowded restaurant (presumably by herself) where things like this could happen. However, it is foreseeable that a person who can't see may end up walking into the wrong location and may suffer injuries as a result. If the court finds that the negligent act (yelling "Fire") is foreseeable capable of causing someone to get burned and suffer smoke inhalation, then this element may be satisfied. And because danger/negligence invites rescue, Polly could recover for the injuries she suffered from passerby as well, as long as it was foreseeable, which Good Samaritan assistance would be.

@@ -1,10 +1,12 @@
-<li class="dropdown" ng-if="!userData">
+<ul class="nav navbar-nav navbar-right">
+ <li class="dropdown" ng-if="!userData">
   <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
   <ul class="dropdown-menu">
     <li><a href="" ng-click="googleLogin()">Google Login</a></li>
     <li><a href="" ng-click="facebookLogin()">Facebook Login</a></li>
     <li><a href="" ng-click="twitterLogin()">Twitter Login</a></li>
     <li><a href="" ng-click="githubLogin()">Github Login</a></li>
+    <li><a href="" role="button" data-toggle="modal" data-target="#login-modal">Email Login</a></li>
   </ul>
 </li>
 
@@ -15,3 +17,5 @@
     <li><a href="" ng-click="logout()">Logout</a></li>
   </ul>
 </li>
+
+</ul>
