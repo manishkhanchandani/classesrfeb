@@ -1,0 +1,45 @@
+<?php
+
+function yearToAge($year) {
+  $currentYear = date('Y');
+  return $currentYear - $year;
+}
+
+$siteConfig = array(
+  'SITENAME' => 'femalejole.tk',
+  'PROJECT_TITLE' => 'FemaleJole (A Lesbian Community)',
+  'TEMPLATE_FILE' => 'g/template.php',
+  'MESSAGE_URL' => 'g/messages?toId=',
+  'HOBBIES' => array('hj' => 'HJ', 'bj' => 'BJ', 'foreplay' => 'Foreplay', 'dfk' => 'DFK', 'prostate' => 'Prostate Massage', 'backMassage' => 'Back Massage', 'deepThroat' => 'Deep Throat', 'hard' => 'Hard', 'soft' => 'Soft', 'anal' => 'Anal', 'licking' => 'Licking', 'swallow' => 'Swallow', 'toys' => 'Toys'),
+  'education' => array(1 => 'Masters', 'Honours degree', 'Bachelors', 'Undergraduate', 'Associate Degree', 'Diploma', 'High School', 'Less than high school', 'Trade School'),
+  'religion' => array(1 => 'Hindu', 'Muslim', 'Christian', 'Sikh', 'Parsi', 'Jain'),
+  'marital_status' => array(1 => 'Never Married', 'Divorced', 'Separated', 'Widowed'),
+  'profession' => array(1 => 'Advertising/ Marketing', 'Administrative services', 'Architecture', 'Armed Forces', 'Arts', 'Commerce', 'Computers/ IT', 'Education', 'Engineering/ Technology', 'Fashion', 'Finance', 'Fine Arts', 'Home Science', 'Law', 'Management', 'Medicine', 'Nursing/ Health Sciences', 'Office administration', 'Science', 'Shipping', 'Travel &amp; Tourism'),
+  'height' => array(1 => 'Below 4 Feet', 'Between 4 to 5 Feet', 'Between 5 to 6 Feet', 'Above 6 Feet'),
+  'weight' => array(1 => 'Between 50 to 100 lb', 'Between 100 to 150 lb', 'Between 150 to 200 lb', 'Between 200 to 250 lb', 'Above 250 lb'),
+  'diet' => array(1 => 'Veg', 'Non-Veg', 'Occasionally Non-Veg', 'Eggetarian', 'Vegan'),
+  'bodyType' => array(1 => 'Slim', 'Athletic', 'Average', 'Heavy'),
+  'nature' => array(1 => 'Top', 'Bottom', 'Versatile'),
+  'hosting' => array(1 => 'I can host', 'I cannot host'),
+  'firebaseDirectory' => '/f',
+  'homeUrl' => 'f/home',
+  
+);
+
+$defaultFirebasePath = $siteConfig['firebaseDirectory'];
+
+define('DEFAULT_IMAGE', 'http://bento.cdn.pbs.org/hostedbento-prod/filer_public/_bento_media/img/no-image-available.jpg');
+
+$siteConfig = array_merge($siteConfigMain, $siteConfig);
+
+$page = '';
+if (!empty($_GET['p'])) {
+  $page = $_GET['p'];
+  $page .= '.php';
+}
+
+
+if (!file_exists($page)) {
+  $_GET['p'] = 'f/home';
+}
+?>

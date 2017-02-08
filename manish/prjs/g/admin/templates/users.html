@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Users</h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="data in usersData | orderBy: '-created_dt'">{{data.displayName}} / {{data.email}}<br><br>
+      {{data.ipDetails.ip}} / {{data.ipDetails.city}} / {{data.ipDetails.region}} / {{data.ipdetails.country}}<br>
+      <a href="http://maps.google.com/maps?q=loc:{{data.ipDetails.lat}},{{data.ipDetails.lng}}" target="_blank">{{data.ipDetails.lat}} / {{data.ipDetails.lng}} <br >
+      </a> / Block This User / UnBlock This User (<strong>{{data.created_dt | date: 'EEEE, MMMM d, y h:mm:ss a'}}</strong>)
+      </li>
+    </ul>
+  </div>
+</div>

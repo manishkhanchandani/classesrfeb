@@ -1,0 +1,134 @@
+<?php
+
+
+if (empty($_GET['id'])) {
+  header("Location: home");
+  exit;
+}
+
+$p = '/users/'.$_GET['id'];
+$d1 = $firebase->get($defaultFirebasePath . $p);
+
+if (empty($d1)) {
+  header("Location: home");
+  exit;
+}
+
+$details = json_decode($d1, true);
+$v = !empty($details['profile']) ? $details['profile'] : '';
+$address = !empty($details['profile']['address']) ? json_decode($details['profile']['address'], true) : '';
+
+$images = json_decode($v['images'], true); 
+$videos = json_decode($v['videos'], true); 
+$urls = json_decode($v['urls'], true); 
+$mainImage = !empty($details['photoURL']) ? $details['photoURL'] : DEFAULT_IMAGE;
+
+$v['created'] = date('Y-m-d', $details['created_dt']/1000);
+
+$title = !empty($v['title']) ? $v['title'] : $details['displayName'];
+$location = !empty($address['sn']['city']) ? $address['sn']['city'].', '.$address['sn']['state'].', '.$address['sn']['country'].' ('.$address['sn']['county'].')' : '';
+if (empty($location) && !empty($details['ipDetails'])) {
+  $location = $details['ipDetails']['city'].', '.$details['ipDetails']['region'].', '.$details['ipDetails']['country'];
+}
+?>
+
+<script>
+angular.module('myApp')
+
+.controller('detailsController', ['$scope', function($scope) {
+  
+}]);
+</script>
+<div ng-controller="detailsController">
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><?php echo $title; ?></h3>
+      </div>
+      <div class="panel-body">
+        
+        <div class="row">
+          <div class="col-md-4">
+            <img src="<?php echo $mainImage; ?>" class="img-responsive img-circle img-thumbnail" />
+
+          </div>
+          <div class="col-md-8">
+            <p><small>
+                <br><strong>Location:</strong> <?php echo $location; ?>
+                <br><?php if (!empty($v['nature'])) { echo $siteConfig['nature'][$v['nature']]; } ?> 
+                <?php if (!empty($v['birth_year'])) { echo yearToAge($v['birth_year']).' years'; } ?>
+                <?php if (!empty($v['height'])) { echo '<b>Ht</b>: '.$siteConfig['height'][$v['height']]; } ?> 
+                <?php if (!empty($v['weight'])) { echo '<b>Wt</b>: '.$siteConfig['weight'][$v['weight']]; } ?>
+                <?php if (!empty($v['distance'])) { ?>
+                <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
+                <?php } ?> 
+                <br><strong>Created:</strong> <?php echo $v['created']; ?>
+
+                </small></p>
+                
+          </div>
+        </div><!-- ends -->
+        
+        
+      </div>
+      <div class="panel-footer">
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li ng-if="userData" class="tooltip-social message-link">
+            <a href="<?php echo $siteConfig['MESSAGE_URL']; ?><?php echo $v['uid']; ?>" data-toggle="tooltip" data-placement="top" title="Message"><i class="fa fa-envelope fa-2x"></i></a>
+          </li>
+          
+          <li ng-if="userData" class="tooltip-social fav-link" show-fav user-data="userData" uid="<?php echo $v['uid']; ?>">
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Images</h3>
+      </div>
+      <div class="panel-body"> Panel content </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Videos</h3>
+      </div>
+      <div class="panel-body"> Panel content </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Links</h3>
+      </div>
+      <div class="panel-body"> Panel content </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+<?php echo pr($_GET);
+pr($details);
+pr($address);
+pr($v);?>

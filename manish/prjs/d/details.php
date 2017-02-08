@@ -1,0 +1,186 @@
+<?php
+
+
+if (empty($_GET['id'])) {
+  header("Location: home");
+  exit;
+}
+
+$p = '/users/'.$_GET['id'];
+$d1 = $firebase->get($defaultFirebasePath . $p);
+
+if (empty($d1)) {
+  header("Location: home");
+  exit;
+}
+
+$details = json_decode($d1, true);
+$v = !empty($details['profile']) ? $details['profile'] : '';
+$address = !empty($details['profile']['address']) ? json_decode($details['profile']['address'], true) : '';
+
+$images = json_decode($v['images'], true); 
+$videos = json_decode($v['videos'], true); 
+$urls = json_decode($v['urls'], true); 
+$mainImage = !empty($details['photoURL']) ? $details['photoURL'] : DEFAULT_IMAGE;
+
+$v['created'] = date('Y-m-d', $details['created_dt']/1000);
+
+$title = !empty($v['title']) ? $v['title'] : $details['displayName'];
+$location = !empty($address['sn']['city']) ? $address['sn']['city'].', '.$address['sn']['state'].', '.$address['sn']['country'].' ('.$address['sn']['county'].')' : '';
+if (empty($location) && !empty($details['ipDetails'])) {
+  $location = $details['ipDetails']['city'].', '.$details['ipDetails']['region'].', '.$details['ipDetails']['country'];
+}
+
+?>
+<script>
+angular.module('myApp')
+
+.controller('detailsController', ['$scope', function($scope) {
+  
+}]);
+</script>
+<div ng-controller="detailsController">
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><?php echo $title; ?></h3>
+      </div>
+      <div class="panel-body">
+        
+        <div class="row">
+          <div class="col-md-4">
+            <img src="<?php echo $mainImage; ?>" class="img-responsive img-circle img-thumbnail" />
+
+          </div>
+          <div class="col-md-8">
+              <?php if (!empty($v['description'])) { ?>
+                 <p><?php echo $v['description']; ?></p>
+              <?php } ?>
+            <p>
+                <br><strong>Location:</strong> <?php echo $location; ?>
+                <br><?php if (!empty($v['nature'])) { echo $siteConfig['nature'][$v['nature']]; } ?> 
+                <?php if (!empty($v['birth_year'])) { echo yearToAge($v['birth_year']).' years'; } ?>
+                <?php if (!empty($v['height'])) { echo '<b>Ht</b>: '.$siteConfig['height'][$v['height']]; } ?> 
+                <?php if (!empty($v['weight'])) { echo '<b>Wt</b>: '.$siteConfig['weight'][$v['weight']]; } ?>
+                <?php if (!empty($v['distance'])) { ?>
+                <br><strong>Distance:</strong> <?php echo $v['distance']; ?> mi
+                <?php } ?> 
+                <br><strong>Created On:</strong> <?php echo $v['created']; ?>
+                <br><strong>Created By: </strong> <?php echo $details['displayName']; ?>
+                <br>
+                <div class="row">
+                  <div class="col-md-6">
+                    <?php if (!empty($siteConfig['nature'][$v['nature']])) { ?>
+                      <br><strong>Nature:</strong> <?php echo $siteConfig['nature'][$v['nature']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['hosting'][$v['hosting']])) { ?>
+                      <br><strong>Hosting:</strong> <?php echo $siteConfig['hosting'][$v['hosting']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['marital_status'][$v['marital_status']])) { ?>
+                      <br><strong>Marital Status:</strong> <?php echo $siteConfig['marital_status'][$v['marital_status']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['height'][$v['height']])) { ?>
+                      <br><strong>Height:</strong> <?php echo $siteConfig['height'][$v['height']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['profession'][$v['profession']])) { ?>
+                      <br><strong>Profession:</strong> <?php echo $siteConfig['profession'][$v['profession']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['gender'][$v['gender']])) { ?>
+                      <br><strong>Gender:</strong> <?php echo $siteConfig['gender'][$v['gender']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['drinking'][$v['drinking']])) { ?>
+                      <br><strong>Drinking:</strong> <?php echo $siteConfig['drinking'][$v['drinking']]; ?>
+                    <?php } ?>
+                  </div>
+                  <div class="col-md-6">
+                    <?php if (!empty($siteConfig['bodyType'][$v['bodyType']])) { ?>
+                      <br><strong>Body Type:</strong> <?php echo $siteConfig['bodyType'][$v['bodyType']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['religion'][$v['religion']])) { ?>
+                      <br><strong>Religion:</strong> <?php echo $siteConfig['religion'][$v['religion']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['hosting'][$v['hosting']])) { ?>
+                      <br><strong>Hosting:</strong> <?php echo $siteConfig['hosting'][$v['hosting']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['weight'][$v['weight']])) { ?>
+                      <br><strong>Weight:</strong> <?php echo $siteConfig['weight'][$v['weight']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['education'][$v['education']])) { ?>
+                      <br><strong>Education:</strong> <?php echo $siteConfig['education'][$v['education']]; ?>
+                    <?php } ?>
+                    <?php if (!empty($siteConfig['smoking'][$v['smoking']])) { ?>
+                      <br><strong>Smoking:</strong> <?php echo $siteConfig['smoking'][$v['smoking']]; ?>
+                    <?php } ?>
+                  </div>
+                </div>
+
+                </p>
+                
+          </div>
+        </div><!-- ends -->
+        
+        
+      </div>
+      <div class="panel-footer">
+        <?php if (!empty($_COOKIE['uid'])) { ?>
+        <ul class="list-unstyled list-inline list-social-icons">
+          <li ng-if="userData" class="tooltip-social message-link">
+            <a href="<?php echo $siteConfig['MESSAGE_URL']; ?><?php echo $v['uid']; ?>" data-toggle="tooltip" data-placement="top" title="Message"><i class="fa fa-envelope fa-2x"></i></a>
+          </li>
+          
+          <li ng-if="userData" class="tooltip-social fav-link" show-fav user-data="userData" uid="<?php echo $v['uid']; ?>">
+            
+          </li>
+        </ul>
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Images</h3>
+      </div>
+      <div class="panel-body"> Panel content </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Videos</h3>
+      </div>
+      <div class="panel-body"> Panel content </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Links</h3>
+      </div>
+      <div class="panel-body"> Panel content </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+  </div>
+</div>
+
+-->
+
+</div>
+
+<?php /*echo pr($_GET);
+pr($details);
+pr($address);
+pr($v);*/?>
