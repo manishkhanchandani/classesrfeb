@@ -1,0 +1,1075 @@
+<div id="views" ng-view="" autoscroll="true" class="ng-scope"><div id="personalized-health" class="personalized-results ng-scope">
+    <div class="row health-results-above-banner">
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 ng-scope all-hp-select-main" ng-class="{'all-hp-select-main':healthProfiles.length > 0}" ng-if="healthProfiles.length > 0">
+            <select class="form-control hp-select ng-pristine ng-valid" name="healthProfile" ng-model="selectedHealthProfileIndex" ng-init="selectedHealthProfileIndex=0" ng-change="changeHealthProfieInfo(healthProfiles[selectedHealthProfileIndex])">
+                <!-- ngRepeat: healthProfileInfo in healthProfiles --><option ng-repeat="healthProfileInfo in healthProfiles" value="0" class="ng-scope ng-binding">
+                    preethi SIRIAM, 12/19/16
+                </option><!-- end ngRepeat: healthProfileInfo in healthProfiles --><option ng-repeat="healthProfileInfo in healthProfiles" value="1" class="ng-scope ng-binding">
+                    preethi SIRIAM, 11/28/16
+                </option><!-- end ngRepeat: healthProfileInfo in healthProfiles --><option ng-repeat="healthProfileInfo in healthProfiles" value="2" class="ng-scope ng-binding">
+                    preethi SIRIAM, 10/25/16
+                </option><!-- end ngRepeat: healthProfileInfo in healthProfiles -->
+            </select>
+        </div>
+        <div class="col-xs-12  ng-binding col-sm-3 col-md-3 col-lg-3" ng-class="{'col-sm-8 col-md-8 col-lg-8 email-address':healthProfiles.length === 0,'col-sm-3 col-md-3 col-lg-3 email-address':healthProfiles.length > 0}">
+            psiriam@shaklee.com
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right resultTopLinks">
+            <!-- ngIf: !readOnly --><a href="" ng-if="!readOnly" ng-click="retakeQuiz();" class="ng-scope ng-binding">RETAKE YOUR ASSESSMENT</a><!-- end ngIf: !readOnly -->
+            <!-- ngIf: !isMobile --><a href="" ng-click="printResults();" ng-if="!isMobile" class="ng-scope"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a><!-- end ngIf: !isMobile -->
+            <!-- ngIf: !readOnly --><a href="" ng-click="openEmailResultMoreModal({email: answered.email, name:answered.first_name + ' ' + answered.last_name, id: answered.health_profile_id, userId: answered.user_id, mailToUp: 0});" ng-if="!readOnly" class="ng-scope"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a><!-- end ngIf: !readOnly -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row health-results-banner">
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 img-banner-placeholder">
+                    <img ng-src="//images.shaklee.com/healthprint/Healthprint-Logo.png" src="//images.shaklee.com/healthprint/Healthprint-Logo.png">
+                </div>
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                    <div class="hp-profile-name">
+                        <h1 ng-style="hpProfileNameStyle" class="ng-binding" style="font-size: 28px;">preethi siriam,</h1>
+                        <h4 ng-bind-html="'personalize-health.results.health-summary'|translate" class="ng-binding">Your HEALTHPRINT™ Summary and Recommendations</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ngIf: !isMobile --><div affixer="" off-set-top="423" ng-if="!isMobile" class="float-nav ng-scope ng-isolate-scope">
+        <nav id="nav" class="navbar navbar-default navbar-custom" role="navigation">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="answered.age > 12 ? '' : 'hidden'" class=""><a href="#yourHealthAssessment" du-smooth-scroll="" du-scrollspy="" offset="30" ng-click="trackEventOnResults('health assessment nav');" class="ng-binding">YOUR HEALTH ASSESSMENT</a></li>
+                        <li bs-scrollspy=""><a href="#productRecommendations" du-smooth-scroll="" du-scrollspy="" offset="30" ng-class="answered.age > 12 ? '' : 'remove-right-border'" ng-click="trackEventOnResults('product recommendations nav');" class="ng-binding">PRODUCT RECOMMENDATIONS</a></li>
+                        <li ng-class="answered.age > 12 ? '' : 'hidden'" class=""><a href="#yourAnswers" du-smooth-scroll="" du-scrollspy="" offset="30" ng-click="trackEventOnResults('your answers nav');" class="ng-binding">YOUR ANSWERS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div><!-- end ngIf: !isMobile -->
+
+    <!-- ngIf: !kids --><div class="row ng-scope" ng-if="!kids" id="toMobileNav">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="hp-nav hp-nav-open" ng-class="{'hp-nav-open':sectionNav.yourHealthAssessment}">
+                <!-- ngIf: isMobile -->
+            </div>
+        </div>
+    </div><!-- end ngIf: !kids -->
+    <section id="yourHealthAssessment">
+        <!-- ngIf: (contRecomInfo.status !== 5000) && sectionNav.yourHealthAssessment --><div class="row recommendations ng-scope" ng-if="(contRecomInfo.status !== 5000) &amp;&amp; sectionNav.yourHealthAssessment">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="section" ng-class="{'is-es-fr': (isUsEs || isCanFr)}">
+                    <h1 class="title ng-binding" ng-bind-html="'personalize-health.results.content-recom.headline-'+contRecomInfo.diet.key|translate:contRecomInfo.diet">Your Healthprint diet score of  <b>70</b> shows you’re on your way.</h1>
+                    <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/score-diet.png" src="//images.shaklee.com/healthprint/score-diet.png">
+                    <div class="score-bar">
+                        <div class="legend"><span class="score-mover" ng-style="{width: contRecomInfo.diet.score+'%'}" style="width: 70%;"><em class="ng-binding">70</em></span></div>
+                        <div class="bar">
+                            <div class="scale red"> </div>
+                            <div class="scale orange"> </div>
+                            <div class="scale yellow"> </div>
+                            <div class="scale green"> </div>
+                        </div>
+                        <div class="line"> <span class="left">0</span> <span class="right">100</span> </div>
+                    </div>
+                    <div class="score-info">
+                        <p><span ng-bind-html="'personalize-health.results.content-recom.intro-'+contRecomInfo.diet.key|translate" class="ng-binding">You’re already doing lots of great things to improve your health.  Based on your responses, here are a few more things you can do take your nutritional health to the next level:</span></p>
+                        <ul>
+                            <!-- ngRepeat: key in contRecomInfo.diet.bullet_keys --><li ng-repeat="key in contRecomInfo.diet.bullet_keys" class="ng-scope">
+                                <p>
+                                    <span ng-bind-html="'personalize-health.results.content-recom.bullet-list-on-page.'+key|translate" class="ng-binding">Reducing your intake of unhealthy snacks and fast food is something you can start right away.</span>
+                                </p>
+                            </li><!-- end ngRepeat: key in contRecomInfo.diet.bullet_keys --><li ng-repeat="key in contRecomInfo.diet.bullet_keys" class="ng-scope">
+                                <p>
+                                    <span ng-bind-html="'personalize-health.results.content-recom.bullet-list-on-page.'+key|translate" class="ng-binding">Try to reduce your intake of sugary drinks</span>
+                                </p>
+                            </li><!-- end ngRepeat: key in contRecomInfo.diet.bullet_keys --><li ng-repeat="key in contRecomInfo.diet.bullet_keys" class="ng-scope">
+                                <p>
+                                    <span ng-bind-html="'personalize-health.results.content-recom.bullet-list-on-page.'+key|translate" class="ng-binding">You’re well on your way to getting the vegetables your body needs! To perform at your best, make sure you are eating at least 3 servings of vegetables every day.</span>
+                                </p>
+                            </li><!-- end ngRepeat: key in contRecomInfo.diet.bullet_keys -->
+                        </ul>
+                    </div>
+                    <div class="read-more-box">
+                        <span class="learn-more ng-binding" ng-bind-html="'personalize-health.label.read-more'|translate" ng-click="readMoreInfo(contRecomInfo.diet,'diet')">Read More</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="section section-lifestyle" ng-class="{'is-es-fr': (isUsEs || isCanFr)}">
+                    <h1 class="title ng-binding" ng-bind-html="'personalize-health.results.content-recom.headline-'+contRecomInfo.lifestyle.key|translate:contRecomInfo.lifestyle">Your Healthprint lifestyle score of  <b>60</b> shows you’re ready to pick up the pace.</h1>
+                    <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/score-lifestyle.png" src="//images.shaklee.com/healthprint/score-lifestyle.png">
+                    <div class="score-bar">
+                        <div class="legend"><span class="score-mover" ng-style="{width: contRecomInfo.lifestyle.score+'%'}" style="width: 60%;"><em class="ng-binding">60</em></span></div>
+                        <div class="bar">
+                            <div class="scale red"> </div>
+                            <div class="scale orange"> </div>
+                            <div class="scale yellow"> </div>
+                            <div class="scale green"> </div>
+                        </div>
+                        <div class="line"> <span class="left">0</span> <span class="right">100</span> </div>
+                    </div>
+                    <div class="score-info">
+                        <p><span ng-bind-html="'personalize-health.results.content-recom.intro-'+contRecomInfo.lifestyle.key|translate" class="ng-binding">You already make some healthy choices in your weekly routine, but it’s never too late or too difficult to deepen your commitment to a healthier you. Here are a few things you can try based on your health assessment:</span></p>
+                        <ul>
+                            <!-- ngRepeat: key in contRecomInfo.lifestyle.bullet_keys --><li ng-repeat="key in contRecomInfo.lifestyle.bullet_keys" class="ng-scope">
+                                <p>
+                                    <span ng-bind-html="'personalize-health.results.content-recom.bullet-list-on-page.'+key|translate" class="ng-binding">Fill your body with the nutrients it needs to increase your energy.</span>
+                                </p>
+                            </li><!-- end ngRepeat: key in contRecomInfo.lifestyle.bullet_keys --><li ng-repeat="key in contRecomInfo.lifestyle.bullet_keys" class="ng-scope">
+                                <p>
+                                    <span ng-bind-html="'personalize-health.results.content-recom.bullet-list-on-page.'+key|translate" class="ng-binding">Lifestyle changes and supplementation can help improve your memory and concentration.</span>
+                                </p>
+                            </li><!-- end ngRepeat: key in contRecomInfo.lifestyle.bullet_keys --><li ng-repeat="key in contRecomInfo.lifestyle.bullet_keys" class="ng-scope">
+                                <p>
+                                    <span ng-bind-html="'personalize-health.results.content-recom.bullet-list-on-page.'+key|translate" class="ng-binding">Even small moments of self-care can make a big difference in managing stress.</span>
+                                </p>
+                            </li><!-- end ngRepeat: key in contRecomInfo.lifestyle.bullet_keys -->
+                        </ul>
+                    </div>
+                    <div class="read-more-box">
+                        <span class="learn-more ng-binding" ng-bind-html="'personalize-health.label.read-more'|translate" ng-click="readMoreInfo(contRecomInfo.lifestyle,'lifestyle')">Read More</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ngIf: !(answered.age <= 12 || answered.pregnant === 'PREGNANT') --><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ng-scope" ng-if="!(answered.age <= 12 || answered.pregnant === 'PREGNANT')">
+                <div class="row bmi">
+                    <div class="col-xs-5 col-sm-2 col-md-2 col-lg-2"> <span class="bmi-scale ng-binding bmi-scale-en">18.5</span> </div>
+                    <div class="col-xs-7 col-sm-10 col-md-10 col-lg-10">
+                        <p class="info">
+                            <span ng-bind-html="'personalize-health.results.content-recom.'+contRecomInfo.bmi.key|translate:contRecomInfo.bmi" class="ng-binding"><b>Body Mass Index </b>(BMI) is a universally recognized measure of body composition based on height and weight. Based on the answers you provided, your BMI is 18.5. According to the World Health Organization, you are in the normal range for BMI. Keeping your weight under 268 pounds will keep you at a healthy weight.</span>
+                            <a ng-href="http://go.shaklee.com/need-know-bmi/" ng-click="trackEventOnResults('learn more - BMI', 'BMI');" class="learn-more ng-binding" ng-bind-html="'personalize-health.label.learn-more'|translate" target="_blank" href="http://go.shaklee.com/need-know-bmi/">Learn More</a>
+                        </p>
+                    </div>
+                </div>
+            </div><!-- end ngIf: !(answered.age <= 12 || answered.pregnant === 'PREGNANT') -->
+        </div><!-- end ngIf: (contRecomInfo.status !== 5000) && sectionNav.yourHealthAssessment -->
+        <!-- ngIf: !(kids || (contRecomInfo.goals.length === 0)) && sectionNav.yourHealthAssessment --><div class="row health-goals ng-scope" ng-if="!(kids || (contRecomInfo.goals.length === 0)) &amp;&amp; sectionNav.yourHealthAssessment">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="health-goal-title ng-binding" ng-bind-html="'personalize-health.results.content-recom.goals-title'|translate">Let's Take A Closer Look At <b>Your Top Health Goals</b></div>
+                <div class="row">
+                    <!-- ngIf: isMobile -->
+                    <!-- ngRepeat: goal in contRecomInfo.goals --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ng-scope" ng-repeat="goal in contRecomInfo.goals" ng-if="!isMobile">
+                        <div sk-dr-goal="" sk-pr-goal="goal" sk-pr-index="$index" class="ng-isolate-scope"><img ng-src="//images.shaklee.com/healthprint/goals/fitness.png" src="//images.shaklee.com/healthprint/goals/fitness.png">
+<h3 class="ng-binding">Goal 1:  Staying Fit</h3>
+<p class="goal-info">
+    <span ng-bind-html="'0.'+goal.name+'-intro'|translate|shortString" class="ng-binding">Staying fit depends on regular and varied physical activity, as well as considering what you can do to keep bones, muscles, and joints working at their best. Here are 3 import</span>...&nbsp;<span class="read-more ng-binding" ng-click="readMoreGoalInfo(goal, $index+1)" ng-bind-html="'personalize-health.label.continue'|translate|shortString">continue</span>
+</p></div>
+                    </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: goal in contRecomInfo.goals --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ng-scope" ng-repeat="goal in contRecomInfo.goals" ng-if="!isMobile">
+                        <div sk-dr-goal="" sk-pr-goal="goal" sk-pr-index="$index" class="ng-isolate-scope"><img ng-src="//images.shaklee.com/healthprint/goals/aging.png" src="//images.shaklee.com/healthprint/goals/aging.png">
+<h3 class="ng-binding">Goal 2:  Healthy Aging</h3>
+<p class="goal-info">
+    <span ng-bind-html="'0.'+goal.name+'-intro'|translate|shortString" class="ng-binding"> People are living longer than ever, and there is a strong desire to maintain vitality throughout life. Your body (and each cell that makes up your body) has a tremendous abil</span>...&nbsp;<span class="read-more ng-binding" ng-click="readMoreGoalInfo(goal, $index+1)" ng-bind-html="'personalize-health.label.continue'|translate|shortString">continue</span>
+</p></div>
+                    </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: goal in contRecomInfo.goals --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ng-scope" ng-repeat="goal in contRecomInfo.goals" ng-if="!isMobile">
+                        <div sk-dr-goal="" sk-pr-goal="goal" sk-pr-index="$index" class="ng-isolate-scope"><img ng-src="//images.shaklee.com/healthprint/goals/heart.png" src="//images.shaklee.com/healthprint/goals/heart.png">
+<h3 class="ng-binding">Goal 3:  Healthy Heart</h3>
+<p class="goal-info">
+    <span ng-bind-html="'0.'+goal.name+'-intro'|translate|shortString" class="ng-binding">The heart is the hardest working organ in the body, so it deserves special attention. As you learn about your particular risk factors, there are many steps you can take to pro</span>...&nbsp;<span class="read-more ng-binding" ng-click="readMoreGoalInfo(goal, $index+1)" ng-bind-html="'personalize-health.label.continue'|translate|shortString">continue</span>
+</p></div>
+                    </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: goal in contRecomInfo.goals -->
+                </div>
+            </div>
+        </div><!-- end ngIf: !(kids || (contRecomInfo.goals.length === 0)) && sectionNav.yourHealthAssessment -->
+    </section>
+
+    <!-- Recommended Bundles -->
+    <section id="productRecommendations">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="hp-nav hp-nav-open" ng-class="{'hp-nav-open':sectionNav.productRecommendations}">
+                <!-- ngIf: isMobile -->
+            </div>
+        </div>
+    </div>
+    <!-- Recommended Bundles Description-->
+    <div class="row bundles content" ng-show="sectionNav.productRecommendations">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 shaklee-guarantee">
+            <!-- ngIf: kids -->
+            <!-- ngIf: !kids --><div ng-if="!kids" class="title ng-scope ng-binding" ng-bind-html="'personalize-health.results.shaklee-guaranteed-title'|translate">Next, See How the <b>Shaklee Difference</b><br> Can Help Achieve Your Goals</div><!-- end ngIf: !kids -->
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <img ng-src="//images.shaklee.com/healthprint/guarantee-seal.png" class="img-responsive guarantee-logo" src="//images.shaklee.com/healthprint/guarantee-seal.png">
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <div ng-bind-html="'personalize-health.results.shaklee-guaranteed-text'|translate" class="ng-binding"><p>Everything we do has been designed In Harmony with Nature™. <b>Safe, Proven, Guaranteed.</b></p><ul><li><p><b>Safe</b> – Our products undergo a screening process that surpasses even the standards of the United States Pharmacopeia. The USP only considers about 100 contaminants, but we screen for over 350 contaminants, pesticides and impurities on every new botanical ingredient.</p></li><li><p><b>Proven</b>  - Our products are backed by 71 patents and patents-pending, over 120 published scientific papers and presentations, and the Landmark Study, one of the largest studies of long-term supplementation conducted by UC Berkeley.  The study showed that Shaklee supplement users had markedly better health than non-supplement users.</p></li><li><p><b>Guaranteed</b> - We stand behind our products with a 100% money-back guarantee—no questions asked.</p></li></ul></div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header">
+            <div class="title ng-binding" ng-bind-html="'personalize-health.results.now-choose-bundles'|translate">Now, Choose From <b>3 Personalized Recommendations</b></div>
+            <p ng-bind-html="'personalize-health.results.bundles-desc'|translate" class="ng-binding">These recommendations are put together based on your results and top health goals. Each solution includes personalized product recommendations to give your body the nutrients and support it needs to achieve optimal health.</p>
+            <!-- ngIf: isUS && !isMC -->
+        </div>
+        <img ng-src="//images.shaklee.com/healthprint/HP-results-promo-EN.jpg" class="img-responsive" src="//images.shaklee.com/healthprint/HP-results-promo-EN.jpg">
+    </div>
+    <div class="row bundles skus member-hp" ng-show="sectionNav.productRecommendations" ng-class="isMC?'member-hp':'pws-hp'" id="bundleTop">
+        <!-- ngIf: isMobile -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bundle-container row-eq-height" ng-class="freeShippingTier3?'has-shipping':''">
+            <!-- ngIf: !isMobile || (currentBundle == 'TIER_1' && isMobile) --><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 product-divider ng-scope product-divider-bundle-price-no-shake" ng-class="!kids &amp;&amp; showLifeShake &amp;&amp; sectionNav.productRecommendations?'product-divider-bundle-price-with-shake':'product-divider-bundle-price-no-shake'" ng-if="!isMobile || (currentBundle == 'TIER_1' &amp;&amp; isMobile)">
+                <div class="basic">
+                    <b class="title">
+                        <span ng-bind-html="'personalize-health.results.basic'|translate" class="ng-binding">Basic</span>
+                        <!-- ngIf: results.recommended === 'TIER_1' -->
+                    </b>
+                    <div class="product-info">
+                        <p class="less-text ng-binding">Less than <!-- ngIf: !isCanFr --><span ng-if="!isCanFr" class="ng-scope">$</span><!-- end ngIf: !isCanFr -->4<!-- ngIf: isCanFr --> a day</p>
+                        <!-- ngIf: membershipTier1 -->
+                        <!-- ngIf: emailPromotionTier1 -->
+                    </div>
+                    <!-- ngRepeat: basicSku in basicBundle['skus'] --><div class="row product-recommendation personalized_nutrition noMessage" ng-class="isMultiVitaminMessage?'hasMessage':'noMessage'" ng-repeat="basicSku in basicBundle['skus']">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sku-category"><b ng-bind-html="'personalize-health.tags.personalized_nutrition'|translate" class="ng-binding">Personalized Nutrition<br>Based On Your Profile</b></div>
+                        <!-- ngIf: $first && mutiVitaminTier1 -->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 image">
+                            <!-- ngIf: basicSku.category != 'membership' --><img ng-if="basicSku.category != 'membership'" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b89402.jpg" class="img-responsive ng-scope" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b89402.jpg"><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' -->
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 description">
+                            <!-- ngIf: basicSku.category != 'membership' --><b ng-if="basicSku.category != 'membership'" ng-bind-html="basicSku.info.title" class="ng-scope ng-binding"><p>Essentials Plan</p>
+</b><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' -->
+
+                            <!-- ngIf: basicSku.category != 'membership' --><p ng-if="basicSku.category != 'membership'" class="short-desc aem-desc ng-scope ng-binding" ng-bind-html="basicSku.info.healthPrintDescription"><p>Supports your basic nutritional needs</p>
+</p><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' -->
+
+                            <!-- ngIf: basicSku.category != 'membership' --><p ng-if="basicSku.category != 'membership'" class="price ng-scope ng-binding">$69.45</p><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' && basicSku.sn_price != 0 -->
+
+                            <!-- ngIf: (!hideAddToItem) && ((basicSku.category == 'membership' && basicSku.sn_price != 0) || (basicSku.category != 'membership')) --><a ng-if="(!hideAddToItem) &amp;&amp; ((basicSku.category == 'membership' &amp;&amp; basicSku.sn_price != 0) || (basicSku.category != 'membership'))" ng-click="addToCart(basicSku, $event, 'Basic');" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: (!hideAddToItem) && ((basicSku.category == 'membership' && basicSku.sn_price != 0) || (basicSku.category != 'membership')) -->
+                            <!-- ngIf: basicSku.category != 'membership' --><a ng-if="basicSku.category != 'membership'" ng-click="openLearnMoreModal(basicSku, 'Basic');" class="learn-more ng-scope ng-binding">More Info</a><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' && basicSku.sn_price == 0 -->
+                        </div>
+                    </div><!-- end ngRepeat: basicSku in basicBundle['skus'] --><div class="row product-recommendation energy noMessage" ng-class="isMultiVitaminMessage?'hasMessage':'noMessage'" ng-repeat="basicSku in basicBundle['skus']">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sku-category"><b ng-bind-html="'personalize-health.tags.energy'|translate" class="ng-binding">More Energy*</b></div>
+                        <!-- ngIf: $first && mutiVitaminTier1 -->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 image">
+                            <!-- ngIf: basicSku.category != 'membership' --><img ng-if="basicSku.category != 'membership'" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/b20732.jpg" class="img-responsive ng-scope" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/b20732.jpg"><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' -->
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 description">
+                            <!-- ngIf: basicSku.category != 'membership' --><b ng-if="basicSku.category != 'membership'" ng-bind-html="basicSku.info.title" class="ng-scope ng-binding"><p>CorEnergy<sup>®</sup></p>
+</b><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' -->
+
+                            <!-- ngIf: basicSku.category != 'membership' --><p ng-if="basicSku.category != 'membership'" class="short-desc aem-desc ng-scope ng-binding" ng-bind-html="basicSku.info.healthPrintDescription"><p>Promotes sustained vitality and enhance stamina*</p>
+</p><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' -->
+
+                            <!-- ngIf: basicSku.category != 'membership' --><p ng-if="basicSku.category != 'membership'" class="price ng-scope ng-binding">$32.10</p><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' && basicSku.sn_price != 0 -->
+
+                            <!-- ngIf: (!hideAddToItem) && ((basicSku.category == 'membership' && basicSku.sn_price != 0) || (basicSku.category != 'membership')) --><a ng-if="(!hideAddToItem) &amp;&amp; ((basicSku.category == 'membership' &amp;&amp; basicSku.sn_price != 0) || (basicSku.category != 'membership'))" ng-click="addToCart(basicSku, $event, 'Basic');" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: (!hideAddToItem) && ((basicSku.category == 'membership' && basicSku.sn_price != 0) || (basicSku.category != 'membership')) -->
+                            <!-- ngIf: basicSku.category != 'membership' --><a ng-if="basicSku.category != 'membership'" ng-click="openLearnMoreModal(basicSku, 'Basic');" class="learn-more ng-scope ng-binding">More Info</a><!-- end ngIf: basicSku.category != 'membership' -->
+                            <!-- ngIf: basicSku.category == 'membership' && basicSku.sn_price == 0 -->
+                        </div>
+                    </div><!-- end ngRepeat: basicSku in basicBundle['skus'] -->
+                    <div class="bundle-price">
+                        <p class="total-price">
+                            <b class="ng-binding">$101.55</b><br>
+                            <!-- ngIf: !isMC && !membershipTier1 --><br>
+                            <span class="less-text ng-binding">Less than <!-- ngIf: !isCanFr --><span ng-if="!isCanFr" class="ng-scope">$</span><!-- end ngIf: !isCanFr -->4<!-- ngIf: isCanFr --> a day</span><br>
+                            <!-- ngIf: !isMC && isUS -->
+                        </p>
+                        <!-- ngIf: (!hideAddToItem) --><button ng-if="(!hideAddToItem)" ng-click="addBundleToCart(basicBundle, $event, 'basic');" type="button" class="btn add-btn continue-btn ng-scope ng-binding">ADD ALL TO CART</button><!-- end ngIf: (!hideAddToItem) -->
+                        <!-- ngIf: isUS --><p ng-if="isUS" ng-bind-html="'personalize-health.results.prices-reflect'|translate" class="ng-scope ng-binding">Prices reflect monthly supply</p><!-- end ngIf: isUS -->
+                    </div>
+                    <!-- Recommended Life Shake -->
+                    <!-- ngIf: !kids && showLifeShake && sectionNav.productRecommendations -->
+                </div>
+            </div><!-- end ngIf: !isMobile || (currentBundle == 'TIER_1' && isMobile) -->
+            <!-- ngIf: !isMobile || (currentBundle == 'TIER_2' && isMobile) --><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 product-divider ng-scope product-divider-bundle-price-no-shake" ng-class="!kids &amp;&amp; showLifeShake &amp;&amp; sectionNav.productRecommendations?'product-divider-bundle-price-with-shake':'product-divider-bundle-price-no-shake'" ng-if="!isMobile || (currentBundle == 'TIER_2' &amp;&amp; isMobile)">
+                <div class="advanced">
+                    <b class="title">
+                        <span ng-bind-html="'personalize-health.results.advance'|translate" class="ng-binding">Advanced</span>
+                        <!-- ngIf: results.recommended === 'TIER_2' -->
+                    </b>
+                    <div class="product-info">
+                        <p class="less-text ng-binding">Less than <!-- ngIf: !isCanFr --><span ng-if="!isCanFr" class="ng-scope">$</span><!-- end ngIf: !isCanFr -->6<!-- ngIf: isCanFr --> a day</p>
+                        <!-- ngIf: membershipTier2 -->
+                        <!-- ngIf: freeProudctTier2 -->
+                        <!-- ngIf: emailPromotionTier2 -->
+                    </div>
+
+                    <!-- ngRepeat: advancedSku in advancedBundle['skus'] --><div class="row product-recommendation personalized_nutrition noMessage" ng-class="isMultiVitaminMessage?'hasMessage':'noMessage'" ng-repeat="advancedSku in advancedBundle['skus']">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sku-category"><b ng-bind-html="'personalize-health.tags.personalized_nutrition'|translate" class="ng-binding">Personalized Nutrition<br>Based On Your Profile</b></div>
+                        <!-- ngIf: $first && mutiVitaminTier2 -->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 image">
+                            <!-- ngIf: advancedSku.category != 'membership' --><img ng-if="advancedSku.category != 'membership'" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b89404.jpg" class="img-responsive ng-scope" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b89404.jpg"><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' -->
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 description">
+                            <!-- ngIf: advancedSku.category != 'membership' --><b ng-if="advancedSku.category != 'membership'" ng-bind-html="advancedSku.info.title" class="ng-scope ng-binding"><p>Vitalizing Plan</p>
+</b><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' -->
+
+                            <!-- ngIf: advancedSku.category != 'membership' --><p ng-if="advancedSku.category != 'membership'" class="short-desc aem-desc ng-scope ng-binding" ng-bind-html="advancedSku.info.healthPrintDescription"><p>The plan provides 30 servings of Life Energizing Shake along with essential nutrients to help create a leaner, healthier you*</p>
+<ul>
+<li>Essential nutrition with 100% or more of the Daily Value of vitamins and minerals</li>
+<li>Helps support heart, immune, bone, joint and digestive health, physical energy and more</li>
+<li>Shake packed with 24 grams† of protein, including 16 grams of proprietary, ultra-pure, plant-based, non-GMO protein</li>
+<li>Powered by Leucine to help preserve lean muscle</li>
+<li>No artificial flavors, colors, sweeteners or preservatives.&nbsp; Gluten and lactose free, low glycemic, kosher</li>
+</ul>
+</p><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' -->
+
+                            <!-- ngIf: advancedSku.category != 'membership' --><p ng-if="advancedSku.category != 'membership'" class="price ng-scope ng-binding">$131.95</p><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' && advancedSku.sn_price != 0 -->
+
+                            <!-- ngIf: (!hideAddToItem) && ((advancedSku.category == 'membership' && advancedSku.sn_price != 0) || (advancedSku.category != 'membership')) --><a ng-if="(!hideAddToItem) &amp;&amp; ((advancedSku.category == 'membership' &amp;&amp; advancedSku.sn_price != 0) || (advancedSku.category != 'membership'))" ng-click="addToCart(advancedSku, $event, 'Advanced');" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: (!hideAddToItem) && ((advancedSku.category == 'membership' && advancedSku.sn_price != 0) || (advancedSku.category != 'membership')) -->
+                            <!-- ngIf: advancedSku.category != 'membership' --><a ng-if="advancedSku.category != 'membership'" ng-click="openLearnMoreModal(advancedSku, 'Advanced');" class="learn-more ng-scope ng-binding">More Info</a><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' && advancedSku.sn_price == 0 -->
+                        </div>
+                    </div><!-- end ngRepeat: advancedSku in advancedBundle['skus'] --><div class="row product-recommendation fitness noMessage" ng-class="isMultiVitaminMessage?'hasMessage':'noMessage'" ng-repeat="advancedSku in advancedBundle['skus']">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sku-category"><b ng-bind-html="'personalize-health.tags.fitness'|translate" class="ng-binding">Staying Fit</b></div>
+                        <!-- ngIf: $first && mutiVitaminTier2 -->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 image">
+                            <!-- ngIf: advancedSku.category != 'membership' --><img ng-if="advancedSku.category != 'membership'" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b21261.jpg" class="img-responsive ng-scope" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b21261.jpg"><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' -->
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 description">
+                            <!-- ngIf: advancedSku.category != 'membership' --><b ng-if="advancedSku.category != 'membership'" ng-bind-html="advancedSku.info.title" class="ng-scope ng-binding"><p>Shaklee Life Energizing Shake</p>
+</b><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' -->
+
+                            <!-- ngIf: advancedSku.category != 'membership' --><p ng-if="advancedSku.category != 'membership'" class="short-desc aem-desc ng-scope ng-binding" ng-bind-html="advancedSku.info.healthPrintDescription"><p>A delicious non-GMO protein shake with pre- and probiotics</p>
+</p><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' -->
+
+                            <!-- ngIf: advancedSku.category != 'membership' --><p ng-if="advancedSku.category != 'membership'" class="price ng-scope ng-binding">$42.80</p><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' && advancedSku.sn_price != 0 -->
+
+                            <!-- ngIf: (!hideAddToItem) && ((advancedSku.category == 'membership' && advancedSku.sn_price != 0) || (advancedSku.category != 'membership')) --><a ng-if="(!hideAddToItem) &amp;&amp; ((advancedSku.category == 'membership' &amp;&amp; advancedSku.sn_price != 0) || (advancedSku.category != 'membership'))" ng-click="addToCart(advancedSku, $event, 'Advanced');" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: (!hideAddToItem) && ((advancedSku.category == 'membership' && advancedSku.sn_price != 0) || (advancedSku.category != 'membership')) -->
+                            <!-- ngIf: advancedSku.category != 'membership' --><a ng-if="advancedSku.category != 'membership'" ng-click="openLearnMoreModal(advancedSku, 'Advanced');" class="learn-more ng-scope ng-binding">More Info</a><!-- end ngIf: advancedSku.category != 'membership' -->
+                            <!-- ngIf: advancedSku.category == 'membership' && advancedSku.sn_price == 0 -->
+                        </div>
+                    </div><!-- end ngRepeat: advancedSku in advancedBundle['skus'] -->
+                    <div class="bundle-price">
+                        <p class="total-price">
+                            <b class="ng-binding">$174.75</b><br>
+                            <!-- ngIf: !isMC && !membershipTier2 --><br>
+                            <span class="less-text ng-binding">Less than <!-- ngIf: !isCanFr --><span ng-if="!isCanFr" class="ng-scope">$</span><!-- end ngIf: !isCanFr -->6<!-- ngIf: isCanFr --> a day</span><br>
+                            <!-- ngIf: !isMC && isUS -->
+                        </p>
+                        <!-- ngIf: (!hideAddToItem) --><button ng-if="(!hideAddToItem)" ng-click="addBundleToCart(advancedBundle, $event, 'advanced');" type="button" class="btn add-btn continue-btn ng-scope ng-binding">ADD ALL TO CART</button><!-- end ngIf: (!hideAddToItem) -->
+                        <!-- ngIf: isUS --><p ng-if="isUS" ng-bind-html="'personalize-health.results.prices-reflect'|translate" class="ng-scope ng-binding">Prices reflect monthly supply</p><!-- end ngIf: isUS -->
+                    </div>
+                    <!-- Recommended Life Shake -->
+                    <!-- ngIf: !kids && showLifeShake && sectionNav.productRecommendations -->
+
+                </div>
+            </div><!-- end ngIf: !isMobile || (currentBundle == 'TIER_2' && isMobile) -->
+            <!-- ngIf: !isMobile || (currentBundle == 'TIER_3' && isMobile) --><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 product-divider ng-scope product-divider-bundle-price-no-shake" ng-class="!kids &amp;&amp; showLifeShake &amp;&amp; sectionNav.productRecommendations?'product-divider-bundle-price-with-shake':'product-divider-bundle-price-no-shake'" ng-if="!isMobile || (currentBundle == 'TIER_3' &amp;&amp; isMobile)">
+                <div class="comprehensive">
+                    <b class="title">
+                        <span ng-bind-html="'personalize-health.results.comprehensive'|translate" class="ng-binding">Comprehensive</span>
+                        <!-- ngIf: results.recommended === 'TIER_3' --><p ng-if="results.recommended === 'TIER_3'" class="green-text ng-scope ng-binding">Recommended <img ng-src="//images.shaklee.com/healthprint/ico-tooltip.png" width="12px" tooltip-html-unsafe="This option is recommended based on the amount you are willing to spend to improve your health, based on your answers to the health assessment." tooltip-placement="top" src="//images.shaklee.com/healthprint/ico-tooltip.png"></p><!-- end ngIf: results.recommended === 'TIER_3' -->
+                    </b>
+                    <div class="product-info">
+                        <p class="less-text ng-binding">Less than <!-- ngIf: !isCanFr --><span ng-if="!isCanFr" class="ng-scope">$</span><!-- end ngIf: !isCanFr -->9<!-- ngIf: isCanFr --> a day</p>
+                        <!-- ngIf: membershipTier3 -->
+                        <!-- ngIf: basicTier3 -->
+                        <!-- ngIf: freeProudctTier3 -->
+                        <!-- ngIf: freeShippingTier3 -->
+                        <!-- ngIf: emailPromotionTier3 -->
+                    </div>
+
+                    <!-- ngRepeat: comprehenSku in comprehenBundle['skus'] --><div class="row product-recommendation personalized_nutrition noMessage" ng-class="isMultiVitaminMessage?'hasMessage':'noMessage'" ng-repeat="comprehenSku in comprehenBundle['skus']">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sku-category"><b ng-bind-html="'personalize-health.tags.personalized_nutrition'|translate" class="ng-binding">Personalized Nutrition<br>Based On Your Profile</b></div>
+                        <!-- ngIf: $first && mutiVitaminTier3 -->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 image">
+                            <!-- ngIf: comprehenSku.category != 'membership' --><img ng-if="comprehenSku.category != 'membership'" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b89403.jpg" class="img-responsive ng-scope" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b89403.jpg"><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' -->
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 description">
+                            <!-- ngIf: comprehenSku.category != 'membership' --><b ng-if="comprehenSku.category != 'membership'" ng-bind-html="comprehenSku.info.title" class="ng-scope ng-binding"><p>Shaklee Life Plan</p>
+</b><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' -->
+
+                            <!-- ngIf: comprehenSku.category != 'membership' --><p ng-if="comprehenSku.category != 'membership'" class="short-desc aem-desc ng-scope ng-binding" ng-bind-html="comprehenSku.info.healthPrintDescription"><p>The best, most comprehensive nutrition system to help provide the foundation for a longer, healthier life</p>
+<ul>
+<li>Advanced Multivitamin that provides 100% or more of the Daily Value of all essential vitamins</li>
+<li>Vivix, containing an all-natural blend of powerful polyphenols designed to help protect and repair DNA to slow aging at the cellular level</li>
+<li>Additional support for heart, immune, bone, joint and digestive health, physical energy and more</li>
+<li>Shake packed with 24 grams† of protein, including 16 grams of proprietary, ultra-pure, plant-based, non-GMO protein; powered by Leucine to help preserve lean muscle</li>
+<li>No artificial flavors, colors, sweeteners or preservatives.&nbsp; Gluten and lactose free, low glycemic, kosher</li>
+</ul>
+</p><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' -->
+
+                            <!-- ngIf: comprehenSku.category != 'membership' --><p ng-if="comprehenSku.category != 'membership'" class="price ng-scope ng-binding">$212.85</p><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' && comprehenSku.sn_price != 0 -->
+
+                            <!-- ngIf: (!hideAddToItem) && ((comprehenSku.category == 'membership' && comprehenSku.sn_price != 0) || (comprehenSku.category != 'membership')) --><a ng-if="(!hideAddToItem) &amp;&amp; ((comprehenSku.category == 'membership' &amp;&amp; comprehenSku.sn_price != 0) || (comprehenSku.category != 'membership'))" ng-click="addToCart(comprehenSku, $event, 'Comprehensive');" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: (!hideAddToItem) && ((comprehenSku.category == 'membership' && comprehenSku.sn_price != 0) || (comprehenSku.category != 'membership')) -->
+                            <!-- ngIf: comprehenSku.category != 'membership' --><a ng-if="comprehenSku.category != 'membership'" ng-click="openLearnMoreModal(comprehenSku, 'Comprehensive');" class="learn-more ng-scope ng-binding">More Info</a><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' && comprehenSku.sn_price == 0 -->
+                        </div>
+                    </div><!-- end ngRepeat: comprehenSku in comprehenBundle['skus'] --><div class="row product-recommendation fitness noMessage" ng-class="isMultiVitaminMessage?'hasMessage':'noMessage'" ng-repeat="comprehenSku in comprehenBundle['skus']">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sku-category"><b ng-bind-html="'personalize-health.tags.fitness'|translate" class="ng-binding">Staying Fit</b></div>
+                        <!-- ngIf: $first && mutiVitaminTier3 -->
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 image">
+                            <!-- ngIf: comprehenSku.category != 'membership' --><img ng-if="comprehenSku.category != 'membership'" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b21261.jpg" class="img-responsive ng-scope" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_foundation/b21261.jpg"><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' -->
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 description">
+                            <!-- ngIf: comprehenSku.category != 'membership' --><b ng-if="comprehenSku.category != 'membership'" ng-bind-html="comprehenSku.info.title" class="ng-scope ng-binding"><p>Shaklee Life Energizing Shake</p>
+</b><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' -->
+
+                            <!-- ngIf: comprehenSku.category != 'membership' --><p ng-if="comprehenSku.category != 'membership'" class="short-desc aem-desc ng-scope ng-binding" ng-bind-html="comprehenSku.info.healthPrintDescription"><p>A delicious non-GMO protein shake with pre- and probiotics</p>
+</p><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' -->
+
+                            <!-- ngIf: comprehenSku.category != 'membership' --><p ng-if="comprehenSku.category != 'membership'" class="price ng-scope ng-binding">$42.80</p><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' && comprehenSku.sn_price != 0 -->
+
+                            <!-- ngIf: (!hideAddToItem) && ((comprehenSku.category == 'membership' && comprehenSku.sn_price != 0) || (comprehenSku.category != 'membership')) --><a ng-if="(!hideAddToItem) &amp;&amp; ((comprehenSku.category == 'membership' &amp;&amp; comprehenSku.sn_price != 0) || (comprehenSku.category != 'membership'))" ng-click="addToCart(comprehenSku, $event, 'Comprehensive');" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: (!hideAddToItem) && ((comprehenSku.category == 'membership' && comprehenSku.sn_price != 0) || (comprehenSku.category != 'membership')) -->
+                            <!-- ngIf: comprehenSku.category != 'membership' --><a ng-if="comprehenSku.category != 'membership'" ng-click="openLearnMoreModal(comprehenSku, 'Comprehensive');" class="learn-more ng-scope ng-binding">More Info</a><!-- end ngIf: comprehenSku.category != 'membership' -->
+                            <!-- ngIf: comprehenSku.category == 'membership' && comprehenSku.sn_price == 0 -->
+                        </div>
+                    </div><!-- end ngRepeat: comprehenSku in comprehenBundle['skus'] -->
+                    <div class="bundle-price">
+                        <p class="total-price">
+                            <b class="ng-binding">$255.65</b><br>
+                            <!-- ngIf: !isMC && !membershipTier3 --><br>
+                            <span class="less-text ng-binding">Less than <!-- ngIf: !isCanFr --><span ng-if="!isCanFr" class="ng-scope">$</span><!-- end ngIf: !isCanFr -->9<!-- ngIf: isCanFr --> a day</span><br>
+                            <!-- ngIf: !isMC && isUS -->
+                        </p>
+                        <!-- ngIf: (!hideAddToItem) --><button ng-if="(!hideAddToItem)" ng-click="addBundleToCart(comprehenBundle, $event, 'comprehensive');" type="button" class="btn add-btn continue-btn ng-scope ng-binding">ADD ALL TO CART</button><!-- end ngIf: (!hideAddToItem) -->
+                        <!-- ngIf: isUS --><p ng-if="isUS" ng-bind-html="'personalize-health.results.prices-reflect'|translate" class="ng-scope ng-binding">Prices reflect monthly supply</p><!-- end ngIf: isUS -->
+                    </div>
+                    <!-- Recommended Life Shake -->
+                    <!-- ngIf: !kids && showLifeShake && sectionNav.productRecommendations -->
+                </div>
+            </div><!-- end ngIf: !isMobile || (currentBundle == 'TIER_3' && isMobile) -->
+        </div>
+        <!-- ngIf: isMobile -->
+    </div>
+
+    <!-- you may like -->
+    <!-- ngIf: sectionNav.productRecommendations && considerBundle.skus.length > 1 --><div class="row you-may-interest ng-scope" ng-if="sectionNav.productRecommendations &amp;&amp; considerBundle.skus.length > 1">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!-- ngIf: !kids --><div ng-if="!kids" class="title ng-scope ng-binding" ng-bind-html="'personalize-health.results.you-may-like-title'|translate">You May Also be Interested in These <b>Based on Your Goals and Profile</b></div><!-- end ngIf: !kids -->
+            <!-- ngIf: kids -->
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bundle">
+            <!-- ngIf: isMobile -->
+            <!-- ngRepeat: considerSku in considerBundle['skus']| limitTo:4 --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="considerSku in considerBundle['skus']| limitTo:4" ng-if="!isMobile">
+                <div sk-dr-sku-list="" sk-pr-hide-add-to-item="hideAddToItem" sk-pr-bundle-type="'consider'" sk-pr-sku="considerSku" sk-pr-add-to-cart="addToCart(considerSku, $event, 'Consider');" sk-pr-learn-more="openLearnMoreModal(considerSku, 'Consider');" class="ng-isolate-scope"><!-- ngIf: bundleType=='regimen' -->
+
+<!-- ngIf: bundleType=='consider' --><div ng-if="bundleType=='consider'" class="ng-scope">
+    <div class="image"><img class="img-responsive" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/shaklee_canada/product images/b22911.jpg" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/shaklee_canada/product images/b22911.jpg"></div>
+    <div class="sku-category"><b ng-bind-html="'personalize-health.tags.aging'|translate" class="ng-binding">Healthy Aging*</b></div>
+    <div class="description">
+        <b ng-bind-html="sku.info.title" class="ng-binding"><p>Vivix</p>
+</b>
+        <p class="short-desc ng-binding" ng-bind-html="sku.info.healthPrintDescription"><p>Keeps cells vital and strong*</p>
+</p>
+    </div>
+    <p class="price ng-binding">$85.00</p>
+    <!-- ngIf: !hideAddToItem --><a ng-if="!hideAddToItem" ng-click="addToCart(sku, $event);" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: !hideAddToItem --><a ng-click="openLearnMoreModal(sku);" class="learn-more ng-binding">More Info</a>
+</div><!-- end ngIf: bundleType=='consider' -->
+
+<!-- ngIf: bundleType=='kids' -->
+</div>
+            </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: considerSku in considerBundle['skus']| limitTo:4 --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="considerSku in considerBundle['skus']| limitTo:4" ng-if="!isMobile">
+                <div sk-dr-sku-list="" sk-pr-hide-add-to-item="hideAddToItem" sk-pr-bundle-type="'consider'" sk-pr-sku="considerSku" sk-pr-add-to-cart="addToCart(considerSku, $event, 'Consider');" sk-pr-learn-more="openLearnMoreModal(considerSku, 'Consider');" class="ng-isolate-scope"><!-- ngIf: bundleType=='regimen' -->
+
+<!-- ngIf: bundleType=='consider' --><div ng-if="bundleType=='consider'" class="ng-scope">
+    <div class="image"><img class="img-responsive" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/b20656.jpg" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/b20656.jpg"></div>
+    <div class="sku-category"><b ng-bind-html="'personalize-health.tags.stress'|translate" class="ng-binding">Stress Reduction*</b></div>
+    <div class="description">
+        <b ng-bind-html="sku.info.title" class="ng-binding"><p>Stress Relief Complex</p>
+</b>
+        <p class="short-desc ng-binding" ng-bind-html="sku.info.healthPrintDescription"><p>Supports a more relaxed state without causing drowsiness*</p>
+</p>
+    </div>
+    <p class="price ng-binding">$27.50</p>
+    <!-- ngIf: !hideAddToItem --><a ng-if="!hideAddToItem" ng-click="addToCart(sku, $event);" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: !hideAddToItem --><a ng-click="openLearnMoreModal(sku);" class="learn-more ng-binding">More Info</a>
+</div><!-- end ngIf: bundleType=='consider' -->
+
+<!-- ngIf: bundleType=='kids' -->
+</div>
+            </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: considerSku in considerBundle['skus']| limitTo:4 --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="considerSku in considerBundle['skus']| limitTo:4" ng-if="!isMobile">
+                <div sk-dr-sku-list="" sk-pr-hide-add-to-item="hideAddToItem" sk-pr-bundle-type="'consider'" sk-pr-sku="considerSku" sk-pr-add-to-cart="addToCart(considerSku, $event, 'Consider');" sk-pr-learn-more="openLearnMoreModal(considerSku, 'Consider');" class="ng-isolate-scope"><!-- ngIf: bundleType=='regimen' -->
+
+<!-- ngIf: bundleType=='consider' --><div ng-if="bundleType=='consider'" class="ng-scope">
+    <div class="image"><img class="img-responsive" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/MindWorks_22066_withViolator.jpg" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/MindWorks_22066_withViolator.jpg"></div>
+    <div class="sku-category"><b ng-bind-html="'personalize-health.tags.focus'|translate" class="ng-binding">Sharp Memory and Focus*</b></div>
+    <div class="description">
+        <b ng-bind-html="sku.info.title" class="ng-binding"><p>MindWorks</p>
+</b>
+        <p class="short-desc ng-binding" ng-bind-html="sku.info.healthPrintDescription"><p>Enhances mental sharpness and supports brain health*</p>
+</p>
+    </div>
+    <p class="price ng-binding">$49.95</p>
+    <!-- ngIf: !hideAddToItem --><a ng-if="!hideAddToItem" ng-click="addToCart(sku, $event);" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: !hideAddToItem --><a ng-click="openLearnMoreModal(sku);" class="learn-more ng-binding">More Info</a>
+</div><!-- end ngIf: bundleType=='consider' -->
+
+<!-- ngIf: bundleType=='kids' -->
+</div>
+            </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: considerSku in considerBundle['skus']| limitTo:4 --><!-- ngIf: !isMobile --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="considerSku in considerBundle['skus']| limitTo:4" ng-if="!isMobile">
+                <div sk-dr-sku-list="" sk-pr-hide-add-to-item="hideAddToItem" sk-pr-bundle-type="'consider'" sk-pr-sku="considerSku" sk-pr-add-to-cart="addToCart(considerSku, $event, 'Consider');" sk-pr-learn-more="openLearnMoreModal(considerSku, 'Consider');" class="ng-isolate-scope"><!-- ngIf: bundleType=='regimen' -->
+
+<!-- ngIf: bundleType=='consider' --><div ng-if="bundleType=='consider'" class="ng-scope">
+    <div class="image"><img class="img-responsive" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/b22031.jpg" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/b22031.jpg"></div>
+    <div class="sku-category"><b ng-bind-html="'personalize-health.tags.energy'|translate" class="ng-binding">More Energy*</b></div>
+    <div class="description">
+        <b ng-bind-html="sku.info.title" class="ng-binding"><p>Shaklee 180<sup>®</sup> Energizing Tea</p>
+</b>
+        <p class="short-desc ng-binding" ng-bind-html="sku.info.healthPrintDescription"><p>Antioxidant-rich blend for a safe and natural pick-me-up</p>
+</p>
+    </div>
+    <p class="price ng-binding">$25.45</p>
+    <!-- ngIf: !hideAddToItem --><a ng-if="!hideAddToItem" ng-click="addToCart(sku, $event);" class="add-item ng-scope ng-binding">ADD ITEM</a><!-- end ngIf: !hideAddToItem --><a ng-click="openLearnMoreModal(sku);" class="learn-more ng-binding">More Info</a>
+</div><!-- end ngIf: bundleType=='consider' -->
+
+<!-- ngIf: bundleType=='kids' -->
+</div>
+            </div><!-- end ngIf: !isMobile --><!-- end ngRepeat: considerSku in considerBundle['skus']| limitTo:4 -->
+        </div>
+    </div><!-- end ngIf: sectionNav.productRecommendations && considerBundle.skus.length > 1 -->
+
+    <!-- Kids bundle -->
+    <!-- ngIf: !kids && sectionNav.productRecommendations --><div ng-show="sectionNav.productRecommendations" class="row kids-bundle ng-scope" ng-if="!kids &amp;&amp; sectionNav.productRecommendations">
+        <!-- ngIf: !showKids --><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ng-scope" ng-if="!showKids">
+            <p class="have-kids ng-binding">Have Kids? Make sure they're happy &amp; healthy with our Shaklee Kids options. <a ng-click="kidsBundleOn();" class="ng-binding">View Kids Options</a></p>
+        </div><!-- end ngIf: !showKids -->
+        <!-- ngIf: showKids -->
+    </div><!-- end ngIf: !kids && sectionNav.productRecommendations -->
+
+    <!-- Get Clean -->
+    <!-- ngIf: !kids && sectionNav.productRecommendations --><div class="row getclean ng-scope" ng-if="!kids &amp;&amp; sectionNav.productRecommendations">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="title ng-binding" ng-bind-html="'personalize-health.results.good-health'|translate">Good Health Goes <b>Beyond What You Put Into Your Body</b></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 getclean-left">
+                <img class="img-responsive" ng-src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_home/50456_600.png" width="350px" src="http://ecmcmst01.shaklee.com/publish/content/dam/shakleemedia/products/new_products_us/healthy_home/50456_600.png">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class=" getclean-right">
+                    <h3 class="ng-binding"><span ng-bind-html="'personalize-health.results.get-clean-kit'|translate" class="ng-binding">Get Clean Starter Kit</span> $99.00</h3>
+                    <p class="getclean-info ng-binding" ng-bind-html="'personalize-health.results.get-clean-desc'|translate">Help make your home one of the safest places on earth with Shaklee Get Clean - a full line of natural and nontoxic household cleaning products</p>
+                    <ul>
+                        <li ng-bind-html="'personalize-health.results.get-clean-list1'|translate" class="ng-binding"><b>Always Safe</b> - No harmful fumes or hazardous chemicals</li>
+                        <li ng-bind-html="'personalize-health.results.get-clean-list2'|translate" class="ng-binding"><b>Always Works</b> - Powerful against even the most stubborn dirt</li>
+                        <li ng-bind-html="'personalize-health.results.get-clean-list3'|translate" class="ng-binding"><b>Always Green</b> - Concentrated formulas, plus biodegradable, recyclable or reduced-waste packaging</li>
+                    </ul><br>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7">
+                        <!-- ngIf: (!hideAddToItem) --><a ng-if="(!hideAddToItem)" ng-click="addToCart(getCleanSku, $event, 'Get Clean');" class="add-item ng-scope ng-binding" ng-bind-html="'personalize-health.results.add-to-cart'|translate">ADD TO CART</a><!-- end ngIf: (!hideAddToItem) -->
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 learn-more-link">
+                        <a ng-click="openLearnMoreModal(getCleanSku, 'Get Clean');" class="learn-more ng-binding">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end ngIf: !kids && sectionNav.productRecommendations -->
+    </section>
+
+    <!-- Recap of Diet & Lifestyle-->
+    <!-- ngIf: !kids --><section id="yourAnswers" ng-if="!kids" class="ng-scope">
+        <div class="row your-nav">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="hp-nav hp-nav-open" ng-class="{'hp-nav-open':sectionNav.yourAnswers}">
+                    <!-- ngIf: isMobile -->
+                </div>
+            </div>
+        </div>
+        <!-- ngIf: sectionNav.yourAnswers --><div class="row recap ng-scope" ng-if="sectionNav.yourAnswers">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="title ng-binding" ng-bind-html="'personalize-health.results.recap-title'|translate">A Recap of <b>Your Answers</b></div>
+                <!-- ngIf: !readOnly --><p ng-if="!readOnly" class="desc ng-scope"><span ng-bind-html="'personalize-health.results.answers-change'|translate" class="ng-binding">Answers change? </span><a ng-click="retakeQuiz();" ng-bind-html="'personalize-health.results.take-quiz'|translate" class="ng-binding">Take the Assessment Again</a></p><!-- end ngIf: !readOnly -->
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col">
+                    <div class="diet">
+                        <h5 ng-bind-html="'personalize-health.results.diet'|translate" class="ng-binding">Diet</h5>
+                        <div class="chart">
+                            <div id="chart1" config="chartConfig" class="span10 ng-isolate-scope" data-highcharts-chart="1"><div class="highcharts-container" id="highcharts-2" style="position: relative; overflow: hidden; width: 439px; height: 280px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="439" height="280"><desc>Created with Highcharts 4.2.5</desc><defs><clipPath id="highcharts-3"><rect x="0" y="0" width="187" height="341"></rect></clipPath></defs><rect x="0" y="0" width="439" height="280" fill="#FFFFFF" class=" highcharts-background"></rect><path fill="none" d="M 87.5 50 L 87.5 237" stroke="#EEE" stroke-width="1" visibility="visible"></path><g class="highcharts-grid"></g><g class="highcharts-grid"></g><g class="highcharts-axis"><path fill="none" d="M 87.5 50 L 87.5 237" stroke="#CCC" stroke-width="1"></path></g><g class="highcharts-axis"><path fill="none" d="M 87.5 237 L 87.5 232" stroke="#CCC" stroke-width="1" opacity="1"></path><path fill="none" d="M 172.5 237 L 172.5 232" stroke="#CCC" stroke-width="1" opacity="1"></path><path fill="none" d="M 258.5 237 L 258.5 232" stroke="#CCC" stroke-width="1" opacity="1"></path><path fill="none" d="M 343.5 237 L 343.5 232" stroke="#CCC" stroke-width="1" opacity="1"></path><path fill="none" d="M 429.5 237 L 429.5 232" stroke="#CCC" stroke-width="1" opacity="1"></path><text x="43.5" text-anchor="middle" transform="translate(0,0)" class=" highcharts-yaxis-title" style="color:#000;font-weight:bold;font-size:12px;fill:#000;" y="251">times/week</text><path fill="none" d="M 88 237.5 L 429 237.5" stroke="#CCC" stroke-width="1"></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(429,237) rotate(90) scale(-1,1) scale(1 1)" style="" width="341" height="187" clip-path="url(#highcharts-3)"><rect x="165.5" y="85.5" width="10" height="256" stroke="#FFFFFF" stroke-width="1" fill="#b6d89e" rx="0" ry="0"></rect><rect x="118.5" y="85.5" width="10" height="256" stroke="#FFFFFF" stroke-width="1" fill="#b6d89e" rx="0" ry="0"></rect><rect x="71.5" y="85.5" width="10" height="256" stroke="#FFFFFF" stroke-width="1" fill="#b6d89e" rx="0" ry="0"></rect><rect x="24.5" y="85.5" width="10" height="256" stroke="#FFFFFF" stroke-width="1" fill="#b6d89e" rx="0" ry="0"></rect></g><g class="highcharts-markers highcharts-series-0" transform="translate(429,237) rotate(90) scale(-1,1) scale(1 1)" width="341" height="187" clip-path="none"></g><g class="highcharts-series highcharts-series-1 highcharts-tracker" transform="translate(429,237) rotate(90) scale(-1,1) scale(1 1)" style="" width="341" height="187" clip-path="url(#highcharts-3)"><rect x="151.5" y="85.5" width="10" height="256" stroke="#FFFFFF" stroke-width="1" fill="#5d9732" rx="0" ry="0"></rect><rect x="104.5" y="-0.5" width="10" height="342" stroke="#FFFFFF" stroke-width="1" fill="#5d9732" rx="0" ry="0"></rect><rect x="57.5" y="-0.5" width="10" height="342" stroke="#FFFFFF" stroke-width="1" fill="#5d9732" rx="0" ry="0"></rect><rect x="10.5" y="-0.5" width="10" height="342" stroke="#FFFFFF" stroke-width="1" fill="#5d9732" rx="0" ry="0"></rect></g><g class="highcharts-markers highcharts-series-1" transform="translate(429,237) rotate(90) scale(-1,1) scale(1 1)" width="341" height="187" clip-path="none"></g></g><g class="highcharts-legend" transform="translate(90,10)"><g><g><g class="highcharts-legend-item" transform="translate(8,3)"><text x="21" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start" y="15"><tspan>Your Intake</tspan></text><rect x="0" y="4" width="16" height="12" fill="#b6d89e"></rect></g><g class="highcharts-legend-item" transform="translate(119.1875,3)"><text x="21" y="15" style="color:#333333;font-size:12px;font-weight:bold;cursor:pointer;fill:#333333;" text-anchor="start"><tspan>Recommended Intake</tspan></text><rect x="0" y="4" width="16" height="12" fill="#5d9732"></rect></g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels"><text x="85" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:135px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="76" opacity="1">Fruits</text><text x="85" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:135px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="123" opacity="1">Vegetables</text><text x="85" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:135px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="170" opacity="1"><tspan>Whole Grains</tspan></text><text x="85" style="color:#606060;cursor:default;font-size:11px;fill:#606060;width:135px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="216" opacity="1">Dairy</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels"><text x="88" style="color:#606060;cursor:default;font-size:10px;fill:#606060;width:75px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="255" opacity="1"></text><text x="173.25" style="color:#606060;cursor:default;font-size:10px;fill:#606060;width:75px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="255" opacity="1"><tspan>less than 7</tspan></text><text x="258.5" style="color:#606060;cursor:default;font-size:10px;fill:#606060;width:75px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="255" opacity="1">7-13</text><text x="343.75" style="color:#606060;cursor:default;font-size:10px;fill:#606060;width:75px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="255" opacity="1">14-20</text><text x="417" style="color:#606060;cursor:default;font-size:10px;fill:#606060;width:75px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="255" opacity="1">20+</text></g><text x="429" text-anchor="end" style="cursor:pointer;display:none;color:#909090;font-size:9px;fill:#909090;" y="275">Highcharts.com</text></svg></div></div>
+                        </div>
+                        <!-- ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/16-fish-150x150.png" src="//images.shaklee.com/healthprint/16-fish-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.healthy-fats'|translate" class="ng-binding">How many times per week do you eat <strong><span style="text-decoration: underline;">omega-3-rich fish</span></strong>, such as salmon?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' --><p ng-if="diet.question != 'dietary-restrictions'" class="ng-scope"><span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span><span ng-bind-html="'personalize-health.label.healthy-fats2'|translate" class="ng-binding">About once a week</span></p><!-- end ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/17-water-150x150.png" src="//images.shaklee.com/healthprint/17-water-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.water'|translate" class="ng-binding">How many 8-ounce glasses of <span style="text-decoration: underline;"><strong>water</strong></span> do you drink each day?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' --><p ng-if="diet.question != 'dietary-restrictions'" class="ng-scope"><span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span><span ng-bind-html="'personalize-health.label.water2'|translate" class="ng-binding">5-7 glasses</span></p><!-- end ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/18-sugary-drinks-150x150.png" src="//images.shaklee.com/healthprint/18-sugary-drinks-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.sugar-drinks'|translate" class="ng-binding">How many times per week do you consume <strong><u>sugary drinks</u></strong> (ex: soda, juices, etc.)?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' --><p ng-if="diet.question != 'dietary-restrictions'" class="ng-scope"><span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span><span ng-bind-html="'personalize-health.label.sugar-drinks2'|translate" class="ng-binding">3-6 times</span></p><!-- end ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/19-fast-food-150x150.png" src="//images.shaklee.com/healthprint/19-fast-food-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.junk-food'|translate" class="ng-binding">How many times per week do you eat <span style="text-decoration: underline;"><strong>unhealthy snacks or fast food</strong></span>?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' --><p ng-if="diet.question != 'dietary-restrictions'" class="ng-scope"><span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span><span ng-bind-html="'personalize-health.label.junk-food2'|translate" class="ng-binding">7-13 times</span></p><!-- end ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/20-breakfast-150x150.png" src="//images.shaklee.com/healthprint/20-breakfast-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.breakfast'|translate" class="ng-binding">What do you typically<br>eat for <span style="text-decoration: underline;"><strong>breakfast</strong></span>?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' --><p ng-if="diet.question != 'dietary-restrictions'" class="ng-scope"><span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span><span ng-bind-html="'personalize-health.label.breakfast1'|translate" class="ng-binding">I tend to eat things like toast, bagels, muffins, cereal and oatmeal</span></p><!-- end ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/21-organic2-150x150.png" src="//images.shaklee.com/healthprint/21-organic2-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.organic'|translate" class="ng-binding">Do you purchase<br><span style="text-decoration: underline;"><strong>organic foods</strong></span>?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' --><p ng-if="diet.question != 'dietary-restrictions'" class="ng-scope"><span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span><span ng-bind-html="'personalize-health.label.organic2'|translate" class="ng-binding">I do, for certain types of food</span></p><!-- end ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap --><div class="row question ng-scope" ng-repeat="diet in dietRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/22-dietary-restrictions-150x150.png" src="//images.shaklee.com/healthprint/22-dietary-restrictions-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.dietary-restrictions'|translate" class="ng-binding">Do you have any <span style="text-decoration: underline;"><strong>dietary restrictions</strong></span>?</span>
+                                    </b>
+                                </p>
+                                <!-- ngIf: diet.question != 'dietary-restrictions' -->
+                                <!-- ngIf: diet.question == 'dietary-restrictions' --><p ng-if="diet.question == 'dietary-restrictions'" class="ng-scope">
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <!-- ngRepeat: options in diet.answer --><span class="chart-option ng-scope" ng-repeat="options in diet.answer">
+                                        <span ng-bind-html="'personalize-health.label.dietary-restrictions-kosher'|translate" class="ng-binding">Kosher</span>
+                                        <!-- ngIf: !$last -->
+                                    </span><!-- end ngRepeat: options in diet.answer -->
+                                </p><!-- end ngIf: diet.question == 'dietary-restrictions' -->
+                            </div>
+                        </div><!-- end ngRepeat: diet in dietRecap -->
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col">
+                    <div class="life">
+                        <h5 ng-bind-html="'personalize-health.results.life-style'|translate" class="ng-binding">Lifestyle</h5>
+                        <!-- ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/05-energy-level-150x150.png" src="//images.shaklee.com/healthprint/05-energy-level-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.energy'|translate" class="ng-binding">How is your energy level on a normal day?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.energy0'|translate" class="ng-binding">I feel tired all the time</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/06-stress-150x150.png" src="//images.shaklee.com/healthprint/06-stress-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.stress'|translate" class="ng-binding">How often do you get stressed?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.stress3'|translate" class="ng-binding">Always: I’m a total stress-mess</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint//07-sleep-150x150.png" src="//images.shaklee.com/healthprint//07-sleep-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.sleep'|translate" class="ng-binding">How do you sleep?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.sleep0'|translate" class="ng-binding">Not great, I wake up several times throughout the night</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/08-memory-concentration-150x150.png" src="//images.shaklee.com/healthprint/08-memory-concentration-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.memory'|translate" class="ng-binding">How is your memory and concentration?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.memory0'|translate" class="ng-binding">It seems to be progressively deteriorating</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/09-exercize-week-150x150.png" src="//images.shaklee.com/healthprint/09-exercize-week-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.exercise-frequency'|translate" class="ng-binding">How often do you<br>exercise each week?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.exercise-frequency3'|translate" class="ng-binding">More than 4 hours</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/10-exercize-describe-150x150.png" src="//images.shaklee.com/healthprint/10-exercize-describe-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.exercise-intensity'|translate" class="ng-binding">How would you describe<br>your weekly exercise?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.exercise-intensity3'|translate" class="ng-binding">Intense (interval training, weight lifting, training for marathons, etc.)</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint//11-cleaning-products-150x150.png" src="//images.shaklee.com/healthprint//11-cleaning-products-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.toxins'|translate" class="ng-binding">Do any of your cleaning products<br>contain bleach or ammonia?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.toxins1'|translate" class="ng-binding">Yes</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap --><div class="row question ng-scope" ng-repeat="life in lifeStyleRecap">
+                            <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                                <img class="img-responsive" ng-src="//images.shaklee.com/healthprint/24-spend-150x150.png" src="//images.shaklee.com/healthprint/24-spend-150x150.png">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10">
+                                <p>
+                                    <b>
+                                    <span ng-bind-html="'personalize-health.questions.ques'|translate" class="ng-binding">Q: </span>
+                                    <span ng-bind-html="'personalize-health.questions.spending'|translate" class="ng-binding">How much would you spend each day to achieve your optimum health?</span>
+                                    </b>
+                                </p>
+                                <p>
+                                    <span ng-bind-html="'personalize-health.questions.ans'|translate" class="ng-binding">A: </span>
+                                    <span ng-bind-html="'personalize-health.label.spending3'|translate" class="ng-binding">More than $8</span>
+                                </p>
+                            </div>
+                        </div><!-- end ngRepeat: life in lifeStyleRecap -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngIf: sectionNav.yourAnswers -->
+    </section><!-- end ngIf: !kids -->
+    <div class="row legal-disclaimers">
+        <!-- ngIf: isUS --><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ng-scope" ng-if="isUS">
+            <ul class="legal-note">
+                <li class="ng-binding">*These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</li>
+            </ul>
+        </div><!-- end ngIf: isUS -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <ul>
+                <li ng-bind-html="'personalize-health.legal.disclaimer-2'|translate" class="ng-binding">**If you are taking any medications or under the care of a physician, we recommend that you discuss your use of supplementation with your doctor.</li>
+                <!-- ngIf: vegeterian -->
+                <li><span ng-bind-html="'personalize-health.legal.disclaimer-4'|translate" class="ng-binding"><sup>†</sup>When prepared as directed with 1 cup of nonfat milk. <br><sup>‡</sup> For details on free Membership please </span> <a href="" ng-click="openFreeMembershipInfo()" ng-bind-html="'personalize-health.legal.click-here'|translate" class="ng-binding">click here</a>.</li>
+                <li><span ng-bind-html="'personalize-health.legal.disclaimer-5'|translate" class="ng-binding"><sup>§</sup> For details on the free product and free shipping with purchase, please </span> <a href="" ng-click="openFreeWipeDetails()" ng-bind-html="'personalize-health.legal.click-here'|translate" class="ng-binding">click here</a>.</li>
+                <!-- ngIf: gluten -->
+                <!-- ngIf: pregnant -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--Add to Cart -->
+<script type="text/ng-template" id="cartModalContent.html" class="ng-scope">
+    <div class="shopping-modal add-cart results-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <h3>
+                <img ng-src="//images.shaklee.com/newMemCenter/icons/cart-green.png" />
+                <span ng-bind-html="'shop.prod.text2' | translate"></span>
+            </h3>
+        </div>
+        <div class="modal-body row">
+            <span class="col-xs-3 col-sm-2 col-md-2"><img ng-src="{{items.info.itemImage}}" width="65px" /></span>
+            <span class="col-xs-9 col-sm-10 col-md-10">
+                <b ng-if="items.bundle"  ng-bind-html="'personalize-health.results.{{items.bundle}}'|translate"></b>
+                <b ng-if="!items.bundle &&  items.category != 'membership'" ng-bind-html="items.info.title"></b>
+                <b ng-if="!items.bundle && items.category == 'membership'" ng-bind-html="'personalize-health.results.shaklee-membership-title'|translate"></b>
+
+                <span ng-if="!items.is_bo" ng-bind-html="'shop.prod.text3' | translate"></span>
+                <span ng-if="items.is_bo" ng-bind-html="'shop.prod.text4' | translate"></span>
+            </span>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-green pull-left" ng-click="checkout()" ng-if="!items.is_bo" ng-bind-html="'shop.prod.text5' | translate"></button>
+            <button class="btn btn-green pull-left auto-wrap-text" ng-click="addToCartOnPopup(items, true);" ng-if="items.is_bo" ng-bind-html="'shop.prod.text20' | translate"></button>
+            <button class="btn btn-green pull-left auto-wrap-text continue" ng-click="addToCartOnPopup(items, false);" ng-if="items.is_bo" ng-bind-html="'shop.prod.text21' | translate"></button>
+            <a class="continue-shopping" href="javascript:void(0);"  ng-click="cancel()" ng-bind-html="items.is_bo ? ('shop.directive.text29' | translate) :  ('shop.prod.text6' | translate) "></a>
+        </div>
+    </div>
+</script>
+
+<!-- Learn More Modal-->
+<script type="text/ng-template" id="learnMoreModalContent.html" class="ng-scope">
+    <div class="shopping-modal add-cart learn-more-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <h2 ng-bind-html="items.info.title"></h2>
+            <p ng-bind-html="items.info.shortDescription"></p>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-4 col-sm-4 col-md-4"><img ng-src="{{items.info.itemImage}}" class="img-responsive" /></div>
+            <div class="col-xs-8 col-sm-8 col-md-8" ng-class="items.sku == 50456 && isUS?'add-scroll':'no-scroll'"><p ng-bind-html="items.info.description"></p></div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+<!-- Read More Modal-->
+<script type="text/ng-template" id="readMoreModalContent.html" class="ng-scope">
+    <div class="read-more-goal-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h1 style="text-align: left;" class="title" ng-bind-html="'personalize-health.results.content-recom.headline-'+items.key|translate:items"></h1>
+            <div class="score-bar">
+                <div class="legend"><span class="score-mover" ng-style = "{width: items.score+'%'}"><em>{{items.score}}</em></span></div>
+                <div class="bar">
+                    <div class="scale red">
+                    </div>
+                    <div class="scale orange">
+                    </div>
+                    <div class="scale yellow">
+                    </div>
+                    <div class="scale green">
+                    </div>
+                </div>
+                <div class="line">
+                    <span class="left">0</span>
+                    <span class="right">100</span>
+                </div>
+            </div>
+            <div class="read-more-content">
+                 <p>
+                    <span ng-bind-html="'personalize-health.results.content-recom.intro-'+items.key|translate"></span>
+                </p>
+                <div class="row" ng-repeat="item in items['bullet_keys']">
+                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                        <img ng-src="//images.shaklee.com/healthprint/{{imageBulletList[item]}}" class="img-responsive"/>
+                     </div>
+                    <div class="col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                        <div sk-dr-bullet-list sk-pr-bullet-key="item" sk-pr-translate-key="personalize-health.results.content-recom." sk-pr-max-length="120"></div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center;"><a ng-href="{{'personalize-health.results.content-recom.'+items.dietLifestyle+'-learn-more-link'|translate}}{{pwdDomain}}" target="_blank"><span class="learn-more ng-binding" ng-bind-html="'personalize-health.label.learn-more'|translate"></span></a></p>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+<!-- Read More Modal content for goals-->
+<script type="text/ng-template" id="readMoreGoalsModalContent.html" class="ng-scope">
+    <div class="read-more-goal-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="read-more-goal-content">
+                <img ng-src="//images.shaklee.com/healthprint/goals/{{items.name}}.png" class="img-responsive img-goal"/>
+                <h1>
+                    {{'personalize-health.results.content-recom.goal'|translate:items}} {{'personalize-health.label.health-goals-'+items.name|translate:items}}
+                </h1>
+                <p ng-bind-html="'0.'+items.name+'-intro'|translate"></p>
+                    <div class="row" ng-repeat="item in items['keys']">
+                        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                            <img ng-src="{{'1.'+item|translate}}" class="img-responsive"/>
+                        </div>
+                        <div class="col-xs-9 col-sm-10 col-md-10 col-lg-10">
+                            <div sk-dr-bullet-list sk-pr-bullet-key="item" sk-pr-translate-key="0." sk-pr-max-length="160"></div>
+                        </div>
+                    </div>
+                <p style="text-align: center;"><a ng-href="{{'personalize-health.results.content-recom.read-more-link-'+items.name|translate}}{{pwdDomain}}" target="_blank"><span class="learn-more ng-binding" ng-bind-html="'personalize-health.label.learn-more'|translate"></span></a></p>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+<!-- Email Result Modal-->
+<script type="text/ng-template" id="emailResultModalContent.html" class="ng-scope">
+    <div class="shopping-modal add-cart read-more-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <h1>{{'personalize-health.email-quiz-result.text0'|translate}}<br /><b class="retake-quiz" ng-bind-html="'personalize-health.email-quiz-result.text1'|translate"></b></h1>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="email-quiz-info">
+                    {{'personalize-health.email-quiz-result.text2'|translate}} {{items.email}}
+                    <button class="start-over-btn" ng-click="sendHQEmail()" ng-bind-html="'personalize-health.email-quiz-result.text3'|translate"></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+<!-- Email Result Send Modal-->
+<script type="text/ng-template" id="emailResultSendModalContent.html" class="ng-scope">
+    <div class="shopping-modal add-cart read-more-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <!--<h1>{{'personalize-health.email-quiz-result-send.text0'|translate}}<br /><b class="retake-quiz" ng-bind-html="'personalize-health.email-quiz-result-send.text1'|translate"></b></h1>
+            -->
+            <div class="textContainer">
+                <span class="yourText">{{'personalize-health.email-quiz-result-send.textYour'|translate}}</span> <span class="healthPrintText">{{'personalize-health.email-quiz-result-send.textShakleeHealthPrint'|translate}}</span>
+                <span class="sentText">{{'personalize-health.email-quiz-result-send.textHasSent'|translate}}</span>
+            </div>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="email-result-send-info">
+                    {{'personalize-health.email-quiz-result-send.text2'|translate}} {{items.email}}
+                    <button class="start-over-btn" ng-click="cancel()" ng-bind-html="'personalize-health.email-quiz-result-send.text3'|translate"></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+
+<!-- Retake Quiz Modal-->
+<script type="text/ng-template" id="retakeModalContent.html" class="ng-scope">
+    <div class="shopping-modal add-cart read-more-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <h1>{{'personalize-health.retake-quiz.text0'|translate}}<br /><b class="retake-quiz" ng-bind-html="'personalize-health.retake-quiz.text1'|translate"></b></h1>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="retake-info">
+                    {{'personalize-health.retake-quiz.text2'|translate}}
+                    <button class="start-over-btn" ng-click="startOverQuiz()" ng-bind-html="'personalize-health.retake-quiz.text3'|translate"></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+<!-- Free membership Modal-->
+<script type="text/ng-template" id="freeMembershipHqModalContent.html" class="ng-scope">
+    <div class="shopping-modal read-more-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <div ng-bind-html="'personalize-health.legal.free-memeberhip-title'|translate"></div>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12 disc" ng-bind-html="'personalize-health.legal.free-memeberhip-details'|translate"></div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+<!-- Free Wipes Modal-->
+<script type="text/ng-template" id="freeShippingFreePreductModalContent.html" class="ng-scope">
+    <div class="shopping-modal read-more-modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">&times;</button>
+            <div ng-bind-html="'personalize-health.legal.free-wipes-title'|translate"></div>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div ng-bind-html="'personalize-health.legal.free-wipes-details-1'|translate"></div>
+                <div ng-bind-html="'personalize-health.legal.free-wipes-details-2'|translate"></div>
+            </div>
+        </div>
+        <div class="modal-footer"></div>
+    </div>
+</script>
+
+</div>

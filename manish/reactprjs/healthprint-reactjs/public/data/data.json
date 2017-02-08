@@ -1,0 +1,11 @@
+[
+  {
+  "question":{"age":{"component": "Input"},"gender":{"component": "DropDown", "labels": ["Male", "Female"], "values": ["M", "F"]},"weight":{}}
+  },
+  {
+    "question":{"age":{"component": "Input"},"gender":{"component": "DropDown", "labels": ["Male", "Female"], "values": ["M", "F"]},"weight":{}}
+  },
+  {
+    "question":{"age":{"component": "Input"},"gender":{"component": "DropDown", "labels": ["Male", "Female"], "values": ["M", "F"]},"weight":{}}
+  }
+]

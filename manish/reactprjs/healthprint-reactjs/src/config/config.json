@@ -1,0 +1,398 @@
+{
+  "questionList": [
+    {
+      "settings": {
+          "autoMoveToNextPage": false
+      },
+      "question": [{
+                      "componentName":"InputTextField",
+                      "imageUrl":"https://images.shaklee.com/healthprint//01-age-150x150.png",
+                      "description":"What is your age?",
+                      "questionName":"age",
+                      "className":"col-lg-4 col-md-4 col-xs-12"
+                  },
+                  {
+                      "componentName":"ButtonSelectionList",
+                      "values":[{"label":"Male","value":0,"className":"male"},{"label":"Female","value":1,"className":"female"}],
+                      "imageUrl":"//images.shaklee.com/healthprint//02-gender-150x150.png",
+                      "description":"What is your gender?",
+                      "questionName":"gender",
+                      "className":"col-lg-4 col-md-4 col-xs-12 question-middle"
+                  },
+                  {
+                    "componentName":"WeightHeight",
+                    "imageUrl":"//images.shaklee.com/healthprint//03-weight-height-150x150.png",
+                    "description":"What is your weight and <br>height?",
+                    "questionName":"",
+                    "className":"col-lg-4 col-md-4 col-xs-12"
+                    }]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+                  {
+                    "componentName":"ButtonSelectionList",
+                    "values":[
+                          {"label":"I can take the day by storm","value":0,"className":""},
+                          {"label":"I’ve got just enough to make it through the day","value":1,"className":""},
+                          {"label":"I occasionally need a little pick-me-up","value":2,"className":""},
+                          {"label":"I feel tired all the time","value":3,"className":""}
+                    ],
+                    "imageUrl":"//images.shaklee.com/healthprint/05-energy-level-150x150.png",
+                    "description":"How is your energy level on a normal day?",
+                    "questionName":"energy",
+                    "className":"col-lg-4 col-md-4 col-xs-12"
+                  },
+                  {
+                    "componentName":"ButtonSelectionList",
+                    "values":[
+                      {"label":"Rarely: I don’t let things bother me","value":0,"className":""},
+                      {"label":"Occasionally: I have my moments, but it's manageable","value":1,"className":""},
+                      {"label":"Frequently: I’ve got a lot on my plate","value":2,"className":""},
+                      {"label":"Always: I’m a total stress-mess","value":3,"className":""}
+                    ],
+                    "imageUrl":"//images.shaklee.com/healthprint/06-stress-150x150.png",
+                    "description":"How often do you get stressed?",
+                    "questionName":"stress",
+                    "className":"col-lg-4 col-md-4 col-xs-12 question-middle"
+                  },
+                  {
+                    "componentName":"ButtonSelectionList",
+                    "values":[
+                      {"label":"Great, 7-8 hours of uninterrupted bliss","value":0,"className":""},
+                      {"label":"Fine, I just don’t get enough","value":1,"className":""},
+                      {"label":"I have trouble falling asleep","value":2,"className":""},
+                      {"label":"Not great, I wake up several times throughout the night","value":3,"className":""}
+                    ],
+                    "imageUrl":"//images.shaklee.com/healthprint//07-sleep-150x150.png",
+                    "description":"How do you sleep?",
+                    "questionName":"sleep",
+                    "className":"col-lg-4 col-md-4 col-xs-12"
+                  }
+              ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+                    {
+                      "componentName":"ButtonSelectionList",
+                      "values":[
+                                {"label":"Great, I’m sharp as a tack","value":0,"className":""},
+                                {"label":"No problems now, but I worry about it getting worse","value":1,"className":""},
+                                {"label":"OK, but I occasionally lose my train of thought","value":2,"className":""},
+                                {"label":"It seems to be progressively deteriorating","value":3,"className":""}
+                      ],
+                      "imageUrl":"//images.shaklee.com/healthprint/08-memory-concentration-150x150.png",
+                      "description":"How is your memory and concentration?",
+                      "questionName":"memory",
+                      "className":"col-lg-4 col-md-4 col-xs-12"
+                    },
+                    {
+                      "componentName":"ButtonSelectionList",
+                      "values":[
+                        {"label":"Less than 1 hour","value":0,"className":""},
+                        {"label":"1-2 hours","value":1,"className":""},
+                        {"label":"2-4 hours","value":2,"className":""},
+                        {"label":"More than 4 hours","value":3,"className":""}
+                      ],
+                      "imageUrl":"//images.shaklee.com/healthprint/09-exercize-week-150x150.png",
+                      "description":"How often do you<br>exercise each week?",
+                      "questionName":"exercise_frequency",
+                      "className":"col-lg-4 col-md-4 col-xs-12 question-middle"
+                    },
+                    {
+                      "componentName":"ButtonSelectionList",
+                      "values":[
+                        {"label":"Light (walking, some stretching, etc.)","value":0,"className":""},
+                        {"label":"Mostly cardio (jogging, elliptical machine, etc.)","value":1,"className":""},
+                        {"label":"Moderate balance of cardio and weight training","value":2,"className":""},
+                        {"label":"Intense (interval training, weight lifting, training for marathons, etc.)","value":3,"className":""}
+                      ],
+                      "imageUrl":"//images.shaklee.com/healthprint/10-exercize-describe-150x150.png",
+                      "description":"How would you describe<br>your weekly exercise?",
+                      "questionName":"exercise_intensity",
+                      "className":"col-lg-4 col-md-4 col-xs-12"
+                    }
+        ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"No","value":0,"className":""},
+            {"label":"Yes","value":1,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint//11-cleaning-products-150x150.png",
+          "description":"Do any of your cleaning products<br>contain bleach or ammonia?",
+          "questionName":"cleaning",
+          "className":"col-lg-12 col-md-12 col-xs-12 cleaning"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than 7 times","value":0,"className":""},
+            {"label":"7-13 times","value":1,"className":""},
+            {"label":"14-20 times","value":2,"className":""},
+            {"label":"More than 20 times","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/12-fruit-150x150.png",
+          "description":"How many times per week<br>do you eat <span style=\"text-decoration: underline;\"> <strong>fruit</strong></span>?",
+          "questionName":"fruits",
+          "className":"col-lg-4 col-md-4 col-xs-12"
+        },
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than 7 times","value":0,"className":""},
+            {"label":"7-13 times","value":1,"className":""},
+            {"label":"14-20 times","value":2,"className":""},
+            {"label":"More than 20 times","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/13-vegies-150x150.png",
+          "description":"How many times per week<br>do you eat <span style=\"text-decoration: underline;\"><strong>vegetables</strong></span>?",
+          "questionName":"vegetables",
+          "className":"col-lg-4 col-md-4 col-xs-12 question-middle"
+        },
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than 7 times","value":0,"className":""},
+            {"label":"7-13 times","value":1,"className":""},
+            {"label":"14-20 times","value":2,"className":""},
+            {"label":"More than 20 times","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/14-grains-150x150.png",
+          "description":"How many times per week<br>do you eat <span style=\"text-decoration: underline;\"><strong>whole grains</strong></span>?",
+          "questionName":"grains",
+          "className":"col-lg-4 col-md-4 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than 7 times","value":0,"className":""},
+            {"label":"7-13 times","value":1,"className":""},
+            {"label":"14-20 times","value":2,"className":""},
+            {"label":"More than 20 times","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/15-dairy-150x150.png",
+          "description":"How many times per week<br> do you eat <span style=\"text-decoration: underline;\"><strong>dairy</strong></span>?",
+          "questionName":"dairy",
+          "className":"col-lg-4 col-md-4 col-xs-12"
+        },
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"None","value":0,"className":""},
+            {"label":"Rarely","value":1,"className":""},
+            {"label":"About once a week","value":2,"className":""},
+            {"label":"Two times or more per week","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/16-fish-150x150.png",
+          "description":"How many times per week do you eat <strong><span style=\"text-decoration: underline;\">omega-3-rich fish</span></strong>, such as salmon?",
+          "questionName":"healthy_fats",
+          "className":"col-lg-4 col-md-4 col-xs-12 question-middle"
+        },
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than 2 glasses","value":0,"className":""},
+            {"label":"2-4 glasses","value":1,"className":""},
+            {"label":"5-7 glasses","value":2,"className":""},
+            {"label":"8 glasses or more","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/17-water-150x150.png",
+          "description":"How many 8-ounce glasses of <span style=\"text-decoration: underline;\"><strong>water</strong></span> do you drink each day?",
+          "questionName":"water",
+          "className":"col-lg-4 col-md-4 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Rarely","value":0,"className":""},
+            {"label":"1-2 times","value":1,"className":""},
+            {"label":"3-6 times","value":2,"className":""},
+            {"label":"More than 6 times","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/18-sugary-drinks-150x150.png",
+          "description":"How many times per week do you consume <strong><u>sugary drinks</u></strong> (ex: soda, juices, etc.)?",
+          "questionName":"sugar_drinks",
+          "className":"col-lg-6 col-md-6 col-xs-12 question-left"
+        },
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than 2 times","value":0,"className":""},
+            {"label":"2-6 times","value":1,"className":""},
+            {"label":"7-13 times","value":2,"className":""},
+            {"label":"More than 13 times","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/19-fast-food-150x150.png",
+          "description":"How many times per week do you eat <span style=\"text-decoration: underline;\"><strong>unhealthy snacks or fast food</strong></span>??",
+          "questionName":"junk_food",
+          "className":"col-lg-6 col-md-6 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": true
+      },
+      "question": [
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"I rarely eat breakfast","value":0,"className":""},
+            {"label":"I tend to eat things like toast, bagels, muffins, cereal and oatmeal","value":1,"className":""},
+            {"label":"I eat a classic American breakfast (bacon, eggs, hash browns, etc.)","value":2,"className":""},
+            {"label":"I opt for lighter options like yogurt and fruit","value":3,"className":""},
+            {"label":"I get a mix of protein, fruit, and/or veggies from shakes and smoothies, or look for other sources of lean protein like eggs or egg-whites","value":4,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/20-breakfast-150x150.png",
+          "description":"What do you typically<br>eat for <span style=\"text-decoration: underline;\"><strong>breakfast</strong></span>?",
+          "questionName":"breakfast",
+          "className":"col-lg-6 col-md-6 col-xs-12 question-left"
+        },
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Always, whenever available","value":0,"className":""},
+            {"label":"I do, for certain types of food","value":1,"className":""},
+            {"label":"I’d like to, but it’s too expensive","value":2,"className":""},
+            {"label":"No, I don't think it's worth it","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/21-organic2-150x150.png",
+          "description":"Do you purchase<br><span style=\"text-decoration: underline;\"><strong>organic foods</strong></span>?",
+          "questionName":"organic",
+          "className":"col-lg-6 col-md-6 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": false
+      },
+      "question": [
+        {
+          "componentName":"CheckBoxSelection",
+          "values": [
+            {"key":"GLUTEN", "label":"Gluten Free"},
+            {"key":"SOY", "label":"Soy Free"},
+            {"key":"NUTS", "label":"Nut Free"},
+            {"key":"DAIRY", "label":"Dairy Free"},
+            {"key":"VEGETERIAN", "label":"Vegeterian"},
+            {"key":"KOSHER", "label":"Kosher"},
+            {"key":"NONE", "label":"None"}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/22-dietary-restrictions-150x150.png",
+          "description":"Do you have any <span style=\"text-decoration: underline;\"><strong>dietary restrictions</strong></span>?",
+          "questionName":"dietary_restrictions",
+          "className":"col-lg-12 col-md-12 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": false
+      },
+      "question": [
+        {
+          "componentName":"MultiSelection",
+          "values": [
+            
+            {"key":"health_goal_1", "selectedLabel":"-- Select a Health Goal --"},
+            
+            {"key":"health_goal_2", "selectedLabel":"-- Select a Health Goal --"},
+            
+            {"key":"health_goal_3", "selectedLabel":"-- Select a Health Goal --"}
+            
+          ],
+          "multiselect_keys": ["OVERALL", "HEART", "JOINT", "BONE", "AGING", "IMMUNE", "BRAIN", "ENERGY", "DIGESTIVE", "WEIGHT", "SLEEP", "STRESS", "FITNESS"],
+          "multiselect_labels": ["Overall Health", "Healthy Heart", "Joint Comfort", "Strong Bones", "Healthy Aging", "Immune Support", "Sharp Memory and Focus", "More Energy", "Healthy Digestion", "Weight Loss", "Better Sleep", "Stress Reduction", "Staying Fit"],
+          "imageUrl":"//images.shaklee.com/healthprint/23-top3-goals-150x150.png",
+          "description":"Please identify your top 3 health goals.",
+          "questionName":"health_goals",
+          "className":"col-lg-12 col-md-12 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": false
+      },
+      "question": [
+        {
+          "componentName":"ButtonSelectionList",
+          "values":[
+            {"label":"Less than $3 per day","value":0,"className":""},
+            {"label":"$3 - $5 per day","value":1,"className":""},
+            {"label":"$5 - $8 per day","value":2,"className":""},
+            {"label":"More than $8","value":3,"className":""}
+          ],
+          "imageUrl":"//images.shaklee.com/healthprint/24-spend-150x150.png",
+          "description":"How much would you spend each day to achieve your optimum health?",
+          "questionName":"spending",
+          "className":"col-lg-12 col-md-12 col-xs-12"
+        }
+      ]
+    },
+    {
+      "settings": {
+          "autoMoveToNextPage": false
+      },
+      "question": [
+        {
+          "componentName":"PersonalInformation",
+          "values":[],
+          "imageUrl":"",
+          "description":"Thank You for completing your Shaklee HealthPrint!<br />Please enter your name and email below to have your results emailed to you.",
+          "questionName":"health_goals",
+          "className":"col-lg-12 col-md-12 col-xs-12"
+        }
+      ]
+    }
+  ],
+  
+  "questionPageChoices":{
+    "default": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "woman": [0, 1, 5, 11],
+    "child": [0, 2, 11]
+  },
+  
+  "questionDefaults": {
+    "template": "default"
+  },
+  
+  "answered": {
+      "age":"",
+      "gender":""
+  }
+}
