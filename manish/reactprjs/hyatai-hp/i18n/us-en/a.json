@@ -1,0 +1,11 @@
+{
+  "BUTTON_LANG_USEN": "US English",
+  "BUTTON_LANG_CAEN": "CA English",
+  "BUTTON_LANG_USES": "US Spanish",
+  "BUTTON_LANG_CAFR": "CA French",
+  "home": {
+    "hello": "world",
+    "hello2": "world2"
+  },
+  "main" : "main"
+}
