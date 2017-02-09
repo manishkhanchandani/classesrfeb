@@ -9,15 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
 var GithubService = (function () {
-    function GithubService() {
-        this.client_id = '';
-        this.client_secret = '';
+    function GithubService(_http) {
+        this._http = _http;
+        this.client_id = '85ed9b6325343133f7cc';
+        this.client_secret = '2be6c435e81399b75348100d909f3ea7a2e226a1';
+        console.log('Github service ready...');
+        this.username = 'manishkhanchandani';
     }
+    GithubService.prototype.getUser = function () {
+        return this._http.get('http://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret).map(function (res) { return res.json(); });
+    };
+    GithubService.prototype.getRepos = function () {
+        return this._http.get('http://api.github.com/users/' + this.username + '/repos?client_id=' + this.client_id + '&client_secret=' + this.client_secret).map(function (res) { return res.json(); });
+    };
+    GithubService.prototype.updateUser = function (username) {
+        this.username = username;
+    };
     GithubService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], GithubService);
     return GithubService;
 }());
