@@ -1,0 +1,155 @@
+<!-- Enter your HTML code here -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<head>
+<meta charset="utf-8">
+<title>Sample Title</title>
+
+<script>
+  angular.module('myApp', []);
+
+  angular.module('myApp').controller('mainController', ['$scope', function ($scope) {
+    
+    $scope.frm = {};//form variable used to take current form data
+    
+    $scope.data = {};//data is saved in this variable
+    
+    $scope.data2 = {}; //used for filter, to hide or show the completed task
+    
+    $scope.title = 'Add Task';//title to show if user wants to add or edit.
+    
+    $scope.isReadOnly = false; //this flag is to make id field in readonly mode for edit functionality
+    
+    $scope.checkedValue = 2;//used to save filter results
+    
+    $scope.countData = function() {
+      $scope.totalRows = Object.keys($scope.data).length;
+    }
+    
+    //create new task
+    $scope.createTask = function() {
+      if (!$scope.frm.id) {
+        alert('id is missing');
+        return;
+      }
+      if (!$scope.frm.subject) {
+        alert('subject is missing');
+        return;
+      }
+      var formData = angular.copy($scope.frm);
+      $scope.data[$scope.frm.id] = formData;
+      $scope.frm = {};
+      $scope.countData();
+      
+      //reverting the title to Add Task
+      $scope.title = 'Add Task';
+      $scope.isReadOnly = false;
+      $scope.filterResults($scope.checkedValue);
+    };
+    
+    //remove functionality
+    $scope.removeTask = function(d) {
+      var a = confirm('do you really want to delete this task');
+      if (!a) {
+        return;
+      }
+      
+      delete $scope.data[d.id];
+      $scope.countData();
+      $scope.filterResults($scope.checkedValue);
+    };
+    
+    //update functionality
+    $scope.updateTask = function(d) {
+      //changing the title to Edit Task
+      $scope.title = 'Edit Task';
+      
+      $scope.isReadOnly = true;
+      
+      //updating the form with values
+      $scope.frm.id = d.id;
+      $scope.frm.subject = d.subject;
+      $scope.frm.IfCompleted = d.IfCompleted;
+      $scope.filterResults($scope.checkedValue);
+    };
+    
+    //filter results
+    $scope.filterResults = function(t) {
+      //saving the result key
+      $scope.checkedValue = t;
+      
+      
+      if (t === 2) {
+        $scope.data2 = angular.copy($scope.data);
+        return;
+      }
+      
+      if (t === 1) {
+        $scope.data2 = {};
+        angular.forEach($scope.data, function (value, key) {
+          if (value.IfCompleted) {
+            $scope.data2[value.id] = value;
+          }
+        });
+      } else {
+        $scope.data2 = {};
+        angular.forEach($scope.data, function (value, key) {
+          if (!value.IfCompleted) {
+            $scope.data2[value.id] = value;
+          }
+        });
+      }//end if
+      
+    };//end function
+    
+    $scope.filterResults($scope.checkedValue);
+  }]);
+</script>
+</head>
+<body ng-controller="mainController">
+<div class="container">
+<h1>{{title}}</h1>
+
+<form ng-submit="createTask();">
+    <div class="form-group">
+        <label for="ID">ID:</label>
+        <input type="text" class="form-control" id="id" placeholder="Enter ID" ng-model="frm.id" ng-readonly="isReadOnly">
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" class="form-control" id="subject" placeholder="Enter Subject" ng-model="frm.subject">
+    </div>
+    <div class="form-group">
+        <label for="IfCompleted">Completed:</label>
+        <input type="checkbox" id="IfCompleted" ng-model="frm.IfCompleted">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<hr>
+<div  ng-if="totalRows > 0">
+<h1>All Tasks</h1>
+
+<a href="" ng-click="filterResults(1)">Show Completed</a> | <a href="" ng-click="filterResults(0)">Show Incomplete</a> | <a href="" ng-click="filterResults(2)">Show All</a>
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="d in data2">
+    <strong>Id:</strong> {{d.id}},  <strong>Subject:</strong> {{d.subject}}, <strong>Completed:</strong> <span ng-if="d.IfCompleted">Yes</span><span ng-if="!d.IfCompleted">No</span>
+    <br><br>
+    <a class="btn btn-primary btn-sm" ng-click="removeTask(d)">Remove</a> 
+    <a class="btn btn-primary btn-sm" ng-click="updateTask(d)">Update</a> 
+  </li>
+</ul>
+
+<br>
+
+<span class="label label-primary">Total Rows {{totalRows}}</span>
+
+</div>
+
+
+
+</div>
+</body>
+</html>
