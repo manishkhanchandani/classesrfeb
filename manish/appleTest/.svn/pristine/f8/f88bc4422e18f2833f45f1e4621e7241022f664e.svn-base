@@ -1,0 +1,65 @@
+$topBorder: #CBCBCB;
+$headerColor: #CECECE;
+$counterColor: #90C2E4;
+$counterTextColor: #A8A8A8;
+$workSpaceColor: #67ABDC;
+$notificationTitle: #6D6D6D;
+$notificationDesc: #C0C0C0;
+
+.dropdown-notifications {
+  
+  .topBorder {
+    border-top: solid thick $topBorder;
+  }
+  
+  .header {
+    padding: 15px;
+    color: $headerColor;
+  }
+  
+  .notifyRows {
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .counter {
+    font-size: 42px;
+    color: $counterColor;
+    text-align: right;
+    font-weight: lighter;
+  }
+  
+  .counterText {
+    text-align: left;
+    margin-left: -20px;
+    margin-top: 19px;
+    color: $counterTextColor;
+  }
+  
+  .workspace {
+    color: $workSpaceColor;
+  }
+  
+  .notifications {
+    .notification-title {
+      color: $notificationTitle;
+    }
+    
+    .notification-desc {
+      color: $notificationDesc;
+      font-size: 12px;
+    }
+  }
+  
+  .scrollable-menu {
+      max-height: 600px;
+      overflow: auto;
+      max-width: 350px;
+  }
+}
+
+@media only screen
+  and (max-width:991px)
+  and (min-width:700px) {
+    
+}

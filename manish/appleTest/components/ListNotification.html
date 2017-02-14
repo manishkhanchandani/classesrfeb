@@ -1,0 +1,12 @@
+<ul class="notifications">
+  <li class="notification" ng-if="data.created_dt > 0" ng-repeat="data in $ctrl.collection | orderBy: created_dt : false">
+      <div class="media">
+        <div class="media-body">
+           <div class="pull-right">X</div>
+          <strong class="notification-title">{{data.created_dt | daysAgo}}</strong>
+          <p class="notification-desc">{{data.message}} <a href="/{{data.category}}/{{data.id}}">View Task</a></p>
+
+        </div>
+      </div>
+  </li>
+</ul>

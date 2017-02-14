@@ -1,0 +1,27 @@
+<!--
+https://skywalkapps.github.io/bootstrap-notifications/#notifications-overview
+http://skywalkapps.github.io/bootstrap-dropmenu/#scrolling
+-->
+
+<div class="btn-group dropdown dropdown-notifications sw-open">
+  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <i data-count="{{$ctrl.totalCount}}" class="glyphicon glyphicon-bell notification-icon"></i>
+    <span class="caret"></span>
+  </button>
+
+  <div class="dropdown-container scrollable-menu dropdown-position-bottomright">
+   <div class="dropdown-toolbar topBorder">
+      <h3 class="dropdown-toolbar-title header">{{$ctrl.currenDate}}</h3>
+    </div><!-- /dropdown-toolbar -->
+    <div class="dropdown-toolbar">
+      <counter-rows number="{{$ctrl.totalTask}}" name="Assigned Tasks"></counter-rows>
+      <counter-rows number="{{$ctrl.totalReminder}}" name="Reminder"></counter-rows>
+      <counter-rows number="{{$ctrl.totalNotification}}" name="Notification"></counter-rows>
+      <div class="text-center workspace"><a href="javascript:;">My Workspace</a></div>
+    </div><!-- /dropdown-toolbar -->
+    
+    <list-notification collection="$ctrl.collection"></list-notification>
+    
+              
+  </div>
+</div>
