@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Coins Calculator</title>
+	<meta name="author" content="Samuel Linnett" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0;user-scalable=0" />
+
+	<link href="http://fonts.googleapis.com/css?family=PT+Sans|Oxygen:400,300,700" rel="stylesheet" type="text/css">
+
+	<script src="js/coins.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" href="css/reset.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+<body>
+
+	<section id="wrapper">
+
+		<h1>Coins Calculator</h1>
+
+		<p>Enter a value in the box to see what coins you would need to make up the total.</p>
+		<p>The following characters are allowed: &pound;, p &amp; all numeric.</p>
+
+		<div id="field">
+			<input id="amount" name="amount" maxlength="21" type="text" placeholder="Please enter an amount of money." tabindex="1" />
+			<aside id="enter"></aside>
+		</div>
+
+		<div id="result"></div>		
+
+	</section>
+
+	<script>
+		// Event listener for amount field.
+		document.getElementById("amount").addEventListener("keydown", CoinsCalculator.init, false);
+	</script>
+</body>
+</html>

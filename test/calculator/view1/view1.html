@@ -1,0 +1,49 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <section>
+        <form ng-submit="process()">
+        <div class="form-group">
+            <label for="inputVal">Enter Monetary Value For Coin Conversion</label>
+            <input type="text" class="form-control" id="inputVal" ng-model="inputVal" placeholder="Enter Input Value">
+        </div>
+        <button type="submit" class="btn btn-primary form-control">Submit</button>
+        </form>
+      </section>
+      <section ng-if="error">
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      </section>
+      <section ng-if="inputValModified">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <h3>Converting {{inputValModified}} pennies into coins</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 text-left">
+            <strong>Coin</strong>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 text-right">
+            <strong>Amount</strong>
+          </div>
+        </div>
+        <div class="row" ng-if="result" ng-repeat="(key, vals) in validValuesLabels">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 text-left">
+            {{vals}}
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 text-right">
+            {{result[key]}}
+          </div>
+        </div>
+      </section>
+  
+  
+      
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

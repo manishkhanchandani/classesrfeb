@@ -1,0 +1,18 @@
+/* CSS Document */
+
+
+.content {
+  max-width: 650px;
+}
+
+.panel-primary>.panel-heading {
+    color: #000056;
+    background-color: #c1befe;
+    border-color: #c1befe;
+}
+
+.panel-footer {
+    color: #000056;
+    background-color: #c1befe;
+    border-color: #c1befe;
+}
