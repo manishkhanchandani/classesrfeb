@@ -29,6 +29,9 @@ var list = {
 
 //display list
 displayList(1);
+countNodes(1);
+search(1, '40');
+search(1, 'some text');
 
 function createNode(passedInfo, passedLink) {
   var temp = {
@@ -54,32 +57,35 @@ function displayList(startNode)
 function countNodes(startNode)
 {
   var n = 0;
-  var p = startNode;
+  var p = list[startNode];
+  console.log('Count List is : ');
   while (p != null) {
-    n++;
-    p = p.link;
+    console.log(p.info, ', ', p);
+    p = list[p.link];
+    n++
   }
   
   console.log('Number of nodes = ' + n);
 }
 
-function search(startNode) 
+function search(startNode, searchText) 
 {
   var position = 1;
-  var p = startNode;
+  var p = list[startNode];
+  console.log('Search List is : ');
   while (p != null) {
-    if (p.info === x) {
+    console.log(p.info, ', ', p);
+    if (p.info == searchText) {
       break;
     }
-    
     position++;
-    p = p.link;
-  }//end while
+    p = list[p.link];
+  }
   
-  if (p === null) {
-    console.log(x + ' not found in list ');
+  if (!p) {
+    console.log(searchText + ' not found in list ');
   } else {
-    console.log(x + ' found in list ');
+    console.log(searchText + ' found in list ');
   }//end if
   
   
