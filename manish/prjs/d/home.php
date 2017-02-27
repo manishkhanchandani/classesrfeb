@@ -2,7 +2,7 @@
 
 //pr($_GET);
 $pageTitle = $siteConfig['PROJECT_TITLE'].' Users';
-$g = new G();
+$d = new D();
 
 $params = array();
 $params['mia'] = '';
@@ -69,7 +69,7 @@ $radius = !empty($_GET['radius']) ? $_GET['radius'] : 10000;
 $pageNum_rsView = !empty($_GET['pageNum_rsView']) ? $_GET['pageNum_rsView'] : 0;
 $totalRows_rsView = !empty($_GET['totalRows_rsView']) ? $_GET['totalRows_rsView'] : 0;
 
-$list = $g->getList($siteConfig['tableName'], $max, $pageNum_rsView, $totalRows_rsView, $keyword, $params, $homeLat, $homeLng, $radius, '', 1, 0, 1, 0);
+$list = $d->getList($siteConfig['tableName'], $max, $pageNum_rsView, $totalRows_rsView, $keyword, $params, $homeLat, $homeLng, $radius, '', 1, 0, 1, 0);
 
 
 $totalPages_rsView = $list['totalPages'];

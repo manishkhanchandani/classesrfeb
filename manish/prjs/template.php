@@ -2,6 +2,7 @@
 switch ($_SERVER['HTTP_HOST']) {
   case 'donationworld.tk':
   case 'www.donationworld.tk':
+  case 'dw.mkgalaxy.com':
     header("Location: d/home");
     exit;
     break;

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var NavbarComponent = (function () {
     function NavbarComponent() {
+        this.websiteName = "My New Website";
     }
     NavbarComponent = __decorate([
         core_1.Component({

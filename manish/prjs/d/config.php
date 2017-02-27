@@ -9,9 +9,10 @@ $siteConfig = array(
   'SITENAME' => 'donationworld.tk',
   'PROJECT_TITLE' => 'Donation World',
   'TEMPLATE_FILE' => 'd/template.php',
+  'MESSAGE_URL' => 'd/messages?toId=',
   'firebaseDirectory' => '/d',
   'homeUrl' => 'd/home',
-  'tableName' => 'g_profile'
+  'tableName' => 'd_profile'
   
   
 );

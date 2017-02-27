@@ -136,6 +136,7 @@ log_log(__FILE__.' on line number '.__LINE__);
 
 switch ($host) {
   case 'donationworld.tk':
+  case 'dw.mkgalaxy.com':
     $_GET['site'] = 'd';
     break;
   case 'femalejole.tk':
