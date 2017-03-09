@@ -11,3 +11,5 @@ http://api.mkgalaxy.com/api.php?action=continuityLatLng&noOfDays=10&from[dob]=19
 
 
 npm install react-google-autocomplete --save
+
+https://davidwalsh.name/fetch

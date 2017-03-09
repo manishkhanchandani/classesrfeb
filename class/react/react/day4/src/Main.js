@@ -14,11 +14,15 @@ class Main extends Component {
     
   }
   
+  changeMe(fieldname, e) {
+    this.props.changeMe(fieldname, e.target.value);
+  }
+  
   render() {
     return (
       <div>
         <h1>Main Page</h1>
-        <p><b>Username: </b> <input type="text" ref="username"  /></p>
+        <p><b>Username: </b> <input type="text" ref="username" onChange={this.changeMe.bind(this, 'username')}  /></p>
         <p><b>Age: </b> <input type="text" ref="age"  /></p>
         <p><b>Email: </b> <input type="text" ref="email" /></p>
         <button onClick={this.submitMe.bind(this)}>Submit</button>

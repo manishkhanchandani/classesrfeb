@@ -1,21 +1,78 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link  } from 'react-router'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  
+  navigate(e) {
+    e.preventDefault();
+    console.log(this.props);
+    this.props.router.push('contact');
   }
+   render() {
+      return (
+         <div>
+            <ul>
+               <li><Link to="/home">Home</Link></li>
+               <li><Link to="/about">About</Link></li>
+               <li><Link to="/about/1">About with ID</Link></li>
+               <li><Link to="/contact">Contact</Link></li>
+               <li><Link to="/xxx">xx</Link></li>
+              <li><a href="" onClick={this.navigate.bind(this)}>Click here</a></li>
+            </ul>
+				
+           {this.props.children}
+         </div>
+      )
+   }
 }
 
-export default App;
+
+class Home extends Component {
+   render() {
+      return (
+         <div>
+            <h1>Home...</h1>
+         </div>
+      )
+   }
+}
+
+class About extends Component {
+   render() {
+     console.log(this.props);
+     console.log(this.props.location.query);
+      return (
+         <div>
+            <h1>About...</h1>
+         </div>
+      )
+   }
+}
+
+
+class Contact extends Component {
+   render() {
+      return (
+         <div>
+            <h1>Contact...</h1>
+         </div>
+      )
+   }
+}
+
+class PageNotFound extends Component {
+   render() {
+      return (
+         <div>
+            <h1>Page Not Found...</h1>
+         </div>
+      )
+   }
+}
+
+
+exports.App = App;
+exports.Home = Home;
+exports.About = About;
+exports.Contact = Contact;
+exports.PageNotFound = PageNotFound;

@@ -15,6 +15,10 @@ class App extends Component {
     }
   }
   
+  changeMe(fieldname, newValue) {
+    
+  }
+  
   changeValues(obj) {
     this.setState(obj);
   }

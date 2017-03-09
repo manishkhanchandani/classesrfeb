@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 
+import {saveUser, samplePost, samplePostJson, sampleGet} from './util.js';
+
 class Home extends Component {
   
   constructor(props) {
@@ -17,10 +19,38 @@ class Home extends Component {
       
     };
   }
+  
+  componentDidMount() {
+    samplePost();
+    samplePostJson();
+    sampleGet();
+  }
+  
   profileSubmit(e) {
     e.preventDefault();
-    let url = 'http://api.mkgalaxy.com/api.php?action=naks&lat='+this.refs.latitude.value+'&lng='+this.refs.longitude.value+'&dob='+this.refs.birthYear.value+'-'+this.refs.birthMonth.value+'-'+this.refs.birthDay.value+'+'+this.refs.birthHour.value+':'+this.refs.birthMinute.value;
+    let url = 'http://api.mkgalaxy.com/api.php?action=naks&lat='+this.refs.latitude.value+'&lng='+this.refs.longitude.value+'&dob='+encodeURIComponent(this.refs.birthYear.value+'-'+this.refs.birthMonth.value+'-'+this.refs.birthDay.value+' '+this.refs.birthHour.value+':'+this.refs.birthMinute.value);
     console.log(url);
+    
+    var obj = {};
+    obj.name = this.refs.profileName.value;
+    obj.lat = this.refs.latitude.value;
+    obj.lng = this.refs.longitude.value;
+    obj.dob = this.refs.birthYear.value+'-'+this.refs.birthMonth.value+'-'+this.refs.birthDay.value+' '+this.refs.birthHour.value+':'+this.refs.birthMinute.value;
+    console.log(obj);
+    
+    fetch(url, {
+      method: 'get'
+    }).then((response) => { 
+      // Convert to JSON
+      return response.json();
+    }).then((j) => {
+      obj.naks = j.data[7];
+      obj.naksNumber = j.data[9];
+      obj.naming = j.data[12];
+      saveUser(obj);
+    }).catch((err) => {
+      console.log('error is ', err);
+    });
   }
   
   changeFields(fieldname, e) {

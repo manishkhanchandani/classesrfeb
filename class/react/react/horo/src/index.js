@@ -7,6 +7,7 @@ import Match from './Match';
 import './index.css';
 import { Router, Route, browserHistory, IndexRoute  } from 'react-router';
 
+
 ReactDOM.render(
   (
    <Router history={browserHistory}>
@@ -14,6 +15,7 @@ ReactDOM.render(
          <IndexRoute component={Home} />
          <Route path="home" component={Home} />
          <Route path="profile" component={Profile} />
+         <Route path="profile/:id" component={Profile} />
          <Route path="match" component={Match} />
       </Route>
    </Router>
