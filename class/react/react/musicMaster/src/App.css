@@ -12,3 +12,13 @@ body {
   
   font-size: 26px;
 }
+
+.profile-info {
+  margin-left: 10px;
+}
+.profile-name {
+  font-size: 26px;
+}
+.profile-followers, .profile-genres {
+  font-size: 18px;
+}

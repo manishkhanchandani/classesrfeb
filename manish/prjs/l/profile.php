@@ -1,0 +1,484 @@
+<?php
+$pageTitle = "My Profile";
+if (empty($_COOKIE['uid'])) {
+  header("Location: home");
+  exit;
+}
+
+$recordComplete = array();
+$query = "select * from {$siteConfig['tableName']} LEFT JOIN nodes ON {$siteConfig['tableName']}.node_id = nodes.node_id WHERE nodes.uid = ?";
+$recordComplete = $modelGeneral->fetchRow($query, array($_COOKIE['uid']), 0);
+
+if (!empty($recordComplete['images'])) {
+  $images = json_decode($recordComplete['images'], true);
+}
+if (!empty($recordComplete['videos'])) {
+  $videos = json_decode($recordComplete['videos'], true);
+}
+if (!empty($recordComplete['urls'])) {
+  $urls = json_decode($recordComplete['urls'], true);
+}
+
+if (!empty($recordComplete['address'])) {
+  $address = json_decode($recordComplete['address'], true);
+}
+
+function saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray)
+{
+  $p = '/users/'.$_COOKIE['uid'].'/profile';
+  $arr = array_merge($nodesArray, $profileArray);
+  $firebase->update($defaultFirebasePath . $p, $arr);
+}
+
+
+if (!empty($_POST)) {
+  if (empty($_COOKIE['uid'])) {
+    header("Location: home");
+    exit;
+  }
+  
+  try {
+    
+    //validation
+    if (empty($_POST['title'])) {
+      throw new Exception('please fill the title');
+    }
+    
+    if (empty($_POST['birth_year'])) {
+      throw new Exception('please fill the birth year');
+    }
+    
+    if (empty($_POST['location'])) {
+      throw new Exception('please fill the location');
+    }
+    
+    if (empty($_POST['terms'])) {
+      throw new Exception('please check the terms');
+    }
+  
+    $nodesArray = array();
+
+    $nodesArray['title'] = !empty($_POST['title']) ? $_POST['title'] : '';
+    $nodesArray['description'] = !empty($_POST['description']) ? $_POST['description'] : '';
+    $nodesArray['updated_dt'] = date('Y-m-d H:i:s');
+    $nodesArray['deleted'] = 0;
+    $nodesArray['status'] = !empty($_POST['status']) ? $_POST['status'] : 0;
+    $nodesArray['approved'] = 1;
+    $nodesArray['lat'] = !empty($_POST['lat']) ? $_POST['lat'] : '';
+    $nodesArray['lng'] = !empty($_POST['lng']) ? $_POST['lng'] : '';
+    $nodesArray['location'] = !empty($_POST['location']) ? $_POST['location'] : '';
+    $nodesArray['address'] = !empty($_POST['address']) ? $_POST['address'] : '';
+    $nodesArray['images'] = !empty($_POST['images']) ? json_encode(array_filter($_POST['images'])) : '';
+    $nodesArray['videos'] = !empty($_POST['videos']) ? json_encode(array_filter($_POST['videos'])) : '';
+    $nodesArray['urls'] = !empty($_POST['urls']) ? json_encode(array_filter($_POST['urls'])) : '';
+    $nodesArray['featured'] = 0;
+    $nodesArray['uid'] = $_COOKIE['uid'];
+    $nodesArray['terms'] = !empty($_POST['terms']) ? $_POST['terms'] : 0;
+
+    $profileArray = array();
+    $profileArray['birth_year'] = !empty($_POST['birth_year']) ? $_POST['birth_year'] : '';
+    if (date('Y') - $profileArray['birth_year'] < 18) {
+      throw new Exception('under age, age below 18 are not allowed');
+    }
+
+    $profileArray['birth_month'] = !empty($_POST['birth_month']) ? $_POST['birth_month'] : '';
+    $profileArray['birth_day'] = !empty($_POST['birth_day']) ? $_POST['birth_day'] : '';
+    if (!empty($_POST['hobbies'])) {
+      foreach ($_POST['hobbies'] as $field => $value) {
+        $profileArray[$field] = $value;
+      }
+    }
+    $profileArray['gender'] = !empty($_POST['gender']) ? $_POST['gender'] : '';
+    $profileArray['nature'] = !empty($_POST['nature']) ? $_POST['nature'] : '';
+    $profileArray['education'] = !empty($_POST['education']) ? $_POST['education'] : '';
+    $profileArray['marital_status'] = !empty($_POST['marital_status']) ? $_POST['marital_status'] : '';
+    $profileArray['religion'] = !empty($_POST['religion']) ? $_POST['religion'] : '';
+    $profileArray['profession'] = !empty($_POST['profession']) ? $_POST['profession'] : '';
+    $profileArray['hosting'] = !empty($_POST['hosting']) ? $_POST['hosting'] : '';
+    $profileArray['smoking'] = !empty($_POST['smoking']) ? $_POST['smoking'] : '';
+    $profileArray['drinking'] = !empty($_POST['drinking']) ? $_POST['drinking'] : '';
+    $profileArray['height'] = !empty($_POST['height']) ? $_POST['height'] : '';
+    $profileArray['weight'] = !empty($_POST['weight']) ? $_POST['weight'] : '';
+    $profileArray['diet'] = !empty($_POST['diet']) ? $_POST['diet'] : '';
+    $profileArray['bodyType'] = !empty($_POST['bodyType']) ? $_POST['bodyType'] : '';
+
+    if (!empty($recordComplete['node_id'])) {
+      $nodesArray['node_id'] = $recordComplete['node_id'];
+      $profileArray['node_id'] = $recordComplete['node_id'];
+
+      $where = sprintf('node_id = %s', $modelGeneral->qstr($nodesArray['node_id']));
+      $modelGeneral->updateDetails('nodes', $nodesArray, $where);
+      $modelGeneral->updateDetails($siteConfig['tableName'], $profileArray, $where);
+      saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
+      header("Location: profile");
+      exit;
+    } else {
+      $nodesArray['created_dt'] = date('Y-m-d H:i:s');
+      $nodesArray['node_id'] = guid();
+      $profileArray['node_id'] = $nodesArray['node_id'];
+      $modelGeneral->addDetails('nodes', $nodesArray);
+      $modelGeneral->addDetails($siteConfig['tableName'], $profileArray);
+      saveToFb($firebase, $defaultFirebasePath, $nodesArray, $profileArray);
+      header("Location: profile");
+      exit;
+    }//end if
+  } catch (Exception $e) {
+    $error = $e->getMessage();
+  }
+  
+}
+
+if (!empty($_POST)) {
+  $recordComplete = array_merge($recordComplete, $_POST);
+}
+?>
+<script>
+angular.module('myApp')
+
+.controller('profileController', ['$scope', function($scope) {
+
+}]);
+</script>
+<div ng-controller="profileController">
+<h3>My Profile</h3>
+<?php if (!empty($error)) { ?>
+
+<div class="alert alert-danger" role="alert">
+  <?php echo $error; ?>
+</div>
+<?php } ?>
+<form method="post" action="" name="form1" id="form1">
+    
+    <fieldset><legend>Personal</legend>
+    <div class="form-group">
+      <label for="location">Choose Address/Location *</label>
+      <input type="text" class="form-control addressBox" id="location" name="location" placeholder="Enter Location" value="<?php echo isset($recordComplete['location']) ? $recordComplete['location'] : ''; ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Introduction Title *</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="<?php echo isset($recordComplete['title']) ? $recordComplete['title'] : ''; ?>" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description (Write about your personality and what you are looking for in your partner.)</label>
+        <textarea rows="5" class="form-control" id="description" name="description" placeholder="Enter description"><?php echo isset($recordComplete['description']) ? $recordComplete['description'] : ''; ?></textarea>
+    </div>
+    <div class="form-group">
+        <div class="row">
+          <div class="col-md-4"><label for="birth_year">Birth Year *</label>
+        <input type="number" class="form-control" id="birth_year" name="birth_year" placeholder="Enter Birth Year" value="<?php echo isset($recordComplete['birth_year']) ? $recordComplete['birth_year'] : ''; ?>" required></div>
+          <div class="col-md-4"><label for="birth_month">Birth Month</label>
+        <input type="number" class="form-control" id="birth_month" name="birth_month" placeholder="Enter Birth Month" min="1" max="12" value="<?php echo isset($recordComplete['birth_month']) ? $recordComplete['birth_month'] : ''; ?>"></div>
+          <div class="col-md-4"><label for="birth_day">Birth Day</label>
+        <input type="number" class="form-control" id="birth_day" name="birth_day" placeholder="Enter Birth Day"  min="1" max="31" value="<?php echo isset($recordComplete['birth_day']) ? $recordComplete['birth_day'] : ''; ?>"></div>
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="nature">I am *: </label><br>
+            <input type="radio" id="nature" name="nature" value="1" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 1) ? 'checked' : ''; ?>> Top
+            <input type="radio" id="nature" name="nature" value="2" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 2) ? 'checked' : ''; ?>> Bottom
+            <input type="radio" id="nature" name="nature" value="3" <?php echo (isset($recordComplete['nature']) && $recordComplete['nature'] == 3) ? 'checked' : ''; ?>> Versatile
+          </div>
+          <div class="col-md-4">
+            <label for="nature">Gender: </label><br>
+            <?php if ($siteConfig['showGender'] === 1) { ?>
+            <input type="radio" id="gender" name="gender" value="1" <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 1) ? 'checked' : ''; ?>> Male
+            <?php } ?>
+            <?php if ($siteConfig['showGender'] === 2) { ?>
+            <input type="radio" id="gender" name="gender" value="2"  <?php echo (isset($recordComplete['gender']) && $recordComplete['gender'] == 2) ? 'checked' : ''; ?>> Female
+            <?php } ?>
+          </div>
+          <div class="col-md-4">
+            <label for="nature">Hosting: </label><br>
+            <input type="radio" id="hosting" name="hosting" value="1" <?php echo (isset($recordComplete['hosting']) && $recordComplete['hosting'] == 1) ? 'checked' : ''; ?>> I can host
+            <input type="radio" id="hosting" name="hosting" value="2" <?php echo (isset($recordComplete['hosting']) && $recordComplete['hosting'] == 2) ? 'checked' : ''; ?>> I cannot host
+          </div>
+        </div>
+    </div> 
+    <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="nature">Show / Hide My Profile</label><br>
+            <input type="radio" id="status" name="status" value="1" <?php echo (!isset($recordComplete['status']) || (isset($recordComplete['status']) && $recordComplete['status'] == 1)) ? 'checked' : ''; ?>> Show
+            <input type="radio" id="status" name="status" value="0" <?php echo (isset($recordComplete['status']) && $recordComplete['status'] == 0) ? 'checked' : ''; ?>> Hide
+          </div>
+          <div class="col-md-4">
+            <label for="nature">Do you smoke?</label><br>
+            <input type="radio" id="smoking" name="smoking" value="1" <?php echo (isset($recordComplete['smoking']) && $recordComplete['smoking'] == 1) ? 'checked' : ''; ?>> No
+            <input type="radio" id="smoking" name="smoking" value="2" <?php echo (isset($recordComplete['smoking']) && $recordComplete['smoking'] == 2) ? 'checked' : ''; ?>> Occassionally
+            <input type="radio" id="smoking" name="smoking" value="3" <?php echo (isset($recordComplete['smoking']) && $recordComplete['smoking'] == 3) ? 'checked' : ''; ?>> Yes
+          </div>
+          <div class="col-md-4">
+            <label for="nature">Do you drink?</label><br>
+            <input type="radio" id="drinking" name="drinking" value="1" <?php echo (isset($recordComplete['drinking']) && $recordComplete['drinking'] == 1) ? 'checked' : ''; ?>> No
+            <input type="radio" id="drinking" name="drinking" value="2" <?php echo (isset($recordComplete['drinking']) && $recordComplete['drinking'] == 2) ? 'checked' : ''; ?>> Occassionally
+            <input type="radio" id="drinking" name="drinking" value="3" <?php echo (isset($recordComplete['drinking']) && $recordComplete['drinking'] == 3) ? 'checked' : ''; ?>> Yes
+          </div>
+        </div>
+    </div> 
+    <div class="form-group">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+        </div>
+    </div> 
+    <div class="form-group">
+        <label for="nature">I like: </label><br>
+        <div class="row">
+        <?php foreach ($siteConfig['HOBBIES'] as $field => $label) { ?>
+         <div class="col-md-3"> <input type="checkbox" id="<?php echo $field; ?>" name="hobbies[<?php echo $field; ?>]" value="1" <?php if (isset($recordComplete[$field]) && $recordComplete[$field] == 1) { echo ' checked'; } ?>> <?php echo $label ; ?></div>
+        <?php } ?>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+          <div class="col-md-4"><label for="marital_status">Marital Status</label>
+            <select name="marital_status" id="marital_status" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['marital_status'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['marital_status']) && $recordComplete['marital_status'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          <div class="col-md-4"><label for="profession">Profession</label>
+            <select name="profession" id="profession" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['profession'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['profession']) && $recordComplete['profession'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          <div class="col-md-4"><label for="education">Education</label>
+            <select name="education" id="education" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['education'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['education']) && $recordComplete['education'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <div class="row">
+          <div class="col-md-4"><label for="religion">Religion</label>
+            <select name="religion" id="religion" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['religion'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['religion']) && $recordComplete['religion'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          
+          <div class="col-md-4"><label for="height">Height</label>
+            <select name="height" id="height" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['height'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['height']) && $recordComplete['height'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          
+          <div class="col-md-4"><label for="weight">Weight</label>
+            <select name="weight" id="weight" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['weight'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['weight']) && $recordComplete['weight'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+        </div>
+        
+    </div>
+    
+    
+    <div class="form-group">
+        <div class="row">
+          
+          <div class="col-md-4"><label for="diet">Diet</label>
+            <select name="diet" id="diet" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['diet'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['diet']) && $recordComplete['diet'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          
+          <div class="col-md-4"><label for="bodyType">Body Type</label>
+            <select name="bodyType" id="bodyType" class="form-control">
+              <option value="">Select</option>
+              <?php foreach ($siteConfig['bodyType'] as $field => $label) { ?>
+                <option value="<?php echo $field; ?>" <?php if (isset($recordComplete['bodyType']) && $recordComplete['bodyType'] == $field) { echo ' selected'; } ?>><?php echo $label; ?></option>
+              <?php } ?>
+            </select>
+          </div>
+          
+        </div>
+        
+    </div>
+    </fieldset>
+    <fieldset><legend>Media</legend>
+    <div class="form-group" id="imgs">
+        <strong>Images</strong> (Complete nude images will be deleted)<br />
+        <?php if (!empty($images)) { ?>
+          <?php foreach ($images as $image) { ?>
+          <input type="text" name="images[]" class="form-control" value="<?php echo $image; ?>" placeholder="Enter Image URL" />
+          <?php } ?>
+        <?php } else { ?>
+        <input type="text" name="images[]" class="form-control" value="" placeholder="Enter Image URL"/>
+        <?php } ?>
+    </div>
+    <div class="form-group">
+      <input type="button" name="images_img_add" id="images_img_add" onClick="addimage()" value="Add More Image URL" />
+    </div>
+    <div id="tmpImgs" style="display:none;"><input type="text" name="images[]" class="form-control" value="" placeholder="Enter Image URL" /></div>
+
+
+    <div class="form-group" id="videos">
+        <strong>Youtube URLS</strong><br />
+        <?php if (!empty($videos)) { ?>
+          <?php foreach ($videos as $video) { ?>
+          <input type="text" name="videos[]" class="form-control" value="<?php echo $video; ?>" placeholder="Enter Youtube or Vimeo Video URL" />
+          <?php } ?>
+        <?php } else { ?>
+        <input type="text" name="videos[]" class="form-control" value="" placeholder="Enter Youtube or Vimeo Video URL" />
+        <?php } ?>
+    </div>
+    <div class="form-group">
+      <input type="button" name="videos_video_add" id="videos_video_add" onClick="addvideo()" value="Add More Youtube or Vimeo Video URL" />
+    </div>
+    <div id="tmpVideo" style="display:none;"><input type="text" name="videos[]" class="form-control" placeholder="Enter Youtube or Vimeo Video URL" value="" /></div>
+
+
+    <div class="form-group" id="urls">
+        <strong>Web URLS or Links</strong> <br />
+        <?php if (!empty($urls)) { ?>
+          <?php foreach ($urls as $url) { ?>
+          <input type="text" name="urls[]" class="form-control" value="<?php echo $url; ?>" placeholder="Enter Web URL" />
+          <?php } ?>
+        <?php } else { ?>
+        <input type="text" name="urls[]" class="form-control" value="" placeholder="Enter Web URL" />
+        <?php } ?>
+    </div>
+    <div class="form-group">
+      <input type="button" name="urls_url_add" id="urls_url_add" onClick="addurl()" value="Add More Web URL" />
+    </div>
+    <div id="tmpURLS" style="display:none;"><input type="text" name="urls[]" class="form-control" placeholder="Enter Web URL" value="" /></div>
+    </fieldset>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" id="terms" name="terms" value="1" required <?php if (isset($recordComplete['terms']) && $recordComplete['terms'] == 1) { echo ' checked'; } ?>> I agree to <a href="g/terms" target="_blank">terms & conditions</a> and I agree that I am older than 18 years of age and I did not put any nude images.
+        </label>
+    </div>
+    
+    <input type="hidden" class="field" id="street_number">
+    <input type="hidden" class="field" id="route">
+    <input type="hidden" class="field" id="locality">
+    <input type="hidden" class="field" id="administrative_area_level_1">
+    <input type="hidden" class="field" id="administrative_area_level_2">
+    <input type="hidden" class="field" id="postal_code">
+    <input type="hidden" class="field" id="country">
+    <input type="hidden" class="field" id="lat" name="lat" value="<?php echo isset($recordComplete['lat']) ? $recordComplete['lat'] : ''; ?>">
+    <input type="hidden" class="field" id="lng" name="lng" value="<?php echo isset($recordComplete['lng']) ? $recordComplete['lng'] : ''; ?>">
+    <input type="hidden" class="field" id="address" name="address" value="<?php echo isset($recordComplete['address']) ? htmlspecialchars($recordComplete['address']) : ''; ?>">
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<script>
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWqKxrgU8N1SGtNoD6uD6wFoGeEz0xwbs&libraries=places">
+
+var placeSearch, autocomplete;
+var componentForm = {
+  street_number: 'short_name',
+  route: 'long_name',
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  administrative_area_level_2: 'long_name',
+  country: 'long_name',
+  postal_code: 'short_name'
+};
+var resultPlace = {};
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('location')),
+      {types: ['geocode', 'establishment']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+  console.log(place);
+  resultPlace.formatted_address = place.formatted_address;
+  resultPlace.name = place.name;
+  resultPlace.place_id = place.place_id;
+  resultPlace.lat = place.geometry.location.lat();
+  resultPlace.lng = place.geometry.location.lng();
+  resultPlace.adr_address = place.adr_address;
+  resultPlace.url = place.url;
+  resultPlace.sn = {};
+  resultPlace.ln = {};
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    var val1 = place.address_components[i]['short_name'];
+    var val2 = place.address_components[i]['long_name'];
+    if (addressType === 'administrative_area_level_1') addressType = 'state';
+    if (addressType === 'administrative_area_level_2') addressType = 'county';
+    if (addressType === 'locality') addressType = 'city';
+    resultPlace.sn[addressType] = val1;
+    resultPlace.ln[addressType] = val2;
+  }
+  console.log(resultPlace);
+  
+  document.getElementById('address').value = JSON.stringify(resultPlace);
+  document.getElementById('lat').value = resultPlace.lat;
+  document.getElementById('lng').value = resultPlace.lng;
+  
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+    document.getElementById(component).disabled = false;
+  }
+
+  // Get each component of the address from the place details
+  // and fill the corresponding field on the form.
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
+  }
+  
+  
+}
+initAutocomplete();
+</script>
+<script language="javascript">
+  function addimage()
+  {
+    $('#imgs').append($('#tmpImgs').html());
+  }
+  function addvideo()
+  {
+    $('#videos').append($('#tmpVideo').html());
+  }
+  function addurl()
+  {
+    $('#urls').append($('#tmpURLS').html());
+  }
+</script>
+</div>

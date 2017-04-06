@@ -8,7 +8,7 @@ ReactDOM.render(
   (
    <Router history={browserHistory}>
       <Route path="/" component={App}>
-         <IndexRoute component={Home} />
+         <IndexRoute component={About} />
          <Route path="home" component={Home} />
          <Route path="about" component={About} />
          <Route path="about/:id" component={About} />

@@ -128,7 +128,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     if ($scope.frm.keyword) {
       //$scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + keyword;
       var keyword = encodeURIComponent($scope.frm.keyword);
-      var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&max=100&page='+$scope.frm.page;
+      var url = 'php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&max=100&page='+$scope.frm.page;
     } else if ($scope.frm.chapter >= 0) {
       var url = 'php2/repertory/complete.php?action=complete_browse&chapter='+$scope.frm.chapter+'&max=25&page='+$scope.frm.page;
       console.log(url);
@@ -176,7 +176,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     $scope.frm.urlSufix = $scope.frm.urlSufix + '/k_' + $routeParams.keyword;
     
     var keyword = encodeURIComponent($scope.frm.keyword);
-    var url = '/php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
+    var url = 'php2/repertory/complete.php?action=complete_search&keyword='+keyword+'&start=0&max=25&page='+$scope.frm.page;
     dataService.get(url, function (r) { if (r.data.data.totalRows == 0) {$scope.frm.resultStatus = 'No Result Found. Send email to manishkk74@gmail.com and ask him to add rubrics related to word "' + $scope.frm.keyword + '"'; return}; $scope.frm.resultStatus = ''; $scope.recordsGroup = r.data.data.resultsGroup;  $scope.data = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
   } else {
     //var url = '/php2/repertory/complete.php?action=complete_search&start=0&max=100&page='+$scope.frm.page;
@@ -184,7 +184,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     
   }
   
-  var url = '/php2/repertory/complete.php?action=getAllChapters';
+  var url = 'php2/repertory/complete.php?action=getAllChapters';
   dataService.get(url, function (r) { $scope.chapters = r.data.data;}, function (r) { console.log('failed: ', r)}, true);
   
   
@@ -196,10 +196,10 @@ angular.module('myApp.completeRep', ['ngRoute'])
     $scope.recordedSymptomStatus = '';
     if (!$scope.userData) return;
     if (type == 1) {
-      var url = '/php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+$scope.userData.id;
+      var url = 'php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+$scope.userData.id;
       dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
     } else if (type == 2) {
-      var url = '/php2/repertory/complete.php?action=saved_complete_repertory_delete&rid='+rid+'&access_token='+$scope.userData.access_token;
+      var url = 'php2/repertory/complete.php?action=saved_complete_repertory_delete&rid='+rid+'&access_token='+$scope.userData.access_token;
       dataService.get(url, function(r) { if (r.data.error) {$scope.recordedSymptomStatus = r.data.error; return;} $scope.viewSavedList(trace_id, false, 0); }, function(r) {console.log('err delSym: ', r);}, false);
     }
   };
@@ -212,7 +212,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
       alert('please login first to add symptom');
       return;  
     }
-    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };*/
   
@@ -226,7 +226,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
       alert('please login first to add symptom');
       return;  
     }
-    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
   
@@ -275,7 +275,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   
   function getAllMySymptoms(uid, cacheTime, cache) {
     
-    var url = '/php2/repertory/complete.php?action=complete_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
     dataService.get(url, function(r) { successMySymptoms(r, 1); }, function(r) {console.log('err getAllMySymptoms: ', r);}, cache);
   }
   
@@ -304,7 +304,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
       uid = $scope.userData.id;
     }//end if
     var data = {symptoms: symptoms, remedies: remedies, uid: uid};
-    var url = '/php2/repertory/complete.php?action=add';
+    var url = 'php2/repertory/complete.php?action=add';
     dataService.postJson(url, data, function (r) { console.log('success: ', r); $scope.frm.data = ''; if (r.data.error) { $scope.frm.showStatus = r.data.error; $scope.viewSymptoms(); } else { $scope.viewSymptoms();}}, function (r) { console.log('failed: ', r)});
   }
   
@@ -325,7 +325,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     if ($routeParams.page) {
       $scope.frm.page = parseInt($routeParams.page);
     }
-    var url = '/php2/repertory/complete.php?action=complete_getAll&start=0&max=5&cacheTime=0&page='+$scope.frm.page;
+    var url = 'php2/repertory/complete.php?action=complete_getAll&start=0&max=5&cacheTime=0&page='+$scope.frm.page;
     dataService.get(url, function (r) { console.log('success: ', r); $scope.records = r.data.data.results; /*console.log($scope.records); */}, function (r) { console.log('failed: ', r)});
   };
   $scope.viewSymptoms();
@@ -347,7 +347,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
       alert('please login first to add symptom');
       return;  
     }
-    var url = '/php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_add_specific&id='+rec.id+'&uid='+$scope.userData.id+'&intensity='+intensity;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
   
@@ -356,7 +356,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   
   $scope.delSym = function(rid) {
     if (!$scope.userData) return;
-    var url = '/php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+$scope.userData.id;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
   
@@ -367,7 +367,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
       alert('please login first to add symptom');
       return;  
     }
-    var url = '/php2/repertory/complete.php?action=complete_repertory_add&id='+rec.id+'&uid='+$scope.userData.id;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_add&id='+rec.id+'&uid='+$scope.userData.id;
     dataService.get(url, function(r) { getAllMySymptoms($scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
   };
   
@@ -414,7 +414,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
   
   function getAllMySymptoms(uid, cacheTime, cache) {
     
-    var url = '/php2/repertory/complete.php?action=complete_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
+    var url = 'php2/repertory/complete.php?action=complete_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
     dataService.get(url, successMySymptoms, function(r) {console.log('err getAllMySymptoms: ', r);}, cache);
   }
   

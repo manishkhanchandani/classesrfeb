@@ -1,5 +1,14 @@
 <?php
 switch ($_SERVER['HTTP_HOST']) {
+  case 'localcommunity.tk':
+  case 'locals.ml';
+    header("Location: l/home");
+    exit;
+    break;
+  case 'myreligion.tk';
+    header("Location: m/home");
+    exit;
+    break;
   case 'donationworld.tk':
   case 'www.donationworld.tk':
   case 'dw.mkgalaxy.com':

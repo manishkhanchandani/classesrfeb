@@ -1,9 +1,0 @@
-[25-Feb-2017 15:20:49 UTC] PHP Notice:  Trying to get property of non-object in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 90
-[25-Feb-2017 15:20:49 UTC] PHP Notice:  Trying to get property of non-object in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 96
-[25-Feb-2017 15:20:49 UTC] PHP Fatal error:  Call to a member function MoveNext() on boolean in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 97
-[25-Feb-2017 15:20:54 UTC] PHP Notice:  Trying to get property of non-object in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 90
-[25-Feb-2017 15:20:54 UTC] PHP Notice:  Trying to get property of non-object in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 96
-[25-Feb-2017 15:20:54 UTC] PHP Fatal error:  Call to a member function MoveNext() on boolean in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 97
-[25-Feb-2017 15:21:17 UTC] PHP Notice:  Trying to get property of non-object in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 90
-[25-Feb-2017 15:21:17 UTC] PHP Notice:  Trying to get property of non-object in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 96
-[25-Feb-2017 15:21:17 UTC] PHP Fatal error:  Call to a member function MoveNext() on boolean in /home/consultlawyers/public_html/projects/classesrfeb/manish/prjs/general.php on line 97

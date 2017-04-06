@@ -145,6 +145,13 @@ switch ($host) {
   case 'malejole.tk':
     $_GET['site'] = 'g';
     break;
+  case 'localcommunity.tk':
+  case 'locals.ml';
+    $_GET['site'] = 'l';
+    break;
+  case 'myreligion.tk':
+    $_GET['site'] = 'm';
+    break;
 }
 
 if (!empty($_GET['site'])) {

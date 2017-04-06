@@ -1,0 +1,18 @@
+describe('calculating distance', function() {
+  it('test to get parse coordinates of points', function() {
+    // your test assertion goes here
+  });
+  
+  it('calculate distance between two points', function() {
+    // your test assertion goes here
+  });
+  
+  it('calculating results', function() {
+    // your test assertion goes here
+  });
+});
+
+Points:
+We should test if parsing of coordinates file is correct
+We should test if distance between two points is correct
+We should calculate if sorting is proper

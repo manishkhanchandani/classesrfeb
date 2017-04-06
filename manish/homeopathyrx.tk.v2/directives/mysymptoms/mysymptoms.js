@@ -170,7 +170,7 @@
             
             function getAllMySymptoms(uid, cacheTime, cache) {
               
-              var url = '/php2/repertory/complete.php?action=complete_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
+              var url = 'php2/repertory/complete.php?action=complete_repertory_getAll&uid='+uid+'&cacheTime='+cacheTime;
               dataService.get(url, successMySymptoms, function(r) {console.log('err getAllMySymptoms: ', r);}, cache);
             }
             
@@ -188,7 +188,7 @@
             scope.deleteAll = function() {
               var a = confirm('do you want to delete all symptoms?');
               if (!a) return;
-              var url = '/php2/repertory/complete.php?action=complete_repertory_delete_all&access_token='+scope.userData.access_token;
+              var url = 'php2/repertory/complete.php?action=complete_repertory_delete_all&access_token='+scope.userData.access_token;
               dataService.get(url, function(r) { getAllMySymptoms(scope.userData.id, 0, false); }, function(r) {console.log('err deleteAll: ', r);}, false);
             };
             
@@ -198,10 +198,10 @@
               scope.recordedSymptomStatus = '';
               if (!scope.userData) return;
               if (type == 1) {
-                var url = '/php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+scope.userData.id;
+                var url = 'php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+scope.userData.id;
                 dataService.get(url, function(r) { getAllMySymptoms(scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
               } else if (type == 2) {
-                var url = '/php2/repertory/complete.php?action=saved_complete_repertory_delete&rid='+rid+'&access_token='+scope.userData.access_token;
+                var url = 'php2/repertory/complete.php?action=saved_complete_repertory_delete&rid='+rid+'&access_token='+scope.userData.access_token;
                 dataService.get(url, function(r) { if (r.data.error) {scope.recordedSymptomStatus = r.data.error; return;} scope.viewSavedList(trace_id, false, 0); }, function(r) {console.log('err delSym: ', r);}, false);
               }
             };
@@ -210,7 +210,7 @@
             //old
             scope.delSym = function(rid) {
               if (!scope.userData) return;
-              var url = '/php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+scope.userData.id;
+              var url = 'php2/repertory/complete.php?action=complete_repertory_delete&rid='+rid+'&uid='+scope.userData.id;
               dataService.get(url, function(r) { getAllMySymptoms(scope.userData.id, 0, false); }, function(r) {console.log('err delSym: ', r);}, false);
             };*/
             
@@ -236,25 +236,25 @@
               data.uid = scope.userData.id;
               data.ids = tmp;
               data.name = scope.frm.name;
-              dataService.postJson('/php2/repertory/complete.php?action=save_complete_repertory', data, function(r) { scope.frm.name = '';}, function(err) {console.log('err: ', err); });
+              dataService.postJson('php2/repertory/complete.php?action=save_complete_repertory', data, function(r) { scope.frm.name = '';}, function(err) {console.log('err: ', err); });
             };
             
             
             scope.getSavedCases = function(uid, cacheTime, cache) {
               scope.showSavedList = true;
               scope.save = false;
-              var url = '/php2/repertory/complete.php?action=saved_complete_repertory&uid='+uid+'&cacheTime='+cacheTime;
+              var url = 'php2/repertory/complete.php?action=saved_complete_repertory&uid='+uid+'&cacheTime='+cacheTime;
               dataService.get(url, function(r) {scope.savedListResults = r.data.data; }, function(r) {console.log('err getSavedCases: ', r);}, cache);
             }
             
             scope.viewSavedList = function(trace_id, cache, cacheTime) {
-              var url = '/php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id='+trace_id+'&cacheTime='+cacheTime;
+              var url = 'php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id='+trace_id+'&cacheTime='+cacheTime;
               dataService.get(url, function(r) { successMySymptoms(r, 2); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
             };
             
             
             scope.viewListBasedOnUrl = function(trace_id, cache, cacheTime) {
-              var url = '/php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id='+trace_id+'&cacheTime='+cacheTime;
+              var url = 'php2/repertory/complete.php?action=savedOne_complete_repertory&trace_id='+trace_id+'&cacheTime='+cacheTime;
               dataService.get(url, function(r) { successMySymptoms(r, 3); }, function(r) {console.log('err getSavedCases: ', r);}, cache);
             };
             

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+var sort_by = function(field, reverse, primer){
+
+   var key = primer ? 
+       function(x) {return primer(x[field])} : 
+       function(x) {return x[field]};
+
+   reverse = !reverse ? 1 : -1;
+
+   return function (a, b) {
+       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+     } 
+}
+
+var homes = [{
+
+   "h_id": "3",
+   "city": "Dallas",
+   "state": "TX",
+   "zip": "75201",
+   "price": 3
+
+}, {
+
+   "h_id": "4",
+   "city": "Bevery Hills",
+   "state": "CA",
+   "zip": "90210",
+   "price": 1
+
+}, {
+
+   "h_id": "5",
+   "city": "New York",
+   "state": "NY",
+   "zip": "00010",
+   "price": 2
+
+}];
+  
+// Sort by price high to low
+var a1 = homes.sort(sort_by('price', false, parseInt));
+  
+console.log('a1: ', a1);
+  
+// Sort by city, case-insensitive, A-Z
+//var a2 = homes.sort(sort_by('city', true, function(a){return a.toUpperCase()}));
+//console.log('a2: ', a2);
+</script>
+</head>
+
+<body>
+</body>
+</html>

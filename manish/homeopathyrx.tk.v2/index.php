@@ -2,6 +2,7 @@
 include_once('init.php');
 $jsVersion = '1.1';
 
+$dir = '/projects/classesrfeb/manish/homeopathyrx.tk.v2/';
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
@@ -9,7 +10,7 @@ $jsVersion = '1.1';
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Homeopathy :: <?php echo $title; ?></title>
-  <base href="/">
+  <base href="<?php echo $dir; ?>">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>

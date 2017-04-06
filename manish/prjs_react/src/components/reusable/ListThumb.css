@@ -1,0 +1,177 @@
+/* CSS Document */
+
+.result-row {
+    height: auto;
+    max-height: 70px;
+    overflow: hidden;
+}
+
+.result-row {
+    background-color: transparent;
+    overflow: hidden;
+    padding: 0 10px 20px;
+    position: relative;
+}
+
+.result-row .result-image {
+    float: left;
+    width: 50px;
+    height: 50px;
+    display: inline;
+}
+
+.result-row .result-image {
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    display: none;
+}
+
+.gallery {
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.result-row .result-image img {
+    border: 0;
+    height: 50px;
+    width: 50px;
+}
+
+img {
+    border: 0;
+}
+
+.result-row .result-info {
+    display: block;
+}
+
+.result-row .result-info {
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.result-info {
+    font-family: "Times New Roman",Times,serif;
+    line-height: 20px;
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+p {
+    clear: none;
+    margin: 1em 0;
+}
+
+.result-row .icon-star {
+    float: left;
+    margin: 2px 5px 0 0;
+}
+
+.icon-star {
+    background-position: 0 -96px;
+    margin-top: -4px;
+}
+
+.icon {
+    display: -moz-inline-stack;
+    display: inline-block;
+    background-image: url(/img/sprite-16px.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 16px;
+    vertical-align: middle;
+    /* width: 16px; */
+}
+
+.screen-reader-text {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.result-date {
+    color: gray;
+    font-size: 11px;
+    line-height: 22px;
+    margin-right: 2px;
+}
+
+.result-title {
+    font-family: "Times New Roman",Times,serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.result-row .result-meta {
+    display: block;
+    line-height: 22px;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.result-meta {
+    font-family: "Arial",sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 2px 0 0 0;
+}
+
+.result-meta .result-tags {
+    color: orange;
+}
+
+.result-meta .result-tags .maptag {
+    color: #080;
+}
+
+.banish {
+    display: -moz-inline-stack;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.icon-trash {
+    background-position: 0 -192px;
+}
+
+.icon {
+    display: -moz-inline-stack;
+    display: inline-block;
+    background-image: url(/img/sprite-16px.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+}
+.restore-link {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
