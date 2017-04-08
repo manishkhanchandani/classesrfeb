@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
-const guid = () => {
-  const s4 = () => {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  }
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-    s4() + '-' + s4() + s4() + s4();
-}
+import {guid} from './MyFunctions.js';
 
 class DisplayList extends Component {
 
@@ -474,6 +466,15 @@ class SingleLinkedLists extends Component {
 
   }
 
+  makeInt(node) {
+    for (var y in node) {
+      console.log('y is ', y, ', and node is ', node[y]);
+      node[y].data = parseInt(node[y].data, 10);
+    }
+    
+    return node;
+  }
+  
   /*
     Start -> 45 -> 38 -> 59 -> 12 -> 49
     References: p, q, end
@@ -483,10 +484,10 @@ class SingleLinkedLists extends Component {
       stop when end refers to second node
       starting point: p = start, q = p.link; so p will refer to first node and q will refer to second node
       Stop when p.link = end
-      And we will compare the info part of p and q, if info part are out of order, we will swap p and q
+      And we will compare the data part of p and q, if data part are out of order, we will swap p and q
 
       Example:
-      1. end is null, p refer to first node, q refer to second node, we compare the info value of p and q, since p is 45 and q is 38 so we swap the 2 values, and then p will refer to q and q will refer to next node.
+      1. end is null, p refer to first node, q refer to second node, we compare the data value of p and q, since p is 45 and q is 38 so we swap the 2 values, and then p will refer to q and q will refer to next node.
       2. here since 45 is less than 59 so no need of swapping, move p to q and q to next node
       3. here p is 59, q is 12, so we need to swap and then move p to q and q to next node
       4. here p is 59 and q is 49 so we swap and move so now p.link is null and end is null so we stop, this is end of pass 1
@@ -499,17 +500,31 @@ class SingleLinkedLists extends Component {
       Each pass will sort one node from last to first,
 
       once end reach 2nd node, we will stop the program.
+      
+      
+      PENDING
   */
   BubbleSortExData(e) {
     e.preventDefault();
-    var start = 'a1';
-    var node = {
-      a1: {id: 'a1', info: 45, link: 'a2'},
-      a2: {id: 'a2', info: 38, link: 'a3'},
-      a3: {id: 'a3', info: 59, link: 'a4'},
-      a4: {id: 'a4', info: 12, link: 'a5'},
-      a5: {id: 'a5', info: 49, link: null},
+    if (!this.state.start) {
+      console.log('empty list');
+      return;
     }
+    console.log('state is ', this.state);
+    /*var start = 'a1';
+    var node = {
+      a1: {id: 'a1', data: 45, link: 'a2'},
+      a2: {id: 'a2', data: 38, link: 'a3'},
+      a3: {id: 'a3', data: 59, link: 'a4'},
+      a4: {id: 'a4', data: 12, link: 'a5'},
+      a5: {id: 'a5', data: 49, link: null},
+    }
+    */
+    var start = this.state.start;
+    var node = this.state.nodes;
+    
+    //make all values as integer
+    node = this.makeInt(node);
 
     console.log('start is ', start, ' and node is ', node);
 
@@ -518,34 +533,43 @@ class SingleLinkedLists extends Component {
     var pObj = {}
     var qObj = {};
     var temp;
-
+    var endTemp = [];
     var newNode = node;
 
     //inner loop starts
     p = start;
     var orignalObj = node[start];
     pObj = node[p];
+    
+    //once end reach 2nd node, we will stop the program.
     while (end !== orignalObj.link) {
       console.log('start loop');
       node = newNode;
       newNode = {};
+      //inner loop starts here
       while (pObj.link !== end) {
+        //assign q to second node
         q = pObj.link;
         qObj = node[q];
-        console.log('p: ', pObj.info, ', q: ', qObj.info);
-        if (pObj.info > qObj.info) {
+        
+        console.log('p: ', pObj.data, ', q: ', qObj.data);
+        //check if first node data is greater than second node, if yes then swap it
+        if (pObj.data > qObj.data) {
           //swap
-          temp = pObj.info;
-          pObj.info = qObj.info;
-          qObj.info = temp;
+          temp = pObj.data;
+          pObj.data = qObj.data;
+          qObj.data = temp;
         }
 
+        //assign p node to newNode
         newNode[p] = pObj;
         console.log('p: ', pObj, ', q: ', qObj);
 
+        // set p = q and later q will move to next element when loop will restart
         p = q;
         pObj = node[p];
       }
+      //inner loop ends here
 
       newNode[q] = qObj;
       console.log('new node is ', newNode);
@@ -554,12 +578,22 @@ class SingleLinkedLists extends Component {
       p = start;
       pObj = node[p];
       console.log('end is ', end);
+      
+      //taking end item and putting it in new array
+      endTemp.unshift(newNode[end]);
     }
+    
+    endTemp.unshift(pObj);
+    
+    var endTempObj = {};
+    for (var x=0; x < endTemp.length; x++) {
+      endTempObj[endTemp[x].id] = endTemp[x];
+    }
+    
+    console.log('endTempObj: ', endTempObj);
 
 
-    //inner loop ends
-
-
+/*
         //inner loop starts
         node = newNode;
         newNode = {};
@@ -568,12 +602,12 @@ class SingleLinkedLists extends Component {
         while (pObj.link !== end) {
           q = pObj.link;
           qObj = node[q];
-          console.log('p: ', pObj.info, ', q: ', qObj.info);
-          if (pObj.info > qObj.info) {
+          console.log('p: ', pObj.data, ', q: ', qObj.data);
+          if (pObj.data > qObj.data) {
             //swap
-            temp = pObj.info;
-            pObj.info = qObj.info;
-            qObj.info = temp;
+            temp = pObj.data;
+            pObj.data = qObj.data;
+            qObj.data = temp;
           }
 
           newNode[p] = pObj;
@@ -587,7 +621,7 @@ class SingleLinkedLists extends Component {
         console.log('new node is ', newNode);
 
         //inner loop ends
-
+*/
 
 
   }

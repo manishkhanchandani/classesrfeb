@@ -23,6 +23,8 @@ class Navigation extends Component {
                   <ul className="dropdown-menu">
                     <li><Link to="linkedlist">Linked List</Link></li>
                     <li><Link to="singlelinkedlists">Single Linked Lists</Link></li>
+                    <li><Link to="array">DS Array</Link></li>
+                    <li><Link to="stacks">Stacks</Link></li>
                   </ul>
                 </li>
               </ul>
