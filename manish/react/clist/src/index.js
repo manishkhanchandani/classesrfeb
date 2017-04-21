@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './layouts/App';
 
-import { Router, Route, browserHistory, IndexRoute  } from 'react-router';
 
 import {Provider} from 'react-redux';
 import store from './store.js';
@@ -14,11 +13,6 @@ import FirebaseConstant from './constants/FirebaseConstant.js';
 import {logUser} from './actions/UserAction.js';
 import {ipDetails} from './actions/MyAction.js';
 
-
-import Home from './containers/Home.js';
-import SignIn from './components/auth/SignIn.js';
-import SignUp from './components/auth/SignUp.js';
-import List from './components/List.js';
 
 
 //firebase auth checking if user is logged in or not
@@ -49,20 +43,7 @@ store.dispatch(ipDetails());
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-           <IndexRoute component={Home} />
-           <Route path="home" component={Home} />
-           <Route path="category/:category/:subcategory" component={List} />
-           <Route path="category/:category" component={List} />
-        </Route>
-        <Route path="/auth" component={App}>
-           <IndexRoute component={SignIn} />
-           <Route path="signin" component={SignIn} />
-           <Route path="signup" component={SignUp} />
-        </Route>
-     </Router>
+    <App />
    </Provider>,
   document.getElementById('root')
 );
-

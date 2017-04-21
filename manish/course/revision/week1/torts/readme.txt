@@ -326,7 +326,7 @@ Definitions To Remeber
             
             
             Rule:
-            A land occupier owes a duty of ordinary care to invitees, which includes reasonably inspecting the land for dangerous conditions and reqpairing those dangerous conditions which a reasonable inspection would reveal.
+            A land occupier owes a duty of ordinary care to invitees, which includes reasonably inspecting the land for dangerous conditions and repairing those dangerous conditions which a reasonable inspection would reveal.
             
             Idea:
             Inspect and Correct
@@ -386,38 +386,206 @@ Definitions To Remeber
                 
                 Also, since Owen removed a tree which left a deep hole in his back yard, it is foreseeable that a child could fall into the hole and be seriously hurt.
                 
-                Additionally, 8 year old Carl lived right next door to Owen and fell in the hole, breaking his leg.
+                Additionally, 8 year old Carl lived right next door to Owen was unware of the deep hole and fell in the hole, breaking his leg.
                 
                 Finally, the cost to Owen to voer the hole or at least place markers around it was very little compared to the harm Carl suffered by breaking his leg.
-            
+              
+              Conclusion
+                Element 1:
+                  Foreseeable Trespass: Lot of Kids
+
+                Element 2:
+                  Foreseeable serious harm: Deep Hole
+
+                Element 3:
+                  Child not aware of danger: Carl falls in
+
+                Element 4:
+                  Balance of benefit to risk: Cover the Hole Vs Leg
+            Duty Owed to a Person Off the Premises
+              The land occupier owes a duty to maintain the premises in a reasonably safe condition for the protection of passersby and occupiers of adjoining premises. This includes the duty of inspection to discover and correct theose defects which a reasonable inspection would reveal.
+              
+              INSPECT AND CORRECT
             
         ii. Attractive Nuisance Doctrine
+          Explained above
+          
         iii. Rowland v. Christian
-      h. Lessors & Lesses
+          Under Rowland v. Christian, the court eliminated the distinction between business invitee, licensee, and trespasser, and found that the land occupier owes a duty to act as a "reasonable man" for the purposes of rendering the occupied property safe for others.
+        
+        Natural Conditions:
+          A land occupier traditionally owed no duty to others for the care of natural conditions on the occupied property. However, the recent trend may be to impose a duty of reasonable care as to natural conditions, at least in those situations where the condition is known to the landowner.
+          
+          
+      h. Lesses & Lessors
+      
+        Lessors - LandLoard
+        Lessees - Tenant
+      
+        A lessee is a land occupier and has the same liabilities that any land occupier whould have. A landlord owes no duty to a person coming onto land with the consent of the lesse, with the following exceptions:
+        
+        1. the lessor owes a duty if a danger exists at the start of the lease which the lessor knows or should know about and which the lessee has no reason to know about.
+        2. the lessor has the duty to inspect for and repair dangerous conditions, if the lessor knows the lessee will hold the land and open to the public.
+        3. the lessor has a duty to use reasonable care to make common areas safe.
+        4. the lessor owes a duty to keep the premises in good repair if that is part of the lesse contract.
+        5. the lessor owes a duty if he begins repairs and performs them unreasonablyor does not finish them.
+        6. the lessor owes a general duty of care in some jurisdictions.
       
   B. Breach
+    A breach is the failure to perform one's duty.
+    
     1. Direct / Circumtantial
+      Breach is proved by direct or circumstantial evidence.
+      
     2. Res Ipsa Loquitur
+      ResIpsa Loquitur is a rule of evidence which aids the plaintiff in proving the element of breach of duty when the plaintiff is unable to establish by other evidence that the defendant acted unreasonably. The doctrine proceeds upon the theory that the occurence itself speaks of negligence and it is unnecessary for the plaintiff to show the exact circumstances whereby the defendant breached his or her duty of care.
+      
+      The literal interpretation is "the thing speak for itself"
+      
+      Rule for Memorization
+        Under the doctrine of ResIpsa Loquitor, the defendants duty and breach are established if the plaintiff proves:
+        
+        a. the defendant was in complete control of the instrument that caused the harm;
+        b. the plaintiff is not guilty of contributory negligence;
+        c. the defendant is in a better position to explain what happened; and
+        d. injuries of this type do not normally occur absent such negligence.
+        
   C. Causation
-    1. Actual
+    Proof that the defendant's act is the actual and proximate cause of the plaintiff's harm is required in order to establish that a defendant should be held liable for that particular harm.
+    
+    Actual cause and Proximate cause are TWO separate issues, each of which must be SEPARATELY proved. That means TWO IRAC section.
+    
+    1. Actual (Factual Cause, Cause in Fact)
+      An actual cause is the cause which starts, ignites or makes possible the result which follows, and which satisfies the "But For" or Substantial Factor Test.
+      
       a. But for
+        The "But For" Test is used to establish actual cause. To apply the test, the plaintiff must show that "but for" the defendant's act, the plaintiff would not have been injured.
+        
+        Applying the "But For" Test to Multiple Acts
+          The "But For" Test may be applied where concurrentacts together produce an injury which would not have occurred but for the concurrence. Where the concurrent acts are performed by different persons, both persons are liable as concurrent tortfeasers.
+          
+          
       b. Substantial Factor
+        Under the "Substantial Factor Test", the defendant's breach of duty is an actual cause of the plaintiff's harm if the defendant's act is a substantial factor in bringing the harm about. This means that the defendant's act contributed in more than a trivial degree to the plaintiff's injury.
+        
+        The test applies where tow or more acts combine to produce a single indivisiable injury regardless of whether either or any of the acts by itself would have caused the injury.
+        
+        Where more than one act could have caused the injury by itself, then each actor may be held jointly and severally liable. However, where an act would not have caused the injury without the other contributing acts, liability may be apportioned between the tortfeasors.
+        
     2. Proximate
+      An actual cause of harm is the proximate cause of that harm if the act occurs in a natural and continuous sequence of events, unbroken by unforeseeable, independent, intervening acts, and results in the harm.
+      
+      Rule:
+        Proximate cause is an act which, in a natural and continuous sequence of events, unbroken by unforeseeable, independent, intervening acts, causes injury to the plaintiff, without which the injury would not have occurred.
+        
+      Proximate cause is
+        i. an act which
+          a. in a natural and continuous sequence of events,
+          b. unbroken by
+            I. unforeseeable,
+            II. independent,
+            III. intervening acts
+          c. causes injury to the plaintiff
+        ii. without which the injury whould not have occured.
+        
+      Proximate cause means either that
+        i. the defendant's act directly caused injury to the plaintiff without any intervening acts or
+        ii. if there was an intervening act,
+          a. it was a dependent act with a foreseeable cause or
+          b. it was an independent act with a highly foreeable result.
+      
+      Note that for a direct cause, there can be an exception if the cause is so remote to the damages that is unfair to impose liability.
+      
+      Dependent intervening act with foreseeable cause
+        Dependent means the intervening act would not have occured without the original act. Foreseeable cause means that the depndent intervening act was foreseeable when viewed in the light of the original act.
+      
+      Independent intervening act with highly foreseeable result
+        Independnt means the intervening act would have occured even without the original act. Highly foreseeable result means that even though the independent intervening act would have happened anyhow, the result was highly foreseeable.
+        
+      Cases:
+        1. D x , Defendant did act x and it causes injury to Plaintiff
+        2. D x 1 2 3 P, Defendant did act x and it is followed by acts 1, 2, 3 and that causes injury to Plaintiff
+        
+        i. D:
+          a. Act X
+            Act which breaches duty and which sets in motion a serios of continuous events.
+          b. Intervening Acts: (1, 2, 3)
+            Look here for intervening acts. What events happened after the breach and before the damages?
+        ii. P
+          Harm / Damage: Plaintiff's harm or damages occur
+      
+      Do sampleTest1.html,
+      Do sampleTest2.html
+      
       a. Watch the time line
       b. Direct
       c. Intervening Acts
         i. Independent
+          
+          Independent intervening act with highly foreseeable result
+            Independnt means the intervening act would have occured even without the original act. Highly foreseeable result means that even though the independent intervening act would have happened anyhow, the result was highly foreseeable.
+            
         ii. Dependent
+          
+          Dependent intervening act with foreseeable cause
+            Dependent means the intervening act would not have occured without the original act. Foreseeable cause means that the depndent intervening act was foreseeable when viewed in the light of the original act.
+          
   D. Damages
+    
     1. Physical Harm Needed
+      In a negligence action, 
+
+      the plaintiff may not recover damages unless he first proves that he suffered physical harm. 
+
+      Once this is established, he may recover most categories of damages, except for punitive damages, which are generally not available for negligence, unless the defendant's conduct was reckless or outrageous.
     2. NIED
+    
+      A plaintiff may recover damages for negligent infliction of emotional distress if:
+        i. there was a physical impact to the plaintiff's person, or
+        ii. the plaintiff physically manifests emotional distress caused by either
+          a. the defendant's endangerment of the plaintiff who was within the zone of danger or
+          b. by the defendant's injuring of the plaintiff's close relative while the plaintiff was present and aware of the injury happening.
+          
+    NO PUNITIVE DAMAGES IN NEGLIGENCE
+    
   E. Defenses
     1. Contributory Negligence
+      Under the minority doctrine of contributory negligence, if the plaintiff's failure to exercise reasonable care for his own safety is a contributing factor to his own injury, he is barred from recovery for the defendant's negligent action.
+      
     2. Comparative Negligence
+      
+      Modernly, the doctrine of comparative negligence has replaced contributory negligence, so that liability is apportioned according to the relative degrees of fault of the plaintiff and defendant.
+    
+      In pure comparative negligence jurisdiction like California, the plaintiff will recover some damages no matter how great his own negligence was.
+      
+      In partical comparative negligence jurisdictions, the plaintiff will not recover if his own negligence equals or exceeds the defendant's.
+      
     3. Last Clear Chance
+      The last clear change doctrine limits the contributory negligence defense,
+      
+      so that even if the plaintiff was contributorily negligent,
+      
+      he will be permitted to recover if the defendant hasd a superior opportunity to avoid the accident and failed to do so.
+    
     4. Assumption of Risk
+      Under the defense of assumption of a risk, a plaintiff assumes the risk of harm if he voluntarily subjects himself to a known and appreciated risk. Such consent may be expressly created by agreement between the parties, or it may be implied by the plaintiff's conduct. At common law, assumption of the risk is a complete bar to recover in a negligence action.
+    
   F. Multiple Defendant Issues
     1. Joint, Concurrent, Successive
+      a. Joint Tortfeasors
+        Joint tortfeasors consist of two or more persons who join together to commit a tortious act.
+        
+        Their status is similar to that of co-cospirtators in criminal law, and each is vicariously liable for the acts done by the other in the furtherance of the common design.
+        
+      b. Concurrent Tortfeasors
+        Concurrent tortfeasors consist of two or more persons who are not acting in concert with each other but whose acts combine to produce a single indivisible injury to the plaintiff.
+        
+      In some jurisdictions, joint and several liability is applied in a pure form, holding each concurrent torteasor liable for the full amount of the harm.
+      
+      However, a majority of jurisdictions will apportion damages by using a comparative fault system.
+      
+      Vicarious liability does not apply.
+    
     2. Joint & Several Liability
     3. Contribution & Indemnity
 
@@ -427,19 +595,106 @@ Definitions To Remeber
   C. Statute of Limitations
   D. Immunities
     1. Husband / Wife
+      At common law, husband-wife immunity prevented one spouse from maintaining an action against the other.
+      
+      Modernly, husband-wife immunity does not exist in most jurisdictions.
+  
     2. Parent / Child
+      Traditionally parent-child immunity has been applied so that parent and minor child are immune from suits against each other in tort action.
+	
+      However, suits involving interference with property interests have been freely allowed.
+
+      Many jurisdictions have abolished parent-child immunity.
+
     3. Charities
+      Charitable immunity traditionally prevented non-paying recipients from suing a charity.
+
+      However, paying recipients could sue the charity because, as to them, it was not a charity; it was business.
+
+      Modernly, the trend is to abolish the immunity and to hold non-profit organizations liable to the same extent as any other wrongdoing defendant.
+    
     4. Government
+    
+      Governmental immunity has been applied to prevent suits against a governmental entity unless that entity has consented to the suit.
+
+      A substantial number of jurisdictions have totally abolished the immunity of municipal governments, and in several states, the immunity of the state government has also been terminated.
 
 4. Strict Liability
+  Strict liability is liability without fault.
+
+  It is imposed against a defendant even though the defendent has done nothing intentionally wrong and has not acted unreasonably under the circumstances.
+
   A. Animals
+    Strict liability is typically imposed for the keeping of dangerous animals.
+
+    i. Watch for dangerous characteristic.
+    ii. Domestic animals with known dangerous propensity.
+    
+    Dangerous animals? anything which is not domestic is dangerous:
+      Lions, monkey, zebra, alligator, reptiles, 
+    
+    Domestic animals are:
+      Cow, sheep, dog, cat, bull (domestic but dangerous)
+    
+    
+    
   B. Abnormally Dangerous Activities
+    Strict liability is typically imposed for the carrying on of abnormally dangerous activities.
+
+    i. Non-delegation issue
+    
+  C. Non-natural Additions to Land
+    Rylands v. Fletcher
+      Under the landmark English case of Rylands v. Fletcher, one who brings something onto his land which is non-natural and likely to cause injury if it escapes, is strictly liable for all damages resulting from an escape.
+      
+  D. Defenses
+    Generally, there are none, as strict liability means liability without fault and is strictly enforced.
+
+    However, in some jurisdictions, the following may apply in certain situations.
+    
+    i. Contributory Negligence
+        Contributory negligence is not a defense for strict liability torts unless the plaintiff has knowingly assumed an unreasonable risk.
+
+        Example:
+        Taunting a wild animal by poking it with a stick (but watch for attractive nuisance)
+    
+    ii. Comparative Negligence
+	     Some jurisdictions allow comparative fault to diminish recovery where the plaintiff is partially at fault for the harm.
+    
+    iii. Assumption of Risk
+	    A limited defense based upon consent may apply as a type of assumption of the risk.
+
+      Example:
+      Lion tamer can’t recover from circus for lion bite injury.
 
 5. Vicarious Liability
+  Under the theory of vicarious liability, a defendant who is not charged with personal fault or wrongdoing may be held liable for the tortfeasor’s act because of the defendant’s relationship to the tortfeasor.
+
+  A defendant who is held vicariously liable has the right to indemnification by the tortfeasor.
+  
+  
   A. Employment Relationship - Respondeat Superior
+
+    - Let the superior answer -
+    The doctrine of respondeat superior applies in employment situations to hold the employer vicariously liable for his employee’s torts which are committed within the scope of employment.
+  
     1. Scope of empolyment
+	     A tort is committed within the scope of employment wihen the employee was acting with an intent to further his employer’s business interests, even if the employee acted indirectly or unwisely, and even if the employer forbade the employee from such an act.
+       
     2. To / From Home
+      Typically, the trip from home to work, or from work to home, is not considered part of the scope of employment.
+
+      Exception: an employee who is "on the clock” during such trips.
+      
     3. Frolic and Detour
+      a. A frolic is an employee’s significant deviation from the employer’s business for personal reasons.
+
+        A frolic is outside the scope of employment, so the employer will not be vicariously liable.
+        
+      b. b. A detour is an employee’s minor deviation from the employer’s business for personal reasons.
+
+        A detour is within the scope of employment, so the employer will be vicariously liable.
+      
   B. Independent Contractors
   C. Joint Enterprise
   D. Bailor / Bailee

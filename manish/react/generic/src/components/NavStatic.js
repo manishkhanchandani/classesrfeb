@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
 import { Link  } from 'react-router';
-import {firebaseApp} from '../firebase.js';
+import {firebaseApp} from '../MyFirebase.js';
 import {logOut} from '../actions/UserAction.js';
+
 
 import '../css/NavStatic.css';
 
@@ -16,6 +17,14 @@ class NavStatic extends Component {
   }
 
   render() {
+    let ipDetails = [];
+    if (this.props.my.ipDetails) {
+      ipDetails.push(<li key="0" role="separator" className="divider"></li>);
+      ipDetails.push(<li key="1" className="dropdown-header">Location</li>);
+      for (var x in this.props.my.ipDetails) {
+        ipDetails.push(<li key={x}><a href="">{x}: {this.props.my.ipDetails[x]}</a></li>);
+      }
+    }
     return (
       <nav className="navbar navbar-inverse navbar-static-top">
         <div className="container">
@@ -26,7 +35,7 @@ class NavStatic extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="" onClick={(event) => {event.preventDefault()}}>Project name</a>
+            <a className="navbar-brand" href="" onClick={(event) => {event.preventDefault()}}>CategoryList.US</a>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav">
@@ -59,8 +68,9 @@ class NavStatic extends Component {
               {
                 (this.props.user.uid) ?
                   <ul className="dropdown-menu">
-                    <li><Link to="home">{this.props.user.email}</Link></li>
+                    <li><Link to="home">{this.props.user.displayName} ({this.props.user.email}) {this.props.user.loggedInDate}</Link></li>
                     <li><a href="" onClick={this.signOut.bind(this)}>Sign Out</a></li>
+                    {ipDetails}
                   </ul>
                 :
                 <ul className="dropdown-menu">
@@ -79,9 +89,9 @@ class NavStatic extends Component {
 
 
 const mapStateToProps = (state) => {
-  console.log('state is ', state);
   return {
-    user: state.UserReducer
+    user: state.UserReducer,
+    my: state.MyReducer
   }
 };
 

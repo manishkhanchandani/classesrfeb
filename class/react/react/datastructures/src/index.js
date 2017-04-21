@@ -7,8 +7,7 @@ import Home from './Home.js';
 import SingleLinkedLists from './SingleLinkedLists.js';
 import LinkedList from './LinkedList.js';
 
-import DSArray from './DSArray.js';
-import DSStacks from './DSStacks.js';
+import CompleteDataStructures from './CompleteDataStructures.js';
 
 ReactDOM.render(
   (<Router history={browserHistory}>
@@ -17,8 +16,7 @@ ReactDOM.render(
          <Route path="home" component={Home} />
          <Route path="singlelinkedlists" component={SingleLinkedLists} />
          <Route path="linkedlist" component={LinkedList} />
-         <Route path="array" component={DSArray} />
-         <Route path="stacks" component={DSStacks} />
+         <Route path="complete" component={CompleteDataStructures} />
       </Route>
    </Router>),
   document.getElementById('root')

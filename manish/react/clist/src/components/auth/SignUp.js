@@ -67,6 +67,7 @@ class SignUp extends Component {
       return;
     }
     
+    const currentState = this.state;
 
     firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((response) => {
@@ -84,7 +85,7 @@ class SignUp extends Component {
           let data = {};
           data.created = firebase.database.ServerValue.TIMESTAMP;
           data.email = response.email;
-          data.displayName = this.state.displayName;
+          data.displayName = currentState.displayName;
           data.authType = 'email';
           data.loggedIn = firebase.database.ServerValue.TIMESTAMP;
           firebaseDatabase.ref(FirebaseConstant.basePath + '/users/' + userId).set(data);

@@ -161,6 +161,7 @@ Here, the governing law is the UCC.
 The UCC defines merchant as someone who trades the types of goods in question or holds themselves out to be knowledgeable regarding the goods.
 Here, Seller is a television set retailer and is clearly a merchant.
 Note: Seller's salesperson, since acting within the scope of her/his employment, binds Seller Sets, Inc. to any contracts/offers, etc., that she makes (respondeat superior).
+
 3. Did Buyer and Seller have a contract for the sale of a TV set for $300?
 A contract consists of an offer, an acceptance, and consideration. An offer is a manifestation to be presently found or committed, communicated to specific offerees, with definite subject matter and material terms. Under the UCC, quantity and subject matter are generally the only two terms required.
 Offer

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import NavStatic from '../components/NavStatic';
+import NavBar from '../components/nav/NavBar.js';
 
 
 class App extends Component {
   render() {
     return (
       <div>
-        <NavStatic />
+        <NavBar />
         <div className="container">
           <div className="row">
             <div className="col-md-12">
