@@ -1,0 +1,12 @@
+/* CSS Document */
+
+.myTd {
+  border: 1px solid black;
+}
+.leftTd {
+  width: 30%;
+}
+
+td[rowspan] {
+  vertical-align: top;
+}

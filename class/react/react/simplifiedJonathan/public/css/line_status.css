@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    //border: 1px solid black;
+    background: red;
+}
+
+.lr-zero {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.faqDrop{
+    background-color: #67b168;
+    padding: 6px 0px 5px 20px;
+    margin: 0px;
+    color: white;
+    font-weight: bold;
+}
+
+
+p.logOutProfile{
+    position: relative;
+    width: 124px;
+}
+a.logOut{
+    position: absolute;
+    top: 15px;
+    text-decoration: none;
+    color: rgb(119,119,119);
+}
+a.profileInfo{
+    position: absolute;
+    top: 54px;
+    text-decoration: none;
+    color: rgb(119,119,119);
+}
+
+
+
+
+.sInline{
+    display: inline-block;
+}
+.sFloatRight{
+    float: right;
+}
+s48p{
+    width:48%;
+}
+s22p{
+    width:22%;
+}
+
+/*
+<div className="collapse navbar-collapse lr-zero" id="bs-example-navbar-collapse-1" style={{display: 'inline-block'}}>
+<ul className="nav navbar-nav" style="{{marginLeft: 0+'px', marginRight: 'auto', paddingLeft: 0+'px', width: '48%', whiteSpace:'nowrap'}}">
+
+<form className="navbar-form navbar-nav lr-zero" action="/perl/test.cgi" style={{margin: '10px 0px'}}>
+<input type="text" className="form-control input-sm" placeholder="User" style={{width: '70' +px}} />
+<input type="password" className="form-control input-sm" placeholder="Pass" style={{width: 70+'px'}} />
+
+<ul className="nav navbar-nav lr-zero" style={{float: 'right', width:22+'%'}}>
+                                     <li role="separator" className="divider"></li>
+
+*/
+
+
+
+
+
+
+.test{border: solid red 1px;} .test2{border: dashed red 1px;} .test3{border: dashed fuchsia 1px;}

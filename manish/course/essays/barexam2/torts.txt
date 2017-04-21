@@ -1,0 +1,448 @@
+October 2015
+
+QUESTION 3
+David owns a herd of dairy animals from which he produces and sells milk and cheese. The animals in his herd are the product of cross-breeding domestic goats and a wild breed of sheep. They have the appearance and size of large goats, but have the much more aggressive character of bighorn sheep. In fact, the males have large curved horns similar to those of the bighorn and become aggressive when agitated.
+One of the locks on a gate into a pen that held 40 of these animals was beginning to pull free from the wooden support post to which the lock was attached; a close inspection would have revealed that the wood was rotting around the screws that attached the lock to the 10-year-old post. Unfortunately, David failed to examine the gate support post when he performed his regular semi-annual inspection of the fencing on his land. Eventually the lock in fact pulled out, the gate swung open, and the animals wandered onto neighboring land.
+Peter, David’s next-door neighbor, found most of the animals on his land. Peter attempted to herd the animals back onto David’s land, using an electric cattle prod to deliver shocks to them when they wouldn’t move as he wished. When Peter shocked one of the larger horned males, it turned and rammed him, knocking him to the ground. After Peter was driven to the ground, the animal continued butting him, striking Peter quite a few times in the head and upper body. The attack left Peter with a serious concussion and broken bones.
+Peter went to the local hospital emergency room (ER), where his broken bones were set. Even though Peter mentioned having a headache, the ER doctor and nurses didn’t examine him for concussion or other head injury. Peter failed to report to them that the animal had directly struck his head. Later that day, Peter suffered a cerebral hemorrhage (bleeding in the brain), with paralysis in his upper limbs.
+1. What tort causes of action, if any, can Peter reasonably assert against David? Discuss.
+2. What defenses, if any, can David reasonably raise? Discuss.
+3. What damages, if any, will Peter be able to obtain against David? Discuss.
+￼
+QUESTION 3: SELECTED ANSWER A
+1. Peter vs. David Strict Liability
+Strict Liability for wild animals or domesticated animals with known dangerous propensities arises when damages or injuries are caused by either wild animals or domesticated animals. Strict liability is liability without fault. As long as plaintiff can show causation and damages resulting from actions of above referenced animals and the damages caused resulted from the nature which makes such animals dangerous, plaintiffs are entitled to recover.
+Here, David owned a herd of dairy animals. Although goats are domestic animals, they were cross-bred with a wild breed of sheep. In addition, they have the aggressive character of bighorn sheep, which is known to the owner. Peter was driven to the ground by one of the larger horned males which escaped the farm. The animal rammed Peter, knocking him to the ground and butted him. Animal acted based on its nature and known dangerous propensities making David strictly liable for Peter's injuries. Peter sustained a concussion and broken bones, which are foreseeable outcomes of being rammed by a wild bighorn sheep.
+David will be strictly liable for injuries sustained by Peter.
+Negligence
+In order to prevail in a negligence action, Plaintiff must show that defendant owed him/her a duty of care, said duty was breached, damages were sustained and said damages were caused by Defendant's breach.
+￼
+Duty
+David owed a duty of care of a reasonably prudent person to avoid subjecting others to unreasonable risk of harm. Owning cross-bred animals, the standard of care would be to exercise care to ensure securing the animals. This would include inspection and maintenance of the lock of the gate and fences. Although he conducted semi-annual inspection of the fencing of his land, he failed to examine the gate support. David owed a duty to all foreseeable plaintiffs. Under Palsgraf case, the majority Cardozo view imposed duty on all plaintiffs within the zone of danger. Peter was a next- door neighbor and was therefore within the zone of danger under Cardozo view. Under Andrews view, which was the minority view, the duty of care is owed to everyone.
+David owed a duty of care to Peter. Breach of Duty
+Breach occurs when defendant's act falls below the standard of care established. Here, the standard of care was that of a reasonably prudent farmer, one that would exercise care to keep his animals within his farm. His duty included securing the lock of the gate which, as facts stipulate, David failed to do.
+David breached his duty to Peter by failure to examine the gate.
+Actual cause- "But-for"
+David's breach was the actual cause of Peter's injuries since but for David's failure to examine the gate and secure it, keeping the animals within the farm, Peter would not be injured by the bighorn sheep. David was also a substantial factor for Peter's injuries sustained by ER doctor's failure to examine for concussion.
+Therefore, David was the actual cause of Peter's injuries.
+￼￼￼￼
+Proximate Cause
+David's failure to examine the gate was the proximate cause of Peter's injuries. Proximate cause has to pass the foreseeability test. It was foreseeable that had the gate lock failed to be secured or properly supported, the animals would escape and injure someone. David was also the proximate cause of injuries sustained by ER doctor's failure to examine as it was a natural and foreseeable consequence, since he created the peril. Although the ER's failure to examine was an intervening cause, it was foreseeable and both tortfeasors contributed to Peter's injuries.
+David was the proximate cause of Peter's injuries.
+Damages
+Peter sustained head injury, concussion and broken bones. He will recover both for pain and suffering and for medical bills incurred.
+Trespass to Land
+Interference and physical intrusion upon another's land without consent.
+Here, David's sheep entered Peter's land without permission. He was in charge of them.
+Peter will be able to recover for damages to his land.
+Joint Tortfeasors.
+Both David and hospital staff contributed to final damages sustained by Peter. They were substantial factors causing Peter's damages. Since they are jointly and severally
+￼￼
+liable, Peter can recover from both or either the full amount of damages and the tortfeasors may sue each other for contribution or indemnification.
+2. David's Defenses
+Assumption of Risk
+Assumption of risk defense can be raised when Plaintiff knew and appreciated the risk of harm involved and exposed himself/herself to said risk.
+Here, David may argue that Peter assumed risk of getting injured and rammed by animals, when he attempted to herd the animals back onto David's land. He used an electric cattle prod which provoked and aggravated sheep. However, this defense will fail because Peter was not aware of the cross-breeding and did not know the sheep had dangerous propensities.
+Contributory Negligence
+Under tort law, contributory negligence defense may be raised when Plaintiff's own actions contribute to his/her injuries. In some jurisdictions, it can be a complete bar to recovery.
+Here, David may assert that Peter contributed to his own injuries by provoking animals with an electric prod and further contributed to his cerebral hemorrhage and paralysis by failure to report to ER doctors and hospital of head injury. However, this defense will fail because Peter was not a doctor and being under hospital care, he was expected to be examined properly. As for provoking, he acted as a reasonable person would in Peter's position in attempting to herd animals back to David.
+This defense will fail.
+￼
+Comparative Negligence
+Under comparative negligence, if Peter is found to have contributed to his own injuries, the damages will be apportioned based on fault.
+David will argue that by provoking animals and failure to report to hospital of head injury, Peter contributed to his own injuries. This defense will fail, however, even if a small percentage of fault is placed on Peter, his damages will be reduced by said amount.
+3. Peter's Damages against David
+Special Damages
+Special damages include medical bills, loss of earnings, loss of earning capacity.
+Peter incurred hospital bills and due to his paralysis has likely lost earning capacity.
+Peter will be able to recover said damages.
+General Damages
+Pain and suffering, loss of enjoyment can be recovered.
+Peter sustained pain and suffering when sheep rammed and for further injuries sustained at the hospital.
+He will be able to recover for general damages which will also include loss of ability to enjoy ordinary daily living activities due to his paralysis.
+￼
+QUESTION 3: SELECTED ANSWER B
+TORT LAW/QUESTION #3
+What tort causes of action if any can Peter reasonably assert against David? Discuss.
+Peter v. David
+Strict Liability
+Under strict liability theory, liability is imposed without fault.
+Strict liability attaches to cause of action from possession of domestic and wild animals, or ultrahazardous/abnormally dangerous activities on one's land.
+Here, strict liability will attach to an owner, David, who has a herd of dairy animals which the owner uses to produce and sell milk for commercial purposes.
+The owner or possessor of trespassing animals is strictly liable for any damage caused to person or property. The damage must result from the dangerous propensity of the animal(s), that make the animals wild or dangerous in the first place.
+Trespassing animals
+The owner or possessor of a herd of domestic animals is strictly liable in tort for trespass for any damage caused by such animal, to property and person.
+David will be liable for any damage caused by his trespassing animals.
+
+Wild Animals
+Here, David owns a breed of herd of cross-breeding domestic goats and a wild breed of sheep. They have the appearance and size of large goats, but have the much more aggressive character of bighorn sheep. In fact, according to the facts of the case, the males have large curved horns similar to those of the bighorn and become aggressive when agitated.
+David as an owner or breeder will know the dangerous propensity of these animals and will be strictly liable for any damage from their dangerous propensity.
+Here, the facts indicate these were cross-bred animals with dangerous propensity, namely that of a bighorn sheep with large curved horns who become aggressive when agitated.
+Peter, David's next-door neighbor, found most of the animals on his land and attempted to herd the animals back to David's land. One of the animals became agitated when prodded with an electric cattle prod and turned and rammed Peter, knocking him to the ground. Afterwards, the animal continued to butt him, striking Peter quite a few times in the head and upper body. Peter was left with a serious concussion and broken bones.
+David will argue that he behaved reasonably under the circumstances, but regardless, given the natural propensity of this particular breed, David is strictly liable for injuries he suffered by the animals butting him with large curved horns.
+David may argue assumption of risk by Peter, but he is likely to be held liable for his animals goring him to his injury.
+David is likely to be strictly liable for David's physical and property injury by his animals.
+
+Negligence
+Peter may have a cause of action for Negligence, if Peter can establish that David owed him a duty, and David breached that duty, and the breach of which inflicted injury, both actually and proximately caused by his breach, resulting in physical injury.
+Duty
+Duty is created when a defendant does an act which foreseeably causes an unreasonable risk of harm to others. The question arises whether the defendant exercised reasonable care once that duty arose.
+Standard of Care/General duty
+The standard of care used to determine general duty of care is one exercised by a reasonable person of ordinary prudence under the same or similar circumstances.
+Here, David owed a duty of due care to keep his herd of cross-bred and potentially dangerous animals in a safe place and manner.
+One of the locks on a gate into the pen that held 40 of his animals was beginning to pull free from the wooden support post to which the lock was attached. Notably, a close inspection would have revealed that the wood was rotting around the screws that attached the lock the 10-year-old post.. Unfortunately, David failed to examine the gate support post when he performed his regular semi-annual inspection of the fencing on his land.
+Thus, David owned a duty of due care to inspect, detect, and correct the gate that held 40 potentially dangerous animals.
+
+Special Duty
+Special duty of care may arise when a landowner-occupier is involved.
+Here, David as an occupier of land, next door to his neighbor Peter, may owe a special duty of due care not to cause unreasonable risk of harm.
+Peter was his next-door neighbor and his land abutted his and was at risk for unreasonable risk of harm if David failed to inspect, detect and correct any malfunction on his land that may ultimately cause damage to his neighbor’s property or person.
+David may have failed as an owner or occupier of land in his duty of due care to outsiders, in close proximity to his land, that may get injured.
+Breach of Duty
+Breach of duty arises when the person fails to exercise due care under the circumstances as a reasonably prudent person under the same or similar circumstances.
+Here, the damage is clear and the facts show Peter was injured by David's failure to act as a reasonable rancher in securing his animals safely.
+One of the locks on a gate into a pen that held 40 of his animals was beginning to pull free from the wooden support post to which the lock was attached. Notably, a close inspection would have revealed that the wood was rotting around the screws that attached the lock the 10-year-old post. Unfortunately, David failed to examine the gate support post when he performed his regular semi-annual inspection of the fencing on his land.
+
+A reasonable owner or possessor of a herd of animals would have secured it properly and David failed to do so. The risk of harm far outweighed the utility of not fixing the gate, in light of the facts of this case, where Peter suffered a grave injury.
+Causation
+Actual
+But for David's negligence in not securing the gate holding 40 potentially dangerous animals, Peter would not have been gored and butted and injured.
+In addition, there was a subsequent act, namely the negligence of the emergency room not to stabilize Peter for concussion, that acted upon the injury actually caused by David.
+Proximate
+Proximate cause refers to the legal liability of David as to whether he is directly liable for Peter's injuries, without any supervening acts.
+Here, David was the proximate cause of David's injuries as he was the direct cause of his injuries, and responsible for any foreseeable damage, and injury.
+However, the emergency room team failed to check and stabilize Peter for his concussion, resulting in cerebral hemorrhage and paralysis in his upper limbs. This failure was an intervening act that acted upon Peter's injuries.
+Notably, rescue or emergency acts aggravating a pre-existing injury are foreseeable and dependent causes, and do not cut David's legal responsibility in Peter's injuries.
+Thus, both David and the Emergency room are the proximate cause of Peter's injuries.
+
+Damages
+Damages are those that are foreseeable results of a negligent injury of another.
+Here, as a result of David's negligence, Peter suffered a serious concussion, broken bones, and ultimately cerebral hemorrhage. The injuries were exacerbated by the negligence of the Emergency room staff.
+Joint Tortfeasors
+When two or more actors jointly cause an indivisible injury they are both jointly and severally liable for the injury.
+Here, The ER and David together are jointly and severally liable for Peter’s injury, one indivisible injury.
+Peter or his estate can sue both David and/or ER for his injury.
+Contribution
+David can seek contribution from ER for their share.
+What defenses if any can David reasonably raise? Discuss.
+Comparative Negligence
+Under comparative theory, the damages are assigned according to the blameworthiness of each tortfeasor and share is allocated accordingly.
+Here, David may assert Peter's comparative negligence as a defense.
+
+He is unlikely to succeed as Peter may have acted reasonably under the circumstances.
+Assumption of Risk
+When one party knowingly, consciously and willfully confronts a risk, he will be deemed to have assumed the risk.
+Here, David may argue that Peter knew and understood that these animals were dangerous and proceeded to herd them and in fact used an electric cattle prod and agitated the animals and causing them to attack.
+David may not succeed in this defense if Peter acted reasonably under the circumstances.
+Contributory Negligence
+If a Plaintiff falls short in his own protection by failing to act as a reasonable and prudent man he may be contributorily negligent.
+Here, David will argue that Peter used an electric cattle prod and exercised less than due care in his defense and contributed to his own injuries.
+David is unlikely to use this defense if Peter acted reasonably under the circumstances.
+In addition, David may not use this defense for his strict liability under strict liability case as discussed above.
+What damages, if any, will Peter be able to obtain against David? Remedies
+
+Monetary
+Monetary damages are those that flow from the injury and are relatively certain and not remote and ascertainable.
+General
+General damages refer to pain and suffering (past, present and future) that Peter will endure and are compensable.
+Special
+Special damages are pecuniary damages in the form of medical bills, lost wages, profits, that Peter will suffer. He will be compensated for his medical bills and future bills, reduced to present value.
+Equitable
+Injunction
+Peter or his estate may seek injunction against David to stop the milk farm to continue as it presents a dangerous activity.
+
+
+
+_____________________________________________________________________________
+
+
+October 2014
+
+QUESTION 2
+Homer and Wanda are husband and wife. The furnace in their home stopped working. Wanda wanted to call a licensed repair person, but Homer insisted on attempting to fix it himself, despite having no knowledge of how the furnace worked.
+After working on the furnace for some time, Homer informed Wanda that he had fixed it. Wanda and Homer then went out to dinner. When they arrived home, they found that it had been destroyed by fire. They were informed by a firefighter at the scene that the fire appeared to have originated in the furnace. When Wanda started yelling at Homer for “burning the house down,” Homer slapped her to calm her down.
+Wanda sued Homer for negligence and battery. At a jury trial, she presented evidence proving the facts stated above. At the close of evidence, Homer moved for a directed verdict on the following grounds:
+1. Spouses cannot sue each other in tort;
+2. Wanda failed to present sufficient evidence to support a finding that Homer was negligent; and
+3. Homer is not subject to liability for slapping Wanda because his intent was to calm her down, not to cause her any harm.
+How is the judge likely to rule on Homer’s motion for directed verdict? Discuss.
+
+QUESTION 2: SELECTED ANSWER A
+WILL HOMER'S MOTION FOR DIRECTED VERDICT SUCCEED?
+IDENTIFICATION OF THE PARTIES: Homer is the defendant; Wanda is the plaintiff.
+STANDING TO SUE:
+I. CAN SPOUSES SUE EACH OTHER IN TORT?
+According to common law, spousal suits against each other were not generally allowed. However, the current trend is to allow suits between spouses especially when intentional torts are involved. Thus, whether Wanda can sue Homer would essentially be a jurisdictional issue and a matter of law which the judge would determine. If the judge rules that no, spouses cannot sue in tort, Homer's liability will terminate and the directed verdict will be granted. However, this is unlikely considering the current trends allowing suits between spouses. Here, we will assume that spouses are allowed to sue each other in tort of both intentional tort and negligence.
+II. IS HOMER NEGLIGENT?
+Here, the question of negligence would relate to the burning of the house and whether Homer's actions were sufficiently negligent in causing the burning. Negligence requires the finding of a duty imposed upon the Plaintiff (Homer), a breach of that duty, causation of the injury and an actual injury.
+1. DID HOMER HAVE A DUTY?
+Duties are usually evaluated according to a reasonable person standard unless a special relationship exists between the parties. The reasonable duty of care is
+
+generally the duty to not harm another person and to act in a reasonable manner designed not to place others in unreasonable harm.
+IS THERE A SPECIAL DUTY VIA RELATIONSHIP?
+Here, the parties are husband and wife. A duty of care between husband and wife, as immediate family, is higher than the duty imposed regarding an average unrelated citizen. The duty to protect from harm is greater because of the relationship between Homer and Wanda. Because the duty to not harm Wanda is greater than the reasonable person standard a duty can be assignable to Homer.
+2. DID HOMER BREACH THAT DUTY?
+A breach of duty requires actions be committed by the Plaintiff (Homer) that place others in unreasonable danger or heightened risk. Breach can be established via statute (negligence per se) where a violation of civil or criminal statute imposes automatic fault (which then, if the violation is a civil statute, constitutes a rebuttable presumption by the Plaintiff). Here, there is no negligence per se because there is no mention of a statute being violated. Breach can also be established through clear explicit facts and/or the definable overt actions of the Plaintiff (Homer). However, the facts here are murky. Thus, a third method of determining breach must be used--the method of res ipsa loquitor.
+Res ipsa loquitor allows an inference of breach when clear facts supporting breach do not exist. Res ipsa requires that the defendant be in clear control of the instrumentality that caused the injury, that the injury would not have occurred without some sort of negligence by the defendant, that no possible superseding acts occur that would remove the defendant from the chain of control over the instrumentality, and that the plaintiff (Wanda) not have participated in their own injury.
+
+RES IPSA LOQUITOR AS VEHICLE FOR FINDING BREACH OF DUTY
+a. DID HOMER HAVE CLEAR CONTROL OVER THE FURNACE?
+Here, the instrumentality that caused the injury (the destruction of the property, the "house") appears to be the "furnace in their home" that had "stopped working". It states that Homer "insist[ed] on attempting to fix it himself" instead of "call[ing] a licensed repair person". There is no mention of any other person or thing interacting with the furnace between the time Homer "attempt[ed] to fix it himself" and the "burning" of the house. This means Homer was ostensibly the last person to interact with the furnace and a reasonable person could conclude that Homer had a clear control over the physical object of the "furnace" which ostensibly caused the injury, "burning". This element is most likely met on its face since the "furnace" was within the purview of the "home" which would be interpreted to be under Homer's control (dominion).
+b. WOULD THE INJURY HAVE OCCURRED WITHOUT SOME SORT OF NEGLIGENCE BY THE DEFENDANT?
+This is a more sticky issue than the clear control issue, supra, which seems to be a straight physical-control-over-the-object question. This element focuses more on the interaction the defendant had on the object in question.
+On first glance, it seems that since Homer "having no knowledge of how the furnace worked" but yet "attempting to fix it himself" would infer that his lack of experience likely caused improper repair on the furnace which then, according to the firefighter at the scene, seemed to be the cause of the fire that "appeared to have originated in the furnace". It appears on its face that Homer's repair led to the fire. However, could the furnace have posed a fire risk prior to Homer's repair efforts? Perhaps. Did Homer's repair in fact actually place the furnace in a condition that would cause a fire risk when his attempt at repair would not? This is
+
+unknown. The facts state that "the furnace in their home stopped working" but it doesn't state what stopped working or why. There is also no mention of a defect to the furnace prior to repair that would pose a fire risk.
+Surface review would appear to assign Homer's actions as a direct cause of the fire. But, the fact that a firefighter (although ostensibly an expert in the field of fighting fires) making the statement that the fire "appeared" to have "originated in the furnace" is not a direct statement of "the furnace started the fire because it had been repaired incorrectly". This is probably a matter for an expert witness to determine at trial. If Homer's actions did not cause the fire because the furnace was already damaged and at a fire risk and Homer's "repairs" did not place that furnace in a higher state of unreasonable unsafety then the injury of "the burning of the house" may not be attributable to Homer's act of trying to fix the furnace and negate this element of res ipsa loquitor resulting in no negligence. However, if this element is met the other elements of negligence must also be met to find liability on the part of Homer.
+c. WERE ANY ACTS OR EVENTS INTERVENING OR SUPERSEDING CAUSES OF THE INJURY THAT WOULD RELEASE DEFENDANT FROM LIABILITY?
+Intervening and superseding acts are those outside occurences separate from the defendant's actions that may break the chain of causation within the res ipsa loquitor analysis. Intervening acts are those that occur that are foreseeable consequences of defendant's acts and do not relieve defendant of liability. Superseding acts are those that are outside the realm of foreseeability and would be those so out of the ordinary that they would relieve the defendant of liability. Intentional torts and criminal acts are considered superseding.
+
+Here, we don't know what acts may or may have occurred between the "attempt[ed]...fix" by Homer and the "home...destroyed by fire" that may or may not have "originated in the furnace". As discussed above, the exact cause of the fire is only an assumption at this point, not a definitive statement of fact. Further analysis outside the fact pattern will be needed.
+It is to be noted that the acts of the fire department in attempting to stop the fire may have contributed to the "destruction" of the home. However, acts done during attempts to rescue are foreseeable results of a "fire" by those public servants tasked with protecting the public, "firefighters". Even if actions by the fire department are found to be negligent that will not release Homer from any potential liability since intervening acts of negligence are always considered foreseeable.
+d. DID PLAINTIFF CONTRIBUTE TO THEIR OWN INJURY?
+It is unlikely Wanda will be considered to have contributed to her own injury, the "destruction" of the "house" by "fire". However, she did want to call a "licensed repair person" but was persuaded to let Homer fix the furnace instead despite the fact that she (likely) knew Homer had "no knowledge of how the furnace worked". Was this enough to place some responsibility of "destruction" of the "home" by "fire" on Wanda? Perhaps. Again, additional facts will be needed.
+Assuming the elements of res ipsa loquitor are met, there will be a finding of breach on the part of Homer.
+3. WAS THE BREACH THE CAUSE OF THE INJURY?
+Again, as discussed above in the res ipsa loquitor section, whether Homer's breach in trying to "fix it [the furnace] himself, despite having no knowledge of how the furnace worked" caused the injury of "destruction of the house by fire" is uncertain. If breach is found via res ipsa loquitor then this element of causation will
+
+also be met since the question posed here will be answered in the analysis of res ipsa loquitor.
+4. WAS THERE AN INJURY?
+An injury here would be the destruction of the "house" by "fire" which would constitute property damage and thus qualify as "injury" for negligence. Pure economic damages are not recoverable but personal injury and property damages do qualify as "injury" for the purposes of negligence.
+DEFENSES TO BREACH
+Homer may have several defenses to breach that would negate his liability and thus allow a directed verdict. The only two potential defenses are comparative negligence and assumption of risk. Comparative negligence jurisdictions allow a complete bar to plaintiff recovery if that plaintiff contributed in any manner to their own injury. As above, assignment of responsibility to Wanda will be necessary to trigger comparative negligence and bar her from recovery. A bar to recovery would allow a directed verdict for Homer regarding the negligence claim. Contributory negligence, while a defense more often available in a majority of jurisdictions, assigns risk to plaintiffs based on their percentage of fault and reduces their recovery accordingly. Here, only a finding of fault in excess of 50% on Wanda's behalf (in Pure Comparative Negligence jurisdictions) or 50% or higher (Modified Comparative Negligence jurisdictions) would bar her from complete recovery. Finding Wanda at fault in excess of 50% or 50% or higher is unlikely and thus comparative negligence in both its forms would only serve to reduce damages which would then prohibit Homer from receiving his directed verdict. Assumption of the risk is a defense that states a plaintiff is barred from recovery if they knew of the risk and voluntarily assumed it. Here, there is no clear assumption of the risk of "destruction of the home by fire" by Wanda and thus she did not voluntarily assume it. This is not a defense.
+
+III. DID HOMER COMMIT A BATTERY AGAINST WANDA?
+Battery is the intentional volitional act of the defendant against the plaintiff causing an offensive or harmful touching of the plaintiff's body or person (a connected object suffices). The reasonable person standard applies when evaluating what is "harmful" or "offensive" contact.
+Here, the defendant "Homer" intentionally and volitionally "slapped [the plaintiff] [[Wanda] to calm her down" which would be considered a harmful and offensive touching of the body of "Wanda" when evaluated by a reasonable person. There is a battery because Homer intended to touch her and caused a harmful and offensive touching.
+DEFENSES TO BATTERY
+Homer poses a defense to battery that his intent was "to calm Wanda down" and not "cause her alarm". However, the reason behind the battery is not relevant, only the intent to touch and a resulting harmful or offensive contact is needed to establish battery. There is no defense to battery.
+CONCLUSION: There is likely standing for the parties to sue; negligence on the part of Homer has not been clearly established with the facts at hand; Homer did commit a battery. There will be no directed verdict in favor of Homer.
+
+QUESTION 2: SELECTED ANSWER B
+WANDA v. HOMER SPOUSAL IMMUNITY?
+SPOUSAL IMMUNITY is where a husband and wife cannot sue each other. This theory is no longer observed in most modern jurisdictions, but is the common law.
+The facts show that Wanda sued her husband. In common law a husband and wife could not sue each other. Modernly, this is no longer observed and spouses can, and do, sue each other.
+If a common law jurisdiction, Wanda could not sue Homer.
+NEGLIGENCE?
+NEGLIGENCE is found where there is a DUTY owed, a STANDARD OF CARE to be followed, a BREACH of the DUTY, the BREACH is the ACTUAL CAUSE of plaintiff's injury, the PROXIMATE CAUSE of plaintiff's injury, and DAMAGES are suffered by plaintiff.
+DUTY?
+DUTY is the responsibility to not cause unreasonable risk of harm to others.
+The facts show that Homer wanted to repair the furnace in their house. He had a duty to not unreasonably cause risk of harm to others in the house by doing so.
+Homer owed a duty.
+
+STANDARD OF CARE?
+STANDARD OF CARE is the care that must be observed to ensure that defendant's actions are reasonable.
+Homer's standard of care owed was to ensure that the furnace was repaired in a safe manner, so as not to burn the house down, or cause harm to his house or his wife.
+Homer owed a standard of care to Wanda.
+BREACH OF DUTY?
+BREACH OF DUTY is failure to perform one's duty, supra.
+The facts show that Homer did not know how to repair a furnace. He breached his duty because he wanted to fix it himself, despite having no knowledge of how to do so. This was a breach because he did not know how to fix a furnace.
+Homer breached his duty.
+RES IPSA LOQUITUR?
+RES IPSA LOQUITUR finds that plaintiff has suffered an injury that is not normally found in the absence of negligence, plaintiff was not contributorily negligent, defendant had complete control of the item that caused the injury, and defendant in a better position to explain what happened.
+After Homer fixed the furnace Homer and Wanda left the house and went out to dinner. Because nobody was home, the exact cause of the fire could not be determined without an expert's inspection of the premises. However, normally a
+
+house does not burn down right after a furnace has been worked on. Because the furnace work was done by someone who did not know how to work on furnaces, there is an appearance of negligence. Wanda was not contributorily negligent toward the house burning down because she did not work on the furnace. Homer had complete control of the furnace because he worked on it prior to the house burning down. Homer was in a better position to explain what caused the fire to start because he worked on the furnace.
+Absent proof of actual breach of duty, supra, Wanda could rely on res ipsa loquitur. ACTUAL CAUSE?
+ACTUAL CAUSE is the event that ignites events that causes plaintiff's injury and is satisfied by the but-for or substantial factor test.
+The facts show that after working for some time on the furnace, Homer believed that he had fixed it. This was the actual cause that ignited the event that burned their house down. But for Homer working on the furnace, the house would not have burnt down.
+Homer was the actual cause of the injury. PROXIMATE CAUSE?
+PROXIMATE CAUSE is the foreseeable result of the actual cause, supra, unbroken by independent or superseding intervening events.
+The facts show that after Homer worked on the furnace, the house burnt down. This was a foreseeable event of someone doing repairs on a furnace by someone who does not know how to work on a furnace. There were not intervening events because the firefighter informed them that the fire originated in the furnace.
+
+Homer was the proximate cause of the injury.
+CONTRIBUTORY NEGLIGENCE?
+CONTRIBUTORY NEGLIGENCE is where plaintiff contributes to her own injury and is a complete bar to recovery. This theory has been abolished in most jurisdictions, but is still the common law theory.
+The facts show that Wanda wanted to call a licensed repair person but let Homer work on the furnace himself. Wanda contributed to her own injury because she should have insisted that the professional furnace repair person be there. She was responsible for the house burning down because she didn't insist on a professional doing the repair.
+Absent a valid defense, Wanda was contributorily negligent.
+LAST CLEAR CHANCE?
+LAST CLEAR CHANCE is a valid defense to contributory negligence supra, where plaintiff is found contributorily negligent but defendant had the last clear chance to avoid the injury.
+The facts show that Wanda was contributorily negligent, supra. However, Homer had the last clear chance to avoid the injury by not working on the furnace when he had no knowledge on how to do so. Had he waited until a professional could work on the furnace, the house would not have burnt down.
+Homer had the last clear chance to avoid the injury and Wanda's recovery is not barred.
+
+COMPARATIVE NEGLIGENCE?
+COMPARATIVE NEGLIGENCE is found where defendant is liable for the injury, plaintiff contributed to her own injury, and can recover damages in an amount apportioned to defendant's liability.
+The facts show that Homer was liable for the injury because he worked on the furnace and the house burnt down. Wanda contributed to her own injury because she did not insist on a professional repairing the furnace. If the jurisdiction is a comparative negligence jurisdiction, she could recover damages in an amount apportioned to Homer's negligence in burning down their house.
+There was comparative negligence. STRICT LIABILITY?
+STRICT LIABILITY is liability without fault where an abnormally or dangerous activity is found.
+The facts show that Homer had no knowledge of how to work on a furnace. Because furnaces are dangerous pieces of equipment subject to exploding, this could be classified as an abnormally dangerous activity. Homer did not have the skill to work in this manner, and the fact that the house burnt down with the fire originating at the furnace shows that there was a dangerous element to this repair.
+Homer may be strictly liable.
+
+DAMAGES?
+DAMAGES are required if plaintiff is to recover for negligence.
+Wanda's house was burned down; therefore she suffered an injury. She could recover general damages for pain and suffering and special damages for the cost of the house that burnt down.
+Wanda can recover damages. BATTERY?
+BATTERY is the intentional, harmful, offensive touching of another without consent or privilege.
+The facts show that Homer slapped Wanda when she yelled at him for burning the house down. This was an intentional touching because he intended to slap her. It was a harmful touching because he did slap her. It was an offensive touching because slapping people is not acceptable adult behavior. Homer did not have Wanda's consent to slap her, nor did he have a privilege to slap his wife.
+Homer argued that he was only trying to calm her down. However, this is offensive and harmful because it is not acceptable to slap people to calm them down.
+Homer is liable for battery. DAMAGES?
+DAMAGES, supra.
+
+Wanda could recover general and special damages, supra. She could also recover punitive damages for Homer's wanton and willful battery.
+1. Homer's motion for directed verdict for spousal immunity should be granted if a common law jurisdiction.
+2. Homer's motion for directed verdict for negligence should be denied because Homer was negligent.
+3. HomerisliableforslappingWandabecausehecommittedintentionalbattery.
+
+
+_____________________________________________________________________________
+
+
+October 2013
+
+QUESTION 4
+Rick and Walt are next-door neighbors. Rick hosted nightly rehearsals in his backyard for his band, which featured several electric guitars and amplifiers that he owned. Because the rehearsals were so loud, Walt could not conduct telephone conversations in his house even with the windows closed. He repeatedly asked Rick to lower the volume of his rehearsals, but Rick refused.
+One night, while Walt was standing in his own yard, he attempted to disrupt a rehearsal by trying to spray Rick with water from his garden hose. He missed Rick with the water, but hit Cal, another band member, and the amplifiers. The water caused Cal to suffer a severe electric shock when it contacted an electric guitar he was holding. The water also destroyed the amplifiers.
+Rick picked up another electric guitar, ran into Walt’s yard, and charged at Walt, swinging at his head. Walt ducked and ran into his house.
+1. What tort claims, not based on negligence, can Walt reasonably bring against Rick? Discuss.
+2. What tort claims, not based on negligence, can Rick reasonably bring against Walt? Discuss.
+3. What tort claims, not based on negligence, can Cal reasonably bring against Walt? Discuss.
+
+Walt v Rick
+QUESTION 4 – SELECTED ANSWER A
+￼A. Nuisance
+Nuisance is unreasonable interference with plaintiff's use and enjoyment of land. In order to determine whether the interference is unreasonable and substantial, the court will look at the following factors:
+1) Harm v Utility
+The seriousness and probability of harm in comparison to the utility of the activity.
+Rick will argue that his music is his life and the utility is very high. Walt will argue that the rehearsals and playing are so loud that he cannot conduct a telephone conversation. Walt will argue that the interference is substantial because it constitutes a breach of the peace. Also, Walt will argue that this occurs nightly, so there is no avoiding the interference.
+It is likely that a court will favor the plaintiff in this argument because the harm outweighs the utility due to the breach of the peace caused by and the frequency (nightly) of the interference.
+2) Hypersensitivity of the Plaintiff
+The sensitivities and particular activities on either side will be considered to determine if that is what is resulting in the claim of interference.
+It does not appear that Walt is particularly sensitive to Rick's activities. As discussed above, the interference is a breach of the peace and it occurs every night.
+The court will favor the plaintiff in this argument.
+
+3) Natural or Incidental to the Activity
+The court will examine whether or not the interference is naturally occurring as a result of the activity, or whether it is clearly artificial and incidental to the activity.
+Walt will argue that the use of high output guitars and amplifiers are creating interference that is clearly incidental to the activity.
+The court will favor the plaintiff in this argument.
+4) Did the Plaintiff Come to the Nuisance
+If the plaintiff came to the nuisance and is suing, the court will consider whether the plaintiff still has a nuisance claim, but may have to indemnify the defendant.
+It does not appear that the plaintiff came to the nuisance in this case.
+B. Battery
+Under Tort Law, battery is a volitional and intentional act by defendant which results in a harmful or offensive touching to the person of the plaintiff. The intent associated with tortious battery is that the defendant desired the result, the harmful or offensive touching, or that he was substantially certain that his act would result in it.
+Rick committed a volitional act because of his affirmative act of picking up the guitar, running into Walt's yard and charging at Walt. Rick committed an intentional act because he charged at Walt and swung at his head with the intent to cause a harmful or offensive touching. All reasonable persons would agree that hitting someone in the head with a guitar would result in a harmful or offensive touching. However, Rick will argue that he did not hit Walt because he ducked and ran into the house.
+Therefore, Walt cannot bring a claim of battery against Rick.
+
+C. Assault
+Under Tort Law, assault is a volitional and intentional act by defendant which results in plaintiff's reasonable apprehension of a harmful or offensive touching to their person. The intent associated with tortious assault is that the defendant desired the result, plaintiff's apprehension of a harmful or offensive touching, or that he was substantially certain that his act would result in it.
+Rick committed a volitional act because of his affirmative act of picking up the guitar, running into Walt's yard and charging at Walt. Rick committed an intentional act because he charged at Walt and swung at his head with the intent to cause a harmful or offensive touching. All reasonable persons would agree that hitting someone in the head with a guitar would result in a harmful or offensive touching. All reasonable persons would agree that almost being hit by someone in the head with a guitar would result in reasonable apprehension of a harmful or offensive touching. Walt will argue that Rick missed him because he ducked, but that the incident did actually result in his apprehension of a harmful or offensive touching.
+Therefore, Walt can bring a claim of assault against Rick.
+Rick v Walt
+A. Battery
+Under Tort Law, battery is a volitional and intentional act by defendant which results in a harmful or offensive touching to the person of the plaintiff. The intent associated with tortious battery is that the defendant desired the result, the harmful or offensive touching, or that he was substantially certain that his act would result in it.
+Walt committed a volitional act because of his affirmative act of spraying water from his garden hose into Rick's yard. Walt committed an intentional act because he desired to disrupt the rehearsal by spraying with water. All reasonable persons would agree that
+￼
+being sprayed by water is an offensive touching. However, Walt will argue that he didn't commit a battery because the water never actually hit Rick.
+Therefore, Rick cannot bring a claim of battery against Walt.
+B. Assault
+Under Tort Law, assault is a volitional and intentional act by defendant which results in plaintiff's reasonable apprehension of a harmful or offensive touching to their person. The intent associated with tortious assault is that the defendant desired the result, plaintiff's apprehension of a harmful or offensive touching, or that he was substantially certain that his act would result in it.
+Walt committed a volitional act because of his affirmative act of spraying water from his garden hose into Rick's yard. Walt committed an intentional act because he desired to disrupt the rehearsal by spraying with water. All reasonable persons would agree that being sprayed by water is an offensive touching. All reasonable persons would agree that almost being hit by sprayed water would result in reasonable apprehension of a harmful or offensive touching. Rick will argue that Walt missed him, but that the incident did actually result in his apprehension of a harmful or offensive touching.
+Therefore, Rick can bring a claim of assault against Walt.
+C. Trespass
+Under Tort Law, a trespass is a physical invasion of the plaintiff's real property (land).
+Walt committed trespass when he sprayed water over Rick's property line because that is a physical invasion of Rick's property, and because Walt sprayed the water with the intent to hit Rick's property.
+Therefore, Rick can bring a claim of trespass against Walt.
+
+D. Trespass to Chattels
+Under Tort Law, trespass to chattels is intentional interference with plaintiff's ownership or possessory interest in a chattel.
+Walt intentionally interfered with Rick's amplifiers because he sprayed water with the intent of hitting Rick's property. The water actually caused damage to the amplifiers because per the facts, the amplifiers were destroyed.
+Therefore, Rick can bring a claim of trespass to chattels against Walt.
+E. Conversion
+Under Tort Law, conversion is intentional interference with plaintiff's ownership or possessory interest in a chattel that is so severe that the defendant must pay the plaintiff the full value of the chattel.
+Walt intentionally interfered with Rick's amplifiers because he sprayed water with the intent of hitting Rick's property. The water actually caused damage to the amplifiers because per the facts, the amplifiers were destroyed. Walt will have to pay the full value of the amplifiers because they were destroyed.
+Therefore, Rick can bring a claim of conversion against Walt.
+Cal v Walt
+A. Battery Due to Transferred Intent
+Under Tort Law, battery is a volitional and intentional act by defendant which results in a harmful or offensive touching to the person of the plaintiff. The intent associated with tortious battery is that the defendant desired the result, the harmful or offensive touching, or that he was substantially certain that his act would result in it. Transferred intent can occur as a result of the defendant's intent to target one party, but instead the
+￼
+harm falls on a different victim. It can also occur where the defendant commits one intentional tort, and the intent associated with that tort transfers to another intentional tort. The intentional torts that apply to transferred intent are Battery, Assault, Trespass to Chattels, Trespass to Land and False Imprisonment.
+Walt committed a volitional act because of his affirmative act of spraying water from his garden hose into Rick's yard. Walt committed an intentional act because he desired to disrupt the rehearsal by spraying with water. All reasonable persons would agree that being sprayed by water is an offensive touching. Cal will argue that although Walt intended to hit Rick, he still committed a battery under the theory of transferred intent, because he hit him instead. As well, Cal will argue that his was both a harmful and offensive touching because he was hit by water and shocked by his electric guitar when it got wet.
+Therefore, Cal can bring a claim of battery against Walt.
+B. Assault Due to Transferred Intent
+Under Tort Law, assault is a volitional and intentional act by defendant which results in plaintiff's reasonable apprehension of a harmful or offensive touching to their person. The intent associated with tortious assault is that the defendant desired the result, plaintiff's apprehension of a harmful or offensive touching, or that he was substantially certain that his act would result in it. Transferred intent can occur as a result of the defendant's intent to target one party, but instead the harm falls on a different victim. It can also occur where the defendant commits one intentional tort, and the intent associated with that tort transfers to another intentional tort. The intentional torts that apply to transferred intent are Battery, Assault, Trespass to Chattels, Trespass to Land and False Imprisonment.
+Walt committed a volitional act because of his affirmative act of spraying water from his garden hose into Rick's yard. Walt committed an intentional act because he desired to disrupt the rehearsal by spraying with water. All reasonable persons would agree that
+
+being sprayed by water is an offensive touching. All reasonable persons would agree that almost being hit by sprayed water would result in reasonable apprehension of a harmful or offensive touching. Cal will argue that although Walt intended to hit Rick, he still committed a battery under the theory of transferred intent, because he hit him instead. As well, Cal will argue that Walt's battery actually resulted in his apprehension of a harmful or offensive touching.
+Therefore, Cal can bring a claim of assault against Walt.
+C. Trespass to Chattels
+Under Tort Law, trespass to chattels is intentional interference with plaintiff's ownership or possessory interest in a chattel.
+Walt intentionally interfered with Cal's guitar because he sprayed water with the intent of hitting Rick's property and disrupting the rehearsal. The water actually caused damage to the guitar because per the facts, the guitar and Cal suffered an electric shock, assuming that an electric shock would harm an electric guitar.
+Therefore, Cal can bring a claim of trespass to chattels against Walt if he can show damages to his guitar in this case.
+
+I. WALT v. RICK
+QUESTION 4 – SELECTED ANSWER B
+￼A. NUISANCE
+Nuisance is an intentional act that causes an unreasonable and substantial interference with the use and enjoyment of another's land.
+1) Intent.
+Intent can be established when the defendant acted with the desire that the result occurs or when the defendant acted knowing with substantial certainty that the results will occur.
+Here, the facts indicate that Rick hosted every night loud rehearsals with his rock band in the backyard. Since Walt had repeatedly asked Rick to lower the volume of the rehearsals, Rick refused to do so and continued at the usual loudness. Therefore, it can be concluded that Rick acted with the requisite intent to hold loud rehearsals.
+2) UnreasonableandSubstantialInterference.
+Interference is unreasonable, when it would bother a reasonable person, and substantial, when it occurs over a long period of time or very intensely.
+Here, the facts indicate that Walt was not able to have a telephone conversation in his house even with the windows closed, which would likely be objectionable to a reasonable person. Also, the fact that those rehearsals took place every night means that they were a substantial interference of Walt's use and enjoyment of his house.
+Thus, Walt will likely be able to establish a successful claim of nuisance.
+
+B. TRESPASS TO LAND
+Trespass is an intentional act that causes an unauthorized entry onto another's land.
+Intent, see definition above.
+Here the facts indicate that Rick ran into Walt's yard, after Walt had sprayed water over into Rick's yard. Rick clearly desired to run into Walt's yard and he did so without getting prior permission from Walt.
+Therefore, Walt will likely be able to successfully establish a claim of trespass to land.
+C. ASSAULT
+Assault occurs when the defendant acted with the intent to cause the plaintiff reasonable apprehension of an immediate harmful or offensive touching.
+1) Intent, see definition above.
+The facts indicate that Rick charged with an electric guitar at Walt and swung it at Walt's head. Rick, therefore, very likely desired to hit Walt and acted with substantial certainty that he would be able to hit Walt with the guitar.
+2) ReasonableApprehensionofanImmediateHarmfulTouching
+The fact that Walt ducked shows that Walt saw that Rick swung the guitar at him and that he (Walt) knew that he would be hit, if he did not duck away.
+Walt certainly ducked, because he feared to be hit by the guitar.
+Thus, Walt will likely establish a successful case of assault against Rick.
+
+II. RICKv.WALT
+A. TRESPASS TO LAND. Definition, see above.
+Intent, see definition above.
+Here the facts indicate that Walt sprayed water over into Rick's yard, meaning to spray Rick with water from his garden hose. It is conceivable, since the water was sprayed from a hose and presumably a good amount of water came out, that some of the water also went onto the ground of Rick's back yard, causing a physical, unauthorized entry onto land.
+Therefore, Rick will likely be able to successfully establish a claim of trespass to land.
+B. CONVERSION
+Conversion occurs when the defendant exerted complete control and dominion over the plaintiff's property or if the defendant in any other way substantially interfered with the use, enjoyment and property rights of the plaintiff.
+Here, the facts indicate that some of the water that Walt sprayed over into Rick's yard, as discussed above, contacted one of Rick's electric guitars which was consequently destroyed. The destruction goes beyond a mere 'trespass to chattels' situation and constitutes a highly substantial interference with Rick's property.
+Here it is assumed that the electric guitar belonged to Rick, since the facts state that Rick owned several guitars. If the electric guitar belonged to Cal, then Cal would be able to assert the claim of conversion.
+In any case, Rick will be able to successfully assert a claim of conversion against Walt and will be able to recover the entire replacement cost for the guitar.
+￼
+C. ASSAULT
+See definition above.
+1) Intent, see definition above.
+The facts indicate that Walt tried to spray Rick with water from the garden hose; thus he had an intent to either touch or cause apprehension to Rick.
+2) Reasonable Apprehension of an Immediate Offensive Touching
+The facts don't indicate whether or not Rick saw that Walt tried to spray him with water. While being sprayed with water would not be harmful, it might constitute a potentially offensive touching.
+Since Rick might not have seen what Walt attempted to do and since Rick, therefore, was likely not apprehended, Rick will likely not establish a successful case of assault.
+III. CAL v. WALT
+A. BATTERY THROUGH TOUCHING WITH WATER
+Battery occurs when the defendant acted with the intent to cause the plaintiff a harmful or offensive touching.
+1) Intent, see definition above.
+Here, the facts state that Walt sprayed the water into Rick's yard to disrupt the rehearsal. Thus, Walt acted with intent.
+2) TransferredIntent.
+￼
+When a person intends to commit a tort to one person, but hits another person instead, then the intent transfers from the one person to the other person.
+Here, the facts indicate that Walt tried to spray Rick with water, but he missed Rick and hit Cal instead. Thus, Walt's intent transferred from Rick to Cal.
+3) Offensive Touching.
+An offensive touching is a touching that is against a person's dignity.
+While being sprayed with water was likely not a harmful touching, it certainly constituted an offensive touching of Cal. Therefore, Cal will likely assert a successful claim against Walt for being sprayed with water.
+B. BATTERY DUE TO ELECTRIC SHOCK Battery, see definition above.
+Besides being sprayed with water, Cal experienced another touching by Walt, this time a harmful touching. Here, the facts indicate that Cal suffered a severe electric shock when the water got into contact with the electric guitar that he was holding. Since Walt was the one who sprayed the water which ultimately caused the harmful touching, Walt will very likely be held liable for this kind of touching as well.
+C. CONVERSION
+The conversion of the electric guitar was discussed under Rick's claims against Walt. However, if the electric guitar belonged to Cal, then Cal would be able to assert the claim of conversion against Walt, as discussed under Rick's claims.
+
+
+_____________________________________________________________________________
+
+
+
+
+_____________________________________________________________________________
+
+
+
+
+_____________________________________________________________________________
+
+
+
+
+_____________________________________________________________________________

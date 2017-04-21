@@ -1,0 +1,1013 @@
+October 2015
+
+QUESTION 1
+Painter and Developer entered into a contract under the terms of which Painter was to paint the interior of Developer’s new apartment building for a price of $40,000. The contract called for work to begin on June 1 and to be completed on July 1.
+Painter was ready to start work on June 1, but Developer told Painter that because of problems with the drywall contractor, Painter could not start work until June 15. To avoid the possibility of losing her employees, who might quit if forced to take a two-week layoff, Painter took another job, which was not completed until June 20, at which time Painter started work on Developer’s building.
+On July 15, Painter informed Developer that she would not be able to complete the project until August 15. Developer told her he would lose substantial rental income if the project was not completed by August 1, when university students, his prime market, began moving in. He asked her to hire additional help, but she refused, saying the job would be finished on August 15 or not at all. In an attempt to get the job completed sooner, Developer fired Painter and looked for another painting contractor.
+The best price Developer could get to have another painting contractor finish the job was $30,000. Before firing Painter, Developer had paid Painter one-half of the contract price. Because the painting was completed late, Developer lost $10,000 in rental income. This rental income would not have been lost if the painting had been completed by August 1.
+At the time Painter was fired, she was out-of-pocket for $5,000 in materials. She expected a profit of $5,000 had she been allowed to complete the contract.
+Developer has sued Painter for breach of contract. Painter cross-complained against Developer for breach of contract.
+1. Who breached the contract? Discuss.
+2. Assuming Painter breached the contract, what damages, if any, would Developer be entitled to? Discuss.
+3. Assuming Developer breached the contract, what damages, if any, would Painter be entitled to? Discuss.
+￼
+QUESTION 1: SELECTED ANSWER A
+1) Who breached the contract? Discuss.
+DEVELOPER V. PAINTER
+The rights and remedies of parties to a contract depend on there being a valid contract and the terms and performance thereof. A contract is a promise or set of promises for the breach of which the law provides a remedy and the performance of which the law recognizes as a duty. An enforceable contract consists of MUTUAL ASSENT (VALID OFFER AND ACCEPTANCE), CONSIDERATION and NO DEFENSES.
+GOVERNING LAW
+The sale of goods, those items moveable and tangible at the time of identification to the contract are governed by the UCC. All other contracts are governed by the common law.
+Here, the agreement calls for painting services, which are not moveable at the time of contract and thus not goods. The agreement is for services, governed by the common law. Therefore, the common law governs.
+CONTRACT FORMATION
+Here, a contract exists because certain and definite terms have been agreed including Parties (Painter, Developer), Price ($40k), Quantity (1 job), Subject (Painting), Performance Date (June 1-July1). There has impliedly been acceptance and the consideration of legally sufficient, bargained-for exchange that induces performance and is a detriment to the promisee of $40,000 has been identified. The STATUTE OF FRAUDS, a requirement of a written expression for certain contract types does not
+
+apply here as the provision of painting services is not one of the 5 types (Marriage, Over a Year, Land, Executory, Guarantor). Therefore, there is an impliedly valid contract.
+CONTRACT TERMS
+Here, the contract specified that performance was to begin June 1 and complete by July 1. There was no EXPRESS TIME IS OF THE ESSENCE clause; however the specificity of the dates of performance implies that time is a MATERIAL TERM.
+CONTRACT PERFORMANCE
+JUNE 1 - WAIVER OF START?
+Here, on June 1, Painter was ready to start but an IMPLIED CONDITION PRECEDENT that the drywall be completed first was not satisfied. Therefore, because an IMPLIED CONDITION PRECEDENT was not satisfied, Painter's start was waived. Further, Painter took additional work to be completed June 20.
+JULY 15 - ANTICIPATORY BREACH?
+ANTICIPATORY BREACH is the unequivocal communication of a repudiation of a contract duty before that duty is due to be performed. The act allows the non-breaching party to treat as a BREACH and immediately take all legal remedies and seek to mitigate.
+BREACH is a non-performance of a required contract duty. A MINOR BREACH is where the contract is substantially performed but not completely. A MATERIAL BREACH is where the non-breaching party is deprived of the substantial benefit of the bargain.
+
+Here, there is an ANTICIPATORY BREACH because Painter tells Developer that "she would not be able to complete the project until August 15," which is a date after which performance was due. The BREACH is a MAJOR BREACH because although Painter had commenced performance, the parties had expressly made time a MATERIAL TERM and the substantial change from July 1 to Aug 15 of 6 weeks to finish (longer than the original period of work) would deprive DEVELOPER of the substantial benefit of the bargain. Developer also indicates that his clients are students who begin moving in by August 1. Therefore, Painter anticipatorily breached the contract with Developer and allowed Developer to declare a breach and seek legal remedies and to mitigate.
+
+2) Assuming Painter breached the contract, what damages, if any, would Developer be entitled to? Discuss.
+DAMAGES
+Damages are compensation for contract harm and include MONETARY DAMAGES and EQUITABLE RELIEF.
+MONETARY DAMAGES
+Monetary damages include EXPECTATION DAMAGES, CONSEQUENTIAL and RELIANCE DAMAGES.
+EXPECTATION DAMAGES
+EXPECTATION DAMAGES give the non-breaching party the "benefit of the bargain". Where there is a BREACH, the non-breaching party is allowed to cure. The cure would be the difference between the market price and the contract price for the completion of the contract.
+
+Here, Developer would be entitled to EXPECTATION DAMAGES equal to the difference between the market price to finish of $30,000 and the contract price of $40,000 less the amount already paid of $20,000 or $20,000.
+CONSEQUENTIAL DAMAGES
+Under Hadley-Baxendale, CONSEQUENTIAL DAMAGES that are foreseeable, contemplated at the time of contracting, certain and mitigated are awarded as compensation.
+Here, at the time of contracting, it was not known to Painter that Developer intended to rent his apartment to students by Aug 1. Because it was not contemplated, such consequential damages even if foreseeable and certain (rental income is certain) would not be awarded.
+RELIANCE DAMAGES
+RELIANCE DAMAGES are amounts spent in reliance on the contract that would be awarded as if the contract had never happened.
+Here, because Painter had spent $5,000 in materials for the job that had not been applied to the job, Painter would receive and Developer would owe $5,000 in reliance damages. Therefore, Developer would owe Painter $5,000 in reliance damages.
+Therefore, if PAINTER BREACHED, Developer would receive a net $15,000 from Painter for completion of the job.
+EQUITABLE RELIEF
+Based on QUANTUM MERUIT, if there is inequity as a result of an award, EQUITABLE RELIEF may be sought to better value the damages.
+
+Here, if Painter's work was largely complete, QUANTUM MERUIT might suggest that EQUITABLE RELIEF be used to adjust the damages to reflect the value of the work completed by Painter prior to the breach.
+3) Assuming Developer breached the contract, what damages, if any, would Painter be entitled to? Discuss.
+DAMAGES. Supra.
+EXPECTATION DAMAGES. Supra.
+Here, if Developer has breached, Painter would be entitled to the "benefit of the bargain" or the $5,000 in expected profits. Therefore, Painter would be entitled to $5,000 in expectation damages.
+CONSEQUENTIAL DAMAGES. Supra.
+Here, if Developer has breached, Painter would be required to pay any consequential damages because Developer was the breaching party.
+RELIANCE DAMAGES. Supra.
+Here, if Developer has breached, Painter would still be entitled to the $5,000 in materials for the job in addition. Therefore, Painter would receive $5,000 in reliance damages.
+Therefore, if DEVELOPER BREACHED, Painter would receive a net $10,000 from Developer for leaving the job.
+
+QUESTION 1: SELECTED ANSWER B
+Question 1:
+1. Who Breached the Contract? Discuss. Applicable Law?
+The common law applies to contracts for the provision of services. Here, the subject matter of the contract is the painting of an apartment building. Painting is a service, something that requires labor as opposed to a sale of goods. Therefore, the common law applies to this contract.
+Valid contract?
+Here the facts state that there was a contract between Painter and Developer; thus there are no issues of offer, acceptance, or consideration (Painting work by Painter, $40,000 payment to Painter by Developer).
+Defenses to Formation
+Definiteness of Terms?
+Under the common law, a contract requires that quantity, time of performance, identity of parties, price and subject matter be identified in the contract. The facts state the quantity - 1 apartment building to be painted, time - painting to take place between June 1 and July 1, parties - Painter and Developer, price - $40,000, and subject matter - painting of the apartment building have been identified. Thus, the contract will not fail due to indefiniteness.
+￼
+Statute of Frauds:
+The statute of frauds requires that certain contracts be written in order to be enforceable, including sale of goods contracts over $500, service contracts that cannot be completed within 1 year, promises for marriage, promises to answer for debt of another, and contracts for the sale of an interest in land.
+The facts do not state whether the contract was made in writing. Here, none of these items apply to this contract. The contract performance time is just 1 month (June 1 to July 1), and although the contract involves painting work on a building, which is real estate, painting is a service, not a transfer of any title interest; therefore, the statute of frauds will not prevent enforcement of this contract.
+Implied Covenants of contract:
+An implied covenant is an implied promise by one party to a contract to do something. Developer, in making the contract, made an implied covenant that the building drywall would be ready for painting by June 1.
+Conditions of contract:
+A condition to performance is some event or action that must occur in order for the party to be charged to be found in breach.
+Here, in order for the painting of the building to commence, there is an implied condition that the drywall must be completed, as drywall is a lower layer on a wall, and the paint is applied to the top of the drywall.
+
+Performance:
+The contract stated that the painting was to commence on June 1, and Painter was ready to start painting on June 1; however, Developer was not ready for the building to be painted, thus, Painter was unable to begin painting on June 1.
+Breach:
+A breach of contract is a failure of one party to a contract to perform his/her duties under the contract.
+Painter will argue that Developer breached the contract on June 1 through an unequivocal statement that the building would not be ready for painting (drywall not ready) until June 15.
+Materiality of Breach
+A material breach is one that substantially negatively impacts the non-breaching party.
+Developer's failure to have the building drywalled by June 1 as agreed to was a material breach, as this could cause a substantial loss of staff, who would have to take a two week layoff; had Painter known prior to contract formation that Developer wasn't going to be ready for painting until June 15, Painter likely would have attempted to find other work for his staff prior to Developer's breach.
+Excuse of Condition
+Developer's breach of his covenant (supra) to have the drywall prepared by June 1 was an excuse of the Painter's conditional performance to paint the building, because absent the drywall completion, the painting could not commence because paint must be applied to the drywall, not to the studs in the walls.
+
+Course of Performance:
+Course of performance refers to actions conducted by either party to the contract which will demonstrate what the parties actually agreed to. While Developer breached the condition of having drywall ready in time, Painter did not treat this breach as a full repudiation of the contract, but rather commenced work on the painting work on June 15.
+Developer will argue that despite the delay in commencement of painting caused by Developer, Painter anticipatorily repudiated the contract by stating that the work would not be done until August 15. The difference in the originally agreed to start date (June 1) and completion date (July 1), was just one month, which would imply an agreed to completion time of one month from the start of painting. Painter completed his other project on June 20, which is approximately 55 days before his new estimated completion date of August 15. 55 days is much more than 1 month; therefore, Developer will argue that through the course of performance that altered the start date and by Painter stating unequivocally that he could not get done until August 15, it was Painter who breached.
+Despite Developer's arguments, Developer was the breaching party.
+
+
+2. Assuming Painter breached the contract, what damages, if any, would Developer be entitled to?
+Consequential Damages
+Consequential damages are awarded to compensate the non-breaching party for losses sustained as a consequence of the breach. As a consequence to the delay in the completion of the painting, Developer would not be able to rent the units in the building at their normal time, and lost $10,000 in income. Thus, $10,000 in consequential damages may be awarded.
+￼￼
+Expectation Damages
+Expectation damages are awarded to place the non-breaching party in the condition they would have been in had the contract not been breached.
+In reliance on the contract, Developer had paid $15,000 to Painter. In addition, he ultimately had to pay another painter $30,000 to finish the job; thus his total cost of the contract was $45,000, which is $5,000 more than Developer had agreed to pay Painter. Because Developer would not have had to pay the additional $5,000 had Painter fully performed, Developer may be awarded $5,000 in expectation damages. This would put him back in the position of having only paid a net of ($45,000 minus $5,000 damages) $40,000 in exchange for a painted building.
+Duty to Mitigate Damages
+When a party to a contract breaches, the non-breaching party has a duty to mitigate damages. Here, Developer fulfilled this duty by soliciting bids and locating another painter to complete the painting job.
+3. Assuming Developer breached the contract, what damages, if any, would Painter be entitled to? Discuss
+Expectation damages
+Rule: Supra
+The facts state that while the contract price was $40,000, Developer only paid Painter $15,000. This is a difference in $25,000. Had the contract been fully performed, Painter would have received the additional $25,000; thus $25,000 in expectation damages may be awarded
+￼￼
+Duty to mitigate damages
+Rule supra
+Upon hearing that the drywall would not be ready in time for painting, Painter went out and found another painting job for her and her staff to complete; thus by finding other work which would generate income during the waiting period, Painter fulfilled the duty as a nonbreaching party to mitigate damages.
+
+_____________________________________________________________________________
+
+October 2015
+
+QUESTION 4
+Jack, a retiree, plans to build a new home on his vacant property. He decided to use a particular product called “Austin Brown Stone” for the exterior walls, and estimated he would need about 100 tons of stone.
+Jack drafted a contract to present to Stone-Co, a local stone distributor, in which Jack agreed: (i) to buy all the Austin Brown Stone he needs to build the exterior walls of his house, (ii) at a price of $200 per ton, (iii) to be delivered to his property in 5-ton lots within 10 days following each request for 5 tons, (iv) to be paid for upon delivery. To ensure timely deliveries, Jack included a liquidated damages clause which provided that Stone-Co would pay $5,000 per day for each day that any requested delivery is late.
+Jack signed and dropped off the contract to Stone-Co for its review and signature. That evening, the Stone-Co salesperson, knowing that Austin Brown Stone is often not easily obtained, wrote the following just below Jack’s liquidated damages clause: “Notwithstanding the foregoing, if Stone-Co has difficulty getting Austin Brown Stone, Stone-Co may substitute Austin White Stone.”
+The Stone-Co salesperson then signed the contract and returned it to Jack the next day. Jack did not read the modified contract or see the term added by Stone-Co.
+One week later, Jack made a request for the first 5 tons of Austin Brown Stone, and Stone-Co started looking for a supplier. Stone-Co quickly discovered that Austin Brown Stone was not available in the United States. Although it could be imported from Canada, importing it would add $25 per ton to Stone-Co’s expenses and reduce its profit margin.
+Ten days after Jack’s order, Stone-Co delivered Austin White Stone with a note stating that Austin Brown Stone was not available in the U.S., and a demand for payment at the new price of $225 per ton. Jack immediately called the Stone-Co salesperson, stating he would not accept the substitution because Austin White Stone is a completely different product.
+Jack contracted with another supplier for Austin Brown Stone at $225 per ton. Jack thereafter filed a lawsuit against Stone-Co seeking damages for breach of contract and liquidated damages.
+1. What is Jack’s likelihood of success in his lawsuit and what damages, if any, would he be entitled to? Discuss.
+2. What defenses, if any, can Stone-Co reasonably assert? Discuss.
+￼
+QUESTION 4: SELECTED ANSWER A
+1. Jack v. Stone-Co
+Applicable law
+For sale of goods, the applicable law is the Uniform Commercial Code (UCC), as opposed to other contracts, which are subject to the common law.
+Here, the contract is for supply of stones, so this is sale of goods and the applicable law is therefore the UCC.
+Contract?
+To have a valid contract, the following elements must be met:
+- willingness to be bound by a legally enforceable contract by both parties, - mutual assent (usually in the form of offer and acceptance),
+- consideration.
+Here, both parties (Jack and Stone-Co) intended to enter into a binding contract, so the willingness to be bound element is satisfied.
+Offer
+An offer is an expression of willingness to contract under certain terms, made with the intention that it shall become binding as soon as it is accepted by the person to whom it is addressed.
+￼￼￼￼￼￼￼￼￼￼
+Here, the contract Jack left at the Stone-Co office contained all material terms of his offer, including price, quantity and time for delivery.
+This was obviously an offer capable of acceptance by Stone-Co.
+Acceptance
+At common law, acceptance is a final and unqualified expression of assent to the terms of an offer.
+Under the UCC, the mirror image rule, by which the expression of assent must be unqualified, has been modified and the terms agreed to depend on the status of the parties (i.e. whether both parties are merchants or not).
+Where at least one party is not a merchant, if acceptance varies or adds a term to the offer, acceptance is nonetheless still valid and the added or varied term is considered as a mere offer to vary or add the term.
+Here, Jack was not acting as a merchant (he is not in the trade of stones and, even though he apparently knows pretty well how to draft contracts, he did not claim himself to be a merchant or particularly knowledgeable about the trade of stones).
+Therefore, the terms of the contract were those of the original offer he made, unless he expressly agreed to the added term Stone-Co's salesman had put in the contract, and the acceptance is still valid (under UCC rules), because Stone-Co did not explicitly limit its acceptance by requesting that Jack accepts himself the additional term about the Austin White Stone.
+So, the mutual assent element is satisfied, with the terms of the original offer (made by Jack) as the terms of the contract (and Stone-Co's additional term being a mere
+￼￼￼￼￼￼￼￼￼
+proposal to add the term to the contract and which, under these circumstances, has not been accepted by Jack and is not part of the contract).
+Consideration
+Consideration is satisfied where the contract is the result of a bargained-for agreement and each party suffered legal benefit or detriment.
+Usually, quantity is required for a valid consideration to be found in a contract but requirements and output contracts are considered valid and satisfy the consideration requirement.
+Here, the contract is a requirements contract (all stone that Jack will need for building his house) and, even though it states no particular quantity, there is valid consideration (Jack to pay the price, Stone-Co to provide the stones).
+Therefore, consideration is satisfied for this contract and there is a valid, enforceable contract between Jack and Stone-Co.
+Liquidated damages clause
+To be valid, a liquidated damages clause must reflect the damages, which would have been reasonably anticipated by the parties at the time they entered into the contract. An unreasonable amount would be deemed a penalty clause and would not be enforceable by the court.
+Here, the liquidated damages clause mentions that Stone-Co will be liable to Jack for $5,000 for each day of delay in delivering the stones for each order delayed. This represents a substantial amount compared to the price of the contract: each delivery must be of 5 tons, at $200 per ton, i.e., each delivery is $1,000. The liquidated
+￼￼￼￼￼￼￼￼￼￼￼
+damages clause therefore represents 5 times the price of the goods to be delivered for each day of delay!
+And Jack's estimation of needs is 100 tons of stone, i.e., about $20,000 for the whole contract.
+A four day delay would result in Stone-Co's liability for the estimated price of the whole contract, which is apparently totally unreasonable.
+The only justification would be if the delay in delivering the stones could result in Jack having a substantial loss of earning, revenue or another form of liability himself. As he is building his own house, he would not be liable to a client or another contractor for the delay in performing the job.
+However, he might have other contractors charge him for the day without stone, but $5,000 is unlikely to be a reasonable amount on these facts (unless wages are huge in Jack's area...) and the clause would be considered a penalty clause, therefore not enforceable by the court.
+Damages
+On these facts, the liquidated damages clause would be considered as a penalty clause and would not be enforceable by the court, so Jack could not recover the $5,000 per day for each day of late delivery.
+However, he could recover the damages suffered by the breach of contract by Stone- Co, i.e., the additional $25 he would have to pay for each ton of stones required for building his house.
+
+2. Stone-Co's defenses
+Impracticability
+Where performance of a contract becomes impossible because of circumstances not caused by either party (but outside their control), performance is excused.
+Under modern common law, if performance becomes substantially more difficult, so as to affect the nature of performance, the same rule can apply (impracticability instead of impossibility).
+Here, Stone-Co could try to rely on the defense of impracticability to explain that they were unable to provide Austin Brown Stone to Jack, because this type of stone was not available on the US market.
+However, this is unlikely to be a valid defense on the facts, as Jack obtained the Austin Brown Stone from another supplier, and it seems not to have been so difficult or impossible to obtain the stones in question in the US. It must have been merely more expensive, and a bad bargain is never an excuse for breach of contract, so Stone-Co is unlikely to prevail with this defense.
+Lack of consideration
+C.f. supra for definition of consideration.
+Here, as stated above, requirements contracts are valid contracts, so Stone-Co could not rely on the lack of consideration to try to avoid liability under this contract.
+￼￼￼￼￼￼
+Applicable Law
+QUESTION 4: SELECTED ANSWER B
+￼The UCC applies to the sale of goods; tangible, movable items at the time of sale. The common law applies to all other transactions.
+Here, we are dealing with the purchase of stone, to build a wall. The stone is tangible and movable; therefore it is a good.
+The UCC laws will apply.
+Merchants
+A merchant under the UCC is someone who holds himself out to have special knowledge or skill particular to the goods of the sale, or regular deals with the goods of the kind.
+Here, Jack is a retiree and plans on building a new home on his vacant property. There are no facts to show that Jack has any special knowledge or skill related to the Austin Brown Stone, or that he regularly deals with the home. It is likely he is purchasing the stone for this one period in time, to build himself a home.
+Stone-Co, is a local stone distributor, they sell stones, and regularly deals with stones in their business.
+Jack will not be considered a merchant under the UCC, but Stone-Co is a merchant.
+Valid Contract
+A valid contract consists of mutual assent through offer and acceptance, consideration, and no defenses to formation.
+￼￼
+Offer
+An offer is an objective manifestation of intent to be bound, given with specific and definite terms, to an identified offeree.
+Here, Jack has drafted a contract to present to Stone-Co, which contained the following terms:
+subject matter: Austin Brown Stone
+price: $200 per ton, paid for upon delivery
+delivery: delivered to his home in 5 ton lots within 10 days following each request for 5 tons.
+quantity: all the stone needed to build the exterior walls of his home.
+His offer is certain and definite in its terms, and a reasonable person would think that Jack intended to enter into a contract and create the power of acceptance in Stone-Co. Furthermore, he signed and dropped off the contract to Stone-Co, so he communicated his intent to enter into a contract.
+Jack has made a valid offer.
+Requirements Contract
+Under the UCC, a party can agree to purchase all goods required for their needs, and the other party may agree to supply all of the goods required. This is called a requirements contract.
+Typically, a contract for goods must include quantity; however, in a requirements contract, all that is needed is the good faith promise that the purchaser will purchase all that is required for their needs. This contract will not be found to be illusory and lack of definiteness because both parties are to act in good faith.
+Jack will be bound by the requirements contract to act in good faith.
+￼￼
+Acceptance
+An acceptance is an objective manifestation of unequivocal assent to the terms of the offer, communicated in a proper manner and time. Under common law, acceptance must be the "mirror image" of the terms of the offer; however, under the UCC, acceptance can be given in any reasonable manner.
+The next day, Stone-Co's salesperson signed the contract and returned it to Jack the next day after adding a term. Since her contract had an additional term, it would have been a counteroffer under common law but the UCC allows for acceptance in any reasonable manner. Since the contract was not worded so that acceptance was conditional on the additional term but rather, it stated that "notwithstanding the foregoing", it is still a valid acceptance.
+Therefore, Stone-Co has accepted Jack's offer.
+Consideration
+Consideration is a bargained-for exchange, whereby both parties incur a new legal detriment.
+Here, Jack's promise to pay for all required stones induced Stone-Co's promise to deliver all required stones. Both parties have incurred new legal detriment.
+Valid consideration exists.
+Additional Terms under UCC
+Between merchants, additional terms will be automatically added to the contract unless the contract limits it, the term materially alters the contract, or the other party rejects within 10 days. Between a merchant and a non-merchant, additional terms will be considered proposals to the contract and will not automatically be added to the contract.
+￼￼￼
+Here, Jack did not read the modified contract, or see the term added by Stone-Co. Therefore, the proposal of the additional terms have not been added to the contract since Jack did not assent to the terms.
+Jack and Stone-Co have a requirements contract for Austin Brown Stone.
+Modification
+A modification under common law required mutual assent and consideration. A modification to a UCC contract does not require consideration, only mutual assent and good faith.
+10 days after Jack's order, Stone-Co attempts to modify the contract because Austin Brown Stone is not available in the United States and importing it would incur additional costs. Stone-Co's request for modification was in good faith; however, Jack did not assent to the terms because Austin White Stone is a completely different stone.
+There has not been a valid modification.
+Breach
+Breach is the failure to perform one’s duties under contract.
+All contracts can be substantially performed, unless there is a term that is expressly stated in the contract. Furthermore, sale of goods under the UCC require "Perfect Tender", and must be exactly as ordered.
+Here, the contract between Jack and Stone-Co expressly states that the 5-ton lots must be delivered to his home within 10 days following each request for 5 tons. Jack made his first request for stones one week after contracting. 10 days later, Stone-Co failed to deliver the required stones, but rather notified Jack that the stones weren't available in the United States and that he would have to pay additional fees if he wanted them imported from Canada.
+￼￼
+Furthermore, instead of sending Austin Brown Stone, they delivered Austin White Stone. As discussed above, Stone-Co's request to allow substitution for Austin White Stone was not added into the contract; therefore Stone-Co breached by sending nonconforming goods.
+Stone-Co has not perfectly tendered the goods required by Jack and failed to deliver Austin Brown Stone within 10 days of Jack's request.
+Stone-Co has breached the contract.
+Anticipatory Breach
+Where a party has unequivocally expressed his inability to perform under contract, the other party may sue immediately, or wait for performance to be due, then sue.
+Here, on the 10th day after requesting delivery, Stone-Co has sent non-conforming stones and called Jack and expressed the difficulties in getting Austin Brown Stone, and requested a higher payment to get it to him. They have unequivocally expressed their inability and unwillingness to perform their duties under contract for further deliveries of the required stones, which is to deliver Austin Brown Stone at $200 per ton.
+Stone-Co has anticipatorily breached the rest of the contract, and Jack may sue immediately.
+Damages
+Liquidated Damages
+Liquidated damages are valid when damages are unforeseeable at the time of contracting, are reasonable in amount, and not a penalty.
+Here, Jack would likely incur damages for the late delivery of stone because he would lose time; however liquidated damages amount at $5000/day is likely to be deemed a
+￼￼
+punishment. It is unreasonable in amount, and furthermore, the damages that Jack would incur are likely to be foreseeable.
+Jack will not be able to recover the liquidated damages, and will have to look to Expectation Damages.
+Expectation Damages
+The non-breaching party is entitled to what their expected benefits are under contract.
+Here, Stone-Co has breached the contract and Jack will be entitled to expectation damages. Jack expected to purchase about 100 tons of stone at $200 per ton, which comes out to roughly $20,000. He ended up contracting with another supplier for $225 per ton, an extra $25 per ton, which is roughly an additional $2,500 more than he expected to pay. Jack will be entitled to recover from Stone-Co $25 for every ton he needed to build his wall.
+Furthermore, he will be entitled to any incidental costs related to the breach, and any reliance damages which were incurred as a result of his reliance on the contract.
+2. What defenses, if any, can Stone-Co reasonably assert?
+Impossibility
+A contract is deemed impossible when unforeseen at the time of contracting and objectively speaking, no other person could possibly perform the contract.
+Here, Stone-Co will assert that the contract was impossible to satisfy because the stone was not available in the United States. However, since Stone-Co is able to import the stone from Canada at an additional cost, and Jack found another supplier who was able to supply him with the stone, the contract will not be Impossible.
+￼￼
+Impracticability
+A contract because impracticable when unforeseen at the time of contracting, the contract becomes impracticable to perform.
+Here, Stone-Co will claim impracticability because of the added costs of importing the goods from Canada, which would cut into their profit margin. Increased costs will be deemed to make a contract impracticable, only if it is a substantial increase to the cost. Here, the extra costs of importing the rock adds $25 per ton of rock. It is not substantially increased and rather small, especially because it seems that it would not take away Stone-Co's entire profit, but rather merely reduce the profit margin. To void a contract due to increased costs, the cost would have to be at least 10 times the expected cost, and cause substantial hardship to Stone-Co. We do not have this situation here.
+Furthermore, the stones were not available at the time of contracting, and had Stone-Co done their due diligence, they would have figured that out; but instead, they agreed to the contract without checking, then failed to perform.
+The contract will not be deemed impracticable. Stone-Co has no valid defenses.
+
+_____________________________________________________________________________
+
+October 2014
+
+QUESTION 1
+Zena placed an advertisement in a local newspaper: “Wanted: Someone to clean my four-bedroom, four-bath house (2500 square feet) once a week for the next month; pay $35 per hour. No interview or references necessary. The first to apply will be accepted.” She included her phone number.
+Carl called her the next day and said, “I accept on the terms you have offered.” Zena said, “You should know there was a mistake in the advertisement. The pay will be the same, but my house is actually 3000 square feet.”
+Carl said, “Let me think a moment.”
+Zena replied, “I have a call on another line, and I’ll call you right back.” When she called Carl two minutes later, Carl said, “I agree to clean for you on the terms you described. An extra 500 square feet does not matter to me.”
+Zena told Carl, “I’m sorry, but I’ve changed my mind and I think I’ll do my own cleaning.” Carl sues Zena for breach of contract.
+Is Zena liable to Carl? Discuss.
+
+QUESTION 1: SELECTED ANSWER A
+Is Zena liable for Carl? Zena (Z) v. Carl (C)
+Contract
+For a contract to be valid there must be an offer, acceptance, consideration, and no formation defenses.
+Governing Law
+The Uniform Commercial Code (UCC) governs contracts that are for the sale of goods.
+Service contracts are covered under common law, not the UCC. Here the contract is for a cleaning service and therefore this contract is governed by common law.
+Offer
+An offer is an objective present contractual intent communicated to the offeree with clear and definite terms.
+Under common law the terms required for a contract are quantity, time for performance, identification of the parties, price and subject matter.
+Advertisement
+An advertisement is generally not considered an offer. However if the advertisement has clear and definite terms such that the advertisement may meet the requirements for an offer, some courts will allow for an advertisement to be considered an offer.
+When Z placed an ad in the paper her terms were: quantity - my house
+time for performance - Once a week for a month parties - first to apply
+
+price - $35 per hour subject matter - cleaning
+Because Z's advertisement in the paper has clear and definite terms her advertisement would likely be viewed as an offer.
+Acceptance
+Assent to the terms of the offer.
+When C stated that, "I accept on the terms you have offered" C assented to the terms and showed an outward manifestation to be bound by the contract.
+Z may argue that because her advertisement stated, "The first to apply will be accepted" and C stated that he accepted, C did not properly accept the contract. However a reasonable person would look at the conduct and what was said and likely find that acceptance was appropriate.
+Modes of Acceptance (Mailbox Rule)
+The offeror is the "master of the offer" and may specify a specific mode of acceptance. If the offeror does not, acceptance is done by a reasonable method given the method of the offer. Additionally, an acceptance is effective upon dispatch and a rejection is effective upon receipt.
+Z included her phone number in the advertisement. This shows Z's intent that reasonable acceptance may be done by phone. C called Z the day after the advertisement was placed.
+Timely Response
+It is reasonable to assume that the following day after an advertisement goes into the paper when C called, that the acceptance is reasonably timely.
+
+Mirror Image Rule
+Under common law, an acceptance had to be a mirror image of the offer (additional or different terms would likely be a counteroffer or if asked properly an inquiry).
+Consideration
+Consideration is a bargained-for exchange/legal detriment.
+Z was not bound to pay C for cleaning the house; the $35 per hour is a bargained-for exchange and a legal detriment. C was not previously bound or had a preexisting duty to clean Z's house. There is valid consideration for both parties.
+Contract Formed
+As discussed supra, there was a valid offer, acceptance and consideration. Absent a formation defense, a contract has been formed.
+Formation Defense, No offer
+Z will argue that the advertisement was not an offer. However for the reasons discussed supra, she will not win on this argument.
+Formation Defense, Mistake
+If there is a mutual mistake that goes to the heart of the bargain, the contract may be rescinded by the harmed party.
+In the facts given there is no mutual mistake as a slight increase in the square footage of the home is not likely significant.
+Unilateral Mistake
+When there is a unilateral mistake to a contract, the contract may be unenforceable if it is unconscionable, or the non-mistaken party knew of or should have known of the mistake.
+
+Z will state that she made a mistake in the offer and therefore she should be let out of the contract. However the contract on its face is not unconscionable, nor could C have known of the mistake.
+Z will not prevail on this argument.
+Statute of Frauds
+Contracts for the sale of goods, in consideration of marriage, surety, sale of real property, and contracts that cannot be completed within a year are required to be in writing. Here there are no facts to support the statute of frauds is an issue as the contract is for a month’s time.
+Modification
+A contract may be modified under common law so long as there is additional consideration and both parties assent to the modification.
+When Z stated her house was actually 3000 sq feet and the pay was the same, Z attempted to modify the contract.
+Additional Consideration for Modification
+Consideration defined supra.
+Because there was additional cleaning to be done 500 sq feet C would have more cleaning to do. Additional work would be legal consideration. C is being paid by the hour ($35). Because cleaning additional areas would take longer, C would be paid more.
+Therefore this modification would have consideration.
+
+Assent to Modification
+When Z told C that she wanted to modify the contract, C said, "Let me think a moment". Let me think is not an outward appearance to agree to the modification and therefore C is not bound to the modification at this point.
+When Z called C back C stated, "I agree to clean for you on the terms you described. An extra 500 sq ft does not matter to me." C assented to the modification and the modification therefore became valid.
+Timeliness and Mode of Acceptance of Modification Defined supra.
+Z stated she had another call and would call C right back. Upon calling C right back, C accepted the modification. Therefore the mode and timeliness of the acceptance of the modification were valid.
+The modification of the contract is valid for the reasons discussed supra.
+Revocation of an Offer
+An offer may be terminated by communicating to the offeree prior to acceptance.
+Z will argue that she terminated the offer when she stated she changed her mind and would do her own cleaning. Because the offer had already been accepted (discussed supra) Z cannot terminate the offer.
+Breach
+A breach occurs when one side to a contract does not perform. A breach may be major (goes to the heart of the contract) or may be minor.
+
+Anticipatory Repudiation
+When a party to a contract states clearly (through words or actions) they will not perform under the contract, the other party may treat the repudiation as a breach.
+When Z stated she changed her mind, Z effectively said she was not going to perform under the contract. Because cleaning the house was the heart of the contract, this would be seen as a major breach.
+C would be excused from his promise to clean.
+Good Faith
+A party to a contract may not make performance impossible and enforce the contract. Therefore Z does not have a claim of breach.
+Expectation Damages
+A party to a contract is entitled to the benefit he would have received had the contract been performed.
+Here C would be entitled to $35 times the number of hours it would have taken to clean the house (as the modified contract stated) minus any expenses he would have had in cleaning the house.
+Call 1. Is Zena liable to Carl?
+For the reasons discussed supra, yes Zena is liable.
+
+Carl v Zena
+Governing Law
+QUESTION 1: SELECTED ANSWER B
+￼￼The Common Law governs contracts for services, as the Uniform Commercial Code governs contracts made for the sale of moveable goods.
+The facts state the contract is for house cleaning, a type of service.
+Thus the Common Law will be the governing law.
+First Offer
+An offer is a present outward manifestation of contractual intent, with clear and definite terms, communicated to the offeree.
+Advertisement
+According to Majority Rule an advertisement is merely a proposal for offers.
+Minority Rule states if the Advertisement contains clear and definite terms could be an offer.
+Here the facts indicate that Zena places an advertisement in a local newspaper for house cleaning services, showing a manifestation of present contractual intent, as she described the service needed.
+The advertisement also included the following terms: Quantity: 1
+￼￼
+Time of performance: Once a week/next month Identity of parties: Zena and 1st to apply
+Price: $35 per hour
+Subject matter: 4 bedroom house (2500 sq ft)
+Since the terms are clear and definite, and stated with particularity they become part of the offer.
+Also, because Zena placed her phone number in the advertisement, and received a call from Carl, it was communicated to the offeree.
+Because all the terms are clear and definite if the courts follow the minority rule they will construe this advertisement to be an offer.
+If the courts decide it is merely an invitation for offers, and follow the Majority rule, it will not be a valid offer.
+Reasonable Person - Objective Theory of Contracts
+According to the objective theory of contracts, the most reasonable person would view Zena’s offer in the newspaper as an offer, because all the terms are clearly stated, and it states the first person to apply will be accepted. Also a reasonable person would see Zena’s phone number, not just merely an ad, and would believe that she could be contacted immediately to accept the cleaning service.
+Acceptance #1
+An acceptance is an unequivocal assent to the terms of the offer.
+Here, Carl calls Zena the next day, stating, “I accept on the terms you have offered,” showing an unequivocal assent to the terms of the offer, made using her telephone
+￼￼
+number, a call assenting to the “master of the offer,” to return an acceptance in phone call. If the courts find there was a valid offer, then Carl’s acceptance will also be valid.
+Zena will argue that because she received the phone call from Carl, their conversation also included that she made a mistake in the advertisement which she stated before the conversation was over.
+As will be discussed below, if the courts decide that Zena does have a valid point then the offer will be terminated; if not, then Carl will have made a valid acceptance.
+Termination – Oral Conversation.
+Because an oral conversation has taken place between Carl and Zena, and Zena made a statement of making a mistake in her advertisement, at the end of the conversation, Carl states “Let me think about it,” we can infer that there was no decision made.
+Thus the oral conversation terminates the offer, since no decisions were made.
+Exception Unilateral
+A unilateral contract cannot be terminated once performance has begun. Here, because Carl and Zena have not made a decision, or agreed upon one, and no performance has begun the offer is still terminated at the end of their conversation.
+OFFER #2
+Offer defined supra.
+During Carl and Zena’s phone conversation, Zena proposed a mistake in her first offer to Carl. She stated that the pay will be the same, but my house is actually 3,000 square feet, in which implies different terms, thus creating a second offer to Carl.
+￼￼￼￼￼
+Acceptance #2
+Because Zena hung up the phone, and called Carl two minutes later, Carl then stated an unequivocal assent to the terms of her second offer.
+Thus a valid acceptance. Revocation
+An offeror may revoke their offer anytime prior to a timely acceptance. Revocation is effective upon receipt.
+Here, the facts indicate after Carl accepts Zena’s offer, Zena then tells Carl, “I’m sorry, but I’ve changed my mind,” indicating a revocation of her offer to Carl.
+Since Zena’s revocation was not prior to the acceptance by Carl, it will not be effective. Thus not a valid revocation.
+Meeting of the Minds/Mistake
+The courts will view the contract by both Zena and Carl to be mutual if they show that they knew of the contract, and a reasonable person would believe that they were entering this contract with no doubts.
+Zena will argue that there was no meeting of the minds because she made a mistake in her advertisement, and when Carl called they hung up, and two minutes later before Zena could respond, Carl is stating that he accepts the terms. This is not giving her enough time to respond or react to the second offer; he just came out and said I agree to your terms.
+￼￼￼
+Thus if the courts side with Zena and there was no meeting of the minds then there will be no contract, if they side with Carl a contract has been formed.
+MISTAKE – UNILATERAL
+Usually the courts will side with the non-mistaken party and go by what they state was in the contract at the beginning of formation.
+Carl will argue that Zena made a mistake in her advertisement, clearing it up with him later, and he still accepted her new terms.
+Thus the court will side with Carl and use the terms of the contract that were formed during formation.
+Consideration
+Consideration is a bargain for exchange of a legal detriment.
+Here, Zena is bargaining for her house to be cleaned, and Carl is receiving $35 per hour to clean her home.
+Thus a bargain for exchange has been made. Thus a valid contract exists.
+Defenses to Formation Mistake – Unilateral
+As discussed above, Zena created a unilateral mistake, but fixed the mistake with Carl after the advertisement was posted.
+￼￼￼￼
+Thus not a valid defense.
+STATUTE OF FRAUDS
+Statute of frauds requires some contracts to be in writing: Marriage, debt of another, contracts that cannot be performed within one year, $500.00 or more, and interest in land.
+Because this contract is for house cleaning services it does not fall within the statute of frauds.
+Thus not a valid defense. BREACH
+Major Breach – Here because Carl did not receive his benefit of the bargain, Zena has created a major breach of contract.
+Remedies
+Reformation
+Due to the mistake that Zena made in her advertisement, which was later cleared up, Carl may ask the courts to reform the contract to what both parties intended it to be at the time of formation.
+Rescission
+Due to Zena’s unilateral mistake she may ask the court to rescind the contract, and apply the agreed upon terms.
+
+
+_____________________________________________________________________________
+
+October 2014
+
+QUESTION 4
+Doug, a developer, and Bill, a builder, entered into a contract. Under the contract, Bill was to build a building for Doug for $100,000, and was to receive a $10,000 “on-time bonus” if he were to complete construction by a specified date.
+Bill, in turn, entered into a contract with Ellen, an electrical contractor. Under this contract, Ellen was to do the electrical work for the building for $15,000. At the time she entered into the contract, Ellen was not aware of Bill’s on-time bonus, but learned about it before she was to begin the job.
+In the midst of the job, after receiving $3,000 in progress payments, Ellen decided she could not profitably do the electrical work for $15,000 and quit. Bill looked diligently for an electrical contractor to complete the work at the lowest cost. The only electrical contractor Bill could locate was Roger. Roger demanded $20,000 to complete the work. Bill agreed and paid Roger $20,000 upon completion.
+In spite of Bill’s best efforts, and solely because Ellen had quit the job, Bill completed construction late and, as a result, did not receive the on-time bonus.
+1. Is Ellen liable to Doug for any damages Doug may have incurred as a result of the late completion of the construction? Discuss.
+2. Is Ellen liable to Bill for:
+a. The loss of the on-time bonus? Discuss. b. For any other damages? Discuss.
+
+QUESTION 4: SELECTED ANSWER A
+1. IS ELLEN LIABLE TO DOUG FOR ANY DAMAGES DOUG MAY HAVE INCURRED AS A RESULT OF THE LATE COMPLETION OF THE CONSTRUCTION?
+DOUG V. ELLEN
+U.C.C./COMMON LAW
+The common law governs contracts for the sale of goods. A good is tangible property that is moveable and identifiable at the time and of the formation of a contract.
+In this case, the subject matter is the construction of a building. This is not a good, but rather Doug is bargaining for Bill's service and Bill is bargaining for Ellen and Roger's service.
+Therefore, common law rules will govern this case. FORMATION
+An enforceable contract consists of a valid offer and a valid acceptance, together known as mutual assent, plus consideration, minus applicable defenses.
+Facts state that a valid contract between Doug and Bill had been formed wherein Bill was to build a building for Doug for $100,000 and an additional on-time bonus of $10,000 if the building was completed on time. Doug is receiving the building in exchange for the money and Bill is receiving the money in exchange for the service.
+Therefore, there is valid consideration and a valid contract has been formed.
+
+CONDITIONS
+An act or event not certain to occur, which if excused or satisfied, gives rise to or extinguishes a duty to perform under the terms of the contract.
+Express Condition Precedent
+In order to receive the $10,000 bonus, Bill must complete the project on time. Bill must fully satisfy the condition to receive this money.
+Satisfaction of Condition
+Bill failed to satisfy this condition due to the breach caused by Ellen. Substantial satisfaction is not adequate.
+Excuse
+Bill does not have a valid excuse. Doug does not owe Bill the bonus. FORMATION OF CONTRACT 2
+Supra.
+Facts state that Bill subsequently entered into a valid contract with Ellen. Ellen was to perform the electrical work as a subcontractor for Bill for the price of $15,000. Bill is receiving Ellen's services in exchange for the money. Ellen is receiving the money in exchange for her labor for Bill's project.
+Therefore, there is a valid consideration and valid contract has been formed.
+
+THIRD PARTY RIGHTS
+A contract in which the parties, at the time of the agreement, specifically intend to benefit a third party.
+Privity
+Doug is not in privity with Ellen because he is not a party to the contract. However, the privity requirement has been abolished under Lawrence v. Fox.
+Intended Beneficiary
+Doug will argue that he is an intended beneficiary of the Bill/Ellen contract because the work that was to be performed was for him.
+However, Ellen will argue that Doug was not an intended beneficiary because she did not enter into the contract in order to benefit Doug, but only to gain employment from Bill. Ellen could have entered into a contract to work as a subcontractor for Bill for any number of projects which Bill may have been working. Her agreement with Bill does not mean that Ellen had a specific intent to benefit the client for whom Bill was contracted.
+Therefore, Doug is not an intended beneficiary.
+Creditor/Donee Beneficiary
+If for some reason Doug can prove to the court that he is an intended beneficiary, the argument will continue as follows.
+If Doug is an intended beneficiary, he is a creditor beneficiary because he is owed something under the Doug/Bill contract. Bill and Ellen are not performing their services in order to confer a gift upon Doug, but are doing so in exchange for the money Doug will pay. However, as discussed supra Doug is not likely an intended beneficiary.
+
+Vesting
+Doug does not have rights.
+Defenses None
+Therefore, Doug will not be able to recover damages from Ellen for the late completion of the contract because he is not a party to the Bill/Ellen contract and is not an intended beneficiary.
+Remedies/Damages
+If Doug recovers at all, he will be able to recover from Bill for damages incurred due to Bill's failure to complete the project on time. Doug will be able to deduct his damages from the contract price. Bill will then be able to recover those damages from Ellen for her breach. See infra.
+2. IS ELLEN LIABLE TO BILL FOR: THE LOSS OF THE ON-TIME BONUS? FOR ANY OTHER DAMAGES?
+BILL V. ELLEN
+FORMATION OF CONTRACT 2 Supra.
+Facts state that Bill subsequently entered into a valid contract with Ellen. Ellen was to perform the electrical work as a subcontractor for Bill for the price of $15,000. Bill is receiving Ellen's services in exchange for the money. Ellen is receiving the money in exchange for her labor for Bill's project.
+
+Therefore, there is a valid consideration and valid contract has been formed.
+CONDITIONS
+An act or event not certain to occur, which if excused or satisfied, gives rise to or extinguishes a duty to perform under the terms of the contract.
+Constructive Condition Precedent
+Generally, the longer performance must precede the shorter performance. Thus, Ellen has a duty to perform before receiving payment. However, in this case Ellen was receiving progress payments during the course of her performance.
+DUTIES
+Ellen had a duty to perform under the contract at the agreed upon price of $15,000. Bill had been paying her progress payments throughout the course of her performance. Thus, Ellen has no legal excuse for repudiating the contract and quitting.
+Therefore, Ellen had a duty to perform.
+BREACH
+An unjustified failure to tender performance under the terms of the contract.
+Ellen is in breach because she repudiated the contract and quit. Bill will argue that this is a major breach because her performance goes to the essence of her contract with Bill.
+Therefore, Ellen's failure to perform is a breach of contract.
+
+REMEDIES
+General Damages - Expectation
+Bill will be able to recover his expectation damages under the Bill/Ellen contract in order to put Bill back into the position he would have been in had the contract been performed by Ellen. Bill paid Ellen $3,000 for the work she had completed. Bill then had to pay Roger $20,000 to complete Ellen's work. Bill's total expense for the electrical work was $23,000. Bill will be able to recover the difference between the difference between his cost of covering for Ellen's breach and contract price agreed to with Ellen.
+Therefore, Bill will be able to recover $8,000 from Ellen in expectation damages.
+Special Damages - Consequential - Hadley v. Baxendale
+Bill will try to recover his $10,000 bonus from Ellen because the project was not completed on time solely due to Ellen's breach. Under Hadley v. Baxendale, recovery of damages is limited to the foreseeable costs of breach. The facts state that at the time that Bill entered into his contract with Ellen that Ellen was unaware of Bill's on-time bonus. Because Ellen was unaware of the bonus, she had no reason to know of the lost profits that Bill would suffer if she breached the contract.
+Therefore, since Ellen could not foresee the loss of $10,000 in profit to Bill at the time of the formation of her contract with Bill, the $10,000 will not be recovered by Bill.
+Incidental Damages
+Bill will be able to recover incidental expenses incurred in the course of trying to find a replacement for Ellen and to bring suit against her for breach.
+
+Bill will also be able to recover damages incurred by Doug as a result of Bill's failure to complete the project on time. As discussed supra, Doug will be able to deduct his damages due to Bill's late completion from Bill. Bill will be able to pass those expenses on to Ellen.
+
+QUESTION 4: SELECTED ANSWER B
+1. IS ELLEN LIABLE FOR ANY DAMAGES DOUG MAY HAVE INCURRED AS A RESULT OF THE LATE COMPLETION.
+THIRD PARTY CONTRACT
+A third party contract is one that is intended to benefit a party other than the promissor and promisee and is made at contract formation.
+PRIVITY
+In a third party contract, a party must be a vested, intended beneficiary in order to enforce the contract.
+INTENT TO BENEFIT
+It must be shown that the contracting parties intended for the third party to benefit from the contract when it was formed.
+Here there is nothing in the contract between Ellen and Bill to indicate that there was an intent to benefit Doug.
+VESTING
+An intended beneficiary's interest vests when they learn about the contract and assent to it.
+An intended beneficiary may enforce a third party contract when their interests become vested.
+DONEE OR CREDITOR BENEFICIARY OR INCIDENTAL BENEFICIARY
+A donee beneficiary is one that receives benefit of the contract as a gift; a creditor beneficiary receives the benefit to satisfy an obligation due him by the promisee. An
+
+incidental beneficiary is one that will benefit from the contract but is not an intended beneficiary.
+Doug would be an incidental beneficiary of the Bill/Ellen contract and would not have standing to enforce or recover under it.
+CONCLUSION
+There was no enforceable agreement between Doug and Bill that would allow him to recover.
+2. IS ELLEN LIABLE TO BILL
+WHAT LAW GOVERNS THE CONTRACT?
+This is a contract building services and will be governed by the rules of the common law because it is not a contract for the sale of goods.
+CONTRACT
+A contract is an agreement between two [or] more parties the law will enforce. To be valid it must contain an offer, acceptance and consideration.
+The facts indicate that there was a valid contract present between Doug and Bill and that contract contained a specified time of completion and an on-time bonus.
+There was also a valid contract between Bill and Ellen for the electrical work to be done for $15,000.
+STATUTE OF FRAUDS SATISFIED?
+Under the common law certain contracts have to be in writing to be enforceable. These include contracts in consideration of marriage, those that cannot be completed in less than a year, executor guarantees and suretyship or those dealing with real property.
+
+It's unclear if this contract is in writing, but because it can be completed in a year and is for a building not an interest in land it would not need to be in writing.
+It appears the Statute of Frauds is satisfied.
+DISCHARGE OF DUTY
+A party's duty may be discharged if they have a valid excuse.
+IMPOSSIBILITY
+If it becomes objectively impossible for anyone to perform the duties under the contract, the defendant's duty may be discharged.
+Ellen will claim that it is impossible for her to perform because she could not profitably do the electrical work for $15,000. This is not a valid excuse because someone else could do the work.
+FRUSTRATON OF PURPOSE
+When both parties know at the time of contract formation of a specific reason for the contract and the nonoccurrence of an event that was to occur happens and then the basis for the bargain is destroyed excusing the party from performance.
+Here Ellen will claim that the purpose for her taking the contract was to turn a profit and when she couldn't do that her purpose in entering into the contract was frustrated.
+This is an error in judgment, not a happening the nonoccurrence of would destroy the bargained-for exchange.
+Frustration of purpose is not a valid defense.
+
+COMMERCIAL IMPRACTICABILITY
+When there is extreme and disproportionate disparity in the expense or effort in performance that was not part of the original agreement, the defendant may claim extreme financial hardship. The 10x rule is generally applied to see if completion of the agreement would cost the defendant ten times more than agreed. If so performance may be excused.
+Commercial impracticability will fail because another contractor completed the electrical work for $20,000, which is not ten times the agreed upon price.
+There do not appear to be any valid events that would discharge Ellen's duty to perform.
+BREACH OF CONTRACT
+A breach is the failure to perform one's absolute duty when it comes due.
+Ellen failed to perform her duty because she quit after receiving $3000 in progress payments.
+IS THE BREACH MAJOR OR MINOR
+This would be a major breach because it severely impacted the bargained-for exchange when Ellen quit after completing only one-third of the work.
+REMEDIES
+DAMAGES - MONETARY AWARD FOR THE LOSS OF THE BENEFIT OF THE BARGAIN
+a. THE LOSS OF THE ON-TIME BONUS
+CONSEQUENTIAL DAMAGES
+Under Hadley vs Baxendale consequential damages may be awarded for those damages that result from the failure of a contract. These must be contemplated by
+
+the parties at the time of formation, be clearly caused by the breach, be certain in amount, and could not have been avoided.
+Here Bill will contend that the loss of the on-time bonus was solely caused by Ellen's quitting the job, as the facts indicate; so the loss was clearly caused by the breach by Ellen. The amount was certain because the on-time bonus was stated in the Doug/Bill contract to be $10,000. Bill will also argue that the loss could not have been avoided because he put forth his best efforts, but could not complete the work in time. On the other hand Ellen will argue that she had no idea of the on-time bonus when she entered into the agreement with Bill. The facts state Ellen was not aware of Bill's on-time bonus; therefore the loss by Bill was not contemplated by both parties at the time of formation. Ellen will further argue that she didn't learn about the bonus until before she began the job.
+It appears that Ellen will have the stronger argument.
+CONCLUSION
+The fact that Ellen did not know about the on-time bonus at the time the contract was formed will most likely preclude Bill from recovering that amount from her.
+b. FOR ANY OTHER DAMAGES
+EXPECTATION DAMAGES
+Expectation damages are to recover the benefit of the bargain for the non-breaching party.
+Bill should be able to recover the difference between what he had to pay Roger, $20,000, and the contract price of the original contract $15,000, or $5,000. He may be able to recover the additional $3000 that Ellen received in progress payments, if he can show that the work was one-third complete and the cost to finish was an additional $20,000. If that is the case, Bill should be able to recover $8000 from Ellen.
+
+
+_____________________________________________________________________________
+
+October 2013
+
+QUESTION 1
+Olivia is a florist who specializes in roses. She has a five-year written contract with Juan to sell him as many roses as he needs for his wedding chapel. Over the past three years, Olivia sold Juan between 300 and 1,500 dozen roses annually. Although two years remain on the contract, Juan has just notified Olivia that he cannot continue to buy roses from her because of serious budget concerns.
+Last month, Ann emailed Olivia an order for “1,000 white stems” to decorate an event hall, specifying no particular price or flower. Ann assumed that Olivia would send roses, her specialty, but Olivia instead sent orchids, the only “white stems” available at the time. When Ann received the white orchids, she was surprised, but had no time to inquire about substitutes. As a result, she used the orchids for the event. When Olivia subsequently billed Ann $5 per stem for the orchids, a price twice that of roses, Ann refused to pay the higher amount.
+1. What contract rights and remedies, if any, does Olivia have against Juan? Discuss. 2. What contract rights and remedies, if any, does Olivia have against Ann? Discuss.
+
+Olivia vs. Juan
+Governing Law
+QUESTION 1 – SELECTED ANSWER A
+￼UCC governs contracts involving the sale of goods. Goods are movable tangible objects at the time of contract formation. In this case, the item involved was the sale of roses. Roses are movable tangible objects.
+Thus the UCC governs this contract.
+Merchants
+A merchant is one who has special knowledge or skill of the goods involved in the contract or regularly deals with the goods of this kind.
+Olivia is a florist who specializes in roses. This shows she regularly deals with the sale of roses, the goods involved in the contract. Thus, Olivia will constitute a merchant.
+Juan and Olivia entered into a five year contract to sell him as many roses as he needs for his wedding chapel. Since Juan wants the contract for five years, and a wedding chapel typically purchases roses for funerals, weddings, or mass schedules, Juan will be considered a merchant.
+Hence, both parties are merchants.
+
+Mutual Assent
+Mutual assent consists of an offer and an acceptance.
+Olivia and Juan entered into a five year contract to sell him as many roses as he needs for his wedding chapel. The facts do not state which party presented the offer or the acceptance, but it is clear that the parties came to a mutual agreement for Olivia to sell Juan about 300 to 1500 dozen roses annually for the next five years and, as such, Juan will pay the price for those deliveries.
+Thus there is mutual assent to show there was an intent to enter into a contract.
+Consideration
+Consideration is bargain for exchange between the parties in which one party incurs a legal detriment and the other a legal benefit.
+Olivia incurred the detriment of delivering the specified flowers to Juan annually. She incurred the benefit of receiving payment for the roses that were delivered.
+Juan incurred the detriment of paying Olivia for the flowers and Juan incurred the benefit of receiving the specified flowers from Olivia.
+Juan will argue that since the exact quantity is not specified in the contract that it is simply illusory and cannot illustrate that there was consideration to bind both parties.
+However, under a requirements contract, as illustrated below, the requirements contracts are not illusory so long as the goods delivered are capable of being made, regardless if the exact quantity is not stated.
+Thus there is valid consideration.
+
+Requirements Contract
+A requirements contract is where the buyer promises to buy from the seller all the goods the buyer requires and the seller in turn promises to deliver all that the buyer requires.
+Olivia and Juan entered into a five year contract to sell "as many roses as he needs for his wedding chapel." Olivia promises to deliver all that Juan requires and Juan promises to purchase all that he requires from Olivia. Although the exact quantity is not stated, the contract will still be enforceable since it is capable of being made since the agreement was made in good faith.
+Hence, this is an enforceable requirements contract.
+Statute of Frauds
+Where certain contracts must be evidenced in writing in order to be enforceable and signed by the parties to be bound.
+The contract entered into by Juan and Olivia was for the sale of roses, which is a good. Since Olivia delivered approximately 300 to 1500 dozen roses annually it established that the goods exceed the price of $500. This must be evidenced in writing as it was.
+Also, since the contract was for five years, it cannot be performed in one year and must be evidenced in a writing, which it was when they entered into a written contract.
+Hence, Statute of Frauds applies and is satisfied.
+Constructive Condition Precedent
+Where an act must offer before another party’s performance becomes due.
+
+Here, Olivia must deliver the roses to Juan before Juan has the duty to pay for the roses that were delivered.
+Hence a condition precedent exists.
+Impossibility
+Where a party’s performance becomes objectively impossible due to an unforeseen circumstance that occurs.
+Juan will attempt to argue that his duty for the remaining two years should be discharged since he incurred serious budget concerns that affected his ability to perform.
+Olivia will counter-argue that it is commonly foreseeable with those buying and selling flowers that budget concerns may arise and that issues with payment are possible, but that since it was reasonably foreseeable it should not cut off Juan's liability and duty under the contract. Olivia will also state that it was not objectively impossible for Juan to perform since he simply incurred some budget cuts and could still find a way to make payment.
+Therefore, no valid impossibility defense.
+Impracticability
+Where a party’s performance becomes impracticable due to an unforeseen event that neither party could foresee.
+Juan will argue that his performance has become impracticable because of changes in his economic situation. He will attempt to argue that it was not foreseeable that he
+
+would incur such budget cuts since he had no problem the previous three years of the contract.
+However Olivia will argue that increases in prices or budget changes are reasonably foreseeable and that although it might be more difficult for Juan to make payments he is still obligated to perform because his economic impracticability was anticipated.
+Thus no valid impracticability defense.
+Frustration of Purpose
+Where a party’s purpose for entering into a contract has become frustrated due to an unforeseen event that was not anticipated by either party and both parties have knowledge of the other’s purpose.
+Juan will state that he only wanted to enter into an agreement with Olivia so long as he could afford the shipment of roses and now that he is incurring budget concerns his purpose for entering the contract was frustrated. Juan will argue that he was not aware that he would incur such difficulty because he had been able to perform the past three years and could not foresee that it would affect the contract the remaining two years.
+Olivia will counter-argue that Olivia was never informed of Juan's purpose of entering into a contract so long as he could afford the payments. It was not made known to Olivia; thus she had no knowledge of his purpose when entering into the contract. Also the difficulty with payment and budget concerns is reasonably foreseeable in the sale of roses.
+Thus no valid frustration of purpose defense.
+
+Anticipatory Repudiation
+Where a party expressly repudiates the contract saying they will not perform when performance becomes due and the injured party may immediately bring suit.
+Juan just notified Olivia, when two years remained in the contract, that he cannot continue to buy roses from her because of serious budget concerns.
+Juan's notifying Olivia is a clear expression through his words that he will no longer perform when his performance becomes due.
+Thus Juan anticipatorily repudiated the contract and Olivia may bring suit to recover.
+Voluntary Disablement
+Where a party through their conduct illustrates that they will no longer perform when performance becomes due.
+Juan stopped ordering and making payments for Olivia's delivery. Thus his stopping of his orders illustrates through his conduct that he will no longer perform.
+Hence, Juan voluntarily disabled himself.
+Substantial Performance
+Where a party substantially performs their part of the contract, the injured party is entitled to compensation.
+The contract with Olivia and Juan was to deliver roses for Juan's wedding chapel between 300 to 1500 dozen roses annually for the next five years. Olivia had
+
+performed three years of the contract, with only two years remaining. Therefore, she substantially performed her end of the bargain and Juan will be liable for continued payments and compensation for his breach to Olivia.
+Breach
+An unjustified failure to perform an essential part of the bargain.
+Juan and Olivia had a contract for five years where Olivia was to deliver 300 to 1500 dozen roses annually. Since the contract was for five years, any failure on
+either party to perform is a breach.
+Juan notified Olivia that he would no longer perform. Juan had no valid defense for his failure to perform; thus it was unjustified because budget cuts and economic issues with payment are reasonably foreseeable. Since Olivia performed a substantial part of the contract for three years, Juan committed a breach and Olivia is entitled to damages resulting from the breach.
+Remedies Expectation Damage
+Where a party is entitled to any expectation damages that result from the party’s unjustified breach.
+Olivia expected to receive payment from Juan for each delivery for the remaining two years. Since Juan breached his part to pay for the roses, Olivia is entitled to expectation damages and what she expected to receive from the contract with Juan.
+
+Cover Cost
+A cover is when a seller resells the goods to another buyer and if the sale price is less than the contract price with the breaching party, the seller is entitled to a cover cost.
+Since Olivia mitigated her damages by selling the roses to Ann, she will be entitled to any restitution in cover costs if there is a difference in contract price for the sale of the roses with Juan versus the contract with Ann.
+Lost Volume Seller
+Where a seller has a large volume of goods and resells the goods for a different price due to a breach, the seller is entitled to compensation for making or the wholesale price minus the resale price.
+Olivia is entitled to any lost profit she lost as a lost volume seller since she specialized in roses and sold dozens of them. Olivia is entitled to any lost profits as a result of Juan's breach.
+Since the exact amount of damages is not specified since the roses delivered ranged from 300 to 1500 dozen, the court will most likely look at the reasonable average amount that was delivered to Juan, prior to the breach to determine the contract price in regards to damages.
+Therefore, Olivia is entitled to the contract price for the remaining two years, or since she mitigated her damages she is entitled to the contract price minus the resale price of the roses for the remaining two years with the contract with Juan.
+
+Olivia vs. Ann
+Governing Law
+UCC governs the sale of goods.
+Roses constitute goods and thus the UCC governs this contract.
+Merchants
+Merchants regularly deal with goods involved in the contract.
+As discussed above, Olivia is a merchant since she regularly deals with the sale of roses and other flowers.
+Ann ordered "1000 white stems" to decorate an event hall. The facts do not specify if she regularly deals with the sale of roses; however judging by the excess amount of flowers ordered and since it is for the purpose of decorating an event hall, it can be inferred that Ann is a merchant as well and regularly deals with the sale of roses.
+Offer
+An offer is a manifestation of intent to enter into a bargain that contains definite and certain terms and is communicated to the offeree.
+Ann emailed Olivia an order. Ann's conduct of emailing illustrates through her conduct that she intended to be bound by the offer. The offer stated 1000 white stems to decorate an event hall. The quantity is there, representing 1000. The time was not specified but can be assumed to mean a reasonable time. The subject matter is "white stems." The price is not stated but according to the UCC gap fillers will be applied for
+￼
+course of dealing, course of performance, or usage of trade, to provide a price for the white stems. Ann emailed Olivia, who is the offeree.
+Thus there is a valid offer made by Ann.
+Acceptance
+Under the UCC an acceptance is permitted in any reasonable manner or medium.
+Thus Olivia's shipment of the orchids will constitute an acceptance through her conduct of delivering them.
+Shipment of Nonconforming Goods
+Where a seller ships nonconforming goods and does not illustrate it was an accommodation is in breach.
+Ann will argue that under the UCC, any shipment of nonconforming goods without notifying that it is offered as an accommodation is breach. Ann will state that since Olivia delivered "orchids" and not "roses,” which she had presumed since Olivia "specializes in roses", and since it is nonconforming and there is no notice it is offered as an accommodation, that Olivia breached.
+Olivia will argue that the term "1000 white stems" is ambiguous and therefore left Olivia to believe she wanted whatever white stems were available. Thus her shipment does indicate a valid acceptance but since the term "white stems" is ambiguous, infra, Olivia will have a valid claim that Ann is still entitled to pay for the "white stems" since she accepted the goods and did not give any notice of her dissatisfaction or concern with what was delivered.
+
+Consideration Defined Supra
+Olivia incurred the detriment to deliver the flowers and she incurred the benefit of being paid for the delivery to Ann.
+Ann incurred the benefit of receiving the white stems and Ann incurred the detriment to pay for the white stems delivered by Olivia.
+Thus valid consideration.
+Statute of Frauds -- Sale of Goods over $500
+A contract must be evidenced in writing and signed by the party to be bound in order to be enforceable when dealing with the sale of goods over $500.
+Here, the email sent by Ann stated that she wanted 1000 white stems. Because the quantity is so large and since Olivia later stated that it was $5 per stem, it is indicative that the sale of goods over $500 was involved. Hence it needed to be evidenced by a writing.
+Ann will argue there is no enforceable contract because it was not in one complete writing, but only partial writings and thus both parties did not sign it.
+Exception -- Substantial Performance
+Where a party substantially performs the essence of the bargain.
+
+Olivia will argue that although it is not one complete writing and that it was not signed by Olivia, the fact that she substantially performed takes the sale of the goods over $500 out of the statute of frauds. Also since Ann accepted the flowers, regardless if she had no time to inquire about the substitute, she still accepted and thus Olivia substantially performed and is entitled to payment.
+Unilateral Mistake
+Where a party is mistaken about a material fact of the contract.
+Ann will argue that she was mistaken as to the term "white stems" as well as the fact that she did not know the price would be $5 per stem. Ann will state that she should not pay the amount because she was unilaterally mistaken.
+However, Olivia will argue that the term "white stems" was ambiguous and that even if it was not what Ann ordered, she accepted the shipment and thus is liable for payment.
+Hence, no unilateral mistake.
+Ambiguity
+Where a term in the contract has more than one meaning the court will usually allow evidence to establish the meaning.
+Ann will argue that the term "white stems" was specific to roses since Olivia specializes in roses and she expected to pay for roses but received orchids.
+However, Olivia will bring into evidence that "white stems" was ambiguous but in the course of performance or trade usage that "white stems" also refers to orchids as well. Also, if Ann did not want to accept the orchids she could have rejected the shipment but
+
+since she did not object within a reasonable time or state dissatisfaction, she is obligated to perform.
+Also the court will provide any gap fillers as well as outside evidence of course of performance and trade usage to support Olivia's claim.
+Duress
+Where a party enters into a contract because they are left with no other reasonable alternative.
+Ann will attempt to argue that she accepted the orchids because she had no time to inquire about substitutes and needed it for the event hall. She will state she was left with no other alternative but to accept the orchids and thus should not be liable to pay for them since she did not have another choice.
+However, this will not be a valid defense, because Ann could have argued that it was not what she had ordered and she also could have specified what she wanted in her offer. Since it was ambiguous as to "white stems" and she accepted the shipment, the defense of duress is not applicable since other reasonable options in handling the situation were available.
+Thus no valid duress defense for Ann.
+Constructive Condition Precedent Defined Supra
+The condition was that Olivia was to deliver the white stems before Ann had a duty to pay.
+
+Since Olivia delivered the white stems, Ann now has a duty to pay. Thus valid condition precedent.
+Breach
+Defined Supra
+Olivia delivered the white stems as requested by Ann. Since Olivia already performed, she was entitled to receive payment for the roses. Thus since Ann is refusing to pay the higher amount for the orchids, Ann has committed an unjustified breach since she accepted the shipment without any objection.
+Thus Ann committed a material breach when her performance was due and Olivia is entitled to compensation.
+Remedy
+Defined Supra
+Since Olivia delivered the white stems that she had available, and since the court will most likely apply the UCC gap fillers for the "white stem" price and if it is a reasonable $5 per stem, Ann will be required to pay the amount.
+Ann accepted the goods without objecting and did not note that she was dissatisfied or that it was nonconforming. Even if the price was higher than she expected, she still accepted the orchids knowing that Olivia expected to be paid.
+Thus Olivia is entitled to the payment of $5 per stem.
+
+QUESTION 1 – SELECTED ANSWER B OLIVIA v. JUAN
+CONTRACT DEFINITION
+A set of promises between two or more people wherein the law states performance is a duty, and the breach of which provides a remedy. A valid contract consists of an offer, acceptance, and consideration with no viable defenses.
+APPLICABLE LAW
+The Common Law governs contracts for the sale of land and for services. The UCC governs contracts for the sale of movable goods.
+Here, we are dealing with a contract for the sale of roses, which are movable goods, and therefore, the UCC will govern.
+MERCHANTS
+A merchant is one who regularly deals with the types of goods involved in the contract, or who holds themself out to be knowledgeable about the goods. When the parties are both merchants, they are held to a reasonable standard of good faith and fair dealing.
+Here, we are dealing with two merchants. Olivia is a florist specializing in roses, and Juan is the owner of a wedding chapel. Both are considered merchants.
+￼
+CONTRACT FORMATION
+OFFER
+The offeror is master of the offer, and provides for the acceptance by the offeree. An offer is the intent to be bound by definite terms.
+ACCEPTANCE
+The UCC requires that the acceptance be of mutual assent by the parties involved. Whenever possible, the UCC will strive to see a formation of a contract to benefit all parties.
+CONSIDERATION
+Consideration is the bargained-for exchange and legal detriment of all parties.
+Here, we are informed that there is a valid five-year written contract between Olivia and Juan. We are also informed that the contract involved is for Olivia to sell Juan all the roses he needs for his wedding chapel, which indicates the parties are involved in a Requirements / Outputs contractual agreement.
+Where parties agree to provide all the requirements or purchase all the outputs of the products of the other party, the good faith and fair dealing will suffice as proper consideration for the contract. The amount of the quantity will be proportional on a regular basis as agreed by both parties, with no major variances in the quantities.
+
+Therefore, we will proceed with determining any breach, appropriate defenses or remedies for the parties.
+STATUTE OF FRAUDS
+The statute of frauds requires certain contracts to be in writing and signed by the party to be charged in order to be enforceable.
+The types of contracts involved are:
+Contracts for the sale of goods of $500 or more. Contracts for the sale of land.
+Contracts for the executorship/suretyship/administration. Contracts for marriage.
+Contracts that cannot be performed in one year.
+Here, the contract is a five-year contract and is for goods that will most likely cost more than $500.
+Therefore, because we are told we have a written contract, the contract satisfies the Statute of Frauds.
+PERFORMANCE OF DUTIES / ISSUES WITH PERFORMANCE
+Financial Impracticability
+When a party is faced with financial difficulty that will no longer allow them to perform their agreed duties, the law may allow for the contract to be ended, voided or nullified.
+
+Here, Juan contacted Olivia at the end of their 3rd year of their contract, and he informed Olivia that he is no longer able to buy roses from Olivia because of serious budget concerns. If Juan's business is in financial difficulty to the extent that he can no longer pay for roses or other items necessary to run his chapel, Juan may be able to prove his financial distress. However, if Juan's business finances are not in serious distress, he will still be obligated to perform his duties to Olivia for his part of the performance of their contract.
+Therefore, Juan may or may not be able to claim Financial Impracticability to avoid the remaining two years of his contract with Olivia.
+BREACH OF CONTRACT
+Anticipatory Repudiation
+Anticipatory Repudiation occurs when one party expressly or impliedly acts to avoid or state their inability to perform under the contract.
+Here, when Juan contacted Olivia and stated he could not continue to buy roses from her, he Anticipatorily Repudiated his performance of the contract.
+Olivia may at that time immediately elect to sue for breach of contract, or she may wait until Juan is scheduled to order his next shipment of roses.
+Therefore, Juan will be liable to Olivia for breach of contract by Anticipatory Repudiation.
+
+Requirements and Outputs Contracts
+Requirements and Outputs Contracts require the parties to perform in good faith and fair dealing. The amount of goods transacted must be a proportional amount with no great variances. Any major variances will be viewed as a breach.
+Here, Olivia agreed to sell Juan as many roses as Juan needed for his chapel. Over three years, Juan bought between 300 and 1,500 dozen roses annually from Olivia. There seems to be a large discrepancy between 300 and 1,500 dozen over a year time period. Olivia has proven that she is able and willing to provide for most likely any amount of roses Juan needs.
+Therefore, if Juan can no longer purchase his roses from Olivia, and Juan does not have a viable excuse or defense, Juan will be in breach of his contract with Olivia.
+REMEDIES
+Mitigation
+Olivia must mitigate her damages, and if she has an overstock of roses that Juan will no longer purchase.
+Incidentals
+If Olivia makes arrangements for a specific and proportionate stock of roses for Juan, Juan will be liable for any incidental expenses to Olivia for maintaining the roses, or perhaps for loss of roses because of overstocking, for the remaining two years.
+
+Expectation
+Olivia will be entitled to expectation damages, as she and Juan were under a binding Requirements and Outputs contract. Olivia would be entitled to damages for the roses she expected to sell to Juan but that Juan did not purchase for the remaining two years.
+Difference in Contract Price V. Market Price
+Olivia will be entitled to the difference in their contract price with Juan and the current market or resale price if she is forced to sell the roses at a lesser price before they die.
+OLIVIA v. ANN
+CONTRACT DEFINITION. Supra.
+MERCHANTS
+Here, Olivia is a merchant, and we assume that Ann is not a merchant, but a one-time consumer.
+Therefore, Olivia will be held to a higher standard to perform with good faith and fair dealing.
+CONTRACT FORMATION. Supra.
+￼Offer. Supra.
+
+The UCC will require the contract to include a minimum of: The parties involved
+Quantity of goods
+Here, Ann emailed Olivia an order for "1,000 white stems", but did not specify a price or type of flower. Ann assumed Olivia would send roses, which were her specialty, but Olivia sent orchids instead.
+Acceptance. Supra.
+Mutual Assent. Supra.
+Here, Ann and Olivia were not on the same page for the type of flowers preferred by
+Ann. However, Olivia did send flowers.
+Nonconforming Goods
+When the seller sends nonconforming goods, the buyer can do one of any of the following:
+Buyer may refuse the goods;
+Buyer may accept the goods;
+Buyer may accept some of the goods and return the remaining. Here, the order did not specify the type of flower to be sent.
+Ann received the white orchids and was surprised, but had no time to inquire about substitutes. Ann used the orchids for the event.
+
+Therefore, because Ann accepted and did not inquire or contact Olivia in any way to refuse the orchids, Ann will be viewed as accepting the flowers.
+Consideration. Supra.
+Here, initially, Ann ordered "1,000 white stems" from Olivia, and Olivia shipped white
+stems to Ann. We have the minimum requirement of the good and the quantity.
+Therefore, both parties bargained for an exchange of flowers for payment, and there is valid consideration.
+Statute of Frauds. Supra.
+If the amount of the order for 1,000 white stems of orchids or roses amounts to $500 or more, the contract must be in writing and signed by the party to be charged in order to be enforceable.
+Here, Olivia billed Ann $5 per stem, for a total of $5,000 for the flowers. The contract between Olivia and Ann must be in writing and signed by Ann, to be enforceable under the Statute of Frauds.
+Therefore, the contract was an email, but not signed by Ann; the contract will not be enforceable under the SOF.
+DEFENSES
+Mistake
+
+Ann may claim that she made a mistake by not stating "roses" in the order, but that because Olivia was a rose specialist, Ann assumed Olivia would deliver roses and not orchids. This will fail because Ann used the flowers without contacting Olivia for sending the incorrect flower.
+Misunderstanding
+Olivia may claim that she made a mistake and sent the wrong flower. This will fail because the only "white stems" available at the time of Ann's order were orchids and not roses.
+Ambiguity
+A contract may be voided when the terms of the offer and acceptance are ambiguous. Here, the type of flower was not specified.
+Therefore, the contract may be voided due to ambiguity.
+BREACH
+Major
+When a party performs their duty under the agreement, and the other party does not perform, either by performance or payment of goods, a major breach has occurred.
+Here, Ann refused to pay $5,000 to Olivia for the flowers. Therefore, Ann breached her duty to pay Olivia.
+
+Perfect Tender Rule
+When a party performs by delivering the goods under the contract, they have
+performed under the "perfect tender rule". If the other party does not perform or deliver the goods or payment exactly as stated, they have breached their duty.
+Here, Olivia will claim she delivered 1,000 white stems to Ann, yet Ann did not perform by paying her. This claim will fail because the perfect tender of the type of flowers was not stated in the original agreement or offer.
+REMEDIES
+Expectation.
+Olivia may be entitled to the $5,000 in payment from Ann because Ann used the flowers and never disputed the type of flower sent. Ann never contacted Olivia to inquire or request the roses be sent, or to clarify the specific type of flower she wanted.
+
+
+_____________________________________________________________________________
+
+October 2013
+
+
+QUESTION 3
+County planned to make improvements on one of its roads. To that end, on May 1, County entered into a contract with Installco containing the following terms: County agreed to repave the road by June 1; Installco agreed to install new guardrails, which was expected to take three weeks, after County had completed repaving; and County agreed to pay Installco $200,000.
+On June 15, Installco learned that County was far from completing the repaving of the road. It sent County an email stating: “The June 1 start date for the installation has passed. You knew when we signed the contract that we have another large guardrail installation job starting on August 1 and do not have enough equipment to do both jobs simultaneously. Please advise immediately as to your schedule for completion of the repaving.”
+On June 18, County responded with an email stating: “We are doing our best.”
+On July 1, County had not yet completed the repaving of the road. Installco received an offer to do a two-week guardrail installation job beginning immediately. Installco sent County an email stating that it no longer intended to perform the contract because of County’s failure to complete repaving.
+On August 10, County finally completed repaving the road. It located another company to install the guardrails, but had to pay $300,000.
+1. What arguments can County reasonably make that Installco breached the contract? Discuss.
+2. What arguments can Installco reasonably make that it did not breach the contract? Discuss.
+3. Who is likely to prevail? Discuss.
+
+QUESTION 3 – SELECTED ANSWER A
+1. What arguments can County reasonably make that Installco breached the contract?
+U.C.C. V. COMMON LAW:
+The Uniform Commercial Code, or UCC, will govern all contracts for the sale of goods which are identifiable and movable at the time of sale. Contracts for services will be governed by the common law.
+This is a contract for the installation of guardrails. The providing of the guardrails is just incidental to the service of installing them. Therefore, this contract will be governed by the common law.
+This agreement will be governed by the common law. FORMATION:
+Formation is created by mutual assent. Mutual assent is often shown by an offer and acceptance, supported by sufficient consideration.
+On May 1st, County and Installco showed present contractual intent by entering a contract with the following terms.
+Quantity: Guardrails for the new road.
+Time for Performance: To be completed within three weeks of the County finishing paving the road on June 1st.
+Identity of Parties: County and Installco Price: $200,000
+
+Subject matter: Installing guardrails.
+There is valid consideration because County is giving $200,000 to Installco in exchange for the legal benefit of Installco installing the guardrails.
+Therefore, there were clear and definite terms on the part of the contracting party. And as both parties showed a present contractual intent by entering into this agreement, there has been a valid contract formed.
+DEFENSES TO FORMATION:
+Parol Evidence Rule:
+Statements, whether written or oral, made prior to or contemporaneously with the formation of a contract will not be allowed by the courts to enter the contract if the contract is fully integrated.
+County will argue that Installco's statement of June 15, showing that County knew that Installco had previous business agreements and that time was of the essence if County wanted Installco to perform, that the court should not allow this statement to enter into the contract because it was made after the formation of the contract.
+However, Installco will argue that it falls under one of the exceptions to the Parol Evidence Rule. Installco will argue that because the written email shows a condition precedent to the formation of the contract, the court should allow it in.
+Therefore, since this statement falls under one of the exceptions to the rule, it will not be barred from entering into the contract.
+
+BREACH:
+Anticipatory Repudiation:
+County can argue that Installco breached the contract by stating on July 1st that it would not perform the contract. Installco will defend that County did not fulfill a condition to the contract, and thus Installco was not in breach.
+Actual Breach:
+County will argue that Installco breached the contract when they did not perform after County finished paving the road on August 10. However, Installco will counter that they were not in breach, because their duty to perform under the contract never arose due to the non-occurrence of a condition precedent to the existence of a contract.
+Prospective Inability to Perform:
+County will argue that by accepting the contract for another project that was two weeks long and started immediately showed a prospective inability to perform on Installco's part. However, if that project went as planned, it was finished before County finished paving the road. Therefore, it would not have hindered Installco's ability to perform. Thus, County will not succeed in this instance.
+2. What arguments can Installco reasonably make that it did not breach the contract? CONDITIONS:
+A condition is an act or event not certain to occur which if excused or satisfied gives rise to or extinguishes a duty to perform under the terms of a contract.
+Installco will argue that the County's agreement to finish paving the road by June 1st was a condition precedent to Installco's duty to install the guardrails. This is likely a
+
+condition, because it is an event not certain to occur, and if County does not finish the road on June 1st, Installco's duty to perform does not arise under the terms of the contract.
+Excuse/Satisfaction of Condition:
+County will argue that when Installco sent the email on June 15th inquiring how long it would take for County to complete the project they were waiving the condition to finish by June 1st.
+However, Installco will show that it clearly stated in the communication that it had another job to perform that County knew of when it entered into the contract with Installco.
+Therefore, when County sent the email in reply that "We are doing our best," the condition to complete the paving on June 1st was not waived by Installco.
+Non-occurrence of a condition precedent:
+Installco will therefore be able to argue that because the condition precedent was never fulfilled, satisfied, or excused, its duty to perform under the terms of the contract never arose, and that it is thus not in breach.
+Time is of the Essence Clause:
+Installco will argue that there was a time is of the essence clause in the contract, and that if County didn't finish paving on June 1st, their duty to perform would not arise. Installco will show that they had a previously existing contract which County knew about, and that was a reason the County job was to start on June 1st, so it could finish the job for the County before moving on to its other project.
+
+3. Whoislikelytoprevail?
+County will probably lose in this action. First, time is of the essence is in this contract to enable Installco to perform. Second, Installco's duty to perform under the contract did not arise unless County finished paving the road on June 1st. County did not finish paving until August 10, almost a month and a half after their speculated date of completion.
+Therefore, County will not be able to recover from Installco the $100,000 extra it had to pay to get another contractor to install the guardrails.
+
+QUESTION 3 – SELECTED ANSWER B
+COUNTY (C) v. INSTALLCO (I) GOVERNING LAW
+The UCC will govern contracts for the sale of goods while the common law will govern all other contracts.
+Here, the contract is for the installation of guardrails. Although it could be argued that because guardrails are a good, the UCC should govern this contract. However, what C is really bargaining for here is the installation of the guardrails. In fact, as their name indicates, their specialty is a service of installation and not just merely a provider of goods.
+Additionally, because the contract involves the installation of equipment which must be installed on a busy highway in such a specialized manner, it is likely that the court would find that it was the installation that was the predominant factor of the contract.
+This contract will be governed by the common law. FORMATION AND DEFENSES
+a) Offer
+An outward manifestation of present contractual intent, clear and definite in its terms and communicated in such a way so as to create in a specific offeree the reasonable expectation that the offeror is willing to enter into an agreement.
+Here, C wanted I to install guardrails and offered to pay I $200,000 to do so. Thus, the terms of the offer were sufficiently definite as follows:
+
+Quantity: Enough guardrail to complete the roadway repaved by C.
+Time for Performance: By three weeks after C repaved the road, but no later than the first week of August.
+Identity of the Parties: I and C.
+Price: $200,000
+Subject Matter: Installation of Guardrail.
+Further, a reasonable person in I's position would interpret this as an offer.
+There has been an offer.
+b) Acceptance
+An outward manifestation of unequivocal assent to the terms of an offer.
+Because I and C "entered into a contract" it would appear that I accepted the terms of the above offer.
+There has been acceptance.
+c) Consideration
+The bargained-for exchange involving a legal detriment and benefit to both parties where each party views his performance as the "price" to be paid for return performance.
+
+Here, I will suffer the detriment of having to perform the installation and provide the guardrail, while incurring the benefit of receiving payment from C, while C will suffer the detriment of having to pay I while incurring the benefit of their roads being repaired.
+There is sufficient consideration. d) Defenses to Formation
+None.
+CONDITIONS AND COVENANTS
+A condition is an act or event, not certain to occur, which if excused or satisfied, gives rise to or extinguishes a legal duty to tender performance under the terms of a contract. A covenant is simply a promise to perform.
+a) Express Conditions
+The contract specified that before I's duty to perform the installation arose, C would repave the road. C agreed to do this by June 1st.
+Thus, C had a duty to repave the road by June 1st. I will argue that because C did not do so their duty to install the guardrails never arose.
+C will argue that this was merely a promise and not a condition.
+When there is a doubt as to whether a clause is a covenant or a condition, the courts will look to the intent of the parties as demonstrated through the words used.
+Here, the words used are that C "agreed" to repave the road and that I "agreed" to install the guardrails.
+
+I is going to argue that this was a condition. C is going to argue that this was a promise.
+Before entering into the contract, the facts indicate that I and C had a conversation that I would have another job starting on August 1st and that, because they would need three weeks from when the repaving was done to finish the installation, that C's repaving would need to be done no later than the first week of June; otherwise the contract would not be valid.
+Such conversations are considered parol evidence. I will seek to enter parol evidence to show that this was a condition and not a promise.
+b) Parol Evidence
+Statements whether written or oral which are made prior to or contemporaneously with the formation of a contact cannot alter or vary the terms of an integrated contract.
+C will argue that because this conversation took place prior to the actual agreement, it cannot be introduced into evidence.
+c) ExceptionstoParolEvidence
+I will argue that, because the conversation dealt with a condition precedent to legal effectiveness of the contract itself, it should be admitted.
+d) Any Relevant Evidence Test
+Even if this argument fails, I will argue that because any relevant evidence should be allowed to show the intent of the parties in regards to whether a contract is intended to be an integrated contract, and because such a conversation would be relevant, he should be able to testify about the conversation.
+
+The parol evidence will likely be allowed into evidence to show that there was a condition precedent to legal effectiveness of the agreement.
+Therefore, because the parol evidence will be allowed this clause will likely be viewed as an express condition and thus I's duty to perform never arose.
+e) Implied-in-Fact Conditions
+The parties have an implied condition that they will act in good faith.
+I may argue that C's failure to repave the road shows that they were not acting in good faith.
+However, C's e-mail of June 18th indicates that they were "doing their best". This condition has been satisfied.
+f) Implied-in-Law, aka Constructive Conditions
+The court will imply that longer performance comes before shorter performance. Therefore, I's duty to install the railing will be a condition precedent to C's duty to pay.
+g) Prospective Inability
+On June 15th, when I realized that the road had not been paved yet, and that their deadline to begin the work without losing the other job had passed, they asked C for assurances that the road would be paved. Their request for assurances was met with a response that C was "doing their best". This statement by C was NOT adequate assurance.
+Because of this, I is entitled to suspend performance and sue for breach.
+
+DISCHARGE OF DUTIES
+As stated supra, C's duty to repave was not performed and therefore I's duty to install did not arise.
+Additionally, even if the court rejects the Parol Evidence argument, it is likely that because C did not perform this will be viewed as a breach.
+C would argue that this would be a minor breach; however, in light of the time factors and that I had another job which it had to complete, this argument will likely fail.
+I had not breached their duty because their duty did not arise. a) Repudiation vs. Mitigation of Damages
+However, C will argue that I's acceptance of the other job was a repudiation of the contract.
+I will counter that because they had requested but not received assurances, and because they had put C on notice prior to the contract formation that they had another job which they would have to start no later than July 7th (three weeks prior to August 1st), they were entitled to repudiate the contract in order to mitigate their damages, and rightfully did so on July 1st.
+C will argue that I was obligated to give them until July 7th to finish the repaving. However, this argument will fail, because they did not respond to I's request for assurances.
+b) Prevention
+Additionally, I will argue that by failing to pave the road, C prevented them from performing under the contract.
+
+c) ImpossibilityofPerformance
+I will also argue that because C failed to pave the road, it was objectively impossible for them to perform their duty under the contract.
+Additionally, C had breached their duty because they did not pave the road.
+BREACH
+As discussed supra, C will argue that I breached but, in fact C breached. C's breach goes to the heart of the contract because it prevented I from performing. Therefore, it will be considered a major breach.
+REMEDIES
+a) General Damages / Expectation Damages
+I will argue that it is entitled to the benefit of its bargain from the contract. This would include the profit that it expected to receive from the project.
+C will argue that because it never received any benefit of the contract, it should not be entitled to pay these damages.
+Further, C may continue to argue breach by I, in which case it would ask the court to allow it to recover the difference between the contract price of $200,000 and the amount they had to pay another contractor to install the railing ($300,000) for a total of $100,000, plus incidental and reliance damages.
+b) SpecialDamages/ConsequentialDamages(Hadleyv.Baxendale)
+Because I properly mitigated its damages, by requesting assurance and then repudiating the contract, it did not suffer any consequential damages.
+
+Conclusion
+For the reasons stated above, I is likely to prevail.
+
+
+_____________________________________________________________________________
+
+
+
+_____________________________________________________________________________
+
+
+
+_____________________________________________________________________________
+
+
+
+_____________________________________________________________________________

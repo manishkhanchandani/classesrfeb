@@ -1,0 +1,52 @@
+* {box-sizing: border-box;}
+.lr-zero {margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; }
+.faqDrop{ background-color: #67b168; padding: 6px 0px 5px 20px; margin: 0px; color: white; font-weight: bold; }
+
+p.logOutProfile{ position: relative; width: 124px; }
+a.logOut{ position: absolute; top: 15px; text-decoration: none; color: rgb(119,119,119); }
+a.profileInfo{ position: absolute; top: 54px; text-decoration: none; color: rgb(119,119,119); }
+
+.sInline{ display: inline-block; }
+.sFloatRight{ float: right; }
+s48p{ width:48%; }
+s22p{ width:22%; }
+
+#success_message{ display: none;}
+
+#content {
+    float: left ;
+    width: 80% ;
+}
+#leftNavBar {
+    float: left ;
+    width: 20% ;
+}
+
+
+.sidebar-nav {
+    padding: 10px;
+}
+.nav.nav-list a {
+    padding: 5px 10px;
+}
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+    background-color: #428BCA;
+    color: #FFFFFF;
+}
+.nav-header {
+    color: darkgrey;
+    font-weight: bold;
+}
+
+#extHeader {
+    min-height: 80px;
+    padding: 0px;
+    margin-top: 8px;
+}
+
+.smallText {
+    font-size: 12px;
+}
+
+
+.test{border: solid red 1px;} .test2{border: dashed red 1px;} .test3{border: dashed fuchsia 1px;}
