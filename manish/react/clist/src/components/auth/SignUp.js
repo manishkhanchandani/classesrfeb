@@ -71,7 +71,6 @@ class SignUp extends Component {
 
     firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((response) => {
-        console.log('sign up response is ', response);
         //update the firebase db
       
         const userId = response.uid;
@@ -89,7 +88,6 @@ class SignUp extends Component {
           data.authType = 'email';
           data.loggedIn = firebase.database.ServerValue.TIMESTAMP;
           firebaseDatabase.ref(FirebaseConstant.basePath + '/users/' + userId).set(data);
-          console.log('data is ', data);
           this.props.callLogUser(response.email, response.uid, data.displayName);
           
         });

@@ -29,7 +29,6 @@ class SignIn extends Component {
 
     firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((response) => {
-        console.log('sign in response is ', response);
         const userId = response.uid;
         firebaseDatabase.ref(FirebaseConstant.basePath + '/users/' + userId).once('value').then((snapshot) => {
           if (!snapshot.exists()) {

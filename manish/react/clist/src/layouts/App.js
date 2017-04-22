@@ -7,6 +7,7 @@ import Home from '../containers/Home.js';
 import SignIn from '../components/auth/SignIn.js';
 import SignUp from '../components/auth/SignUp.js';
 import List from '../components/List.js';
+import New from '../components/New.js';
 
 
 class App extends Component {
@@ -18,13 +19,13 @@ class App extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <h2>Header</h2>
-                <hr />
+                
               </div>
             </div>
             
           
             <Route exact={true} path="/" component={Home} />
+            <Route exact={true} path="/create" component={New} />
             <Route exact={true} path="/category/:category/:subcategory" component={List} />
             <Route exact={true} path="/category/:category" component={List} />
             <Route path="/auth/signin" component={SignIn} />
@@ -33,8 +34,7 @@ class App extends Component {
 
             <div className="row">
               <div className="col-md-12">
-                <hr />
-                <h2>Footer</h2>
+                
               </div>
             </div>
           </div>

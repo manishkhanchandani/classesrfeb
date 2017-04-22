@@ -20,7 +20,6 @@ class Category extends Component {
   }
   
   render() {
-    console.log('state is ', this.state);
     if (!this.state.categories) {
       return false;
     }

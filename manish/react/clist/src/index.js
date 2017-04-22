@@ -34,7 +34,6 @@ firebaseApp.auth().onAuthStateChanged((user) => {
 
     });
   } else {
-    console.log('user is not login');
   }
 });
 

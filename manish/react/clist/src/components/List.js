@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Config from '../includes/config.js';
+import Search from './Search.js';
 
 class List extends Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class List extends Component {
   }
   
   render() {
-    console.log('p is ', this.props);
     if (!this.state.categories) {
       return false;
     }
@@ -29,7 +29,6 @@ class List extends Component {
     if (!category) {
       return false;
     }
-    console.log('category: ', category);
     var title = category.name;
     
     
@@ -42,11 +41,10 @@ class List extends Component {
       title += ' : ' + subcategory.name;
     }
     
-    console.log('subcategory: ', subcategory);
-    console.log('List props are: ', this.props);
     return (
       <div>
-        <h1>{title}</h1>
+        <h3>{title}</h3>
+        <Search />
       </div>
     );
   }

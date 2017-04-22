@@ -96,7 +96,12 @@ class NavBar extends Component {
                     </li>
                   </ul>
                   <ul className="nav navbar-nav">
-                      <li><a href="#">Post</a></li>
+                      {
+                        (this.props.user.uid) ?
+                        <li><Link to="/create">Post</Link></li>
+                        :
+                        null
+                      }
                       <li>
                           <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                           <ul className="dropdown-menu">

@@ -27,7 +27,6 @@ export const ipDetails = () => {
       }).then((response) => {
         return response.json();
       }).then((j) => {
-        console.log('j is ', j);
         MyConstant.saveData(MyConstant.IPDETAILS, j.data.result);
         resolve(j.data.result);
       }).catch((err) => {
@@ -63,7 +62,7 @@ export const parsePlace = (place) => {
     locality: 'long_name',
     administrative_area_level_1: 'short_name',
     administrative_area_level_2: 'short_name',
-    country: 'long_name',
+    country: 'short_name',
     postal_code: 'short_name'
   };
   var obj = {}
@@ -83,13 +82,11 @@ export const parsePlace = (place) => {
   obj.address = place.formatted_address;
   obj.lat = place.geometry.location.lat();
   obj.lng = place.geometry.location.lng();
-  console.log('parsePlace: ', obj);
   return obj;
 }
 
 
 export const savePlace = (place) => {
   const obj = parsePlace(place);
-  console.log('save Place: ', obj);
   return setLocation(obj);
 }
