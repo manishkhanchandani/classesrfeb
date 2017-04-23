@@ -26,8 +26,11 @@ class App extends Component {
           
             <Route exact={true} path="/" component={Home} />
             <Route exact={true} path="/create" component={New} />
+            <Route exact={true} path="/category/:category/:subcategory/lat_:lat/lng_:lng/k_:keyword" component={List} />
+            <Route exact={true} path="/category/:category/:subcategory/k_:keyword" component={List} />
+            <Route exact={true} path="/category/:category/:subcategory/lat_:lat/lng_:lng" component={List} />
+      
             <Route exact={true} path="/category/:category/:subcategory" component={List} />
-            <Route exact={true} path="/category/:category" component={List} />
             <Route path="/auth/signin" component={SignIn} />
             <Route path="/auth/signup" component={SignUp} />
 
