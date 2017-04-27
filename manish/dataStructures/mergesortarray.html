@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  function mergeSortedArray(a,b){
+    var tempArray = [];
+    while(a.length || b.length) {
+      console.log('a[0]: ', a[0]);
+      console.log('b[0]: ', b[0]);
+        if(typeof a[0] === 'undefined') {
+            tempArray.push(b[0]);
+            b.splice(0,1);
+            console.log('1. b is ', b);
+        } else if(typeof b[0] === 'undefined') {
+            tempArray.push(a[0]);
+            a.splice(0,1);
+            console.log('4. a is ', a);
+        } else if(a[0] > b[0]){
+            tempArray.push(b[0]);
+            b.splice(0,1);
+            console.log('2. b is ', b);
+        } else if(a[0] < b[0]){
+            tempArray.push(a[0]);
+            a.splice(0,1);
+            console.log('3. a is ', a);
+        } else if(a[0] == b[0]){
+            tempArray.push(a[0]);
+            tempArray.push(b[0]);
+            a.splice(0,1);
+            b.splice(0,1);
+            console.log('5. a is ', a);
+            console.log('5. b is ', b);
+        }
+    }
+    return tempArray;
+}
+console.log(mergeSortedArray([2,4,6,7,8], [1,2,3,5,9]));
+</script>
+</head>
+
+<body>
+</body>
+</html>

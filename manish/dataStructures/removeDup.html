@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script language="javascript">
+function removeDoubles(string) {
+  var mapping = {};
+  var newString = '';
+
+  for (var i = 0; i < string.length; i++) {
+    if (!(string[i] in mapping)) {
+      newString += string[i];
+      mapping[string[i]] = true;
+    }
+  }
+  return newString;
+}
+var b = removeDoubles('hello');
+  console.log(b);
+</script>
+</head>
+
+<body>	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  //How to swap two numbers without using a temporary variable?
+function swap(x, y)
+  {
+    console.log('Before: x is ', x, ', y is ', y);
+  // Code to swap 'x' and 'y'
+  x = x + y;  // x now becomes 15
+  y = x - y;  // y becomes 10
+  x = x - y;  // x becomes 5
+    console.log('After x is ', x, ', y is ', y);
+  }
+var x = 10;
+var y = 5;
+swap(x, y);
+  </script>
+</head>
+
+<body>
+</body>
+</html>

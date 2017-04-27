@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  console.log('Factorial Series');
+  /*
+  factorial(n) {
+    if n = 0, set fact = 1; and return
+    return n * factorial(n -1);
+  }
+  
+  */
+  function factorial(n) {
+    if (n === 0) {
+      return 1;
+    }
+    
+    return n * factorial(n -1);
+  }
+  
+  var n = 6;
+  console.log('factorial of number ', n, ' is ', factorial(n));
+</script>
+</head>
+
+<body>
+</body>
+</html>

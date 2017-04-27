@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  var gcd = function(a, b) {
+    console.log('a is ', a, ', b is ', b);
+    if ( ! b) {
+        return a;
+    }
+
+    return gcd(b, a % b);
+};
+  
+var ret = gcd(8, 12);
+  console.log('ret is ', ret);
+</script>
+</head>
+
+<body>
+</body>
+</html>
