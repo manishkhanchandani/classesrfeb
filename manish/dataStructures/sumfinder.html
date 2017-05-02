@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  
+  function sumFinder(arr, sum) {
+    var len = arr.length;
+    for (var i = 0; i < len - 1; i++) {
+      for (var j = i+1; j < len; j++) {
+        if (arr[i] + arr[j] == sum) {
+          return true;
+        }
+      }
+    }
+    
+    return false;
+  }
+  
+  function sumFinder2(arr, sum) {
+    var len = arr.length;
+    var extract = {};
+    var subtract = null;
+    console.log('arr is ', arr);
+    for (var i = 0; i < len; i++) {
+      subtract = sum - arr[i];
+      
+      if (extract[subtract]) {
+        return true;
+      } else {
+        extract[arr[i]] = true;
+      }
+    }
+    return false;
+  }
+  console.log(sumFinder([6,4,3,2,1,7], 9));
+  console.log(sumFinder2([6,4,3,2,1,7], 7));
+</script>
+</head>
+
+<body>
+</body>
+</html>

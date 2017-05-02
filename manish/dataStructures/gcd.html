@@ -13,8 +13,32 @@
     return gcd(b, a % b);
 };
   
-var ret = gcd(8, 12);
+var ret = gcd(14, 21);
   console.log('ret is ', ret);
+  
+function greatestCommonDivisor(a, b){
+  var divisor = 2, 
+      greatestDivisor = 1;
+
+    console.log('a is ', a, ', b is ', b);
+  //if u pass a -ve number this will not work. fix it dude!!
+  if (a < 2 || b < 2)
+     return 1;
+  
+  while(a >= divisor && b >= divisor){
+    console.log('a is ', a, ', b is ', b, ', divisor is ', divisor);
+   if(a %divisor == 0 && b% divisor ==0){
+      greatestDivisor = divisor;      
+      console.log('greatestDivisor is ', greatestDivisor);
+    }
+   divisor++;
+  }
+  return greatestDivisor;
+}
+
+console.log(greatestCommonDivisor(14, 21));
+console.log(greatestCommonDivisor(69, 169));
+
 </script>
 </head>
 

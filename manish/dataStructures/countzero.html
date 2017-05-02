@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  
+  function countzero(n) {
+    var count = 0;
+    var check, k;
+    for (var i = 0; i <= n; i++) {
+      k = i;
+      while (k > 0) {
+        console.log('k is ', k);
+        check = Math.floor(k / 10);
+        console.log('check is ', check);
+        k = k / 10;
+      }
+    }
+    
+    return count;
+  }
+  
+  console.log(countzero(12));
+</script>
+</head>
+
+<body>
+</body>
+</html>

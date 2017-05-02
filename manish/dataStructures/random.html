@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+ function rand5(){
+   var randNum = Math.random();
+   return 1 + randNum * 4;
+}
+function rand7(){
+  var r = rand5();
+  console.log('r is ', r, ', r / 5 is ', (r / 5), ', r / 5 * 2 is ', (r / 5 * 2));
+  return 5 + r / 5 * 2;
+}
+console.log(rand7());
+</script>
+</head>
+
+<body>
+</body>
+</html>

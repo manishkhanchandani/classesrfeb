@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+function firstNonRepeatChar(str){
+  var len = str.length; // to check how much to proceed
+  console.log('len is ', len);
+  var char;
+  var charCount = {};
+  
+  //go through each character and save the count, then loop again to see which one is of count 1
+  
+  for (var i = 0; i < len; i++) {
+    char = str[i];
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+  
+  console.log('all count is ', charCount);
+  for (var j in charCount) {
+    if (charCount[j] === 1) {
+      return j;
+    }
+  }
+  
+  
+  return null;
+}
+  
+var str = 'the quick brown fox jumps then quickly blow air';
+var result = firstNonRepeatChar(str);
+console.log(result);
+</script>
+</head>
+
+<body>
+</body>
+</html>

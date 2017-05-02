@@ -17,18 +17,33 @@
   if n = 0 or 1, Fn = n,
   if n > 1, Fn = Fn-2 + Fn-1
   */
-  function fibonacci(n) {
+  function fibonacci2(n) {
     if (n <= 1) return n;
     console.log('n is ', n, ', n - 2 is ', (n - 2), ', n - 1 is ', (n-1));
-    var fib1 = fibonacci(n-2);
-    var fib2 = fibonacci(n-1);
+    var fib1 = fibonacci2(n-2);
+    var fib2 = fibonacci2(n-1);
     var fib = fib1 + fib2;
     console.log('fib1 is ', fib1, ', fib2 is ', fib2, ', fib is ', fib);
     return fib;
   }
   
   var n = 6;
+  console.log('fib of number ', n, ' is ', fibonacci2(n));
+  function fibonacci(num){
+    var a = 1, b = 0, temp;
+    
+    while (num >= 0){
+      temp = a;
+      a = a + b;
+      b = temp;
+      num--;
+    }
+    
+    return b;
+  }
+  var n = 5;
   console.log('fib of number ', n, ' is ', fibonacci(n));
+  
 </script>
 </head>
 

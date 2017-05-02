@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+ function missingNumber(arr) {
+   console.log('arr is ', arr);
+   
+   var n = arr.length + 1;
+   console.log('n is ', n);
+   var sum = 0;
+   
+   var len = arr.length;
+   
+   for (var i = 0; i < len; i++) {
+     sum += arr[i];
+   }
+   
+   console.log('sum is ', sum);
+   
+   var expectedSum = n * (n + 1) / 2;
+   
+   console.log('expected sum is ', expectedSum);
+   
+   return expectedSum - sum;
+   
+ }
+  
+  console.log(missingNumber([5, 3, 1, 2, 6, 7, 10, 9, 4]));
+</script>
+</head>
+
+<body>
+</body>
+</html>

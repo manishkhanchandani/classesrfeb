@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+ function reverseInPlace(str){
+  return str.split(' ').reverse().join(' ').split('').reverse().join('');
+}
+
+//console.log(reverseInPlace('I am the good boy'));
+  
+  //sum two methods.
+//you can simply split words by ' '
+//and for each words, call reverse function
+//put reverse in a separate function
+  
+function reverse(str) {
+  var newString = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    newString += str[i];
+  }
+  
+  return newString;
+}
+function rev(str) {
+  var revStr = [];
+  var wordLen = 0;
+  var i;
+  for ( i = str.length - 1; i >= 0; i--) {
+    if (str[i] === ' ' || i === 0) {
+      var word = str.substr(i, wordLen + 1);
+      word = reverse(word);
+      revStr.push(word.trim());
+      wordLen = 0;
+    } else {
+      wordLen++;
+    }
+  }
+  
+  var revStr2 = [];
+  for ( i = revStr.length - 1; i >= 0; i--) {
+    revStr2.push(revStr[i]);
+  }
+  return revStr2.join(' ');
+  
+}
+  
+  var str = 'i am a good girl';
+ // console.log(rev(str));
+  
+</script>
+</head>
+
+<body>
+</body>
+</html>
