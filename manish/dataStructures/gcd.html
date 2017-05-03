@@ -13,7 +13,7 @@
     return gcd(b, a % b);
 };
   
-var ret = gcd(14, 21);
+var ret = gcd(69, 169);
   console.log('ret is ', ret);
   
 function greatestCommonDivisor(a, b){
@@ -26,7 +26,7 @@ function greatestCommonDivisor(a, b){
      return 1;
   
   while(a >= divisor && b >= divisor){
-    console.log('a is ', a, ', b is ', b, ', divisor is ', divisor);
+    console.log('a is ', a, ', b is ', b, ', divisor is ', divisor, ', greatestDivisor is ', greatestDivisor);
    if(a %divisor == 0 && b% divisor ==0){
       greatestDivisor = divisor;      
       console.log('greatestDivisor is ', greatestDivisor);

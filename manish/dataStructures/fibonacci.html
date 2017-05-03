@@ -28,17 +28,19 @@
   }
   
   var n = 6;
-  console.log('fib of number ', n, ' is ', fibonacci2(n));
+  //console.log('fib of number ', n, ' is ', fibonacci2(n));
   function fibonacci(num){
     var a = 1, b = 0, temp;
     
     while (num >= 0){
+      console.log('a is ', a, ', b is ', b, ', temp is ', temp);
       temp = a;
       a = a + b;
       b = temp;
       num--;
     }
     
+      console.log('a is ', a, ', b is ', b, ', temp is ', temp);
     return b;
   }
   var n = 5;

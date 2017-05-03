@@ -2,24 +2,10 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import './NavBar.css';
 import {logOut} from '../../actions/UserAction.js';
-import Config from '../../includes/config.js';
 import {firebaseApp} from '../../MyFirebase.js';
 import {Link} from 'react-router-dom';
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      categories: null
-    }
-  }
-  
-  componentDidMount() {
-    this.setState({
-      categories: Config.categories
-    });
-  }
   
   signOut(e) {
       e.preventDefault();
@@ -29,9 +15,6 @@ class NavBar extends Component {
   }
   
   render() {
-    if (!this.state.categories) {
-      return false;
-    }
     let ipDetails = [];
     if (this.props.my.ipDetails) {
       ipDetails.push(<li key="0" role="separator" className="divider"></li>);
@@ -62,7 +45,6 @@ class NavBar extends Component {
       username = this.props.user.displayName + ' (' + this.props.user.email + ')';
     }
     
-    var categories = this.state.categories;
     return (
       <div className="navbar navbar-default navbar-fixed-top" role="navigation">
           <div className="container">
@@ -73,7 +55,7 @@ class NavBar extends Component {
                       <span className="icon-bar"></span>
                       <span className="icon-bar"></span>
                   </button>
-                  <Link to="/" className="navbar-brand">CategoryList.us</Link>
+                  <Link to="/" className="navbar-brand">Donation</Link>
               </div>
               <div className="collapse navbar-collapse">
                   <ul className="nav navbar-nav navbar-right">
@@ -94,34 +76,6 @@ class NavBar extends Component {
                       </ul>
                     }
                     </li>
-                  </ul>
-                  <ul className="nav navbar-nav">
-                      {
-                        (this.props.user.uid) ?
-                        <li><Link to="/create">Post</Link></li>
-                        :
-                        null
-                      }
-                      <li>
-                          <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
-                          <ul className="dropdown-menu">
-                              {
-                                Object.keys(categories).map((value, key) => {
-                                  return <li key={value} className="dropdown-submenu">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">{categories[value].name}</a>
-                                    <ul className="dropdown-menu">
-                                      {
-                                        Object.keys(categories[value].childs).map((value2, key2) => {
-                                          let myLink = '/category/' + value + '/' + value2;
-                                          return <li key={value2} ><Link to={myLink}>{categories[value].childs[value2].name}</Link></li>
-                                        })
-                                      }
-                                    </ul>
-                                  </li>
-                                })
-                              }
-                          </ul>
-                      </li>
                   </ul>
               </div>
           </div>
