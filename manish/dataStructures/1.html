@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  
+  
+function spacify(str) {
+    return str.split('').join(' ');
+}
+  
+  //console.log(spacify('Hello World') );
+var obj =  {
+      name: "Home",
+      child: {
+        name: "Electronics",
+        child: {
+          name: "TVs",
+          child: {
+            name: "Sony",
+            child: {
+              name: "Accessories"
+            }
+          }
+        }
+      }
+  };
+  
+function makeBreadcrumbsString(breadcrumbs) {
+    var str = breadcrumbs.name;
+    if (breadcrumbs.child) {
+        str = str + ' / ';
+        return str + makeBreadcrumbsString(breadcrumbs.child);
+    }
+    return str;
+}
+  
+function makeBreadcrumbsString2(breadcrumbs, arr) {
+    arr.push(breadcrumbs.name);
+    if (breadcrumbs.child) {
+        return str + makeBreadcrumbsString(breadcrumbs.child);
+    }
+    return str;
+}
+  
+
+  
+  var str = makeBreadcrumbsString(obj);
+ // console.log(str);
+  
+  
+  
+var variantMeta = [
+    {name: "actual_color", type: "locator", rank: 1},
+    {name: "diaper_size", type: "INFORMATION_TILE", rank: 7},
+    {name: "count_number", type: "TRANSACTION_TYPE", rank: 9},
+    {name: "diaper_size", type: "INFORMATION_TILE", rank: 5}
+];
+     
+function parseResult(data) {
+  var tmpRank = 0;
+  var obj = {};
+  for(var i = 0; i < data.length; i++) {
+      if (data[i].type === "INFORMATION_TILE" && data[i].rank > tmpRank) {
+        obj = data[i];
+        tmpRank = data[i].rank;
+      }
+  }
+  
+  return obj;
+}
+    console.log(parseResult(variantMeta));
+  
+  
+    var x = 0;
+
+
+var increment= (function() {
+    var x = 0;
+    function y() {
+      x = x + 1
+      console.log(x);
+        return x;
+    }
+    
+    return y;
+})();
+  increment();
+  increment();
+  increment();
+</script>
+</head>
+
+<body>
+</body>
+</html>
