@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  //http://stackoverflow.com/questions/111102/how-do-javascript-closures-work
+  
+  function makeKitchen() {
+    var trashBags = ['A', 'B', 'C'];
+    return {
+      getTrashBag: function() {
+        return trashBags.pop();
+      }
+    }
+  }
+  
+  var kitchen = makeKitchen();
+  console.log(kitchen);
+  console.log(kitchen.getTrashBag());
+  console.log(kitchen.getTrashBag());
+  console.log(kitchen.getTrashBag());
+  
+  function sayHello2(name) {
+  var text = 'Hello ' + name; // Local variable
+  var say = function() { console.log(text); }
+  return say;
+}
+var say2 = sayHello2('Bob');
+say2(); // logs "Hello Bob"
+  
+  var str = "hello World";
+  var replacetext = 'new text';
+  var patt = new RegExp('world', "ig");
+  var newstr = str.replace(patt,replacetext);
+  console.log(newstr);
+  console.log(str);
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  //https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
+  //nice website: http://javascriptissexy.com/understand-javascript-closures-with-ease/
+  var add= (function() {
+    var counter = 0;
+    function y() {
+      counter = counter + 1; 
+      console.log(counter);
+      return counter;
+    }
+    return y;
+  })();
+  add();
+  add();
+  add();
+  
+  //Immediately invoked function expression
+  /*function celebrityIDCreator(theCelebrities) {
+    var i;
+    var uniqueId = 100;
+    for (i = 0; i < theCelebrities.length; i++) {
+      theCelebrities[i]["id"] = function() {
+        return uniqueId + i;
+      }
+    }
+    
+    return theCelebrities;
+  }
+  
+  var actionCelebs = [
+    {name:"Stallone", id:0}, 
+    {name:"Cruise", id:0}, 
+    {name:"Willis", id:0}
+  ];
+  
+  var createdIds = celebrityIDCreator(actionCelebs);
+  var standAloneId = createdIds[0];
+  console.log(standAloneId.id());
+  standAloneId = createdIds[1];
+  console.log(standAloneId.id());
+  standAloneId = createdIds[2];
+  console.log(standAloneId.id());*/
+  function celebrityIDCreator(theCelebrities) {
+    var i;
+    var uniqueId = 100;
+    for (i = 0; i < theCelebrities.length; i++) {
+      theCelebrities[i]["id"] = (function(j) {
+        return function() {
+          return uniqueId + j;
+        }
+      })(i);
+    }
+    
+    return theCelebrities;
+  }
+  
+  var actionCelebs = [
+    {name:"Stallone", id:0}, 
+    {name:"Cruise", id:0}, 
+    {name:"Willis", id:0}
+  ];
+  
+  var createdIds = celebrityIDCreator(actionCelebs);
+  var standAloneId = createdIds[0];
+  console.log(standAloneId.id());
+  standAloneId = createdIds[1];
+  console.log(standAloneId.id());
+  standAloneId = createdIds[2];
+  console.log(standAloneId.id());
+  console.log(createdIds);
+</script>
+</head>
+
+<body>
+</body>
+</html>

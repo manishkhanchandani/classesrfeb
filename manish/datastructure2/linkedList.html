@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Linked List</title>
+
+<script language="javascript">
+  function LinkedList() {
+    this.length = 0;
+    function Node(v, n) {
+      if ((typeof v === 'number') && ((n != null && n instanceof LinkedList.Node) || (n === null))) {
+        this.value = v;
+        this.next = n;
+      } else if ((typeof v === 'number') && n === undefined) {
+        this.value = v;
+        this.next = null;
+      } else {
+        throw new Error ('invalid arguments')
+      }
+    }
+    
+    LinkedList.Node = Node;
+  }
+  
+  LinkedList.prototype.size = function() {
+    return this.length;
+  }
+  
+  LinkedList.prototype.isEmpty = function() {
+    return this.length === 0;
+  }
+  //insert element at head
+  LinkedList.prototype.addHead = function(value) {
+    this.head = new LinkedList.Node(value, this.head);
+    this.length++;
+  }
+  //insertion at end of list
+  LinkedList.prototype.addTail = function(value) {
+    var newNode = new LinkedList.Node(value, null);
+    var curr = this.head;
+    if (this.head === null) {
+      this.head = newNode;
+    }
+    
+    while (curr.next != null) {
+      curr = curr.next;
+    }
+    
+    curr.next = newNode;
+  }
+  
+  var LL = new LinkedList();
+  LL.addHead(1);
+  LL.addHead(2);
+  LL.addHead(3);
+  LL.addTail(10);
+  console.log(LL);
+</script>
+</head>
+
+<body>
+</body>
+</html>
