@@ -30,6 +30,7 @@
   var n = 6;
   //console.log('fib of number ', n, ' is ', fibonacci2(n));
   function fibonacci(num){
+    if (num <= 1) return num;
     var a = 1, b = 0, temp;
     
     while (num >= 0){
@@ -43,7 +44,7 @@
       console.log('a is ', a, ', b is ', b, ', temp is ', temp);
     return b;
   }
-  var n = 5;
+  var n = 4;
   console.log('fib of number ', n, ' is ', fibonacci(n));
   
 </script>

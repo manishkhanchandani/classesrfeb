@@ -11,6 +11,7 @@ import QuizList from '../components/Quiz/QuizList.js';
 import QuizListYear from '../components/Quiz/QuizListYear.js';
 import QuizListYearSubject from '../components/Quiz/QuizListYearSubject.js';
 import QuizListYearSubjectQuiz from '../components/Quiz/QuizListYearSubjectQuiz.js';
+import FormationContract from '../components/l1/day1/FormationContract.js';
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
           
             <Route exact={true} path="/" component={Home} />
             <Route exact={true} path="/l1/day1/intro" component={Intro} />
+            <Route exact={true} path="/l1/day1/formationContract" component={FormationContract} />
             <Route exact={true} path="/quiz" component={QuizList} />
             <Route exact={true} path="/quiz/:year" component={QuizListYear} />
             <Route exact={true} path="/quiz/:year/:subject" component={QuizListYearSubject} />

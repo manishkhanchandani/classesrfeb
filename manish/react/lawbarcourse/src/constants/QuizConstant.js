@@ -15,7 +15,6 @@ const QuizConstant = {
             name: 'UCC / Common Law',
             questions: [
               {
-                id: 1,
                 text: 'Which law governs "Sale of Goods"',
                 choices: [
                   {
@@ -30,7 +29,6 @@ const QuizConstant = {
                 correct: 'a'
               },
               {
-                id: 2,
                 text: 'The Uniform Commercial Code (UCC) governs contracts for sale of goods?',
                 choices: [
                   {
@@ -45,7 +43,6 @@ const QuizConstant = {
                 correct: 'a'
               },
               {
-                id: 3,
                 text: 'Common Law governs all the laws except sale of goods?',
                 choices: [
                   {
@@ -60,7 +57,6 @@ const QuizConstant = {
                 correct: 'b'
               },
               {
-                id: 4,
                 text: 'Agreement of Exchange of Service?',
                 choices: [
                   {
@@ -75,7 +71,6 @@ const QuizConstant = {
                 correct: 'a'
               },
               {
-                id: 5,
                 text: 'Real Property Contracts?',
                 choices: [
                   {
@@ -85,6 +80,48 @@ const QuizConstant = {
                   {
                     id: 'b',
                     text: 'UCC'
+                  }
+                ],
+                correct: 'a'
+              },
+              {
+                text: 'Goods are tangible chattels which are movable and identifiable to the contract at the time of formation?',
+                choices: [
+                  {
+                    id: 'a',
+                    text: 'True'
+                  },
+                  {
+                    id: 'b',
+                    text: 'False'
+                  }
+                ],
+                correct: 'a'
+              },
+              {
+                text: 'Intangible goods means which are unable to be touched or grasped; not having physical presence.,',
+                choices: [
+                  {
+                    id: 'a',
+                    text: 'False'
+                  },
+                  {
+                    id: 'b',
+                    text: 'True'
+                  }
+                ],
+                correct: 'b'
+              },
+              {
+                text: 'Is Document an Intangible goods?',
+                choices: [
+                  {
+                    id: 'a',
+                    text: 'False'
+                  },
+                  {
+                    id: 'b',
+                    text: 'True'
                   }
                 ],
                 correct: 'a'

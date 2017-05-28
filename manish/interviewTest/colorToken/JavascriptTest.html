@@ -1,0 +1,156 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title>Javascript Test</title>
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<style type="text/css">
+  .myWidth {
+    width: 500px;
+    border: 1px solid green;
+  }
+</style>
+<script src="angular.min.js"></script>
+
+<script src="jquery-1.11.3.min.js"></script>
+<script src="jquery-migrate-1.2.1.min.js"></script>
+<script src="bootstrap.min.js"></script>
+
+<script>
+  angular.module('myApp', [])
+  .controller('mainController', ['$scope', function($scope) {
+    
+    $scope.inventory = [
+      {
+        id: 1,
+        title: 'Nike Mens Barcelona 2016/2017 Away Soccer Jersey (Purple) X-Large',
+        manufacturer: 'Nike',
+        stock: 1,
+        price: 45.00,
+        img: 'https://s-media-cache-ak0.pinimg.com/236x/a6/0b/8f/a60b8fb425948d752941a5fe586089bd.jpg'
+      },
+      {
+        id: 2,
+        title: 'Mens FC Barcelona Anthem Track Jacket Blue (X-Large)',
+        manufacturer: 'Tamara Nikolova',
+        stock: 10000,
+        price: 65.99,
+        img: 'https://s-media-cache-ak0.pinimg.com/564x/06/5a/7a/065a7a4d5b50e7a824f28c5a28af4424.jpg'
+      },
+      {
+        id: 3,
+        title: 'adidas Performance Mens Tiro Training Pant, Medium, Black/White/Black',
+        manufacturer: 'ADIDAS',
+        stock: 10000,
+        price: 31.60,
+        img: 'https://ae01.alicdn.com/kf/HTB1CFHwKpXXXXcAXXXXq6xXFXXXS/Free-Shipping-Custom-Made-Black-font-b-Modern-b-font-Man-Suit-Three-Piece-Suit-Groomsman.jpg'
+      }
+    ];
+    
+    $scope.cart = {
+      
+    };
+    $scope.discount = 5;
+    
+    $scope.calculateTotals = function() {
+      $scope.totalCartItems = Object.keys($scope.cart).length;
+      $scope.subTotal = 0;
+      if ($scope.totalCartItems) {
+        var subtotal = 0;
+        angular.forEach($scope.cart, function (value, key) {
+          subtotal += value.qty * value.price;
+        });
+        $scope.subTotal = subtotal;
+      }
+      
+      $scope.subTotalDiscount = $scope.subTotal - ((5 / 100) * $scope.subTotal);
+      
+    };
+    
+    $scope.calculateTotals();
+    
+    
+    $scope.addtocart = function(list) {
+      var id = list.id;
+      if ($scope.cart[id]) {
+        $scope.cart[id].qty = $scope.cart[id].qty + 1;
+        $scope.calculateTotals();
+        return;
+      }
+      
+      $scope.cart[id] = list;
+      $scope.cart[id].qty = 1;
+      $scope.calculateTotals();
+    };
+    
+    /*$scope.updatecart = function(list, qty) {
+      var id = list.id;
+      if ($scope.cart[id]) {
+        $scope.cart[id].qty = qty;
+        $scope.calculateTotals();
+        return;
+      }
+      
+      return false;
+    };*/
+    
+    $scope.deleteItem = function (list) {
+      var a = confirm('do you want to delete the item');
+      if (!a) return false;
+      
+      var id = list.id;
+      delete $scope.cart[id];
+      $scope.calculateTotals();
+    };
+  }])
+  ;
+</script>
+
+</head>
+
+<body ng-controller="mainController">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Inventory</h1>
+        <div class="row" ng-repeat="list in inventory">
+          <div class="col-md-2"><img ng-src={{list.img}} class="img-responsive" alt="Responsive image" /></div>
+          <div class="col-md-4">
+            <div>
+              <strong>{{list.title}}</strong> <span class="manufacturer">by {{list.manufacturer}}</span>
+            </div>
+            <div class="stock"><span ng-if="list.stock == 1">Only 1 left in</span><span ng-if="list.stock > 1">In</span> stock</div>
+          </div>
+          <div class="col-md-2">{{list.price|currency}}</div>
+          <div class="col-md-2"><a href="" ng-click="addtocart(list)" class="btn btn-primary">Add To Cart</a></div>
+        </div>
+      </div>
+      <div class="col-md-6" ng-if="totalCartItems > 0">
+        <h1>Shopping Cart</h1>
+        <div class="row" ng-repeat="list in cart">
+          <div class="col-md-2"><img ng-src={{list.img}} class="img-responsive" alt="Responsive image" /></div>
+          <div class="col-md-4">
+            <div>
+              <strong>{{list.title}}</strong> <span class="manufacturer">by {{list.manufacturer}}</span>
+            </div>
+            <div class="stock"><span ng-if="list.stock == 1">Only 1 left in</span><span ng-if="list.stock > 1">In</span> stock</div>
+            <div class="delete"><a href="" ng-click="deleteItem(list)">Delete</a></div>
+          </div>
+          <div class="col-md-2">{{list.price|currency}}</div>
+          <div class="col-md-2">
+            <input type="text" ng-model="list.qty" size="5" ng-change="calculateTotals()" />
+           
+          </div>
+        
+        </div>
+        
+        <div class="row">
+        <div class="col-md-12">
+          <div class="pull-right">SubTotal: ({{totalCartItems}} items): {{subTotal | currency}}<br /> Discount: {{subTotalDiscount | currency}}</div></div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

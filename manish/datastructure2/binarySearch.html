@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Binary Search</title>
+<script>
+function BinarySearch(arr, value) {
+  var size = arr.length;
+  console.log('size of array is ', size);
+  var mid;
+  var low = 0;
+  var high = size - 1;
+  console.log('low is ', low, ', and high is ', high);
+  while (low <= high) {
+    mid = low + Math.floor((high - low) / 2);
+    console.log('mid is ', mid);
+    console.log('arr[mid]: ', arr[mid], ' and value is ', value);
+    if (arr[mid] === value) {
+      return mid;
+    } else {
+      if (arr[mid] < value) {
+        low = mid + 1;
+        console.log('new low is ', low);
+      } else {
+        high = mid - 1;
+        console.log('new high is ', high);
+      }//end if
+    }//end if
+  }//end while
+  
+  return -1;
+}//end BinarySearch
+
+var result = BinarySearch([1,2,3,4,5,6,7,8,9,10], 3);
+console.log('result is ', result);
+</script>
+</head>
+
+<body>
+</body>
+</html>

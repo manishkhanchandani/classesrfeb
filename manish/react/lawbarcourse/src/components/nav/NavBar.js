@@ -87,7 +87,8 @@ class NavBar extends Component {
                             <li className="dropdown-submenu">
                               <a href="" className="dropdown-toggle" data-toggle="dropdown">Day 1</a>
                               <ul className="dropdown-menu">
-                                <li><Link to='l1/day1/intro'>Intro</Link></li>
+                                <li><Link to='/l1/day1/intro'>Intro</Link></li>
+                                <li><Link to='/l1/day1/formationContract'>Formation (Contracts)</Link></li>
                               </ul>
                             </li>
                           </ul>
