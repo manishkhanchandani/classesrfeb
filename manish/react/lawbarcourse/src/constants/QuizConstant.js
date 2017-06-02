@@ -156,6 +156,52 @@ const QuizConstant = {
                 ],
                 correct: 'd'
               },
+              
+              {
+                text: 'A woman had been working for a company for a long time. When she was ready to retire, her boss promised to pay her $500 a month for the rest of her life, in appreciation for her years of service. The woman exclaimed, "Thank you, this is the biggest surprise I\'ve ever gotten!" The woman knew that the company did not have a retirement plan for any of its employees. <br><br> What was the legal effect, if any, of the woman\'s statment after hearing the promise of lifetime income?',
+                choices: [
+                  {
+                    id: 'a',
+                    text: 'There was a valid and binding acceptance by the woman.'
+                  },
+                  {
+                    id: 'b',
+                    text: 'At the moment of the statement, there was an objective meeting of the minds.'
+                  },
+                  {
+                    id: 'c',
+                    text: 'It created acceptance, only if the woman expressly promised not to be self-indulgent with the funds.'
+                  },
+                  {
+                    id: 'd',
+                    text: 'It has no binding legal effect.'
+                  }
+                ],
+                correct: 'd'
+              },
+              
+              {
+                text: 'A charitable boy picked up trash at the beach one weekend. His neighbor found out what the boy had done and promised to give the boy $100 on his birthday for his charitable work picking up the trash. The boy\'s birthday arrived, but the neighbor did not pay him. The boy sued the neighbor. What will be the most likely outcome?',
+                choices: [
+                  {
+                    id: 'a',
+                    text: 'The boy will recover because the neighbor made a legally enforceable gratuitous promise.'
+                  },
+                  {
+                    id: 'b',
+                    text: 'The boy will recover because the neighbor had a moral oblication to pay him.'
+                  },
+                  {
+                    id: 'c',
+                    text: 'The boy will recover under a promissory estoppel theory.'
+                  },
+                  {
+                    id: 'd',
+                    text: 'The boy will not recover.'
+                  }
+                ],
+                correct: 'd'
+              },
             ]
           }
           
