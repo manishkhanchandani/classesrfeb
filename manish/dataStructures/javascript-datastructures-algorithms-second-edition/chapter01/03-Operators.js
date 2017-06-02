@@ -1,19 +1,19 @@
 /* Arithmetic operators */
 var num = 0;
 
-console.log('num value is ' + num);
+console.log('1 num value is ' + num);
 
 num = num + 2;
 
-console.log('New num value is ' + num);
+console.log('2 New num value is ' + num);
 
 num = num * 3;
 
-console.log('New num value is ' + num);
+console.log('3 New num value is ' + num);
 
 num = num / 2;
 
-console.log('New num value is ' + num);
+console.log('4 New num value is ' + num);
 
 num++;
 
@@ -32,7 +32,7 @@ num /= 2;
 num %= 3;
 
 console.log('New num value is ' + num);
-
+num = 1;
 /* Assignment operators */
 console.log('num == 1 : ' + (num == 1));
 console.log('num === 1 : ' + (num === 1));

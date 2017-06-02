@@ -127,7 +127,40 @@ const QuizConstant = {
                 correct: 'a'
               }
             ]
+          },
+          
+          
+          {
+            
+            name: 'MBE 1',
+            questions: [
+              {
+                text: 'A distributor of stereo equipment phones a merchant-customer and agrees that it will sell 1,200 stereo systems to tha tmerchant-customer for $500 each - if delivery can be made before August 1. The merchant-customer states that he will think abou tit. The merchant-customer then sends a confirmation form to the distributor, signed by the merchant-customer, stating the price of the goods and the quantity of the stereo systems. The distributor receives this form on July 1. On July 16, the distributor informs the merchant-customer that it will not perform, due to an increase in production costs. The merchant-customer sues the distributor for the breach of contract. Which of the following statements are most correct?',
+                choices: [
+                  {
+                    id: 'a',
+                    text: 'Given the above facts, the Parol Evidence Rule is applicable, and the merchant-customer would win'
+                  },
+                  {
+                    id: 'b',
+                    text: 'If the distributor asserts the Statute of Frauds as a defense, the distributor would win.'
+                  },
+                  {
+                    id: 'c',
+                    text: 'The Statute of Frauds requires that the merchant-customer should have signed a written contract with the distributor.'
+                  },
+                  {
+                    id: 'd',
+                    text: 'If the distributor asserts the Statute of Frauds, it will probably be unsuccessful.'
+                  }
+                ],
+                correct: 'd'
+              },
+            ]
           }
+          
+          
+          
         ]
       },
       {

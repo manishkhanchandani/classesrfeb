@@ -1,0 +1,31 @@
+/* CSS Document */
+
+body {
+    padding-top: 50px;
+  }  
+  .table {
+    font-size: 12px;
+    font-family: Verdana;
+  }
+  .table .year {
+    min-width: 100px;
+  }
+  .table .essay {
+    min-width: 500px;
+  }
+.table .th {
+  min-width: 200px;
+}
+.table .th300 {
+  min-width: 300px;
+}
+.table .th400 {
+  min-width: 400px;
+}
+.table .merchants {
+  min-width: 300px;
+}
+
+.table tr th {
+  vertical-align: top !important;
+}
