@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style type="text/css">
+h2 ~ p {
+   color: blue;
+}  
+  
+p + p {
+   text-indent: 1.5em;
+   margin-bottom: 0;
+}
+  
+input[type="text"] {
+   background-color: #fee;
+   width: 400px;
+}
+  a:hover {
+   color: gray;
+}
+
+.container {
+  display: block;
+  border: 1px solid black;
+  width: 400px;
+  height: 200px;
+}
+.container:before {
+  content: 'hello2 world2';
+  float: right;
+  position: relative;
+  color: white;
+  display: block;
+  border: 1px solid yellow;
+  width: 150px;
+   height: 150px;
+   background-color: #141414;
+}
+</style>
+</head>
+
+<body>
+<h2>Title</h2>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<div class="container">
+  Hello world
+</div>
+<div class="box">
+  <p>Paragraph example.</p>
+  <p>Paragraph example.</p>
+</div>
+
+<input type="text" id="name">
+<a href="">Mango</a>
+<input type="submit">
+
+
+
+
+
+https://www.sitepoint.com/web-foundations/css-selectors/
+</body>
+</html>

@@ -1,21 +1,16 @@
-<?php
-$folder = 'contracts';
-include('Rules.php');
-?>
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Contracts</title>
+<title>Untitled Document</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../scripts/jquery.floatThead.js"></script>
-
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" id="navs">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,20 +30,9 @@ include('Rules.php');
     </div><!--/.nav-collapse -->
   </div>
 </nav>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Contracts Law</h1>
-    </div>
-  </div>
-   
-  <div class="row">
-    <div class="col-md-12"> 
-      <div class="table-responsive style="overflow:auto;"">
-        <table class="table table-bordered table-striped with-responsive-wrapper">
-          <thead> 
+<div class="table-responsive">
+     <table class="table table-bordered table-striped">
+       <thead> 
             <tr> 
               <th class="year">Year</th> 
               <th class="essay">Essay</th> 
@@ -157,14 +141,20 @@ include('Rules.php');
             </tr>
             <tr> 
               <th scope="row">June 2016</th> 
-              <td><?php @include($folder.'/june2016.php'); ?></td> 
+              <td>Sara is a doctor who collects, buys, sells, and trades baseball cards for profit, averaging 15 transactions a week. She is a recognized expert in the 1939-50 era.<br>
+Bill operates a store that regularly sells baseball cards. Bill claims he phoned Sara and offered to buy a 1939 Denny Wilson card for $550, and that Sara accepted.<br>
+Immediately after their phone conversation, Bill sent Sara an unsigned, typed letter confirming the contract, and identifying the parties, the Denny Wilson card and the price. Bill’s letter had a letterhead identifying the name of his business, Beyer’s Baseball Cards and Collectibles. The letter included the following term: “Seller shall provide a certificate of authenticity from the Baseball Trading Cards Association.” Certificates of authenticity cost $100 and significantly increase a card’s value. Sara’s card was not certified, and the parties had not discussed this before.<br>
+Sara received and read the letter but did not respond to it. When Bill called later, Sara said she had sold the card to another party for $575. Bill sued Sara for breach of contract, seeking $250 in damages (based on $800 as the fair market value of a certified card).<br>
+Sara denies the existence of a contract, alleging that Bill only asked, “Would you consider taking $550” for the card, and that she replied, “Okay, send me something in writing.” Alternatively, she claims that the phone agreement was unenforceable and that the so-called letter of confirmation had no legal effect. She also contests Bill’s calculation of damages.<br>
+1. Can Bill prevail in his lawsuit? Discuss.<br>
+2. If so, what damages, if any, is Bill entitled to recover? Discuss.</td> 
               <td>1. Can Bill prevail in his lawsuit? Discuss.<br>
               2. If so, what damages, if any, is Bill entitled to recover? Discuss.</td>
               <td>
-                <strong>Rule:</strong> <?php echo Contracts::isUCC; ?><br>
+                <strong>Rule:</strong> The Uniform Commercial Code (UCC) applies to the sale of goods, which are tangible, movable personal property identified to the contract at the time of formation.<br>
                 <strong>Analysis:</strong> Here, the contract is for the sale of a 1939 Denny Wilson baseball card which is a good.<br>
                 <strong>Conclusion:</strong> Therefore, UCC applies.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::merchant; ?><br>
+              <td><strong>Rule:</strong> A merchant is a person who regularly deals in these kinds of goods or who otherwise holds themself out as having special knowledge as to these goods.<br>
                 <br>
                 <strong>Sara as Merchant</strong><br>
                 <strong>Issue:</strong> Here, Sara is a doctor who collects, buys, sells and trades baseball cards for a profit averaging 15 transactions a week and is a recognized expert in the 1939-50 era. Typically, collectors will not be seen as merchants especially when they make their living by other means, as evidenced here in that Sara is a doctor, but Sara's recognition of being an "expert in the 1939-50 era" along with her frequency of transactions, 15 transactions a week will likely place her in the eyes of the court as a merchant since a typical collector, non-merchant, would not be recognized as an expert nor would they engage in 15 transactions a week. Further Sara's expertise pertains to the contract in question, a 1939 Denny Wilson card.
@@ -175,9 +165,8 @@ include('Rules.php');
                 <strong>Bill as Merchant</strong><br>
                 <strong>Issue:</strong> Bill operates a store that regularly sells baseball cards. Bill's business is that of selling baseball cards and will also be seen as a merchant.<br>
                 <strong>Conclusion: </strong>Therefore, both parties will be seen as merchants.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::contractFormation; ?></td>
-              <td><strong>Rule:</strong> <?php echo Contracts::offer; ?>
-              <br>
+              <td><strong>Rule:</strong> Contract formation requires a valid offer, a valid acceptance, consideration, and no valid defenses.</td>
+              <td><strong>Rule:</strong> An offer is the outward manifestation of present contractual intent, using definite and certain terms, communicated to the offeree.              <br>
               <strong>Issue:</strong> Here Bill will argue that he phoned Sara and offered to buy a 1939 Denny Wilson card for $550. Under the UCC only the quantity is required to establish a valid offer but here we have most of the essential terms as follows:<br><br>
 Quantity - 1 baseball card<br>
 Identity of parties - Bill and Sara<br>
@@ -191,8 +180,8 @@ The court will have to decide whether or not Bill's phone call to Sara was in fa
 <strong><br>
 <br>
 Conclusion: </strong>Therefore, valid offer. </td>
-              <td><strong>Rule:</strong> <?php echo Contracts::termination; ?></td>
-              <td><strong>Rule:</strong> <?php echo Contracts::rejection; ?><br>
+              <td><strong>Rule:</strong> Termination can happen in one of three ways; either by rejection, revocation, or destruction of subject matter.</td>
+              <td><strong>Rule:</strong> A rejection is a manifestation by the offeree that he or she does not intend to accept the offer nor to give it further consideration.<br>
                 <strong><br>
                 Analysis:</strong> Here, Sara will argue that her selling of the baseball card to another party should be seen by the court as a valid rejection to the terms of the offer, selling Bill the same card, and that it was done prior to acceptance.<br><br>
 Bill will argue that Sara accepted his offer to buy the card for $550 prior to Sara's selling of the baseball card to another party and thus makes the rejection invalid.<br>
@@ -200,13 +189,13 @@ Bill will argue that Sara accepted his offer to buy the card for $550 prior to S
 As discussed above, the courts will likely view Bill and Sara's phone conversation as having culminated in a valid acceptance and Sara's argument for rejection will fail.<br>
             <strong><br>
             Conculsion:</strong> Therefore, no rejection. </td>
-              <td><strong>Rule:</strong> <?php echo Contracts::acceptanceUCC; ?>, <?php echo Contracts::acceptanceCL; ?><br><br>
+              <td><strong>Rule:</strong> An acceptance under the UCC is any seasonable expression of acceptance., An acceptance under common law is an unequivocal assent to the terms of an offer.<br><br>
               <strong>Analysis: </strong>Bill will argue, as the facts state, that he phoned Sara and offered to buy a 1939 Denny Wilson baseball card for $550 and that Sara accepted.<br><br>
 Sara will argue that Bill only asked "would you consider taking $550 for the card" and that she only accepted an invitation to negotiate and not an offer.<br><br>
 As discussed supra, it is likely that under either party's interpretation of the phone call a valid offer was made because Sara's saying "okay" to Bill's alleged question of "would you consider taking $550" will equate to an acceptance because she made no reference to needing to think about it or review the terms prior to acceptance and statement "send me something in writing" will equate to a mere acknowledgement of the Statute of Frauds requirement that a contract for the sale of goods in excess of $500 be in writing.<br><br>
 <strong>Conclusion:</strong> Therefore, valid acceptance.
               </td>
-              <td><strong>Rule:</strong> <?php echo Contracts::differingTermsBattleOfForms; ?><br><br>
+              <td><strong>Rule:</strong> Where a merchant sends a letter of confirmation containing different or added terms that adds to, varies or materially alters a contract the different or added terms will be "knocked out" and only the agreed upon terms will be retained within the contract unless the other party fails to reject the added terms in a reasonable amount of time, typically within 10 days of receipt.<br><br>
               <strong>Analysis:</strong> Here, Bill sent a confirmation letter including the following term: "Seller shall provide a certificate of authenticity from the Baseball Trading Cards Association." This additional term will likely be seen by the court as materially altering the contract because the
 ￼￼
 typical cost of such a certificate is $100, nearly 20% of the original agreed upon price, and would significantly, or materially, alter the value of the card from $550 to $800. Bill and Sara had not discussed the additional term of a certificate of authenticity and thus no agreement had been made.<br><br>
@@ -215,18 +204,18 @@ The facts state that "Bill called later" and it is reasonable to infer that the 
 <br>
               <strong>Conclusion:</strong> Therefore, no added term.
              </td>
-              <td><strong>Rule:</strong> <?php echo Contracts::consideration; ?><br>
+              <td><strong>Rule:</strong> Consideration is that which is bargained for and given in exchange for a promise.<br>
 <br>
               <strong>Analysis:</strong> Here Bill promised to pay $550 and Sara promised to supply a 1939 Denny Wilson card. <br>
 <br>
               <strong>Conclusion:</strong> Therefore, valid consideration.
              </td>
-              <td><strong>Rule:</strong> <?php echo Contracts::statuteOfFraud; ?> <br>One such type of contract is that for the sale of goods in excess of $500.<br>
+              <td><strong>Rule:</strong> The statute of frauds state that certain contracts must be in writing to be enforceable. <br>One such type of contract is that for the sale of goods in excess of $500.<br>
 <br>
               <strong>Analysis:</strong> Here, the contract was for the sale of a baseball card for $550 and thus must be in writing. <br>
 <br>
               <strong>Conclusion:</strong> Therefore, Statute of Frauds applies.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::confirmatoryLetter; ?><br>
+              <td><strong>Rule:</strong> There are, however, exceptions to the Statute of Frauds that when satisfied will take a contract "out of" the Statute of Frauds. Once such exception is a confirmatory letter between merchants: a letter confirming a prior agreement to enter into a contract typically within the statute of frauds. The Defendant has 10 days to object to the confirmatory letter after which it becomes binding as a matter of law.<br>
 <br>
               <strong>Analysis:</strong>  As discussed above, both Sara and Bill will be seen as merchants in the eyes of the court and thus Bill's unsigned, typed letter confirming the contract and identifying the parties and subject matter written on a letterhead identifying the name of Bill's business will be seen as satisfying the statute of frauds. The fact that the letter was "unsigned" is of no consequence because the letterhead will suffice as the signing and only one party, not the party to be charged needs to sign.
 Sara will have 10 days to object to the confirmatory letter after which it becomes binding as a matter of law. The facts state that "Bill called her later" the court will have to decide whether it was later that day or after 10 days had passed.
@@ -234,22 +223,22 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
 <br>
 <br>
               <strong>Conclusion:</strong> Therefore, statute of frauds is satisfied.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::merchantConstructiveCondition; ?><br>
+              <td><strong>Rule:</strong> Merchants are held to a higher standard of good faith and fair dealing under an implied constructive condition.<br>
 <br>
               <strong>Analysis:</strong>  Bill will argue that Sara's failure to respond to the letter of confirmation was a breach of the implied covenant of good faith and fair dealing because a reasonable merchant would let another merchant know of their intent.<br>
 <br>
               <strong>Conclusion:</strong> The court will likely view this as a breach of the implied constructive condition under the UCC.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::breach; ?><br>
+              <td><strong>Rule:</strong> A failure to perform under the obligations of the contract.<br>
 <br>
               <strong>Analysis:</strong> Here Bill will argue that because Sara sold the card to another party when she was contractually obligated to sell the card to him she is in breach of their contract for the sale of the card for $550. <br>
 <br>
               <strong>Conclusion:</strong> The court will view Sara as being in breach of the contract and will hold her liable for all foreseeable damages naturally flowing from her breach absent any valid defenses.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::parolEvidenceRule; ?><br>
+              <td><strong>Rule:</strong> Any oral or written communication made prior to or contemporaneous with a fully integrated writing will be barred by the parol evidence rule.<br>
 <br>
               <strong>Analysis:</strong> Here Sara may attempt to admit her recollection of the phone conversation to combat the legal effectiveness of the acceptance;  <br>
 <br>
               <strong>Conclusion:</strong> however, as discussed above her argument is likely to fail.</td>
-              <td><strong>Rule:</strong> <?php echo Contracts::remedies; ?></td>
+              <td><strong>Rule:</strong> Where a party has breached their contractual duties the aggrieved party is able to recover damages that naturally flow from the breach.</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -259,7 +248,15 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr> 
               <th scope="row">October 2015</th> 
-              <td><?php @include($folder.'/october2015_1.php'); ?></td> 
+              <td>Painter and Developer entered into a contract under the terms of which Painter was to paint the interior of Developer’s new apartment building for a price of $40,000. The contract called for work to begin on June 1 and to be completed on July 1.<br>
+Painter was ready to start work on June 1, but Developer told Painter that because of problems with the drywall contractor, Painter could not start work until June 15. To avoid the possibility of losing her employees, who might quit if forced to take a two-week layoff, Painter took another job, which was not completed until June 20, at which time Painter started work on Developer’s building.<br>
+On July 15, Painter informed Developer that she would not be able to complete the project until August 15. Developer told her he would lose substantial rental income if the project was not completed by August 1, when university students, his prime market, began moving in. He asked her to hire additional help, but she refused, saying the job would be finished on August 15 or not at all. In an attempt to get the job completed sooner, Developer fired Painter and looked for another painting contractor.<br>
+The best price Developer could get to have another painting contractor finish the job was $30,000. Before firing Painter, Developer had paid Painter one-half of the contract price. Because the painting was completed late, Developer lost $10,000 in rental income. This rental income would not have been lost if the painting had been completed by August 1.<br>
+At the time Painter was fired, she was out-of-pocket for $5,000 in materials. She expected a profit of $5,000 had she been allowed to complete the contract.<br>
+Developer has sued Painter for breach of contract. Painter cross-complained against Developer for breach of contract.<br>
+1. Who breached the contract? Discuss.<br>
+2. Assuming Painter breached the contract, what damages, if any, would Developer be entitled to? Discuss.<br>
+3. Assuming Developer breached the contract, what damages, if any, would Painter be entitled to? Discuss.</td> 
               <td>1. Who breached the contract? Discuss.<br>
                 2. Assuming Painter breached the contract, what damages, if any, would Developer be entitled to? Discuss.<br>
               3. Assuming Developer breached the contract, what damages, if any, would Painter be entitled to? Discuss.</td>
@@ -287,7 +284,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2015</th>
-              <td><?php @include($folder.'/june2015.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -313,7 +310,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2014</th>
-              <td><?php @include($folder.'/october2014.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -339,7 +336,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2014</th>
-              <td><?php @include($folder.'/june2014.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -365,7 +362,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2013</th>
-              <td><?php @include($folder.'/october2013.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -391,7 +388,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2013</th>
-              <td><?php @include($folder.'/june2013.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -417,7 +414,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2012</th>
-              <td><?php @include($folder.'/october2012.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -443,7 +440,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2012</th>
-              <td><?php @include($folder.'/june2012.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -469,7 +466,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2011</th>
-              <td><?php @include($folder.'/october2011.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -495,7 +492,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2011</th>
-              <td><?php @include($folder.'/june2011.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -521,7 +518,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2010</th>
-              <td><?php @include($folder.'/october2010.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -547,7 +544,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2010</th>
-              <td><?php @include($folder.'/june2010.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -573,7 +570,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2009</th>
-              <td><?php @include($folder.'/october2009.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -599,7 +596,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2009</th>
-              <td><?php @include($folder.'/june2009.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -625,7 +622,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2008</th>
-              <td><?php @include($folder.'/october2008.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -651,7 +648,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2008</th>
-              <td><?php @include($folder.'/june2008.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -677,7 +674,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2007</th>
-              <td><?php @include($folder.'/october2007.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -703,7 +700,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2007</th>
-              <td><?php @include($folder.'/june2007.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -729,7 +726,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2006</th>
-              <td><?php @include($folder.'/october2006.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -755,7 +752,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2006</th>
-              <td><?php @include($folder.'/june2006.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -781,7 +778,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2005</th>
-              <td><?php @include($folder.'/october2005.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -807,7 +804,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2005</th>
-              <td><?php @include($folder.'/june2005.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -833,7 +830,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2004</th>
-              <td><?php @include($folder.'/october2004.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -859,7 +856,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2004</th>
-              <td><?php @include($folder.'/june2004.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -885,7 +882,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2003</th>
-              <td><?php @include($folder.'/october2003.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -911,7 +908,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2003</th>
-              <td><?php @include($folder.'/june2003.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -937,7 +934,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">October 2002</th>
-              <td><?php @include($folder.'/october2002.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -963,7 +960,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
             </tr>
             <tr>
               <th scope="row">June 2002</th>
-              <td><?php @include($folder.'/june2002.php'); ?></td>
+              <td></td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>
@@ -988,28 +985,7 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
               <td>&nbsp;</td>
             </tr>
           </tbody>
-        </table>
-      </div>
+    </table>
     </div>
-    <blockquote>&nbsp;</blockquote>
-  </div>
-
-</div><!-- /.container -->
-
-<script type="text/javascript">
-  function pageTop(){
-    return $("#navs").height();
-  }
-
-    $(function(){
-        $(".table.with-responsive-wrapper").floatThead({
-            top: pageTop,
-            responsiveContainer: function($table){
-                return $table.closest(".table-responsive");
-            }
-        });
-        $(".table.without-responsive-wrapper").floatThead();
-    });
-</script>
 </body>
 </html>
