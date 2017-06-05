@@ -1,0 +1,286 @@
+OCTOBER 2016
+
+QUESTION 2
+Dealer operates an antique shop. While traveling, she buys a Union cavalry officer’s handgun for $1,500 from Seller. Dealer takes several photos of the handgun and Seller agrees to ship it to Dealer’s shop. When Dealer arrives home, she immediately shows the photos of the handgun to Buyer. The parties shake hands on a deal to sell the handgun to Buyer for $2,000, payment upon delivery.
+The next day, Buyer regrets agreeing to the deal without first having an opportunity to actually examine the handgun. Buyer tells Dealer that he will not pay the $2,000 unless she first allows him to have the handgun examined by an expert appraiser. Dealer becomes angry and tells Buyer, “A deal’s a deal. I’ll expect my money when the handgun is delivered to you.”
+When the handgun arrives at Dealer’s shop, she does some internet research and discovers that the handgun was issued to a general who played a prominent role at the Battle of Gettysburg, which increases the value of the handgun by a factor of ten. The next day, Dealer receives a letter from Buyer stating, “Sorry. You’re right. A deal’s a deal.” The envelope contains a check for $2,000. Dealer sends the check back to Buyer with a note stating, “Buyer: Because you backed out of our deal, I will not sell you the handgun. //Signed// Dealer.”
+A few weeks later, Buyer learns that Dealer is offering the handgun for sale at her shop for $20,000 because of its connection to the Civil War general. Buyer brings suit against Dealer for breach of contract, requesting specific performance.
+1. Is Buyer likely to prevail against Dealer in his suit for breach of contract? Discuss.
+2. If so, is the court likely to grant Buyer’s request for specific performance? Discuss
+￼
+Governing Law
+QUESTION 2: SELECTED ANSWER A
+￼The Uniform Commercial Code ("U.C.C.") governs contracts for the sale of goods -- tangible personal property not affixed to real property -- while the common law governs all other contracts, including those for personal services.
+Here, the facts indicate that the deal in question is a handgun in exchange for money. A handgun is tangible and there is no indication that the handgun in question was permanently affixed to real estate.
+The U.C.C. will govern this contract because it is for the sale of goods.
+
+
+Merchant Rules
+While the U.C.C. applies to all contracts for the sale of goods, some of the more stringent provisions apply only to deals where one or both of the parties are merchants.
+Regarding Dealer, the facts indicate that Dealer "operates an antique shop." Since the item in question is an antique, it seems reasonable to conclude that Dealer is a merchant. The only factor that may lie against considering Dealer a merchant is that Dealer needed to research the item before obtaining its true value. Perhaps, Dealer could argue that this is evidence that he does not possess the requisite expertise to be qualified as a merchant. However, balancing both sides, Dealer will likely be found to be a merchant.
+Regarding Buyer, the facts do not indicate that Buyer is a merchant. We know nothing of Buyer other than that he agreed to purchase the gun.
+￼
+Dealer will be held to merchant rules while Buyer will be held to non-merchant rules.
+Buyer v. Dealer
+
+Was There a Contract?
+A contract is a set of promises that the law is prepared to enforce. There must be an offer, an acceptance, and mutual consideration.
+
+
+Offer
+An offer is an outward manifestation of present intent to be bound to a contract. Under the common law, an offer must sufficiently describe the parties, the subject matter, the quantity, the price, and the time of delivery. Under the U.C.C., however, price and time may be omitted and a court will substitute reasonable terms for those that are missing.
+Here, Dealer showed Buyer pictures of the handgun and the facts state that they came to an agreement on a price of $2,000. The facts do not clearly identify whether the $2,000 offer was made by Dealer or Buyer.
+An offer was made by either Dealer or Buyer.
+
+
+
+Acceptance
+An acceptance is an unequivocal agreement to be bound by the terms of an offer. Acceptance must be made while the offer is still outstanding and in the manner specified by the offeror, but if no manner specified, by a reasonable manner.
+Here, the facts state that the parties "shook hands on a deal." Traditionally, this is a
+￼￼￼￼
+manifestation of agreement to terms. Since both parties shook hands, both parties agreed to the terms. It therefore matters not whether the offer was by Dealer for Buyer's acceptance, or by Buyer for Dealer's acceptance -- either way, it was accepted. Since the parties immediately prior to the acceptance had verbally negotiated an offer, it would not appear that the offer was terminated before acceptance. Since the offer did not include a specified means of acceptance, the method of acceptance must be reasonable, and there are no facts that would indicate that a handshake was unreasonable. Indeed, since both offeror and offeree participated in the handshake, and offeror made no objection, it would seem that the offeror consented to that method of acceptance.
+The offer was accepted by the offeree.
+
+
+Consideration
+Consideration is bargained-for legal detriment; "an agreement to do what one needn't, or to refrain from doing what one may."
+Here, the facts show that Dealer was going to transfer ownership of the handgun to Buyer, which she had no obligation to do but for the contract. Likewise, Buyer was to transfer money to Dealer, which he had no obligation to do but for the contract. These obligations arose out of a negotiating, or bargaining, process, and constitute legal detriment.
+There was mutual consideration. The contract was formed absent a defense.
+Defense - Statute of Frauds
+The Statute of Frauds requires a contract to be in writing if it is: 1) for the sale of goods
+￼￼
+valued at more than $500, 2) for the sale of an interest in land, 3) an agreement to answer for the debt of another, 4) impossible to complete within 1 year, or 5) in consideration of marriage.
+Relevant to this contract is the first of these: the contract was for the sale of a handgun valued at (under the contract) $2,000. As such, the contract must be in writing to be enforceable, absent an exception.
+
+
+U.C.C. Merchant's Confirmatory Memorandum
+A contract that would otherwise be unenforceable under the Statute of Frauds may still be enforceable if a merchant seller issues a signed writing confirming the deal.
+As discussed supra, Dealer is a merchant, and in this transaction, she is the seller. The facts state that Dealer sent Buyer a note that referred to the deal. The note was signed. Dealer will argue that this is insufficient to constitute a confirmatory memorandum because he specifically wrote that the deal is off. However, any signed writing by a merchant seller that evidences the existence of a contract is sufficient to apply this exception to the Statute of Frauds.
+The merchant's confirmatory memorandum exception applies, and Dealer will not be able to escape liability under the Statute of Frauds.
+
+Defense - Anticipatory Repudiation
+An anticipatory repudiation is a definite, unequivocal manifestation by a party to a contract that they will not perform one or more of their duties under that contract. The non-repudiating party may treat the repudiation as an immediate material breach of contract or may demand that the repudiating party perform as agreed. And, if the
+￼￼
+repudiating party is in breach, the non-repudiating party's duties are discharged, thus providing Dealer a defense if he can prove that Buyer breached first.
+This defense presents two issues for Dealer. First, a request to have the item inspected before purchase may not be sufficiently definite and unequivocal of a manifestation that one intends to fail to perform their duties. Dealer will argue that Buyer's statement that he "will not pay ... unless" Dealer did something he was under no obligation to do is sufficiently clear as to Dealer's intent to breach. Buyer will argue that his statement is mere grumbling and does not rise to the definiteness required to be an anticipatory repudiation. Dealer probably has the better of these arguments. However, it seems Dealer elected to demand assurances rather than treat this as an immediate breach by telling Buyer that he "expect[s]" the Buyer to go through with the deal. Buyer then provided assurance that he would perform, before he gave any notice of intent to treat the anticipatory repudiation as a breach.
+To the extent that Buyer repudiated the contract, he cured that repudiation with his letter assuring performance, and Dealer will not be able to escape liability under a theory of anticipatory repudiation.
+Defense - Mistake
+A mutual mistake is when, at the formation of the contract, the parties are mistaken as to a fact that goes to the essence of the bargain, and the risk of such a mistake was not placed on the parties under the express or implied terms. Such a contract is voidable by either party.
+Here, it seems that neither party knew the value of the handgun at contract formation. Dealer was originally going to sell it for one tenth of what it should have been, while Buyer almost backed out of the deal. The mistake in the value of the handgun is therefore mutual. Dealer will argue that this mistake was as to the essence of the bargain; that is, the contract was for an ordinary Civil War handgun, not for a general's
+￼
+weapon. Buyer will argue that the risk of an antique being more or less valuable as a result of learning more about the history of that antique is inherent in the transaction and not a risk that the parties should not bear. Or, being that Dealer is a merchant, Buyer may argue that the risk he created for himself by failing to exercise caution by researching before selling, as he should have known to do as a merchant of antiques, is Dealer's fault and Dealer's to bear. Further, Buyer could argue that Dealer's mistake was not reasonable, as Dealer could have learned of the issue by doing some basic Internet searching as he later did.
+Due to the nature of antiques and the Dealer's failure to research before selling, it is unlikely Dealer will be able to escape liability under a theory of mutual mistake.
+Specific Performance
+Specific performance is an equitable remedy reserved for when money damages are insufficient to make a plaintiff whole. Equitable remedies are never given as-of-right -- they are at the discretion of the court.
+Here, the facts indicate that the handgun is, essentially, one-of-a-kind. No amount of money can purchase a replacement of it, as the item's value is not in the metal the handgun contains, nor in the cost to turn metal into a handgun, but in the historical nature of the item, and history cannot be bought.
+The court should grant Buyer's request for specific performance.
+Other Remedy
+If the court refuses to exercise its discretion to issue equitable relief, Buyer may seek expectation damages. Expectation damages seek to give the non-breaching party the
+￼￼
+"benefit of the bargain;" that is, to put them in the position that they would have been had the contract been fulfilled.
+The benefit of the bargain can be calculated as the market value of what the plaintiff would have received minus the expenses the plaintiff would have had if the contract had gone through. The facts suggest that the market value may be $20,000 due to the listing price by the dealer and the 10x enhancement of value from the $2,000 original price. A court would make the final determination as to the fair market value.
+Assuming that value is $20,000, Buyer's expenses would have been $2,000, and Buyer would be entitled to $18,000 in expectation damages if the court declines to issue equitable relief.
+
+QUESTION 2: SELECTED ANSWER B
+I. Will Buyer likely prevail against Dealer for breach?
+What is the applicable law? The law that applies for a contract involving the sale of goods is the UCC. The UCC will apply here because the contract concerns the sale of a good, the gun.
+A. Was contract formed? A contract is a promise or set of promises for which the law will provide a remedy for its breach. A contract is formed when there is mutual assent, consideration, and no defenses to its enforcement.
+1. Mutualassentiswherethereisavalidofferthatisaccepted.
+a. Offer is a commitment of intent to be bound by the promisor that contains the material terms of the offer, that is communicated to an identified offeree, that invites acceptance. The UCC states that the quantity is the only material term needed for an offer. Here we have Dealer showing pictures of a Union cavalry officer’s handgun to Buyer directly, and offering to sell it to him for $2000. This is a valid offer
+b. Acceptance: a commitment from the promisee to be bound to the terms of the offer that is communicated back by either promise or performance of promise. Here, the buyer promises to purchase the gun, and they shake hands in apparent agreement. This offer was accepted. Valid mutual assent exists between the parties.
+2. Consideration – a bargained-for exchange between the parties that produces a legal detriment. The bargained-for exchange is where the parties are each bargaining for something that they would like. Dealer is bargaining to give the gun to Buyer in exchange for a payment of $2000. The legal detriment occurs when the party either promises to do something that they are not already legally obligated to do, or when
+￼￼￼￼￼￼￼
+they refrain from doing something that they are legally entitled to do. Dealer giving the gun to Buyer and Buyer paying the $2000 is good legal detriment. This is good consideration.
+3. Defenses to enforcement: if the party can show a defense that is valid the Court will not enforce the contract.
+a. Statute of Frauds – the statute of frauds requires tangible evidence that a contract exists to make it enforceable for some of the more easily imagined types of contracts. One of these types is a contract for the sale of goods for $500 or more. The tangible evidence needed is a writing signed by the party to be charged, a partial performance on the contract, or a reasonable foreseeable detrimental reliance (promissory estoppel) on the contract. The writing must evidence the material terms of the contract and be signed by the party to be charged. Our tangible evidence in this case, would be the letter that was signed by the Dealer that states “Buyer: Because you backed out of our deal, I will not sell you the handgun.” This writing states that they did have a deal. This would suffice to remove this contract from the statute of frauds and this would not succeed as a defense.
+B. What effect does Buyer telling the Dealer he will not pay without first having the gun examined have?
+1. Anticipatory Repudiation – when one party unequivocally states that they will not perform their duties under a contract before performance is due that is an anticipatory breach. The issue here is whether Buyer was absolutely refusing to perform. He is just stating that he wants the gun examined by an appraiser first. He is not in definite terms stating he will not pay the money. This is not definite enough language to be construed as an unequivocal refusal to perform.
+2. Modification – a modification is when a party seeks to change the terms of an existing contract. Here, the buyer wants to add in a condition that the gun is examined
+￼￼￼￼￼￼￼
+before he will pay. The UCC treats a modification with new terms as a separate term that can either be accepted or rejected by the other party. When the Dealer becomes angry and says “A deal is a deal. I’ll expect my money when the handgun is delivered to you,” she is refusing outright to accept these terms. Had the modification been accepted, if it was deemed to be out of good faith it would not require new consideration, but it was not accepted so terms stay as is.
+C. Performance of the contract: When any conditions are met or excused, the duties of the parties come due. If these duties are not performed then the result is a breach of contract, unless the duties can be discharged.
+1. Discharge of duties – when the party due to perform claims that they cannot because of an unforeseen event that has occurred. Impossibility – is when the party states that it is impossible for them to perform. This impossibility must be objective, to where no one in the world could perform the duty. There are no facts to support this. Impracticability – is when the party claims that performance would give them a substantial hardship. Here, Dealer does not want to perform because she now knows how much the gun is actually worth, so selling it for the contract price would limit her profit by 10x what she could get. While this loss is substantial, the party in a sale assumes the risk of a profit loss due to making a bad deal. This argument would not work to discharge her duties. It is likely that when Dealer refused to sell the gun and Buyer tendered his payment of the $2000 that she was in breach.
+2. Mistake – the last chance Dealer would have to avoid the contract would be that she was mistaken as to the true value of the gun. A unilateral mistake where only one party is mistaken will have no effect unless the other party knew or should have known of the mistake. Here, Dealer was the one selling the gun and Buyer was just someone she showed pictures to. His reluctance to purchase without an appraisal shows he did not know and probably didn’t have reason to. Mutual mistake where both parties are mistaken as to a material term of contract can make the contract voidable by either party. If Dealer could assert that they both were mistaken as to the value of the gun,
+￼￼￼￼￼￼￼￼
+this could have the effect of making it voidable. She should try to argue this, as this is her only hope. She will be deemed, as an antique dealer, to have assumed this risk and it won’t be successful.
+II. CanBuyergetspecificperformance?
+A. Specific performance is a remedy in which the party is seeking the contract to be ordered to be performed. Specific performance is only applicable when monetary damages wouldn’t be adequate or if the subject matter is truly unique. If the Buyer could argue that this Union cavalry officer’s gun was unique because it was issued to a general who played a prominent role at the Battle of Gettysburg, then the court could decide to order Dealer to sell it to him. Courts will avoid this where it would cause them too much supervising. Being that the gun is so unique, he may have a chance at a decree of specific performance.
+
+
+
+QUESTION 4
+Owner wants to turn her warehouse into a restaurant. She decides to install an innovative solar heating system, which Contractor agrees to install at a cost of $50,000. Contractor’s son (“Son”) wants to use two parking spaces in the warehouse parking lot for his (Son’s) business. If Owner agrees to designate two parking spaces for Son’s use for five years, Contractor will drop the price to $35,000.
+On November 13th, the parties agree to the latter arrangement in a valid written contract in which Contractor promises to start the job on November 17th and to complete it by January 1st. The contract includes a recital stating, “Timely performance by Contractor is important to avoid any delay in the opening of Owner’s restaurant.”
+State law requires that all installations of the new solar systems be done by a certified solar technician. On November 15th, the only certified technician who works for Contractor, Tech, is injured in a car accident. Contractor immediately notifies Owner and advises her that the start of the work will be delayed because of Tech’s accident. Owner replies, “You know that on-time performance is crucial. Yesterday, the city announced special tax breaks for businesses that open by the end of the year. Can you still finish by then?” Contractor says, “I don’t know when we can start. It depends on how quickly Tech recovers.” Owner tells Contractor that she is terminating the contract.
+Owner finds an alternative supplier of a similar system at a cost of $60,000, but he can’t start work immediately and the restaurant opens in February of the following year. Owner misses the deadline for the city tax break.
+Owner sues Contractor for breach of contract. Son sues Owner for breach of contract, seeking damages for Owner’s failure to provide the two parking spaces.
+1. Can Owner prevail in her lawsuit against Contractor? Discuss.
+2. If so, can Owner recover
+a. The $10,000 in increased costs for the heating system? Discuss. b. The lost profits for the delay in opening the restaurant? Discuss. c. The value of the tax reduction? Discuss.
+3. Can Son prevail in his lawsuit against Owner? Discuss.
+￼
+QUESTION 4: SELECTED ANSWER A
+Can Owner prevail in his lawsuit against Contractor? UCC/Common law
+UCC governs contract for the sale of goods. Common law governs all other contracts. Goods: Tangible, movable items, identifiable at the time of sale
+The contract is for the installation of the heating system. It could be argued that the contract price includes the price of the unit itself, and that it is therefore a contract for the sale of goods. However, the facts state that the contract was for the installation of the unit, which indicated that the purchase of the unit is merely incidental to the terms. The court will evaluate this based on a test of what the major value of the contract is from. In this case, particularly since the law requires a specialist to install the unit, it seems clear that the installation of the unit is likely the major value of the contract price.
+Thus, the common law will govern.
+Formation Offer
+An outward manifestation of present contractual intent, clear and definite in terms and communicated to the offeree in such a way as to create a reasonable expectation that the offeror is willing to enter into a contract.
+Offer 1:
+The facts indicate that the original offer was for $50,000 and contained no parking spaces. While this was a valid offer as it contained the other terms as outlined below, the facts indicate also that there was a modification of the contract.
+￼￼￼￼
+Modification of contract
+The facts state that there was an offer based on the original terms which were agreed to. However, the facts also state that the parties later agreed to reduce the price to $35,000 in exchange for O adding two parking spaces to the deal. Because the change in price and the addition of the spaces was new consideration, this modification will be valid. The facts state that it was valid.
+In this case, the terms of the offer are:
+Quantity: 1 installation and 2 parking spaces Time for Performance: Nov 17-Jan 1 Identity of the parties: O and C
+Price: $35,000
+Subject matter: Installation of a heating unit
+Acceptance
+An outward manifestation of unequivocal assent to the terms of the offer.
+There are no issues to discuss here. The facts state that there was a valid offer and acceptance.
+Consideration
+The bargained-for exchange of legal benefit and legal detriment between parties.
+There are no issues to discuss here. The facts state that the contract was valid, which required consideration. The consideration would be the installation of the unit and the receipt of two parking spaces in exchange for $35,000.
+There is valid consideration.
+￼￼
+Defenses
+The facts state that it was a valid written contract. There are no defenses to the enforcement of the contract.
+Conditions
+An act or event not certain to occur which, if it does occur, gives rise to or extinguishes a legal duty.
+Express
+O will argue that there was an express condition precedent to O's duty to pay that the installation be started by Nov. 12 and completed by Jan. 1. The court will typically construe a given term to be a promise rather than a condition unless it is clear from the terms that the intent of the parties was for a duty to not arise unless the condition was met. In the event of a time for performance, the courts typically will not find an express condition unless there is a "time of the essence" clause included.
+Here, O will argue that the contract clearly states that the performance must begin and finish on time because they are trying to avoid delay in opening. This could be considered sufficient, but it does not clearly state that the duty of O is conditioned on such event; rather it outlines the importance and makes clear that C is required to perform.
+The court could find this to be an express condition precedent, but more likely it will be construed as a promise by C.
+Implied in fact
+There are no implied-in-fact conditions.
+Implied in law
+The law assumes a condition precedent that the longer performance will be done before the shorter performance. Thus, in this case the duty of O to pay will be conditioned on
+￼￼
+the installation of the unit by C.
+This condition was never met by C.
+Duties
+C had the duty to install the unit.
+O had the duty to pay $35,000 and to allow the use of 2 parking spaces.
+Excuse of duties: Impossibility/impracticability
+C will argue that his duty to perform was legitimately delayed by his only certified worker becoming sick. If this argument prevails then C will be allowed to delay performance until impossibility is removed. The law requires the certified worker to be the one to install the unit. In this case, it is possible that C could have subcontracted with another worker, but the facts are not clear as to whether or not it was feasible to do or if this would have delayed completion of the installation.
+It is possible that C will prevail on this argument, since the law prevented him from using his technicians, but O will argue that C assumed this risk by hiring only one technician when he knew that a certified technician was required. The court would likely agree with this argument because C should have foreseen this risk prior to contracting, and thus implicitly assumed it.
+This excuse will likely fail.
+Frustration of purpose
+O could argue that the purpose of the contract was frustrated because he was not able to complete in time to gain the necessary tax breaks. However, this argument will almost certainly fail because the facts do not indicate that this purpose was discussed between O and C prior to contracting. The court will require the purpose of the contract to have been completed by both parties before it will allow this excuse to prevail.
+
+This excuse will fail.
+Breach
+The facts state that C told O that he was unable to perform in time because his technician was injured. Unless C's duty to perform on time was excused/delayed above, then this will be at least an anticipatory repudiation of the agreement, and possibly a major breach.
+Anticipatory breach
+O will argue that the statement by C that he "did not know" when he could begin was a major breach, or at least that his first statement that they would not begin on time was. However, because there were still two days left to begin performance and because it was still possible for C to perform in time, this would likely not be a complete repudiation. Thus, it would give rise to the right by O to demand assurances of performance. The facts state that O did just that when he asked "Can you still finish by then?"
+C was unable to provide these assurances, which would allow O to sue for breach, unless the duty to perform on time was excused above.
+Conclusion
+It is likely that C is in breach on contract because is it likely that his duty was not excused, since he assumed the risk. Thus, his inability to provide assurances constitutes an anticipatory breach by C and allows O to sue for damages.
+Can Son prevail in his lawsuit against Owner?
+Third-party rights Beneficiaries
+intended beneficiary
+The facts indicate that Son was an intended beneficiary of the O and C contract. The
+
+contract stated that S would receive 2 parking spaces for 5 years. An intended beneficiary can sue based on a breach of contract if his rights have vested. In this case, the facts are not clear as to whether S's rights have vested because they do not indicate whether he has relied or confirmed his understanding and acceptance of the arrangement. However, it is reasonable to assume that S would have been aware of the arrangement and would have consented because his father was the contractor.
+O will be allowed to raise any defenses against S that he would have been able to raise against C. In this case, if C is found to have anticipatorily breached the contract then O will be able to use this as a defense against S and refuse to perform on the contract to S as well.
+It is likely that C will be found to have anticipatorily breached, and thus O will be able to refuse performance to S and S will not be able to recover against Owner.
+Can Owner prevail for $10,000 for the heating system, the lost profit on the restaurant, or the value of the tax reduction?
+Remedies
+General Damages
+Expectation
+Expectation damages are designed to put the injured party back in the position they would have been in had the contract been performed. In this case, O was contracted to pay C $35,000, but this price included the use of 2 parking spaces by C. The original contract was going to cost O $50,000. O was scheduled to receive the installation of the unit. The court cannot fully compensate C through expectation damages because C was expecting an installation, and the court will not require specific performance on a personal service contract.
+Cover.
+The court will allow O to "cover" his damages by contracting with someone else to
+
+provide what C was not able to. Thus, O will be able to recover the difference between the cost of his new contract and the cost of his original contract. The court will likely estimate this against the $50,000 figure which was originally agreed to, because the $35,000 figure included the use of two parking spaces.
+O will likely be able to recover the $10,000 extra that was spent under the new contract.
+Duty to mitigate
+O has the duty to mitigate his damages to prevent any unreasonable and foreseeable increase in damages which could have been avoided. The facts are not clear as to whether or not O tried to find cheaper contractors before agreeing to the price of $60,000. However, considering that O was trying hard to get the work done quickly presumably he contacted multiple contractors and picked the one that was the best balance of price and timeliness.
+If O failed to mitigate then C would be able to reduce the damages by the amount which O could reasonably have avoided.
+Consequential
+Lost profits on the restaurant are most likely not recoverable. The court will usually only allow recovery for lost profits if it is an established business where the profits can be reasonably estimated, and if the damage was reasonably foreseeable by both parties. While the damage was reasonably foreseeable, because this restaurant was brand new, there is no good way to estimate the profits which were lost. Thus, O will not be able to recover for lost profits.
+Reliance
+O will argue that he relied on C's representations that work would be finished by Jan 1 and that he was damaged by the fact that work was not finished on time, causing him to lose the tax breaks. However, this argument will fail because, while O did fail to gain the tax breaks, this was not contemplated prior to the contract and, therefore, O did not rely on that representation.
+￼￼￼
+Conclusion
+O will be able to recover $10,000 for the cost of the new heating system, will not be able to recover the lost profits on the restaurant, and will not be able to recover for the loss of the tax breaks.
+
+QUESTION 4: SELECTED ANSWER B
+OWNER v. CONTRACTOR
+GOVERNING LAW
+All contracts for the sale of goods are governed by the UCC. Goods are movable and tangible items at the time of identification of a contract. All contracts not governed by the UCC are governed by the common law.
+HYBRID CONTRACT
+Here the subject matter of the contract is for the purchase and installation of a solar heating system. The majority of jurisdictions will determine whether the thrust of the contract was for goods or services and use the thrust as the basis for determining governing law. A minority of jurisdictions apply the Gravamen test where the goods portion of the contract is governed by the UCC and the services component is governed by the common law.
+Here, it is likely that the thrust of the contract will be established to be services since the installation was solicited and quoted, specifically.
+Therefore, this contract will be governed by the common law.
+CONTRACT FORMATION
+A valid contract consists of offer, acceptance, consideration and no defenses.
+MUTUAL ASSENT
+Where, the parties through a written agreement and/or their conduct, have expressly or impliedly demonstrated a mutual intent to be bound to the terms of a contract, mutual assent (consisting of a valid offer and acceptance) can be demonstrated.
+
+Here, the parties have a written contract for the installation of a solar system and it contains the necessary terms of parties, price ($35K plus 5 years use of parking space), quantity and subject matter (one solar system installation), and time of performance (beginning November 17 and completed by January 1).
+Mutual assent can be demonstrated.
+CONSIDERATION
+Consideration is a legally sufficient bargained-for exchange between the parties requiring a valid benefit and/or detriment.
+Here, Owner was to pay $35,000 and provide two parking spaces for 5 years in exchange for installation of a solar system.
+This is legally sufficient consideration.
+DEFENSES TO FORMATION
+STATUTE OF FRAUDS
+The statute of frauds is a set of rules that requires certain types of contracts to be in writing and signed by the party to be charged. The only relevant rule under SOF would be if this contract could not be performed in a year, which is not the case here.
+Therefore, the statute of frauds will not be a defense to formation.
+Therefore, barring any defenses, there is an enforceable contract between Owner and Contractor.
+THIRD-PARTY BENEFICIARIES
+A third-party beneficiary is one the parties to a contract intend to confer a benefit on at the time of contracting. To have standing to sue upon the contract, it must be shown that the parties intended him to benefit and his rights must have vested. A donee
+
+beneficiary is one that receives the benefit gratuitously and his rights do not vest until he materially changes his position in reliance upon the promise. A creditor beneficiary is one where there is a duty owed and its rights vest when it learns of the right, changes its position, or sues to seek enforcement of the promise. Incidental beneficiaries have no standing to sue on the contract.
+Here, Son was a third-party beneficiary of the contract between Owner and Contractor because the contract specifically named him and indicated that they intended to confer the benefit of the use of two parking spaces to him.
+Son is a third-party beneficiary of the contract between Owner and Contractor.
+PERFORMANCE
+CONDITIONS
+TIME OF ESSENCE
+Where a contract unequivocally states specific dates in which the contract must be performed, time is of the essence and failure to deliver duties in that period is considered a material breach.
+Here, within the contract, it states that "Contractor promises to start the job on November 17 and complete it by January 1st." Owner will argue that it is unequivocal because it uses the words "promises to" which establishes an absolute duty to perform within that window. Furthermore, Contractor agreed to the terms during contracting without objection.
+This contract contains a time is of the essence clause.
+BREACH
+Breach is the failure to perform a duty under the contract. A minor breach is when the breaching party has substantially performed under the contract, but not perfectly. A major breach is when the non-performance of the duty substantially impairs the
+
+expected benefit of the bargain for the non-breaching party.
+PROSPECTIVE INABILITY TO PERFORM
+Where a party, through its words or conduct indicates that it may not be able to perform its duties under the contract or non-breaching party has reason to suspect he will not, non-breaching party can demand assurance. If adequate assurance is not received, non-breaching party can terminate its own performance and sue for damages.
+Here, Contractor contacts Owner on Nov 15, two days before job is scheduled to start, stating that the only possible installer has been injured and cannot perform within the time specified in the contract. When Owner demanded assurance, Contractor failed to provide adequate assurance that it would perform.
+Therefore, Contractor has unequivocally repudiated and breached its duties under the contract. Owner can sue immediately.
+DEFENSES
+IMPOSSIBILITY OF PERFORMANCE
+Where the performance of duties due under a contract becomes objectively impossible, a breaching party may be excused from performance and all other duties terminated.
+Here, Contractor will argue that it was impossible to perform within the time frame specified in the contract due to the injury of the technician. He will argue that because state law requires them to be certified, replacements are not easy to find and his performance was, therefore, impossible.
+Owner will argue that injury to a technician, especially when you have only one, is foreseeable and that this was a risk assumed by Contractor. Owner will also argue that it is not objectively impossible to find an alternate installer, even if it costs substantially more.
+
+A court would likely agree and find that performance by Contractor of its duties was not impossible and he will not be excused from performing his duties.
+REMEDIES
+EQUITABLE REMEDIES
+SPECIFIC PERFORMANCE
+Where the subject matter is unique and monetary damages are inadequate, a court may order a party to perform under a contract.
+Because this is a contract for services, a court will not order specific performance since monetary damages will be adequate.
+COMPENSATORY DAMAGES
+EXPECTATION DAMAGES
+Expectation damages are damages to provide the non-breaching party with the exchange bargained for. Under Hadley-Baxendale, damages must be contemplated by the parties at the time of contract formation.
+COVER PRICE
+Here, the Owner bargained for a fully functional solar heating system for the price of $50,000. The value of the parking space that was to be provided, was established by the contract to be $15,000. As a result of the Contractor's breach, the solar system cost Owner $60,000. The value of the parking space is irrelevant for the calculation; therefore the difference between the contract price and the cover price was $10,000, which Owner can recover from Contractor.
+LOST PROFITS
+Generally, lost profits must be reasonably certain to be recoverable.
+Here, this is a new establishment and profits would be very difficult to calculate.
+Therefore, lost profits resulting from the breach would likely not be recoverable and
+￼
+expectation damages will be limited to $10,000.
+TAX REDUCTION
+Under Hadley v. Baxendale the parties must contemplate damages at the time of contract formation. Here, though the contract stated that time was of the essence, the tax breaks were only instituted the day prior to the anticipatory repudiation. Neither party was aware of these yet-to-be-announced breaks; therefore they were not contemplated at the time of contract formation.
+Therefore, the tax reduction will not be recoverable.
+Therefore, in a breach of contract action, Owner will be able to recover $10,000 as a result of its increased cost to install system.
+SON v. OWNER
+THIRD-PARTY BENEFICIARY See rule supra.
+Son is an intended beneficiary of the Owner/Contractor contract where he is to receive use of 2 parking spaces for 5 years. He is specifically named and is intended to benefit. He is an intended beneficiary.
+Son was a donee beneficiary as Contractor gratuitously conferred the benefit upon him. However, he has not materially changed his position in reliance upon this promise, and Owner will use the Contractor's breach as a defense which relieves her of her duty to provide the space.
+Therefore, Son will not prevail against owner on a breach of contract action for the failure to provide parking spaces.
+￼￼￼￼
+RELIANCE DAMAGES
+Reliance damages are damages that are incurred in anticipation of contract duty performance by the other party.

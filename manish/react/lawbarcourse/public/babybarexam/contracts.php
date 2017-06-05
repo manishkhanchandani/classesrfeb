@@ -111,6 +111,262 @@ include('Rules.php');
               <td>2</td>
               <td>3</td>
               <td>4</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>5</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>Q0</td>
+              <td>Q0</td>
+              <td>Q1</td>
+              <td>Q1</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>Q1</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">October 2016</th>
+              <td><?php @include($folder.'/october2016.php'); ?></td>
+              <td>1. Is Buyer likely to prevail against Dealer in his suit for breach of contract? Discuss.<br>
+              2. If so, is the court likely to grant Buyer&rsquo;s request for specific performance? Discuss</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::isUCC; ?><br>
+<br>
+              <strong>Analysis:</strong> Here, the facts indicate that the deal in question is a handgun in exchange for money.
+A handgun is tangible and there is no indication that the handgun in question was
+permanently affixed to real estate.
+<br>
+<br>
+              <strong>Conclusion:</strong> The U.C.C. will govern this contract because it is for the sale of goods .</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::merchant; ?><br>
+<br>
+              <strong>Analysis:</strong> Regarding Dealer, the facts indicate that Dealer "operates an antique shop." Since the
+item in question is an antique, it seems reasonable to conclude that Dealer is a
+merchant. The only factor that may lie against considering Dealer a merchant is that
+Dealer needed to research the item before obtaining its true value. Perhaps, Dealer
+could argue that this is evidence that he does not possess the requisite expertise to be
+qualified as a merchant. However, balancing both sides, Dealer will likely be found to
+be a merchant.<br><br>
+Regarding Buyer, the facts do not indicate that Buyer is a merchant. We know nothing
+of Buyer other than that he agreed to purchase the gun.
+<br>
+<br>
+              <strong>Conclusion:</strong> Dealer will be held to merchant rules while Buyer will be held to non-merchant rules. </td>
+              <td><strong>Rule:</strong> <?php echo Contracts::contractFormation; ?></td>
+              <td><strong>Rule:</strong> <?php echo Contracts::offer; ?><br>
+<br>
+              <strong>Analysis:</strong> Here, Dealer showed Buyer pictures of the handgun and the facts state that they came
+to an agreement on a price of $2,000. The facts do not clearly identify whether the
+$2,000 offer was made by Dealer or Buyer.
+ <br>
+<br>
+              <strong>Conclusion:</strong> An offer was made by either Dealer or Buyer.</td>
+              <td> &nbsp;</td>
+              <td>&nbsp;</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::acceptanceUCC; ?><br>
+<br>
+              <strong>Analysis:</strong> Here, the facts state that the parties "shook hands on a deal." Traditionally, this is a
+manifestation of agreement to terms. Since both parties shook hands, both parties
+agreed to the terms. It therefore matters not whether the offer was by Dealer for
+Buyer's acceptance, or by Buyer for Dealer's acceptance -- either way, it was accepted.
+Since the parties immediately prior to the acceptance had verbally negotiated an offer, it
+would not appear that the offer was terminated before acceptance. Since the offer did
+not include a specified means of acceptance, the method of acceptance must be
+reasonable, and there are no facts that would indicate that a handshake was
+unreasonable. Indeed, since both offeror and offeree participated in the handshake,
+and offeror made no objection, it would seem that the offeror consented to that method
+of acceptance.
+<br>
+<br>
+              <strong>Conclusion:</strong> The offer was accepted by the offeree.</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">October 2016 II</th>
+              <td><?php @include($folder.'/october2016_2.php'); ?></td>
+              <td>1. Can Owner prevail in her lawsuit against Contractor? Discuss.<br>
+                2. If so, can Owner recover<br>
+                a. The $10,000 in increased costs for the heating system? Discuss.<br>
+                b. The lost profits for the delay in opening the restaurant? Discuss.<br>
+                c. The value of the tax reduction? Discuss.<br>
+              3. Can Son prevail in his lawsuit against Owner? Discuss.</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
               <td>5</td>
               <td>6</td>
               <td>7</td>
@@ -122,11 +378,11 @@ include('Rules.php');
               <td>13</td>
               <td>14</td>
               <td>15</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td>19</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>20</td>
               <td>&nbsp;</td>
             </tr>
             <tr>
@@ -148,11 +404,11 @@ include('Rules.php');
               <td>Q1</td>
               <td>Q1</td>
               <td>Q2</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td>Q2</td>
+              <td>Q2</td>
+              <td>Q2</td>
+              <td>Q2</td>
+              <td>Q2</td>
               <td>&nbsp;</td>
             </tr>
             <tr> 
@@ -250,11 +506,27 @@ Sara's argument that the letter of confirmation had no legal effect will be vali
 <br>
               <strong>Conclusion:</strong> however, as discussed above her argument is likely to fail.</td>
               <td><strong>Rule:</strong> <?php echo Contracts::remedies; ?></td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::specialDamage; ?><br>
+<br>
+              <strong>Analysis:</strong>  Here, Bill will seek specific performance in order to obtain the 1939 Denny Wilson card. He will argue this item is particularly unique and monetary damages will be inadequate compensation.
+<br>
+<br>
+              <strong>Conclusion:</strong> As the facts stipulate Sara sold the card to another party, if Sara has already tendered the goods and concluded the transaction, it is likely a court would not disrupt an additional contract with a good faith buyer. If Sara has not yet tendered the goods, then a court may award specific performance if the baseball card is deemed unique.</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::expectedDamage; ?><br>
+<br>
+              <strong>Analysis:</strong>  Bill will seek damages in the amount of $250 which he considers his expectation damages under the contract due to the fair market value of the card being $800. However, since that price was conditioned upon a certificate of authenticity and that was an additional term, the court may or may not allow it which would alter his ability to recover.<br><br>
+If the court allows the additional term, Bill will be able to recover the $250; but if they bar the additional term under the UCC 2-207 then Bill will likely only recover $25 as evidenced by the fact that Sara sold the card to another party, as-is without a certificate of authenticity, for only $575. The contract price was $550 so the difference between the contract price and the fair market value, $575, would be $25.<br>
+<br>
+              <strong>Conclusion:</strong> Bill will likely only recover $25.</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::consequentialDamage; ?><br>
+<br>
+              Bill will be able to recover consequential damages if he has any.</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::incidentalDamage; ?><br>
+<br>
+              <strong>Analysis:</strong>  Here the facts do not indicate that Bill has suffered any damages of this kind <br>
+<br>
+              <strong>Conclusion:</strong> but if he were to he would be able to recover those damages as well.</td>
+              <td><strong>Rule:</strong> <?php echo Contracts::compensationDamage; ?></td>
               <td>&nbsp;</td> 
             </tr>
             <tr> 
