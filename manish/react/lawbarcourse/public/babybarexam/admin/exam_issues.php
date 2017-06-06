@@ -37,9 +37,11 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO essay_answers (question_id, rule_id, sorting, call_of_question) VALUES (%s, %s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO essay_answers (question_id, rule_id, analysis, conclusion, sorting, call_of_question) VALUES (%s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['question_id'], "int"),
                        GetSQLValueString($_POST['rule_id'], "int"),
+                       GetSQLValueString($_POST['analysis'], "text"),
+                       GetSQLValueString($_POST['conclusion'], "text"),
                        GetSQLValueString($_POST['sorting'], "int"),
                        GetSQLValueString($_POST['call_of_question'], "int"));
 
@@ -93,7 +95,6 @@ $query_rsMax = sprintf("SELECT MAX(sorting) as maxVal, MAX(call_of_question) as 
 $rsMax = mysql_query($query_rsMax, $connLaw) or die(mysql_error());
 $row_rsMax = mysql_fetch_assoc($rsMax);
 $totalRows_rsMax = mysql_num_rows($rsMax);
-
 ?>
 <!doctype html>
 <html>
@@ -106,6 +107,7 @@ $totalRows_rsMax = mysql_num_rows($rsMax);
 
 <body>
 <div class="container">
+   <a href="exams.php">Back to Exams</a>
   <div class="row">
     <div class="col-md-6">
       
@@ -155,9 +157,21 @@ do {
     <input name="call_of_question" type="number" id="call_of_question" value="<?php echo $row_rsMax['maxCall']; ?>">
   </p>
   <p>
+    <label for="analysis">Analysis:</label>
+  </p>
+  <p>
+    <textarea name="analysis" cols="70" rows="7" id="analysis"></textarea>
+  </p>
+  <p>
+    <label for="conclusion">Conclusion:</label>
+  </p>
+  <p>
+    <textarea name="conclusion" cols="70" rows="5" id="conclusion"></textarea>
+  </p>
+  <p>
     <input type="submit" name="submit" id="submit" value="Submit">
     <input name="question_id" type="hidden" id="question_id" value="<?php echo $_GET['question_id']; ?>">
-  </p>
+</p>
   <input type="hidden" name="MM_insert" value="form1">
 </form>      
       
@@ -171,7 +185,8 @@ do {
     <div class="col-md-12">
       <?php if ($totalRows_rsAnswer > 0) { // Show if recordset not empty ?>
         <h3>View Answers </h3>
-        <table width="100%" border="1" cellspacing="0" cellpadding="5">
+        <div class="table-responsive style="overflow:auto;"">
+        <table class="table table-bordered table-striped with-responsive-wrapper">
           <tbody>
             <tr>
               <td><strong>Answer ID</strong></td>
@@ -180,21 +195,24 @@ do {
               <td><strong>Analysis</strong></td>
               <td><strong>Conclusion</strong></td>
               <td><strong>Sorting</strong></td>
+              <td><strong>Call of Question</strong></td>
               <td><strong>Edit</strong></td>
             </tr>
             <?php do { ?>
               <tr>
                 <td><?php echo $row_rsAnswer['answer_id']; ?></td>
                 <td><?php echo $row_rsAnswer['rule']; ?></td>
-                <td><?php echo $row_rsAnswer['description']; ?></td>
-                <td><?php echo $row_rsAnswer['analysis']; ?></td>
-                <td><?php echo $row_rsAnswer['conclusion']; ?></td>
+                <td><?php echo nl2br($row_rsAnswer['description']); ?></td>
+                <td><?php echo nl2br($row_rsAnswer['analysis']); ?></td>
+                <td><?php echo nl2br($row_rsAnswer['conclusion']); ?></td>
                 <td><?php echo $row_rsAnswer['sorting']; ?></td>
-                <td><a href="#">Edit</a></td>
+                <td><?php echo $row_rsAnswer['call_of_question']; ?></td>
+                <td><a href="editAnswer.php?question_id=<?php echo $row_rsAnswer['question_id']; ?>&answer_id=<?php echo $row_rsAnswer['answer_id']; ?>">Edit</a></td>
               </tr>
               <?php } while ($row_rsAnswer = mysql_fetch_assoc($rsAnswer)); ?>
           </tbody>
         </table>
+        </div>
         <?php } // Show if recordset not empty ?>
 <p>&nbsp;</p>
     </div>

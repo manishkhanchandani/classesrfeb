@@ -1,0 +1,373 @@
+https://www.sitepoint.com/web-foundations/css-selectors/
+
+
+
+Introducing CSS Selectors
+A CSS selector is the part of a CSS rule set that actually selects the content you want to style. Let’s look at all the different kinds of selectors available, with a brief description of each.
+
+Universal Selector
+The universal selector works like a wild card character, selecting all elements on a page. Every HTML page is built on content placed within HTML tags. Each set of tags represents an element on the page. Look at the following CSS example, which uses the universal selector:
+
+* {
+   color: green;
+   font-size: 20px;
+   line-height: 25px;
+}
+The three lines of code inside the curly braces (color, font-size, and line-height) will apply to all elements on the HTML page. As seen here, the universal selector is declared using an asterisk. You can also use the universal selector in combination with other selectors.
+
+Element Type Selector
+Also referred to simply as a “type selector,” this selector must match one or more HTML elements of the same name. Thus, a selector of nav would match all HTML nav elements, and a selector of <ul> would match all HTML unordered lists, or <ul> elements.
+
+The following example uses an element type selector to match all <ul> elements:
+
+ul {
+   list-style: none;
+   border: solid 1px #ccc;
+}
+To put this in some context, here’s a section of HTML to which we’ll apply the above CSS:
+
+<ul>
+  <li>Fish</li>
+  <li>Apples</li>
+  <li>Cheese</li>
+</ul>
+
+<div class="example">
+  <p>Example paragraph text.</p>
+</div>
+
+<ul>
+  <li>Water</li>
+  <li>Juice</li>
+  <li>Maple Syrup</li>
+</ul>
+There are three main elements making up this part of the page: Two <ul> elements and a <div>. The CSS will apply only to the two <ul> elements, and not to the <div>. Were we to change the element type selector to use <div> instead of <ul>, then the styles would apply to the <div> and not to the two <ul> elements.
+
+Also note that the styles will not apply to the elements inside the <ul> or <div> elements. That being said, some of the styles may be inherited by those inner elements.
+
+ID Selector
+An ID selector is declared using a hash, or pound symbol (#) preceding a string of characters. The string of characters is defined by the developer. This selector matches any HTML element that has an ID attribute with the same value as that of the selector, but minus the hash symbol.
+
+Here’s an example:
+
+#container {
+   width: 960px;
+   margin: 0 auto;
+}
+This CSS uses an ID selector to match an HTML element such as:
+
+<div id="container"></div>
+In this case, the fact that this is a <div> element doesn’t matter—it could be any kind of HTML element. As long as it has an ID attribute with a value of container, the styles will apply.
+
+An ID element on a web page should be unique. That is, there should only be a single element on any given page with an ID of container. This makes the ID selector quite inflexible, because the styles used in the ID selector rule set can be used only once per page.
+
+If there happens to be more than one element on the page with the same ID, the styles will still apply, but the HTML on such a page would be invalid from a technical standpoint, so you’ll want to avoid doing this.
+
+In addition to the problems of inflexibility, ID selectors also have the problem of very high specificity.
+
+Class Selector
+The class selector is the most useful of all CSS selectors. It’s declared with a dot preceding a string of one or more characters. Just as is the case with an ID selector, this string of characters is defined by the developer. The class selector also matches all elements on the page that have their class attribute set to the same value as the class, minus the dot.
+
+Take the following rule set:
+
+.box {
+   padding: 20px;
+   margin: 10px;
+   width: 240px;
+}
+These styles will apply to the following HTML element:
+
+<div class="box"></div>
+The same styles will also apply to any other HTML elements that have a class attribute with a value of box. Having multiple elements on a single page with the same class attribute is beneficial, because it allows you to reuse styles, and avoid needless repetition. In addition to this, class selectors have very low specificity—again, more on this later.
+
+Another reason the class selector is a valuable ally is that HTML allows multiple classes to be added to a single element. This is done by separating the classes in the HTML class attribute using spaces. Here’s an example:
+
+<div class=”box box-more box-extended”></div>
+
+
+
+Descendant Combinator
+
+
+
+The descendant selector or, more accurately, the descendant combinator lets you combine two or more selectors so you can be more specific in your selection method. For example:
+
+#container .box {
+   float: left;
+   padding-bottom: 15px;
+}
+This declaration block will apply to all elements that have a class of box that are inside an element with an ID of container. It’s worth noting that the .box element doesn’t have to be an immediate child: there could be another element wrapping .box, and the styles would still apply.
+
+Look at the following HTML:
+
+<div id="container">
+  <div class="box"></div>
+
+  <div class="box-2"></div>
+</div>
+
+<div class="box"></div>
+If we apply the CSS in the previous example to this section of HTML, the only element that’ll be affected by those styles is the first <div> element that has a class of box. The <div> element that has a class of box-2 won’t be affected by the styles. Similarly, the second <div> element with a class of box won’t be affected because it’s not inside an element with an ID of container.
+
+You should be careful when using the descendant combinator in your CSS. This kind of selector, while making your CSS a little easier to read, can unnecessarily restrict your styles to a specific context—in this case, the styles are restricted to boxes inside of #container—which can make your code inflexible.
+
+Child Combinator
+A selector that uses the child combinator is similar to a selector that uses a descendant combinator, except it only targets immediate child elements:
+
+#container > .box {
+   float: left;
+   padding-bottom: 15px;
+}
+This is the same code from the descendant combinator example, but instead of a space character, we’re using the greater-than symbol (or right angle bracket.)
+
+In this example, the selector will match all elements that have a class of box and that are immediate children of the #container element. That means, unlike the descendant combinator, there can’t be another element wrapping .box—it has to be a direct child element.
+
+Here’s an HTML example:
+
+<div id="container">
+  <div class="box"></div>
+
+  <div>
+    <div class="box"></div>
+  </div>
+</div>
+In this example, the CSS from the previous code example will apply only to the first <div> element that has a class of box. As you can see, the second <div> element with a class of box is inside another <div> element. As a result, the styles will not apply to that element, even though it too has a class of box.
+
+Again, selectors that use this combinator can be somewhat restricting, but they can come in handy—for example, when styling nested lists.
+
+General Sibling Combinator
+A selector that uses a general sibling combinator matches elements based on sibling relationships. That is to say, the selected elements are beside each other in the HTML.
+
+h2 ~ p {
+   margin-bottom: 20px;
+}
+This type of selector is declared using the tilde character (~). In this example, all paragraph elements (<p>) will be styled with the specified rules, but only if they are siblings of <h2> elements. There could be other elements in between the <h2> and <p>, and the styles would still apply.
+
+Let’s apply the CSS from above to the following HTML:
+
+<h2>Title</h2>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<div class="box">
+  <p>Paragraph example.</p>
+</div>
+In this example, the styles will apply only to the first three paragraph elements. The last paragraph element is not a sibling of the <h2> element because it sits inside the <div> element.
+
+Adjacent Sibling Combinator
+A selector that uses the adjacent sibling combinator uses the plus symbol (+), and is almost the same as the general sibling selector. The difference is that the targeted element must be an immediate sibling, not just a general sibling. Let’s see what the CSS code for this looks like:
+
+p + p {
+   text-indent: 1.5em;
+   margin-bottom: 0;
+}
+This example will apply the specified styles only to paragraph elements that immediately follow other paragraph elements. This means the first paragraph element on a page would not receive these styles. Also, if another element appeared between two paragraphs, the second paragraph of the two wouldn’t have the styles applied.
+
+So, if we apply this selector to the following HTML:
+
+<h2>Title</h2>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+
+<div class="box">
+  <p>Paragraph example.</p>
+  <p>Paragraph example.</p>
+</div>
+…the styles will apply only to the second, third, and fifth paragraphs in this section of HTML.
+
+Attribute Selector
+The attribute selector targets elements based on the presence and/or value of HTML attributes, and is declared using square brackets:
+
+input[type="text"] {
+   background-color: #444;
+   width: 200px;
+}
+There should not be a space before the opening square bracket unless you intend to use it along with a descendant combinator. The above CSS would match the following element:
+
+<input type="text">
+But it wouldn’t match this one:
+
+<input type="submit">
+The attribute selector can also be declared using just the attribute itself, with no value, like this:
+
+input[type] {
+   background-color: #444;
+   width: 200px;
+}
+This will match all input elements with an attribute of type, regardless of the value.
+
+You can also use attribute selectors without specifying anything outside the square brackets (thus targeting based on the attribute alone, irrespective of the element). It’s also worth noting that, when using values, you have the option to include quotes (single or double,) or not.
+
+Pseudo-class
+A pseudo-class uses a colon character to identify a pseudo-state that an element might be in—for example, the state of being hovered, or the state of being activated. Let’s look at a common example:
+
+a:hover {
+   color: red;
+}
+In this case, the pseudo-class portion of the selector is the :hover part. Here we’ve attached this pseudo-class to all anchor elements ( elements). This means that when the user hovers their mouse over an element, the color property for that element will change to red. This type of pseudo-class is a dynamic pseudo-class, because it occurs only in response to user interaction—in this case, the mouse moving over the targeted element.
+
+It’s important to recognize that these types of selectors do not just select elements; they select elements that are in a particular state. For the purposes of this example, the state is the “hover” state.
+
+Pseudo-element
+Finally, CSS has a selector referred to as a pseudo-element and, used appropriately, it can be very useful. The only caveat is that this selector is quite different from the other examples we’ve considered. Let’s see a pseudo-element in context:
+
+.container:before {
+   content: "";
+   display: block;
+   width: 50px;
+   height: 50px;
+   background-color: #141414;
+}
+This example uses one kind of pseudo-element, the :before pseudo-element. As the name suggests, this selector inserts an imaginary element into the page, inside the targeted element, before its contents.
+
+
+
+
+
+
+
+https://www.w3schools.com/css/css_pseudo_elements.asp
+
+What are Pseudo-Elements?
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+
+Style the first letter, or line, of an element
+Insert content before, or after, the content of an element
+
+The ::first-line Pseudo-element
+The ::first-line pseudo-element is used to add a special style to the first line of a text.
+
+The following example formats the first line of the text in all <p> elements:
+
+Example 
+p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+
+Note: The ::first-letter pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-letter pseudo- element: 
+
+font properties
+color properties 
+background properties
+margin properties
+padding properties
+border properties
+text-decoration
+vertical-align (only if "float" is "none")
+text-transform
+line-height
+float
+clear
+
+Pseudo-elements and CSS Classes
+Pseudo-elements can be combined with CSS classes: 
+
+Example
+p.intro::first-letter {
+    color: #ff0000;
+    font-size:200%;
+}
+
+Multiple Pseudo-elements
+Several pseudo-elements can also be combined.
+
+In the following example, the first letter of a paragraph will be red, in an xx-large font size. The rest of the first line will be blue, and in small-caps. The rest of the paragraph will be the default font size and color:
+
+Example
+p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+}
+
+p::first-line {
+    color: #0000ff;
+    font-variant: small-caps;
+}
+
+CSS - The ::before Pseudo-element
+The ::before pseudo-element can be used to insert some content before the content of an element.
+
+The following example inserts an image before the content of each <h1> element:
+
+Example
+h1::before {
+    content: url(smiley.gif);
+}
+
+CSS - The ::after Pseudo-element
+The ::after pseudo-element can be used to insert some content after the content of an element.
+
+The following example inserts an image after the content of each <h1> element:
+
+Example
+h1::after {
+    content: url(smiley.gif);
+}
+
+CSS - The ::selection Pseudo-element
+The ::selection pseudo-element matches the portion of an element that is selected by a user.
+
+The following CSS properties can be applied to ::selection: color, background, cursor, and outline.
+
+The following example makes the selected text red on a yellow background:
+
+Example
+::selection {
+    color: red; 
+    background: yellow;
+}
+
+All CSS Pseudo Elements
+Selector	Example	Example description
+::after	p::after	Insert something after the content of each <p> element
+::before	p::before	Insert something before the content of each <p> element
+::first-letter	p::first-letter	Selects the first letter of each <p> element
+::first-line	p::first-line	Selects the first line of each <p> element
+::selection	p::selection	Selects the portion of an element that is selected by a user
+All CSS Pseudo Classes
+Selector	Example	Example description
+:active	a:active	Selects the active link
+:checked	input:checked	Selects every checked <input> element
+:disabled	input:disabled	Selects every disabled <input> element
+:empty	p:empty	Selects every <p> element that has no children
+:enabled	input:enabled	Selects every enabled <input> element
+:first-child	p:first-child	Selects every <p> elements that is the first child of its parent
+:first-of-type	p:first-of-type	Selects every <p> element that is the first <p> element of its parent
+:focus	input:focus	Selects the <input> element that has focus
+:hover	a:hover	Selects links on mouse over
+:in-range	input:in-range	Selects <input> elements with a value within a specified range
+:invalid	input:invalid	Selects all <input> elements with an invalid value
+:lang(language)	p:lang(it)	Selects every <p> element with a lang attribute value starting with "it"
+:last-child	p:last-child	Selects every <p> elements that is the last child of its parent
+:last-of-type	p:last-of-type	Selects every <p> element that is the last <p> element of its parent
+:link	a:link	Selects all unvisited links
+:not(selector)	:not(p)	Selects every element that is not a <p> element
+:nth-child(n)	p:nth-child(2)	Selects every <p> element that is the second child of its parent
+:nth-last-child(n)	p:nth-last-child(2)	Selects every <p> element that is the second child of its parent, counting from the last child
+:nth-last-of-type(n)	p:nth-last-of-type(2)	Selects every <p> element that is the second <p> element of its parent, counting from the last child
+:nth-of-type(n)	p:nth-of-type(2)	Selects every <p> element that is the second <p> element of its parent
+:only-of-type	p:only-of-type	Selects every <p> element that is the only <p> element of its parent
+:only-child	p:only-child	Selects every <p> element that is the only child of its parent
+:optional	input:optional	Selects <input> elements with no "required" attribute
+:out-of-range	input:out-of-range	Selects <input> elements with a value outside a specified range
+:read-only	input:read-only	Selects <input> elements with a "readonly" attribute specified
+:read-write	input:read-write	Selects <input> elements with no "readonly" attribute
+:required	input:required	Selects <input> elements with a "required" attribute specified
+:root	root	Selects the document's root element
+:target	#news:target	Selects the current active #news element (clicked on a URL containing that anchor name)
+:valid	input:valid	Selects all <input> elements with a valid value
+:visited	a:visited	Selects all visited links
+
+
+
+
+
+
+
+

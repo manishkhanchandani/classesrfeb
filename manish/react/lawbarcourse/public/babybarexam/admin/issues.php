@@ -82,7 +82,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 <style type="text/css">
   body {
     font-family: Verdana;
-    font-size: 11px;
+    font-size: 12px;
   }
 </style>
 </head>
@@ -127,7 +127,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
       <tr>
           <td valign="top"><?php echo $row_Recordset1['rule_id']; ?></td>
           <td valign="top"><?php echo $row_Recordset1['rule']; ?></td>
-          <td valign="top"><?php echo $row_Recordset1['description']; ?></td>
+          <td valign="top"><?php echo nl2br($row_Recordset1['description']); ?></td>
           <td valign="top"><?php echo $row_Recordset1['rule_subject']; ?></td>
       </tr>
           <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
