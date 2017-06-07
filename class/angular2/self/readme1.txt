@@ -141,3 +141,98 @@ to
       ],
       
 __________________________________________________________________
+
+
+Basics:
+
+1. Module Introduction
+
+How angular page gets loaded and started:
+
+in app.component.ts, we have following code
+selector: 'app-root',
+
+this app-root is the defined in index.html.
+
+so this two are linked and we get app.component.html content inside this tag as defined by following code:
+templateUrl: './app.component.html',
+
+main.ts is the first file which is executed.
+if you see following code in this file:
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+it uses AppModule and bootstrap that module.
+
+if you open app.module.ts, we have following
+bootstrap: [AppComponent]
+
+we pass app component and angular analyse it and knows the selector root and angular is able to handle the app-root and it inserts the AppComponent which has some template in html format.
+
+
+__________________________________________________________________
+
+Components are important:
+
+Components are key features in angular js. We start with AppComponent (root component). Let's say if we have layout as header, navigation, left side content, right side content, footer. Each part will be a new component. So we create simple reusable components.
+
+Let's see how components are created:
+
+Let's say i want to show some server information. Create a folder server in app, as it holds server component.
+
+Create a new file inside the server folder. Name it as server.component.ts. ts is typescript.
+
+Use following code to create new component:
+
+export class ServerComponent {
+
+}
+
+This is simple typescript class. Now we add some decorator to make it angular component.
+
+@Component()
+export class ServerComponent {
+
+}
+
+But we don't have component, so we need to import it from angular core as and we also put object inside the component with some json data information
+
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-server', //unique selector
+  templateUrl: './server.component.html' //relative path
+})
+export class ServerComponent {
+
+}
+
+Now add following code in app.module.ts to know about the new component: Open app.module.ts
+
+import { ServerComponent } from './server/server.component';
+
+and
+
+declarations: [
+    AppComponent,
+    ServerComponent
+  ],
+  
+Now, we can use ServerComponent.
+
+We are also importing some modules inside the app.module.ts, we can also build our custom module and import it.
+
+Add following in the app.component.html
+<hr />
+<app-server></app-server>
+
+Above code will display everything from html created in ServerComponent.
+
+__________________________________________________________________
+
+
+We can also use cli command to create a new component, open new terminal, don't stop ng server window, and type following code:
+
+ng generate component servers
+or 
+ng g c servers
+
