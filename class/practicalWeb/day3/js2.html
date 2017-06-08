@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  function x12() {
+    this.x1 = 'hello';
+    this.x2 = 'hello2';
+    this.x3 = function() {
+      console.log('i am in x3');
+    }
+    function x4() {
+      console.log('i am inside x4');
+    }
+    console.log('i am in x12');
+    x4();
+  }
+  
+var x = new x12();
+x.x3();
+x.x4();
+</script>
+</head>
+
+<body>
+</body>
+</html>
