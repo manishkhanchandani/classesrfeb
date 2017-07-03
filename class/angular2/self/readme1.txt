@@ -236,3 +236,25 @@ ng generate component servers
 or 
 ng g c servers
 
+--------------------------------------------------------
+Template and TemplateURL
+
+Go to servers.component.ts and change from templateURL to template and add following:
+template: '<app-server></app-server><app-server></app-server>',
+
+Put all in one line if you want to put in multiple line then use backtick and put all in different lines.
+
+
+--------------------------------------------------------
+
+App HTML in container
+
+Open app.component.html
+
+and if you see it in browser, all text are too much left aligned almost touching the browser. To make it with little margin, add following code in app.component.html
+
+
+--------------------------------------------------------
+
+
+
