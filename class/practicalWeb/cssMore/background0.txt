@@ -1,0 +1,338 @@
+The CSS background properties are used to define the background effects for elements.
+
+CSS background properties:
+
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+
+
+Background Color
+The background-color property specifies the background color of an element.
+
+The background color of a page is set like this:
+
+Example
+body {
+    background-color: lightblue;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+
+<p>This page has a light blue background color!</p>
+
+</body>
+</html>
+
+
+With CSS, a color is most often specified by:
+
+a valid color name - like "red"
+a HEX value - like "#ff0000"
+an RGB value - like "rgb(255,0,0)"
+Look at CSS Color Values for a complete list of possible color values.
+
+In the example below, the <h1>, <p>, and <div> elements have different background colors:
+
+Example
+h1 {
+    background-color: green;
+}
+
+div {
+    background-color: lightblue;
+}
+
+p {
+    background-color: yellow;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+    background-color: green;
+}
+
+div {
+    background-color: lightblue;
+}
+
+p {
+    background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h1>CSS background-color example!</h1>
+<div>
+This is a text inside a div element.
+<p>This paragraph has its own background color.</p>
+We are still in the div element.
+</div>
+
+</body>
+</html>
+
+
+Background Image
+The background-image property specifies an image to use as the background of an element.
+
+By default, the image is repeated so it covers the entire element.
+
+The background image for a page can be set like this:
+
+Example
+body {
+    background-image: url("paper.gif");
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("paper.gif");
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+
+<p>This page has an image as the background!</p>
+
+</body>
+</html>
+
+
+Note: When using a background image, use an image that does not disturb the text.
+
+Background Image - Repeat Horizontally or Vertically
+By default, the background-image property repeats an image both horizontally and vertically.
+
+Some images should be repeated only horizontally or vertically, or they will look strange, like this:
+
+Example
+body {
+    background-image: url("gradient_bg.png");
+}
+
+If the image above is repeated only horizontally (background-repeat: repeat-x;), the background will look better:
+
+Example
+body {
+    background-image: url("gradient_bg.png");
+    background-repeat: repeat-x;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("gradient_bg.png");
+    background-repeat: repeat-x;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<p>Here, a backgound image is repeated only horizontally!</p>
+
+</body>
+</html>
+
+
+
+
+Tip: To repeat an image vertically, set background-repeat: repeat-y;
+
+
+Background Image - Set position and no-repeat
+Showing the background image only once is also specified by the background-repeat property:
+
+Example
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<p>W3Schools background image example.</p>
+<p>The background image is only showing once, but it is disturbing the reader!</p>
+
+</body>
+</html>
+
+
+In the example above, the background image is shown in the same place as the text. We want to change the position of the image, so that it does not disturb the text too much.
+
+The position of the image is specified by the background-position property:
+
+Example
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 200px;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<p>W3Schools background no-repeat, set position example.</p>
+<p>Now the background image is only shown once, and positioned away from the text.</p>
+<p>In this example we have also added a margin on the right side, so the background image will never disturb the text.</p>
+
+</body>
+</html>
+
+
+
+
+
+Background Image - Fixed position
+To specify that the background image should be fixed (will not scroll with the rest of the page), use the background-attachment property:
+
+Example
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+Try it Yourself »
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 200px;
+    background-attachment: fixed;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>The background-image is fixed. Try to scroll down the page.</p>
+<p>If you do not see any scrollbars, try to resize the browser window.</p>
+
+</body>
+</html>
+
+
+Background - Shorthand property
+To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.
+
+The shorthand property for background is background:
+
+Example
+body {
+    background: #ffffff url("img_tree.png") no-repeat right top;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: #ffffff url("img_tree.png") no-repeat right top;
+    margin-right: 200px;
+}
+</style>
+</head>
+<body>
+
+<h1>Hello World!</h1>
+<p>Now the background image is only shown once, and it is also positioned away from the text.</p>
+<p>In this example we have also added a margin on the right side, so that the background image will not disturb the text.</p>
+
+</body>
+</html>
+
+
+
+When using the shorthand property the order of the property values is:
+
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+It does not matter if one of the property values is missing, as long as the other ones are in this order.
