@@ -173,7 +173,7 @@ Question 2 Solution
 QUESTION 2: SELECTED ANSWER A
 ￼Applicable Law - Uniform Commercial Code
 Contracts for the sale of goods, which are tangible, movable items will be governed by the Uniform Commercial Code (UCC).
-Here, the contract is for the sale of a 1939 Denny Wilson baseball card which is a good.
+Here, the contract is for the sale of a <strong>1939 Denny Wilson baseball card</strong> which is a good.
 Therefore, UCC applies.
 Merchants
 Where parties to a contract hold themselves out to be experts or as having specialized knowledge in the area of which the contract pertains the parties will be seen as merchants and held to a higher standard of good faith and fair dealing and the sections of the UCC pertaining specifically to Merchants will apply.
