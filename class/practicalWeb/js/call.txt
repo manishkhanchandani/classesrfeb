@@ -1,0 +1,91 @@
+Functions are Object Methods
+In JavaScript functions are object methods.
+
+If a function is not a method of a JavaScript object, it is a function of the global object (see previous chapter).
+
+The example below creates an object with 3 properties (firstName, lastName, fullName).
+
+Example
+var person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+person.fullName();         // Will return "John Doe"
+
+The fullName property is a method. The person object is the owner of the method.
+
+The fullName property is a method of the person object.
+
+The JavaScript call() Method
+The call() method is a predefined JavaScript function method.
+
+It can be used to invoke (call) a function with an owner object as the first argument (parameter).
+
+With call(), you can use a method belonging to another object.
+
+This example calls the fullName function of person, but is using it on myObject:
+
+Example
+var person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+var myObject = {
+    firstName:"Mary",
+    lastName: "Doe",
+}
+person.fullName.call(myObject);  // Will return "Mary Doe"
+
+
+
+
+The JavaScript apply() Method
+The apply() method is similar to the call() method:
+
+Example
+var person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+var myObject = {
+    firstName:"Mary",
+    lastName: "Doe",
+}
+person.fullName.apply(myObject);  // Will return "Mary Doe"
+
+
+
+The Difference Between call() and apply()
+The only difference is:
+
+call() takes any function arguments separately.
+
+apply() takes any function arguments as an array.
+
+The apply() method is very handy if you want to use an array instead of an argument list.
+
+If you want to obtain the largest number in a list of numbers you can use the Math.max() method:
+
+Example
+Math.max(1,2,3);  // Will return 3
+
+
+Since JavaScript arrays do not have a max() method, you can apply the Math.max() instead.
+
+Example
+Math.max.apply(null,[1,2,3]); // Will also return 3
+
+
+The Value of this
+In JavaScript strict mode, the first argument becomes the value of this in the invoked function, even if the argument is not an object.
+
+In "non-strict" mode, if the value of the first argument is null or undefined, it is replaced with the global object.
