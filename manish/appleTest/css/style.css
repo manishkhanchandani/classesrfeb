@@ -1,38 +1,29 @@
 .dropdown-notifications .topBorder {
-  border-top: solid thick #CBCBCB;
-}
+  border-top: solid thick #CBCBCB; }
 .dropdown-notifications .header {
   padding: 15px;
-  color: #CECECE;
-}
+  color: #CECECE; }
 .dropdown-notifications .notifyRows {
   text-align: center;
-  padding: 12px;
-}
+  padding: 12px; }
 .dropdown-notifications .counter {
   font-size: 42px;
   color: #90C2E4;
   text-align: right;
-  font-weight: lighter;
-}
+  font-weight: lighter; }
 .dropdown-notifications .counterText {
   text-align: left;
   margin-left: -20px;
   margin-top: 19px;
-  color: #A8A8A8;
-}
+  color: #A8A8A8; }
 .dropdown-notifications .workspace {
-  color: #67ABDC;
-}
+  color: #67ABDC; }
 .dropdown-notifications .notifications .notification-title {
-  color: #6D6D6D;
-}
+  color: #6D6D6D; }
 .dropdown-notifications .notifications .notification-desc {
   color: #C0C0C0;
-  font-size: 12px;
-}
+  font-size: 12px; }
 .dropdown-notifications .scrollable-menu {
   max-height: 600px;
   overflow: auto;
-  max-width: 350px;
-}
+  max-width: 350px; }

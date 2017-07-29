@@ -1,6 +1,6 @@
 /*
 Error: Invalid US-ASCII character "\xE2"
-        on line 106 of /Users/mkhancha/web/github/classesrfeb/manish/receipes/netflix1/style.sass
+        on line 106 of /Applications/MAMP/htdocs/classesrfeb/manish/receipes/netflix1/style.sass
 
 101:     border-radius: 100%
 102:     background: rgba(0,0,0,0.5)
@@ -15,7 +15,7 @@ Error: Invalid US-ASCII character "\xE2"
 111:     margin-top: -18px
 
 Backtrace:
-/Users/mkhancha/web/github/classesrfeb/manish/receipes/netflix1/style.sass:106
+/Applications/MAMP/htdocs/classesrfeb/manish/receipes/netflix1/style.sass:106
 /Applications/Adobe Dreamweaver CC 2017/Adobe Dreamweaver CC 2017.app/Contents/Resources/gems/rubygems/gems/sass-3.4.19/lib/sass/util.rb:1296:in `rescue in block in find_encoding_error'
 /Applications/Adobe Dreamweaver CC 2017/Adobe Dreamweaver CC 2017.app/Contents/Resources/gems/rubygems/gems/sass-3.4.19/lib/sass/util.rb:1293:in `block in find_encoding_error'
 /Applications/Adobe Dreamweaver CC 2017/Adobe Dreamweaver CC 2017.app/Contents/Resources/gems/rubygems/gems/sass-3.4.19/lib/sass/util.rb:1292:in `each'
@@ -36,4 +36,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 106 of /Users/mkhancha/web/github/classesrfeb/manish/receipes/netflix1/style.sass\A \A 101:     border-radius: 100%\A 102:     background: rgba(0,0,0,0.5)\A 103:     z-index: 1\A 104: \A 105:   &:before\A 106:     content: '▶'\A 107:     left: 0\A 108:     width: 100%\A 109:     font-size: 30px\A 110:     margin-left: 7px\A 111:     margin-top: -18px"; }
+  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 106 of /Applications/MAMP/htdocs/classesrfeb/manish/receipes/netflix1/style.sass\A \A 101:     border-radius: 100%\A 102:     background: rgba(0,0,0,0.5)\A 103:     z-index: 1\A 104: \A 105:   &:before\A 106:     content: '▶'\A 107:     left: 0\A 108:     width: 100%\A 109:     font-size: 30px\A 110:     margin-left: 7px\A 111:     margin-top: -18px"; }
