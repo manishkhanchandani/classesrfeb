@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import NavBar from '../components/nav/NavBar.js';
 
-
-import Home from '../containers/Home.js';
-import SignIn from '../components/auth/SignIn.js';
-import SignUp from '../components/auth/SignUp.js';
-import List from '../components/List.js';
-import New from '../components/New.js';
+import Routing1 from './Routing1.js';
+import Routing2 from './Routing2.js';
 
 
 class App extends Component {
@@ -24,15 +20,8 @@ class App extends Component {
             </div>
             
           
-            <Route exact={true} path="/" component={Home} />
-            <Route exact={true} path="/create" component={New} />
-            <Route exact={true} path="/category/:category/:subcategory/lat_:lat/lng_:lng/k_:keyword" component={List} />
-            <Route exact={true} path="/category/:category/:subcategory/k_:keyword" component={List} />
-            <Route exact={true} path="/category/:category/:subcategory/lat_:lat/lng_:lng" component={List} />
-      
-            <Route exact={true} path="/category/:category/:subcategory" component={List} />
-            <Route path="/auth/signin" component={SignIn} />
-            <Route path="/auth/signup" component={SignUp} />
+            <Routing1 />
+			<Routing2 />
 
 
             <div className="row">
