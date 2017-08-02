@@ -233,7 +233,93 @@ D's wrongful intent is transferred from the <strong>intended victim</strong> to 
 <p>Reasonable force in fresh pursuit, Entry made in reasonable manner, reasonable force, is complete defense.</p>
 <p><strong>Entry to abate a nuisance (nuisances can be intentional)</strong></p>
 <p>Defendant, must be owner, first make a demand to stop nuisance, and use reasonable time and reasonable force to effect the abatement.</p>
-<p>&nbsp;</p>
+<p><strong>NEGLIGENCE</strong></p>
+<p>Liability for negligence requires proof of a <strong>duty of care</strong> owed by the defendant to the plaintiff, a <strong>breach</strong> of the duty, and that breach was the <strong>actual and proximate cause</strong> of <strong>damages</strong> suffered by the plaintiff.</p>
+<ul>
+  <li><strong>Duty</strong>
+<ul>
+  <li><strong>General Duty</strong><br>
+        The general rule of duty holds that everyone owes a duty of exercise due care so as not to subject others to unreasonable risks of harm.<br>
+        <br>
+        Note: IRAC this section, first give above rule and then check in facts that if there is any duty between two parties, so it must be general duty and special duty explained infra and conclude yes or no. Check following rules:      
+        <ul>
+          <li><strong>Cardoza Rule of Duty </strong> (majority rule)<br>
+            Under Palsgraf v. Long Island Railroad Co., Justice Cardozo's majority opinion held that a defendant owes a duty only to those who could foreseeably be endangered by the defendant's negligent act. Therefore according to the rule, there is no duty owed to a plaintiff who is in position of apparent safety when the defendant commits a negligent act. This is the so called &quot;orbit of danger&quot; test.<br>
+            <br>
+          </li>
+          <li><strong>Andrews Rule on Duty</strong><br>
+            Under Palsgraf case, Justice Andrews gave a dissenting opinion which has been applied as the majority opinion in other cases. Andrews 
+            argued that if the defendant owes a duty to anyone, then he owes a duty to everyone who could foreseeably be injured by his action. Thus Cardoza looked at the issue from a perspective of identifying whether the duty is owed, while Andrews considered the issue as one of proximate causation.<br>
+            <br>
+            <strong>Example 1:</strong><br>
+            The general rule of duty holds that everyone owes a duty to exercise due care so as not to subject others to <strong>unreasonable risks</strong> of harm<br>
+            <br>
+            Here, as a driver, Dan <strong>owes a duty</strong> to drive with reasonable care so that he does not risk harming others on or near the road.<br>
+            <br>
+            Dan may argue he only owes a duty to those actually using the road, and no facts show Pete was on the road. However, under the <strong>Cardoza rule of duty</strong> from the Palsgraf case, since Pete's<strong> lawn appears to be near</strong> enough to the road for Sally to run onto it when she swerved, Pete is likely within the orbit of danger surrounding Dan. Under <strong>Andrew's view</strong>, if <strong>Dan's action caused injury to Pete</strong>, then Dan will be liable. <br>
+            <br>
+            So under both views, Dan owes a duty to Pete.
+            <br>
+            <br>
+            <strong>Example 2:</strong><br>
+            The general rule of duty holds that everyone owes a duty to exercise due care so as not to subject others to <strong>unreasonable risks </strong>of harm.<br>
+            <br>
+            This would include Darla owing a duty not to do anything what would subject Penny to an <strong>unreasonable risk</strong> of harm.<br>
+            <br>
+            Therefore, Darly owes a general duty of care to Penny.
+<br>
+          </li>
+        </ul>
+      </li>
+      <li>Special</li>
+  </ul>
+  </li>
+  <li>Breach
+    <ul>
+      <li>Direct / Circumstantial</li>
+      <li>Res Ipsa Loquitur</li>
+    </ul>
+  </li>
+  <li>Causation
+    <ul>
+      <li>Actual</li>
+      <li>Proximate</li>
+    </ul>
+  </li>
+  <li>Damages
+    <ul>
+      <li>Physical Harm Needed</li>
+      <li>NIED</li>
+    </ul>
+  </li>
+  <li>Defenses
+    <ul>
+      <li>Contributory Negligence</li>
+      <li>Comparative Negligence</li>
+      <li>Last Clear Chance</li>
+      <li>Assumption of the Risk</li>
+    </ul>
+  </li>
+  </ul>
+<p><strong>Example 1:</strong><br>
+Dan was driving down the road when a squirrel ran in front of his car. He swerved to avoid hitting the squirrel, and he ran into a tree.<br><br>
+
+The tree trunk broke and fell across the road. Sally was driving in the opposite direction when she saw the tree fall. To avoid having the tree hit her, Sally swerved onto Pete’s lawn, narrowly escaping injury from the falling tree.<br><br>
+
+Sally’s car caused significant damage to Pete’s yard, crushing several sprinkler lines and destroying several very valuable plants.<br><br>
+
+Pete has filed a lawsuit against Dan. Discuss.</p>
+<p><strong>Example 2:</strong><br>
+
+Last week, Darla hosted a dinner party at her two-storey home. Her neighbor Penny was one of several guests.<br><br>
+
+After the meal, Penny went upstairs to use the restroom and she tripped and fell on a broken step and although she was not hurt, she sat down for a moment to catch her breath after being startled by her fall.<br><br>
+
+Just at the same time that she was sitting on the steps, a plane flying overhead lost a wing, due to faulty maintenance. The wing fell right through Darla’s roof and onto the stairs, hitting and badly injuring Penny.<br><br>
+
+Penny has filed a lawsuit against Darla. Discuss.
+<br>
+</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
