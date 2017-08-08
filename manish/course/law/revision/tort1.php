@@ -274,11 +274,36 @@ D's wrongful intent is transferred from the <strong>intended victim</strong> to 
       <li>Special</li>
   </ul>
   </li>
-  <li>Breach
-    <ul>
-      <li>Direct / Circumstantial</li>
-      <li>Res Ipsa Loquitur</li>
-    </ul>
+  <li><strong>Breach</strong><br>
+    A Breach is the failure to perform one's duty.
+      <ul>
+  <li><strong>Direct / Circumstantial</strong><br>
+    Breach is proved by direct or circumstantial evidence.
+  </li>
+      <li><strong>Res Ipsa Loquitur</strong><br>
+        Res  Ipsa Loquitur is a rule of evidence which aids the plaintiff in proving the element of breach of duty when the plaintiff is unable to establish by other evidence that the defendant acted unreasonably.<br>
+        <br>
+        The doctrine proceeds upon the theory that the occurence itself speaks of negligence and it is unnecessaryfor the plaintiff to show the exact circumstances whereby the defendant breached his duty of care.<br>
+        <br>
+        The literal interpretation is &quot;The Thing Speak For Itself&quot;.<br>
+        <br>
+        <strong>Example 1:</strong><br>
+        A breach is a failure to perform one's duty.<br>
+        <br>
+        Here, it wasn't a breach for Dan to swerve and avoid hitting the squirrel, as long as he could do so safely without causing harm to anyone else. However, when Dan swerved, he <strong>hit a tree</strong>, which <strong>ultimately led to harming</strong> Pete's lawn (infra).<br>
+        <br>
+        Therefore, Dan breached his duty to Pete.
+        <br>
+        <br>
+        <strong>Example 2:</strong><br>
+        A breach is a failure to perform one's duty<br>
+        <br>
+        Because the step was broken when Penny went upstairs, Darla breached her duty as a land occupier by <strong>not warning </strong>Penny or by <strong>not repairing</strong> the step. There are no facts  to suggest Penny was aware of the broken steps
+      or that the condition of the step was obvious.<br>
+      <br>
+      Therefore, Darla breached her duty to Penny.
+      </li>
+  </ul>
   </li>
   <li>Causation
     <ul>
