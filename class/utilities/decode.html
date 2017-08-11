@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+  /*&quot;&gt;&lt;svg&#47;onload&#61;alert&#40;document&#46;cookie&#41;&gt;&#47;
+  */
+  function htmlDecode(input){
+  var e = document.createElement('div');
+  e.innerHTML = input;
+  return e.childNodes[0].nodeValue;
+}
+
+var rs = htmlDecode('&quot;&gt;&lt;svg&#47;onload&#61;alert&#40;document&#46;cookie&#41;&gt;&#47;');
+  console.log(rs);
+  </script>
+</head>
+
+<body>
+</body>
+</html>
