@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="setup.php.inc" local="131429293016065114" remote="131429289200000000" testing="0" />
+<file name="test_castle.phpt" local="131429293016070124" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid1.phpt" local="131429293016075135" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid2.phpt" local="131429293016085160" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid3.phpt" local="131429293016090181" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid4.phpt" local="131429293016105217" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid5.phpt" local="131429293016110231" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid6.phpt" local="131429293016115242" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_invalid7.phpt" local="131429293016120256" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_valid1.phpt" local="131429293016130285" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_valid_capture.phpt" local="131429293016135295" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_valid_capturepromote.phpt" local="131429293016140309" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove_valid_promote.phpt" local="131429293016150345" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_invalid1.phpt" local="131429293016160363" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_invalid2.phpt" local="131429293016165373" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_invalid3.phpt" local="131429293016170388" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_invalid4.phpt" local="131429293016175405" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_valid.phpt" local="131429293016185430" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_valid_capture.phpt" local="131429293016190448" remote="131429289200000000" testing="0" />
+<file name="test_piecemove_valid_disambiguate.phpt" local="131429293016195459" remote="131429289200000000" testing="0" />
+<file name="test_placement.phpt" local="131429293016205480" remote="131429289200000000" testing="0" />
+<file name="test_placepawn_backrank.phpt" local="131429293016210498" remote="131429289200000000" testing="0" />
+</dwsync>

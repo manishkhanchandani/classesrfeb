@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="setup.php.inc" local="131429293014305426" remote="131429289200000000" testing="0" />
+<file name="test_bishopcheck1.phpt" local="131429293014315454" remote="131429289200000000" testing="0" />
+<file name="test_bishopcheck2.phpt" local="131429293014325483" remote="131429289200000000" testing="0" />
+<file name="test_bishopcheck3.phpt" local="131429293014330501" remote="131429289200000000" testing="0" />
+<file name="test_bishopcheck4.phpt" local="131429293014335511" remote="131429289200000000" testing="0" />
+<file name="test_knightcheck.phpt" local="131429293014350543" remote="131429289200000000" testing="0" />
+<file name="test_pawncheck1.phpt" local="131429293014375611" remote="131429289200000000" testing="0" />
+<file name="test_pawncheck2.phpt" local="131429293014380629" remote="131429289200000000" testing="0" />
+<file name="test_queencheck1.phpt" local="131429293014385643" remote="131429289200000000" testing="0" />
+<file name="test_queencheck2.phpt" local="131429293014390654" remote="131429289200000000" testing="0" />
+<file name="test_queencheck3.phpt" local="131429293014405693" remote="131429289200000000" testing="0" />
+<file name="test_queencheck4.phpt" local="131429293014410707" remote="131429289200000000" testing="0" />
+<file name="test_queencheck5.phpt" local="131429293014420735" remote="131429289200000000" testing="0" />
+<file name="test_queencheck6.phpt" local="131429293014425746" remote="131429289200000000" testing="0" />
+<file name="test_queencheck7.phpt" local="131429293014430764" remote="131429289200000000" testing="0" />
+<file name="test_queencheck8.phpt" local="131429293014440785" remote="131429289200000000" testing="0" />
+<file name="test_rookcheck1.phpt" local="131429293014445799" remote="131429289200000000" testing="0" />
+<file name="test_rookcheck2.phpt" local="131429293014450814" remote="131429289200000000" testing="0" />
+<file name="test_rookcheck3.phpt" local="131429293014455828" remote="131429289200000000" testing="0" />
+<file name="test_rookcheck4.phpt" local="131429293014460838" remote="131429289200000000" testing="0" />
+</dwsync>

@@ -18,6 +18,7 @@ $httpPath = '/classesrfeb/manish/course/law';
             <li><a href="<?php echo $httpPath; ?>/revision/checklist.php">Checklist</a></li>
             <li><a href="<?php echo $httpPath; ?>/revision/approaches/criminal.php">Criminal Law Approaches</a></li>
             <li><a href="<?php echo $httpPath; ?>/revision/approaches/contracts.php">Contract Law Approaches</a></li>
+            <li><a href="<?php echo $httpPath; ?>/revision/approaches/torts.php">Torts Law Approaches</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>

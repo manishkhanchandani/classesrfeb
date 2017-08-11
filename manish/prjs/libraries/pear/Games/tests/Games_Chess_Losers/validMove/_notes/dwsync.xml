@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="setup.php.inc" local="131429293017955140" remote="131429289200000000" testing="0" />
+<file name="test_invalid_castleb1.phpt" local="131429293017965168" remote="131429289200000000" testing="0" />
+<file name="test_invalid_castleb2.phpt" local="131429293017970179" remote="131429289200000000" testing="0" />
+<file name="test_invalid_castlew1.phpt" local="131429293017980203" remote="131429289200000000" testing="0" />
+<file name="test_invalid_castlew2.phpt" local="131429293017985221" remote="131429289200000000" testing="0" />
+<file name="test_invalid_must_capture_w.phpt" local="131429293017995243" remote="131429289200000000" testing="0" />
+<file name="test_invalid_pawnmove1.phpt" local="131429293018005271" remote="131429289200000000" testing="0" />
+<file name="test_invalid_pawnmove2.phpt" local="131429293018010285" remote="131429289200000000" testing="0" />
+<file name="test_invalid_piecemove1.phpt" local="131429293018015303" remote="131429289200000000" testing="0" />
+<file name="test_invalid_piecemove2.phpt" local="131429293018025324" remote="131429289200000000" testing="0" />
+<file name="test_invalid_piecemove3.phpt" local="131429293018030339" remote="131429289200000000" testing="0" />
+<file name="test_valid_castleb_k.phpt" local="131429293018035353" remote="131429289200000000" testing="0" />
+<file name="test_valid_castleb_q.phpt" local="131429293018040378" remote="131429289200000000" testing="0" />
+<file name="test_valid_castlew_k.phpt" local="131429293018050392" remote="131429289200000000" testing="0" />
+<file name="test_valid_castlew_q.phpt" local="131429293018055406" remote="131429289200000000" testing="0" />
+<file name="test_valid_pawnmove1.phpt" local="131429293018060417" remote="131429289200000000" testing="0" />
+<file name="test_valid_pawnmove2.phpt" local="131429293018070442" remote="131429289200000000" testing="0" />
+<file name="test_valid_pawnmove_ep.phpt" local="131429293018075456" remote="131429289200000000" testing="0" />
+<file name="test_valid_piecemove1.phpt" local="131429293018080470" remote="131429289200000000" testing="0" />
+<file name="test_valid_piecemove2.phpt" local="131429293018085484" remote="131429289200000000" testing="0" />
+</dwsync>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="setup.php.inc" local="131429293013954494" remote="131429289200000000" testing="0" />
+<file name="test_none_of_colorb.phpt" local="131429293013969533" remote="131429289200000000" testing="0" />
+<file name="test_none_of_colorw.phpt" local="131429293013979569" remote="131429289200000000" testing="0" />
+<file name="test_valid_empty.phpt" local="131429293013984583" remote="131429289200000000" testing="0" />
+<file name="test_valid_excludeb.phpt" local="131429293013994597" remote="131429289200000000" testing="0" />
+<file name="test_valid_excludew.phpt" local="131429293014009640" remote="131429289200000000" testing="0" />
+<file name="test_valid_pieceb.phpt" local="131429293014019668" remote="131429289200000000" testing="0" />
+<file name="test_valid_piecesb.phpt" local="131429293014039722" remote="131429289200000000" testing="0" />
+<file name="test_valid_piecesw.phpt" local="131429293014044736" remote="131429289200000000" testing="0" />
+<file name="test_valid_pieces_inpawnb.phpt" local="131429293014024683" remote="131429289200000000" testing="0" />
+<file name="test_valid_pieces_inpawnw.phpt" local="131429293014034704" remote="131429289200000000" testing="0" />
+<file name="test_valid_piecew.phpt" local="131429293014049747" remote="131429289200000000" testing="0" />
+</dwsync>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="setup.php.inc" local="131429293015749271" remote="131429289200000000" testing="0" />
+<file name="test_castlekb.phpt" local="131429293015754281" remote="131429289200000000" testing="0" />
+<file name="test_castlekw.phpt" local="131429293015759299" remote="131429289200000000" testing="0" />
+<file name="test_castleqb.phpt" local="131429293015764310" remote="131429289200000000" testing="0" />
+<file name="test_castleqw.phpt" local="131429293015774338" remote="131429289200000000" testing="0" />
+<file name="test_invalidpawnmove.phpt" local="131429293015784363" remote="131429289200000000" testing="0" />
+<file name="test_invalidpiecemove.phpt" local="131429293015789374" remote="131429289200000000" testing="0" />
+<file name="test_moveking.phpt" local="131429293015799402" remote="131429289200000000" testing="0" />
+<file name="test_moverook.phpt" local="131429293015804417" remote="131429289200000000" testing="0" />
+<file name="test_pawncapture1.phpt" local="131429293015809431" remote="131429289200000000" testing="0" />
+<file name="test_pawncapture2.phpt" local="131429293015819492" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove1.phpt" local="131429293015829495" remote="131429289200000000" testing="0" />
+<file name="test_pawnmove2.phpt" local="131429293015839513" remote="131429289200000000" testing="0" />
+<file name="test_piececapture1.phpt" local="131429293015849538" remote="131429289200000000" testing="0" />
+<file name="test_piecemove1.phpt" local="131429293015854556" remote="131429289200000000" testing="0" />
+<file name="test_piecemove2.phpt" local="131429293015864580" remote="131429289200000000" testing="0" />
+</dwsync>

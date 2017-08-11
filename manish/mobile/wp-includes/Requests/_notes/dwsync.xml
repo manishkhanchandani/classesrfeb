@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Auth.php" local="131429292941563040" remote="131429289200000000" testing="0" />
+<file name="Cookie.php" local="131429292941583082" remote="131429289200000000" testing="0" />
+<file name="Exception.php" local="131429292941598121" remote="131429289200000000" testing="0" />
+<file name="Hooker.php" local="131429292941898929" remote="131429289200000000" testing="0" />
+<file name="Hooks.php" local="131429292941903943" remote="131429289200000000" testing="0" />
+<file name="IDNAEncoder.php" local="131429292941913964" remote="131429289200000000" testing="0" />
+<file name="IPv6.php" local="131429292941923993" remote="131429289200000000" testing="0" />
+<file name="IRI.php" local="131429292941929003" remote="131429289200000000" testing="0" />
+<file name="Proxy.php" local="131429292941934025" remote="131429289200000000" testing="0" />
+<file name="Response.php" local="131429292941954067" remote="131429289200000000" testing="0" />
+<file name="Session.php" local="131429292941974124" remote="131429289200000000" testing="0" />
+<file name="SSL.php" local="131429292941969121" remote="131429289200000000" testing="0" />
+<file name="Transport.php" local="131429292941984149" remote="131429289200000000" testing="0" />
+</dwsync>

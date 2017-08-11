@@ -100,6 +100,77 @@ include('../../navigation.php');
 					?>
           		
            		</ul>
+           		
+           		<h3>Formation</h3>
+			  <ul class="list-group">
+		  		  <li class="list-group-item active">Governing Law</li>
+		    		<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+		    		<li class="list-group-item active">Offer</li>
+		    		<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+          		
+		    		<li class="list-group-item active">Acceptance
+		    		</li>
+		    		<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+		    		<li class="list-group-item active">Consideration
+		    		</li>
+		    		<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+		    		<li class="list-group-item active">Defenses to Formation
+		    		</li>
+		    		<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+          		
+           		</ul>
+           		
+           		
 			</div>
 			<div class="col-md-4">
 			  <h3>3rd Party Beneficiary</h3>
@@ -460,8 +531,8 @@ include('../../navigation.php');
            <div class="col-md-4">
 			  <h3>Remedies</h3>
 			  <ul class="list-group">
-		  		  <li class="list-group-item active">Define</li>
-		    		<li class="list-group-item">
+			    <li class="list-group-item active">Damages</li>
+			    <li class="list-group-item">
 		    		</li>
 			  		<?php for ($i = 0; $i < 2; $i++) {
 						?>
@@ -472,8 +543,20 @@ include('../../navigation.php');
 						<?php
 						}
 					?>
-		    		<li class="list-group-item active">Is Duty Delegable?</li>
-		    		<li class="list-group-item">
+						<li class="list-group-item active">Rescission</li>
+						<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+						<li class="list-group-item active">Restitution</li>
+						<li class="list-group-item">
 		    		</li>
 			  		<?php for ($i = 0; $i < 2; $i++) {
 						?>
@@ -485,21 +568,7 @@ include('../../navigation.php');
 						}
 					?>
           		
-		    		<li class="list-group-item active">Assumption of Duties
-		    		</li>
-		    		<li class="list-group-item">Third Party Beneficiary?
-		    		</li>
-			  		<?php for ($i = 0; $i < 2; $i++) {
-						?>
-						<div>
-						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
-						    <input type="text" class="form-control" placeholder="">
-					      </div>
-						<?php
-						}
-					?>
-          		
-		    		<li class="list-group-item active">Effect
+		    		<li class="list-group-item active">Reformation
 		    		</li>
 		    		<li class="list-group-item">
 		    		</li>
@@ -514,7 +583,22 @@ include('../../navigation.php');
 					?>
          		
          		
-		    		<li class="list-group-item active">Novation
+		    		<li class="list-group-item active">Specific Performance
+		    		</li>
+		    		<li class="list-group-item">
+		    		</li>
+			  		<?php for ($i = 0; $i < 2; $i++) {
+						?>
+						<div>
+						  <div class="input-group"><span id="addon1" class="input-group-addon"><?php echo $i + 1; ?></span>
+						    <input type="text" class="form-control" placeholder="">
+					      </div>
+						<?php
+						}
+					?>
+	    		
+	    		
+		    		<li class="list-group-item active">Injunction
 		    		</li>
 		    		<li class="list-group-item">
 		    		</li>

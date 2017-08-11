@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="01connect.phpt" local="131429293026091786" remote="131429289200000000" testing="0" />
+<file name="02fetch.phpt" local="131429293026096797" remote="131429289200000000" testing="0" />
+<file name="03simplequery.phpt" local="131429293026106829" remote="131429289200000000" testing="0" />
+<file name="04numcols.phpt" local="131429293026111839" remote="131429289200000000" testing="0" />
+<file name="05sequences.phpt" local="131429293026116854" remote="131429289200000000" testing="0" />
+<file name="06prepexec.phpt" local="131429293026131893" remote="131429289200000000" testing="0" />
+<file name="08affectedrows.phpt" local="131429293026136903" remote="131429289200000000" testing="0" />
+<file name="09numrows.phpt" local="131429293026146932" remote="131429289200000000" testing="0" />
+<file name="10errormap.phpt" local="131429293026151946" remote="131429289200000000" testing="0" />
+<file name="11transactions.phpt" local="131429293026161971" remote="131429289200000000" testing="0" />
+<file name="13limit.phpt" local="131429293026167007" remote="131429289200000000" testing="0" />
+<file name="14fetchmode_object.phpt" local="131429293026171999" remote="131429289200000000" testing="0" />
+<file name="15quote.phpt" local="131429293026182028" remote="131429289200000000" testing="0" />
+<file name="16tableinfo.phpt" local="131429293026192053" remote="131429289200000000" testing="0" />
+<file name="17query.phpt" local="131429293026202078" remote="131429289200000000" testing="0" />
+<file name="18get.phpt" local="131429293026207088" remote="131429289200000000" testing="0" />
+<file name="19getlistof.phpt" local="131429293026217120" remote="131429289200000000" testing="0" />
+<file name="20locale.phpt" local="131429293026222135" remote="131429289200000000" testing="0" />
+<file name="21freeResult.phpt" local="131429293026232159" remote="131429289200000000" testing="0" />
+<file name="connect.inc" local="131429293026237174" remote="131429289200000000" testing="0" />
+<file name="droptable.inc" local="131429293026247199" remote="131429289200000000" testing="0" />
+<file name="mktable.inc" local="131429293026252213" remote="131429289200000000" testing="0" />
+<file name="multiconnect.php" local="131429293026262241" remote="131429289200000000" testing="0" />
+<file name="run.cvs" local="131429293026272263" remote="131429289200000000" testing="0" />
+<file name="setup.inc.cvs" local="131429293026277277" remote="131429289200000000" testing="0" />
+<file name="skipif.inc" local="131429293026282291" remote="131429289200000000" testing="0" />
+</dwsync>

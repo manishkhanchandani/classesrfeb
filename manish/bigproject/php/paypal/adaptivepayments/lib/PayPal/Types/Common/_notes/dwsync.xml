@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AccountIdentifier.php" local="131429292782899244" remote="131429289200000000" testing="0" />
+<file name="BaseAddress.php" local="131429292782909266" remote="131429289200000000" testing="0" />
+<file name="ClientDetailsType.php" local="131429292782919294" remote="131429289200000000" testing="0" />
+<file name="CurrencyType.php" local="131429292782924316" remote="131429289200000000" testing="0" />
+<file name="ErrorData.php" local="131429292782934340" remote="131429289200000000" testing="0" />
+<file name="ErrorParameter.php" local="131429292782944362" remote="131429289200000000" testing="0" />
+<file name="FaultMessage.php" local="131429292782954386" remote="131429289200000000" testing="0" />
+<file name="PhoneNumberType.php" local="131429292782964415" remote="131429289200000000" testing="0" />
+<file name="RequestEnvelope.php" local="131429292782969429" remote="131429289200000000" testing="0" />
+<file name="ResponseEnvelope.php" local="131429292782979458" remote="131429289200000000" testing="0" />
+</dwsync>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Google_AssertionCredentials.php" local="131429292859563204" remote="131429289200000000" testing="0" />
+<file name="Google_Auth.php" local="131429292859568218" remote="131429289200000000" testing="0" />
+<file name="Google_AuthNone.php" local="131429292859578247" remote="131429289200000000" testing="0" />
+<file name="Google_LoginTicket.php" local="131429292859583261" remote="131429289200000000" testing="0" />
+<file name="Google_OAuth2.php" local="131429292859593286" remote="131429289200000000" testing="0" />
+<file name="Google_P12Signer.php" local="131429292859608321" remote="131429289200000000" testing="0" />
+<file name="Google_PemVerifier.php" local="131429292859613335" remote="131429289200000000" testing="0" />
+<file name="Google_Signer.php" local="131429292859623368" remote="131429289200000000" testing="0" />
+<file name="Google_Verifier.php" local="131429292859633400" remote="131429289200000000" testing="0" />
+</dwsync>

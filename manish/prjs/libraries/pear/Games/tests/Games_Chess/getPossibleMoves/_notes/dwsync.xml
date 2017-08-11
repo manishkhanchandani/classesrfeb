@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="setup.php.inc" local="131429293014827003" remote="131429289200000000" testing="0" />
+<file name="test_invalid_color.phpt" local="131429293014841859" remote="131429289200000000" testing="0" />
+<file name="test_invalid_piece.phpt" local="131429293014851895" remote="131429289200000000" testing="0" />
+<file name="test_invalid_square.phpt" local="131429293014856899" remote="131429289200000000" testing="0" />
+<file name="test_valid_B.phpt" local="131429293014861909" remote="131429289200000000" testing="0" />
+<file name="test_valid_K.phpt" local="131429293014876952" remote="131429289200000000" testing="0" />
+<file name="test_valid_N.phpt" local="131429293014881966" remote="131429289200000000" testing="0" />
+<file name="test_valid_P.phpt" local="131429293014886973" remote="131429289200000000" testing="0" />
+<file name="test_valid_Q.phpt" local="131429293014896998" remote="131429289200000000" testing="0" />
+<file name="test_valid_R.phpt" local="131429293014902019" remote="131429289200000000" testing="0" />
+</dwsync>

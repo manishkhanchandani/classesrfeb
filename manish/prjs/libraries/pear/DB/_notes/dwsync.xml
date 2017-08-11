@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="common.php" local="131429293013257637" remote="131429289200000000" testing="0" />
+<file name="dbase.php" local="131429293013267666" remote="131429289200000000" testing="0" />
+<file name="fbsql.php" local="131429293013277716" remote="131429289200000000" testing="0" />
+<file name="ibase.php" local="131429293013287719" remote="131429289200000000" testing="0" />
+<file name="ifx.php" local="131429293013297748" remote="131429289200000000" testing="0" />
+<file name="msql.php" local="131429293013307776" remote="131429289200000000" testing="0" />
+<file name="mssql.php" local="131429293013322812" remote="131429289200000000" testing="0" />
+<file name="mysql.php" local="131429293013337854" remote="131429289200000000" testing="0" />
+<file name="mysqli.php" local="131429293013347876" remote="131429289200000000" testing="0" />
+<file name="oci8.php" local="131429293013357904" remote="131429289200000000" testing="0" />
+<file name="odbc.php" local="131429293013372954" remote="131429289200000000" testing="0" />
+<file name="pgsql.php" local="131429293013382975" remote="131429289200000000" testing="0" />
+<file name="sqlite.php" local="131429293013393004" remote="131429289200000000" testing="0" />
+<file name="storage.php" local="131429293013403029" remote="131429289200000000" testing="0" />
+<file name="sybase.php" local="131429293013413054" remote="131429289200000000" testing="0" />
+</dwsync>

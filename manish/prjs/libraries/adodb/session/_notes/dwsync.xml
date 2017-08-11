@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="adodb-compress-bzip2.php" local="131429293012099561" remote="131429289200000000" testing="0" />
+<file name="adodb-compress-gzip.php" local="131429293012104575" remote="131429289200000000" testing="0" />
+<file name="adodb-cryptsession.php" local="131429293012109586" remote="131429289200000000" testing="0" />
+<file name="adodb-cryptsession2.php" local="131429293012119611" remote="131429289200000000" testing="0" />
+<file name="adodb-encrypt-mcrypt.php" local="131429293012124625" remote="131429289200000000" testing="0" />
+<file name="adodb-encrypt-md5.php" local="131429293012134650" remote="131429289200000000" testing="0" />
+<file name="adodb-encrypt-secret.php" local="131429293012139668" remote="131429289200000000" testing="0" />
+<file name="adodb-encrypt-sha1.php" local="131429293012149692" remote="131429289200000000" testing="0" />
+<file name="adodb-sess.txt" local="131429293012159721" remote="131429289200000000" testing="0" />
+<file name="adodb-session-clob.php" local="131429293012169757" remote="131429289200000000" testing="0" />
+<file name="adodb-session-clob2.php" local="131429293012179774" remote="131429289200000000" testing="0" />
+<file name="adodb-session.php" local="131429293012189799" remote="131429289200000000" testing="0" />
+<file name="adodb-session2.php" local="131429293012194813" remote="131429289200000000" testing="0" />
+<file name="adodb-sessions.mysql.sql" local="131429293012204842" remote="131429289200000000" testing="0" />
+<file name="adodb-sessions.oracle.clob.sql" local="131429293012209852" remote="131429289200000000" testing="0" />
+<file name="adodb-sessions.oracle.sql" local="131429293012214867" remote="131429289200000000" testing="0" />
+<file name="crypt.inc.php" local="131429293012219877" remote="131429289200000000" testing="0" />
+<file name="session_schema.xml" local="131429293012259984" remote="131429289200000000" testing="0" />
+<file name="session_schema2.xml" local="131429293012264998" remote="131429289200000000" testing="0" />
+</dwsync>

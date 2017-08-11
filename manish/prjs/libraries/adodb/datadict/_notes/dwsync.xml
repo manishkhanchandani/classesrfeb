@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="datadict-access.inc.php" local="131429293010986598" remote="131429289200000000" testing="0" />
+<file name="datadict-db2.inc.php" local="131429293010996627" remote="131429289200000000" testing="0" />
+<file name="datadict-firebird.inc.php" local="131429293011006655" remote="131429289200000000" testing="0" />
+<file name="datadict-generic.inc.php" local="131429293011011666" remote="131429289200000000" testing="0" />
+<file name="datadict-ibase.inc.php" local="131429293011016680" remote="131429289200000000" testing="0" />
+<file name="datadict-informix.inc.php" local="131429293011026705" remote="131429289200000000" testing="0" />
+<file name="datadict-mssql.inc.php" local="131429293011036733" remote="131429289200000000" testing="0" />
+<file name="datadict-mysql.inc.php" local="131429293011046762" remote="131429289200000000" testing="0" />
+<file name="datadict-oci8.inc.php" local="131429293011051780" remote="131429289200000000" testing="0" />
+<file name="datadict-postgres.inc.php" local="131429293011066815" remote="131429289200000000" testing="0" />
+<file name="datadict-sapdb.inc.php" local="131429293011071826" remote="131429289200000000" testing="0" />
+<file name="datadict-sybase.inc.php" local="131429293011081851" remote="131429289200000000" testing="0" />
+</dwsync>
