@@ -164,9 +164,47 @@
 </ol>
 <p><strong>D. Strict Liability</strong></p>
 <p><strong>Approach</strong></p>
+<p><strong>Def: </strong>Liability is imposed irrespective of whether anyone was at fault.</p>
 <ul>
-  <li>Activity, Rylands vs Fletcher</li>
-  <li>R1 / R2 (factors)</li>
+  <li><strong>Activity, Rylands vs Fletcher</strong>
+<ul>
+      <li>Type of Animal / type of injury</li>
+      <li><strong>Ultrahazardous (Abnormally Dangerous) Activities</strong>
+<ul>
+          <li>The landmark case of Rylands vs Fletcher, held that a person who brings something onto his land that involves a non natural use of the land and is <strong>likely to cause substantial damage</strong> if it escapes will be strictly liable if it in fact escapes and causes harm.</li>
+          <li>Following thinsgs have to be proved:
+            <ul>
+              <li>Defendant engaged in an <strong>ultrahazardous abnormally dangerous</strong> activity,</li>
+              <li>had an absolute duty to <strong>make the activity safe</strong></li>
+              <li>was a <strong>foreseeable plaintiff</strong>, </li>
+              <li>suffered a <strong>foreseeable harm</strong>,</li>
+              <li>the activity was <strong>actual and proximate cause</strong> of his injury and</li>
+              <li>he suffered an <strong>actual injury</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>R1 / R2 (factors)</strong>
+<ul>
+      <li><strong>R1:</strong> Ultrahazardous (1st Restatement) involves a risk of serious harm to the persons or property of others, which cannot be eliminated even by due care, which is not a matter of common usage (utility vs risk) (blasting, drilling, fumigating)</li>
+      <li><strong>R2:</strong> One who maintains an abnormally dangerous condition or activity (2nd Restatement) on his or her premises, or engages in an activity that involves a high risk of harm to the persons or property of others may be liable for the harm it causes even though reasonable care to prevent such harm has been exercised, (crop dusting, stored explosives, common carrier transporting abnormally dangerous cargo, transporting a large quantity of highly flammable chemicals in one's auto)
+        <ul>
+          <li>Factors to consider:
+            <ul>
+              <li>Whether the activity involves a high degree of risk of harm.</li>
+              <li>The gravity of that risk</li>
+              <li>Whether the risk can be eliminated by the exercise of reasonable care</li>
+              <li><strong>Whether the activity is a matter of common usage;</strong></li>
+              <li><strong>Whether the activity is appropriate to the place where it is being carried on; and </strong></li>
+              <li><strong>The value of the activity to the community;</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li>Absolute Duty to Make Safe</li>
   <li>Foreseeable P / Harm</li>
   <li>Causation</li>
