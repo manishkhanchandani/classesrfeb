@@ -58,7 +58,7 @@ Add Following in index.html file
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvXqWIcqyTVRgjXsVjDbdORcNaXHVjtOw&libraries=places"></script>
 
 
-Create firebase.js file with following code in it:
+Create MyFirebase.js file with following code in it:
 
 import * as firebase from 'firebase';
 
@@ -107,6 +107,76 @@ const FirebaseConstant = {
 }
 
 export default FirebaseConstant;
+
+File: actions/MyAction.js
+
+//import {sample} from '../actions/MyAction.js';
+
+import MyConstant from '../constants/MyConstant.js';
+
+export const sample = () => {
+  return {
+    type: 'SAMPLE',
+    payload: 10
+  }
+}
+
+File: reducers/MyReducer.js
+
+const MyReducer = (state = {
+  data: null
+}, action) => {
+
+  switch(action.type) {
+    case 'SAMPLE':
+      state = {
+        ...state,
+        data: action.payload
+      };
+      break;
+    default:
+      break;
+  }
+
+  return state;
+};
+
+export default MyReducer;
+
+
+
+
+file: store.js
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {createLogger} from 'redux-logger';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
+
+import MyReducer from './reducers/MyReducer';
+
+const store = createStore(combineReducers({MyReducer}), {}, applyMiddleware(createLogger(), thunk, promise()));
+
+export default store;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

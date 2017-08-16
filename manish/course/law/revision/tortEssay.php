@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<p>Tort Essay</p>
+<p><strong>Tort Essay</strong></p>
 <p>A. Intentional Torts</p>
 <p>B. Negligence</p>
 <p>C. Products Liability</p>
@@ -168,21 +168,58 @@
 <ul>
   <li><strong>Activity, Rylands vs Fletcher</strong>
 <ul>
-      <li>Type of Animal / type of injury</li>
-      <li><strong>Ultrahazardous (Abnormally Dangerous) Activities</strong>
+      <li><strong>Animals</strong>
 <ul>
-          <li>The landmark case of Rylands vs Fletcher, held that a person who brings something onto his land that involves a non natural use of the land and is <strong>likely to cause substantial damage</strong> if it escapes will be strictly liable if it in fact escapes and causes harm.</li>
-          <li>Following thinsgs have to be proved:
+          <li>Type of Animal / type of injury
             <ul>
-              <li>Defendant engaged in an <strong>ultrahazardous abnormally dangerous</strong> activity,</li>
-              <li>had an absolute duty to <strong>make the activity safe</strong></li>
-              <li>was a <strong>foreseeable plaintiff</strong>, </li>
-              <li>suffered a <strong>foreseeable harm</strong>,</li>
-              <li>the activity was <strong>actual and proximate cause</strong> of his injury and</li>
-              <li>he suffered an <strong>actual injury</strong></li>
+              <li><strong>Domestic Animals</strong><br>
+                One is not strictly liable for injuries caused by a domestic animal (eg. dogs, cats) <strong>unless the defendant has &quot;scienter&quot; or knowledge of the dangerous propensities of the animal</strong>. 
+                <ul>
+                  <li>Without knowledge of a dangerous propensities, an owner is not liable.</li>
+                  <li>Strict liability for physical harm done
+                    <ul>
+                      <li>The possessor is liable only for injuries attributable to the animal's known dangerous propensity.</li>
+                      <li>Normally domestic animals like bull who has normally dangerous propensities is not liable for strict liability.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Wild Animals</strong><br>
+                A possessor of a wild animal is subject to liability to another for harm done by the animal to the other, his person, land or chattels, although the possesor has exercised the utmost care to confine the animal or otherwise prevent it from doing harm (non-delegable duty)
+                  <ul>
+                    <li>Liability is limited to harm that results from a dangerous propensity that is characteristic of wild animals of the particular class.</li>
+                    <li>Where wild animals are kept under a public duty, strict liability does not apply as in case of zoo.</li>
+                  </ul>
+              </li>
+              <li><strong>Tresspassing livestock:</strong><br>
+              Strict liability for trespass / damages.</li>
+              <li><strong>Injuries to third parties:</strong>
+<ul>
+                  <li>Licensees and invitees injured by wild or abnormally dangerous animals may recover in strict liability.</li>
+                  <li>The majority of courts hold that <strong>strict liability does not extend to trespassers whose presence the owner had no reason to know of or anticipate </strong>and thus, no recovery may be held for injuries inflicted by the animal.</li>
+                  <li>Strict liability will apply<strong> if the landowner had reason to anticipate trespassing</strong> upon the property unless adequate warnings of the animals presence were given. </li>
+                  <li>However, trespasser may recover in negligence where the landowner knows of their presence and fails to post warnings.</li>
+                  <li>Strict liability recovery<strong> will apply </strong>for injures inflicted by a <strong>vicious watchdogs</strong> unless adequate warnings of the dog's presence were posted.</li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
+      </li>
+      <li><strong>Ultrahazardous (Abnormally Dangerous) Activities</strong>
+  <ul>
+    <li>The landmark case of Rylands vs Fletcher, held that a person who brings something onto his land that involves a non natural use of the land and is <strong>likely to cause substantial damage</strong> if it escapes will be strictly liable if it in fact escapes and causes harm.</li>
+    <li>Following thinsgs have to be proved:
+      <ul>
+        <li>Defendant engaged in an <strong>ultrahazardous abnormally dangerous</strong> activity,</li>
+        <li>had an absolute duty to <strong>make the activity safe</strong></li>
+        <li>was a <strong>foreseeable plaintiff</strong>, </li>
+        <li>suffered a <strong>foreseeable harm</strong>,</li>
+        <li>the activity was <strong>actual and proximate cause</strong> of his injury and</li>
+        <li>he suffered an <strong>actual injury</strong></li>
+        </ul>
+      </li>
+    </ul>
       </li>
     </ul>
   </li>
@@ -198,18 +235,30 @@
               <li>Whether the risk can be eliminated by the exercise of reasonable care</li>
               <li><strong>Whether the activity is a matter of common usage;</strong></li>
               <li><strong>Whether the activity is appropriate to the place where it is being carried on; and </strong></li>
-              <li><strong>The value of the activity to the community;</strong></li>
+              <li><strong>The value of the activity to the community;</strong><br>
+                <br>
+                Fireworks - negligence
+              </li>
             </ul>
           </li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>Absolute Duty to Make Safe</li>
-  <li>Foreseeable P / Harm</li>
-  <li>Causation</li>
-  <li>Damages</li>
-  <li>Defenses</li>
+  <li><strong>Absolute Duty to Make Safe</strong><br>
+  A strict liability action requires a prima facie showing that defendant <strong>breached an absolute duty to make safe</strong>. </li>
+  <li><strong>Foreseeable P / Harm</strong><br>
+    Duty owed to foreseeable P's and to the results from the kind of danger to be anticipated (MINK Case). Strict liability is limited to the kind of harm, the possibility of which makes the activity abnormally dangerous.
+  </li>
+  <li><strong>Causation</strong><br>
+    Actual and proximate cause should be argued. Some courts cut off proximate cause when the plaintiff's own act caused the strict liability harm.
+  </li>
+  <li><strong>Damages</strong><br>
+    Harm to plaintiff's person or property. No recovery permitted for a pure economic injury. A pure economic loss is a loss that is not connected with physical injury to property or person.
+  </li>
+  <li><strong>Defenses</strong><br>
+    Assumption of the risk may prevent recovery / comparative negligence applicable in some jurisdictions
+  </li>
 </ul>
 <p><strong>E. Defamation</strong></p>
 <p><strong>Approach</strong></p>
@@ -226,7 +275,53 @@
     </ul>
   </li>
 </ul>
-<p>F. Vicarious Liability</p>
+<p><strong>F. Vicarious Liability</strong></p>
+<p><strong>Def:</strong> The master is vicariously liable for the torts of servants that occur within the <strong>course and scope </strong>of their employment.</p>
+<ul>
+  <li><strong>Public Policy</strong><br>
+    Public policy demands that employers should bear the risk of loss.
+    <ul>
+      <li>Look to see if the employee was acting to further his employer's business or to discharge the obligations of his employment.</li>
+      <li>Look to the foreseeability of the deviation
+        <ul>
+          <li>Detour - slight deviation, employer liable</li>
+          <li>Frolic - major deviation, employer not liable</li>
+        </ul>
+      </li>
+      <li>Did the employee commit a foreseeable intentional tort?</li>
+    </ul>
+  </li>
+  <li><strong>Another Servant</strong><br>
+  The master who borrows another's servant will be vicariously liable for the torts of that servant.</li>
+  <li><strong>Independent Contractors</strong><br>
+    General rule no liability to employer unless:
+    <ul>
+      <li>Inherently dangerous activities (beware of strict liability)</li>
+      <li>Non-delegable duties (maintain roads in good repair, maintain automobile, maintain public premises)</li>
+      <li><strong>R2 414,</strong> One who entrusts work to an independent contractor, but who retains the control of any part of the work, is subject to liability for physical harm to others for whose safety the employer owes a duty to exercise reasonable care.</li>
+      <li><strong>Collateral Negligence Rule:</strong> Emplyer is only responsible for the risks which are inherent in the work, not for the collateral negligence of the independent contractor.</li>
+    </ul>
+  </li>
+  <li><strong>Joint Ventures</strong><br>
+    One member of a joint enterprise is vicariously liable to those outside the enterprise for the conduct of another joint enterprisers acting within the scope of the enterprise. 
+  Look for an agreement / common purpose (<strong>majority</strong> requires a business purpose) / equal right of voice and control.</li>
+  <li><strong>Automobile Cases</strong><br>
+    Owner is vicariously liable for injuries resulting from the bailee's negligent operation (third party recoveries)
+    <ul>
+      <li>Family purpose doctrine</li>
+      <li>Permissive use statutes</li>
+    </ul>
+  </li>
+  <li><strong>Bailor / Bailee Relationship</strong><br>
+    Bailment's generally involve no vicarious liability, unless lack of due care shown on the part of the bailor
+    <ul>
+      <li>Negligent entrustment may still apply.</li>
+    </ul>
+  </li>
+  <li><strong>Parent / Child</strong><br>
+    A parent is not vicariously liable for the tortious conduct of the child at common law. However, most states, by statute, make parents liable for the willful and intentional torts of their minor children up to a certain dollar amount. Examples include: parent entrusting a child with a dangerous instrumentality, parent knows of the child's wrongdoing and consents or ratifies or the parent fails to exercise proper control over the child.</li>
+</ul>
+<p><strong>NOTE: </strong>If the related party is not vicariously liable, he may be liable for his own negligence (e.g. negligent selection of independent contractor, negligent entrustment of automoble, negligent supervision of child).</p>
 <p><strong>G. Invasion of Privacy</strong></p>
 <p><strong>Approach</strong></p>
 <ul>
@@ -243,6 +338,62 @@
   </li>
   <li>IIED? </li>
 </ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Extras</strong></p>
+<p>A. Crossovers</p>
+<ul>
+  <li><strong>Misrepresentation</strong>
+<ul>
+      <li><strong>Intentional: Deceit / Fraud</strong><br>
+        In order to recover for intentional misrepresentation, or deceit, the plaintiff must prove that the defendant made a <strong>false statement </strong>of <strong>material fact</strong> with <strong>scienter (intent or knowledge)</strong> and with an intent to <strong>induce the plaintiff's reliance</strong>, and that the <strong>plaintiff justifiably relied</strong>, causing the <strong>plaintiff damage</strong>. <br>
+        <br>
+      </li>
+      <li><strong>Negligent</strong><br>
+      In order to recover for negligent misrepresentation, the plaintiff must prove that the defendant <strong>breached his duty to exercise due care in acquiring and transmitting information</strong>, and made a <strong>false statement</strong> of <strong>material fact</strong>, with an intent to <strong>induce the plaintiff's reliance</strong> and that the <strong>plaintiff justifiably relied</strong>, causing the <strong>plaintiff damage</strong>. <br>
+      <br>
+      <strong>Scienter</strong> is misisng in negligent, in negligent it is breach of duty where as in Intentional, it is knowledge.<br>
+      <br>
+      </li>
+      <li><strong>Damages</strong>
+<ul>
+          <li><strong>Out of Pocke tDamages (Misrepresentation)</strong><br>
+          Out of Pocket damages are usually considered to be the same thing as <strong>special damages</strong> since they are pecuniary in nature. However, in an action for misrepresentation, out-of-pocket damages are calculated by <strong>comparing the difference between what the plaintiff paid, to the value of what the plaintiff received</strong>. <br>
+          <strong>Example</strong> if car is sold for 10,000 and in reality it has problem and value is 4000, so recovery is of 6000 dollars , in case of misrepresentation, if we want full value then sue it for recission.</li>
+          <li><strong>Loss of the Benefit of the Bargain Theory (Misrepresentation)</strong><br>
+          Under the Loss of the Benefit of the Bargain Theory, special damages for misrepresentation are calculated by <strong>considering the value received by the plaintiff</strong> as compared to the <strong>value that the defendant stated</strong> the plaintiff would receive. <br>
+          <strong>Example</strong>: car is sold at $6k and defendant said it is worth $10k, but in reality it is worth $5k, so since he has to pay $5k to plaintiff as 10k - 5k. </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Nuisance</strong>
+<ul>
+      <li><strong>Private Nuisance</strong><br>
+      Private nuisance results from an act by the defendant which <strong>unreasonably interferes</strong> with the <strong>plaintiff's use or enjoyment </strong>of his or her <strong>property</strong>. </li>
+      <li><strong>Public Nuisance</strong><br>
+      Public nuisance results from an <strong>act</strong> or conduct <strong>by the defendant</strong> which is <strong>injurious</strong> to the <strong>public</strong> in general. </li>
+    </ul>
+  </li>
+  <li>Wrongful Litigation
+    <ul>
+      <li>Malicious Prosecution</li>
+      <li>Abuse of Process</li>
+    </ul>
+  </li>
+  <li>Business Torts
+    <ul>
+      <li>Disparagement</li>
+      <li>Interference with Economic Relationship</li>
+    </ul>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </body>
