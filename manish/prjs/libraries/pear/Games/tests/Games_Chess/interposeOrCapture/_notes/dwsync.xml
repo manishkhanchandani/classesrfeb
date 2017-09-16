@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<dwsync>
-<file name="setup.php.inc" local="131429293015633965" remote="131429289200000000" testing="0" />
-<file name="test_knightcheck_capture_impossible.phpt" local="131429293015638976" remote="131429289200000000" testing="0" />
-<file name="test_knightcheck_capture_possible.phpt" local="131429293015649000" remote="131429289200000000" testing="0" />
-<file name="test_piececheck_capture_impossible.phpt" local="131429293015659029" remote="131429289200000000" testing="0" />
-<file name="test_piececheck_capture_possible.phpt" local="131429293015669054" remote="131429289200000000" testing="0" />
-<file name="test_piececheck_interpose_possible.phpt" local="131429293015679086" remote="131429289200000000" testing="0" />
-</dwsync>

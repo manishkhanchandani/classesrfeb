@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<dwsync>
-<file name="perf-db2.inc.php" local="131429292778221795" remote="131429289200000000" testing="0" />
-<file name="perf-informix.inc.php" local="131429292778231824" remote="131429289200000000" testing="0" />
-<file name="perf-mssql.inc.php" local="131429292778241852" remote="131429289200000000" testing="0" />
-<file name="perf-mysql.inc.php" local="131429292778246863" remote="131429289200000000" testing="0" />
-<file name="perf-oci8.inc.php" local="131429292778266920" remote="131429289200000000" testing="0" />
-<file name="perf-postgres.inc.php" local="131429292778286970" remote="131429289200000000" testing="0" />
-</dwsync>
