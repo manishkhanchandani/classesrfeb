@@ -12,7 +12,7 @@ body {
 </head>
 
 <body>
-<h1>Contracts Sample Question 1</h1>
+<h1>Contracts Sample Question 1 (Contract Formation)</h1>
 <p>&nbsp;</p>
 <table width="100%" border="1" cellpadding="5" cellspacing="0">
   <tr>

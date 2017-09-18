@@ -12,5 +12,19 @@ body {
 </head>
 
 <body>
+<h1>Contracts Sample Question 2 (UCC and Acceptance Varying Terms)</h1>
+<table width="100%" border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
 </body>
 </html>
