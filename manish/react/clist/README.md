@@ -12,11 +12,11 @@ npm install redux redux-logger react-redux redux-thunk redux-promise-middleware 
 
 npm install react-google-autocomplete --save
 
-npm install react-router --save
-
 npm install firebase --save
 
 npm install react-router-dom --save
+
+npm install react-router --save
 
 
 Folder Structure Creation
