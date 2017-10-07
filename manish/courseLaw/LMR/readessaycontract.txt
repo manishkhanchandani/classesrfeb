@@ -1,0 +1,450 @@
+Practice Question 17-1
+Lucy owned a rent house. She advertised it in the newspaper citing rent of $700 a month.
+Homer saw the ad and called Lucy at 9:00 a.m. Homer said, "I saw your ad and accept your offer! I will be right there to pay you. I have to see the house, but would you consider $550?”
+Lucy said, “It's a deal. I will rent to you for $550. This is a firm offer.” Homer said he would be there in one hour to see the house.
+Homer went 100 miles an hour to see the house, sideswiping Victoria. Victoria crashed and died along with her 7-month fetus.
+At 3:00 p.m. Homer arrived, five hours late, ran up to Lucy and said, “I unequivocally accept. Here is my $550.”
+Lucy said, “I have decided not to rent to you.” Discuss the rights of Homer and Lucy's defenses.
+
+Sample Answer 17-1: Contract Formation
+HOMER v. LUCY
+The rights and remedies of the parties depend on whether or not there was a valid contract. A contract is a promise or set of promises the performance of which the law will recognize as a duty and for which the law will provide a remedy.
+1) UCC?
+UCC Article 2 governs contracts for the sale of GOODS, movable things at the time of
+identification to the contract. Otherwise, only COMMON LAW governs the contract.
+Here the contract does not concern a sale of movable things because it is for the "rent" of a "house".
+Therefore, only COMMON LAW principles govern this contract.
+2) Is a WRITING REQUIRED?
+Under the STATUTE OF FRAUDS certain types of contracts must be in writing to be enforced. A contract for conveyance of an interest in LAND often requires a writing, but not leaseholds of a year or less.
+Here the question involves conveyance of an interest in land because the alleged agreement was to rent a "house", but this appears to be a month-to-month rental.
+Therefore, a writing would not generally be required.
+3) Was the ADVERTISEMENT an OFFER?
+Under contract law an OFFER is a manifestation of present intent to enter into a bargain communicated to the offeree and sufficiently specific that an observer would reasonably believe assent would form a bargain. Advertisements are generally not offers because they usually fail to identify the parties or the quantity being offered.
+Here the advertisement was not specific as to the parties because it did not guarantee that Lucy would rent to the first person to respond.
+Therefore, the advertisement was not an offer.
+Appendix B Sample Answers
+               145
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams 4) Was the 9:00 statement by Homer an OFFER?
+Offer is defined above.
+Here the statement by Homer did not appear to manifest intent to enter into a bargain because even though he said, "I accept" he added that he "had to see the house first." No reasonable person would believe assent to that statement would form a bargain because it was clear he wanted to “see the house first.”
+Therefore the statement was not an offer.
+5) Was the 9:00 response by Lucy an OFFER? Offer is defined above.
+Here the statement by Lucy did manifest intent to enter into a bargain because she said "It's a deal. I will rent to you for $550." A reasonable person would believe assent to that statement would form a bargain.
+Therefore that statement was an offer.
+6) Did Homer have a valid OPTION?
+Offer is defined above. Under common law an OPTION is a contractual agreement that an offeror will not revoke an offer for a specific period of time in exchange for CONSIDERATION from the offeree. CONSIDERATION is an exchange of promises posing legal detriment such that the law deems it sufficient to support an agreement.
+Here Lucy promised to give a "firm offer", but Homer gave no promise or value in exchange. While the UCC provides for “firm offers” from merchants, the UCC does not govern here. Therefore, Lucy received no legal consideration in exchange for her promise to give a “firm offer” and her promise cannot be enforced against her as an option contract.
+Therefore, Lucy's offer did not create an option contract, and she could revoke her offer at any time.
+7) Did Homer effectively ACCEPT at 3:00?
+At common law an acceptance must be an unequivocal assent to the terms of an offer, dispatched to the offeror in the manner required, or if no manner is required in the offer, by the means by which the offer was dispatched or some faster means.. An offer must be accepted before it LAPSES. Unless there is an option, an offer lapses in the time stated or if no time is stated within a reasonable time after the offer is made.
+Here the reasonable time for acceptance of Lucy's offer is defined by the understanding that Homer would view the house in only one hour at "10:00". That understanding established the
+            146
+
+“reasonable time” within which Homer could accept the offer. But Homer was "five hours late," so Lucy's offer had already lapsed when he arrived. Homer's attempt to unequivocally accept Lucy's 9:00 offer by saying "I unequivocally accept" was ineffective because he could not accept an offer that had already lapsed.
+Therefore, Homer's attempt to accept was ineffective.
+[ANSWER EXPLANATION: This question is a typical FORMATION question because it goes through a series of communications between the parties. When you see messages going back and forth, it is a FORMATION question, so analyze each message.
+Start with an INTRODUCTORY DEFINITION of a contract. Then chronologically analyze each communication to see if it is an OFFER. Once there is an offer, the next issue is whether the offer is ACCEPTED.
+If there is offer and an acceptance a contract forms and the next issue is the TERMS of the contract.
+After the contract and terms are discussed the next issue is whether there has been a BREACH. And if there is a breach, the issues are WHO BREACHED and the REMEDIES of the parties.]
+
+
+
+Practice Question 17-2
+Al had bought a lot of clothes over the years. One day he called tailor Bob and asked him to custom make him a tuxedo to wear to the wedding of his daughter Carla the next Sunday.
+Bob told Al that he could not make a tuxedo so fast and suggested instead that Al buy a ready- made tuxedo that he had in stock in exactly Al's size. Al agreed and said he would be in to pick it up later that week. Price was not discussed.
+Bob sent Al a note several days later stating, "This is to confirm your order to purchase the tuxedo. The price is normally $750, but for you the price is only $519.95."
+Al was shocked at the price, but it was too late for him to get a tuxedo anywhere else on such short notice. He felt he had been taken advantage of, but there was nothing he could do.
+Al came in and tried the tuxedo on the day before the wedding and it did not fit. Bob assured him not to worry. He would take it in. Al nodded.
+Bob took in the pants and sent Al a note that said, "I took in the pants and it should fit you like a glove. With alterations the price is now $750.
+Al was furious.
+Carla's wedding was suddenly called off. Al never called Bob and never went to get the tuxedo. Bob was furious.
+Does Bob have a right to be paid for the tuxedo? What are Al's defenses?
+
+
+Sample Answer 17-2: UCC and Acceptance Varying Terms
+BOB v. AL
+The rights and remedies of the parties here depend on whether there was a valid contract. A CONTRACT is a promise or set of promises the performance of which the law will recognize as a duty and for the breach of which the law will provide a remedy.
+1) UCC?
+Article 2 of the UCC governs contracts for the sale of GOODS, movable things at the time of
+identification to the contract.
+Here the contract is for sale of a moveable thing because it was for sale of a “tuxedo”. Therefore this was a contract for a sale of goods and the UCC governs.
+2) MERCHANTS?
+Under the UCC MERCHANTS are people who deal in the goods or hold themselves out by occupation as knowledgeable about the goods in a contract.
+Here Bob deals in tuxedos because he has a clothing store. Al may have "bought a lot of clothes " but there is no evidence he deals in tuxedos or hold himself out by occupation as being particularly knowledgeable about them.
+Therefore Bob is a merchant and Al is not.
+3) Is A WRITING NEEDED?
+Under UCC 2-201 a contract for the sale of GOODS over $500 requires a writing. This limit is being raised to $5,000 but many States are still using the $500 limit. Under the UCC a contract between MERCHANTS may satisfy the need for a writing against both parties if there is a sales confirmation indicating the quantity sent to one party by the other and the receiving party does not object to the representation of a contract.
+Further, under the UCC there is no need for a writing if goods are special made, the person to be bound acknowledges the contract in a legal setting or where a party has accepted payment or goods.
+Here the goods are over $500 because the tuxedo costs "$519.95." And Al is not a merchant as shown above.
+Further, this was a "ready-made" tuxedo, not special made, and Al never acknowledged the contract in a legal setting or accepted the goods.
+                       148
+Therefore a writing signed by Al is needed if the contract is to be enforced against him by Bob.
+4) Did Bob OFFER to sell the tuxedo?
+Under contract law an OFFER is a manifestation of present contractual intent communicated to the offeree that is so specific that an objective observer would reasonably believe assent would form a bargain.
+Here Bob manifested an intent to sell a tuxedo because he "suggested Al buy" the tuxedo. And a reasonable person would believe assent to this communication would form a bargain.
+Therefore, Bob made an offer.
+5) Did Al ACCEPT Bob's offer?
+Under the UCC acceptance of an offer can be made by any reasonable means showing assent to an offer.
+Here Al showed assent by a reasonable means because he "agreed". Therefore, Al accepted Bob's offer.
+6) What were the TERMS of the bargain?
+Under the UCC the subject matter, quantity and parties must be specified for a contract to be sufficiently certain, but all other terms can be supplied by the UCC’s GAP FILLERS.
+Here the parties are Al and Bob and the subject matter is one tuxedo that is to be "exactly Al's size." Although price was not agreed upon that term would be inferred by the normal price for such goods. If $519.95 was the normal price of the tuxedo, it would be the price supplied by the UCC. The place of delivery was Bob's store and the time of delivery was agreed to be "later in the week."
+Therefore the TERMS of the contract were sufficiently certain for it to be enforced. 7) BREACH?
+Under the UCC PERFECT TENDER RULE goods must be delivered exactly as ordered. A seller that gives notice of intent to CURE a shipment of non-conforming goods has a right to cure within the contract period and a right to extra time to cure if non-conforming goods were delivered with a reasonable belief they were suitable for the buyer's needs.
+Here Bob delivered non-conforming goods because the tuxedo was not an "exact fit" as promised. Bob gave notice of intent to cure, and had time within the contract period to cure the lack of fit.
+Appendix B Sample Answers
+                   149
+
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams Therefore, Bob breached, but had a right to cure the breach.
+Was the contract MODIFIED to a higher price?
+Under the UCC a modification of a contract by agreement between the parties does not require additional consideration.
+Here Al did not agree to pay a higher price because he only "nodded" agreement to the need for alterations. The alterations were so that Bob could cure his breach, and while Bob has a right to cure his breach, he has no right to charge Al for the alterations. Further, Al did not agree to modify the original contract terms.
+Therefore, the contract was not modified to a higher price.
+8) Can Al raise the LACK OF WRITING as a defense?
+As discussed above, Bob could not enforce the contract unless he had a signed writing from Al. No facts show that Al ever signed any writing to buy the tuxedo.
+Therefore, Bob cannot force Al to pay for the tuxedo.
+9) FRUSTRATION OF PURPOSE?
+Under contract law, if the parties enter into a contract knowing that the failure of some condition beyond their control will deny one of the parties the benefit of the bargain, that condition is an implied material condition of the contract, the failure of which excuses both parties from the agreement.
+Here Bob knew that if the wedding of Al’s daughter was cancelled it would deny Al the benefit of the bargain because he wanted the tuxedo to “wear to the wedding.”
+Therefore, Al can claim frustration of purpose excuses him from the contract.
+[ANSWER EXPLANATION: This is a UCC question, obviously. Bob breached by delivering non-conforming goods that failed to provide a perfect fit, as promised. But he has time to cure, and gave notice he intended to cure.
+If Al wants out of the deal, he can claim a lack of a writing. He can do that because he is not a merchant, and the “sales confirmation” does not apply to him. He would be a merchant if he were a collector or hobbyist. But just buying lots of clothes doesn't make him a merchant any more than you are a merchant because you have bought a lot of groceries.
+And Al also possibly can claim frustration of purpose.]
+
+
+Practice Question 17-3
+Groucho entered into a contract with new car dealer Harpo to buy a new Dodge for his brother Chico on his birthday. The agreed sales price was $25,000. Harpo promised the new car would be delivered by Chico's birthday within two weeks. Chico was ecstatic. Groucho made a down payment of $2,000 and promised to pay an additional amount of $23,000 plus interest for the car over a five-year period.
+Harpo made a deal with another dealer, Swifty. Swifty agreed to deliver a Dodge of the type specified on time for Chico's birthday in exchange for an immediate payment of $20,000.
+Swifty became insolvent, its inventory was seized and it did not deliver the Dodge. Harpo blames Swifty.
+Chico was upset he didn't get the car he expected.
+What are the rights, remedies and defenses of Groucho, Harpo, Chico and Swifty?
+
+Sample Answer 17-3: Third Parties
+The rights and remedies of the parties here depend on whether there was a valid contract. A CONTRACT is a promise or set of promises the performance of which the law will recognize as a duty and for the breach of which the law will provide a remedy.
+1) UCC?
+UCC Article 2 governs contracts for the sale of GOODS, movable things at the time of
+identification to the contract.
+Here the question involves a sale of a "car" and it is movable because it was to be delivered.
+Therefore, the UCC applies here.
+GROUCHO v. HARPO
+2) Groucho's rights under a THIRD-PARTY BENEFICIARY CONTRACT?
+Under contract law a THIRD-PARTY BENEFICIARY CONTRACT is one with a main purpose of providing a benefit to a third party. The contract can be enforced by the original party, the promisee, or by a vested intended beneficiary.
+A beneficiary may be a DONEE (of a gift) or a CREDITOR (payment of a debt) beneficiary. The beneficiary vests upon becoming aware of and changing position in reliance on the contract.
+Here the purpose of the contract is to benefit Chico because he was to get a "new Dodge" as a "birthday present." Therefore this is a third-party benefit contract. Chico is an intended DONEE beneficiary because it is a "birthday present."
+Groucho is the promisee because Harpo promised to "deliver" the car in "two weeks." Harpo is the promisor because he has promised to deliver the car to Chico.
+Therefore, this is a third-party beneficiary contract, and Groucho as promisee can enforce it.
+3) Groucho's REMEDIES?
+Under the PERFECT TENDER RULE of the UCC a non-breaching buyer in a non-delivery situation can demand conforming goods, repudiate the contract or by goods to cover and demand the excess of the cover price over the contract price.
+Here Harpo has breached because he did not deliver the promised car.
+Therefore, Groucho can demand delivery from Harpo or repudiate the contract and demand return of his $2,000. If he covers by buying the car elsewhere he can demand the excess of his cover price, if any, over the contract price.
+Appendix B Sample Answers
+                  151
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams
+GROUCHO v. SWIFTY
+4) Groucho's rights under the DELEGATION contract?
+Under contract law a DELEGATION is a second contract conveying the duty of performance under the first contract from the original promisor to a delegatee. The promisor in the first contract retains primary liability to the promisee. The delegatee assumes secondary liability to the promisee of the first contract if she expressly accepts the delegation in exchange for consideration, a bargained for exchange of value creating legal liability. In the delegation contract between the promisor/delegator and the delegatee the original promisee is a CREDITOR third-party beneficiary with standing to enforce the contract.
+A delegatee can raise all defenses that are available to the promisee in the original contract.
+Here there is a delegation contract between Harpo and Swifty supported by consideration because Swifty expressly accepted the duty by saying he "agreed to deliver" in exchange for an “immediate payment of $20,000”.
+Therefore, Groucho has standing to enforce Swifty's promise to deliver the car as a creditor third- party beneficiary.
+5) Groucho's REMEDIES against Swifty?
+A promisee under a contract can enforce the delegation contract as an intended third-party beneficiary in the same way as the original promisee of the delegation agreement (Harpo).
+Here Groucho's remedies against Swifty are the same as his remedies against Harpo, and Groucho can recover from Swifty any amounts he cannot recover from Harpo.
+HARPO v. SWIFTY
+6) Harpo's rights under the DELEGATION contract? Delegation is defined above.
+Here the delegation from Harpo to Swifty is a contract between them because Swifty promised "to deliver the car", and it is a legal contract supported by consideration because Swifty received an “immediate payment of $20,000”.Swifty was the promisor and Harpo the promisee.
+Therefore, Harpo can enforce his contract with Swifty and seek recovery from Swifty for any damages due Groucho and/or Chico.
+     152
+
+CHICO v. HARPO
+7) Chico's rights as a THIRD-PARTY BENEFICIARY?
+Third-party beneficiary contracts are defined above. Chico is an intended third-party beneficiary because the known purpose of the original contract was to give him a "birthday present." He vested when he became aware of the original contract and changed position in reliance.
+A vested third-party beneficiary can enforce the contract against the promisor in the same manner as the promisee.
+Therefore, Chico can enforce the original contract against Harpo in the same manner and extent as Groucho
+8) Chico's REMEDIES?
+Chico's remedies would be the same as Groucho.
+CHICO v. SWIFTY
+9) Chico's rights and remedies against Swifty?
+Since Swifty agreed to perform the duties of Harpo, Swifty assumed the same liability as Harpo. And since Chico has the same enforcement rights as Groucho, Chico's rights and remedies to enforce the contract against Swifty are the same as against Harpo.
+CHICO v. GROUCHO
+10) Chico's rights and remedies against Groucho?
+A donee beneficiary cannot enforce the promise of a gift against the promisee at law and can only enforce at equity based on promissory estoppel.
+Here Groucho entered into the contract with Harpo to give Chico a GIFT, so Chico was a DONEE beneficiary. While there is no evidence Groucho has breached the contract with Harpo, and even if he did Chico would have no right to enforce the contract against Groucho at law.
+Therefore, if Groucho had refused to perform the contract (e.g. had refused to make the car payments) Chico could only plead equity against Groucho based on principals of promissory estoppel.
+Appendix B Sample Answers
+       153
+
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams
+[ANSWER EXPLANATION: The point of this question is that a contract intended to benefit a third party (Chico) can be enforced against the promisor (Harpo) by both the intended beneficiary (Chico) and the promisee (Groucho). Further, a delegation contract supported by consideration (a legally binding contract and not just a gift promise) can be enforced by the delegator (Harpo) against the delegatee (Swifty) and also by the promisee (Groucho) and intended beneficiary (Chico).
+But if the promisee’s effort (Groucho’s effort) to bestow benefit on the beneficiary (Chico) is gratuitous, the donee beneficiary cannot enforce the original contract (Groucho-Harpo contract) against the promisee (Groucho) at law. The donee beneficiary could only plead promissory estoppel or detrimental reliance against the promisee in equity, given evidence to support such a claim.
+If the contract is for a sale of goods, as is the case here, the UCC also governs the remedies of the parties at law, but the equitable remedies would generally remain the same as at common law.
+You should identify each party as promisee, promisor, delegatee, donee/creditor beneficiary, etc. because that designation determines their RIGHTS and REMEDIES (just as the call of the question asks.)
+Keeping the parties straight may require drawing a diagram and labeling each party with the various terms.]
+
+
+
+Practice Question 17-4
+When Al was in high school he wrote and copyrighted a rap song called "Dumb and Dead." He submitted his song to talent agent Tom. On January 1, two days before his seventeenth birthday, he and Tom reached a valid oral agreement that Tom could have exclusive recording rights until Al was 18 years old. Tom was to receive 25 percent of "sales."
+Tom sent Al a signed, written "sales confirmation" of their agreement that gave all of the details of the agreement. The memo pointed out that records are "goods" under the UCC. After this Al performed completely under the terms of the agreement.
+Tom pitched Al's song to Deccra Records telling them Al was 19 years old, an adult. Following negotiations by Tom, Deccra and Al signed a written agreement on March 1 that Al would receive 50 percent of gross record sales over the next three years. Deccra was aware that Tom would receive a portion of this money under his contract with Al.
+Before Deccra paid anything it discovered Al was only 17. A Deccra executive secretly met with Al and told him the company would not stand by its first agreement, and an alternative agreement was proposed that would benefit both parties. Al agreed on April 1 to a new arrangement under which he got 40 percent of gross record sales, Deccra got 60 percent and Tom was cut completely out.
+The song went straight to the top of the charts and Deccra's sales were $1.6 million in the next year. Of this amount Deccra paid Al $640,000, 40 percent of gross sales. Deccra's distribution expenses were $360,000, and it made profits of $600,000. Tom got nothing.
+Tom got a lawyer and sued both Al and Deccra.
+Al also went to a lawyer. Six months after becoming an adult on his eighteenth birthday he sued Deccra claiming he was a minor when the contract was signed. He demanded return of all remaining revenues, $960,000.
+1) Was the contract of January 1 unenforceable by Tom because it was oral?
+2) Was the contract of January 1 enforceable against Tom by Al?
+3) Was the contract of March 1 enforceable by Al against Deccra?
+4) Was the contract of April 1 enforceable by Deccra against Al?
+5) If the contract of April 1 is legally unenforceable by Deccra, what equitable argument might it make?
+
+
+
+Sample Answer 17-4: Defenses
+TOM v. AL
+1. Was the contract of January 1 unenforceable by Tom because it was oral? 1) UCC?
+UCC Article 2 governs the sale of goods, moveable things at the time of identification to the contract. But UCC Article 1 generally requires a written contract signed by the party to be bound for any sale of personal property that is not goods in excess of $5,000.
+Here Tom claimed the records were “goods” but the contract was not for the sale of anything movable because it was for the sale of “recording rights”. But it was for a sale of personal property because it was for “exclusive recording rights.” The value of the contract was not stated to be over $5,000, and it might be argued that on that basis Article I would not require a writing at the time of execution, even though the song later became popular.
+Therefore UCC Article 2 would not require this contract to be in writing, and it is arguable that Article 1 would not require a writing because the contract was not clearly in excess of $5,000 at the time of execution.
+2) Statute of Frauds?
+Under the STATUTE OF FRAUDS a contract that necessarily takes more than a year to complete
+from the time of formation must be in writing to be enforceable at law. But if an oral agreement that fails to satisfy the statute is partially or fully performed, it may be enforceable at equity to the extent necessary to prevent injustice. To plead equity one must have “clean hands”.
+Here the contract would necessarily take more than a year because it was entered "two days before" Al was 17 and it was to last until he was "18". That is more than a year.
+Therefore, the Statute of Frauds required a writing even if Article 1 of the UCC did not. Al only agreed to the contract orally, so and the contract was not enforceable against him at law because it was oral.
+Further, Tom would be unable to plead “clean hands” because he appears to have taken advantage of Al, a minor, and to have lied to Deccra about Al’s age.
+Therefore Tom would be unable to enforce the oral agreement against Al at either law or equity. 2. Was the contract of January 1 enforceable against Tom by Al?
+3) STATUTE OF FRAUDS?
+The Statute of Frauds is defined above.
+Here Tom sent Al a “signed” confirmation that “gave all the details”. And Al also has “performed completely”.
+Appendix B Sample Answers
+              155
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams
+Therefore there may be sufficient “writing” signed by Tom that the Statue of Frauds might be satisfied.
+Otherwise Al would probably be able to enforce the contract against Tom at equity to the extent necessary to avoid injustice.
+4) Enforceable by a MINOR?
+Under contract law a contract, except for necessities of life, cannot be enforced at law against a party which lacked legal capacity at the time of execution. But if a legal incapacity is removed the party to be bound must repudiate the contract within a reasonable period of time or they will be deemed to have affirmed or ratified it. The period of time in which a party gaining legal capacity must repudiate a contract may be set by statue.
+A party lacking capacity can enforce a contract against a party that does not lack capacity.
+Here Al lacked capacity at the time of execution because it was “two days before his seventeenth birthday”. But that does not prevent Al from enforcing the contract against Tom who did not lack capacity.
+Therefore the contract is enforceable by Al, even though he is a minor. AL v. DECCRA
+3. Was the contract of March 1 enforceable by Al against Deccra?
+5) FRAUD?
+Under contract law FRAUD is a defense to enforcement of a contract where a party 1) deliberately misrepresented material facts, 2) the party raising the defense reasonably relied on the misrepresentations, and 3) the party to be bound would not have entered into the contract but for the misrepresentation.
+Here Tom deliberately misrepresented facts because he said Al was "19" knowing that Al was a minor. And this was a material fact since it represented Al had legal capacity to enter into a contract. And Decca reasonably relied on Tom's misrepresentation, and could probably prove it would not have entered the contract had it known the truth.
+Therefore, the contract of March 1 was unenforceable against Deccra.
+4. ISSUE -- Was the contract of April 1 enforceable by Deccra against Al? 6) EFFECTIVE REPUDIATION OF CONTRACT?
+As explained above a contract, except for necessities of life, cannot be enforced against a party lacking legal capacity at the time of execution. But if a party lacking capacity at the time of contract gains capacity, they must affirmatively repudiate the contract within a reasonable period
+              156
+
+of time, or within the time set by statute, or they will be deemed to have affirmed or ratified the contract.
+Here Al lacked capacity to contract at the time of execution because he was a minor who was "only 17".
+Al later attempted to repudiate the contract "six months after becoming an adult". He would argue that this was within a “reasonable” time after he gained capacity. And if this was within the statutory time period the repudiation was effective. Otherwise the contract may have been deemed automatically affirmed and the repudiation would be ineffective.
+If the repudiation was effective, Decca would generally be required to give to Al all money it had made on the sale of his song.
+Therefore, Deccra cannot enforce the contract if Al's repudiation was effective.
+5. If the contract of April 1 is legally unenforceable by Deccra, what equitable argument might it make?
+7) PROMISSORY ESTOPPEL?.
+Under the doctrine of PROMISSORY ESTOPPEL a party can seek enforcement of an otherwise unenforceable promise where 1) a party made a promise, 2) intending to induce reliance, 3) there was reasonable reliance by the other party and 4) injustice will result if the promise is not enforced..
+Here Al made a promise to Deccra because he “agreed on April 1 to a new arrangement”, and he did that intending to induce reliance.
+Al would argue that Decca did not reasonably rely because it was aware Al was a minor and could repudiate the contract at any time. Deccra would argue that Al would reap an UNJUST ENRICHMENT because it incurred "$360,000 in distribution expense".
+Therefore, it would appear that Decca's restitution to Al should be reduced by this amount and restricted to the actual profit made by Decca.
+Appendix B Sample Answers
+            157
+
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams
+[ANSWER EXPLANATION: The most important thing this question teaches is how to "follow the call" of a STRUCTURED CALL while still addressing important issues the call fails to mention.
+While the CALL asks you about Tom’s rights against Al, and Al’s rights against Tom, and Al’s rights against Deccra, and Deccra’s rights against Al, you only have to state the parties twice: “Tom v. Al” and “Al v. Deccra”. It is simply a waste of time to state the parties again with their names switched around.
+The call of the question asks the validity of an oral contract. That requires you to immediately determine if the UCC applies. UCC Article 2 does not apply because this question does not involve the sale of goods. Even if those do not apply, the Statute of Frauds applies because this is a contract that necessarily cannot be performed in less than a year.
+Remember oral contracts and contracts signed by minors may be valid but not enforceable. Or, they may be unenforceable at law but enforceable at equity. It depends on the facts. Even if a party cannot enforce the contract, they may get quantum meruit reimbursement if the other party would otherwise receive an unjust enrichment.
+Deccra’s defense against enforcement of the March 1 contract could be stated as the issue of “unilateral mistake” where Tom knew Deccra was mistaken, but since Tom deliberately lied to Deccra about Al’s age with intent to deceive “fraud” seems the more accurate issue statement.]
+
+
+
+Practice Question 17-5
+Homeowner Homer orally agreed with builder Bill that he would pay Bill $100,000 to have a custom built home erected on the land that Homer already owned. They agreed the home was to be done before the winter rains set in.
+When Bill was half done building, he discovered he had terminal cancer and would only live a few weeks.
+Bill told Homer his medical expenses were so high he needed $30,000 more in order to hire a helper or it would be impossible for him to finish the home in time. Homer offered to pay Bill the extra $30,000 this would take because he was tired of living in a tent.
+In reasonable reliance on Homer’s promise, Bill hired his friend, Fred, and paid Fred wages of $30,000.
+The home was all done except for the painting when Bill died. Fred split.
+Homer demanded that Bill’s widow, Wanda, as executor of Bill’s estate, finish the house. She said it was impossible.
+Wanda demanded payment of $130,000, but Homer was mad and refused to pay anything. Homer paid painter Paul $10,000 to finish the painting of the home.
+Discuss the rights and defenses of Homer and Wanda against each other.
+
+Sample Answer 17-5: Common Law Modification, Breach and Remedy
+WANDA v. HOMER
+The rights and remedies of the parties here depend on whether there was a valid contract. A CONTRACT is a promise or set of promises the performance of which the law will recognize as a duty and for the breach of which the law will provide a remedy.
+1) UCC?
+Article 2 of the UCC governs contracts for the sale of GOODS. GOODS are movable things at the time of identification to the contract. Otherwise only the common law applies.
+Here the contract does not involve a sale because it is a contract for personal services -- building a house.
+Therefore, only the COMMON LAW applies.
+2) Is a WRITING REQUIRED?
+Under the STATUTE OF FRAUDS certain types of contracts must be in writing to be enforced. A contract for conveyance of an interest in LAND generally requires a writing, and contracts that necessarily must take more than a year to complete require a writing.
+Here the contract is for building a house, and does not involve conveyance of an interest in land because Homer “already owns” the land. And the contract can be performed in less than a year because it was to be completed before the “Winter rains”.
+Therefore, no writing is required by the Statute of Frauds
+3) ANTICIPATORY REPUDIATION and WAIVER OF THE BREACH?
+Under contract law an ANTICIPATORY REPUDIATION is a clear statement or indication that a contract party will not perform future contract duties, and it is a MAJOR BREACH of the contract. But if the non-breaching party allows the breaching party to continue performance, that constitutes a WAIVER OF THE BREACH and the non-breaching party effectively elects to treat the breach as minor. After that the non-breaching party cannot object that the earlier repudiation was a major breach.
+Here Bill effectively indicated that he was not going to finish construction because he said he “could not finish” the house. So Homer could have objected at that time that Bill had committed a major breach. But Homer allowed Bill to continue performance because Bill eventually finished everything except the painting.
+Therefore, Homer would be estopped from claiming that Bill’s earlier behavior constituted a major breach.
+Appendix B Sample Answers
+             159
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams 4) MODIFICATION without CONSIDERATION?
+Under COMMON LAW a contract modification must be supported by CONSIDERATION, a bargained for exchange of value posing legal detriment sufficient to enforce the modification at law.
+Here the contract was modified because Homer promised to pay $30,000 more. But Bill did not give anything of value in exchange for that promise since he only agreed to do what he already had a PRE-EXISTING DUTY to do -- to build the house for $100,000.
+Therefore, the modification of the contract was not supported by consideration and it is unenforceable at law against Homer.
+5) Enforceable by PROMISSORY ESTOPPEL?
+Under the theory of PROMISSORY ESTOPPEL an agreement that otherwise is unenforceable at law for a lack of consideration may be enforced at equity to the extent necessary to avoid injustice. In order to plead equity a party must have CLEAN HANDS. Promissory estoppel applies where the party to be bound made a 1) promise with 2) intent to induce reliance and there 3) was reasonable reliance and 4) failure to enforce the promise would cause an injustice.
+Here Homer made a promise because he "promised" to pay $30,000. And he did that with intent to induce reliance because Homer didn’t want to “live in a tent”. Bill reasonably relied on Homer’s promise because he "hired Fred" in "reasonable reliance" on the promise. But there is NO INJUSTICE because Bill was only induced by Homer's lie to do exactly what he was already legally obligated to do -- finish the house. Homer reaped NO UNJUST ENRICHMENT because he only got the house that he had already been promised, and had promised to pay for.
+Therefore, Bill was not induced to do anything he was not otherwise obligated to do, and Homer did not receive anything of value that he was not entitled to.
+Since there was no injustice, promissory estoppel would not apply.
+Further, Bill had UNCLEAN HANDS because he had a legal duty to perform under the contract, and he elicited Homer’s promise to pay $30,000 more by threatening to breach the contract. A Court of equity will not act to enforce a promise elicited by a threat of illegal conduct.
+Therefore, Homer’s promise to pay more cannot be enforced at either law or equity. 6) Defense of IMPOSSIBILITY?
+Under contract law the defense of IMPOSSIBILITY excuses a breach where the performance of a contract has become impossible due to events beyond the control of the parties. Impossibility means that performance is physically impossible, and it constitutes a failure of an IMPLIED MATERIAL CONDITION of the agreement.
+Here finishing the house was not impossible because Homer finished it by hiring Paul. Therefore, Wanda cannot claim impossibility as a defense.
+                     160
+
+7) BREACH?
+Under contract law a BREACH is a failure to perform contractual duties when they become due. A MAJOR BREACH is one which denies the non-breaching party the EXPECTED BENEFIT OF THE BARGAIN. A major breach completely excuses the non-breaching party from any further obligation under the contract. A MINOR BREACH is one where the breaching party has SUBSTANTIALLY PERFORMED. When there is a minor breach the non-breaching party must perform contractual duties but is entitled to an OFFSET as compensation for damages.
+Here there was substantial performance because the home was all done "except for the painting". The minor breach cost Homer an additional $10,000, so he was entitled to an OFFSET in that amount.
+Therefore, Homer must pay Wanda the contract price less an offset of $10,000, a net payment of $90,000.
+[ANSWER EXPLANATION: Don't let sympathy blind you. Effective modification of a common law contract (not UCC) requires an exchange of consideration. Here Bill receives a promise of $30,000, but Homer gets nothing. If Homer gets nothing, then he gets no consideration (no bargained for thing in exchange for his promise).
+Restatement 2nd provides that a “good faith” modification requires no consideration to be enforced at law. But that is not clearly “broadly adopted”. The general view seems to be that consideration is required to enforce a modification agreement at law, and without consideration it may only be enforced at equity to the extent necessary to avoid injustice. Besides, an agreement made “under threat” is hardly in good faith anyway.
+Consider a situation where Bill demands $30,000 more but also promises to paint the house a different color. In that case there would be a bargained for exchange of consideration, so Homer would have to argue he was forced to agree to pay more under duress, a different legal defense argument. But here that is not the case, so any argument of ‘duress’ is unnecessary and irrelevant.
+For defenses, impossible means just that. If the non-breaching party can finish the job, so can the breaching party.
+If the question has dollar amounts, state the dollar amounts each party should get (or pay) when discussing remedy.]
+
+
+
+ Practice Question 17-6
+Dottie's father Fester called her one day and told her he had suffered a stroke. He was paralyzed from the scalp down. He asked her to come live with him and take care of him. He told her that if, and only if, she took care of him for the rest of his life he would leave her his entire estate in his will, including his house. He emphasized that Dottie could only accept his offer by doing what he asked, and that she could not accept by merely promising to take care of him.
+Dottie sold her home at a $50,000 loss and moved across the country to take care of Fester for the rest of his life. She gave up her $250,000 per year practice as a brain surgeon nursed Fester 24 hours a day, seven days a week. Similar care in a nursing home would have cost $40,000 per year.
+After ten years Fester suddenly said, "I revoke! Get out of my house." Dottie sadly moved into a homeless shelter.
+A month later Fester died leaving his estate, consisting of the house and 1 million shares of Microsoft, to TV evangelist, Reverend Melvin Huckster, and his Society for the Prevention of Cat Teasing.
+Discuss:
+1) Dottie's remedies at law relative to the stock?
+2) Dottie's remedies at law relative to the house?
+3) Her remedies for enforcement at equity?
+4) Her remedies in alternative to enforcement?
+
+
+Sample Answer 17-6: Common Law Remedies
+DOTTIE v. ESTATE OF FESTER
+The rights and remedies of the parties here depend on whether there was a valid contract. A CONTRACT is a promise or set of promises the performance of which the law will recognize as a duty and for the breach of which the law will provide a remedy.
+1. What are Dottie's remedies at law relative to the stock? 1) UCC?
+UCC Article 2 governs contracts for the sale of GOODS. GOODS are movable things at the time of identification to the contract. Otherwise only the common law applies.
+Here the contract is not for a sale of goods because it is an exchange of promises that Dottie will provide services and Fester will leave her his stock in his Will in exchange.
+Therefore, only the COMMON LAW governs.
+2) Is a WRITING REQUIRED?
+Under the STATUTE OF FRAUDS certain types of contracts must be in writing to be enforced. A contract for transfer of stock is not one of them.
+Therefore, no writing is required by the Statute of Frauds.
+3) UNILATERAL CONTRACT?
+Under contract law a UNILATERAL CONTRACT is proposed by an offer that unequivocally requires acceptance by performance and cannot be accepted merely by a promise of performance.
+Here this offer unequivocally required Dottie to "actually take care of " Fester for the rest of his life because Fester “emphasized” Dottie could not accept by merely “promising” to do what he asked.
+Therefore, this was an offer of a unilateral contract.
+4) SAVING DOCTRINES of a UNILATERAL CONTRACT?
+Under the common law an offeror could revoke her offer at any time before acceptance. Under that view Fester could revoke at any time, leaving Dottie without a remedy. Modernly SAVING DOCTRINES have been adopted to prohibit the offeror of a unilateral contract from revoking for a reasonable time after becoming aware that the offeree has begun performance in acceptance.
+         162
+Under an alternative view the offeror may revoke but the offeree has a right to RESTITUTION to avoid UNJUST ENRICHMENT.
+Here Dottie began performance in acceptance because she "sold her home", "moved" and "nursed Fester." And Fester was aware of her performance because he was alert despite his paralysis.
+Therefore, under the modern savings doctrines Dottie would usually be given a reasonable time to complete performance. Here a "reasonable time" is the rest of Fester's life, since that was the condition of the offer.
+5) BREACH OF IMPLIED COVENANT?
+Under contract law an IMPLIED COVENANT by each party to a contract is that they will not act to prevent the other party from performing contract duties and they will take reasonable steps to assure the other party enjoys the expected benefit of the bargain. Performance of this implied covenant is an IMPLIED MATERIAL CONDITION of every contract,
+Here Fester breached the implied covenant because he denied Dottie the opportunity to complete performance in acceptance. This caused a failure of an implied material condition because it totally denied her any of the benefits she expected from the contract.
+Therefore, Dottie can claim a MAJOR BREACH by Fester.
+6) Dottie's CONTRACT REMEDY?
+Under contract law remedies are COMPENSATORY to give the non-breaching party the benefit of the bargain, the compensation that had been bargained for. If property is UNIQUE money damages are in inadequate remedy and SPECIFIC PERFORMANCE is appropriate.
+Here the stock is not “unique” and money damages are adequate.
+Therefore Dottie's remedy is an award of money damages equal to the value of the stock.
+2. What are Dottie's remedies at law relative to the house?
+The same common law and savings doctrines apply to the house as for the stock as explained above. But under the STATUTE OF FRAUDS contracts for interests in land must be in writing to be enforced at law.
+7) STATUTE OF FRAUDS?
+The Statute of Frauds is defined above.
+Here the contract was for conveyance of an interest in land because the contract was for a ”house" to be given to Dottie in exchange for services.
+Appendix B Sample Answers
+         163
+
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams
+Therefore, the Statute of Frauds would require a writing, and this contract generally cannot be enforced at law regarding the house.
+3. What are Dottie's remedies for enforcement at equity? 8) PROMISSORY ESTOPPEL?
+If a plaintiff has no adequate remedy at law, they may be able to obtain a remedy in equity. Here Dottie has an adequate remedy at law as to the promise of the stock, so she cannot seek enforcement at equity as to that part of Fester’s promise. But since she has no adequate remedy as to the promise of the house, she can seek a remedy at equity as to that part of her claim.
+Under the equitable doctrine of PROMISSORY ESTOPPEL a promise or contract that cannot be enforced at law might be enforced at equity to the extent necessary to prevent unjust enrichment where 1) the party to be bound made a promise ,2) intending to induce reliance, 3) there was reasonable reliance on the promise by the party seeking equity, and 4) justice demands enforcement.
+Here there was a promise because Fester "promised" to give Dottie the house. And Fester made the promise intending to induce reliance by Dottie because he wanted her to “move" to where he lived and "nurse" him. Dottie reasonably relied because she trusted him as an "honest, God- fearing Christian." And there would be injustice otherwise because she nursed him for "10 years."
+To enforce the promise Dottie would argue that an award of money damages is insufficient to prevent unjust enrichment because the “house” is unique property. A Court of equity may order title to the house conveyed to her (EQUITABLE REPLEVIN) to prevent injustice.
+Therefore, Dottie may be able to enforce the promise in equity even though it could not be enforced at law.
+4. What are Dottie's remedies in alternative to enforcement? 9) EQUITABLE RESTITUTION?
+At equity a party that cannot enforce a promise at law or equity may still seek damages in RESTITUTION to prevent UNJUST ENRICHMENT. The measure of damages may be either the benefits their performance conveyed to the breaching party, or else the detriment they have suffered in reasonable reliance.
+Here Dottie can seek RESTITUTION for the benefits she conveyed to Fester. He enjoyed benefits that would have cost him $40,000 a year for ten years, so he enjoyed an unjust enrichment of $400,000.
+In the alternative Dottie suffered a loss of $50,000 on her house and foregone wages of $2,500,000 over the ten year period, for a total of $2,550,000.
+Dottie may seek an award of money damages in these amounts in equitable restitution.
+          164
+
+[ANSWER EXPLANATION: This call of this question is for a discussion of REMEDIES and yet the facts raise other issues that should be discussed first such as the Statute of Frauds.
+Always follow the call of the question, but you can use "sub-issues" as shown here to discuss necessary issues that the call does not mention.
+The first question asked in the call should settle the matter of the stock since Dottie has an adequate legal remedy as to that part of her claim. The last three questions deal with the promise of just the house, and as to that Dottie has no adequate legal remedy because the Statute of Frauds generally bars legal enforcement of an oral contract for conveyance of an interest in land.
+Another possible issue here is the “part performance doctrine” under which the Court will legally enforce an oral sales agreement for land in certain very narrow circumstances. The reason I don’t discuss it in my sample answer is that it would so clearly fail that it did not seem an intended issue. That doctrine requires the “buyer” to take possession of the land in a manner that almost unequivocally proves an oral sales agreement. Here Dottie did not take possession; she shared possession. And nothing she did “unequivocally” showed any oral agreement to “sell” the land.
+Therefore, it appears Dottie’s only remedies as to the promise of the house are at equity.]
+
+
+
+Practice Question 17-7
+Sellco sent Buyco a catalogue offering widgets at $6 with a 90-day warranty.
+On 6/2/99 Buyco wrote Sellco and said, “We hereby accept your catalogue offer and order 10,000 yellow widgets for delivery by 6/8/99 with the standard 90-day warranty.”
+On 6/3/99, Sellco called Buyco and said that they could provide the widgets, but without any warranty. Buyco verbally agreed.
+On 6/4/99 Sellco sent a written message to Buyco saying, “This is to confirm your order of 10,000 widgets with no warranty.” Buyco never responded to this message or signed anything that agreed to waive the warranty.
+On 6/8/99 Sellco shipped 10,000 blue widgets by mistake.
+On 6/9/99 Buyco rejected the blue widgets and sent a letter saying, “You sent us the wrong product, you jerks. We had to buy from another supplier, and they cost us $5. You owe us $50,000."
+What are the rights and remedies of the parties?
+
+
+
+Sample Answer 17-7: UCC Formation, Breach and Remedy
+SELLCO v. BUYCO
+The rights and remedies of the parties here depend on whether there was a valid contract. A CONTRACT is a promise or set of promises the performance of which the law will recognize as a duty and for the breach of which the law will provide a remedy.
+1) Does the UCC apply?
+UCC Article 2 governs contracts for the sale of GOODS. GOODS are movable things at the time of identification to the contract.
+Here the question involves a sale of "widgets" and they are clearly moveable because they were to be “delivered”.
+Therefore, Article 2 of UCC applies.
+2) Are the parties MERCHANTS?
+Under the UCC MERCHANTS are people who deal in the goods or hold themselves out by occupation as knowledgeable about the goods in a contract.
+Here Sellco is clearly a dealer in these types of goods because it advertises them in its “catalogue.” Buyco is by occupation knowledgeable concerning “widgets” because of the large quantities it is ordering ($60,000).
+Therefore, the parties appear to be merchants.
+3) Is there a NEED FOR A WRITING?
+Under UCC 2-201 a contract for the sale of GOODS over $500 requires a writing signed by the party to be bound unless an exception applies. This limit is being raised to $5,000 but many States are continuing to use the $500 limit.
+In a contract between MERCHANTS the need for a writing may be satisfied by a sales confirmation indicating the quantity sent to one party by the other if the receiving party has reason to know the contents of the writing and does not object to the representation of a contract within 10 days.
+Here a writing is needed because the cost of the goods is $60,000 ("10,000" at "$6"). But this is “between merchants” because both parties appear to be merchants, and the 6/4 sales confirmation Sellco sent to Buyco specifies quantity at “10,000”. That satisfies the requirement of 2-201.
+Therefore a writing was needed, but the need for a writing would be satisfied by the 6/4 message, unless Buyco objected within 10 days.
+               166
+4) Was the catalogue an OFFER?
+Under contract law an OFFER is a manifestation of present contractual intent communicated to the offeree that is so specific that an objective observer would reasonably believe assent would form a bargain. An advertisement is never a valid offer unless it clearly identifies the QUANTITY of goods for sale and the PARTY to whom the offeror is willing to sell them.
+Here the catalogue is not an offer because it is just a price list that does not specify the quantity of any product Sellco is willing to sell. No reasonable person would believe merely ‘assenting’ to the catalogue would alone form a bargain, so a catalogue cannot be an ‘offer’.
+Therefore, the catalogue itself is not an offer.
+5) 6/2/99 OFFER by Buyco?
+Offer is defined above.
+Here the communication from Buyco expresses present contractual intent because it says “we hereby accept”. The offer is specific as to parties because it says “we” and “your”, and it is specific as to a quantity of “10,000”. This is specific enough for an offer because it objectively appears assent would form a bargain.
+Therefore, this is a valid offer.
+6) 6/3/99 ACCEPTANCE?
+Under UCC 2-206 an offer that does not clearly require acceptance in a specific manner can be accepted in any reasonable manner including a promise to ship or shipment of conforming or non- conforming goods.
+Under UCC 2-207 an acceptance that includes varying terms is still effective. If the contract is between merchants the varying term proposed by the offeree may become part of the contract if the offer did not expressly require acceptance according to its terms, the offeror does not object to the varying terms within a reasonable time, and the varying terms are not a material alteration of the offer terms.
+Even when varying terms do not automatically become part of the contract they may become part of the contract by agreement, and the UCC allows modification without additional consideration.
+Here Sellco did not promise to ship in response to Buyco’s offer because it said it "could provide" and not that it “would” provide the product. The word “could” does not imply any “promise to ship”. Therefore the response of Sellco was a rejection of Buyco’s offer and a counter-offer to sell on different terms.
+Appendix B Sample Answers
+            167
+
+NAILING THE BAR – How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams
+Buyco’s reaction to Sellco’s offer to sell without warranty was an acceptance because Buyco
+“verbally agreed.”
+Even if one argues that Sellco accepted Buyco’s offer with a varying term, Buyco still “agreed” to it, so that would have modified the contract to exclude the warranty term anyway.
+Therefore, there was an acceptance under either interpretation, and there is “no warranty” under either interpretation.
+7) TERMS?
+Under UCC Article 2 a goods contract is enforceable if quantity and parties are specified. All other terms can be supplied by the UCC’s GAP FILLERS.
+Here the parties are specified as Sellco and Buyco. The quantity is 10,000 yellow widgets at a price of $6 without a warranty for delivery on 6/8.
+Therefore the contract is specific enough to be enforced. 8) BREACH?
+Under the PERFECT TENDER RULE of the UCC goods must be supplied exactly as ordered. Any non-conforming delivery is a major breach.
+A seller that delivers non-conforming goods has a right to GIVE NOTICE of intent to cure, and may CURE the shipment of non-conforming goods at any time within the contract period. Further, the seller gets a reasonable amount of extra time beyond the contract period if the original shipment was sent with a reasonable belief it would satisfy the buyer's needs.
+Here Sellco shipped non-conforming goods because it shipped "blue widgets". They were not sent with a reasonable belief they would satisfy the buyer’s needs because they were sent by " mistake". And there is no time left to cure in the contract period because the shipment was on the deadline of "6/8/99”.
+Therefore, Sellco breached by shipping non-conforming goods, and has no time left to cure.
+9) Buyco's REMEDY?
+Under the UCC a buyer who receives nonconforming goods can REJECT the goods and REPUDIATE the contract. The buyer can COVER by buying the goods elsewhere and demand the excess of the cover price over the contract price, or demand the excess of market price over the contract price.
+Here Buyco had a right to reject the goods, and covered by buying at a price of $5. Since this is less than the $6 contract price, Buyco has suffered no loss as a result of the breach and has no right to receive damages from Sellco.
+          168
+
+Therefore, Buyco's demand for $50,000 has no basis and they would get nothing.
+[ANSWER EXPLANATION: This is a simple UCC formation, breach and remedy question. The need for writing, and the existence of a writing must be discussed.
+If an offeree says it “will” or “would” ship goods it is a promise to ship and an acceptance, even if they cite a varying term. In this case UCC 2-207 applies. But if the offeree only says it “can” or “could” ship on different terms it is not a promise to ship. It is really a rejection and counter-offer.
+The unusual fact here is that Buyco has suffered no loss, so they can recover no damages. This should be expressly recognized. They promised to buy for $6 and they covered for $5. They benefited from Sellco's error and have no cause of action.]
+

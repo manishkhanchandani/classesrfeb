@@ -1,0 +1,897 @@
+COMMON CONTRACT AND UCC ISSUES AND ANSWERS
+FOLLOW THE CALL of the question. But if the call is general, such as "discuss the rights and remedies," list the issues as follows:
+1. Does UCC apply? (Important! Always issue #1 if UCC applies, but maybe a “non-issue” otherwise!)
+Under contract law UCC Article 2 controls contracts for the sale of GOODS. Goods are movable things at the time of identification to the contract. 17 Otherwise only the common law controls.
+Here the agreement was NOT (is) for a sale of goods, because ....
+Therefore, only the common law (UCC) determines the rights of the parties here.
+2. Are the parties MERCHANTS? (Important! Always issue #2 if UCC applies, but otherwise it
+is never an issue).
+Under the UCC a MERCHANT is a person who trades in or otherwise holds himself out by occupation or otherwise as knowledgeable about the goods of the contract. Further, a principal that employs an agent that is a merchant is held to be a merchant by implication. 18
+Here the buyer is (not) a dealer in these goods because ... And they are not a merchant by occupation or implication because...Further the seller is (not) a dealer in these goods because... And...Therefore ...
+3. Was the communication of [date] an OFFER? (only for a formation question. Watch out for advertisements because they are rarely offers and catalogues are NEVER offers! Skip this altogether if the question says they had an agreement or contract.)
+Under contract law an OFFER is a manifestation of present contractual intent communicated to the offeree such that an objective person would reasonably believe assent would form a bargain. 19 Important!
+If ONLY common law go on to say,
+At common law a communication was only deemed sufficient to constitute an offer if it specified the parties, subject matter, quantity, price, and time of performance.
+17 Be aware, and prepared to say, that special made goods, standing crops, timber, unborn animals and minerals in the land to be removed by the seller are also “goods”.
+18 For a person in “business” to be a “merchant” they either have to DEAL in the goods that are the subject of the contract on a regular basis or else they have to be some type of “expert” concerning these goods or employ an “agent” who is an expert in these goods.
+19 The reason a “catalogue” is NEVER an offer is that a catalogue is, by definition, a price list without any specification of quantity.
+                            48
+If UCC say,
+The UCC deems a communication sufficient to constitute an offer if it specifies the parties and quantity. The UCC provides “GAP FILLERS” that may be used by the Court to determine any additional terms.
+Here the communication was (not) an offer because ...
+Therefore, the communication was (not) an offer. 20
+4. Was the offer a MERCHANT’S FIRM OFFER? (SKIP UNLESS the given facts suggest the
+offeree may be a merchant and has promised to “leave the offer open” for some period of time)
+Under UCC 2-205 an offer by a merchant that promises to “leave the offer open” for a period of time cannot be revoked by the offeror if it is stated in writing, for the period of time stated, or for a reasonable period of time (given the circumstances) if no time period is stated. However, regardless of the period of time stated by the offeror, the offeror can revoke within 3 months if that is less than the time period stated.
+If the merchant promises to “leave the offer open” for any period of time, whether more or less than 3 months, that is the “reasonable period of time” in which the offeree can accept the offer even if the offeror could legally revoke the offer sooner.
+Here the offer was (not) a merchant’s firm offer because...
+Therefore this offer could (not) be revoked on ...
+5. Was it an offer for a UNILATERAL CONTRACT? (SKIP UNLESS the given facts make it
+entirely clear this is an intended issue or the offer is a GENERAL OFFER.)
+Under the common law a UNILATERAL CONTRACT OFFER is one that unequivocally indicates acceptance can only be manifested by completion of performance by the offeree. GENERAL OFFERS, reward or bounty offers, are always unilateral contract offers. 21
+Here it is (not) unequivocally clear that the offeree can only accept this offer by completion of performance because....
+Therefore this is (not) a unilateral contract offer.
+6. Was the communication (action) of [date] an (implied) ACCEPTANCE? (SKIP if question
+says there was an agreement or contract.)
+If ONLY common law, say,
+Under the common law MIRROR IMAGE RULE an acceptance is an unequivocal assent to an offer. (However, acceptance can be implied by silent performance.) Important!
+20 Many law professors use the term “invitation to negotiate” but that has no specific legal meaning. It just means the communication was not legally sufficient to constitute an offer, so that is what you should say.
+21 Do not presume an offer proposes a unilateral contract unless it is a GENERAL OFFER. Otherwise, the offer must be unequivocally clear and if it is not all modern Courts will presume it is a bilateral contract.
+Chapter 17: Answering Contract and UCC Questions
+              49
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+If UCC say,
+Under UCC 2-206 an acceptance of an offer not otherwise expressly conditioned may be made in any REASONABLE MANNER, including a promise to ship or shipment of either conforming or non-conforming goods. BUT a shipment of NON-CONFORMING goods as an EXPRESS ACCOMMODATION is not an acceptance. Further, UCC 2-207 allows an acceptance containing varying terms to be effective. 22 Important!
+Here the communication was (not) an acceptance because ...
+Therefore, a CONTRACT WAS FORMED on [date]. (Or else the communication was a REJECTION AND COUNTER-OFFER on different terms.)
+[Note: In a formation question if a contract is formed, it can ONLY be determined by the analysis of the acceptance – that is the only thing that can form a contract.]
+7. Did the VARYING TERMS become part of the contract? (Only do this if there is a UCC question and the offeree cites a varying term.)
+Under UCC 2-207 varying terms will NOT be included in the contract where the parties are not both merchants. And even if they are both merchants the varying term still does not become part of the contract if the offer expressly limited acceptance and the offeror does not agree to the new term, OR if the varying terms materially alter the contract, OR if the party to be bound objects to the varying terms within a reasonable period of time.
+If the acceptance is expressly conditioned on the varying terms by the offeree, the response is effectively a rejection and counter-offer. Otherwise the varying terms are considered only “proposed modifications”.
+Here the parties are (not) both merchants because... And the acceptance cited varying terms because... Further, the varying terms did (not) materially alter the contract because ...
+Therefore...
+8. Had the OFFER LAPSED before acceptance was attempted? (This issue is frequently tested
+and poorly taught.)
+Under common law an offer LAPSES AND CANNOT BE ACCEPTED unless it is accepted in a reasonable period of time. Oral offers are deemed to lapse at the end of the conversation, and written offers are deemed to lapse within the timeframe implied by the means of dispatch, absent contrary agreement or implication.
+Here the offer was oral (by fax, telegraph, mail, etc.) so it would be deemed to have lapsed when ... Therefore the offer did (not) lapse before the offeree attempted to accept it.
+22 Pay attention to the difference between “I will” and “I can”. In a UCC situation there is an ACCCEPTANCE if the seller says “it will” or “it would” supply the goods, and a REJECTION AND COUNTER-OFFER if the seller says “it can, but...” or “it could, but...” citing a varying term.
+           50
+
+9. Was the communication of [date] an EFFECTIVE ACCEPTANCE? (SKIP if question says there was an agreement or contract. This is only a possible issue if there is an “acceptance” by “dispatch” that conflicts with some communication of rejection or revocation.)
+Under the MAILBOX RULES of the common law an acceptance is effective when dispatched, if dispatched in the manner specified in the offer, or by the same or faster means the offer was transmitted where the offer does not specify a means of communication.
+Here the acceptance was (not) effective upon dispatch (receipt) because it was (not) sent by the means specified in the offer (no means was specified in the offer and it was sent at the same or faster means than the offer had been sent).
+[Note: a unilateral contract offer can only be accepted by the requested performance, but NEVER assume the offer is for a unilateral contract offer unless it is unequivocal. Further, modern contract law provides SAVING DOCTRINES as stated below.]
+Therefore ...
+10. Was the communication of [date] an EFFECTIVE REJECTION? (SKIP if not applicable.)
+Under the MAILBOX RULES of contract law a rejection is effective upon receipt while an acceptance may be effective upon dispatch. An EXCEPTION is made if the OFFEROR CHANGES POSITION in reliance upon a communication of rejection, not knowing that an acceptance was dispatched prior to receipt of the rejection. In that case the rejection is effective upon receipt regardless of the fact an acceptance was also dispatched.
+Here the rejection was (not) effective because ...
+Here the offeror (did not) change position in reliance on the rejection because... Therefore ...
+11. Was the communication of [date] an EFFECTIVE REVOCATION? (SKIP if not applicable.) Under the MAILBOX RULES revocation of a contract offer is usually effective upon receipt by
+the offeree.
+For an unequivocal unilateral offer also say, as appropriate,
+Under common law a unilateral offer could be revoked at any time, and revocation of GENERAL OFFERS, reward or bounty offers, was effective when published in the same manner the offer was first announced. But modernly SAVING DOCTRINES prevent the revocation of a unilateral contract offer if the offeror is aware the offeree has commenced the requested act for a reasonable period during which the offeree will be allowed to complete acceptance by performance.
+Here the offeror was aware the offeree had commenced the requested act because... Here the revocation was (was not) effective because...Therefore ...
+Chapter 17: Answering Contract and UCC Questions
+            51
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+12. Was there an IMPLIED-IN-FACT CONTRACT?
+Under contract law an IMPLIED-IN-FACT CONTRACT will be deemed to have existed, even if there is no express agreement between the parties, if one party acts to bestow benefits on the other party reasonably expecting to be compensated, and the other party knowingly accepts those benefits knowing that the other party expects to be compensated.
+An implied-in-fact contract is an actual, legal contract. The party that knowingly receives the benefits is liable for a reasonable contract amount to the other party.
+Here...because...Therefore...
+13. Is a WRITING needed?
+If ONLY common law governs say, 23
+Under the STATUTE OF FRAUDS certain types of contracts must be written in order to be legally enforced, and one type is a contract for (pick one if it applies here -- MARRIAGE, more than a YEAR, LAND, EXECUTOR of an estate, GUARANTEE of a debt). 24 Important!
+If UCC say,
+Under UCC 2-201, a contract for sale of goods worth $500 or more must evidenced by a writing sufficient to show the existence of a contract and signed by the party against whom the contract is to be enforced. But between merchants a SALES CONFIRMATION by one listing quantity will bind both parties if the receiving party does not object within 10 days. 25 Important!
+Furthermore, the UCC provides exceptions for SPECIAL MADE GOODS, where there is an ADMISSION by the party to be bound that there had been an agreement, or where there has been PARTIAL PERFORMANCE of the contract (i.e. acceptance of some or all goods or payment).
+Under UCC 2-209 contract modifications must be written to be legally enforceable if the contract, as modified, is for over $500. Otherwise modification agreements will be treated as waivers of conditions that can be always be retracted, unless the Court estops retraction to prevent injustice.
+Here the contract is within (is outside) the statute because ... And the need for a writing was (not) satisfied because...
+23 The reason I am saying “ONLY common law” is that even UCC contracts are subject to the common law in some manner, but contracts the UCC does NOT apply to will ONLY be controlled by common law.
+24 The mnemonic is MYLEG. The YEAR means from the date of execution until the earliest date the contract could possibly be completed according to its terms. The main issue when there is a GUARANTOR is the “main purpose rule”. The main issue when LAND is concerned is whether the “seller” owns any interest in the land that is being conveyed to the “buyer”. Note that modernly the a lease of real property for a year or less requires no writing.
+25 Note that the UCC is being modified and in some States this limit is $5,000 while in others it has still been kept at $500.
+                52
+
+Therefore, there was (not) a need for a writing in order for the agreement to be legally enforced as a contract, and the requirement was (not) met because... 26
+[Note: The Statute of Frauds is not an “issue” at all when contracts are written. If contracts are oral, addressing the need for a writing early eliminates the danger of forgetting it later. Some professors demand discussion of the need for a writing toward the end of an answer in a “Defenses” section. But when oral contracts cannot be enforced at LAW the movants are forced to plead EQUITY and that will determine your entire essay structure.
+If the Statute of Frauds is an issue, the Parol Evidence Rule cannot be an issue, and vice versa since the first is an issue when contracts are oral and the latter when they are written.]
+14. What were the CONTRACT TERMS?
+If an acceptance forms a contract, for common law say,
+Under common law enforceable contracts generally must indicate PARTIES, PRICE, SUBJECT MATTER, TIME OF PERFORMANCE and QUANTITY. Most express terms and promises are considered to be EXPRESS MATERIAL CONDITIONS, except for TIME of performance, buyer SATISFACTION, and promises NOT TO ASSIGN the contract which are generally considered mere “covenants”.
+If an acceptance forms a contract, for UCC say,
+Under the UCC a contract is enforceable if the QUANTITY and PARTIES are specified. Other terms will be provided by the GAP FILLER provisions of the UCC. All express terms and promises are treated as material terms under the PERFECT TENDER RULE.
+Here the PARTIES to the contract were..., the QUANTITY was..., the PRICE was ..., SUBJECT MATTER was.. , and TIME OF PERFORMANCE was ...
+Therefore, the contract was (not) specified enough to be enforceable.
+15. Was TIMELY PERFORMANCE a MATERIAL CONDITION? (This is frequently tested and poorly taught. This is never a UCC issue because under the Perfect Tender Rule tardy performance is always a breach.)
+Under contract law the parties may agree at the time of contract execution that timely performance (by the party to first perform contract services) is a MATERIAL CONDITION. Then the condition is called an EXPRESS CONDITION, and typically the contract says, “Time is of the essence”.
+But material conditions may also be or implied when the parties knew at the time of execution that tardy performance would deny the non-performing party the BENEFIT OF THE
+26 While “defenses” are often saved for the end of the essay, this one is so important it is best to address it early in the essay when you have plenty of time. If you wait to the end of the essay before you address this issue and run out of time it may be fatal to your law school career.
+Chapter 17: Answering Contract and UCC Questions
+                53
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+BARGAIN, the benefit expected when they entered into the agreement. In that case the
+condition is called an IMPLIED MATERIAL CONDITION.
+Here the parties did (not) agree that “time was of the essence”. And tardy performance would (not) deny the non-breaching party the benefit of the bargain because...
+Therefore...
+[Note: The INTENT of the parties at the time of execution is the court’s only concern, NOT the actual EFFECT of tardy execution. If the contract concerns the performance of services that are frequently delayed by weather, transportation delays or other factors beyond the control of the parties the Court will generally assume timely performance was NOT a material condition unless the terms of the contract expressly say it is.]
+16. Was Buyer SATISFACTION a MATERIAL CONDITION? (This is frequently tested and poorly taught.)
+Under contract law reasonably satisfactory performance by the parties is ALWAYS AN IMPLIED MATERIAL CONDITON of every contract. However, the parties may agree that buyer SATISFACTION is a MATERIAL CONDITION so buyers who are not actually satisfied have no legal duty to pay.
+But if the terms of the agreement do not expressly and unequivocally state that the parties intended for personal satisfaction to be a material condition, the Court will generally hold that a promise of “satisfaction” was merely a “covenant” to perform in a manner that would be satisfactory to a “reasonable person” and NOT a material condition UNLESS the service to be performed was one that is highly subject to personal tastes.
+Here the parties did (not) expressly agree that “satisfaction” was a material condition. And the service to be performed was not one that is highly subject to personal tastes. [Or else, “But the service to be performed was one that is highly subject to personal tastes.”]
+Therefore...
+[Note: The types of services that are highly subject to personal tastes are things such as portrait photographs and artistic renderings. Otherwise, a Court is generally going to interpret a promise of “satisfaction” to mean a promise (covenant) to perform in a manner satisfactory to a reasonable person, absent express, unequivocal language to the contrary in the contract.]
+17. Does the PAROL EVIDENCE RULE bar evidence of other covenants and terms? (This is only an issue if there is a detailed written contract. This and the Statute of Frauds can almost never both be issues in the same fact pattern because usually the contract can only be either written or oral, not both at the same time.)
+Under the PAROL EVIDENCE RULE evidence of PRIOR or CONTEMPORANEOUS agreements may not be introduced to VARY or CONTRADICT the terms of a FULLY INTEGRATED WRITING unless it is to show evidence of [DAM FOIL] Duress, Ambiguity,
+      54
+
+Chapter 17: Answering Contract and UCC Questions
+Mistake, Fraud, Oral condition precedent, Illegality, or Lack of consideration. 27 The Court may determine the “completeness” of a written contract by examining the comprehensiveness of its contents.
+Here ...because...Therefore...
+18. Can LACK OF INTENT be raised as a defense?
+Under the OBJECTIVE MAN RULE, there is sufficient INTENT to enter into a contract if an objective observer listening to the parties would have reasonably concluded from their communications that assent would form a bargain.
+Here an objective observer would (not) have thought the party to be bound intended to form a contract because...Therefore...
+19. Is LACK OF CONSIDERATION a defense? (This is almost never a worthwhile issue in a UCC answer except for a modification scenario because the original contract always involves an exchange of goods for money so how can there be a lack of consideration at that point?)
+Under contract law every valid contract, and any modification of a contract, must be supported by CONSIDERATION, a BARGAINED FOR exchange posing sufficient LEGAL DETRIMENT that the law will enforce the agreement. 28 Important!
+For UCC modification say,
+However, under the UCC a contract supported by legal consideration may be MODIFIED without additional consideration.”
+Here the promised act was (not) bargained for because...
+And there was (not) any legal detriment to the promisee because he had (did not have) a PRE- EXISTING DUTY to...
+Further [party] was (not) totally denied the benefit of the bargain because... Therefore, the contract did (not) fail for lack of consideration.
+[Note: This is never a UCC issue as to the original contract because it is always a trade of money for goods (that is what makes it a UCC situation). So it can only be an
+27 90% of law students have no idea what an “oral condition precedent” is, and it is the most tested of all of these possibilities. It is an oral agreement that a contract party does not have to perform a stated contractual duty UNLESS the condition holds. It is like an oral agreement that you don’t have to pay your student loans if you don’t pass the Bar Exam.
+28 Consideration is an “exchange” or “quid pro quo” so any promise of a gift, or even an exchange between parties of promises to bestow gifts on each other, is not valid, legal consideration. The vast majority of Courts hold that “past acts” and “moral obligation” are NOT valid consideration. A promise exchanged for a promise is always considered adequate consideration, as long as each promise is not merely to do something that the other party already had a legal duty to perform. But if a party’s promise is “illusory” or “empty” the contract is void from the beginning for “lack of consideration”. And otherwise if a party fails to perform the promised duty so completely that the other party gets no benefit at all, that is a major breach and again the contract may be said to have failed for “lack of consideration”.
+               55
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+issue in a “UCC question” when there is a modification of the original contract, and
+then no consideration is required so it is a marginal issue then, also.]
+20. Was the need for a WRITING SATISFIED? (This second visit to the Statute of Frauds is only necessary if you did not settle the issue completely at the beginning of the essay OR there has been a contract modification.)
+As discussed above, this contract would have to be supported by a signed writing under the STATUTE OF FRAUDS (or UCC 2-201) sufficient to show the existence and required terms of the contract.
+For UCC modification say,
+Under UCC 2-209 contract modifications do not require consideration, but if a contract as modified would have to be supported by a sufficient writing under UCC 2-201, and the modification is not supported by a writing, it is not enforceable at law. However, the modification may be viewed by the Court as a WAIVER OF CONDITION that the waiving party has a legal right to retract, but the Court may estop the retraction of the waiver of condition to prevent injustice.
+Here there was (not) a sufficient writing to enforce the contract (or modification) because... Therefore ...
+21. Was the contract UNCONSCIONABLE? (Never discuss this unless the given facts make it very, very clear it is an intended issue.)
+Under contract law an unconscionable contract will not be enforceable because there is NO REASONABLE FINDING OF INTENT to enter into such a contract. An ADHESION CONTRACT is a “take it or leave it” contract that a party is forced to agree to, and it will often be found unenforceable.
+Here the contract appears to be unconscionable because ...Therefore ...
+22. Is DURESS a defense?
+Under contract law only good faith agreements are enforceable. No contract agreement induced by illegal threats is valid. Likewise, agreements induced by deliberate acts to create threats of economic harm are not enforceable. 29
+Here the contract may be argued to be unconscionable (or the result of duress) because... Therefore ...
+29 You are unlikely to ever see a question that suggests threats of physical harm because the answer is too easy. But remember that a contract creates legal duties to perform so a threat to breach a contract is an illegal threat. Any agreement that results is the result of “economic duress” and is unenforceable.
+               56
+
+23. Is FRAUD (or DECEIT) a defense?
+Chapter 17: Answering Contract and UCC Questions
+ Under contract law a contract induced through deliberate CONCEALMENT of material facts by a party with a duty to reveal the facts, or by a party deliberately concealing and/or MISREPRESENTING material facts is unenforceable if it can be shown the party seeking to void the contract would never have agreed to the bargain but for the concealment and/or misrepresentation. 30
+Here there was (not) fraud because ...Therefore ...
+24. Is INCAPACITY a defense?
+Under contract law a contract cannot be enforced AGAINST one who lacks capacity. EXCEPTIONS are contracts for provision of NECESSITIES of life and where the incapacitated party attains capacity (becomes sane or an adult) and either AFFIRMS or FAILS TO REPUDIATE the contract. 31
+Here the party seeking to avoid the contract was a MINOR (or ADJUDICATED INSANE perhaps) at the time the contract was executed because... And (But) the contract was not (was) for necessities of life because... 32And (But) the party to be bound did (not) ratify the contract because... 33
+Therefore, this contract could (not) be enforced.
+25. Is ILLEGALITY a defense?
+Under contract law, a contract generally cannot be enforced by a party who knowingly entered into it for an illegal purpose. If the parties are equally guilty, IN PARI DELICTO, the court will generally not intervene. However, if one party is less guilty, the court has discretion to order restitution in equity.
+Here ... because ...Therefore ...
+26. Is IMPOSSIBILITY a defense?
+Under contract law a material condition of every contract is that performance of contract duties must be objectively possible to perform. The inability of a contract party to perform is irrelevant, as long as performance, in general, is possible. But if performance becomes impossible because of events beyond the control of the parties the contract becomes void. 34 Here ... because ...Therefore ...
+30 Fraud based on misrepresentation is easy to claim but hard to prove because the movant has the burden of proving the other party intended to defraud them at the time of contract. But fraud based on concealment is much easier to prove because the movant usually only has to prove that the other party knew the facts, had a duty to reveal the facts, and did not reveal the facts.
+31 Note that a contract with an incapacitated party is VALID but possibly unenforceable against that party.
+32 Necessities of life means food, shelter, clothing, medical care, etc. NOT legal representation.
+33 If a previously incapacitated party continues to enjoy the benefits of a contract after the incapacity is removed they may be deemed to have “impliedly ratified” the contract.
+34 A MATERIAL CONDITION of every contract is that performance is not required if it is impossible. Impossibility does not have to be “unforeseeable”. It just has to result from events beyond the parties’ control.
+              57
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+27. Is COMMERCIAL IMPRACTICABILITY a defense?
+A Court (a judge, in equity) has the authority to declare a contract void if performance by a party would be so financially burdensome, because of events beyond the control of the parties, that it would cause an injustice. Here...because...Therefore...
+28. Is FRUSTRATION OF PURPOSE a defense?
+Under contract law, if the parties enter into a contract knowing that the failure of some condition beyond their control will deny one of the parties the benefit of the bargain, that condition is an implied material condition of the contract, the failure of which excuses both parties from the agreement .35 Here ... because ...Therefore ...
+29. Is MUTUAL MISTAKE a defense?
+Under PEERLESS when both parties enter into a contract because of a misunderstanding as to a material fact, there is no “meeting of the minds” and the contract is void from the beginning. 36 Here ... because ... Therefore ...
+30. Is UNILATERAL MISTAKE a defense?
+Under contract law, when one party enters into a contract because of a misunderstanding as to a material fact the majority view is that the parties are legally bound to the contract unless the other party knew or should have known of the mistake, and in that case the contract is voidable by the mistaken party. Under a minority view the contract is legally voidable by the mistaken party in any event if they 1) discover the mistake quickly before the other party substantially relies on the contract, 2) give prompt notice of the mistake, and 3) reimburse the other party for any expenses caused by the mistake. 37 Here...because...Therefore....
+31. Was there an ANTICIPATORY BREACH? (If there is also a WAIVER of the breach, discuss both issues together.)
+Under contract law an anticipatory breach (or anticipatory repudiation) is a CLEAR STATEMENT OR INDICATION that a party WILL NOT PERFORM future contractual duties when they become due. This is a major breach as to those duties, the non-breaching party is EXCUSED from performance of all remaining contractual duties, and the future duties of the breaching party are ACCELERATED to the present.
+35 This is a second example of failure of an IMPLIED MATERIAL CONDITION. The famous case was the renting of an apartment to see the procession of the newly crowned king. When the king became ill the rental contract was without purpose. Lack of foreseeability was not necessary. All that is needed is that both parties know the purpose of the party seeking to void the contract, and that that party had no control over the failure of the condition.
+36 A mutual mistake means that BOTH parties shared a misunderstanding of facts that were material to the purpose and effect of the contract, and in that case the contract is void from the beginning. For example, if A agrees to sell a painting to B, and both think the painting is by Picasso, then the contract will be void from the beginning if the painting is not by Picasso.
+37 Under the majority view a mistaken party that breaches will be legally liable for “expectation” and “reliance” damages of the other party unless they can obtain equitable relief. But under the minority view (based on the California case of Elsinore v. Kastorff) the mistaken party can legally rescind and is only liable for the “reliance” damages.
+                        58
+
+If a party has a REASONABLE BASIS to believe the other party may not perform future contractual duties, the party may demand REASONABLE ASSURANCES and REFUSE TO PERFORM until they are provided. Reasonable assurances generally means a financial guarantee or payment into escrow.
+If reasonable assurances are properly demanded and not provided, the failure to respond constitutes an anticipatory breach.
+Here there was (not) an anticipatory breach because the party said “....” and that (did not) make it clear they were not going to perform. That did (not) form a reasonable basis for (the other party) to demand reasonable assurances because... Therefore...
+32. WAIVER of the breach? (Discuss if anticipatory breach is ignored by non-breaching party.)
+Under contract law if a non-breaching party lets the breaching party continue performance after a major breach it WAIVES THE BREACH. 38 The waiver cannot be revoked, and the non-breaching party is forever ESTOPPED from citing the breach as major and can only cite it as a minor breach. Here ... because ...Therefore...
+33. Was there a BREACH OF IMPLIED COVENANT?
+An IMPLIED MATERIAL CONDITION of every contract is that the parties must act in good faith and are bound by an IMPLIED COVENANT that they will act as reasonably necessary to help the other parties enjoy the benefits of the contract and that they will not act in any way to prevent that from occurring.
+A breach of GOOD FAITH or acting in “bad faith” means either deceit, concealment or fraud at the time of execution or else the breach of an implied covenant. The mere breach of an express contract promise, even if done deliberately, is not a breach of good faith.
+Here ... Therefore...
+34. BREACH? MAJOR OR MINOR? (Realize the first party to breach a contract is the breaching
+party and after that the other party is the non-breaching party no matter what they do later.)
+For COMMON LAW say,
+Under contract law a BREACH is a failure to perform a contractual duty when it becomes due. A MAJOR BREACH is either an act which deprives the other party of the BENEFIT OF THE BARGAIN or the violation of an EXPRESS OR IMPLIED MATERIAL CONDITION by a party, regardless of its effect on the other party. A major breach EXCUSES the non-breaching party from all further performance of contractual duties and ACCELERATES the future contractual duties of the breaching party to the present so the non-breaching party can seek IMMEDIATE PAYMENT OF DAMAGES.
+38 Technically this is an “election” and not a “waiver” but everyone calls it a “waiver of breach”.
+Chapter 17: Answering Contract and UCC Questions
+             59
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+For UCC say,
+Under the PERFECT TENDER RULE of the UCC any shipment of non-conforming goods is a breach of contract. There is no distinction between “major” and “minor” breaches.
+For UCC DIVISIBLE CONTRACT SITUATION say,
+Under the UCC a breach with respect to any shipment of goods under a DIVISIBLE CONTRACT does not constitute a breach of the entire contract. A DIVISIBLE contract is one under which goods are to be delivered in separate shipments which can each be evaluated separately under the contract.
+Here ... because ...Therefore...
+35. EFFECT OF BREACH ON A DIVISIBLE CONTRACT?
+Under the UCC a breach with respect to any shipment of goods under a DIVISIBLE CONTRACT does not constitute a breach of the entire contract. A DIVISIBLE contract is one under which goods are to be delivered in separate shipments which can each be evaluated separately under the contract.
+Here there was a divisible UCC contract because...Therefore...
+36. WAIVER of condition?
+Under contract law if a party performs a contractual duty that is subject to a condition precedent at a time the condition fails to hold, the party WAIVES THE CONDITION. But after a condition has been waived the waiving party has a legal right to retract the waiver. 39 Nevertheless, a Court of EQUITY may estop the retraction based on considerations of equitable estoppel. (UCC 2-209 adopts this same concept when oral contract modifications fail to meet the requirements of UCC 2-201. See “Is a Writing Needed?” above.)
+Here ... because ...Therefore.
+37. Was there an ACCORD AND SATISFACTION?
+Under contract law an ACCORD AND SATISFACTION is binding on both parties if there is an agreement by the parties to settle a reasonable and good faith claim by one party that the other party has breached the original contract. 40
+Here a claim of breach was raised in good faith because ... And it was reasonable because... And there was an agreement in settlement because...Therefore...
+39 For example, Bevis and Butthead have a labor contract that says Bevis will pay Butthead’s wages on Fridays. Bevis’ does not have any duty to pay Butthead unless it is Friday. But one week Bevis pays Butthead on Thursday. That “waives the condition” for that week. But Bevis does not have to pay Butthead every Thursday after that because he can “retract the waiver”.
+40 Further, under UCC 3-311 acceptance or cashing a “check” marked “satisfaction in full” or something similar generally discharges all liability. There are exceptions, but this UCC provision reflects the common law view.
+          60
+
+38. Is the plaintiff an INTENDED THIRD-PARTY BENEFICIARY?
+Under contract law an INTENDED THIRD-PARTY BENEFICIARY is a party that can seek damages for breach of a contract between two other parties because the contract was INTENDED to benefit them.
+An INCIDENTAL beneficiary, one that was not intended to benefit from a contract between others, has no ability to enforce the contract or seek damages.
+Contracts can only be enforced by VESTED, INTENDED third-party beneficiaries that are DONEES, intended to benefit as a GIFT, or CREDITORS, intended to benefit by EXTINGUISHING A DEBT.
+At common law vesting was a more demanding requirement than it is modernly. Under the modern view VESTING occurs if the beneficiary becomes aware of and relies on the existence of the contract.
+Here ___ was (not) an intended third-party beneficiary because... And he (did not) become vested because...
+Therefore ...
+39. STANDING based on a VALID ASSIGNMENT? 41
+Under contract law an ASSIGNEE can seek damages for breach of a contract from the contract promisor if the assignee was EXPRESSLY ASSIGNED the rights of an original promisee, the ASSIGNOR, by EXPRESSION OF CLEAR INTENT.
+An assignment BECOMES EFFECTIVE when the assignee gives the promisor NOTICE of the specific rights assigned. When the assignment becomes effective the promisor is liable only to the assignee and the rights of the original promisee/assignor are EXTINGUISHED.
+If the assignment was in exchange for CONSIDERATION given by the assignee to the promisee/assignor, the assignment is IRREVOCABLE, and it creates a legal contract between the assignee and the promisee/assignor. That contract creates implied warranties 1) that the rights assigned exist, 2) that the promisee/assignor has the authority to assign them, and 3) all documents provided are bone fide. The assignee may seek legal damages from the assignor for a breach of warranty.
+If the assignment was GRATUITOUS it is REVOCABLE until the assignment is made 1) in writing, 2) a token chose is delivered, or 3) detrimental reliance makes revocation inequitable. A gratuitous assignment creates no implied warranties and can only be enforced in equity.
+Here ... because ...Therefore ...
+41 If a question says a party that has a current duty to perform (e.g. to build a house) “assigned the contract” to another party that is going to perform the promised duties, then both an ASSIGMENT of rights and a DELEGATION of duties are implied. These should be discussed as two separate issues.
+Chapter 17: Answering Contract and UCC Questions
+      61
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+[Note: Assignment, delegation and other third-party questions require that you identify the parties and explain all of the rights and liabilities each party has against the other parties. That usually takes so much time that there is little time left for anything else.]
+40. VALID DELEGATION of performance?
+Under contract law the duty to perform under a contract may be DELEGATED to a DELEGATEE by an original promisor/delegator. However, the promisor/delegator remains primarily liable to the original promisee for performance of the contract. The delegation becomes EFFECTIVE when the delegatee agrees to perform the duties of the promisor/delegator.
+If the delegatee accepts the delegation in exchange for CONSIDERATION, a legal contract is created between the promisor/delegator and the delegatee, and the original promisee is an intended third-party beneficiary of that contract. As an intended third-party beneficiary the promisee has standing to pursue legal actions against both the promisor/delegator and the delegatee.
+If the delegatee GRATUITOUSLY accepts the delegation the delegatee has no legal liability to the original promisee and the promisee can only enforce the delegation agreement in equity by showing detrimental reliance.
+Here ... because ...Therefore ...
+41. Effect of ASSIGNMENT on CLAIMS AND DEFENSES?
+Under contract law a promisor may generally assert any claim or defense against the assignee that could have been asserted against the promisee/assignor. 42
+Here...because...Therefore...
+42. Effect of MODIFICATION AFTER ASSIGNMENT?
+MODIFICATION of a contract after it has been assigned is generally effective against the assignee if 1) the contract has not yet been fully performed, and 2) the modification is made in good faith and in accordance with reasonable commercial standards. The assignee acquires CORRESPONDING RIGHTS under the modified (or substituted) contract. 43
+    42 The provisions of UCC Article 9 expressly control this and establish various exceptions. But that Article is NOT TESTED on all Bar exams. So the rule statement above should be sufficient unless your State tests on Article 9.
+43 This is also a UCC Article 9 issue that is note expressly tested on all State Bar exams, but the issue could still arise.
+62
+
+Chapter 17: Answering Contract and UCC Questions
+43. COMMON LAW REMEDY of the NON-BREACHING PARTY? 44
+Under common law the non-breaching party has a right to COMPENSATORY DAMAGES calculated as the sum of 1) RELIANCE DAMAGES, out-of-pocket expenses the non-breaching party paid before the breach in reliance on the contract, 2) EXPECTATION DAMAGES, the expected benefits of the contract lost because of the breach, 3) INCIDENTAL DAMAGES, out- of-pocket expenses the non-breaching party paid because of the breach (e.g. storage costs) and 4) CONSEQUENTIAL DAMAGES, lost profits on collateral contracts that failed because of the breach. [Note: Don’t go into all of this in detail about the measure of damages unless the given facts give you the sort of detailed monetary loss information you need.]
+Non-breaching parties must prove their damages with substantial CERTAINTY, that they were CAUSED by the breach, and COULD NOT HAVE BEEN AVOIDED. This is sometimes called the DUTY TO MITIGATE damages.
+If the breaching party has SUBSTANTIALLY PERFORMED, the non-breaching party is still obligated under the contract with an OFFSET for damages against the contract price. But if the breaching party is in MAJOR BREACH the non-breaching party is freed from all obligations under the contract and has a right to an award of all damages caused.
+A non-breaching buyer of unique property such as land or services can also ask for an order of SPECIFIC PERFORMANCE to obtain title, possession or performance. There is no “right” to specific performance. It is an equitable remedy at the judge’s discretion. Specific performance cannot be used to force performance of personal services by an individual because it violates the 13th Amendment, but an organization (e.g. corporation) may be ordered by the Court to perform unique services. ... Here...because...Therefore...
+44. CONSEQUENTIAL DAMAGES?
+Under HADLEY V. BAXENDALE, a party to a contract may recover CONSEQUENTIAL DAMAGES such as LOST PROFITS expected from collateral contracts that fail because the contract was breached only if it can be shown the damages were [CCCC] 1) CONTEMPLATED (foreseen) by both parties at the time of contract, 2) CERTAIN (measurable) as to dollar value, 3) CLEARLY CAUSED by (resulting from) the breach and 4) the loss COULDN'T BE AVOIDED. ... Here...because...Therefore...
+45. COMMON LAW REMEDY of the BREACHING PARTY?
+Under common law a breaching party that has SUBSTANTIALLY PERFORMED has a right to recover the CONTRACT PRICE LESS AN OFFSET for damages caused by the breach. The remedy of a party in MAJOR BREACH is to seek RESTITUTION for AMOUNTS PAID and BENEFITS CONFERRED to the extent they exceed the damages of the non-breaching party, to prevent UNJUST ENRICHMENT. ... Here...because...Therefore...
+44 It is usually best to discuss remedies from the aspect of the non-breaching party. Your explanation must be tailored to fit the particular facts. In the usual case there is substantial performance and the non-breaching party only has a right to an offset. If there is a major breach the non-breaching party has no obligation to pay anything except restitution to the extent they have benefited from partial performance.
+         63
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+46. UCC REMEDY of the NON-BREACHING BUYER?
+Under the PERFECT TENDER RULE of the UCC a non-breaching buyer can either ACCEPT or REJECT non-conforming goods. Also they can REPUDIATE the contract and COVER, or they can AFFIRM the contract and DEMAND CONFORMING GOODS. The measure of damages is the excess, if any, of market or cover price over the contract price. If the goods are unique non-breaching buyers can ask for an order of SPECIFIC PERFORMANCE to obtain title and possession. There is no “right” to specific performance.
+Here ... because... Therefore...
+47. UCC REMEDY of the NON-BREACHING SELLER?
+Under the UCC a non-breaching seller can sell rejected but conforming goods at a PUBLIC OR PRIVATE SALVAGE SALE (with NOTICE TO BREACHING BUYER) and demand the excess, if any, of the CONTRACT PRICE over the SALVAGE SALE price.
+Alternatively, in a LOST-VOLUME SITUATION where sellers cannot effectively sell the same goods to someone else, they can demand the BENEFIT OF THE BARGAIN of their “lost profits” – the excess, if any, of the CONTRACT PRICE over their cost of acquiring the goods.
+And if the goods have been special made or for some other reason can not be sold elsewhere the non-breaching seller can “sue on the contract price” to get a judgment for that amount.
+Here ... because ...Therefore...
+48. UCC REMEDY of the BREACHING SELLER?
+Under the UCC a breaching seller that GIVES NOTICE of an intent to cure has an absolute right to cure the breach WITHIN THE CONTRACT PERIOD, and also has a right to REASONABLE EXTRA TIME in which to cure beyond the contract period if non-conforming goods have been shipped with a reasonable belief they would satisfy the needs of the buyer.
+Here ... because...Therefore...
+49. Is the LIQUIDATED DAMAGES clause enforceable?
+LIQUIDATED DAMAGES CLAUSES specify that the sole remedy of the non-breaching party is a specified amount of money damages. These clauses are only enforceable if 1) DAMAGES arising from a breach were UNCERTAIN at the TIME OF CONTRACT, 2) the specified amount was REASONABLE at the time of contract, and 3) enforcement after a breach will provide a REASONABLE REMEDY for the non-breaching party.
+Liquidated damages clauses in contracts for UNIQUE PROPERTY are generally UNENFORCEABLE because money damages are inadequate and SPECIFIC PERFORMANCE is appropriate. 45 ... Here ... because ...Therefore ...
+45 This is frequently tested and poorly taught. Liquidated damages will almost NEVER be a reasonable remedy for a non-breaching buyer if the contract is for unique property. But they are often enforceable against breaching buyers.
+              64
+
+50. Was there an IMPLIED-IN-LAW CONTRACT?
+An IMPLIED-IN-LAW CONTRACT is an equitable theory or “cause of action” which gives the Court discretion to provide an equitable remedy when there is no valid, legally enforceable contract if the moving party has acted to convey benefits to the responding party with a reasonable expectation of being compensated in return.
+The Court may either award the amount necessary to prevent an unjust enrichment to the respondent, or the amount necessary to prevent frustration of the reasonable expectations of the movant.
+Here...because...Therefore...
+[Note: This argument should only be raised when no contract is otherwise enforceable at law. Perhaps there was a contract that violated the Statute of Frauds, there was a major breach, or the respondent lacked legal capacity. This equitable theory requires that the movant reasonably expected to be paid for services rendered.]
+51. Can PROMISSORY ESTOPPEL be pled?
+PROMISSORY ESTOPPEL is an equitable theory or “cause of action” which gives the Court discretion to provide an equitable remedy when there is no valid, legally enforceable contract or other legal cause of action but the moving party has acted in reasonable reliance on a promise by the respondent, the respondent intended to induce the movant to rely on the promise, and justice demands that the promise be enforced to some degree.
+The Court may either enforce the promise or award the amount necessary to prevent an unjust enrichment to the respondent, or the amount necessary to prevent frustration of the reasonable expectations of the movant.
+Here...because...Therefore...
+[Note: This argument should only be raised when the movant seeks to enforce an express promise by the respondent and there is no basis for a tort action for fraud or deceit. Often the promise is a gift promise or an assurance the respondent will not assert some legal defense or institute some legal action.]
+52. Can DETRIMENTAL RELIANCE be pled?
+DETRIMENTAL RELIANCE is an equitable theory or “cause of action” which gives the Court discretion to provide an equitable remedy when there is no valid, legally enforceable contract or other legal cause of action, but the moving party has acted in reasonable reliance on EITHER deliberately false representations of fact by the respondent OR deliberately misleading behavior of the respondent done with intent to induce reliance by the movant, and justice demands that the promise be enforced to some degree.
+Chapter 17: Answering Contract and UCC Questions
+                         65
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+The Court may award the amount necessary to prevent an unjust enrichment to the respondent, or the amount necessary to prevent frustration of the reasonable expectations of the movant.
+Here...because...Therefore...
+[Note: This argument should only be raised when there is no “promise” at all, and no other basis to claim either implied-in-law contract or promissory estoppel. The key element here is that the respondent must act (or refrain from acting) with deliberate intent to cause the movant to rely on either false statements of fact or else misleading behavior.]
+53. Is EQUITABLE RESTITUTION appropriate?
+EQUITABLE RESTITUTION is a remedy awarded by a Court of EQUITY when the parties have no adequate legal remedy. The purpose may be to compensate for injuries suffered, prevent unjust enrichment, prevent frustration of reasonable expectations, or restore the status quo.
+Here ... because ...Therefore ...
+[Note: This issue should only be raised when the contract is not otherwise enforceable at law and a money judgment or other remedy is necessary to prevent injustice. Equitable restitution is a remedy (what the Court does), not an “equitable theory” or “cause of action” that justifies the remedy (why the Court does it).]
+54. Is SPECIFIC PERFORMANCE appropriate?
+SPECIFIC PERFORMANCE is an equitable remedy. It is an order of the Court directing parties to deliver possession and title to unique property. A business organization (not an individual) may also be ordered to provide unique services. This may arise out of an action base on a legally enforceable contract or out of an action based on an equitable theory (equitable cause of action). In either case, there is no “right” to specific performance but the Court (judge) has discretion to order it if award of a money judgment would not be an adequate remedy, perhaps because the property (or services) in dispute are unique.
+Here ... because ...Therefore ...
+Note: The above issue statements provide almost every important issue, definition, rule and term that you will ever see on a CONTRACTS examination in law school or Bar exam. If you know the above issues and responses you have everything you really need. However, for Bar exams you should also briefly review the remaining UCC sections.
+
+
+
+
+COMMON TORT ISSUES AND ANSWERS
+FOLLOW THE CALL of the question. But if the call is general list the issues as follows:
+1. ASSAULT? 46
+Under tort law ASSAULT is an intentional act done to cause and that does cause reasonable
+apprehension of a battery, a harmful or offensive touching of the person. Important! [Every “intentional tort” has the element of INTENTIONAL ACT! Always DEFINE
+“intentional act” in the definition of the FIRST intentional tort issue as follows:]
+An INTENTIONAL ACT is one done for the purpose of causing or with knowledge with reasonable certainty that it will cause the result that produces injury. Important!
+[ALWAYS state this in your discussion of the first intentional tort. For TORTS an act is intentional if it is done for the PURPOSE of producing a RESULT, or if the actors knows that result will almost certainly occur! But the result does not necessarily have to be injury. All that matters is that the result CAUSES injury.]
+Here ... because...
+Therefore, the defendant may be liable for tortious assault.
+2. BATTERY?
+Under tort law BATTERY is an intentional act to cause and does cause a touching of the person of the plaintiff resulting in harm or offense to the plaintiff. 47 Important!
+Here ... because...
+Therefore the defendant may be liable for battery.
+46 Note that for “assault” and “battery” you can either call them “tortious assault” or “tortious battery” in the issue statement or else you can say “Under tort law...” in the rule. But somewhere you MUST make it clear you are talking about a tort and not a crime.
+47 Note that the “intent” of the defendant must be to cause a touching, and the touching must cause harm or offense, but the intent of the defendant does not necessarily have to be to cause harm or offense.
+Chapter 18: Answering Tort Questions
+            75
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+3. CONVERSION?
+Under tort law CONVERSION is an intentional act to cause and that does cause interference with the chattel of the plaintiff resulting in substantial deprivation of possession. The proscribed legal remedy is forced purchase by the defendant, but the plaintiff may “waive the tort” and seek restitution instead. Important!
+Here ... because... Therefore the defendant may be liable for conversion.
+4. FALSE IMPRISONMENT?
+Under tort law FALSE IMPRISONMENT is an intentional act to cause and that does cause the plaintiff to be confined to a defined area without any reasonably apparent means of reasonable exit. 48 Plaintiffs must actually know they are confined, but do not have to know the confinement is illegal. 49 Important!
+Here ... because... Therefore the defendant may be liable for false imprisonment.
+5. INTENTIONAL INFLICTION OF EMOTIONAL DISTRESS?
+Under tort law IIED is an intentional, outrageous act by the defendant which causes the plaintiff severe emotional distress. Important!
+[Note: Here "intent" may be shown by EITHER the intentional commission of an outrageous act, regardless of intent, or by almost any act for the purpose of causing emotional distress. Any act is "outrageous" per se if the actual intent is to cause severe emotional distress. And a lack of intent to cause emotional distress is not a defense if the act itself is outrageous. But in any case the plaintiff must almost always present evidence to show they suffered extreme emotional distress (The sort of distress that requires medical or psychiatric care. Not just embarrassment or anger).]
+Here ... because... Therefore the defendant may be liable for intentional infliction.
+6. TRESPASS TO LAND?
+Under tort law TRESPASS TO LAND is an intentional act by the defendant causing an unauthorized entry onto, over, or under the land of the plaintiff. The defendant is liable for nominal damages and all actual damages caused by the entry.
+Here ... because...
+Therefore the defendant may be liable for trespass to land.
+48 A “reasonable person test” determines whether the confinement is without a “reasonably apparent means of reasonable exit.”
+49 For example it is false imprisonment to illegally conceal a child away from its lawful guardian even though the child agrees to be concealed. The child lacks legal capacity to “consent” to being taken. And it is false imprisonment to keep a prisoner in jail after the scheduled (legal) release date, even though the prisoner is unaware they have a right to leave the jail. But it is NOT false imprisonment to keep a plaintiff illegally confined if the plaintiff is asleep, comatose, etc. and unaware of their situation.
+               76
+
+7. TRESPASS TO CHATTELS?
+Chapter 18: Answering Tort Questions
+ Under tort law TRESPASS TO CHATTEL is an intentional act by the defendant causing unauthorized interference with or damage to the chattel of the plaintiff. The defendant is liable for actual damages measured as the lost rental value of the chattel, the rental costs for temporary replacement of the chattel, and the repair costs to repair the chattel, but usually not more than the actual cash value of the chattel.
+Here ... because... Therefore the defendant may be liable for trespass to chattels.
+8. TRANSFERRED INTENT?
+Under the tort doctrine of TRANSFERRED INTENT, a defendant who commits an intentional tort towards anybody generally becomes liable for every injury inflicted on everybody, even if the injury caused or the person caused injury is not the original intent. Important!
+An exception is that Courts generally will not find IIED based on transferred intent, and Courts may find only negligence and not an intentional tort by transferred intent if the original intent of the defendant was not malicious. 50
+Here ... because... Therefore the defendant may be liable for trespass to chattels.
+9. DAMAGES for TORTS?
+Every defendant that commits any tort is liable for all actual damages actually and proximately caused. Damages consist of SPECIAL DAMAGES, compensation for monetary losses, and GENERAL DAMAGES, compensation for pain, suffering, anxiety, emotional distress, inconvenience, etc. Defendants who commit intentional torts, including gross negligence (deliberate breach of duty) and recklessness (deliberate creation of unreasonable risks) may also be liable for PUNITIVE DAMAGES if the Court finds they acted with FRAUD, OPPRESSION or MALICE, an evil or wrongful intent to cause harm. Defendants who commit accidentally negligent torts are not liable for punitive damages. Tort plaintiffs have a right to “waive the tort” and demand RESTITUTION instead of compensation for damages.
+10. DEFENSE of DISCIPLINE?
+Under tort law a person with recognized authority (schoolteacher, bus driver, airplane pilot, policeman, parent, etc.) is privileged to act reasonably given the circumstances in a manner that otherwise might constitute a battery or false imprisonment. 51
+Here...because...Therefore...
+50 For example, Bevis and Butthead deliberately trespass onto Boomer’s land to go hunting. Then Bevis accidentally shoots Butthead. Most Courts would not allow Butthead to claim battery by transferred intent merely because the “intentional trespass” against Boomer caused an injury to Butthead. Butthead may be required to claim negligence. 51 EVERY defense requires REASONABLE acts. Your defense argument should stress “reasonable” throughout.
+           77
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+11. DEFENSE of AUTHORITY OF LAW (PREVENTION OF CRIME)?
+Under tort law a person is privileged to act reasonably to prevent or stop a FELONY or DISTURBANCE OF THE PEACE from being committed in their presence. Police may arrest for misdemeanors committed in their presence and for felonies otherwise if based upon reasonable suspicion. 52
+Here...because...Therefore...
+12. DEFENSE of RECAPTURE?
+Under tort law a person has a qualified privilege to use reasonable force to RECAPTURE their own chattel if 1) they have asked for and have been refused return of the chattel, and 2) they are in fresh pursuit of wrongfully taken chattel, or 3) they lost possession of the chattel through no fault of their own.
+Here...because...Therefore....
+13. DEFENSE of NECESSITY? 53
+Under tort law a person is privileged to act reasonably as NECESSARY to protect their own safety, the safety of others, and the safety of property. For defense of property to be “reasonable” the value of the property being protected must exceed the damages caused by the efforts to protect it. Reasonable acts done to protect the property of others is a PUBLIC NECESSITY and absolutely privileged. Reasonable acts done to protect the defendant’s own property are a PRIVATE NECESSITY and only a qualified privilege. The defendant remains liable for actual damages to the plaintiff.
+Here...because...Therefore...
+14. DEFENSE of CONSENT?
+Under tort law FULLY INFORMED CONSENT from a person with legal capacity is a defense to most intentional torts, but is not a defense to a battery that causes foreseeable great bodily injury.
+Here...because...Therefore....
+52 It is sometimes said that people who are not “police” have no right to stop or prevent “disturbances of the peace”. This odd argument is contrary to common sense and experience. While the law does not encourage private parties to act they are police officers, it also does not punish people who act as reasonably necessary to protect innocent victims, prevent trespassing, theft and vandalism, and quell violent disturbances, even if the crimes being prevented are not technically felonies. If nothing else, these acts are defense of others, public necessity, and defense of property anyway. 53 The defense of necessity is simply a combination of self-defense, defense of others and defense of property, but it more often is used only when property is being protected.
+                        78
+
+15. DEFENSE of OTHERS?
+Under tort law a person is privileged to act reasonably as necessary to defend others who are NOT AGGRESSORS from harm. Aggressors are people who have unreasonably created or increased dangers to others. Courts are split when a defendant unknowingly acts to defend an AGGRESSOR. Under one view the defendant STEPS INTO THE SHOES of the aggressor and has no privilege because the aggressor could not claim self-defense. In other Courts the defendant is privileged to defend the aggressor in a fracas if they act with a REASONABLE BELIEF they are acting to defend an innocent victim of aggression.
+Here...because...Therefore.... 16. DEFENSE of PROPERTY? 54
+Under tort law defendants are privileged to use reasonable force to protect their property or the property of others. The use of deadly force to protect property is never reasonable or legal.
+State something like the following if there is a suspected theft of goods or services:
+Under the SHOPKEEPER’S PRIVILEGE a defendant may use reasonable force to detain a plaintiff for a reasonable period of time to investigate a reasonable suspicion that the plaintiff has stolen goods or services from the defendant.
+State something like the following if there was a tortious injury to the defendant:
+To protect litigation rights defendants may use reasonable force to as necessary to detain plaintiffs for a reasonable period of time to investigate events that have caused them damages.
+55
+Here...because...Therefore...
+17. SELF-DEFENSE?
+Under tort law a person who is NOT AN AGGRESSOR may act reasonably if NECESSARY to protect their own safety. Modernly the person can “hold her ground” and has is no duty to retreat in most jurisdictions. Aggressors are people who have unreasonably created or increased dangers to others.
+Here...because...Therefore....
+18. DEFENSE of INFANCY, INSANITY or INCOMPETENCE?
+INFANCY, INSANITY and INCOMPETENCE are not defenses for intentional torts.
+[Watch for intentional torts by children or insane people! It is a criminal defense but not a tort defense because tort law is to compensate plaintiffs, not punish defendants.]
+54 This is effectively the same issue as “Defense of Necessity”. “Defense of Property” more often is the stated issue when “deadly force” is a factor. “Defense of Necessity” is more often used when “public necessity” is suggested. And every property owner has a legal right to PREVENT TRESPASS TO THEIR LAND OR CHATTEL!
+55 When this is tested 90% of law students fail to grasp the obvious. Litigation rights are personal property.
+Chapter 18: Answering Tort Questions
+                     79
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+19. NEGLIGENCE?
+Under tort law NEGLIGENCE is a failure to exercise that degree of care that a reasonably prudent person would use in the same situation. To prevail the plaintiff must usually prove DUTY, BREACH, ACTUAL and PROXIMATE CAUSATION and DAMAGES. Important!
+[Note: If negligence is just one of several issues in the question, the analysis of negligence elements can be contained within the issue of negligence.
+If a question involves nothing but the cause of action for negligence, CONSIDER MAKING THE ABOVE AN INTRODUCTORY STATEMENT and then treat each of the elements (Duty, Breach, etc.) as a separate “issue”.]
+20. STRICT LIABILITY in NEGLIGENCE?
+Under tort law a defendant that engages in any of three activities is STRICTLY LIABLE to any person who is actually and proximately caused injury. These three activities are: 1) keeping a KNOWN, DANGEROUS ANIMAL, 2) keeping an EXOTIC ANIMAL of a type that is not commonly domesticated, or 3) engaging in ULTRA-HAZARDOUS ACTIVITIES that are unusual, pose extreme risks to others, and are usually subject to strict safety regulations. 56
+If a defendant engages in these activities duty is presumed, and if anyone is caused injured as a result breach is presumed as well. Here...because...Therefore...
+[Note: Product liability also can pose strict liability, but that is better addressed as part of a product liability analysis, not a “strict liability in negligence” analysis.]
+21. DUTY?
+Under tort law the general rule is that a person has no duty to act to defend others from harm. 57 A DUTY to act to protect others from harm ONLY arises under five scenarios: [SCRAP] STATUTE, CONTRACT, RELATIONSHIP, ASSUMPTION or where PERIL to the plaintiff is caused by the defendant. 58 Important! Important in criminal law as well.
+[Go from here to either discussing negligence per se, duty based on peril or perhaps duty based on relationship, premises liability, etc. as appropriate.]
+56 Ultra-hazardous activities are things that average people simply never do. It is often just a matter of scale.
+57 Any statement that there is a “general duty to act reasonably to protect others from harm” is poppy-cock. There is NO GENERAL DUTY to act to protect others from harm.
+58 NOTE: Courts tend to limit liability to only those defendants owed the duty. There are three exceptions - when duties are based on PERIL, when the RESCUER DOCTRINE applies, or in the case of NIED.
+                80
+
+22. NEGLIGENCE PER SE? 59
+Under tort law a DUTY may be created by a STATUTE (or rule), and violation of the statute is a BREACH of duty making the defendant NEGLIGENT PER SE if the purpose of the statute was 1) to protect the CLASS OF PEOPLE to which the plaintiff belongs by 2) preventing the TYPE OF INJURY that the plaintiff suffered. 60
+Here...because...Therefore....
+23. DUTY BASED ON PERIL? 61
+Under tort law defendants that create reasonably foreseeable dangers to others have a DUTY based on PERIL to act reasonably to protect others from those dangers.
+In PALSGRAF, CARDOZO argued that defendants who fail to act reasonably to protect others from the perils they have created should only be liable to plaintiffs who were actually in the ZONE OF DANGER at the time of their breach. The Zone of Danger is the area where the acts of the defendant created reasonably foreseeable dangers to others.
+ANDREWS argued that defendants who fail to act reasonably to protect others from the perils they have created had always been liable to RESCUERS under the RESCUER DOCTRINE, whether they were in the Zone of Danger or not, (because “peril invites rescue”) and the same principal should be applied to all plaintiffs actually and proximately caused injury by the defendants’ breach of duty. 62 Important!
+Here the ZONE OF DANGER was...because... 63 [Note: See footnote 57!]
+24. DUTY BASED ON PREMISES LIABILITY? 64
+Under tort law OCCUPIERS OF LAND have a duty to both those who come onto the land and to those off the land. This is a form of duty based on RELATIONSHIP.
+Under the common law occupiers of land had no duty to UNKNOWN TRESPASSERS.
+The occupiers had a duty to warn and protect KNOWN TRESPASSERS and LICENSEES from
+known, hidden dangers and artificial conditions. Licensees are people allowed onto the land but not for the occupiers’ benefit.
+59 If a “statute” is mentioned in the question discuss NEGLIGENCE PER SE first before discussing duty based on PERIL. Usually the facts will not support a negligence per se finding – because it makes the answer too simple for an entire hour of examination.
+60 You may see a “rule” that is not a “statute” as when an employee works for a firm with a “safety rule.” The employee ASSUMES the duty of obeying the rule by working at the job. And once assumed, the effect of the rule is the same as a statutory requirement.
+61 Duty is probably the most difficult element of negligence to prove and understand.
+62 I have read and re-read what Cardozo and Andrews said and I believe this is an accurate interpretation.
+63 It simplifies your answer if you define the ZONE OF DANGER and analyze just where it was in the situation presented. Was anyone in it? If there is nobody in the zone of danger there is no duty.
+64 Duty based on premises liability, a form of RELATIONSHIP DUTY, is the THIRD MAJOR basis after discussing negligence per se (duty based on STATUTE) and duty based on PERIL.
+Chapter 18: Answering Tort Questions
+             81
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+The occupiers had a duty to reasonably inspect the land and warn and protect INVITEES from known, hidden dangers and artificial conditions. Invitees are people invited or allowed onto the land for the occupiers’ benefit.
+Finally the occupiers of land had a duty to conduct and control activities on the land with due care to prevent injury to PEOPLE OFF THE LAND.
+Modernly these rigid rules by classification have often been modified by both statute and Court decision to create a balancing test under which occupiers of land have a duty of due care to ALL PEOPLE to act as reasonable people would in inspecting, maintaining and using their property so that it does not pose known dangers to others.
+Here...because....Therefore.
+25. ATTRACTIVE NUISANCE DOCTRINE?
+Under the ATTRACTIVE NUISANCE DOCTRINE an OCCUPIER OF LAND who knows that children have or may in the future trespassed onto her land has a strict duty to inspect for and eliminate any condition posing dangers the children might not fully appreciate because of their young age.
+This is a duty based on RELATIONSHIP which poses almost strict liability. The only defense the landowner may raise is assumption of the risk.
+Here...because....Therefore.
+26. LIABILITY BASED ON RESCUER DOCTRINE / FIREMAN’S RULE?
+Under the RESCUER DOCTRINE defendants may be liable to rescuers who are injured attempting to rescue people injured or placed in peril because of a breach of duty, even if the duty was not originally owed to either the rescuers themselves or those being rescued. This is an exception to the general rule that defendants are liable to those owed a duty.
+But under the FIREMAN’S RULE defendants are generally not liable to professional rescue workers because they have ASSUMED THE RISKS associated with their professions.
+Here...because....Therefore.
+27. BREACH of duty?
+Under tort law BREACH means that the defendant did not exercise the DEGREE OF CARE a reasonable person would use in the same circumstances.
+In assessing “reasonableness” the STANDARD OF CARE that would be applied to the defendant is...
+[Note: Normally little if anything has to be said about the STANDARD OF CARE. But, if the defendant is a CHILD engaged in childlike activities, the standard is the level of care a child of that age and experience would normally use. A child engaged in adult activities
+                  82
+
+is held to an adult standard. And if the defendant is (or represents self to be) a highly trained PROFESSIONAL, a higher standard of care applies. Also, the standard of MEDICAL CARE is the standard in the community or the nation (split opinions). But if the defendant is MENTALLY RETARDED, insane or ignorant, the standard of care is NOT LOWERED below that set for the average member of the community.]
+Here there was a BREACH because a reasonable person in the same circumstances would have ... 65
+28. BREACH based on RES IPSA LOQUITUR?
+Under the doctrine of RES IPSA LOQUITUR an INFERENCE OF BREACH exists if 1) negligence by someone is implied by the facts, 2) the defendant had control of the event or instrument that caused injury, and 3) the plaintiff had no control over the event or instrument causing injury. 66
+Here negligence by someone is implied because... and the defendant had control over the event (or cause of injury) because... and the plaintiff had no control over the event (or cause of injury) because...
+Therefore, BREACH could be inferred based on RES IPSA LOQUITUR.
+29. BREACH BASED ON NEGLIGENT ENTRUSTMENT?
+Under tort law defendants who NEGLIGENTLY ENTRUST third parties with resources or authority are directly liable for injuries actually and proximately caused as a result. 67
+Here...because...Therefore.
+30. RESPONDEAT SUPERIOR?
+Under the doctrine of RESPONDEAT SUPERIOR an employer, master or principal is vicariously liable for all torts committed by an employee, servant or agent, respectively, if the tort is committed within the scope of the employment or agency relationship. 68 Respondeat superior does not apply to independent contractors.
+Here...because...Therefore.
+65 Often the best explanation of “breach” is simply to describe what MORE a “reasonable person” would have done that the defendant did not do.
+66 Turn to res ipsa loquitur when the plaintiff is the helpless victim of injury by UNKNOWN CAUSES.
+67 Typically the tested issue is whether a reasonable person would have entrusted the party causing injury.
+68 Typically the tested issue is whether the tort was committed within the scope of the relationship.
+Chapter 18: Answering Tort Questions
+              83
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+31. VICARIOUS LIABILITY for JOINT ENTERPRISE?
+Under tort law each member of a JOINT ENTERPRISE is vicariously liable for all torts committed by other members within the scope of the enterprise relationship. A joint enterprise is one in which two or more parties agree to work together for mutual benefit and each shares equal rights of control over assets and activities. 69
+Here...because...Therefore.
+32. LIABILITY for acts of an INDEPENDENT CONTRACTOR?
+Under tort law prople who hire INDEPENDENT CONTRACTORS to perform duties that are not “non-delegable” by law are NOT vicariously liable for torts committed by the contractors and can only be directly liable because of negligent selection or negligent entrustment of the contractors. An independent contractor is a person selected to provide labor services without close and regular supervision [e.g. gardeners, housekeepers, house painters and babysitters that are not employed on an exclusive and continuous basis.] 70
+Here...because...Therefore.
+33. The ACTUAL CAUSE or a SUBSTANTIAL FACTOR causing injury?
+Under tort law the defendant is the ACTUAL CAUSE of injury if the plaintiff would not have been injured BUT FOR the acts of the defendant. 71
+If two or more defendants acted negligently, the plaintiff would not have been injured if neither had acted, and the plaintiff cannot reasonably prove she would not have been injured but for the acts of each alone, then each defendant is a SUBSTANTIAL FACTOR causing injury. 72 Important!
+Here the defendant was the ACTUAL cause of injury (or else a SUBSTANTIAL FACTOR) because ...but for...
+34. PROXIMATE CAUSE? 73
+Under tort law PROXIMATE CAUSE means that the injury suffered by the plaintiff was so DIRECT, NATURAL and FORESEEABLE, so close in time and place, resulting from a CHAIN OF CAUSATION begun by the defendant’s acts, unbroken by UNFORESEEABLE INTERVENING EVENTS that the law will impose liability for the result. Important!
+69 Typically the tested issue is whether the parties had equal rights of control over assets and activities.
+70 The tested issues are whether the person causing injury is an employee or independent contractor, whether they were selected negligently or negligently entrusted by the defendant, and whether the duties were “non-delegable”.
+71 Actual cause is the easiest element of negligence to prove and understand.
+72 It is not necessary to define SUBSTANTIAL FACTOR unless you are presented with the odd fact pattern where it is necessary because the plaintiff cannot prove she would not have been injured but for the acts of each defendant alone.
+73 Proximate causation often mystifies law students, but using the rule presented here for “unforeseeable intervening events” makes it substantially easier.
+                        84
+
+Generally if two or more events are actual causes of the plaintiff’s injury, the last event will be an UNFORESEEABLE INTERVENING EVENT cutting off the liability of all defendants who acted earlier. However, it is a matter of settled law that negligent acts by others are FORESEEABLE so they can never be intervening events. Acts of nature [e.g. tornados] and criminal or intentionally tortious acts by third parties [e.g. thefts, batteries] are presumed to be UNFORESEEABLE and will terminate defendants’ liability unless extrinsic evidence shows defendants were aware the subsequent events were likely to occur. 74 Important!
+Here there was (no) PROXIMATE CAUSATION because...
+35. EGG SHELL PLAINTIFF?
+Under the EGG-SHELL PLAINTIFF concept, defendants are liable for all damages they actually cause plaintiffs, even if the plaintiffs , through no fault of their own, have pre-existing conditions that make them especially vulnerable to injury. The doctrine of the law is that “defendants must take plaintiffs as they find them.” 75
+Here...because...Therefore...
+36. CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+Under tort law CONTRIBUTORY NEGLIGENCE completely bars plaintiffs from recovery in some States if any negligence by the plaintiffs helped cause their own injury.
+This often produces harsh results and these jurisdictions may use the LAST CLEAR CHANCE DOCTRINE to allow negligent plaintiffs to recover anyway if the defendants had the last clear opportunity to avoid the accident. For the same reason these States may also use the AVOIDABLE INJURY DOCTRINE to allocate the injuries between the parties if negligence by plaintiffs contributed to their injuries even if it did not help cause the accident, itself.
+Other States use the COMPARATIVE NEGLIGENCE approach which does not bar the negligent plaintiff from recovery but reduces the plaintiff’s recovery to reflect the degree of fault shared by the plaintiff. However, some States do bar plaintiffs from recovery if they are over half to blame for causing an accident.
+Here ... because...
+37. ASSUMPTION OF THE RISK?
+Under tort law ASSUMPTION OF THE RISK is a complete bar to recovery for negligence if 1) plaintiffs deliberately put themselves at risk 2) with full awareness of the risks and 3) a conscious acceptance of the risks. Here ... because...
+[Note: This is the only possible affirmative defense to a proven claim of Strict Liability or Attractive Nuisance Doctrine.]
+74 This is one of the most powerful decision making tools for both tort and crime analysis. Learn this one!
+75 This only applies to “conditions” over which the plaintiff had no control and did not unreasonably create themselves. Plaintiffs that are vulnerable to injury because of their own negligence are not “egg-shell” plaintiffs.
+Chapter 18: Answering Tort Questions
+                  85
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+38. NEGLIGENT INFLICTION OF EMOTIONAL DISTRESS (NIED)? 76
+Under tort law, a BYSTANDER to an event may bring an action for NEGLIGENT INFLICTION if they suffer severe emotional distress and there is a nexus between the negligent act and the injury based on a PROXIMITY IN TIME, PLACE and RELATIONSHIP. In some jurisdictions a physical manifestation of emotional distress must be shown. 77
+Here ... because... Therefore...
+39. PRODUCTS LIABILITY?
+Under tort law anyone who RELEASES an UNREASONABLY DANGEROUS product into the STREAM OF COMMERCE is liable for PERSONAL INJURY or PROPERTY DAMAGE CAUSED. A product is UNREASONABLY DANGEROUS if the dangers it poses outweigh its utility given the commercial practicality for making it safer, without destroying its utility.
+Liability may be established based on any of four theories: 1) BREACH OF EXPRESS WARRANTY, 2) BREACH OF IMPLIED WARRANTY, 3) NEGLIGENCE or 4) STRICT LIABILITY IN TORT. 78
+Under a BREACH OF EXPRESS WARRANTY theory the plaintiff must show the defendant sold goods with express representations (express warranty) which made them unreasonably dangerous, and that it was the actual and proximate cause of injury to the plaintiff.
+Further, under a BREACH OF IMPLIED WARRANTY theory the plaintiff must show the defendant sold goods by representing they were safe for ordinary use or knowing the buyer's specific intended use (implied warranty), the goods were unreasonably dangerous for that use, and that it was the actual and proximate cause of injury to the plaintiff.
+Under a NEGLIGENCE theory the defendant has a duty not to place unreasonably dangerous goods into the stream of commerce. The plaintiff must be a foreseeable plaintiff proximately caused injury by the negligent acts of the defendant.
+And, under a STRICT LIABILITY theory the plaintiff must show the seller was a COMMERCIAL SUPPLIER, the product was unreasonably dangerous at the time it left the defendant's control, and the defendant is only liable for non-economic damages.
+Here... because... Therefore ...
+76 Do not discuss NIED unless the plaintiff is a BYSTANDER who only witnesses or hears about some accident that injures another person. If the plaintiff is actually, physically involved in an event they have an action for NEGLIGENCE and can recover for their “emotional distress” as special damages.
+77 NOTE: This is an exceptional situation when Courts may extend liability to one who was not directly owed a duty. 78 Because there are four theories of product liability, each with their own elements, essay questions often have two plaintiffs and two defendants. That produces four relationships and you are expected to compare and contrast how each product liability theory would benefit or fail to benefit each plaintiff or defendant.
+                           86
+
+40. DEFAMATION? 79
+Under tort law DEFAMATION is a FALSE statement of material fact PUBLISHED to others about the plaintiff CAUSING DAMAGE to REPUTATION. Defamation may be SLANDER, an oral statement, or LIBEL, a written statement. Important!
+But many false statements are PRIVILEGED where the defendant speaks to defend a private interest, group interest or the public interest and does so without malice and in a reasonable manner calculated to defend that interest without unnecessarily harming the plaintiff. 80
+Injury to reputation will be presumed where there is LIBEL or SLANDER PER SE. SLANDER PER SE is found where the false statement alleges CRIMINAL behavior, LOATHSOME disease, UNCHASTE behavior or improper BUSINESS practices. [CLUB] Important!
+Under NEW YORK TIMES and its progeny, a PUBLIC FIGURE PLAINTIFF must prove ACTUAL MALICE, that the false statement was made with knowledge or reckless disregard of its falseness, in order to recover in a defamation action. A PUBLIC FIGURE is a person who has acted to put themselves in the public spotlight. Further, where a matter of PUBLIC CONCERN is at issue, or where the plaintiff seeks punitive damages, the plaintiff must at least prove NEGLIGENCE. Important!
+Here the statement was FALSE because ... The defendant would dispute this because ...
+And the statement was NOT PRIVILEGED because (either no valid interest being protected, statement no made reasonably, or malicious intent)...Further, the statement was PUBLISHED because...Also the statement was ABOUT the plaintiff because ... And the statement at issue was DAMAGING to reputation because... 81
+Therefore, the plaintiff would be able to establish a prima facie case of defamation.
+[Now go through the CASE LAW AFFIRMATIVE DEFENSES as part of the defamation analysis. ]
+HOWEVER, the defendant would argue that the plaintiff is a PUBLIC FIGURE because... 82... Therefore, the plaintiff would have to show ACTUAL MALICE because ...
+FURTHER, the defendant would argue that the subject was a PUBLIC MATTER because ... Therefore, the plaintiff would have to prove NEGLIGENCE because ...
+Therefore...
+79 Generally a defamation question takes an entire hour to answer so it seldom is combined with other issues except that it always involves the issue of “negligence” to some degree, and may suggest invasion of privacy. It is usually a mistake to discuss both defamation and false light concerning the same statement because if it is a statement that would damage one’s reputation the issue is clearly defamation, not false light. If the statement does not damage the plaintiff’s reputation but only causes embarrassment otherwise, it is not defamation and can only be false light.
+80 This is frequently tested and poorly taught. If a person has a good, valid reason to speak out, and is not motivated by malice, the statement is privileged even if the thing said turns out to be wrong later!
+81 Incorrect statements may not always damage reputations when compared to the actual truth.
+82 Any person who runs for political office, leads a cause, strives to become a celebrity, or places themselves in front of the television cameras and radio microphones becomes a PUBLIC FIGURE.
+Chapter 18: Answering Tort Questions
+                                  87
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+41. FALSE LIGHT?
+Under tort law FALSE LIGHT is the tort of publishing a false portrayal of a person in a manner that would cause them embarrassment or inconvenience. 83
+Here...because...Therefore...
+42. APPROPRIATION of likeness?
+Under tort law APPROPRIATION is the tort of unauthorized use of the likeness of another person for personal gain in a manner that implies endorsement of a product or cause. 84 Here...because...Therefore...
+43. INTRUSION into the plaintiff’s solitude?
+Under tort law INTRUSION is the tort of unreasonable intrusion into the peace and solitude of
+another person. 85
+Here...because...Therefore...
+44. PUBLIC DISCLOSURE OF PRIVATE FACTS?
+Under tort law PUBLIC DISCLOSURE is the tort of unreasonably disclosing private facts that a reasonable person would find embarrassing. 86
+...Here...because...
+HOWEVER, the defendant would DEFEND on the ground the facts revealed were PUBLIC
+FACTS. [This is the main issue in these cases].
+45. PRIVATE NUISANCE?
+Under tort law PRIVATE NUISANCE is an unreasonable interference with a person’s use and enjoyment of their own land. In the MAJORITY view COMING TO THE NUISANCE is a consideration for the court and NOT A COMPLETE BAR to bringing a nuisance action.
+Here B’s use of her OWN LAND was INTERFERED WITH by A because..., and the interference was UNREASONABLE because...Therefore ...
+83 The best example of false light is false praise or false statements of fact that ridicule and embarrass but are not literally damaging to reputation -- like publishing articles saying Paris Hilton is a virgin.
+84 This is usually for business purposes, but it could also be for some other purpose like political advantage. Typically this gives rise to situations where the defendant has reaped a profit without really costing the plaintiff much. In that case the plaintiff “waives the tort” and seeks RESTITUTION, meaning that the plaintiff asks to be awarded the profits of the defendants instead of the injuries they have actually suffered.
+85 Here, as in so many legal issues, the key element AND YOUR WHOLE FOCUS OF ARGUMENT should be on the “unreasonableness” of the defendant’s actions.
+86 Here, again, the key element is the “unreasonableness” of the defendant’s actions. This sort of issue often involves private matters like past employment history and medical problems.
+                    88
+
+46. PUBLIC NUISANCE?
+Chapter 18: Answering Tort Questions
+ Under tort law PUBLIC NUISANCE is an unreasonable interference with a person’s use and enjoyment of public resources. 87 To have standing the plaintiff must show particular injury, greater than that suffered by the general public. ...Here...because...
+HOWEVER, the defendant would DEFEND on the ground that the plaintiff has suffered no greater injury than the general public. [This is the main defense issue in these cases]
+Therefore ...
+47. MALICIOUS PROSECUTION?
+Under tort law a person is liable for MALICIOUS PROSECUTION if they have instituted or continued a criminal prosecution of another person out of malice and the action was terminated based on its merits because there was no probable cause.
+Here there was no probable cause because... Therefore ...
+48. ABUSE OF PROCESS?
+Under tort law a person is liable for ABUSE OF PROCESS if they have brought a civil or criminal action against another person without a legitimate basis out of malice or for an improper purpose. 88
+Here the defendant acted out of malice because... Therefore ...
+49. ILLEGAL INTERFERENCE? [Paraphrase as necessary] 89
+Under tort law a person is liable for unreasonably and illegally interfering with another person’s known or apparent business relationships.
+Here the defendant’s acts caused unreasonable interference because... Therefore ...
+50. DECEIT (or FRAUD or MISREPRESENTATION)?
+Under tort law a person is liable for 1) making a FALSE STATEMENT OF MATERIAL FACT 2) KNOWING it was false 3) with INTENT TO DECEIVE, 4) that was REASONABLY RELIED upon by the plaintiff, and thereby 5) CAUSING the plaintiff INJURY.
+Here there was FALSE STATEMENT of MATERIAL FACT because... And the statement was made by the defendant with KNOWLEDGE it was false because...Further the defendant had
+87 This concerns all public “resources” including use of public resources and basic rights such as being able to go in public without fear of harm. If a district attorney could bring an action, then a private party can bring an action, given that they meet the STANDING requirement of suffering a greater injury than the “average” member of the public.
+88 Malicious prosecution only concerns criminal actions that are prosecuted without probable cause. Abuse of process in contrast concerns both civil actions and criminal actions instituted for a wrongful purpose.
+89 This may be called “interference with contract”, “trade slander”, “interference with prospective economic advantage” or “injurious falsehood”. Let’s use football terminology and call it “illegal interference”.
+                              89
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+an INTENT TO DECEIVE because... Also the plaintiff REASONABLY RELIED because... And
+the plaintiff was INJURED because... Therefore ...
+51. NONDISCLOSURE (CONCEALMENT)?
+Under tort law a prima facie case of NONDISCLOSURE (or CONCEALMENT) requires showing 1) a DUTY to disclose material facts, 2) BREACH of that duty, 3) REASONABLE RELIANCE by the plaintiff on facts as they appeared to be, and 4) INJURY CAUSED by the nondisclosure.
+Here the defendant had a DUTY to disclose because...And the defendant BREACHED that duty because they did not disclose...Further, this was a MATERIAL FACT because...And the plaintiff REASONABLY RELIED on appearances because...This nondisclosure INJURED the plaintiff because...Therefore...
+52. TORT RESTITUTION ?
+Under tort law plaintiffs have a legal right to “waive the tort” and instead of seeking an award of damages based on the injury they have actually suffered they may demand LEGAL RESTITUTION, an award of a money judgment measured by the amount the defendants have wrongfully benefited as a result of their tortious acts. The purpose of this is to PREVENT UNJUST ENRICHMENT by tortfeasors. 90
+Here...because...Therefore ...
+Note: The above issue statements provide virtually every important issue, definition, rule and term that you will ever see on a TORTS examination in law school or on a Bar Exam. If you know the above issues and responses you have everything you really need.
+
+
+CRIMINAL LAW ISSUES AND ANSWERS
+FOLLOW THE CALL of the question. But if the call is general list the issues as follows:
+1) SOLICITATION to commit [crime]?
+Under CRIMINAL LAW a SOLICITATION is the crime of urging another person to commit a crime. 92 The crime of SOLICITATION is complete as soon as the urging takes place, whether the person urged commits the crime urged or not. But if the urged crime is committed the SOLICITATION MERGES into the criminal result and the person committing the solicitation becomes an ACCESSORY BEFORE THE FACT and VICARIOUSLY LIABLE for the crime based on accomplice theory. 93
+Here A urged B to commit the crime of ... because...Therefore, the defendant can be charged with solicitation to commit [crime].
+2) CONSPIRACY to commit [crime or other illegal goal]? 94
+Under COMMON LAW the crime of CONSPIRACY was an agreement between two or more people to work toward an illegal goal. MODERNLY an OVERT ACT in furtherance of the conspiracy goal is often required in many Courts.
+Further, under the PINKERTON RULE, a member of a conspiracy is VICARIOUSLY LIABLE for the criminal acts of co-conspirators done WITHIN THE SCOPE of the conspiracy goal. This means crimes that were 1) foreseeable and 2) in furtherance of the conspiracy goal.
+Even if the illegal goal of the conspiracy is attained, the CONSPIRACY DOES NOT MERGE into the criminal result, so each member can be convicted of both conspiracy and the other crimes committed during and within the scope of the conspiracy.
+[State the next paragraph if the conspiracy is to commit a crime that necessarily requires more than two people. Receiving stolen property is one of those crimes.]
+And under the WHARTON RULE a conspiracy requires the participation of more people than the minimum number necessary to commit the criminal act.
+92 Note that the act urged must be a crime for which the person urged would be prosecuted. If Bevis urges 3-year old Butthead to steal some whisky for him it is not solicitation because Butthead is too young to form criminal attempt. In this odd situation the crime of Bevis is attempted larceny not solicitation.
+93 For example: Bevis urges Butthead to rob a bank. If Butthead doesn’t rob the bank Bevis can only be charged with solicitation. But if Butthead does rob the bank at Bevis’ urging, Bevis can charged with BOTH solicitation and robbery. He would be VICARIOUSLY LIABLE for the robbery as an ACCOMPLICE (an ACCESSORY BEFORE THE FACT) based on accomplice theory. He cannot be convicted of both solicitation AND robbery because the solicitation is the reason he can be charged with the robbery. The solicitation would MERGE into the robbery as a lesser included offense.
+94 Conspiracy is always a major issue if there are two or more defendants. It creates VICARIOUS LIABILITY for each conspiracy member based on conspiracy theory. If members of a conspiracy takes an active part in pursuing the criminal goal they become ACCOMPLICES and are VICARIOUSLY LIABLE based on BOTH conspiracy theory AND accomplice theory. The DEFENSE OF WITHDRAWAL is frequently tested.
+                      100
+[State the next paragraph if a defendant joins a conspiracy in progress.]
+If a defendant joins a conspiracy in progress most Courts hold they are not liable for previous crimes of the co-conspirators unless the joining defendant seeks to profit from those prior crimes.
+[State the next sentence when crimes are committed after the conspiracy ends.]
+A conspiracy ends when the conspiracy goal is ATTAINED or ABANDONED, and vicarious liability will no longer attach based on conspiracy theory. But it may still attach based on accomplice theory.
+Here two or more parties, A and B, agreed to work toward an illegal goal because ...And there was an OVERT ACT in furtherance of the conspiracy when ....
+Therefore, the defendant can be charged with conspiracy to commit [crime].
+3) CRIMINAL ASSAULT?
+Under CRIMINAL LAW an ASSAULT is the crime of acting with the intention of causing a battery or else to cause apprehension of a battery. The victim of the attempted battery does not have to be aware of the danger. 95 Important!
+Here the defendant attempted to cause a battery (or apprehension of a battery) because ... Therefore...
+4) Can the defendant be charged with CRIMINAL BATTERY?
+Under CRIMINAL LAW a BATTERY is the crime of acting with the intention of causing a
+touching of a victim’s person and causing a harmful or offensive touching . 96 Important! [Every criminal battery includes a criminal assault as a lesser included offense because
+an attempted battery is a criminal assault. The assault merges into the larger crime.]
+Here the defendant deliberately acted to cause a touching because...And it caused a harmful (or offensive) touching because...Therefore...
+5) RAPE?
+Under common law RAPE was an intentional act to have sexual intercourse with a female without consent causing actual penetration, no matter how slight. At common law it was held to be legally impossible for a husband to rape a wife because consent to sexual intercourse
+95 Criminal assault is very different from tort assault because for a tort assault the plaintiff must actually be caused apprehension.
+96 Criminal battery is essentially identical to tort battery.
+Chapter 19: Answering Criminal Law Questions
+                        101
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+was implied by marriage. MODERNLY, the crime of rape has been broadly extended to include any non-consensual sexual act involving penetration, regardless of the relative sexes and marital relationship between the defendant and the victim. 97
+Here there was an intentional act of sexual intercourse because...And the victim did not consent to have sexual intercourse because 98...
+Therefore the defendant can be charged with rape.
+6) ARSON? [Any explosion, smoke or flame raises the issue!!]
+Under common law ARSON was the malicious burning of the dwelling of another. MODERNLY arson is extended by statute to the burning of other structures. Malice for arson means that the burning must be done with wrongful intent. 99
+Here there was a burning because...And there was a malicious intent to burn because ... Therefore, the defendant can be charged with arson.
+7) LARCENY?
+Under common law LARCENY was the trespassory taking and carrying away of the personal property of another with intent to permanently deprive. Where the possession was gained by misrepresentation it was called LARCENY BY TRICK. MODERNLY larceny is generally codified as “THEFT”. Important! GRAND LARCENY, a felony, and PETTY LARCENY, a misdemeanor, are statutory crimes based on the value of property stolen.
+[Only state the next paragraph if there is a theft from a master or employer.]
+Theft of property from a master or employer by a manager or high-level employee was generally embezzlement and not a larceny, unless the defendant got possession by misrepresentation, a larceny by trick. But theft of the same property by a servant or low-level employee was generally larceny, not embezzlement, unless the defendant took possession from a third party before deciding to steal it, and in that case it was embezzlement.
+[Only state the next paragraph if there is “lost” property at issue.]
+Under the RELATION BACK DOCTRINE some common law courts held that a theft of “lost” property by a person who initially intended to return it to the lawful owner was a larceny because a later decision to steal RELATED BACK to make the original taking unlawful. But
+97 Statutory rape is the crime of an adult having sexual intercourse with a minor, and it is generally defined as a “strict liability” offense. This means that no “criminal intent” is required, and a “mistake of fact”, no matter how reasonable, is generally no defense.
+98 Rape is rarely tested on law school or bar exams. When it is, the main issue is generally whether or not the victim gave valid, fully-informed consent to have sexual intercourse.
+99 Malice for arson requires wrongful intent, meaning that the defendant started the fire intending or knowing that someone would be harmed. But to be “malicious” the burning does not have to be “illegal.” Further an “illegal” burning without any intent to harm anyone (for example in violation of zoning ordinances) is not sufficiently “malicious” to support a charge of arson.
+                 102
+
+other courts held this was embezzlement on the theory the original taking formed a “constructive trust.”
+Here there was a trespassory taking of the personal property of another because...And it was done with intent to permanently deprive because...
+Therefore ...
+8) Can FALSE PRETENSES be charged?
+Under common law FALSE PRETENSES was a MISREPRESENTATION of FACT to obtain TITLE to the property of another with intent to permanently deprive. 100 MODERNLY false pretenses is generally codified as “THEFT”. Important!
+Here there was intentional misrepresentation of fact to obtain title to property of another because...And there was an intent to permanently deprive because ...
+Therefore ...
+9) EMBEZZLEMENT?
+Under common law EMBEZZLEMENT was the crime of TRESPASSORY CONVERSION of the property of another by one entrusted with lawful possession with intent to permanently deprive or else causing substantial risk of loss. MODERNLY embezzlement is generally codified as “THEFT”. Important!
+[Only state the next paragraph if there is a theft from a master or employer.]
+Theft of property from a master or employer by a manager or high-level employee was generally embezzlement and not a larceny, unless the defendant got possession by misrepresentation, a larceny by trick. But theft of the same property by a servant or low-level employee was generally larceny, not embezzlement, unless the defendant took possession from a third party before deciding to steal it, and in that case it was embezzlement.
+[Only state the next paragraph if the stolen property was on a common carrier.]
+Further, the COMMON CARRIER DOCTRINE held that a common carrier such as a taxicab, bus or ship is entrusted with possession of passenger’s property, including lost property, so a theft of passenger property by an employee of a common carrier was more often held to be EMBEZZLEMENT than larceny, even if the property was “lost”.
+[Only state the next paragraph if “lost” property was stolen.]
+When “lost” property was stolen by a defendant who first intended to return it to the lawful owner, many courts found EMBEZZLEMENT on the theory the property was held in a
+100 False pretenses involves a purchase that transfers “ownership” of property while larceny and embezzlement only involve taking “possession” without any sort of purchase transaction. A purchase with a stolen credit card is the crime of false pretenses; a purse snatching is a larceny.
+Chapter 19: Answering Criminal Law Questions
+                   103
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+“constructive trust”. But other courts applied the RELATION BACK DOCTRINE and held it was a larceny because the decision to steal RELATED BACK to make the original taking unlawful.
+Here there was a trespassory conversion of the property of another with intent to permanently
+deprive or cause substantial risk of loss because ...And the defendant was entrusted with possession (or would be deemed to have lawful possession) of the property because...
+Therefore, the defendant could (not) be charged with embezzlement.
+10) Can the defendant be charged with ROBBERY?
+Under CRIMINAL LAW a ROBBERY is a larceny, defined above (or define larceny here if it was not defined earlier), from a person by use of force or fear to overcome the will of the victim to resist. 101 Important!
+Here there was a larceny from the person because...And the defendant used force ( or fear) to overcome the will of the victim to resist because...Therefore...
+11) BURGLARY?
+Under COMMON LAW a BURGLARY was the breaking and entering of the dwelling of another in the night with intent to commit a felony. The entry of a structure within the CURTILAGE of the dwelling also constituted a burglary. Important! A physical breaking was generally required, but a CONSTRUCTIVE BREAKING would be found if entry was the result of TRICK, VIOLENT THREATS, or CONSPIRACY.
+MODERNLY burglary has been extended by statute to all times of the day and all types of structures. Intent to commit a larceny is generally still sufficient to support a burglary charge, even if the larceny is no longer a felony. Further, the “breaking” element will generally be satisfied if there is a TRESPASSORY ENTRY, an entry without consent, express or implied. 102
+Here there was a breaking and entry (or trespassory entry) into a structure of another because...But it was not a dwelling because it was...And the intent at the time of entry was to commit a felony (or larceny) because...
+Therefore the defendant could not be charged with common law BURGLARY but could be charged modernly.
+[More than any other crime you need to compare and contrast the common law burglary against the modern view and state whether the defendant could be charged under both or only modernly.]
+101 It is critical that the “force or fear” must be used to overcome the will of the robbery victim!
+102 Some States have statutes that make any entry into any structure with intent to commit a felony “once inside” a “burglary”. This is not common law, not broadly adopted modern law, and not the law to use on Bar exams!
+                            104
+
+12) RECEIVING STOLEN PROPERTY?
+Chapter 19: Answering Criminal Law Questions
+ Under CRIMINAL LAW RECEIVING STOLEN PROPERTY is the crime of taking possession or control over stolen personal property while knowing it has been stolen from the lawful possessor. The defendant that receives the stolen property and the defendant that provides (delivers) the stolen property are both liable, even though the crime is called “receiving”..
+Under the WHARTON RULE there can be no crime of CONSPIRACY TO RECEIVE STOLEN PROPERTY unless there are at least three defendants in agreement. 103
+[Only state the following if the subject property was placed into the possession of the defendants with the tacit consent of the lawful owner or the police.]
+The crime of receiving stolen property is a legal impossibility if the property was in the possession of the defendants with the CONSENT of the lawful OWNER or the POLICE as part of a “sting” operation. In that case the crime is ATTEMPTED RECEIPT OF STOLEN PROPERTY.
+Here...because...Therefore...
+13) ATTEMPTED (name the crime attempted)?
+Under CRIMINAL LAW an ATTEMPTED (crime attempted) is the act of taking a
+SUBSTANTIAL STEP taken toward committing (that intended crime). Important! [Only state the following sentence if the facts suggest an issue of LEGAL
+IMPOSSIBILITY.]
+For an attempted crime to be committed, it must be legally possible for the crime to have been completed at the moment of the first substantial step.
+Here there was a substantial step toward commission of the crime of (name the crime) because ...And the defendant intended to commit that crime because...
+Therefore ATTEMPTED (crime) can be charged.
+[There are particular rules for some “attempted” crimes:
+• For any attempted crime to be committed it must be legally possible to commit the intended crime at the instant of the first substantial step.
+• There can be NO ATTEMPTED SOLICITATION because any “attempt” completes the crime.
+• At common law there was NO ATTEMPTED ASSAULT because assault by definition is an attempt.
+• And at common law there was NO ATTEMPTED BATTERY because that is the crime of assault.
+103 This is a topic for discussion virtually every time there is a “receiving stolen property” issue. 105
+               
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+• There can be NO ATTEMPTED BURGLARY unless the defendants approach a structure with intent to enter and commit some other crime and fail to enter at all.
+• EVERY BURGLARY OR ATTEMPTED BURGLARY makes the defendant automatically liable for a SECOND ATTEMPT CRIME because it is a substantial step toward commission of the second crime the defendant intends to commit after breaking in. 104
+• There can be NO RECEIVING STOLEN PROPERTY and can only be a crime of ATTEMPTED RECEIPT if the subject property was conveyed to the receiving defendant with consent of the lawful owner (or the police).
+• The crime of ATTEMPTED MURDER requires INTENT TO KILL and no other form of malice for murder will suffice. So there can be NO ATTEMPTED DEPRAVED HEART MURDER and NO ATTEMPTED FELONY MURDER.
+• There can be NO ATTEMPTED MANSLAUGHTER because the crime is an alternative to a murder charge that requires a completed homicide.]
+14) MURDER?
+Under CRIMINAL LAW a MURDER is an unlawful HOMICIDE, the killing of one human being by another, with MALICE aforethought. 105 MALICE for murder may be 1) an EXPRESS intent to kill, or IMPLIED by 2) intent to commit GREAT BODILY INJURY, 3) intent to commit an INHERENTLY DANGEROUS FELONY, the FELONY MURDER RULE, or 4) deliberate creation of EXTREME RISKS to human life or deliberate breach of a pre-existing duty to protect others from extreme risks with AWARENESS of and CONSCIOUS DISREGARD for the risks, the DEPRAVED HEART MURDER rule. Important!
+Under COMMON LAW there were NO DEGREES of murder but MODERNLY first degree murder is generally codified as a 1) willful, deliberate and premeditated homicide or one 2) done by enumerated means, 106 or 3) caused by commission of an enumerated felony. 107 Important!
+[Only state the following if it is not clear a “living human being” was killed.]
+At common law and modernly, a “human being” is a person who was born alive and was not yet dead. 108
+104 For example, Bevis goes to Butthead’s house intending to break in and steal his TV. He has taken a substantial step toward commission of both crimes just going there and can be charged with attempted burglary and attempted larceny. 105 All homicides you see on law exams are “unlawful” even if they are “excused” by an affirmative defense.
+106 Some commonly tested “enumerated means” are torture, poison and explosives.
+107 Generally the first-degree murder statutes enumerate the same felonies that qualify for the felony-murder rule (rape, robbery, burglary and arson) but that is coincidental. Do not say that first degree murder automatically includes all of the same felonies that apply to the “felony-murder rule” because that is up to the various legislatures.
+108 If the facts say a “fetus” is killed or a baby was “born dead” or “dead at birth” there has NOT been a homicide. A “baby born dead” is not a homicide at common law or under modern rules. State laws that make killing a fetus a murder (“fetal murder” statutes) do not make fetuses “human beings”. Rather they make killing a “human being or a fetus” a murder. Only about half the States have such statutes, and they vary greatly. There are NO “fetal manslaughter” statutes.
+                106
+
+[Only state the following if a death occurs long after the act being blamed.]
+The common law held that there was NO HOMICIDE if the victim died more than a year and a day after the act blamed for the death. Modernly this has been broadly extended by statute.
+[State the following if the death results from suicide.]
+A suicide is not a homicide. But a death by suicide constitutes a homicide when it is actually and proximately caused by the acts of the defendant.
+[State the following if more than one person was an actual cause of death.]
+The prosecution must prove the defendant was the ACTUAL AND PROXIMATE CAUSE of death, and if more than one act was an actual cause of death, the last, unforeseeable, intentional act generally is the only legal cause of death and it terminates the criminal liability flowing from all prior acts. 109 Generally negligence by others is presumed to be foreseeable and criminal acts and intentional torts by third parties are presumed to be unforeseeable absent special knowledge. 110
+[Only state the following if a death occurs during or after the commission of an inherently dangerous felony (rape, robbery, burglary or arson).]
+Under the FELONY MURDER RULE, a homicide caused by the commission of an inherently dangerous felony can be prosecuted as a murder if it is the result of acts done within the RES GESTAE of the underlying felony AND results from the INHERENT DANGERS of that type of felony. 111 The RES GESTAE is the sequence of events beginning with the first substantial step to commit the felony and ending when the defendants leave the scene of the crime and reach a place of relative safety.
+[Only state the following if a death occurs after a break-in to a structure when the defendant’s sole purpose for breaking into the structure was to attack the victim.]
+A murder prosecution cannot be based on the felony murder rule if the death occurred during a burglary that was committed solely for the purpose of attacking the victim because that is not one of the “inherent dangers” of burglary. 112
+109 For example, OJ poisons his wife, intending to kill her, but just before she would have died anyway a crazed fan, Stalker, sneaks into her hospital room and strangles her. Stalker is the proximate (legal) cause of her death, not OJ, and his act cuts off OJ’s criminal liability for murder. OJ can only be charged with attempted murder.
+110 This rule has application to all crimes, and also to all torts. But it is most useful when analyzing negligence in tort questions and murder in crime questions.
+111 At common law the “inherently dangerous felonies” were rape, robbery, burglary, arson, mayhem and sodomy. Modernly the felony-murder rule only applies with virtual certainty to deaths from rape, robbery, burglary and arson. Kidnapping was not one of the inherently dangerous felonies at common law and is not always an “inherently dangerous felony” for application of the felony-murder rule modernly. Kidnapping may be found to be inherently dangerous in some cases because of the particular facts. Some courts have even found drunk driving to be inherently dangerous in some cases. But there again, that was only because of the peculiar facts of the particular case.
+112 For example, Bevis breaks into Butthead’s house to beat up Butthead. Butthead dies. Bevis has committed burglary (modernly at least) because he has “broken” and “entered” the dwelling with intent to commit a felony. And Butthead has been killed as a result. But the felony-murder rule does not apply if the sole purpose of the “burglary” was to attack Butthead because that is not one of the “inherent dangers of burglary” that led to the creation of the felony- murder rule in the first place.
+Chapter 19: Answering Criminal Law Questions
+  107
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+Here there was an unlawful HOMICIDE because the victim was a human being and he was killed by the acts of another human being, the defendant. And there was malice aforethought because...
+Therefore the defendant can (not) be charged with murder.
+[Once you determine murder can be charged you should almost always discuss the degree of murder that is indicated by the facts as follows.]
+Here the murder would (not) be in the FIRST DEGREE because...
+15) MITIGATING FACTORS? (Always discuss if defendant kills while mentally impaired.)
+Under CRIMINAL LAW, MITIGATING FACTORS may be weighed by the jury in determining whether or not a defendant killed with sufficient premeditation to support a finding of first- degree murder or whether the defendant acted with malice aforethought at all for a finding of murder. They may cause the jury to find only manslaughter and not murder.
+Here there were mitigating factors because the defendant was (intoxicated, mentally incapacitated, etc.)... Therefore the jury may find that...
+16) VOLUNTARY MANSLAUGHTER? (SKIP if the defendant clearly DID NOT intend to kill.)
+Under CRIMINAL LAW, VOLUNTARY MANSLAUGHTER is an INTENTIONAL, unlawful homicide, the killing of one human being by another, without malice aforethought because of ADEQUATE PROVOCATION. Important!
+ADEQUATE PROVOCATION is provocation sufficient to raise a reasonable person to a murderous rage, which did raise the defendant to such a rage, and which was the actual cause of the homicide. Important!
+But ADEQUATE PROVOCATION CANNOT BE FOUND if the defendant had enough time before the killing that a reasonable person would have COOLED DOWN and no longer would have been in a murderous rage.
+Here there was a homicide because... And, adequate provocation might be found because... Therefore...
+17) INVOLUNTARY MANSLAUGHTER? (SKIP if the defendant clearly DID intend to kill.)
+Under CRIMINAL LAW, INVOLUNTARY MANSLAUGHTER is an UNINTENDED homicide, the killing of one human being by another, as a result of CRIMINAL NEGLIGENCE (a.k.a. “negligent homicide”), RECKLESSNESS (a.k.a. “reckless homicide”), or during the
+            108
+
+commission of a MALUM IN SE crime insufficient for a charge of murder (a.k.a. “misdemeanor manslaughter”). Important!
+CRIMINAL NEGLIGENCE is a deliberate breach of a pre-existing duty to protect others from extreme risks and RECKLESSNESS is a deliberate creation of extreme risks to others.
+A MALUM IN SE crime is one that involves moral turpitude. 113
+Here there was a homicide because the victim was a human being, and they were killed by the act of the defendant, another human being.
+[The following applies if the death was caused by RECKLESSNESS (or CRIMINAL NEGLIGENCE).]
+And the defendant deliberately created extreme risks (or deliberately breached a duty to protect others from extreme risks) because...... But the defendant might not have been fully aware of the risks because... 114
+Therefore the defendant may be charged with involuntary manslaughter.
+18) REDLINE RULE?
+Under the REDLINE RULE a co-felon in most States cannot be charged with murder under the FELONY MURDER RULE simply because a co-felon was killed by a victim, bystander or the police during the commission of a crime. 115
+Here the rule would apply because ...
+19) KIDNAPPING?
+Under criminal law KIDNAPPING is the crime of unlawfully taking or confining people against their will. At common law the victim had to be taken out of the country or across a state line. Modernly this requirement has been dropped.
+Kidnapping is not one of the “inherently dangerous felonies” for the Felony Murder Rule but modernly is often an “enumerated felony” for first-degree murder.
+Here...Therefore...
+113 NOT a regulatory violation like a minor traffic offense! Avoid the term “misdemeanor manslaughter” because a “malum in se” crime upon which the charge can be based may be either a felony or a misdemeanor.
+114 Involuntary manslaughter is often found when defendants have diminished capacity because of intoxication, youth, low intelligence, etc. because the defendant’s awareness of the dangers cannot be proven with certainty.
+115 NOTE: The only States that have not adopted the Redline Rule are apparently California and Massachusetts. But broadly adopted rules are to be cited on California Bar exams, so the Redline Rule should be cited, even though California does not actually follow this rule.
+Chapter 19: Answering Criminal Law Questions
+                   109
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+20) MISPRISION? (NEVER DISCUSS this unless the given facts make it entirely clear it is an
+intended issue for discussion because this has not been a crime for about 200 years!)
+Under old common law MISPRISION was the crime of knowingly failing to report felonies by others to the police. Modernly there is no general duty to report crimes by others, and the crime of misprision no longer exists generally.
+Here...Therefore...
+21) COMPOUNDING? (This is a real crime so discuss this instead of misprision.)
+Under criminal law COMPOUNDING is the crime of taking money or something of value in
+exchange for a promise to not report crimes committed by others. Here...Therefore...
+22) ACCOMPLICE LIABILITY?
+Under criminal law ACCOMPLICE LIABILITY is vicarious criminal liability for criminal acts of co-criminals that directly and naturally result (foreseeable acts) from the defendant’s own criminal acts. Many Courts do not recognize Withdrawal as a defense to accomplice liability.
+Here...Therefore...
+23) DEFENSE of INFANCY? [Children and youthful defendants!]
+Under the COMMON LAW there was a CONCLUSIVE PRESUMPTION that a child under the age of seven was unable to form CRIMINAL INTENT. There was a REBUTTABLE PRESUMPTION that a child between 7 and 14 could not form criminal intent, and that a child over the age of 14 could form criminal intent. Modernly similar rules have been adopted by statute.
+Here the defendant may claim he was too young to form criminal intent because ... Therefore...
+24) DEFENSE of MISTAKE OF FACT? 116 [A frequently tested issue.]
+Under CRIMINAL LAW a MISTAKE OF FACT is a complete defense if it negates implied criminal intent. For GENERAL INTENT crimes only a REASONABLE mistake can negate criminal intent. For SPECIFIC INTENT crimes ANY MISTAKE OF FACT may negate criminal intent whether reasonable or not. Battery, rape, arson, involuntary
+116 This is a passive defense but sometimes you might want to analyze it as a separate issue. 110
+                 
+manslaughter and murders that are not willful and deliberate or based on the felony murder rule are general intent crimes. All other crimes are SPECIFIC INTENT crimes.
+A REASONABLE MISTAKE OF FACT is one that a reasonable person would have made in the same situation. VOLUNTARY INTOXICATION never makes an otherwise unreasonable mistake reasonable.
+A MISTAKE OF FACT is no defense to a charge of ATTEMPT if criminal intent is proven and the mistake merely prevented an otherwise criminal act.
+Here the defendant’s mistake of fact does (not) negate implied criminal intent because...
+Therefore...
+25) DEFENSE of LEGAL IMPOSSIBILITY? 117
+Under CRIMINAL LAW, LEGAL IMPOSSIBILITY means that an attempted act is not an attempted crime, even if there was criminal intent, when the attempted crime is a legal impossibility at the time of the first substantial step.
+Here the crime charged was a legal impossibility because...
+Therefore...
+26) DEFENSE of MISTAKE OF LAW?
+Under CRIMINAL LAW, A MISTAKE OF LAW about the legality of an act does not alter the legality of the act. If the defendant commits a criminal act believing it is legal, it is still an illegal act. Likewise, if the defendant commits a legal act believing it is illegal, it is still a legal act. 118
+Here the defendant’s act was legal (illegal) at the time it was committed because...
+Therefore...
+27) DEFENSE of FACTUAL IMPOSSIBILITY?
+Under CRIMINAL LAW, FACTUAL IMPOSSIBILITY is a defense that the act actually done by the defendant was NOT A SUBSTANTIAL STEP toward commission of any crime, despite criminal intent, because the act taken could never produce a criminal result. 119
+Here the defendant’s act was legal (illegal) at the time it was committed because...Therefore...
+117 There are very few scenarios where this issue arises. One is a scenario where the defendant attempts to murder a victim, but the victim died from other causes BEFORE the defendant acted. Another is a scenario where the defendant attempts to steal something, but it is not the property of “another” WHEN HE ACTS because the defendant already owns it or else because the lawful owner has discarded (abandoned) it.
+118 For example, Bevis forces his wife Buffy to have sexual intercourse with him because he believes that is his legal right. He can be charged with rape and his mistaken notions as to the law are no defense.
+119 For example, Bevis attempts to murder Butthead by sticking pins in a voodoo doll named “Butthead”.
+Chapter 19: Answering Criminal Law Questions
+            111
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+28) DEFENSE of WITHDRAWAL? [A commonly tested issue.]
+Under CRIMINAL LAW, WITHDRAWAL is a defense that defendants who were members of a CONSPIRACY (or perhaps are accomplices like those who have urged a crime to be committed) are not liable for crimes committed by co-criminals AFTER they have 1) given the co-criminals NOTICE that they are abandoning the criminal enterprise and 2) have TRIED TO STOP the co-criminals from continuing pursuit of the criminal goal. 120
+Here the defendants did (not) give NOTICE they were abandoning the criminal goal (e.g. conspiracy goal) because... And they did (not) TRY TO STOP the co-criminals from continuing because...Therefore.
+29) DEFENSE of INSANITY?
+Under CRIMINAL LAW insanity is a defense if it negates criminal intent. The insanity defense is now prescribed by statute in almost all jurisdictions. Under the COMMON LAW M’NAUGHTEN RULE insanity was a defense if a disease of the mind at the time of the act prevented the defendant from knowing the nature and quality of his act, or that they were wrong. Under the IRRESISTIBLE IMPULSE RULE insanity is a defense if the defendant knows it is wrong but cannot stop herself. 121 Important!
+Here the defendant would argue that ...Therefore...
+30) DEFENSE of CONSENT?
+Under CRIMINAL LAW consent is a defense to some crimes. [e.g. rape, larceny, battery – consent to a touching] The consent must be informed, voluntary and given by one with legal capacity. Further, consent is not a legal defense to an act that deliberately causes great bodily harm.
+Here... because...Therefore...
+31) DEFENSE of ENTRAPMENT?
+Under CRIMINAL LAW entrapment is a defense if criminal intent was the product of improper police behavior. Courts are split on the application of the entrapment defense, and under the majority view entrapment is no defense if the defendant was predisposed to commit the crime. Under another minority view entrapment is a defense if police conduct was outrageous and instigated the crime, even though the defendant was predisposed.
+Here... because...Therefore...
+120 This defense varies widely among Courts. Some Courts hold that it is a valid defense only to vicarious liability for subsequent crimes and others hold it is a valid defense to the crime of “conspiracy” itself. Some Courts may allow it as a defense to vicarious liability based on conspiracy theory only, and not as a defense to accomplice liability.
+121 The M’Naughten Rule is common law and the Irresistible Impulse Rule is broadly adopted enough to mention it. Other ideas are not broadly adopted and discussing them is a waste of time on a Bar exam.
+                         112
+
+32) DEFENSE of DURESS?
+Chapter 19: Answering Criminal Law Questions
+ Under CRIMINAL LAW a defense may be raised to crimes, EXCEPT MURDER, that the criminal act was the result of DURESS.
+Here... because...Therefore...
+33)DEFENSEof NECESSITY?
+Under CRIMINAL LAW a defense of NECESSITY may be raised to certain crimes.
+[This defense is really nothing more than self-defense, defense of others, or defense of property. And it is probably best addressed under one of those categories in a criminal law answer. The term defense of ‘necessity’ more often has tort connotations, especially when it is a ‘public’ necessity.]
+34) PREVENTION OF CRIME (AUTHORITY OF LAW)?
+Under CRIMINAL LAW a defendant is privileged to act as reasonably necessary to PREVENT FELONIES or a DISTURBANCE OF THE PEACE being committed in their presence.
+[This is only a defense if the acts are reasonably necessary to prevent or stop serious crimes or disturbances of the peace. It is no defense if the defendant acts AFTER THE CRIME IF OVER, except in the rare fact pattern when a fleeing felon (like a known serial-killer) is shot by police while fleeing because it is the only way to protect future victims from future crimes by the same felon.]
+Here ... because...Therefore...
+35) SELF-DEFENSE? [A commonly tested issue.]
+Under CRIMINAL LAW defendants who are NOT AGGRESSORS may act reasonably as NECESSARY to protect their own safety. Modernly defendants can “hold their ground” and have is no duty to retreat in most jurisdictions. Aggressors are people who have unreasonably created or increased dangers to others. Important!
+Here...because...Therefore...
+36) DEFENSE of OTHERS? [A commonly tested issue.]
+Under CRIMINAL LAW defendants are privileged to act reasonably as necessary to defend others who are NOT AGGRESSORS from harm. Aggressors are people who have unreasonably created or increased dangers to others. Courts are split when a defendant unknowingly acts to defend an AGGRESSOR. Under one view the defendant STEPS INTO THE SHOES of the aggressor and has no privilege because the aggressor could not claim self-
+               113
+
+NAILING THE BABY BAR – How to Write Essays for the California First Year Law Student Exam
+defense. In other Courts the defendant is privileged to defend the aggressor in a fracas if they
+act with a REASONABLE BELIEF they are acting to defend an innocent victim of aggression.
+[It is generally NOT reasonable (and not privileged) to shoot fleeing criminals. The only time it is justified by “defense of others” is if the criminal poses a clear danger to the public safety and there is no other feasible way to stop the criminal from escaping. This is often tested.
+The use of unreasonable force in self-defense, defense of others or defense of property results in an “imperfect” defense claim. Where there is an “imperfect” defense claim, the jury may consider the motivations of the defendant as a MITIGATING FACTOR.]
+Here ... because...Therefore...
+37) DEFENSE of PROPERTY? [A commonly tested issue.]
+Under CRIMINAL LAW a defendant is privileged to use reasonable force to protect his own property or the property of others from harm. It is never reasonable to use deadly force to merely protect property.
+[Note: This is never a defense for the use of deadly force. A defendant has no right to shoot thieves who are running away. But this “imperfect” defense will be a MITIGATING FACTOR for a jury to consider.]
+Here ... because...Therefore...
+Note: The above issue statements provide virtually every important issue, definition, rule and term that you will ever see on a CRIMES examination in law school or on the FYLSX or Bar Exams. If you know the above issues and responses you have everything you really need.
