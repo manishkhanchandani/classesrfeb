@@ -1,0 +1,312 @@
+All Definitions
+
+CONTRACTS LAW
+
+The rights and remedies of the parties depend on whether or not there was a valid contract. A contract is a promise or set of promises the performance of which the law will recognize as a duty and for which the law will provide a remedy.
+
+
+
+1. Does UCC apply?
+
+UCC Article 2 governs contracts for the sale of GOODS, movable things at the time of
+identification to the contract. Otherwise, only COMMON LAW governs the contract.
+
+Sample 1, page 74.
+
+Here the contract does not concern a sale of movable things because it is for the "rent" of a "house".
+
+Therefore, only COMMON LAW principles govern this contract.
+
+2. Are the parties MERCHANTS?
+
+3. Was the communication of [date] an OFFER?
+
+4. Was the offer a MERCHANT’S FIRM OFFER?
+
+5. Was it an offer for a UNILATERAL CONTRACT?
+
+6. Was the communication (action) of [date] an (implied) ACCEPTANCE?
+
+7. Did the VARYING TERMS become part of the contract?
+
+8. Had the OFFER LAPSED before acceptance was attempted?
+
+9. Was the communication of [date] an EFFECTIVE ACCEPTANCE?
+
+10. Was the communication of [date] an EFFECTIVE REJECTION?
+
+11. Was the communication of [date] an EFFECTIVE REVOCATION?
+Under the MAILBOX RULES revocation of a contract offer is usually effective upon receipt.
+
+Under common law a unilateral offer could be revoked at any time, and revocation of GENERAL OFFERS, reward or bounty offers, was effective when published in the same manner the offer was first announced. But modernly SAVING DOCTRINES prevent the revocation of a unilateral contract offer if the offeror is aware the offeree has commenced the requested act for a reasonable period during which the offeree will be allowed to complete acceptance by performance.
+
+
+12. Was there an IMPLIED-IN-FACT CONTRACT?
+Under contract law an IMPLIED-IN-FACT CONTRACT will be deemed to have existed, even if there is no express agreement between the parties, if one party acts to bestow benefits on the other party reasonably expecting to be compensated, and the other party knowingly accepts those benefits knowing that the other party expects to be compensated.
+
+13. Is a WRITING needed?
+
+If ONLY common law governs say, 
+Under the STATUTE OF FRAUDS certain types of contracts must be written in order to be legally enforced, and one type is a contract for (pick one if it applies here -- MARRIAGE, more than a YEAR, LAND, EXECUTOR of an estate, GUARANTEE of a debt).
+
+
+If UCC say,
+
+Under UCC 2-201, a contract for sale of goods worth $500 or more must evidenced by a writing sufficient to show the existence of a contract and signed by the party against whom the contract is to be enforced. But between merchants a SALES CONFIRMATION by one listing quantity will bind both parties if the receiving party does not object within 10 days.
+
+Furthermore, the UCC provides exceptions for SPECIAL MADE GOODS, where there is an ADMISSION by the party to be bound that there had been an agreement, or where there has been PARTIAL PERFORMANCE of the contract (i.e. acceptance of some or all goods or payment).
+
+Under UCC 2-209 contract modifications must be written to be legally enforceable if the contract, as modified, is for over $500. Otherwise modification agreements will be treated as waivers of conditions that can be always be retracted, unless the Court estops retraction to prevent injustice.
+
+
+
+
+
+
+
+CONTRACT TERMS
+
+14. What were the CONTRACT TERMS?
+
+
+
+
+
+
+
+15. Was TIMELY PERFORMANCE a MATERIAL CONDITION?
+
+16. Was Buyer SATISFACTION a MATERIAL CONDITION?
+
+17. Does the PAROL EVIDENCE RULE bar evidence of other covenants and terms?
+DEFENSES
+18. Can LACK OF INTENT be raised as a defense?
+19. Is LACK OF CONSIDERATION a defense?
+20. Was the need for a WRITING SATISFIED?
+21. Was the contract UNCONSCIONABLE?
+22. Is DURESS a defense?
+23. Is FRAUD (or DECEIT) a defense?
+24. Is INCAPACITY a defense?
+25. Is ILLEGALITY a defense?
+26. Is IMPOSSIBILITY a defense?
+27. Is COMMERCIAL IMPRACTICABILITY a defense?
+28. Is FRUSTRATION OF PURPOSE a defense?
+29. Is MUTUAL MISTAKE a defense?
+30. Is UNILATERAL MISTAKE a defense?
+BREACH
+31. Was there an ANTICIPATORY BREACH?
+32. WAIVER of the breach?
+33. Was there a BREACH OF IMPLIED COVENANT?
+34. BREACH? MAJOR OR MINOR?
+35. EFFECT OF BREACH ON A DIVISIBLE CONTRACT?
+36. WAIVER of condition?
+37. Was there an ACCORD AND SATISFACTION?
+THIRD PARTY BENEFICIARY
+38. Is the plaintiff an INTENDED THIRD-PARTY BENEFICIARY?
+39. STANDING based on a VALID ASSIGNMENT?
+40. VALID DELEGATION of performance
+41. Effect of ASSIGNMENT on CLAIMS AND DEFENSES
+42. Effect of MODIFICATION AFTER ASSIGNMENT?
+REMEDIES
+43. COMMON LAW REMEDY of the NON-BREACHING PARTY?
+44. CONSEQUENTIAL DAMAGES?
+45. COMMON LAW REMEDY of the BREACHING PARTY?
+46. UCC REMEDY of the NON-BREACHING BUYER?
+47. UCC REMEDY of the NON-BREACHING SELLER?
+48. UCC REMEDY of the BREACHING SELLER?
+49. Is the LIQUIDATED DAMAGES clause enforceable?
+50. Was there an IMPLIED-IN-LAW CONTRACT?
+51. Can PROMISSORY ESTOPPEL be pled?
+52. Can DETRIMENTAL RELIANCE be pled?
+53. Is EQUITABLE RESTITUTION appropriate?
+54. Is SPECIFIC PERFORMANCE appropriate?
+
+55. CONSIDERATION?
+56. MUTUAL ASSENT?
+
+TORTS LAW
+
+1. ASSAULT?
+
+2. BATTERY?
+
+3. CONVERSION?
+
+4. FALSE IMPRISONMENT?
+
+5. INTENTIONAL INFLICTION OF EMOTIONAL DISTRESS?
+
+6. TRESPASS TO LAND?
+
+7. TRESPASS TO CHATTELS?
+
+8. TRANSFERRED INTENT?
+
+9. DAMAGES for TORTS?
+10. DEFENSE of DISCIPLINE?
+11. DEFENSE of AUTHORITY OF LAW (PREVENTION OF CRIME)?
+12. DEFENSE of RECAPTURE?
+13. DEFENSE of NECESSITY?
+14. DEFENSE of CONSENT?
+15. DEFENSE of OTHERS?
+16. DEFENSE of PROPERTY?
+17. SELF-DEFENSE?
+18. DEFENSE of INFANCY, INSANITY or INCOMPETENCE?
+
+19. NEGLIGENCE?
+20. STRICT LIABILITY in NEGLIGENCE?
+21. DUTY?
+22. NEGLIGENCE PER SE?
+
+23. DUTY BASED ON PERIL?
+24. DUTY BASED ON PREMISES LIABILITY?
+25. ATTRACTIVE NUISANCE DOCTRINE?
+26. LIABILITY BASED ON RESCUER DOCTRINE / FIREMAN’S RULE?
+27. BREACH of duty?
+28. BREACH based on RES IPSA LOQUITUR?
+29. BREACH BASED ON NEGLIGENT ENTRUSTMENT?
+30. RESPONDEAT SUPERIOR?
+31. VICARIOUS LIABILITY for JOINT ENTERPRISE?
+32. LIABILITY for acts of an INDEPENDENT CONTRACTOR?
+33. The ACTUAL CAUSE or a SUBSTANTIAL FACTOR causing injury?
+
+
+
+34. PROXIMATE CAUSE?
+
+
+
+35. EGG SHELL PLAINTIFF?
+
+
+36. CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+
+
+
+
+
+
+37. ASSUMPTION OF THE RISK?
+
+38. NEGLIGENT INFLICTION OF EMOTIONAL DISTRESS (NIED)?
+
+39. PRODUCTS LIABILITY?
+
+40. DEFAMATION?
+
+41. FALSE LIGHT?
+42. APPROPRIATION of likeness?
+43. INTRUSION into the plaintiff’s solitude?
+44. PUBLIC DISCLOSURE OF PRIVATE FACTS?
+
+45. PRIVATE NUISANCE?
+46. PUBLIC NUISANCE?
+46a. COMING TO THE NUISANCE? 
+46b. NUISANCE REMEDIES? 
+
+47. MALICIOUS PROSECUTION?
+48. ABUSE OF PROCESS?
+49. ILLEGAL INTERFERENCE?
+50. DECEIT (or FRAUD or MISREPRESENTATION)?
+51. NONDISCLOSURE (CONCEALMENT)?
+52. TORT RESTITUTION ?
+
+CRIMINAL LAW
+
+1. SOLICITATION?
+2. CONSPIRACY?
+
+
+
+
+
+3. CRIMINAL ASSAULT?
+4. CRIMINAL BATTERY?
+
+5. RAPE?
+
+6. ARSON?
+
+7. LARCENY?
+
+
+
+
+
+
+
+
+8. FALSE PRETENSES ?
+
+9. EMBEZZLEMENT?
+
+
+
+
+
+
+10. ROBBERY?
+
+11. BURGLARY?
+
+
+
+12. RECEIVING STOLEN PROPERTY?
+
+
+
+
+
+
+13. ATTEMPTED?
+
+
+
+14. MURDER?
+
+
+
+
+
+
+
+15. MITIGATING FACTORS?
+
+16. VOLUNTARY MANSLAUGHTER?
+
+
+
+
+
+
+17. INVOLUNTARY MANSLAUGHTER?
+
+
+
+
+
+18. REDLINE RULE?
+
+19. KIDNAPPING?
+20. MISPRISION?
+21. COMPOUNDING?
+22. ACCOMPLICE LIABILITY?
+
+23. DEFENSE of INFANCY?
+24. DEFENSE of MISTAKE OF FACT?
+25. DEFENSE of LEGAL IMPOSSIBILITY?
+26. DEFENSE of MISTAKE OF LAW?
+27. DEFENSE of FACTUAL IMPOSSIBILITY?
+28. DEFENSE of WITHDRAWAL
+29. DEFENSE of INSANITY?
+30. DEFENSE of CONSENT?
+31. DEFENSE of ENTRAPMENT?
+32. DEFENSE of DURESS?
+33. DEFENSEof NECESSITY?
+34. PREVENTION OF CRIME (AUTHORITY OF LAW)?
+35. SELF-DEFENSE?
+36. DEFENSE of OTHERS?
+37. DEFENSE of PROPERTY?
+
+38. Malicious mischief
+39. DEFENSE OF INTOXIATION
