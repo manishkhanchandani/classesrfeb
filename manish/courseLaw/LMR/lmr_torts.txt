@@ -1,0 +1,690 @@
+All Definitions
+
+TORTS LAW
+
+Definition 1. ASSAULT?
+
+Under tort law ASSAULT is an intentional act done to cause and that does cause reasonable
+apprehension of a battery, a harmful or offensive touching of the person. 
+
+An act is intentional if it is for the purpose or with knowledge with reasonable certainty a result will occur. 
+
+Definition 2. BATTERY?
+
+Under tort law a battery is an intentional act done to cause a harmful or offensive touching. 
+
+Definition 3. CONVERSION?
+
+Under tort law CONVERSION is an intentional act to cause and that does cause interference with the chattel of the plaintiff resulting in substantial deprivation of possession. The proscribed legal remedy is forced purchase by the defendant, but the plaintiff may “waive the tort” and seek restitution instead. 
+
+Definition 4. FALSE IMPRISONMENT?
+Under tort law a false imprisonment is an intentional act causing the plaintiff to be confined to a defined space against their will with no reasonably apparent means of reasonable exit. The plaintiff must be aware of the confinement. 
+
+
+
+Definition 5. INTENTIONAL INFLICTION OF EMOTIONAL DISTRESS?
+Under tort law intentional infliction is an intentional, outrageous act causing the plaintiff severe emotional distress. Generally emotional distress will not be assumed, and the plaintiff must present evidence showing that they did, in fact, suffer severe emotional distress. Evidence of mere humiliation and embarrassment is generally not enough. 
+
+
+
+Definition 6. TRESPASS TO LAND?
+
+Under tort law a trespass to land is an intentional act causing unauthorized entry onto, under or over the land of another. The entry may be by the defendant personally or by some person or object directed or placed on the land by the defendant. When an object is placed on the land it constitutes a “continuing trespass.” No damage is necessary, but the defendant is liable for all damage actually caused. And if malice can be shown the defendant may be liable for punitive damages. 
+
+Definition 7. TRESPASS TO CHATTELS?
+
+Under tort law TRESPASS TO CHATTEL is an intentional act by the defendant causing unauthorized interference with or damage to the chattel of the plaintiff. 
+
+
+Definition 8. TRANSFERRED INTENT?
+Under tort law transferred intent means that a defendant that acts with intent to commit any tort injury on anyone will be liable for every injury inflicted on everyone, even if the person injured or the injury suffered is not what was originally intended. 
+
+An exception is that Courts generally will not find IIED based on transferred intent, and Courts may find only negligence and not an intentional tort by transferred intent if the original intent of the defendant was not malicious.
+
+Definition 9. DAMAGES for TORTS?
+Every defendant that commits any tort is liable for all actual damages actually and proximately caused. Damages consist of SPECIAL DAMAGES, compensation for monetary losses, and GENERAL DAMAGES, compensation for pain, suffering, anxiety, emotional distress, inconvenience, etc. Defendants who commit intentional torts, including gross negligence (deliberate breach of duty) and recklessness (deliberate creation of unreasonable risks) may also be liable for PUNITIVE DAMAGES if the Court finds they acted with FRAUD, OPPRESSION or MALICE, an evil or wrongful intent to cause harm. Defendants who commit accidentally negligent torts are not liable for punitive damages. Tort plaintiffs have a right to “waive the tort” and demand RESTITUTION instead of compensation for damages.
+
+
+Definition 10. DEFENSE of DISCIPLINE?
+Under tort law a person with recognized authority (schoolteacher, bus driver, airplane pilot, policeman, parent, etc.) is privileged to act reasonably given the circumstances in a manner that otherwise might constitute a battery or false imprisonment.
+
+
+Definition 11. DEFENSE of AUTHORITY OF LAW (PREVENTION OF CRIME)?
+Under tort law a person is privileged to act reasonably to prevent or stop a FELONY or DISTURBANCE OF THE PEACE from being committed in their presence.
+
+
+Definition 12. DEFENSE of RECAPTURE?
+Under tort law a person has a qualified privilege to use reasonable force to RECAPTURE their own chattel if 1) they have asked for and have been refused return of the chattel, and 2) they are in fresh pursuit of wrongfully taken chattel, or 3) they lost possession of the chattel through no fault of their own.
+
+
+Definition 13. DEFENSE of NECESSITY?
+Under tort law a person is privileged to act reasonably as NECESSARY to protect their own safety, the safety of others, and the safety of property. For defense of property to be “reasonable” the value of the property being protected must exceed the damages caused by the efforts to protect it. Reasonable acts done to protect the property of others is a PUBLIC NECESSITY and absolutely privileged. Reasonable acts done to protect the defendant’s own property are a PRIVATE NECESSITY and only a qualified privilege. The defendant remains liable for actual damages to the plaintiff.
+
+
+Definition 14. DEFENSE of CONSENT?
+Under tort law FULLY INFORMED CONSENT from a person with legal capacity is a defense to most intentional torts, but is not a defense to a battery that causes foreseeable great bodily injury.
+
+Definition 15. DEFENSE of OTHERS?
+Under tort law a person is privileged to act reasonably as necessary to defend others who are NOT AGGRESSORS from harm. Aggressors are people who have unreasonably created or increased dangers to others. Courts are split when a defendant unknowingly acts to defend an AGGRESSOR. Under one view the defendant STEPS INTO THE SHOES of the aggressor and has no privilege because the aggressor could not claim self-defense. In other Courts the defendant is privileged to defend the aggressor in a fracas if they act with a REASONABLE BELIEF they are acting to defend an innocent victim of aggression.
+
+Definition 16. DEFENSE of PROPERTY?
+Under tort law defendants are privileged to use reasonable force to protect their property or the property of others. The use of deadly force to protect property is never reasonable or legal.
+
+Under the SHOPKEEPER’S PRIVILEGE a defendant may use reasonable force to detain a plaintiff for a reasonable period of time to investigate a reasonable suspicion that the plaintiff has stolen goods or services from the defendant.
+
+To protect litigation rights defendants may use reasonable force to as necessary to detain plaintiffs for a reasonable period of time to investigate events that have caused them damages.
+
+
+Definition 17. SELF-DEFENSE?
+Under tort law a person who is NOT AN AGGRESSOR may act reasonably if NECESSARY to protect their own safety. Modernly the person can “hold her ground” and has is no duty to retreat in most jurisdictions. Aggressors are people who have unreasonably created or increased dangers to others.
+
+
+Definition 18. DEFENSE of INFANCY, INSANITY or INCOMPETENCE?
+INFANCY, INSANITY and INCOMPETENCE are not defenses for intentional torts.
+
+Practice Question 1
+Clark Kent, star reporter for the Daily Planet was approached by panhandler Bill Gates and asked for a quarter. As a prank, Kent (who was secretly Superman) lifted and very gently flew Gates hundreds of feet up to the top of the World Tribune building and left Gates there on a ledge.
+Kent hovered over the World Tribune building and never touched the surface of the building. During the flight Gates was apprehensive he might fall, but Kent had a strong grip.
+Gates was embarrassed and the crowd below taunted him for hours as the fire department tried to devise a means of rescue. Gates was humiliated.
+As he stood on the ledge Gates accidentally knocked a decorative panel loose. It fell to the ground and injured fireman Frank.
+Suddenly Gates discovered that there was an unlocked window next to him all the time. He opened the window and escaped immediately.
+Discuss Kent's liability to Gates, the World Tribune and fireman Frank.
+
+[ANSWER EXPLANATION: This question has all of the common law intentional torts except for conversion and trespass to chattels. Why did Kent act? Because he intended to pull a “prank.” That fact expressly proves his acts were intentional. His physical acts imply intent, but the fact he wanted to pull a “prank” expressly proves intent. That saves you time.
+Be prepared for batteries that cause “offense” but not harm. Being pushed around by a stranger is offensive to a reasonable person, and be prepared to state that.
+The whole purpose of having fireman Frank hurt is to raise the issue of transferred intent. Did you spot the issue? Don’t turn to “negligence” when the acts causing harm are intentional.
+If Frank was injured as the result of negligence by Kent or Gates, he might have no case because of the “Fireman’s Rule” that rescue personnel cannot sue for injuries suffered as a result of the negligence of others that creates the emergency situation to which they have responded. That is often codified in statute, and it expressly recognizes the issue that emergency personnel, by occupation, have assumed the risks of their employment.
+But the Fireman’s Rule does not generally extend to injury caused by intentional torts.
+Some professors insist that students “always discuss defenses”, and if your professor insists on that humor the prof and discuss defenses, even when there are no facts to suggest any. Often this sort of professor also wants the defenses discussed at the end of the essay in a “Defenses” section.
+But generally the writers of law exam and bar exam questions will guide you by giving you facts to suggest the issues you are to discuss, and if you are not given any facts that suggest an issue it means they don’t want you to discuss that issue.
+And generally question writers want and expect you to discuss the issues in the order in which they arise in the fact pattern.
+If no facts are presented to suggest any plausible defense the writer is effectively saying, “I don’t want you to discuss defenses!” Here there are absolutely no facts to suggest that Kent has any plausible defense claims, so I didn’t waste my time discussing it.]
+
+Sample Answer 16-1: Intentional Torts
+GATES V. KENT
+1) TORTIOUS ASSAULT?
+Under tort law an assault is an intentional act to cause, and which does cause, reasonable apprehension of an immediate battery, a harmful or offensive touching. An act is intentional if it is for the purpose or with knowledge with reasonable certainty a result will occur.
+Here Kent acted intentionally because he intended to pull a "prank" on Gates. His intent because it was a "prank" was to cause Gates to be "apprehensive". Gates was “apprehensive” and that was reasonable because he was held “hundreds of feet in the air”.
+Therefore, Kent can be liable for assault.
+2) TORTIOUS BATTERY on Gates?
+Under tort law a battery is an intentional act done to cause a harmful or offensive touching.
+Here Kent acted intentionally because he intended to pull a " prank", and he caused a touching because he “lifted and flew” Gates into the air. This would be an offensive touching to a reasonable person because it is socially offensive to be grabbed in this manner by a stranger.
+Therefore, Kent can be liable for battery.
+3) FALSE IMPRISONMENT?
+Under tort law a false imprisonment is an intentional act causing the plaintiff to be confined to a defined space against their will with no reasonably apparent means of reasonable exit. The plaintiff must be aware of the confinement.
+Here Kent intentionally acted because it was a “prank”, and he confined Gates with no reasonably apparent means of reasonable exit because he put him on a “ledge”. And Gates was aware of his confinement because he was "apprehensive" of falling and "taunted" by the crowd.
+Kent may argue that Gates was not actually confined because all he had to do was go through the “window”. But that means of exit was not reasonably apparent because even the “firemen” who tried to get Gates down for “hours” did not realize discover it.
+Therefore, Kent can be liable for false imprisonment.
+4) INTENTIONAL INFLICTION OF EMOTIONAL DISTRESS?
+                   
+Under tort law intentional infliction is an intentional, outrageous act causing the plaintiff severe emotional distress. Generally emotional distress will not be assumed, and the plaintiff must present evidence showing that they did, in fact, suffer severe emotional distress. Evidence of mere humiliation and embarrassment is generally not enough.
+Here there was an intentional, outrageous act because Kent "flew" Gates to the top of a building and strand him there in front of a crowd where he was “taunted for hours”.
+However there is no evidence Gates suffered severe emotional distress because the facts only state that he was "humiliated" and “embarrassed”.
+Therefore, Kent can only be liable for IIED if Gates presents additional evidence of emotional distress.
+WORLD TRIBUNE V. KENT 5) TRESPASS TO LAND?
+Under tort law a trespass to land is an intentional act causing unauthorized entry onto, under or over the land of another. The entry may be by the defendant personally or by some person or object directed or placed on the land by the defendant. When an object is placed on the land it constitutes a “continuing trespass.” No damage is necessary, but the defendant is liable for all damage actually caused. And if malice can be shown the defendant may be liable for punitive damages.
+Here Kent was over the land of the World Tribune because he "hovered" over the "building." And he caused Gates to go onto the land because he put Gates on the "ledge." This caused actual damage because Gates accidentally caused a "panel to fall." Additional damages are implied by the fact “firemen” worked in the building “for hours” trying to rescue Gates. This disruption probably caused Tribune to suffer lost wages and lost profits.
+Further, the possibility of malice is implied by the fact that Kent worked for one newspaper, the Daily Planet, and he disrupted business activities at what appears to be a competing newspaper, the World Tribune.
+Therefore Kent would be liable for all damages he actually caused Tribune based on trespass to land, and may also be liable for punitive damages if implied malice could be proven.
+FIREMAN FRANK V. KENT
+6) BATTERY by TRANSFERRED INTENT?
+Battery is defined above. Under tort law transferred intent means that a defendant that acts with intent to commit any tort injury on anyone will be liable for every injury inflicted on everyone, even if the person injured or the injury suffered is not what was originally intended. Some Courts limit the application of transferred intent, but it is more likely to be applied when the original tortious act was intended to inflict harm.
+
+Here Kent intentionally acted to cause Gates to suffer assault, battery, false imprisonment and possibly intentional infliction of emotional distress, and he intended to cause a trespass to the land of the World Tribune. In turn, that caused Frank to suffer a “harmful touching”.
+Therefore, Kent would be liable to Frank for battery by transferred intent.
+
+
+
+
+Definition 19. NEGLIGENCE?
+Under tort law NEGLIGENCE is the failure to exercise that degree of care that a reasonably prudent person would use in the same circumstances. To establish a prima facie case Plaintiff must generally prove DUTY, BREACH, ACTUAL AND PROXIMATE CAUSATION and DAMAGES. 
+
+
+Definition 20. STRICT LIABILITY in NEGLIGENCE?
+Under tort law a defendant that engages in any of three activities is STRICTLY LIABLE to any person who is actually and proximately caused injury. These three activities are: 1) keeping a KNOWN, DANGEROUS ANIMAL, 2) keeping an EXOTIC ANIMAL of a type that is not commonly domesticated, or 3) engaging in ULTRA-HAZARDOUS ACTIVITIES that are unusual, pose extreme risks to others, and are usually subject to strict safety regulations.
+
+
+Definition 21. DUTY?
+Under tort law NEGLIGENCE is the failure to exercise that degree of care that a reasonably prudent person would use in the same circumstances. To establish a prima facie case Plaintiff must generally prove DUTY, BREACH, ACTUAL AND PROXIMATE CAUSATION and DAMAGES. 
+
+
+Definition 22. NEGLIGENCE PER SE?
+If a STATUTE creates a duty, violating the statute may constitute NEGLIGENCE PER SE if the purpose of the statute was to protect the CLASS OF PEOPLE to which the plaintiff belongs, and the violation of the statute caused the plaintiff to suffer the TYPE OF INJURY the statute was intended to prevent. 
+
+
+
+Definition 23. DUTY BASED ON PERIL?
+Under tort law defendants that create reasonably foreseeable dangers to others have a DUTY based on PERIL to act reasonably to protect others from those dangers. 
+
+Under PALSGRAF, Cardozo said that a duty is only owed to those who are in the zone of danger caused by the defendant's acts. The Zone of Danger is the area where the defendant’s acts create reasonably foreseeable peril to others. 
+
+Andrews held that if the defendant owes a duty to anyone and breaches it, he should be liable for all injury actually and proximately caused by that breach. 
+
+
+Definition 24. DUTY BASED ON PREMISES LIABILITY?
+
+Under tort law OCCUPIERS OF LAND have a duty to both those who come onto the land and to those off the land. This is a form of duty based on RELATIONSHIP.
+
+Under the common law occupiers of land had no duty to UNKNOWN TRESPASSERS.
+
+The occupiers had a duty to warn and protect KNOWN TRESPASSERS and LICENSEES from
+known, hidden dangers and artificial conditions. Licensees are people allowed onto the land but not for the occupiers’ benefit.
+
+The occupiers had a duty to reasonably inspect the land and warn and protect INVITEES from known, hidden dangers and artificial conditions. Invitees are people invited or allowed onto the land for the occupiers’ benefit.
+
+Finally the occupiers of land had a duty to conduct and control activities on the land with due care to prevent injury to PEOPLE OFF THE LAND.
+
+Modernly these rigid rules by classification have often been modified by both statute and Court decision to create a balancing test under which occupiers of land have a duty of due care to ALL PEOPLE to act as reasonable people would in inspecting, maintaining and using their property so that it does not pose known dangers to others.
+
+
+Definition 25. ATTRACTIVE NUISANCE DOCTRINE?
+Under the ATTRACTIVE NUISANCE DOCTRINE an OCCUPIER OF LAND who knows that children have or may in the future trespassed onto her land has a strict duty to inspect for and eliminate any condition posing dangers the children might not fully appreciate because of their young age.
+
+This is a duty based on RELATIONSHIP which poses almost strict liability. The only defense the landowner may raise is assumption of the risk.
+
+
+Definition 26. LIABILITY BASED ON RESCUER DOCTRINE / FIREMAN’S RULE?
+Under the RESCUER DOCTRINE defendants may be liable to rescuers who are injured attempting to rescue people injured.
+
+But under the FIREMAN’S RULE defendants are generally not liable to professional rescue workers because they have ASSUMED THE RISKS associated with their professions.
+
+
+Definition 27. BREACH of duty?
+Under tort law a BREACH is the failure to exercise DUE CARE. The standard of due care is that level of caution a reasonably prudent person would use in the same circumstance. 
+
+
+Definition 28. BREACH based on RES IPSA LOQUITUR?
+Under the doctrine of RES IPSA LOQUITUR an INFERENCE OF BREACH exists if 1) negligence by someone is implied by the facts, 2) the defendant had control of the event or instrument that caused injury, and 3) the plaintiff had no control over the event or instrument causing injury.
+
+
+Definition 29. BREACH BASED ON NEGLIGENT ENTRUSTMENT?
+Under tort law defendants who NEGLIGENTLY ENTRUST third parties with resources or authority are directly liable for injuries actually and proximately caused as a result. 
+
+
+Definition 30. RESPONDEAT SUPERIOR?
+Under the doctrine of RESPONDEAT SUPERIOR an employer, master or principal is vicariously liable for all torts committed by an employee, servant or agent, respectively, if the tort is committed within the scope of the employment or agency relationship. 
+
+Respondeat superior does not apply to independent contractors.
+
+
+Definition 31. VICARIOUS LIABILITY for JOINT ENTERPRISE?
+Under tort law each member of a JOINT ENTERPRISE is vicariously liable for all torts committed by other members within the scope of the enterprise relationship. A joint enterprise is one in which two or more parties agree to work together for mutual benefit and each shares equal rights of control over assets and activities. 
+
+
+Definition 32. LIABILITY for acts of an INDEPENDENT CONTRACTOR?
+Under tort law prople who hire INDEPENDENT CONTRACTORS to perform duties that are not “non-delegable” by law are NOT vicariously liable for torts committed by the contractors and can only be directly liable because of negligent selection or negligent entrustment of the contractors. An independent contractor is a person selected to provide labor services without close and regular supervision [e.g. gardeners, housekeepers, house painters and babysitters that are not employed on an exclusive and continuous basis.]
+
+
+Definition 33. The ACTUAL CAUSE or a SUBSTANTIAL FACTOR causing injury?
+Under tort law the defendant is the ACTUAL CAUSE of injury if the plaintiff would not have been injured BUT FOR the acts of the defendant.
+
+If two or more defendants acted negligently, the plaintiff would not have been injured if neither had acted, and the plaintiff cannot reasonably prove she would not have been injured but for the acts of each alone, then each defendant is a SUBSTANTIAL FACTOR causing injury.
+
+
+Definition 34. PROXIMATE CAUSE?
+Under tort law PROXIMATE CAUSE means that the injury suffered by the plaintiff was so DIRECT, NATURAL and FORESEEABLE, so close in time and place, resulting from a CHAIN OF CAUSATION begun by the defendant’s acts, unbroken by UNFORESEEABLE INTERVENING EVENTS that the law will impose liability for the result.
+
+Generally if two or more events are actual causes of the plaintiff’s injury, the last event will be an UNFORESEEABLE INTERVENING EVENT cutting off the liability of all defendants who acted earlier. However, it is a matter of settled law that negligent acts by others are FORESEEABLE so they can never be intervening events. Acts of nature [e.g. tornados] and criminal or intentionally tortious acts by third parties [e.g. thefts, batteries] are presumed to be UNFORESEEABLE and will terminate defendants’ liability unless extrinsic evidence shows defendants were aware the subsequent events were likely to occur.
+
+
+Definition 35. EGG SHELL PLAINTIFF?
+Under the EGG-SHELL PLAINTIFF concept, defendants are liable for all damages they actually cause plaintiffs, even if the plaintiffs , through no fault of their own, have pre-existing conditions that make them especially vulnerable to injury. The doctrine of the law is that “defendants must take plaintiffs as they find them.” 
+
+Definition 35b. Damages in Negligence are:
+Under tort law DAMAGES are SPECIAL (out of pocket expense) and GENERAL (pain and suffering). 
+
+Definition 36. CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+
+
+Under tort law CONTRIBUTORY NEGLIGENCE is a complete bar to recovery if the plaintiff was responsible in any manner for their injury. It is a MINORITY VIEW rule, and the MAJORITY approach is COMPARATIVE NEGLIGENCE which just reduces the plaintiff’s recovery based on the degree of fault of the plaintiff. In some states a plaintiff that is over 50% at fault for her own injuries is completely barred from recovery. 
+
+
+
+Definition 37. ASSUMPTION OF THE RISK?
+Under tort law ASSUMPTION OF THE RISK is a complete defense when plaintiffs 1) put themselves at risk, 2) with a full awareness of the risks, and 3) a conscious acceptance of the risks. 
+
+
+
+Definition 38. NEGLIGENT INFLICTION OF EMOTIONAL DISTRESS (NIED)?
+Under tort law, a BYSTANDER to an event may bring an action for NEGLIGENT INFLICTION if they suffer severe emotional distress and there is a nexus between the negligent act and the injury based on a PROXIMITY IN TIME, PLACE and RELATIONSHIP. In some jurisdictions a physical manifestation of emotional distress must be shown. 
+
+Do not discuss NIED unless the plaintiff is a BYSTANDER who only witnesses or hears about some accident that injures another person. If the plaintiff is actually, physically involved in an event they have an action for NEGLIGENCE and can recover for their “emotional distress” as special damages.
+
+Practice Question 2
+Tom bought some firecrackers in Rural County, where they were legal. He took them into the National Forest where federal law prohibited the possession and use of fireworks. The federal law was enacted to reduce the threat of forest fires and injury on national lands.
+In the National Forest Tom waded to a gravel bar in the middle of Big River, and there he carefully lit and threw the firecrackers into the air above the river. Occasionally one would fail to explode and it would fall harmlessly into the water. There was no one else around, and there was nothing on the gravel bar that could burn.
+Little Dick was playing a half-mile upstream from Tom, throwing sticks into Big River. He was three years old. His mother warned him to stay back from the edge of the river because it was dangerous. Dick disobeyed his mother and recklessly pushed a rotted tree into the river and it swirled away in the water. No one was hurt.
+Half a mile downstream from Tom, Paula was one of five people on the bridge above Big River fishing for trout. Paula was outside the National Forest boundaries. She had ignored a sign that said "No Fishing From Bridge." Fishing from the bridge was prohibited for traffic safety, but she was well off the roadway and there were very few cars this time of year. Paula was sitting carelessly on the edge of the bridge, but it was a nice day, the water was only six feet below her, and she knew how to swim.
+Tom threw another firecracker into the air and it did not explode. Instead it fell onto the log that Dick had pushed into the river upstream.
+The log swept down the river for half a mile before the firecracker exploded just as the log swept under the bridge.
+Paula was startled and fell into the river.
+Other people that had been fishing rushed off the bridge and down the river bank to rescue Paula as she laughingly climbed up the bank.
+Harry had been fishing too, but instead of going to help Paula, he stayed on the bridge and took two dollars out of Paula's purse. No one saw Harry take the money and the crime was never solved. Paula was hurt and upset.
+Under what theories can Paula seek to recover from Tom and Dick and what defenses would they raise?
+
+[ANSWER EXPLANATION: This question focuses on the outer limits of DUTY to a remotely situated plaintiff (with firecracker yet, a la Palsgraf) and PROXIMATE CAUSATION of damage by some burning object floating down a river (a la Wagon Mound I and II). The question also focuses on the outer limits of BREACH because one cannot be breaching a duty by an act that poses no foreseeable risk to others.
+Law schools tend to brainwash every student into thinking they can always sue, and win, for every injury. The truth is that Paula’s case is frivolous. ]
+
+
+Sample Answer 16-2: Negligence
+PAULA V. TOM
+NEGLIGENCE?
+Paula’s only cause of action here is for NEGLIGENCE. Under tort law NEGLIGENCE is the failure to exercise that degree of care that a reasonably prudent person would use in the same circumstances. To establish a prima facie case Paula must generally prove DUTY, BREACH, ACTUAL AND PROXIMATE CAUSATION and DAMAGES.
+1) DUTY?
+Generally a person owes no duty to others. But a duty may be based on a STATUTE, a CONTRACT, a RELATIONSHIP, the ASSUMPTION of a duty, or PERIL caused by the defendant.
+NEGLIGENCE PER SE?
+If a STATUTE creates a duty, violating the statute may constitute NEGLIGENCE PER SE if the purpose of the statute was to protect the CLASS OF PEOPLE to which the plaintiff belongs, and the violation of the statute caused the plaintiff to suffer the TYPE OF INJURY the statute was intended to prevent.
+Here Tom violated the law that prohibited fireworks in the National Forest, and that caused Paula to suffer injury. But she was not in the CLASS OF PEOPLE the statute was intended to protect because it was to protect people “on national lands” and she was “outside the National Forest boundaries”. Further, she did not suffer the TYPE OF INJURY the statute was intended to prevent because it was to “prevent forest fires and injury” while her injury was getting wet and having her money stolen.
+Therefore, Paula would be unable to prove Tom was negligent per se.
+DUTY BASED ON PERIL?
+Under PALSGRAF, Cardozo said that a duty is only owed to those who are in the zone of danger caused by the defendant's acts. The Zone of Danger is the area where the defendant’s acts create reasonably foreseeable peril to others.
+Andrews held that if the defendant owes a duty to anyone and breaches it, he should be liable for all injury actually and proximately caused by that breach.
+Here the Zone of Danger was the gravel bar and the water area immediately around it because it was not reasonably foreseeable the firecrackers could cause peril to anyone outside that area. And there was nobody placed in danger within the zone of danger because “no one else was around” and there was “nothing that could burn”.
+Paula appeared to be outside the zone of danger caused by Tom's activities because she was a "half mile downstream." Paula might argue that the zone of danger was larger than the small area of the “gravel bar” because Tom should have seen the possibility injury could occur farther away.
+Therefore, it would be difficult for Paula to prove that Tom had any duty at all, and almost impossible for her to prove that she was placed in foreseeable peril by his actions.
+2) BREACH?
+Under tort law a BREACH is the failure to exercise DUE CARE. The standard of due care is that level of caution a reasonably prudent person would use in the same circumstance.
+Here Tom went to great lengths to be sure his activities did not endanger anyone because he went to a "gravel bar" in the "middle of the river" with no one around so there would be no foreseeable danger to anyone. And once there he threw the firecrackers “carefully”.
+Paula could only argue that a reasonably observant person would have seen the “log” floating down the river, and would have been careful not to throw any burning firecrackers onto it.
+Therefore, it would be difficult for Paula to show that a reasonable person would have been any more careful than Tom.
+3) ACTUAL CAUSE of injury to Paula?
+Under tort law an act ACTUALLY CAUSES injury if the plaintiff would not have been injured but for the act.
+Here Paula would not have fallen in the river and had her money stolen if Tom had not thrown the firecracker.
+Therefore, Tom was the actual cause of Paula's injury.
+4) PROXIMATE CAUSE of injury to Paula?
+Under tort law PROXIMATE CAUSE means that the injury to the plaintiff was foreseeable, close in time and place to the acts of the defendant and a direct result of a chain of causation unbroken by unforeseeable intervening events.
+Generally when there are two or more actual causes of an injury, the last, unforeseeable,
+intentional act will be an UNFORESEEABLE INTERVENING EVENT that becomes the sole proximate cause, cutting off all liability arising from prior acts. Further, criminal acts and intentional torts by third parties are presumed to be unforeseeable absent additional specific facts.
+Here Paula was rather far away from Tom in time and space, and it would not be foreseeable she could be injured by a firecracker at that distance. Further a reasonable person could not foresee that a firecracker would cause money to be stolen. Finally, even if Tom was the proximate cause of Paula falling in the river, he was not the proximate cause of her money being stolen because Harry’s criminal act was an unforeseeable intervening event.
+Therefore, Paula probably could not prove Tom was the proximate cause of her fall into the river, and she certainly could not prove he was the proximate cause of her money being taken.
+           
+
+5) DAMAGES?
+Under tort law DAMAGES are SPECIAL (out of pocket expense) and GENERAL (pain and suffering).
+Here Paula had SPECIAL damages because she lost "two dollars" and she had GENERAL damages because she was "hurt and upset." But she got out of the river “laughingly” and was not “hurt and upset” until after she discovered the purse was stolen.
+Therefore Paula suffered actual damages, but Tom was not the cause of those damages. 6) CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+Under tort law CONTRIBUTORY NEGLIGENCE is a complete bar to recovery if the plaintiff was responsible in any manner for their injury. It is a MINORITY VIEW rule, and the MAJORITY approach is COMPARATIVE NEGLIGENCE which just reduces the plaintiff’s recovery based on the degree of fault of the plaintiff. In some states a plaintiff that is over 50% at fault for her own injuries is completely barred from recovery.
+NEGLIGENCE PER SE is defined above. Tom might argue Paula was NEGLIGENT PER SE because she was fishing on the bridge where that is prohibited by statute. But Paula did not suffer the TYPE OF INJURY the statute was to prevent/ The purpose of the statute was “traffic safety” and she was not injured in a traffic accident.
+Therefore any “negligence per se” argument by Tom would fail.
+Tom’s better argument is that Paula was contributorily (comparatively) negligent because she sat “carelessly” and that placed her in PERIL of falling.
+Therefore, Tom could easily prove Paula was “careless” and partly responsible for her own injury.
+7) ASSUMPTION OF THE RISK?
+Under tort law ASSUMPTION OF THE RISK is a complete defense when plaintiffs 1) put
+themselves at risk, 2) with a full awareness of the risks, and 3) a conscious acceptance of the risks.
+Here Paula put herself at risk because she “sat carelessly”. She had a full awareness of the risks that she could fall. And she appears to have consciously accepted those risks because the river was only a few “feet” below her, “she could swim” and it was a “nice day”.
+Therefore Tom may be able to prove assumption of the risks.
+
+Negligence is defined above.
+8) DUTY?
+Duty was defined above. Here Dick could only have a duty based on PERIL, and there is little evidence Dick’s act created reasonably foreseeable peril to anyone. The only foreseeable danger he caused by pushing the log in the river is that it might hit someone swimming in the river downstream. Therefore the “zone of danger” created by his act is the surface of the river downstream. There is no evidence anyone was in the river, and Paula was certainly not because she was on the bridge..
+Therefore, there is no evidence Dick created any foreseeable peril to anyone, and if that could not be proven he did not owe Paula or anyone else a duty.
+9) BREACH AND STANDARD OF CARE?
+Breach was defined above. The STANDARD OF CARE for a child is to act in the manner reasonable children of the same age and experience act.
+Here Dick was only “three years old” and he would only be negligent if he acted in a manner that children of that age do not reasonably act.
+Since Dick was so young it is unlikely Paula could prove that he breached his duty, if he had a duty.
+10) PROXIMATE CAUSE? Proximate cause is defined above.
+Here Dick was even farther away from Paula than Tom, and it was even more unforeseeable that his act could harm her or anyone else.
+Therefore, Paula would have even a more difficult time proving Dick was the cause of her injury.
+
+
+
+Definition 39. PRODUCTS LIABILITY?
+Under PRODUCT LIABILITY LAW a person who places an unreasonably dangerous product into the steam of commerce may be liable for the injury it causes. There are four basic theories on which a product liability action may be brought: Breach of Express Warranty, Breach of Implied Warranty, Negligence and Strict Liability. 
+
+A product is unreasonably dangerous if it 1) poses serious and likely dangers, that 2) could be reduced or eliminated easily, 3) without damaging product utility, or else 4) the product utility does not justify the dangers posed. 
+
+Under tort law there is a BREACH OF EXPRESS WARRANTY if a product is sold with 1) express representations that the buyer 2) relies on and 3) the representations are incorrect and 4) it causes the purchaser injury. The seller is liable to foreseeable plaintiffs, those with privity of contract or their family. 
+
+Under tort law there is a BREACH OF IMPLIED WARRANTY if a product is unsafe for ordinary use or for the buyer’s known intended use, the buyer relies on the expertise of the seller, and the buyer is injured as a result. The seller is liable to foreseeable plaintiffs, those with privity of contract or their family. 
+
+Negligence is a failure to use the care a reasonable person would in the same circumstance. To prevail the plaintiff must prove duty, breach, actual cause, proximate cause and damages. 
+
+DUTY? Under tort law a person has a duty to not put an unreasonably dangerous product into the stream of commerce. Further, a person who makes express representations about a product assumes a duty of due care to make sure they are accurate and will not create peril. 
+Here Sam owed Tom a DUTY because he was the seller of a product that posed foreseeable harm. 
+BREACH? Sam BREACHED his duty because he "never read the owner's manual" and misrepresented the saw. 
+
+CAUSATION? That was the ACTUAL CAUSE of his injury because he would not have been hurt if he did not buy the saw. This was also the PROXIMATE CAUSE of injury because it was the direct and foreseeable result. 
+
+DAMAGES? Tom had INJURY because he was "burned." 
+
+Therefore, Tom could recover on a negligence theory. 
+
+Strict Liability Theory
+Under tort law a commercial seller of a product is strictly liable for personal injury or property damage if the product is unreasonably dangerous at the time it leaves the seller. The seller is liable to any person who is injured as a result. 
+
+
+Practice Question 3
+The Macho-X99 chainsaw is a light-duty chainsaw designed for trees no bigger than 18". In the owner's manual said in big red letters, "WARNING -- NEVER TRY TO CUT DOWN A TREE BIGGER THAN 18" OR THIS SAW MIGHT CATCH FIRE." There were no warnings on the saw itself.
+Tom went into Sam's Bargain Center. Sam told him, "This is the best chainsaw on the market. The Macho-X99 will cut trees up to 36" in diameter." Tom bought the Macho-X99 chainsaw.
+Dick went into Sam's Bargain Center and said he didn't know much about chainsaws but needed one that could cut a tree about 24" in diameter. Sam told him, "I am an expert when it comes to chainsaws. I recommend this Macho-X99." Dick bought the Macho-X99 chainsaw.
+Moe went into Sam's Bargain Center and bought the Macho-X99 chainsaw without any discussion.
+Sam, Tom and Dick never read the owner's manual and were unaware of the potential fire danger. When Tom and Dick tried to cut down trees bigger than 18" the saws burst into flames and burned them.
+Moe saw the warning in the owner's manual and tried to return the saw. Sam refused to give Moe his money back. Moe was disgusted and threw the saw in the garbage “Dumpster”.
+Harry saw Moe's old saw in the garbage and took it. There was no owner's manual, but the saw was just like brand new. When he first used the saw it burst into flames and burned him.
+Discuss all the theories under which Tom, Dick and Harry would seek to recover from Sam. Under which theories can they NOT recover?
+
+[ANSWER EXPLANATION: This question calls for a discussion of the four theories of product liability. The facts are intended to illustrate the differences between express and implied breach along with the fact that strict product liability theory extends to remote plaintiffs.
+The preliminary discussion of whether this is an “unreasonably dangerous product” or not is very, very important. Stating the “balance” test given here is MANDATORY if you want to score maximum points.
+Be wary of products that are not really “unreasonably dangerous” at all because they have been extensively tested, have great utility (often saves lives), pose trivial risks (turns hair green) to a very small number of users (less than 0.05%), and what little danger they pose is totally unknown to the manufacturer or simply cannot be easily eliminated. That is NOT an unreasonably dangerous product!
+As for Harry, it is not clear if a person can prevail on a products liability claim if the product has been discarded, scrapped or abandoned. The purpose of product liability law is to protect consumers and regular users of products, not “Dumpster Divers”. There is a strong argument that a product is no longer in the “stream of commerce” after it has been discarded or scrapped.
+Here it seems that Harry put the product back in the stream of commerce by retrieving it from the Dumpster. Also he has assumed the risk by doing that since he knew or should have known something might be wrong with a product that has been discarded.]
+
+Sample Answer 16-3: Product Liability
+TOM V. SAM
+Under PRODUCT LIABILITY LAW a person who places an unreasonably dangerous product into the steam of commerce may be liable for the injury it causes. There are four basic theories on which a product liability action may be brought: Breach of Express Warranty, Breach of Implied Warranty, Negligence and Strict Liability.
+1) UNREASONABLY DANGEROUS?
+A product is unreasonably dangerous if it 1) poses serious and likely dangers, that 2) could be reduced or eliminated easily, 3) without damaging product utility, or else 4) the product utility does not justify the dangers posed.
+Here the product presented serious and likely dangers because it could burst into flame under normal use, and those dangers could have been eliminated or reduced easily by putting a warning on the saw.
+Therefore this was an unreasonably dangerous product at the time of sale. 2) BREACH OF EXPRESS WARRANTY?
+Under tort law there is a BREACH OF EXPRESS WARRANTY if a product is sold with 1) express representations that the buyer 2) relies on and 3) the representations are incorrect and 4) it causes the purchaser injury. The seller is liable to foreseeable plaintiffs, those with privity of contract or their family.
+Here Sam made express representations to Tom because he said the saw "would cut 36" trees" and Tom relied because he "bought" the saw. This was incorrect because the saw would only cut "18" trees", and this caused injury because Tom was "burned" when the saw caught on fire. And Tom had privity of contract because he was a "purchaser."
+Therefore, Tom can recover under a breach of warranty theory
+3) BREACH OF IMPLIED WARRANTY?
+Under tort law there is a BREACH OF IMPLIED WARRANTY if a product is unsafe for ordinary use or for the buyer’s known intended use, the buyer relies on the expertise of the seller, and the buyer is injured as a result. The seller is liable to foreseeable plaintiffs, those with privity of contract or their family.
+Here Tom would argue he bought the saw for ordinary use, relied on Sam’s expertise, and was injured as a result. Sam might argue that he did not know what Tom’s intended use was, and there was no evidence Tom relied on his expertise.
+Therefore Tom can pursue recovery on a breach of implied warranty theory.
+
+4) NEGLIGENCE?
+Negligence is a failure to use the care a reasonable person would in the same circumstance. To prevail the plaintiff must prove duty, breach, actual cause, proximate cause and damages.
+DUTY? Under tort law a person has a duty to not put an unreasonably dangerous product into the stream of commerce. Further, a person who makes express representations about a product assumes a duty of due care to make sure they are accurate and will not create peril.
+Here Sam owed Tom a DUTY because he was the seller of a product that posed foreseeable harm.
+BREACH? Sam BREACHED his duty because he "never read the owner's manual" and misrepresented the saw.
+CAUSATION? That was the ACTUAL CAUSE of his injury because he would not have been hurt if he did not buy the saw. This was also the PROXIMATE CAUSE of injury because it was the direct and foreseeable result.
+DAMAGES? Tom had INJURY because he was "burned." Therefore, Tom could recover on a negligence theory.
+5) STRICT PRODUCT LIABILITY?
+Under tort law a commercial seller of a product is strictly liable for personal injury or property damage if the product is unreasonably dangerous at the time it leaves the seller. The seller is liable to any person who is injured as a result.
+Here Sam was a commercial seller because he had a store, the "Bargain Center", selling the product. And the product was unreasonably dangerous because it "burst into flames" in normal use and had "no warnings on the saw." This caused Tom injury because he was "burned."
+Therefore, Tom can recover under strict product liability.
+DICK V. SAM
+6) BREACH OF EXPRESS WARRANTY?
+Breach of express warranty is defined above.
+Here Dick cannot recover under breach of express warranty because Sam only said he was an "expert" and "recommended" the saw. These are not express misrepresentations.
+
+7) BREACH OF IMPLIED WARRANTY? Breach of implied warranty is defined above.
+Here Dick relied on Sam’s expertise because Dick said he “didn’t know” about saws and Sam said he was an “expert”. And Sam knew Dick’s intended use of the saw because he said he wanted to cut "24" trees". Further, the saw was not safe because it could only cut 18" logs, and this caused injury because the saw "caught fire" and Dick was "burned".
+Therefore, Dick can recover under breach of implied warranty.
+8) NEGLIGENCE or STRICT PRODUCT LIABILITY?
+Dick's rights under negligence or strict product liability are the same as Tom's.
+HARRY V. SAM
+9) BREACH OF EXPRESS or IMPLIED WARRANTY? Breach of warranty is explained above.
+Here Harry did not buy the saw from Sam so there is no privity of contract between them and Harry was not a foreseeable plaintiff to Sam. Further, Sam made no express or implied representations to Harry.
+Therefore, Harry cannot recover based on breach of warranty.
+10) NEGLIGENCE? Negligence is defined above.
+It is not clear that Sam was the PROXIMATE CAUSE of the injury to Harry because Moe's act of throwing the saw in the garbage appears to be an interceding event that breaks the chain of causation.
+Therefore, Harry's injury might be too remote in place and causation for recovery on a negligence theory.
+11) STRICT PRODUCT LIABILITY? Strict Product Liability is discussed above.
+Here Sam would argue that even though he originally put the saw into the stream of commerce, it was TAKEN OUT OF THE STREAM OF COMMERCE because Moe threw it in the “garbage”.
+
+Further, he would argue that Harry ASSUMED THE RISKS the saw was defective when he took it
+out of the garbage.
+Therefore, Harry might not be able to recover under strict product liability.
+
+
+
+Definition 40. DEFAMATION?
+Under tort law DEFAMATION is a FALSE statement of material fact PUBLISHED to others about the plaintiff CAUSING DAMAGE to REPUTATION. Defamation may be SLANDER, an oral statement, or LIBEL, a written statement.
+
+It is usually a mistake to discuss both defamation and false light concerning the same statement because if it is a statement that would damage one’s reputation the issue is clearly defamation, not false light. If the statement does not damage the plaintiff’s reputation but only causes embarrassment otherwise, it is not defamation and can only be false light.
+
+But many false statements are PRIVILEGED where the defendant speaks to defend a private interest, group interest or the public interest and does so without malice and in a reasonable manner calculated to defend that interest without unnecessarily harming the plaintiff. 
+
+Injury to reputation will be presumed where there is LIBEL or SLANDER PER SE. SLANDER PER SE is found where the false statement alleges CRIMINAL behavior, LOATHSOME disease, UNCHASTE behavior or improper BUSINESS practices. 
+
+Under NEW YORK TIMES and its progeny, a PUBLIC FIGURE PLAINTIFF must prove ACTUAL MALICE, that the false statement was made with knowledge or reckless disregard of its falseness, in order to recover in a defamation action. A PUBLIC FIGURE is a person who has acted to put themselves in the public spotlight. Further, where a matter of PUBLIC CONCERN is at issue, or where the plaintiff seeks punitive damages, the plaintiff must at least prove NEGLIGENCE.
+
+
+More Explanation about per se and per quod:
+Certain types of defamatory statements were damaging to reputation. Those are called defamation per se. If a statement is defamation per se, the Court may award a money judgment to plaintiffs without requiring any further evidence they suffered injury.
+
+Other defamatory statements that were are not so clearly damaging to reputation were called defamation per quod. If a statement was defamation per quod, the Court could not award a money judgment to the plaintiffs unless they presented convincing evidence they suffered monetary losses as a result of the statements.
+
+Whether statements are defamation per se or defamation pre quod depends on three factors:
+1. Whether statements are insinuations that have to be interpreted by the listener or clearly defamatory statements about the plaintiff;
+2. Whether the statements are written or oral; and
+3. The subject matter of the statements.
+
+Insinuations
+Under the common law insinuations that might harm the reputation of the plaintiff were always defamation per quod whether they are oral or written, and no matter what the subject matter might be.
+Three types of “insinuations” were recognized by the common law: innuendo, colloquium, and inducement. 
+
+The important point is that if defendants do not clearly identify the plaintiffs as the subject of their statements, or the statements do not clearly make factual assertions about the plaintiffs that would damage their reputations, they are “insinuations” and defamations per quod in all cases.
+
+If defendants make statements that clearly identify the plaintiff and allege facts that would injure the plaintiff’s reputation, they are clearly defamatory. But whether they were defamation per se or defamation per quod depended on whether the statements are libel or slander.
+
+A. Libel:
+A defamatory statement is libel if it is written or recorded in a manner that gives its damaging effects longevity. Under the common law a written defamatory statement about the plaintiff was libel and libel was always defamation per se, regardless of the subject matter.
+
+B. Slander
+A defamatory statement is slander if it is oral or transitory in nature so that the damaging effect soon dissipates. Under common law an oral defamatory statement about the plaintiff was slander but it was only defamation per se if it accused the plaintiff of one of the following four things:
+• Having committed a serious crime; 
+• Having a loathsome disease; 
+• Engaging in sexual misconduct. (Unchaste Behavior) OR 
+• Engaging in business or professional misconduct; 
+
+Remember: CLUB
+
+Any slander regarding any other subject matter was always defamation per quod.
+
+If plaintiffs prove the elements of defamation per se the Court can award money judgments without any proof the plaintiffs suffered monetary losses. These are general damages. If the plaintiff also proves the statements caused monetary losses those are special damages and they can be awarded in addition. This is often phrased, “The plaintiff can get generals without proving specials.”
+
+If plaintiffs only prove the elements of defamation per quod the Court cannot award any damages at all until unless the plaintiffs prove the defamations caused monetary losses. Those are special damages. If plaintiffs do prove special damages, the Court can award general damages in addition to the special damages. But if plaintiffs fail to prove defamations per quod caused monetary losses the plaintiffs get nothing. This is often phrased, “The plaintiff must prove specials to get generals”.
+
+Sample Essay on Defamation
+
+Practice Question 4
+Barbara, the famous TV news lady, was assigned to do a story on former governor, Pat Wilson, to find out why Wilson had become almost a recluse in the years since he left office.
+Barbara interviewed Wilson at his home. Wilson's speech was slurred, his eyes were bloodshot and he was unsteady. Barbara asked him about his health, and he declined to comment. Barbara knew Wilson had once been an alcoholic, and she suspected he had begun drinking heavily again. But she did not ask him about this because she knew he would deny it.
+On TV Barbara accurately described Wilson's slurred speech, bloodshot eyes and unsteady gait. Then she stated, "It appears that someone we once knew and respected has gone back to his old ways." She did not state who the "someone" was, and she did not explain what she meant by "his old ways."
+Because of the news broadcast, rumors rapidly spread that Wilson had again developed a drinking habit. Wilson's approval in polls fell dramatically, and he was passed over for the post of State Republican Chair, but he had little chance of being selected for that post.
+Wilson demanded a retraction and apology, but Barbara refuses. Discuss potential action by Wilson.
+
+[ANSWER EXPLANATION: This question requires discussion of defamation actions by public figures. It is an example of defamation using innuendo, interpretation (COLLOQUIUM) or knowledge of extrinsic facts (INDUCEMENT).
+A definition and discussion of actual malice is necessary. Actual malice may be based on recklessness. When it comes to recklessness, this question is a wobbler because Barbara clearly could have asked and then reported "Wilson denies a drinking problem."
+If Wilson was not a public figure, he would only have to prove the falsity of Barbara’s statements and that they were of the sort that would damage his reputation. Barbara might then claim she was PRIVILEGED to make the statements, even if they were false. But she would have to prove she acted in a ‘reasonable manner’ without malice to protect the public interest. But she would not be able to prove that because it is not clear what “public interest” she is protecting, and it would not be reasonable to make damning statements of this type on TV about a private individual without at least questioning the person about it first directly.
+PRIVILEGE is frequently tested and poorly taught so be sure to consider it in any defamation question. Did the defendant have a legitimate reason to speak out, and did they do it in a reasonable manner? The 1st Amendment does not protect defamatory statements, but it does protect the right to speak out to protect legitimate interests, as long as the defendant acts reasonably and without malice. Privilege defines the balance between these two conflicting rules of law.]
+
+Practice Answer 4
+
+WILSON v. BARBARA 1) DEFAMATION?
+Under the law of torts DEFAMATION is a false statement of material fact of or about the plaintiff published to another party causing damage to the plaintiff's reputation. If the statement involves innuendo, interpretation, or knowledge of extrinsic facts it is DEFAMATION PER QUOD. Oral defamation is SLANDER and written or recorded defamation is LIBEL.
+A false statement may be PRIVILEGED if the defendant speaks to defend a private interest, group interest or the public interest and does so without malice and in a reasonable manner calculated to defend that interest without unnecessarily harming the plaintiff.
+Therefore, if Wilson can establish a prima facie case, and that Barbara was not privileged, Barbara can be liable for defamation.
+2) Were there FALSE STATEMENTS OF FACT?
+To establish a prima facie case, Wilson must show Barbara's objectionable comments were false. Her comments about his physical appearance, the slurred speech and bloodshot eyes, would be true and not defamatory because they do not, by themselves, cause loss of reputation.
+Wilson's denial that he had been drinking might not be credible enough to prove the point. He may have difficulty proving factually that he had not been drinking.
+Therefore, Wilson may not be able to prove the remarks were false.
+3) Were the STATEMENTS ABOUT THE PLAINTIFF?
+Here Barbara might say her remarks were not clearly about Wilson because she only said "someone" had done something. But the context within which the remarks were made, comments on an interview with Wilson and his physical appearance, made it clear Barbara's statements were about Wilson.
+The statement involved innuendo and required extrinsic facts and interpretation because it referred to "his old ways." Therefore Barbara would argue this was a defamation PER QUOD, if at all. But Wilson would argue that since the remarks were made along with observations about "slurred speech" and "bloodshot eyes" viewers would interpret this as a reference to prior drinking problems even if they had no prior knowledge of extrinsic facts. Wilson would argue this was defamation PER SE.
+Therefore, the remarks would reasonably be interpreted to be about Wilson.
+
+4) Did Barbara PUBLISH her remarks?
+Here Barbara clearly published her remarks because they were made "on TV."
+5) Were the statements DAMAGING TO REPUTATION?
+A statement that Wilson had become an alcoholic would be damaging to reputation because alcoholism is generally seen as a character flaw and undesirable in a person placed in a position of responsibility.
+Therefore, the remarks were damaging to reputation.
+6) Did Wilson SUFFER DAMAGE?
+Under the law of torts DEFAMATION PER QUOD requires proof of SPECIAL DAMAGES before GENERAL DAMAGES will be presumed. Special damages will be presumed in a slander per se concerning criminal acts, a loathsome disease, unchaste behavior or improper business practices.
+Here Wilson might argue that the claim he was alcoholic is equivalent to accusation of a loathsome disease. Barbara would dispute this, but alcoholism often is seen as a disease that might cause others to avoid the plaintiff.
+Barbara would argue that her statements were not defamatory on their face (not per se) because they involved innuendo and required interpretation. Wilson would dispute this.
+Wilson would argue he had suffered SPECIAL DAMAGES because his "popularity fell" and he did not get a position he wanted. Barbara would argue that this did not damage Wilson because he was a "former" politician and "almost a recluse." Further, she would argue that Wilson "had little chance" of getting the post, so her broadcast did not cause his loss.
+Therefore, damages may be presumed, or Wilson may be able to prove damages.
+7) Is Wilson a PUBLIC FIGURE PLAINTIFF?
+Under New York Times v. Sullivan a plaintiff that is a public figure must prove actual malice, statements made with knowledge or reckless disregard for their falsity. A public figure is one who injects themselves into the public arena.
+Here Wilson had been inactive in the public arena because he was "almost a recluse" and only a "former governor." Barbara would argue that Wilson agreed to be "interviewed at his home" for a "TV" show, and hoped to become the "State Republican Chair."
+Therefore, Wilson had been in the public eye, was placing himself in the public arena by willingly being interviewed, and was a public figure.
+
+8) Can Wilson prove ACTUAL MALICE?
+Appendix B: Sample Answers
+ Actual malice means statements made with knowledge of or reckless disregard for their falsity. Reckless disregard means intentionally acting without awareness and with negligent disregard for the clear and serious risk to others.
+Here Barbara did not act with knowledge her statement was false because she "suspected" it was true. But there was a clear risk of injury to Wilson because she made comments "on TV" that would damage him.
+Wilson would argue she acted with a reckless disregard of whether her comments were true or not because she had an opportunity to ask Wilson and "did not ask."
+Barbara would argue it was not reckless disregard because Wilson would only have denied drinking. She would show that no further effort on her part would have clarified the matter any further.
+Therefore, Barbara probably would be held to have not acted with actual malice.
+
+Definition 41. FALSE LIGHT?
+Under tort law FALSE LIGHT is the tort of publishing a false portrayal of a person in a manner that would cause them embarrassment or inconvenience.
+
+
+Definition 42. APPROPRIATION of likeness?
+Under tort law APPROPRIATION is the tort of unauthorized use of the likeness of another person for personal gain in a manner that implies endorsement of a product or cause.
+
+
+Definition 43. INTRUSION into the plaintiff’s solitude?
+Under tort law INTRUSION is the tort of unreasonable intrusion into the peace and solitude of
+another person. 
+
+Definition 44. PUBLIC DISCLOSURE OF PRIVATE FACTS?
+Under tort law PUBLIC DISCLOSURE is the tort of unreasonably disclosing private facts that a reasonable person would find embarrassing. 
+
+Sample Essay on Privacy
+
+Practice Question 5: Invasion of Privacy
+
+The National Inkwire focused on sensational articles about celebrities, complete with candid pictures taken during private moments. Actress Ellen D. Generate was pursued relentlessly.
+One time The National Inkwire reported that Ellen was secretly a generous philanthropist. In fact, Ellen was a tightwad. As a result of the Inkwire article, Ellen was besieged by requests for donations, and it was professionally impossible for her to turn them all down.
+Then the Inkwire photographer, Dick took pictures of Ellen sunbathing topless on her sailboat. At the time the photo was taken Ellen was anchored four miles from land in international waters, and she had her friend Anne posted as a lookout to warn of any approaching boats or airplanes. The way Dick got the photo was by using a remote controlled, miniature submarine with a powerful telephoto lens.
+Ellen was so embarrassed by the nude photo that she remained secluded in her home for weeks.
+Ellen decided to sue the Inkwire, so she went to the grocery store and bought a copy of the issue with her photo to show her lawyer. Unfortunately Dick was following her and he took a picture of Ellen buying the Inkwire. Then Inkwire put the picture of Ellen on billboards nationwide with a caption that said "Ellen D. Generate buys Inkwire!"
+Before Ellen could file suit the Inkwire ran an interview with Ellen's old boyfriend from college. He said that even though Ellen was now a strong and vocal anti-abortion advocate, she had an abortion herself in college. This was a true fact that Ellen had told her ex-boyfriend in strictest confidence. This disclosure embarrassed Ellen and made her look like a hypocrite.
+Discuss the possible actions Ellen might bring against the Inkwire and their defenses.
+
+[ANSWER EXPLANATION: This question calls for discussion of each of the four Invasion of Privacy torts -- False Light, Appropriation of Likeness, Intrusion and Disclosure of Private Facts (LAID).
+The focus in intrusion and disclosure is on the unreasonableness of the acts of the defendant. It is not unreasonable to take a picture of a naked lady if she is lying on a public beach, but it is unreasonable to take the same picture by going to great lengths to avoid detection because it violates “reasonable expectations of privacy”.
+The term “money damages” generally means an award intended to compensate the plaintiff for losses suffered in terms of property damage, lost income, inconvenience, lost privacy, embarrassment, pain and suffering, etc. But the plaintiff can also request damages measured by the unjust enrichment the defendant would otherwise reap. In that case the plaintiff is said to have, “waived the tort and sued in restitution”, and the damage award in that case is often referred to as “damages in restitution”. In most cases of False Light, Intrusion and Disclosure of Private Facts the plaintiff is suing for compensatory damages, and in most cases of Appropriation of Likeness the plaintiff is suing for damages in restitution.
+The term “damages” is broadly misused to mean “money judgment” and students are strongly advised to get (and read) Nailing the Bar’s Simple Remedies Outline early in their law school career.]
+
+
+Practice Answer 5: Invasion of Privacy
+ELLEN v. INKWIRE 1) FALSE LIGHT?
+Under tort law FALSE LIGHT is the intentional act of publishing a false portrayal of the plaintiff in a manner causing ridicule or embarrassment.
+Here Inkwire published a portrayal about Ellen because it "reported she was a secret philanthropist." This was a false portrayal because she was a "tightwad." And this caused her embarrassment because she was "besieged with requests" that were "professionally impossible" to reject. Ellen's damages would generally be measured by the amount of embarrassment she was caused.
+Therefore, Inkwire may be liable for invasion of privacy under a false light theory.
+2) INTRUSION?
+Under tort law INTRUSION is an unreasonable intrusion into the peace and solitude of the plaintiff. Damages are measured by the value of lost solitude to the plaintiff.
+Here there was an unreasonable intrusion because Dick sent a "submarine" to photograph Ellen through a "telephoto lens". It disturbed her peace and solitude because she had attempted to be alone in a secluded place "miles" from shore with a "posted lookout." Ellen suffered damages because it "embarrassed her" into "seclusion" in her home for "six weeks."
+Dick would argue that Ellen had no reasonable expectation of privacy because she was "in international waters." Ellen would counter that she had a reasonable expectation of privacy because of the location and precautions she had taken.
+Therefore, Inkwire may be liable for intrusion.
+3) APPROPRIATION OF LIKENESS?
+Under tort law APPROPRIATION is the unauthorized use of the name or likeness of a person in a manner that implies endorsement of a product or support of a cause, but not mere publication of names and photos as news articles. Damages are generally measured by the profit to the defendant.
+Here there was a use of Ellen's photo and name because billboards with her "picture" said "Ellen D. Generate" buys their paper. And the use was not authorized because she did not give permission. The purpose of the billboards was to profit by implying she endorsed their paper.
+Ellen's damages would generally be measured by the profits Inkwire made from using her likeness.
+
+4) PUBLIC DISCLOSURE OF PRIVATE FACTS?
+Under tort law PUBLIC DISCLOSURE is the unreasonable public disclosure of private facts that a reasonable person would find embarrassing.
+Here there was a public disclosure because Inkwire "ran the interview" in its publication. And the facts were private facts because they were told to the ex-boyfriend in "strictest confidence." These were embarrassing facts because they concerned an "abortion", a matter of personal intimacy, and of a nature likely to cause public disdain and ridicule. Ellen would argue Inkwire acted in an unreasonable manner.
+Inkwire would argue that it acted reasonably because these facts were a matter of legitimate public concern since Ellen had injected herself into the public arena as a "strong and vocal anti- abortion advocate." Inkwire would argue the public had a right to know Ellen's true background since she sought to influence public opinion on this controversial topic.
+Therefore, Ellen might fail to show Inkwire acted unreasonably.
+
+
+Definition 45. PRIVATE NUISANCE?
+Under tort law PRIVATE NUISANCE is an unreasonable interference with a person’s use and enjoyment of their own land.
+
+Definition 46. PUBLIC NUISANCE?
+Under tort law PUBLIC NUISANCE is an unreasonable interference with a person’s use and enjoyment of public resources. To have standing the plaintiff must show particular injury, greater than that suffered by the general public.
+
+Definition 46a. COMING TO THE NUISANCE? 
+Under tort law COMING TO THE NUISANCE is the defense that the plaintiff moved to the location where the condition complained of already existed. It is a complete bar in a MINORITY view, but in the MAJORITY view it is only a factor to be considered in determining damages. 
+
+
+Definition 46b. NUISANCE REMEDIES? 
+The REMEDIES for a nuisance action include both money damages and injunctive relief.
+
+If the nuisance is a temporary situation money damages measured by the loss of use for the period of the nuisance will be an adequate remedy. If the nuisance would continue but for injunctive relief, the Court would consider granting an injunction. Injunctive relief is an equitable remedy, and the court has discretion to deny it. The Court will balance the interests of the parties, the interests of third parties and the feasibility of judicial enforcement. If the Court denies injunctive relief, the appropriate remedy is an award of money damages measured by the loss of property value caused by the nuisance. 
+
+
+Practice Question 6
+Ken was a politician from Los Angeles. He moved to Sacramento and purchased a spacious home on the Sacramento River. He felt he got a great deal because he only paid $400,000 and a similar home in Los Angeles would have cost him three times that amount.
+Ken realized his home was directly in the flight path of the airplanes taking off and landing from the County airport, and the realtor had prominently disclosed this fact on the sales documents. But Ken didn't think the noise was so bad because from his backyard he just loved to hear little birds singing along the public river parkway.
+Four years later Ken lost the election and he wanted to move back to Los Angeles. When he had the house appraised, it was worth $500,000. Ken was furious because his home value had only increased 25 percent in value while most real estate had gone up 50 percent.
+Ken blamed the County. In the four years he owned the home the number of flights at the airport increased ten percent. This increased traffic was from increased military use in response to the crisis in Romaria. Ken could not enjoy his yard as much as before, and the little birds on the public river parkway didn't seem to sing as much as they used to.
+What actions might Ken bring against the County, what defenses might be raised, and what remedies are appropriate?
+
+[ANSWER EXPLANATION: This question is roughly based on true events. The point to remember is that "coming to the nuisance" is not a complete bar to recovery. If a defendant unreasonably interferes with the use of land, a new purchaser might "buy into the right to sue" for a nuisance the previous owner did not litigate.
+Just state the rule and prove (or disprove) the elements. Here Ken’s case is rather weak, so you may have to give “conditional” conclusions.
+Discussion of “defenses” and “remedies” is mandatory because the CALL specifically asks for it.]
+
+
+Sample Answer 16-6: Nuisance
+KEN v. COUNTY
+1) PRIVATE NUISANCE?
+Under tort law PRIVATE NUISANCE is an unreasonable interference with the plaintiffs’ use and enjoyment of their land.
+Here there was some interference because the County airport caused "noise" that prevented Ken from "enjoying his yard" and "hearing the birds." And this involved the use of Ken's land because it was his "house" and "yard."
+The two elements that would be most difficult to prove are whether Ken suffered significant damages, and whether the County action was unreasonable. The County would argue that the noise was insufficient interference to prevent Ken from enjoying his land because Ken "didn't think the noise was so bad" when he bought the house. He in effect CAME TO THE NUISANCE, and that fact suggests the situation was not as bad as Ken claims.
+But Ken would try to prove that the interference was unreasonable because the County let flights increase “ten percent" in only "four years."
+The County would also argue it did not cause the nuisance, and had not acted irresponsibly. The County might argue it was not responsible because the increase in noise was caused by "military use" beyond their control. Alternatively, the County would argue that it acted reasonably because the flights were in response to the "Romaria crisis."
+Ken would argue he suffered damages because the value of his home was less that it otherwise would be. But the County would argue there was no proof of financial loss because the home had gone up in value and the claim of loss was speculative. Further, the County would argue there was no proof the birds did not sing as much as before.
+Therefore, the County might be liable for private nuisance depending on whether Ken could prove these legal elements.
+2) PUBLIC NUISANCE?
+Under tort law PUBLIC NUISANCE is an unreasonable interference with the plaintiff's use and enjoyment of public resources causing her particular injury that is different or greater than the general public.
+Here the noise interferes with the enjoyment of public land because it prevents Ken from "hearing the birds sing" on the "public river parkway."
+The County may argue that Ken lacks standing because he does not suffer any injury that is different from any other member of the public. But Ken suffers particular injury because his home is "on the river" and he could hear the birds sing "from his backyard."
+
+Ken would have to prove the other elements of nuisance which are discussed above under private nuisance.
+Therefore, the County may be liable for public nuisance, depending on whether Ken can prove the County’s action is unreasonable and produces significant damages.
+3) COMING TO THE NUISANCE?
+Under tort law COMING TO THE NUISANCE is the defense that the plaintiff moved to the location where the condition complained of already existed. It is a complete bar in a MINORITY view, but in the MAJORITY view it is only a factor to be considered in determining damages.
+Here Ken moved to the location because he "purchased the home." And the condition already existed because he "realized his home was in the flight path" and the "realtor disclosed the fact."
+Ken would argue that even though problems existed when he bought the home, they worsened after that. Further, he would argue that in any event the County action is unreasonable per se.
+Therefore, the court would consider Ken's coming to the nuisances only as a factor in determining damages in most States.
+4) REMEDIES?
+The REMEDIES for a nuisance action include both money damages and injunctive relief.
+If the nuisance is a temporary situation money damages measured by the loss of use for the period of the nuisance will be an adequate remedy. If the nuisance would continue but for injunctive relief, the Court would consider granting an injunction. Injunctive relief is an equitable remedy, and the court has discretion to deny it. The Court will balance the interests of the parties, the interests of third parties and the feasibility of judicial enforcement. If the Court denies injunctive relief, the appropriate remedy is an award of money damages measured by the loss of property value caused by the nuisance.
+Here the nuisance is a permanent condition, so the Court would consider injunctive relief. But the interest of third parties, people who use the airport, the military, and the County residents would be so significant the Court is unlikely to issue an injunction stopping the airport from continuing operations.
+Therefore the Court would most likely award Ken money damages to reflect the loss of market value of his property caused by the increase in airport traffic.
+
+Definition 47. MALICIOUS PROSECUTION?
+Under tort law a person is liable for MALICIOUS PROSECUTION if they have instituted or continued a criminal prosecution of another person out of malice and the action was terminated based on its merits because there was no probable cause.
+
+
+Definition 48. ABUSE OF PROCESS?
+Under tort law a person is liable for ABUSE OF PROCESS if they have brought a civil or criminal action against another person without a legitimate basis out of malice or for an improper purpose. 
+
+Definition 49. ILLEGAL INTERFERENCE?
+Under tort law a person is liable for unreasonably and illegally interfering with another person’s known or apparent business relationships.
+
+
+Definition 50. DECEIT (or FRAUD or MISREPRESENTATION)?
+Under tort law a person is liable for 1) making a FALSE STATEMENT OF MATERIAL FACT 2) KNOWING it was false 3) with INTENT TO DECEIVE, 4) that was REASONABLY RELIED upon by the plaintiff, and thereby 5) CAUSING the plaintiff INJURY.
+
+
+Definition 51. NONDISCLOSURE (CONCEALMENT)?
+Under tort law a prima facie case of NONDISCLOSURE (or CONCEALMENT) requires showing 1) a DUTY to disclose material facts, 2) BREACH of that duty, 3) REASONABLE RELIANCE by the plaintiff on facts as they appeared to be, and 4) INJURY CAUSED by the nondisclosure.
+
+
+Definition 52. TORT RESTITUTION ?
+
+Under tort law plaintiffs have a legal right to “waive the tort” and instead of seeking an award of damages based on the injury they have actually suffered they may demand LEGAL RESTITUTION, an award of a money judgment measured by the amount the defendants have wrongfully benefited as a result of their tortious acts. The purpose of this is to PREVENT UNJUST ENRICHMENT by tortfeasors.
+
+
+Practice Question 7
+Star approached Buck, the owner of JavaManiac, with a business proposal. Star knew where there was a retail space for lease that would be a great place for a JavaManiac franchise. Buck told Star that she would be granted a JavaManiac license if the location was acceptable. Based on this Star described the location in detail and gave Buck its address. Buck said he would have someone "check it out."
+Buck had no intention of giving Star a franchise. He just wanted her to reveal the location. Based on Star's description it sounded perfect for a JavaManiac outlet, and Buck wanted to take the space himself.
+Buck went to the location suggested by Star and saw that it was perfect for JavaManiac. He then contacted the owner, Jack. Jack said he already had tentatively promised the lease to someone named Star. Buck said, "I know Star," and held his hand in the air with his thumb out to indicate that Star had a drinking problem. Then Buck looked at Jack very sincerely and said, "I probably shouldn't say this, but I feel I have a duty to tell you that you don't want to lease to someone like Star."
+Buck reported to Star that the location was unacceptable because it was too small to meet the secret JavaManiac minimum guidelines.
+Star was very dejected and withdrew her offer to lease the space. Jack was relieved.
+Three months later Star happened upon the grand opening of the next new JavaManiac franchise at the very location he had suggested. Standing in front were Buck and Jack shaking hands. Star was furious and accused Buck of cheating her. Buck rolled his eyes at Jack and said, "See what I mean?"
+Then Buck sued Star for slander per se for accusing him of questionable business practices. Star won the suit when the jury found her statements had been true.
+What are Star's possible actions against Buck? (Do not discuss intentional infliction, defamation or false light.)
+
+[ANSWER EXPLANATION: This very short question is intended to focus on the elements that must be proven for fraud, interference, and abuse of process.
+Intentional infliction, defamation and false light were excluded by the call because they are covered in other questions.
+There is no evidence of IIED anyway because Star did not suffer “severe emotional distress.” You are unlikely to ever get such a short, simple question on a real exam.]
+
+
+Sample Answer 16-7: Miscellaneous Torts
+STAR v. BUCK 1) FRAUD?
+Under tort law FRAUD is based on false representations of fact by the defendant made knowingly with intent to deceive that are reasonably relied upon by the plaintiff causing damages.
+Here Buck made a statement of fact when he said a franchise "would be granted" if the location was suitable, and that was false because he had “no intention” of granting Star a franchise. He intended to deceive because he wanted her to reveal the location, and Star reasonably relied on his representation because she did reveal the location. That caused her damages because Buck used the information to convince Jack not to lease the “perfect location” to Star.
+Buck also made false statements when he told Star the location was "too small for a franchise." He intended to deceive her so she would not go through with her lease plans. And she reasonably relied on that statement because she “withdrew” her offer to Jack. That caused her damages because she otherwise would have secured the lease.
+Therefore, Star can prove the elements of fraud and Buck may be liable for the damages she suffered.
+2) TORTIOUS INTERFERENCE?
+Under tort law INTERFERENCE is an unreasonable interference with the plaintiff's known business relationships causing damages.
+Here Buck interfered with Star's business relationship with Jack by suggesting to him that "Star drank" and was a "bad tenant choice". Buck also interfered by telling Star the space was "too small for a coffee shop".
+Buck did these acts knowing that he was interfering with the business relationship between Jack and Star because Jack had told him he, "promised the location to Star." The acts were unreasonable because they were intentional false statements intended to damage Star. And they caused Star damages because it prevented her from completing the lease agreement with Jack.
+Therefore, Buck can be liable for tortious interference.
+3) ABUSE OF PROCESS?
+Under tort law ABUSE OF PROCESS is bringing a civil action against the plaintiff without
+legitimate basis out of malice and for an improper purpose.
+Here Buck brought a civil action against Star because he "sued Star for slander." And he had no legitimate basis because all of Star's statements were true. Buck acted out of malice and for an improper purpose because he was trying to refute Star's statements and hide the truth.
+Therefore, Buck could be liable for abuse of process.
