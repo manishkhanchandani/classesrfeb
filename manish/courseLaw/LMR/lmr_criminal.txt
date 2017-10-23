@@ -2,60 +2,478 @@ All Definitions
 
 CRIMINAL LAW
 
-1. SOLICITATION?
-2. CONSPIRACY?
+Definition 1. SOLICITATION?
+Under CRIMINAL LAW a SOLICITATION is the crime of urging another person to commit a crime. 9 The crime of SOLICITATION is complete as soon as the urging takes place, whether the person urged commits the crime urged or not. But if the urged crime is committed the SOLICITATION MERGES into the criminal result and the person committing the solicitation becomes an ACCESSORY BEFORE THE FACT and VICARIOUSLY LIABLE for the crime based on accomplice theory.
 
-3. CRIMINAL ASSAULT?
-4. CRIMINAL BATTERY?
+Definition 2. CONSPIRACY?
+Under COMMON LAW the crime of CONSPIRACY was an agreement between two or more people to work toward an illegal goal. MODERNLY an OVERT ACT in furtherance of the conspiracy goal is often required in many Courts.
 
-5. RAPE?
+Further, under the PINKERTON RULE, a member of a conspiracy is VICARIOUSLY LIABLE for the criminal acts of co-conspirators done WITHIN THE SCOPE of the conspiracy goal. This means crimes that were 1) foreseeable and 2) in furtherance of the conspiracy goal.
 
-6. ARSON?
+Even if the illegal goal of the conspiracy is attained, the CONSPIRACY DOES NOT MERGE into the criminal result, so each member can be convicted of both conspiracy and the other crimes committed during and within the scope of the conspiracy.
 
-7. LARCENY?
+And under the WHARTON RULE a conspiracy requires the participation of more people than the minimum number necessary to commit the criminal act.
 
-8. FALSE PRETENSES ?
+If a defendant joins a conspiracy in progress most Courts hold they are not liable for previous crimes of the co-conspirators unless the joining defendant seeks to profit from those prior crimes.
 
-9. EMBEZZLEMENT?
+A conspiracy ends when the conspiracy goal is ATTAINED or ABANDONED, and vicarious liability will no longer attach based on conspiracy theory. But it may still attach based on accomplice theory.
 
-10. ROBBERY?
+Definition 3. CRIMINAL ASSAULT?
+Under CRIMINAL LAW an ASSAULT is the crime of acting with the intention of causing a battery or else to cause apprehension of a battery. The victim of the attempted battery does not have to be aware of the danger. 
 
-11. BURGLARY?
+Definition 4. CRIMINAL BATTERY?
+Under CRIMINAL LAW a BATTERY is the crime of acting with the intention of causing a
+touching of a victim’s person and causing a harmful or offensive touching .
 
-12. RECEIVING STOLEN PROPERTY?
 
-13. ATTEMPTED?
+Definition 5. RAPE?
+Under common law RAPE was an intentional act to have sexual intercourse with a female without consent causing actual penetration, no matter how slight.
 
-14. MURDER?
+Definition 6. ARSON?
+Under common law ARSON was the malicious burning of the dwelling of another. MODERNLY arson is extended by statute to the burning of other structures. Malice for arson means that the burning must be done with wrongful intent.
 
-15. MITIGATING FACTORS?
+Definition 7. LARCENY?
+Under common law LARCENY was the trespassory taking and carrying away of the personal property of another with intent to permanently deprive. Where the possession was gained by misrepresentation it was called LARCENY BY TRICK.
 
-16. VOLUNTARY MANSLAUGHTER?
+Theft of property from a master or employer by a manager or high-level employee was generally embezzlement and not a larceny, unless the defendant got possession by misrepresentation, a larceny by trick. But theft of the same property by a servant or low-level employee was generally larceny, not embezzlement, unless the defendant took possession from a third party before deciding to steal it, and in that case it was embezzlement.
 
-17. INVOLUNTARY MANSLAUGHTER?
+Under the RELATION BACK DOCTRINE some common law courts held that a theft of “lost” property by a person who initially intended to return it to the lawful owner was a larceny because a later decision to steal RELATED BACK to make the original taking unlawful. But other courts held this was embezzlement on the theory the original taking formed a
+“constructive trust.”
 
-18. REDLINE RULE?
 
-19. KIDNAPPING?
-20. MISPRISION?
-21. COMPOUNDING?
-22. ACCOMPLICE LIABILITY?
+Definition 8. FALSE PRETENSES ?
+Under common law FALSE PRETENSES was the a MISREPRESENTATION of FACT to obtain TITLE to the property of another with intent to permanently deprive.
 
-23. DEFENSE of INFANCY?
-24. DEFENSE of MISTAKE OF FACT?
-25. DEFENSE of LEGAL IMPOSSIBILITY?
-26. DEFENSE of MISTAKE OF LAW?
-27. DEFENSE of FACTUAL IMPOSSIBILITY?
-28. DEFENSE of WITHDRAWAL
-29. DEFENSE of INSANITY?
-30. DEFENSE of CONSENT?
-31. DEFENSE of ENTRAPMENT?
-32. DEFENSE of DURESS?
-33. DEFENSEof NECESSITY?
-34. PREVENTION OF CRIME (AUTHORITY OF LAW)?
-35. SELF-DEFENSE?
-36. DEFENSE of OTHERS?
-37. DEFENSE of PROPERTY?
+Definition 9. EMBEZZLEMENT?
+Under common law EMBEZZLEMENT was the crime of TRESPASSORY CONVERSION of the property of another by one entrusted with lawful possession with intent to permanently deprive or causing substantial risk of loss.
 
-38. Malicious mischief
-39. DEFENSE OF INTOXIATION
+Further, the COMMON CARRIER DOCTRINE held that a common carrier such as a taxicab, bus or ship is entrusted with possession of passenger’s property, including lost property, so a theft of passenger property by an employee of a common carrier was more often held to be EMBEZZLEMENT than larceny, even if the property was “lost”.
+
+Definition 10. ROBBERY?
+Under CRIMINAL LAW a ROBBERY is a larceny from a person by use of force or fear to overcome the will of the victim to resist.
+
+Definition 11. BURGLARY?
+Under COMMON LAW a BURGLARY was the breaking and entering of the dwelling of another in the night with intent to commit a felony. The entry of a structure within the CURTILAGE of the dwelling also constituted a burglary.
+
+A physical breaking was generally required, but a CONSTRUCTIVE BREAKING would be found if entry was the result of TRICK, VIOLENT THREATS, or CONSPIRACY.
+
+MODERNLY burglary has been extended by statute to all times of the day and all types of structures. Intent to commit a larceny is generally still sufficient to support a burglary charge, even if the larceny is no longer a felony. Further, the “breaking” element will generally be satisfied if there is a TRESPASSORY ENTRY, an entry without consent, express or implied.
+
+
+
+Definition 12. RECEIVING STOLEN PROPERTY?
+
+Under CRIMINAL LAW RECEIVING STOLEN PROPERTY is the crime of taking possession or control over stolen personal property while knowing it has been stolen with intent to permanently deprive the lawful owner.
+
+Definition 13. ATTEMPTED?
+
+Under CRIMINAL LAW an ATTEMPTED CRIME is a SUBSTANTIAL STEP taken toward committing an INTENDED CRIME.
+
+Definition 14. MURDER?
+
+Under criminal law MURDER is an unlawful HOMICIDE, the killing of one human being by another, with MALICE aforethought. Malice for murder can be 1) express intent to kill or implied by 2) intent to cause great bodily injury, 3) intent to commit an inherently dangerous felony, the FELONY MURDER RULE or 4) intent to act with awareness of and conscious disregard for an unreasonably high risk to human life, the DEPRAVED HEART theory. 
+
+Under common law there were no degrees of murder, but modernly FIRST DEGREE murder is 1) willful, deliberate and premeditated, 2) murder by enumerated means or 3) murder during enumerated dangerous felonies. All other murder is second degree. 
+
+The felony-murder rule applies to deaths caused by acts done during the RES GESTAE of an inherently dangerous felony, the events beginning with the first substantial step toward commission of the crime and ending when the defendants leave the scene of the crime and reach a place of relative safety. 
+
+Actual Cause:
+
+Proximate Cause:
+
+
+Definition 15. MITIGATING FACTORS?
+Under CRIMINAL LAW, MITIGATING FACTORS are factual considerations that do not serve as complete defenses but may be weighed by the jury in determining whether murder should be found in the first or second degree, or whether a murder charge should be reduced to a finding of manslaughter.
+
+
+Definition 16. VOLUNTARY MANSLAUGHTER?
+Under criminal law VOLUNTARY MANSLAUGHTER  is an unlawful, intentional homicide without malice aforethought because of adequate provocation sufficient to raise a resonable person to a fit of rage which could and actually did cause the homicide.
+
+ADEQUATE PROVOCATION is provocation sufficient to raise a reasonable person to a murderous rage, which did raise the defendant to such a rage, and which was the actual cause of the homicide. 
+
+But ADEQUATE PROVOCATION CANNOT BE FOUND if the defendant had enough time before the killing that a reasonable person would have COOLED DOWN and no longer would have been in a murderous rage.
+
+Definition 17. INVOLUNTARY MANSLAUGHTER?
+Involuntary manslaughter is an unintentional homicide resulting from GROSS NEGLIGENCE, RECKLESSNESS or the commission of a MALUM IN SE crime insufficient to support the felony murder rule.
+
+GROSS (CRIMINAL) NEGLIGENCE is the deliberate breach of a pre-existing duty to protect others from extreme risks, and RECKLESSNESS is the deliberate creation of extreme risks to others.
+
+
+Definition 18. REDLINE RULE?
+Under the REDLINE RULE the killing of a criminal accomplice by any party other than another criminal accomplice during the commisison of an inherently dangerous felony cannot be used as basis for charging murder under the FELONY-MURDER RULE.
+
+
+Definition 19. KIDNAPPING?
+Under criminal law, a KIDNAPPING is the unlawful taking or confining of a person against their will.
+
+Definition 20. MISPRISION?
+Under the common law MISPRISION was the crime of knowingly failing to report felonies by others to the police. 
+
+Definition 21. COMPOUNDING?
+Under criminal law COMPOUNDING is the crime of taking money or something of value in exchange for a promise to not report crimes committed by others.
+
+Definition 22. ACCOMPLICE LIABILITY?
+
+An accomplice to a crime may be charged with all subsequent crimes committed by other accomplices if they were foreseeable as the direct and natural results of their own criminal acts.
+
+
+Definition 23. DEFENSE of INFANCY?
+Under the COMMON LAW there as a CONCLUSIVE PRESUMPTION that a child under the age of seven was unable to form CRIMINAL INTENT. There was a REBUTTABLE PRESUMPTION that a child between 7 and 14 could not form criminal intent, and a child over the age of 14 was believed to be able to form criminal intent. 
+. 
+
+
+Definition 24. DEFENSE of MISTAKE OF FACT?
+Under CRIMINAL LAW a MISTAKE OF FACT is a complete defense if it negates implied criminal intent. For GENERAL INTENT crimes only a REASONABLE mistake can negate criminal intent. For SPECIFIC INTENT crimes ANY MISTAKE OF FACT may negate criminal intent whether reasonable or not. Battery, rape, arson, involuntary manslaughter and murders that are not willful and deliberate are general intent crimes. All other crimes are SPECIFIC INTENT crimes.
+
+A REASONABLE MISTAKE OF FACT is one that a reasonable person would have made in the same situation. VOLUNTARY INTOXICATION never makes an otherwise unreasonable mistake reasonable.
+
+A MISTAKE OF FACT is no defense to a charge of ATTEMPT if criminal intent is proven and the mistake merely prevented an otherwise criminal act.
+
+Definition 25. DEFENSE of LEGAL IMPOSSIBILITY?
+Under CRIMINAL LAW, LEGAL IMPOSSIBILITY means that an attempted act is not an attempted crime, even if there was criminal intent, when the attempted crime is a legal impossibility at the time of the first substantial step.
+
+Definition 26. DEFENSE of MISTAKE OF LAW?
+Under CRIMINAL LAW, A MISTAKE OF LAW about the legality of an act does not alter the legality of the act. If the defendant commits a criminal act believing it is legal, it is still an illegal act. Likewise, if the defendant commits a legal act believing it is illegal, it is still a legal act. 
+
+Definition 27. DEFENSE of FACTUAL IMPOSSIBILITY?
+Under CRIMINAL LAW, FACTUAL IMPOSSIBILITY is a defense that the act actually done by the defendant was NOT A SUBSTANTIAL STEP toward commission of any crime, despite criminal intent, because the act taken could never produce a criminal result. 
+
+Definition 28. DEFENSE of WITHDRAWAL?
+Under CRIMINAL LAW, WITHDRAWAL is a defense that defendants who were members of a
+CONSPIRACY are not liable for crimes committed by co-conspirators AFTER the defendants
+1) give the other co-conspirators NOTICE that they are abandoning the conspiracy and 2) the
+defendants TRY TO STOP the co-conspirators from continuing pursuing the conspiracy goal.
+
+Definition 29. DEFENSE of INSANITY?
+
+Under criminal law INSANITY is a defense that negates criminal intent. Under the M'NAUGHTEN RULE  person is insane if a disease of the mind so impairs their reasoning that they are unable to appreciate the nature and quality of their acts or to know that they were wrong. Under the IRRESISTIBILE IMPULSE theory a person may raise the defense of insanity if they are unable to control their acts, even if they know the act is wrong
+
+Definition 30. DEFENSE of CONSENT?
+Under CRIMINAL LAW consent is a defense to some crimes.[rape, larceny, battery – consent to a touching] The consent must be informed, voluntary and given by one with legal capacity. Further, consent is not a defense to an act that causes great bodily harm.
+
+Definition 31. DEFENSE of ENTRAPMENT?
+Under CRIMINAL LAW entrapment is a defense if criminal intent was the product of improper police behavior. 
+
+Under the majority view entrapment is no defense if the defendant was predisposed to commit the crime. Under another minority view entrapment is a defense if police conduct was outrageous and instigated the crime, even though the defendant was predisposed.
+
+Definition 32. DEFENSE of DURESS?
+Under CRIMINAL LAW a defense may be raised to crimes, EXCEPT MURDER, that the criminal act was the result of DURESS.
+
+Definition 33. DEFENSEof NECESSITY?
+Under CRIMINAL LAW a defense of NECESSITY may be raised to certain crimes.
+This defense is really nothing more than self-defense, defense of others, or defense of property.
+
+Definition 34. PREVENTION OF CRIME (AUTHORITY OF LAW)?
+Under CRIMINAL LAW a defendant is privileged to act with reasonable force to PREVENT SERIOUS CRIMES being committed in their presence.
+
+Definition 35. SELF-DEFENSE?
+Under criminal law a defendant is privileged to use reasonable force as necessary for SELF-DEFENSE.
+
+Definition 36. DEFENSE of OTHERS?
+Under CRIMINAL LAW a defendant is privileged to act with reasonable force to protect others from an aggressor. Courts are split when a defendant mistakenly aids an aggressor. Some Courts say the defendant who mistakenly aids an aggressor STEPS-INTO-THE-SHOES of the aggressor and cannot claim any defense. Other Courts hold that a defendant can claim this defense if they acted on REASONABLE APPEARANCES.
+
+Definition 37. DEFENSE of PROPERTY?
+Under CRIMINAL LAW a defendant is privileged to use reasonable, non-deadly force to protect his own property or the property of others from harm.
+
+
+Definition 38. Malicious mischief
+Definition 39. DEFENSE OF INTOXIATION
+
+
+Practice Question 16-1
+Tom and Dick burst into the 7-11 store in Sacramento through the open door with their guns drawn at midnight. They wanted to rob the store the first night it opened.
+“Stick ‘em up,” yelled Tom.
+Unfortunately, the store was empty because they made a big mistake. No one was there. There was no merchandise. The store wasn’t going to open until the next week.
+They were so mad they ripped the security camera off the wall and threw it in the river.
+The next morning Tom and Dick saw themselves on the Dumb Crook Show on TV. The store security camera had filled them trying to rob the empty store. They were afraid they would be caught. So to escape Tom drove real fast to San Francisco with Dick as his passenger.
+One the freeway going 75 mph, Tom was distracted and accidentally bumped Victoria’s car. She was only going 70 mph, the posted limit. She spun out of control and crashed. She survived, but went into labor, and her full-term, viable baby was born dead.
+Tom then got off the freeway and drove down the crowded city surface streets of San Francisco at 80 mph. Dick was silent. The posted limit was 25 miles per hour. The car ran over homeless person Victor. He died instantly.
+Discuss the possible charges against Tom and Dick.
+
+Sample Answer 15-1: Attempt, Homicide, Res Gestae, Depraved Heart
+STATE V. TOM
+1. CONSPIRACY?
+Under common law a CONSPIRACY is an agreement between two or more people to work toward an illegal goal. Modernly an overt step toward the criminal goal is often required. Conspiracy does not merge into the ultimate crime.
+Here there was an implied agreement between Tom and Dick, two people, for an illegal goal, because they “burst” into the store together and “wanted to rob” the store. They committed an overt step toward their goal because of this.
+Therefore Tom can be charged with conspiracy.
+2. ATTEMPTED ROBBERY?
+Under criminal law an ATTEMPTED ROBBERY is committed with there is a SUBSTANTIAL STEP taken toward committing a robbery. A robbery is a LARCENY, a trespassory taking of personal property with an intent to permanently deprive, from a person by force or fear overcoming the will of the victim to resist.
+Here Tom took a SUBSTANTIAL STEP toward completing the robbery because he went to the store “with a gun” and “burst” through the door. And his goal was the crime of robbery because he “wanted to rob” the store.
+Therefore, Tom can be charged with attempted robbery.
+3. DEFENSE OF MISTAKE OF FACT?
+Under criminal law a mistake of fact is a valid defense if it NEGATES IMPLIED CRIMINAL INTENT. Attempt is a SPECIFIC INTENT crime, so any mistake of fact that negates criminal intent is a valid defense.
+Here Tom made a mistake because he thought the store was open for business, but that mistake does not negate intent because he “wanted to rob” the store.
+Therefore, Tom’s mistake of fact does not negate his criminal intent, and his defense argument fails.
+
+4. BURGLARY?
+Under the common law a burglary was a breaking and entering of the dwelling of another in the nighttime with intent to commit a felony. Further, a CONSTRUCTIVE BREAKING would be found if an entry was made by trick, threat of violence or with the help of a conspirator. MODERNLY burglary has been extended to almost any structure and all times of the day. If a larceny is not a felony, it still supports a charge of burglary. And modernly a constructive breaking will be found if there is any TRESPASSORY ENTRY, an entry without permission, express or implied.
+Here there was no entry to a dwelling, and the entry was through an “open” door. Therefore, no common law burglary occurred. But there was an entry to a structure because they entered a “store” and it was with intent to commit a felony because they “wanted to rob” the store. Finally, a CONSTRUCTIVE BREAKING would be found modernly because their entry was trespassory. It was trespassory because the store was not open for business, and they had no permission to enter it, either expressly or impliedly.
+Therefore they could be charged with burglary modernly but could not have been charged at common law.
+5. LARCENY?
+Under common law LARCENY was the trespassory taking and carrying away of the personal property of another with intent to permanently deprive. Modernly it is codified as “theft”.
+At common law some Courts held that property attached to the land could not be the subject of a larceny because it was real property and not personal property. Other courts disagreed, and modernly all courts would hold that when property is severed from the land to be stolen it is transformed from real property to personal property and can then be the subject of a larceny.
+Here Tom took and carried personal property of another because he “ripped the security camera” from the wall and took it to the “river”, and he intended to permanently deprive because he threw it in the river.
+Therefore Tom can be charged with larceny.
+6. MURDER OF THE BABY?
+MURDER is an unlawful HOMICIDE, the killing of one human being by another with MALICE AFORETHOUGHT. MALICE for murder can be 1) an express INTENT TO KILL, or implied by 2) intent to commit GREAT BODILY INJURY, 3) a homicide caused by commission of an INHERENTLY DANGEROUS FELONY, the “FELONY MURDER RULE” or 3) DELIBERATE CREATION OF EXTREME RISKS to human life with AWARENESS of the risks and a CONSCIOUS DISREGARD for them, the “DEPRAVED HEART” murder.
+Under the common law and broadly adopted modern law a HUMAN BEING is a person that has been born alive and is not yet dead. About half the States have adopted FETAL-MURDER statutes which define the killing of a fetus with malice aforethought punishable as a murder, but they vary widely. The death of a fetus cannot qualify as a manslaughter.
+Murder may be charged under the FELONY-MURDER RULE if a death is caused by the commission of an inherently dangerous felony, but only if the death is caused by acts done during the RES GESTAE of the underlying felony. The RES GESTAE of a crime is the sequence of events from the first substantial step to committing the crime and ending when the defendants leave the scene of the crime and reach a place of relative safety.
+Here there was no homicide because the baby was “born dead” and not born alive. But this may be defined as a murder under a fetal-murder statute in some States because the fetus was "full term."
+Even if this State had a fetal-murder statute, malice for murder could not be based on intent to kill, intent to cause great bodily injury or depraved heart because the collision was by "accident" and at a reasonable speed of "75".
+Further, malice could not be based on the felony-murder rule because the death occurred after the res gestae the attempted robbery had ended. It ended when they at a place of “relative safety” and were able to watch “TV”.
+Therefore, Tom cannot be charged with murder because there is no basis for finding malice, even if there was a fetal-murder statute.
+7. INVOLUNTARY MANSLAUGHTER.
+Under criminal law INVOLUNTARY MANSLAUGHTER is an UNINTENTIONAL homicide without malice aforethought resulting from GROSS NEGLIGENCE, RECKLESSNESS or the commission of a MALUM IN SE CRIME that is not inherently dangerous enough for application of the felony murder rule.
+GROSS (CRIMINAL) NEGLIGENCE is the deliberate breach of a pre-existing duty to protect others from extreme risks, and RECKLESSNESS is the deliberate creation of extreme risks to others.
+As discussed above, the death of a fetus does not qualify as a manslaughter. Therefore, Tom’s act was not sufficient to charge him with involuntary manslaughter.
+8. MURDER of Victor?
+Murder, defined above, can be based on the DEPRAVED HEART doctrine where one acts unreasonably to DELIBERATELY CREATE EXTREME RISKS TO OTHERS, the actus reus, with AWARENESS of the risks and a CONSCIOUS DISREGARD for the risks, the mens rea.
+Here Tom caused a homicide because he killed Victor, a human being. And he deliberately created extreme risks because he drove down the “crowded surface streets” at “80 mph”.
+
+Further, he was aware of the risks because he was in full control of his faculties. And he
+consciously disregarded the risks because he continued to do this without any compelling reason. Therefore, Tom can be charged with the murder of Victor.
+
+STATE V. DICK.
+9. CONSPIRACY, ATTEMPTED ROBBERY, BURGLARY and LARCENY?
+Dick was an equal participant in the crimes of conspiracy, attempted robbery, burglary and larceny, and did all of the same things as Tom relative to these acts.
+Therefore Dick was DIRECTLY LIABLE and could be charged with each of these crimes on the same facts and legal theories as explained for Tom above.
+10. MURDER of Victor?
+Tom killed Victor and not Dick, and since “Dick was silent” and not urging Tom to run over Victor or do anything criminal, Dick could only be charged with this murder based on a vicarious liability theory. There are two vicarious liability theories: conspiracy theory and accomplice theory.
+CONSPIRACY THEORY? A person may be charged with vicarious liability for a crime based on CONSPIRACY THEORY if while they are a member of a conspiracy a co-conspirator commits the crime within the scope of the conspiracy. But a conspiracy ends when the criminal goal is ATTAINED or ABANDONED.
+Here Dick was a member of a conspiracy to rob the store, but that conspiracy goal was abandoned when they found the store closed. Since the conspiracy had ended, Tom did not kill Victor the next day “within the scope” of the conspiracy.
+Therefore Dick cannot be charged on this basis.
+ACCOMPLICE THEORY? A person who commits or helps commit a crime is liable for all subsequent crimes by co-felons that are a direct and natural result of the prior crimes.
+Here Dick helped Tom try to rob the store the prior day, so he would be liable for any crimes by Tom that are a direct and natural result of the attempted robbery. But the murder of Victor was not a foreseeable result of the prior robbery attempt.
+Therefore Dick cannot be charged with Victor’s death based on accomplice liability. Since Dick had no direct liability or vicarious liability he cannot be charged with Murder.
+
+[ANSWER EXPLANATION: The main points here are that:
+1) Modernly a burglary generally requires a trespassory entry, an entry without permission to
+enter, and does not necessarily require a physical breaking. 2) A fetus is not generally considered a human being.
+3) There are fetal-murder statutes you might need to discuss, but there are no “fetal-manslaughter” statutes (or if there are it is extremely unusual).
+4) The felony-murder rule cannot be applied to a death that results from acts done so long after the robbery that they were not part of the res gestae of the crime.
+5) There is no conspiracy liability for crimes committed by co-conspirators after the conspiracy has ended.
+6) Accomplices in one crime are not automatically liable for all subsequent crimes committed by other accomplices, even if they are committed in their presence unless there is some direct and natural causality linking the second crime back to the first crime.]
+
+
+
+Practice Question 16-2
+Huey and Louie agreed to kidnap Frank's daughter, Millie, and hold her for ransom. Frank was an old movie star with lots of money.
+Huey knew that Louie was a convicted rapist, so he said, "Louie! I want you to swear that you won't touch this girl. Because we are just in this for the ransom. Nothing else. And if you do anything bad to her, that is going to hurt our chances to get the ransom. So, do you swear?"
+Louie said, "Huey, I swear on a stack of bibles I won't touch the dame."
+So Huey and Louie kidnapped Millie and held her for ransom in a rundown motel.
+Huey went to the store for smokes and when he came back he discovered Louie had sex with Millie by telling her he would let her go in exchange. He was furious and afraid. He said, "Louie, I quit. I ain't having nothing to do with this no more!"
+Huey left and went to a bar where he got very drunk. That night Millie became so despondent over allowing Louie to have intercourse with her she hung herself in the bathroom of the motel room while Louie was snoring in the bed.
+Police discovered where Louie was and surrounded the motel room the next morning. Louie vowed not to be taken alive and was gunned down by the cops.
+Huey woke up at noon. Unaware of what happened to Millie and Louie, he decided to turn himself in. So he went to the police that morning and told them everything he knew in an effort to help rescue Millie.
+What crimes can Huey be charged with?
+
+Sample Answer 15-2: Accomplice and Conspiracy Liability
+STATE V. HUEY
+1) CONSPIRACY?
+Under common law a CONSPIRACY was an agreement between two or more people to pursue an illegal goal. Modernly an overt step taken toward the criminal goal is often required. Conspiracy does not merge into the criminal goal. A conspirator may be charged with all crimes by co- conspirators while they are members of the conspiracy that are within the scope of the conspiracy agreement, foreseeable acts in furtherance of the conspiracy goal.
+Here Huey agreed with another person because he "agreed" with "Louie", and the agreement was to pursue an illegal goal because it was to "kidnap Millie" and hold her for ransom. They took an overt step because they did kidnap her.
+Therefore, Huey can be charged with conspiracy.
+2) EFFECTIVELY WITHDRAW from the conspiracy?
+Under criminal law EFFECTIVE WITHDRAWAL from a conspiracy is a defense to liability for subsequent crimes by co-conspirators if the defendant gives notice to the other conspirators of intent to withdraw and then the defendant must act to thwart the conspiracy from attaining its goal.
+Here Huey gave notice because he told Louie "I quit." And he acted to thwart the conspiracy because he "told the police."
+However, Huey did not act to thwart the conspiracy until after the kidnapping, rape and death of Millie. Withdrawal only is a defense to subsequent crimes by co-conspirators and here the withdrawal was not effective until after all crimes had been committed.
+Therefore, Huey effectively withdrew from the conspiracy when he told the police everything, but that did not absolve him from crimes that occurred before that time.
+3) KIDNAPPING?
+Under criminal law a KIDNAPPING is the unlawful taking or confining of a person against their will.
+Here Huey took and confined Millie against her will because he and Louie “kidnapped Millie”. Therefore, Huey can be charged with kidnapping.
+
+4) RAPE under a theory of ACCOMPLICE LIABILITY?
+Appendix B: Sample Answers
+ Under criminal law RAPE is unlawful intercourse with a person without consent. An accomplice to a crime may be charged with all subsequent crimes committed by other accomplices if they were foreseeable as the direct and natural results of their own criminal acts.
+Here Louie had intercourse with Millie because they "had sex." And it was without consent because Millie only agreed to intercourse because she had been kidnapped and Louie said he "would let her go in exchange." Since she was being held against her will and under duress, her apparent consent to intercourse was not effective.
+Therefore, Louie raped Millie, and that rape was foreseeable to Huey as a direct and natural consequence of his own crime of kidnapping Millie. This was all direct and natural, and should have been foreseeable to Huey because he knew "Louie was a convicted rapist."
+Therefore, Huey may be charged with the rape of Millie under a theory of accomplice liability.
+5) MURDER of Millie?
+Under criminal law murder is an unlawful homicide, the killing of one human being by another with malice aforethought. Malice for murder may be 1) express intent to kill, or implied by 2) intentionally causing great bodily injury, 3) intentionally committing an inherently dangerous felony, the FELONY-MURDER RULE, or 4) intentionally acting with an awareness of and conscious disregard for unreasonable risks to human life, the DEPRAVED HEART THEORY. At common law there were no degrees of murder but modernly statutes define first degree murder as those that are 1) willful, deliberate and premeditated, 2) by enumerated means, or 3) caused by the commission of enumerated dangerous felonies. All other murders are in the second degree.
+Under criminal law one of the “inherently dangerous felonies” for application of the felony- murder rule is RAPE.
+Here there was a homicide because Millie was a human being and she died as a result of the acts of Louie.
+Huey would argue that Millie committed suicide and not homicide. But her death by her own hand was directly caused by the rape by Louie. She would not have killed herself if she had not been raped, and she would not have been raped if Huey had not kidnapped her and left her with Louie. The rape by Louie was foreseeable to Huey at the time of the kidnapping, so his own acts were the actual and proximate cause of her death. Huey and Louie effectively caused Millie to be the instrumentality of her own death.
+Further, because Huey acted to place Millie at peril, he had an affirmative duty to protect her from the results of that peril, including protecting her from both Louie and her own suicidal impulses.
+Therefore, the state would successfully argue that this was a homicide and not a simple suicide.
+
+And the state would argue the FELONY-MURDER RULE applies to prove malice aforethought for
+murder because Millie died because of the commission of an inherently dangerous crime, rape.
+As an alternative, the State may also argue that DEPRAVED HEART THEORY applies. Huey kidnapped Millie and left her with Louie, deliberate acts that created extreme risks to human life, and he did that with an awareness of and conscious disregard for the risk to human life because he knew Louie was a “rapist”.
+Therefore, Huey could be charged with murder on a FELONY-MURDER or DEPRAVED HEART theory.
+6) MURDER of Louie?
+Under the REDLINE RULE the killing of a criminal accomplice by any party other than another
+criminal accomplice during the commission of an inherently dangerous felony cannot be used as a basis for charging murder under the FELONY-MURDER RULE.
+Here there was a homicide because Louie was a human being and he was "killed by police." But the police shooting of Louie was a justified act to prevent a felony.
+Therefore, Huey cannot be charged with FELONY-MURDER of Louie.
+[ANSWER EXPLANATION: This question points out two issues. Conspiracy liability only extends to acts within the SCOPE OF THE CONSPIRACY, meaning they must be foreseeable acts in furtherance of the conspiracy goal. But, accomplice liability extends to all foreseeable crimes by co-felons that are a direct and natural result of an initial crime. Here the rape is a direct and natural result of the kidnapping, so Huey is liable based on accomplice theory even if he is not liable based on conspiracy theory.
+Secondly, Huey failed to effectively withdraw by acting to thwart the conspiracy, so he ends up liable for crimes that occurred after he said, "I quit."
+But Huey cannot be charged with murder for the death of Louie (in many or most States) because of the Redline Rule.]
+
+
+
+Practice Question 16-3
+Tom and his lover Dick made frequent trips to Mexico. Dick was getting a little impotent, so on one trip they bought some Viagra with the intent of smuggling it into the United States. They thought this was a felony, but they were wrong. It was not a crime at all.
+Officer Oscar tried to pull them over solely because they looked gay, and Oscar hated gays. He intended to harass them. If he was lucky, he thought, maybe he could beat them up. Oscar had some issues to resolve, but he did not have probable cause to stop the car.
+Tom was afraid. He felt Oscar must somehow know he was smuggling Viagra. He thought he would be strip searched, and he had an overwhelming phobia of body cavity searches. He thought he would be put in prison and treated very badly.
+Tom was scared to death and could not bring himself to stop the car. He knew it was wrong, but he could not help himself. He was in a daze.
+Tom continued to drive carefully at 55 mph and Oscar continued to follow him. Oscar was furious. Then Oscar shot at the car several times and Dick was killed.
+Tom is charged with the murder of Dick.
+Discuss Tom's liability for murder and lessor included offenses, and his applicable defenses.
+
+Sample Answer 15-3: Murder, Mistake of Law, Self Defense, Insanity
+STATE v. TOM 1) MURDER?
+Under criminal law MURDER is an unlawful HOMICIDE, the killing of one human being by another, with MALICE aforethought. Malice for murder can be 1) express intent to kill or implied by 2) intent to cause great bodily injury, 3) intent to commit an inherently dangerous felony, the FELONY MURDER RULE or 4) intent to act with awareness of and conscious disregard for an unreasonably high risk to human life, the DEPRAVED HEART theory.
+Under common law there were no degrees of murder, but modernly FIRST DEGREE murder is 1) willful, deliberate and premeditated, 2) murder by enumerated means or 3) murder during enumerated dangerous felonies. All other murder is second degree.
+Here there was a homicide because Dick was a human being and he was “killed” by another human being, Oscar. But Tom did not do anything intending to cause Dick or anyone else to be killed or intending to cause great bodily injury to anyone.
+Further, Tom was not engaged in commission of an “inherently dangerous felony” at the time so the felony-murder rule has no application. Therefore the only basis for charging Tom with murder would be the DEPRAVED HEART THEORY.
+Tom did not deliberately create extreme risks to other people. He could not have reasonably foreseen Oscar would start shooting. Even if some danger could have been foreseen, Tom was not aware of it and did not consciously disregard the risks because he was “in a daze”.
+Therefore, Tom did not appear to deliberately create and consciously disregard extreme risks to others, and cannot be charged with murder under the DEPRAVED HEART theory unless that could be proven.
+If murder could be charged here, it would be second degree murder because the death was not willful and deliberate, during a typically enumerated felony or by a typically enumerated means.
+2) INVOLUNTARY MANSLAUGHTER?
+Involuntary manslaughter is an unintentional homicide resulting from GROSS NEGLIGENCE, RECKLESSNESS or the commission of a MALUM IN SE crime insufficient to support the felony murder rule.
+GROSS (CRIMINAL) NEGLIGENCE is the deliberate breach of a pre-existing duty to protect others from extreme risks, and RECKLESSNESS is the deliberate creation of extreme risks to others.
+Here there was an unintentional homicide because Dick died and Tom did not intend for him to die. And Tom was not committing any crime because smuggling Viagra was "not a crime." The MISTAKE OF LAW by Tom does not make an otherwise innocent act a crime.
+
+Further, resisting unlawful arrest is not a crime. Here the arrest was unlawful because there was
+“no probable cause" and the police wanted to "harass" and "beat" Tom and Dick.
+And Tom was not grossly negligent because he drove “55 mph” and did not deliberately create extreme risks to others.
+The State could only argue that Tom created extreme risks by refusing to stop his car, but he did not deliberately create those risks because he had an “overwhelming phobia”, was “scared to death” and “could not bring himself to stop” the car.
+Therefore, Tom could not be charged with involuntary manslaughter unless it could be proven his failure to stop was criminally negligent.
+3) SELF-DEFENSE?
+Under criminal law a defendant is privileged to use reasonable force as necessary for SELF- DEFENSE.
+Here Tom acted to defend himself from harm because he was “scared to death” and Oscar wanted to "beat him." Oscar had no legal right to stop Tom because he had no probable cause. And Tom acted reasonably and used reasonable force because he only “drove at 55 mph”.
+The state may argue Tom acted unreasonably by refusing to stop, even if the police lacked probable cause, but there is no legal basis for such a claim.
+Therefore, Tom would succeed in his defense that he acted in reasonable self-defense. 4) INSANITY?
+Under criminal law INSANITY is a defense that negates criminal intent. Under the M’NAUGHTEN RULE a person is insane if a disease of the mind so impairs their reasoning that they are unable to appreciate the nature and quality of their acts or to know that they are wrong. Under the IRRESISTIBLE IMPULSE theory a person may raise the defense of insanity if they are unable to control their acts, even if they know the act is wrong.
+Here Tom could not plead M’Naughten because “he knew it was wrong”. But Tom could plead an irresistible impulse because “he had an overwhelming phobia” and “he could not help himself”.
+Therefore, Tom might be successful with an insanity defense.
+[ANSWER EXPLANATION: This question is quirky so paddling is necessary. Even if Tom and Dick were committing a crime it was not one of the “inherently dangerous crimes of rape, robbery, burglary or arson” so the felony-murder rule has no application here.
+Tom could only be charged under Depraved Heart. For that it must be shown he created extreme risks to others with an awareness of the risks and a conscious disregarded for them. But how could he have foreseen Oscar was crazy enough to shoot Dick? If Tom acted unreasonably enough to be charged with murder, he could not show he acted reasonably for a plea of self-defense]
+
+
+
+Practice Question 16-4
+Jim was sweet on Sue, a cute little red-haired girl in his Senior class, but she was more interested in a big, dumb, old football player named Chester.
+Jim thought that Sue would dump Chester for him if he was a hero. So Jim set fire to the wastepaper basket in old-lady Smith's classroom during the class break intending to report it and be a hero. He didn't intend any harm to the building, and he honestly believed the fire would not hurt the school at all. Unfortunately, the fire slightly singed the wall, and some other boys poured water on it before Jim could report it.
+In the confusion Sue dropped her wallet. Jim picked it up and hid it. He planned on giving it back to her that night. Then she would see he is a hero, and she would have to go to homecoming with him.
+Jim called Sue's house several times that night to tell her he had her wallet. But Sue's mother kept saying she was out with Chester. Jim did not tell Sue's mother about the wallet.
+This went on all night and Jim got so depressed he went to the river, pocketed Sue's money and threw Sue's wallet as far out into the current as he could throw.
+The next day Chester came up to Jim in first period and asked him a favor. Chester said the football team had to assemble for a yearbook picture, so Chester asked Jim to buy him two homecoming tickets in fifth period for Sue and him to go to the dance. Jim intended to do Chester a favor and took his $10.
+Jim got mad and decided he would just keep Chester's money. Then after second period Chester offered Jim $20 more so Sue and him could have their pictures taken at the dance. Jim agreed and took the money with every intention of stealing it.
+Jim used all of Chester's money to buy cigarettes and Playboy magazines. Discuss Jim's crimes.
+
+Sample Answer 15-4: Arson, Larceny, Embezzlement
+
+STATE v. JIM 
+
+1) ARSON?
+
+Under common law ARSON was the malicious burning of the dwelling of another. Modernly arson has been extended to the malicious burning of almost any structure. Malice for arson requires a burning with wrongful intent..
+Here Jim caused a burning of a structure because the "wall" of the school "classroom" was "singed."
+And Jim acted with malice because he acted with the wrongful intent of setting the fire to make himself look like a "hero." This was wrongful because he did it to disrupt the school and knowing it would damage the school’s wastepaper basket.
+Therefore, Jim can be charged with arson. 2) LARCENY of wallet?
+Under criminal law LARCENY is the trespassory taking and carrying away of the personal property of another with an intent to permanently deprive. Modernly it is defined as THEFT. Under the RELATION BACK doctrine some courts held that an initial taking of lost property with intent to return property to the owner becomes trespassory when a later decision to steal “relates back” to the original taking. Other courts held that the finder of lost property holds it in “CONSTRUCTIVE TRUST” for the rightful owner and a later taking was an EMBEZZLEMENT.
+Here Jim took and carried personal property of another because he "picked up" and "took" the "wallet belonging to Sue." However, at the time Jim took the wallet he did not have any intent to permanently deprive so that taking was not trespassory.
+Later Jim formed a larcenous intent when he became "depressed", "pocketed Sue's money" and "threw" the wallet into the river. This was a trespassory taking and Jim clearly intended to permanently deprive because he threw the wallet into the river. This larcenous intent related back to the original taking under the RELATION BACK doctrine.
+Therefore, Jim can be charged with larceny in a Court that recognizes the RELATION BACK theory.
+3) EMBEZZLEMENT of wallet?
+Under criminal law EMBEZZLEMENT is an intentional trespassory conversion of personal property of another by one entrusted with lawful possession. Modernly it is defined as THEFT.
+As stated above, some Courts held that a decision to keep lost property after originally intending to return it was an EMBEZZLEMENT based on CONSTRUCTIVE TRUST THEORY.
+
+Here there was no trespassory taking of the wallet because Jim “intended to return” it. Once he had the wallet he held it in constructive trust. But there was a trespassory conversion with intent to deprive because he decided to keep the money.
+Therefore Jim could be charged with embezzlement in a Court that holds to the CONSTRUCTIVE TRUST THEORY.
+4) EMBEZZLEMENT of $10? Embezzlement is defined above.
+Here Jim was entrusted with possession because Chester "gave him $10 to buy tickets." This was personal property because it was money. And Jim intentionally and trespassorily converted the money to his own use with intent to permanently deprive because he "decided to keep it" and "used it to buy cigarettes and Playboy magazines."
+Therefore, Jim can be charged with embezzlement. 5) LARCENY of $20 BY TRICK?
+Under criminal law LARCENY BY TRICK is the trespassory carrying away of the personal property of another with an intent to permanently deprive after gaining possession by means of a misrepresentation of fact. Modernly it is defined as THEFT.
+Here Jim trespassorily carried away personal property of another because he took "Chester's $20" to buy himself cigarettes and Playboy magazines. And it was personal property because it was money.
+Jim had an intent to permanently deprive because his intent at the time he gained possession was to “steal it." And Jim used a misrepresentation of fact because he said he would use the money to "buy pictures" when his true intent was to "steal it."
+Therefore, Jim can be charged with larceny of the $20 by trick.
+[ANSWER EXPLANATION: This question raises the issues of the malicious intent for arson. It is not arson to burn a building by accident unless the fire was not set for a "malicious" purpose.
+Malice for arson means for a "wrongful” but not necessarily illegal purpose. The purpose for the fire is malicious if the defendant started it to injure or frighten people or to damage their property. If a fire is set to clear brush on the defendant’s land and for no other purpose it is not malicious, even if the fire violated local burn-control laws. But if the fire is set to cause hurt, disruption, annoyance, etc. then the purpose is wrongful and malicious.
+Defendants who take property intending to return it are not guilty of a larceny at the time of the taking, but it becomes larceny (under the ‘relation back’ view) if the defendant later decides to keep the property. Some Courts held that lost property taken with intent to return it is held in ‘constructive trust’ so a subsequent keeping of the property was embezzlement. That was especially true if property was lost on a “common carrier” like a taxicab, train, or boat.]
+
+Practice Question 16-5
+Yang rode his bicycle down Rodeo Drive looking for a victim. He saw a "Hot Tomato" ready to cross the street, and as he coasted past her he deftly lifted her wallet right out of her purse without her knowing.
+At the next street he snatched another purse when an "Old Lady" wasn't even looking. But she was holding tight and fell over into the street. As she hit the pavement she lost her grip and Yang rode away with another prize.
+Yang was having a good day.
+At the next corner Yang reached out to snag another purse. But at the last second as he reached out he realized the "Young Chick" was not carrying a purse.
+Disappointed, Yang called it a day. He decided to score some dope with his earnings. Seeing a dude near an alley, he entered into some negotiations. The dude said he could sell him a baggy of "grass" for $10. Yang agreed and handed over $10. Suddenly cops came out of nowhere and jumped on them before Yang got possession. It turned out the "grass" really was grass -- lawn clippings from the dude's back yard.
+What crimes can Yang be charged with and what defenses might be raised?
+Sample Answer 15-5: Attempt, Mistake of Fact, Mistake of Law
+STATE v. YANG
+1) LARCENY from the "Hot Tomato"?
+Under criminal law LARCENY is the trespassory taking and carrying away of the personal property of another with an intent to permanently deprive. Modernly it is defined as THEFT.
+Here Yang took and carried personal property of another because he "deftly lifted" the "wallet." Yang's intent to permanently deprive is implied by the facts.
+This was a larceny but not a robbery because he did not use force or fear. Therefore, Yang can be charged with larceny.
+2) ROBBERY of the Old Lady?
+Under criminal law ROBBERY is a larceny, the trespassory taking and carrying away of the personal property of another, from the person by means of force or fear overcoming the will of the victim to resist.
+Here Yang took and carried personal property of another because he "snatched a purse" and "rode away with the prize." Yang's intent to permanently deprive is implied by the facts.
+This was a larceny from the person because the Old Lady was "holding tight" until she "lost her grip". And he used force to overcome the will of the victim to resist because he used force to break the Old Lady's "grip".
+Therefore, Yang can be charged with robbery.
+3) ATTEMPTED ROBBERY or ATTEMPTED LARCENY of the Chick?
+Under criminal law an ATTEMPTED CRIME is a SUBSTANTIAL STEP toward committing a crime, with intent to commit the crime. Both LARCENY and ROBBER are defined above.
+Here a SUBSTANTIAL STEP was taken toward LARCENY because Yang "reached out to snag another purse" and he clearly intended to take and carry away the purse to permanently deprive the Chick of it.
+Therefore Yang can clearly be charged with ATTEMPTED LARCENY.
+But there was also an IMPLIED INTENT that Yang intended to commit a larceny by force or fear because he had just previously robbed the "Old Lady" and that prior act showed he had no intention of letting go of the Chick’s purse if she resisted his attempt to take it.
+Therefore, Yang can be charged with ATTEMPTED ROBBERY and it would be up to the jury to decide if there was adequate evidence of intent to rob the Chick if she resisted his efforts to take her purse.
+
+4) MISTAKE OF FACT as a defense to ATTEMPTED LARCENY or ROBBERY?
+Under criminal law MISTAKE OF FACT is a defense that the defendant did not have the necessary intent because he either did not intend to commit the criminal act (GENERAL INTENT crimes) or to cause the criminal result (SPECIFIC INTENT crimes.)
+Here Yang reached out to take a purse that did not exist. He clearly had an intent to commit a larceny or robbery. He might argue that the Chick did not have a purse so it would have been impossible for him to commit a crime. But ATTEMPT is a SPECIFIC INTENT crime so Yang would have to show he did not have any intent to cause a criminal result.
+Since intent to cause a criminal result is shown, Yang could not use mistake of fact as an effective defense.
+5) MISTAKE OF LAW as to the drugs?
+Under criminal law a MISTAKE OF LAW about the legality of an intended act does not alter the legality of the attempted or committed act.
+Here Yang attempted to buy a bag of "grass" that truly was grass. He intended to commit an illegal act because he thought the “grass” was illegal drugs. But he only took a substantial step toward an act that would have been a legal act, the act of buying lawn clippings. His criminal intent does not change that legal act he attempted to complete into an illegal act.
+Therefore, Yang cannot be charged with an attempted purchase of illegal drugs.
+[ANSWER EXPLANATION: This question raises the distinction between larceny from the person (pick pocket, purse snatcher) and robbery (larceny from person by fear or force.) It also raises the issues of mistake of fact. This is only a defense if it negates criminal intent. It is no defense just because the attempted crime is not feasible.
+Mistake of law is also raised, and it can be very confusing. Remember this simple rule: The legality of an intended act does not alter the legality of the attempted or committed act. So focus on the act actually attempted or committed, and do not focus on the act intended.
+For example, suppose jealous Boris Badanuf wants to kill Natahsa Nogudnik and takes the substantial step of driving to her house and shooting her body several times, but she has already died from a broken heart (Bullwinkle rejected her). Is it attempted murder or legal impossibility?
+The answer is the crime of attempt is committed at the time of the substantial step. Always focus on that instant. If Natasha was alive at the instant Boris took that first substantial step (driving up to her home), then Boris is guilty of attempted murder at that instant. If Natasha was dead at the instant of the substantial step, she could not be killed at that moment or any time after that, so Boris’ act (the substantial step) could not ever be a crime.]
+
+
+Practice Question 16-6
+Karen was furious because her lover Billy ran off with Mary. Karen decided to kill Mary and looked for some dynamite to blow Mary straight to Hell.
+Karen went to a "Dynamite R Us Store", but the owner Marvin refused to sell her any dynamite. Karen pulled a gun and demanded quality service like it said on the sign in the window. Marvin said, "Yes, Ma'am!" and handed over 12 sticks of dynamite. Karen was happy with the service. But as she was putting away the gun, it accidentally went off and shot Marvin between the eyes. Karen felt real bad about it.
+As Karen approached Mary's mobile home she was stopped by Ruby. Ruby gave her a hard look. Ruby "dissed" her. Ruby challenged her to a spelling bee and criticized her choice of attire. That was all more than Karen could take, because she always had a short fuse. So she smoked Ruby above the ear with a round from the '38.
+Karen proceeded to put the dynamite under Mary's double-wide "Jerry Springer" brand mobile home. She realized that the blast would probably kill Billy too, and she felt real bad about it. Billy was the reason she was acting out, her love for him and all. But the way she figured, a girl's got to do what a girl's got to do. So she washed that man right out of her hair.
+That night the blast killed both Mary and Billy.
+Discuss the potential first degree murder charges Karen might face along with lesser included offenses and her potential defenses.
+
+
+Sample Answer 15-6: Murder, Murder, Murder
+STATE v. KAREN
+1) MURDER of Marvin?
+Under criminal law MURDER is an unlawful homicide, the killing of one human being by another with malice aforethought. Malice for murder may be 1) express intent to kill, or implied by 2) intentionally causing great bodily injury, 3) intentionally committing an inherently dangerous felony, the FELONY-MURDER RULE, or 4) intentionally acting with an awareness of and conscious disregard for unreasonable risks to human life, the DEPRAVED HEART THEORY.
+The felony-murder rule applies to deaths caused by acts done during the RES GESTAE of an inherently dangerous felony, the events beginning with the first substantial step toward commission of the crime and ending when the defendants leave the scene of the crime and reach a place of relative safety.
+At common law there were no degrees of murder but modernly statutes define first degree murder as those that are 1) willful, deliberate and premeditated, 2) by enumerated means, or 3) caused by the commission of enumerated felonies. All other murders are in the second degree.
+Here there was an unlawful homicide because Marvin was a human being and he was killed by Lucy, another human being. And it was caused by commission of an inherently dangerous felony, ROBBERY, a larceny from the person by force or fear. Karen was taking personal property of another with intent to permanently deprive because she was taking “dynamite” from Marvin, and she was using force or fear to overcome his will to resist because she used a “gun”. The death of Marvin occurred within the RES GESTAE of the robbery because he was shot before she left the scene of the crime.
+Therefore, Karen can be charged with murder for killing Marvin during the robbery. This would typically be FIRST DEGREE MURDER because robbery is typically one of the “enumerated felonies” for first degree murder.
+2) MURDER of Ruby? MURDER is defined above.
+There was an unlawful homicide because Ruby was a human being killed by Karen, another human being, without legal justification.
+Here Karen appears to have acted with an express intent to kill because she shot Ruby in the "head" with a "gun". These facts imply an intent to kill. Alternatively, Karen clearly intended great bodily injury because the homicide was caused by a "firearm". Use of a firearm implies intent to cause serious bodily harm, regardless of where the victim is shot.
+Karen also appears to have acted with an awareness and conscious disregard for danger to human life because she deliberately shot Ruby in the head for little good reason. Her act created extreme risks to Ruby, she apparently had an awareness of the risks and consciously disregarded
+them.
+Based on any of the above theories, Karen could be charged with the murder of Ruby.
+It appears Karen killed Ruby willfully and deliberately. If that is proven the murder was FIRST DEGREE. Karen might argue that she did not act willfully and deliberately to kill Ruby and only reacted instinctively because she had a “short fuse”, a MITIGATING FACTOR that caused her to suffer from impaired capacity.
+If Karen can convince the jury she acted instinctively and did not act willfully, deliberately and with premeditation the murder might be reduced to SECOND DEGREE.
+3) ADEQUATE PROVOCATION for VOLUNTARY MANSLAUGHTER?
+Under criminal law VOLUNTARY MANSLAUGHTER is an unlawful, intentional homicide without malice aforethought because of adequate provocation sufficient to raise a reasonable person to a fit of rage which could and actually did cause the homicide.
+Generally “mere words alone” are not considered at law to be adequate provocation.
+Here there was a lack of adequate provocation because "hard looks", being "dissed", challenged to a "spelling bee" and "criticisms of attire" are “mere words alone” that would not be sufficient to raise a reasonable person to a fit of murderous rage. The subjective factor that Karen "had a short fuse" would not lower the standard of conduct.
+Therefore, Karen would not succeed in reducing the murder charge to voluntary manslaughter.
+4) MURDER OF MARY? Murder is defined above.
+Here there was a homicide because Mary was a human being killed by Karen, another human being. And Karen had an express intent to kill because she "decided to kill Mary". Further, this killing was willful, deliberate and premeditated because it was planned in advance.
+Therefore, Karen can be charged with FIRST DEGREE murder of Mary and she has no defense.
+5) MURDER OF BILL? Murder is defined above.
+Here there was a homicide because Bill was a human being killed by Karen, another human being. Karen may have had an express intent to kill because she "knew the blast would probably kill Bill." But Karen would argue that she did not want to kill Bill because "she felt real bad about it." Regardless, Karen deliberately created extreme risks to human life with awareness of and conscious disregard because she "knew the blast would probably kill Bill."
+Therefore, Karen could be charged with murder based on a Depraved Heart Theory of malice..
+Further, this would generally be FIRST DEGREE murder because the use of explosives to murder is generally one of the “enumerated means” for first degree murder.
+Therefore, Karen can probably be charged with FIRST DEGREE murder of Bill even if she did not willfully and deliberately cause his death with premeditation. She has no defenses.
+[ANSWER EXPLANATION: This purpose of this question was to present four murders, each representing one of the four types of malice for murder. Marvin is a “felony-murder rule” situation, Ruby is a “great bodily injury” case, Mary is an “intent to kill” case, and Bill is a “depraved heart theory” case.
+A second purpose of the question is to illustrate that “depraved heart murder” is not necessarily a “second degree” murder.
+The question asks about “first degree" murder, and it is an express call. The call also asks about "lessor included offenses." That means manslaughter and NOT assault, battery, robbery, etc.
+You must define and discuss robbery as a basis for the felony-murder rule application to some extent. A death caused by a robbery is almost always going to be first degree murder because virtually every State includes it as one of its “enumerated felonies”.
+Only one murder here presents any evidence of "provocation" or “mitigating factors”.]
+
+
