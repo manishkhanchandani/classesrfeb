@@ -1,0 +1,1292 @@
+            NAILING THE BAR
+     TM
+  How to Write PERFORMANCE TESTS for Bar Exams
+(Based on the California Bar Examination )
+WHAT to Say and HOW to Say It!
+      Tim Tyler Ph.D. Attorney at Law
+ 
+NAILING THE BAR HOW TO WRITE
+PERFORMANCE TESTS FOR BAR EXAMS
+(Based on the CALIFORNIA Bar Exam) What to Say and How to Say It.
+Tim Tyler, Ph.D. Attorney at Law
+ Published by Practical Step Press
+--www.PracticalStepPress.com--
+ i
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Copyright © 2014 by Practical Step Press. All rights reserved. No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording or any information storage or retrieval system, without permission in writing from the publisher. Printed in the United States of America.
+ISBN 978-1-936160-23-5
+ii
+
+What to Say and How to Say It
+This book is a "How To" guide of practical information for writing Performance Tests for Bar Exams. The materials presented are based on the past Performance Tests used by the California General Bar Exam, but everything here is generally applicable to almost every other State that uses this type of test procedure.
+This is a "cook book" approach focused on the mechanics and substance needed to write an acceptable performance test (PT) “product”.
+Every California General Bar Exam for about the last 20 years has presented two “performance tests”. The first PT is given on the afternoon of the first day (always a Tuesday) and the second is given on the afternoon of the last day (always a Thursday). And the PTs have always had the same format and approach over this period. There are two Bar Exams each year, 4 PTs given each year.
+The California State Bar website posts all of the PTs given in the past five years along with two student answers for each that received high scores. The website is at www.calbar.ca.gov. At the website select “Bar Exam”, then “Examinations / Statistics”, then “Examination Statistics / Selected Answers / Study Aids”. This gives you access to all of the materials provided in the last 20 performance tests, and 40 past student answers that received high scores. Merely reading through those answers will give you more insight into what you need to do than any other step you might take.
+Your State Bar Exam may present a PT test that is substantially different in some ways from the California Bar. However EVERY PERFORMANCE TEST IS SUBSTANTIALLY THE SAME in that you (the student/applicant) are told to draft a LETTER, a MEMO, or a PLEADING. And good letters, memos and pleadings have the same appearance and tone in every court in every state. Conversely, bad letters, bad memos and bad pleadings also look and sound the same no matter where you are!
+The Performance Tests presented by the California Bar provide a File of facts and a Library of laws. Students are asked to produce one or more written products in a "Boss' Request". These written products are letters, memos, or pleadings. Occasionally students are asked to just produce a “list” for the Boss or perhaps “proposed jury instructions”. Students are graded on:
+1) How closely the written products match the call of the "Boss' Request".
+2) How well the student understands the law presented in the "Library".
+3) How well the student uses the facts presented in the "File".
+4) How well the student recognizes ethical problems presented by the case.
+5) How clear and organized the requested documents are.
+Forward
+              iii
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Table of Contents
+CHAPTER 1: CALIFORNIA BAR EXAM OVERVIEW ......................................................................................... 1
+CHAPTER 2: PRODUCT STRUCTURE AND EMBELLISHMENT ..................................................................... 2
+CHAPTER 3: HOW PERFORMANCE TESTS ARE GRADED ............................................................................. 5
+CHAPTER 4: TYPES OF PRODUCTS ...................................................................................................................... 9
+CHAPTER 5: THE FOUR PRODUCT FORMS...................................................................................................... 10
+1. THE MEANING OF “MEMORANDUM” .................................................................................................................. 10 2. THE THREE-PART RESPONSE .............................................................................................................................. 10 3. MEMO STRUCTURE .............................................................................................................................................. 11 4. LETTER STRUCTURE ............................................................................................................................................ 12 5. PLEADING STRUCTURE......................................................................................................................................... 13 6. MISCELLANEOUS PRODUCT STRUCTURE ............................................................................................................ 17
+CHAPTER 6: HOW TO ORDER THE ISSUES FOR DISCUSSION.................................................................... 18
+CHAPTER 7: TEST PREPARATION ...................................................................................................................... 20
+CHAPTER 8: EXAM STRATEGY ........................................................................................................................... 21
+CHAPTER 9: HOW TO OUTLINE LAWS AND FACTS ...................................................................................... 26
+1. THE PAPERCLIP APPROACH................................................................................................................................. 26 2. THE GRID APPROACH .......................................................................................................................................... 27 3. THE THREE LIST APPROACH ............................................................................................................................... 28
+CHAPTER 10: PERFORMANCE TEST STEPS..................................................................................................... 30 CHAPTER 11: STEP 1 - SEPARATE DOCUMENTS ............................................................................................ 31 CHAPTER 12: STEP 2 - INSTRUCTIONS AND TABLES OF CONTENTS ...................................................... 32 CHAPTER 13: STEP 3 - READ THE BOSS' REQUEST ....................................................................................... 35 CHAPTER 14: STEP 4 - OUTLINE EACH PRODUCT......................................................................................... 38 CHAPTER 15: STEP 5 - SKIM FILE AND LIBRARY FOR THE ISSUES ......................................................... 40 CHAPTER 16: STEP 6 - READ AND TAG RULES OF LAW............................................................................... 44 CHAPTER 17: STEP 7 - READ AND TAG FACTS................................................................................................ 48 CHAPTER 18: STEP 8 - SEPARATELY OUTLINE EACH PRODUCT ............................................................. 50 CHAPTER 19: STEP 9 - WRITE EACH PRODUCT ............................................................................................. 55 CHAPTER 20: CONCLUSION.................................................................................................................................. 61
+iv
+
+Chapter 1: California Bar Exam Overview
+Chapter 1: California Bar Exam Overview
+This book was originally written for the California Bar Exam, but the instruction here is applicable to any “Performance Test” on any Bar Exam. The following instruction is retained for students approaching the California Bar Exam, but other students can skip this portion of the text.
+The California Bar Exam is one of the hardest bar examinations in the United States. In most years the passage rate is between 50 and 60 percent.
+The Bar Exam Structure: The California Bar currently is taken over three days on the following schedule:
+Day 1:
+Day 2:
+Day 3:
+Passing Grades: To pass the
+level”. The “target level” used to be 1466 but most recently it has been 1440. Bar exams that are near but slightly below the passing level on the “first reading” are usually given a “second reading”. But the general perception is that the second reading is more critical than the first. Therefore, it is believed that most applicants failing to pass the bar on the first reading will not be passed based on the second reading. So your goal should be to pass on the first reading. Exams that are not even near passing on the “first reading” are not given a “second reading” at all.
+Test Scoring: The Bar score is tabulated in a bizarrely complicated manner that misleads and produces confusing results. You can read an explanation of it at the Bar website if you like but in reality the Bar uses arbitrary “scaling factors” each year to arbitrarily jack the passage rate up and down. Apparently this is in response to public pressure for a higher passage rate (pressure from existing law schools perhaps) or a lower passage rate (from practicing attorneys and insurance companies perhaps).
+As a general rule if you get over 70% of the MBE questions correct (raw score) and average over 70% on the written work, you will probably pass the Bar. But the only thing that can be said with certainty is that if you score above the 55th percentile you will almost certainly pass the Bar and if you score below the 35th percentile you will almost certainly fail.
+Morning: Afternoon:
+Morning: Afternoon:
+Morning: Afternoon:
+3 Essays in 3 hours. The area of law covered by these essays is unknown until the Bar is given, and often the questions "cross over" from one area of law to another.
+1 Performance Test in 3 hours. This will require writing one or more memorandums, letters or pleadings.
+100 Multiple Choice questions in 3 hours. These are called MBEs because this portion of the Bar is the Multi-State Bar Examination. 100 Multiple Choice questions in 3 hours. Same as in the morning.
+3 Essays in 3 hours. Same as on Day 1. 1 Performance Test. Same as on Day 1.
+California Bar Exam students’ scores must be higher than a “target
+1
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 2: Product Structure and Embellishment
+A Performance Test physically consists of "General Instructions”, a “Boss’ Request” telling you specifically what “products” you are to produce (LETTERS, MEMOS, PLEADINGS or occasionally some sort of LIST or PROPOSED JURY INSTRUCTIONS), a “File" of facts or evidence and a "Library" of laws composed of statutes, cases and occasionally “hornbooks” or legal reference works.
+The Performance Test challenge is to follow the instructions and use these materials to quickly create a finished product in the form of the written document(s) the “Boss” tells you to produce.
+Follow IRAC. The written product should follow an IRAC format by addressing ISSUES that have been raised, citing the determinative RULE of law from the Library, quoting FACTS from the File, ANALYZING their relevance and ending with a CONCLUSION.
+A Christmas Tree Analogy. A successful Performance Test product is kind of like an artificial Christmas tree. (If you wish, please feel free to substitute any other imaginary construct such as a complicated toy.) There is a basic structure embellished with citations to given facts and controlling law.
+Suppose you have just purchased a tacky artificial Christmas tree, disassembled and in a box, complete with all the decorations and lights. You bring the Christmas tree home from the local variety store, and you must erect and decorate it within three hours.
+You quickly open the box and find instructions and a parts list. You lay out the parts and find a stand, a trunk with branches, some lights and decorations.
+1) 2) 3)
+4) 5) 6) 7)
+You start to work by reading the instructions;
+You check the parts list;
+Then you create a structure for the final product by placing the stand and erecting the framework;
+Then you embellish the structure with lights for illumination;
+And you scatter some decorations here and there;
+You conclude by placing a star on the top; and
+Little surprise packages are hidden under the tree.
+Writing a
+some facts, some rules of law, some instructions and a directive to produce something.
+Performance Test involves the same sequence of steps in many ways. You are given
+1) You start to work by reading the General Instructions and the Boss’ Request;
+2) You check the tables of contents for the File and Library;
+3) Then you create a basic structure of ISSUES to be discussed;
+4) But then you embellish it with citations of RULES of law from the Library that
+determine each issue;
+5) And you add quoted FACTS from the File here and there to support each rule;
+6) You end with a CONCLUSION; and
+7) Little ETHICAL PROBLEMS are hidden in the materials.
+2
+
+Chapter 2: Product Structure and Embellishment
+The Instructions give you a set amount of time to produce one or more requested written products. For example, on the California Bar Exam you are given three hours. Some of the instructions are always the same, but some important differences arise here.
+The General Instructions will tell you who you represent, the name of the fictional state where you work, and usually the cause of action.
+The General Instructions will also usually tell you the requested products you are to produce. These are described in more detail in the Boss' Request which usually the first memo in the File.
+[For example, the instructions may say you have to "prepare two briefs and a statement of facts to be incorporated into a declaration."]
+The instructions may state how to cite cases from the Library.
+The instructions will usually advise you how much time to spend reading the materials and organizing your answer. Usually you should use HALF YOUR TIME to organize your test response and HALF YOUR TIME to write. That means on a 3 hour Performance Test use 90 minutes to organize and 90 minutes to write.
+The instructions will always tell you that your test response will be graded for its organization, thoroughness, and content. But watch out because sometimes the response will also be graded for persuasiveness. If more than one product is requested they often will usually tell you the points assigned to each requested product.
+For example, the instructions may refer to the Boss' Request and say the test weighting is:
+"Part A: 40%
+Part B: Section 1 - 20%
+Section 2 - 40%"
+If the instructions ask for more than one product but no weighting is stated, then you should assume they will be equally weighted.
+Most of the instructions are almost always the same in every performance test. Therefore, read them carefully in practice and just skim them for unusual changes in the actual Performance Test given by the Bar.
+The Boss' Request is almost always presented as the first memo in the File. This is the most important document in the entire Performance Test. It is absolutely critical to carefully read and follow the Boss' Request carefully and respond to it exactly.
+The Boss' Request may refer to another document and incorporate it by reference.
+For example, the Boss' Request may say, "Prepare the memo the court has requested in its recent order." To know what the memo is, you must find the court's order. That document will give a more detailed and structured statement of what the memo is to include.
+                  3
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Another example would be where the Boss' Request asks for a pleading, "conforming to our current standard office guidelines." In this case you have to find the "current office guidelines" for pleadings to determine the proper structure for the pleading.
+You must diagram the call of the Boss' question. This is critical. The written product you produce must match the request.
+The File The rest of the File consists of factual information such as memos, letters, news clippings, transcripts, legislative analysis, pleadings, receipts, etc.
+Remember, FILE starts with "F", and "F" stands for FACTS! The Library consists of a compendium of statutes, ordinances, regulations and cases.
+Remember, LIBRARY starts with "L", and "L" stands for LAWS!
+Ethical dilemmas are often hidden in the materials. Be on the alert for these, and they MUST BE ADDRESSED in the written products. You MUST discuss ethical problems at some point if there are any statutes or cases in the Library related to attorney ethics.
+The CRUX of the Performance Test problem is to produce the product asked for in the Boss' Request using the IRAC approach:
+• You must determine the ISSUES that the Boss' Request raises;
+• You must determine and cite the correct RULES of law from the Library that are
+determinative of those issues;
+• You must ANALYZE the client's position by quoting FACTS from the File that relate to
+the rule of law;
+• You must state some CONCLUSION; and
+• You must recognize and address ETHICAL PROBLEMS.
+   4
+
+Chapter 3: How Performance Tests are Graded
+Chapter 3: How Performance Tests are Graded
+To understand how your Performance Test is graded, bear in mind that thousands of Performance Tests must be read and graded in a very limited period of time. To do this, the Bar employs a "team" of Graders who operate from a "scoring sheet" or grading "key". The Grading Key is the document that is supposed to produce consistent grading from each member of the grading team.
+Grader Mentality. Bar Graders are not evil characters. They do not get a bonus for giving you low grades. You should never accept the idea that the Bar is a "rigged" contest that can only be won through luck.
+To understand the Bar Grader, remember they must:
+1) grade as consistently as possible according to the Grading Key, 2) grade a huge number of exams in a relatively short time, and 3) finish all grading by the deadline.
+The Bar Grader does not think of you as an individual any more than a cook thinks an egg is a chicken. Your Performance Test is just a piece of paper that has to be processed as quickly as possible.
+The Grading Key for the Performance Tests is a structured list of the PRODUCTS, ISSUES, RULES of law and SUPPORTING FACTS you are required to cite in your written product. The structure the Grading Key looks for is given in the CALL of the Boss' Request.
+However, the second important factor for PTs is the TONE OF THE PRODUCT. You are expected to produce a product that sounds PROFESSIONAL and TAILORED to the intended reader.
+If your written product presents a structure with statements of the required issues, citation of the required laws, and statements of the required facts, AND sounds professional, your Performance Tests is given a score of about 80 percent. For each required statement you omit, your grade is reduced, and if you sound unprofessional or say things that are inappropriate given the intended reader you may get a failing grade no matter how thorough your answer may be.
+Graders First Look for Completion. When the Grader first picks up your Performance Test, she (or he) first looks to see if you finished. If you did not finish the Performance Test, you get a low grade automatically.
+Produce All Products requested. If the Boss' Request is for a memo to him and a letter to the client, you MUST have two products matching those descriptions. If the Boss' Request is for a "memo" and a "letter" and you only wrote the memo, you did not finish, and you get a very low score.
+If the Boss' memo asks for two "briefs" and an "outline" then you must produce three products that clearly are two "briefs" and one "outline."
+Don't LOOK Like You Ran Out of Time on a Product, Even if You Did. Have a conclusion statement at the end of each product you produce. Have a signature block at the bottom of the products. NEVER say "out of time!" at the end of your written product. NEVER put a big,
+               5
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+garbled, frantic, scribbled mess at the end of the written product. NEVER scribble down a list of issues that you would have discussed if you had more time. If you do any of these things, you might as well write, "JUST SHOOT ME BECAUSE I AM STUPID."
+You must appear to have finished each of the written products on time.
+And if the Boss says she wants a letter written for “her signature” make sure the signature block has HER name on it.
+Next Graders Look for Clarity and Structure. If you appear to have finished the Performance Test, the Grader looks through your products for clarity and structure, correct citation of law (reference to proper statutes and cases) and the use of the facts presented in the file. Use headings and subheadings. Quote the facts to emphasize them. Space between paragraphs.
+If your writing is confused, lacking headings and structure, the Grader will not be given a good first impression. Mentally, she will start thinking about a fairly low grade. She will not waste a lot of time on your essay if it is an obvious loser.
+Leave a lot of WHITE SPACE.
+Leave Two Blank Lines Between Paragraphs. Use a lot of fairly short paragraphs (e.g. 3-5 on each page of a blue book) and put two blank lines between each. That allows you to come back later and insert descriptive HEADINGS that describe what the main point of the paragraph is.
+Graders Look for Structure Matching the Request. It is critical for you to present a structured product that matches the call of the Boss' Request. For example, if the Boss' Request asks for a memo and a letter, you must have two separate products, a memo and a letter. The memo should LOOK AND SOUND like a memo, and the letter should LOOK AND SOUND like a letter. The proper formats for these are shown in Chapter 5, and the Performance Test itself will usually include examples of memos and letters in the File.
+Further, if the Boss' Request asks for a memo analyzing the "causes of action, possible defenses and evidence we will need," the memo MUST clearly and expressly be structured according to causes of action, and the possible defenses, and required evidence for each of them.
+If the Boss' memo asks for a memo in return that has parts labeled "A, B and C" then your memo to the Boss MUST be structured with parts labeled "A", "B" and "C".
+Use HEADINGS that tell the reader what the main issue is for each section of the product. For Pleadings the “arguments” must be posed as headings. But headings will gain you points no matter what the Performance Test product is. If you leave extra blank lines between paragraphs as you write you can go back later and insert headings that describe what the paragraphs illustrate.
+Graders Look for IDENTIFICATION OF THE LAW that determines the client's position. Use citations to the applicable law in your response. LOOK for the LAW in the LIBRARY. Remember "Law" and "Library" both start with "L." Underline your citations to the law to display your use of the law to the grader.
+                    6
+
+Chapter 3: How Performance Tests are Graded
+Cite every case given in the Library somewhere in your finished products if at all possible. You may have to cite a case more than once. Watch out for cases that have been overruled by later cases or rendered moot by statutory changes. The Performance Test will give you cases that are bad law to see if you are paying attention. If a case was overruled or is no longer applicable, expressly state that fact to show the Grader you were alert to the case law changes.
+Cite cases within cases. If the Library gives you four cases, but those cases cite three other cases, try to cite all of them, a total of seven cases in your answer.
+Do not cite statutes from the Library that are inapplicable or irrelevant. And watch out for statutes that did not become effective until after the events of this particular case took place. If you have a statute that does not apply for this reason, expressly state that fact to show the Grader you were alert to the statutory effectiveness.
+Underline all citations to both statutes and cases!
+Try should strive to have at least TWENTY UNDERLINED CITATIONS. Graders Look for USE OF THE FACTS. FIND the FACTS in the FILE and quote facts in your
+written product. Remember "File" and "Facts" both start with "F."
+Cite relevant facts with quotations to make them stand out. Decisive facts should be expressly analyzed, and peripheral facts should simply be referred to in passing. If an irrelevant fact is stressed in the file correspondence, you should expressly state why it is irrelevant. The fact that it is stressed indicates the Grader will be looking for discussion of that fact. Try to quote facts from every document in the file if they are at all relevant.
+Say ‘because’ a lot!
+IF YOU SAY, “...BECAUSE...BECAUSE...BECAUSE...” you will automatically develop an
+“explanatory” style that opens up opportunities to cite cases and quote facts.
+For Example: If you say, “Civil Code 123 favors our case” it sounds conclusionary and does not create many opportunities to cite additional law or facts.
+But if you say, “Civil Code 123 favors our case because...” it opens the door for the opportunity to cite additional law and facts such as, “...because under White the Court held this statute applies to totally disabled individuals and our client is ‘totally and permanently disabled’ according to Dr. Wellbee’s medical report dated June 6.”
+SOUND PROFESSIONAL. Your products must all sound as though they were written by an attorney, and the TONE of the document must reflect the intended reader. All documents should cite and explain the legal basis for your position, but the TONE and APPROACH for doing that should reflect the intended audience.
+• The intended reader for pleadings is the JUDGE, so they must be written in a persuasive manner. You are telling the judge he should find in your favor and why;
+                         7
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+• The intended reader for a memo is usually the BOSS, and those must be written in a balanced and informative. You are giving the Boss the information he requested. The Boss is an attorney, so sound like one attorney explaining findings and concerns to another;
+• The intended reader for letters are usually the CLIENT or OPPOSING COUNSEL or OPPOSING PARTY;
+o Letters to the CLIENT should be explanatory in terms a layman will understand but fully informing the client of both the law and facts the client needs to know;
+o Letters to OPPOSING COUNSEL or PARTIES should be persuasive. You want to convince them to settle their dispute in your party’s favor.
+  Letters to OPPOSING COUNSEL should sound like one attorney persuading another to accept his client’s position.
+  Letters to OPPOSING PARTIES should sound like an attorney explaining to a layman why they should accept your client’s proposed settlement.
+           8
+
+Chapter 4: Types of Products
+As explained above you must be prepared to create basic types of products in a performance test. Every Performance Test is based on a scenario in which YOU are an attorney at a law firm, and the type of product you must produce depends on the intended reader. The term "intended reader" means the party the document is intended to inform or persuade.
+As stated above, the intended reader of the product will usually be the Boss, the Judge or the Client. But sometimes the intended reader is the opposing counsel or someone else.
+BE BALANCED AND EXPLANATORY to the Boss. If you are told to write a MEMO to the Boss (not a “Memorandum” and not a “Memorandum of points and authorities”; those are pleadings to the judge) you MUST write something that looks and sounds like a MEMO. You never write a LETTER to the Boss. Your memo to the Boss must explain both the strengths and weaknesses of your position and any ethical concerns you may have.
+Your MEMO to the Boss should sound professional, analytical and objective. The INTENT of the document will be to fully inform the Boss about the law that applies and the facts that will determine the client’s position.
+BE PERSUASIVE IN ALL PLEADINGS to the judge. If you are told to write a PLEADING (e.g. a BRIEF or a MEMORANDUM or a MEMORANDUM OF POINTS AND AUTHORITIES) the intended audience is the judge. It should be written in a structured format (given below) and it MUST be persuasive telling the judge he should find in your favor and why.
+BE FULLY INFORMATIVE to the client. If you are told to write to the Client you write a LETTER (never a MEMO) and it must fully inform the Client in simple terms with full disclosure of any ethical problems. That requires you to reveal all facts and law that are both good for and bad for the Client’s position. Explain the law to “clients” in “lay terms” but still cite the cases and statutes. Don’t say, “Under White...,” to a lay reader like the client. Instead say something like, “The statutes that control your case have been clarified by the courts in a case called White. In White the court held that...”
+BE PERSUASIVE with opposing parties or counsel. If you are told to write to opposing counsel or opposing parties you write a LETTER (never a MEMO) that must persuade the reader to agree to a settlement on the terms you propose. That requires you to only cite facts and law that are good for the Client’s position and either ignore, deny or downplay any facts or law that are bad for the Client.
+If you are told to prepare JURY INSTRUCTIONS they should also be persuasive showing how the given facts, when applied to the given law, support your Client’s position.
+Chapter 4: Types of Products
+              9
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 5: The Four Product Forms
+Product Format Types. There are four basic forms for the products requested in Performance Tests:
+1) Memorandums,
+2) Letters,
+3) Pleadings, and
+4) Miscellaneous Lists and Outlines.
+1. The Meaning of “Memorandum”
+MEMORANDUMS: The terms “memo”, “memorandum”, “memorandum of law” and “memorandum of points and authorities” cause tremendous confusion when it comes to Performance Tests. When the Boss’ Request tells you to produce one of these it is critical to figure out exactly WHAT they want.
+A Memorandum of Points and Authorities is ALWAYS a pleading addressed to the Judge. In many States they call it a “brief”. California law calls it a Memorandum of Points and Authorities, and it is always required to support a motion before the Court. It has a set structure (given below), and it is always a persuasive document asking the Judge to find in your favor (for or against the motion) and telling him why that is supported by the existing facts and law.
+A “Memorandum” may mean a “MEMO” addressing the Boss or a Memorandum of Points and Authorities addressing the Judge depending on the context. To discern the difference pay close attention to what the Boss is saying for you to do. If he says, “Prepare a memorandum telling me ...” he is saying it is to be addressed to HIM so it is a “MEMO” to him and not a pleading to the Judge. If he says, “Prepare a memorandum telling the Court...” he is saying to write a pleading to the Judge and not a “MEMO” to him.
+A “Memo” is always an “interoffice memo” to the Boss or someone else in the office. This is the most common Performance Test product. It is used to transmit information back to the Boss, or perhaps to another attorney in the same firm. If the Boss' Request asks for a "list" or "outline" consider transmitting it back to the Boss via a memo. Use the format of the Boss' Request memo. This format allows you to use a three-part response starting your "memo" with a statement of the Boss' Request, to transmit the "list" or "outline" as the body of the response, and closing with a summary.
+A “Memorandum of Law” is simply a “Memo” to the Boss giving an analytical discussion or explanation of the relevant law as opposed to a memo that focuses more on the facts of the case.
+2. The Three-Part Response
+Use a three-part response on memos (not pleadings) and letters. This means that you should
+think of the written product as consisting of the following three parts:
+Introduction: Start with a statement of what you have been asked to produce;
+Body: Then present what you were asked to produce; 10
+     
+Chapter 5: The Four Product Forms
+Summary: Then end with a statement of what you have presented.
+For example, a memo with a three-part response might flow as follows:
+1) "You asked me to research the law and brief the major cases..."
+2) "The major case law in this area is as follows..."
+3) "I have provided you with briefs of all of the major cases..."
+3. Memo Structure
+The distinguishing features of a memo are that it has no letterhead, inside address, or salutation. Always type "MEMO” at the top of a memo. After that it states "To:", "From:" and "Subject:". Memos don't always have to be signed at the bottom, but to demonstrate you had enough time to finish the memo, close it with a signature and signature block at the bottom that states, "Sincerely, .... Applicant."
+Example of a Memo With a Three-Part Response. Suppose the Performance Test requests a "memorandum listing the causes of action, possible defenses and evidence needed..." Then the three-part response might be structured as follows:
+"MEMO
+To: Joe Blow, Senior Partner [From Boss' Request memo] From: Applicant
+Re: Request for Analysis of Jones Case
+This memorandum is in response to your request for a listing the causes of action, possible defenses and evidence needed in this matter. [Note: introduction simply restates the call of the question from the Boss' Request.]
+First Cause of Action: Battery. The first cause of action suggested by the facts is battery upon our client. [This would be an ISSUE raised by the facts in the File.] Under Civil Code 123231 [note use of RULE from Library] of the State of Franklin [note ANALYSIS with a fact from File], battery is defined as... [Note: The Boss asked for a list of "causes of action", and this is given here.]
+Here a battery is suggested by the fact that ... [fact from File].
+Potential Defense: Necessity. The defense may raise a claim of necessity. Under the case of ... [cite RULE of case law from Library]. This defense might be based on the fact that [cite fact from File.] [Note: The Boss asked about defenses, and this is responsive.]
+Additional Evidence Needed. To protect our position on this issue we will need to prove ...
+[cite lack of evidence shown by File.] [Note: The Boss asked about needed evidence, and this is the response.]
+Second Cause of Action: Negligence. The second cause of action suggested by the facts is negligence. .... [Go on to cite possible defenses and needed evidence.]
+          11
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+[Note that the body of the answer sequentially follows the exact structure requested
+for each cause of action.]
+Conclusion. The above analysis shows that the client has several potential causes of action, and that there are possible defenses the opposing party might raise. I have listed the factual evidence necessary to address those possible weaknesses in the client's case.
+If you have any further questions, please do not hesitate to call me at 234-5678. [Note: this conclusion simply repeats the call of the Boss' Request as an accomplished fact.]
+Sincerely, Applicant."
+4. Letter Structure
+The letter format is used when there is communication to the client or others outside the firm. Use the same format as other letters provided in the File. This format also uses a three-part response.
+A letter to the client should have an explanatory tone because your primary concern is usually to fully inform the client about the law and the strengths and weaknesses of her case so she can make a fully informed decision.
+A letter to other parties will have a different tone because they are for different purposes. A letter to an opposing party usually has a persuasive tone because the primary concern is usually to persuade the opposing party to accept our settlement proposal.
+The distinguishing features of a letter are that it has a letterhead, inside address, and salutation. It begins with "Dear ...” followed by the name of the addressee. It must be ended with a signature block at the bottom. Note the signature that should appear on letters. Sometimes the Boss asks for you to draft a letter for the Boss' signature. In this case, put the Boss' name on the letter and DO NOT SIGN the letter with your own name. On any memo or letter from you print and sign with the name "Applicant."
+Letterhead. It is not necessary to put a letterhead and inside address on a letter. Don't waste time on it. You can just say “LETTERHEAD”.
+           12
+
+Chapter 5: The Four Product Forms
+Example of a Letter with a Three-Part Response. Suppose the Performance Test requests a "letter to the client addressing her three concerns ..." Then the three-part response might be structured as follows:
+"LETTERHEAD
+Ms. Rhonda Lee [inside address, quickly] 1234 Broadway
+Anywhere, USA
+Re: Concerns Raised [subject line] Dear Ms. Lee: [salutation]
+I have been asked to write this letter to address the three concerns you have raised. [Note: introduction simply restates the call of the question from the Boss' Request as an explanation to the recipient.]
+First Concern. The first concern I will address is [note this would be an ISSUE found in the File]... The rule of law that applies to this issue is [note use of RULE of law from Library]. Here our position would be determined by the fact that ... [fact from File].
+Second Concern. The second concern you raised was...
+Third Concern. The third concern is...
+[Note the body of the response simply lays out and addresses the concerns of the client as asked in the Boss' Request.]
+Conclusion. I hope that this satisfactorily addresses your concerns. If you have any further questions, please do not hesitate to call me at 234-5678. [Note: this conclusion simply repeats the call of the Boss' Request as an accomplished fact.]
+Sincerely,
+Applicant." [Signature block; maybe this is for the Boss’ signature?]
+5. Pleading Structure
+The pleading format to use often will be provided or defined for you in the File materials. There may be a memo from the Boss (or the “firm”) detailing the firm's policy on how to draft a pleading. Use pleadings in the File as examples of the format you should follow. The actual pleadings requested may be called briefs or points and authorities, but they are all basically the same. Also, they may be requested to support various motions, such as a motion for summary judgment or a motion to compel evidence.
+The distinguishing features of a pleading are a heading at the top of the first page that states the nature of the pleading. You can also have a “caption” above that that states the state, court, parties, case number, etc. At the bottom of the last page there is a date and signature. The signature would
+              13
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+be yours, as "Applicant" or else a blank spot for the signature of the judge, if the pleading is a
+proposed order presented for a judge's signature.
+Skip the Caption? The Bar does not require an entire caption on the pleading, but it is a nice touch and takes little time. Skip it if you are short on time. It is far less important than concluding your document with a "conclusion." But the caption adds to the appearance of your finished product and should be added if you have time. And one part of the pleading is important. You MUST have a heading at the top of the pleading stating WHAT it is. For example:
+• “Memorandum of Points and Authorities in Support of Motion for Summary Judgment”
+• “Brief in Support of Motion to Exclude Evidence”
+• “Memorandum of Points and Authorities in Opposition to Motion for Injunction”
+Pleadings are always persuasive writing, no matter what the pleading is called. All pleadings involve a series of points presented to support the client's position. Each point is supported by a citation to the rules of law that apply and to the facts that prove the elements of that rule.
+Pleading Format. No matter what the pleading is called, the basic format is the same. The pleading should start with a short introduction statement explaining what the pleading is: WHO has filed it, whether it is in SUPPORT of or OPPOSITION to a motion, and WHAT THE MOTION is asking for. That is followed by a sequence of numbered arguments. After all of the arguments there should be a conclusion that summarizes the Client's position. A pleading has this structure:
+1) Caption (optional)
+2) Introduction Statement --
+"This memorandum of points and authorities (or perhaps ‘legal brief’) is presented by plaintiff MARY DOE in support of plaintiff's motion for summary judgment on the grounds there are no material facts in dispute and the plaintiff is entitled to judgment by law."
+3) Argument 1 (actually discussion of an issue)
+4) Argument 2
+(and so on for each argument in support of the Client's position)
+5) Conclusion
+6) Date and Signature of attorney signing the pleading
+Argument Format. Each argument has these parts:
+1) An argument, centered, underlined and numbered that presents an ISSUE stated as an
+assertion in a complete sentence. It must state WHAT you want the Judge to do with reference to both the FACTS and LAW supporting that request. This will be explained in more detail below.
+2) A CITATION TO AUTHORITY that presents a RULE of law. In the RULE, underline the elements that must be proven to prove the rule.
+3) References to FACTS that prove each of the elements of the rule.
+4) A CONCLUSION statement.
+            14
+
+Chapter 5: The Four Product Forms
+Example of a Legal Brief as a Pleading. Suppose the Performance Test asks you to draft a "Memorandum of Points and Authorities in support of the client's Motion for Summary Judgment." Then your pleading might be structured as follows:
+“STATE OF FRANKLIN County of Prince William
+Peter Flinders, Plaintiff ) )
+v.
+) Case No. 1232432
+) City of Gum Springs, Defendant ) ---------------------------------------------)
+[The caption above this point is optional; but he heading below is mandatory]
+MEMORANDUM OF POINTS AND AUTHORITIES IN SUPPORT OF MOTION FOR SUMMARY JUDGMENT [You MUST have a heading like this]
+This Memorandum of Points and Authorities is presented by plaintiff PETER FLINDERS in support of his Motion for Summary Judgment. [Unless you are instructed otherwise you should ALWAYS present a brief introductory statement like this to tell the Judge WHO has filed this, is it FOR or AGAINST a motion, and what TYPE of motion it relates to.]
+I. STATEMENT OF FACTS
+[This section is optional and some PTs direct the student to NOT give a “statement of facts”.
+If the instructions do not expressly say to NOT give a “statement of facts” and you decide to provide one, be sure it is BRIEF, only stating facts that are NECESSARY for the JUDGE to understand what the case and motion are about.
+IF you provide a “statement of facts” it should not be more than a page and a half long and it should not state any facts the Judge does not need to know.
+Any “statement of facts” should state facts truthfully BUT in a way that would win the Judge’s favor.]
+II. LEGAL ARGUMENT
+1. THE COURT SHOULD FIND IN FAVOR OF SUMMARY JUDGMENT BECAUSE NO MATERIAL ISSUES OF FACT ARE IN DISPUTE. [An ISSUE presented as an assertion. This should be a complete sentence telling the Judge what you want him to decide with some explanation of “why” based on reference to fact and law.]
+Under Civil Code section 123123 a party may apply for Summary Judgment if there are no material facts in dispute and the party is entitled to judgment as a matter of law. [Cite AUTHORITY with the RULE of law. Always underline cases and statutes cited. The rule is from the LIBRARY. The elements to be proven are underlined here.]
+          15
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Here no material facts are in dispute because... [This is your ANALYSIS or APPLICATION of the rule of law to the facts. Cite FACTS from FILE that prove each element of the rule.]
+The disputed fact that [disputed fact, maybe] is not a material fact because ... [You might need to distinguish case law or show that certain disputed facts do not apply.]
+Therefore, no material facts are in dispute. [This is your CONCLUSION as to this particular “argument”.]
+2. THE COURT SHOULD FIND THE UNDISPUTED FACTS SUPPORT A FINDING FOR THE MOVANT AS A MATTER OF LAW. [A second ISSUE presented as an assertion.]
+Under the holding of Smith [A case from the LIBRARY. Underline citation to case law. Usually the instructions tell you how to cite cases.] a party has a right to judgment when [some fact or condition exists.]
+The movant has a right to judgment in her favor because, in fact [cite FACTS from FILE that prove rule.]
+It may be argued that under the case of Jones there is no right to judgment because... [recognize contrary law to be distinguished.] However, Jones is not relevant here because [FACTS of Jones were different, different JURISDICTION, OVERRULED by precedential cases, etc.]
+Therefore, [party] has a right to judgment as a matter of law. [Conclusion.] III. CONCLUSION
+[Always put a "conclusion" as the last point of the pleading to show the Grader that you finished the product].
+Therefore, there is no dispute of material facts, and based on the facts demonstrated the [party] has a right to judgment as a matter of law.
+DATED __________ _______________________ Applicant”
+[Always put date and "Applicant" signature at bottom of pleading. WHY? To show the Grader you finished the product.]
+            16
+
+Chapter 5: The Four Product Forms
+6. Miscellaneous Product Structure
+The Performance Test may ask you to draft a closing argument, list of cross-examination
+questions, outline or some other document that does not have a clear format. In these cases look to documents in the File for an example. If none is found, begin the product with an identifying heading and place headers or subject statements in the document to the extent possible to help the Grader.
+Unless otherwise directed, a request by the Boss for an "Outline" or "List" can be sent back to the Boss within a memorandum that starts with a statement of the product request.
+Provide Law and Facts. If you are asked for an "outline" or "list" you MUST provide an explanation or reference to the LAW and/or FACTS upon which your response is based.
+Example of a List of Cross-Examination Questions. Suppose the Performance Test has a Boss' Request that asks for a list of "Cross-Examination questions to be asked at trial." The resulting product might look like this:
+“MEMORANDUM
+From: Applicant
+To: Boss
+Re: LIST OF CROSS-EXAMINATION QUESTIONS
+Per your request I have drafted the following questions to be asked the defendant's witness, Jones, on cross-examination in order to refute and impeach his testimony.
+Foundation and Knowledge.
+1. Mr. Jones, isn't it true you have very poor eyesight? (This question is allowed by Evid. Code
+123 and it is supported by the optometrist report.)
+2. Isn't it true Smith saw you arrive on the scene after the accident? (This is based on the
+deposition testimony of Smith)
+Bias
+3. You have a financial interest in this case don't you? (Supported by testimony of Wilson and
+evidence of the Grant Deed.)
+Impeachment.
+4. Isn't it true you have been convicted of perjury in the past? (Evid. Code 456, as interpreted by
+the White case allows introduction of the conviction record.)
+5. Isn't it true that you stated at the scene of the accident the light was RED and not GREEN?
+(This would be shown by the police report and the testimony of Black.)
+Conclusion. This list of questions should refute and impeach the testimony of Jones. Sincerely,
+Applicant.”
+                 17
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 6: How to Order the Issues for Discussion
+One problem in a Performance Test is deciding the ISSUES to discuss and the ORDER in which to discuss them. Sometimes this is stated or obvious, and sometimes it is perplexing. It depends on the situation. The most important thing is to present the issues with STRUCTURE so the Grader can follow your logic.
+Present Issues Following the Boss' Request. If the Boss' Request asks for a product ordered in a certain fashion, then always use the requested order. But sometimes the Boss' Request does not establish a clear order.
+Look for a Document that Suggests Issue Order. If the Boss' Request does not prescribe an order of discussion, it may mention other documents. Look to those mentioned documents in the File or Library for a structured order that might be followed.
+Client Concerns. An easy situation is presented if the Boss' Request says, "Write the client and address her concerns." Obviously the client has raised some concerns. Those concerns will be listed in the FILE in some communications. Some document might say, "I have three concerns..." Find those communications in the File and follow the order shown there.
+Causes of Action and Defenses. This is also a fairly easy situation. The Boss' Request says, "Write a memo listing the client's causes of action, the possible defenses, and evidence we need to gather." Obviously there is some statement of events in the FILE. Find those communications and follow the order shown there.
+Pleading Issues. This is a more difficult situation. The Boss' Request says, "Draft a points and authorities to support the clients' motion for..." Obviously there is some statute or case law in the LIBRARY that indicates the facts the client must prove in order to be granted the motion. Find those statutes or case law and determine the RULES of law they present. These are often LEGAL TESTS, such as a balancing test.
+For example, if the motion is for summary judgment, the client must prove two things. First, they must prove there are no material facts in dispute. In addressing this issue, you must state the underlying cause of action and the facts that are material to that underlying cause of action. After defining the material facts, you must go through them one by one showing they are not in dispute. If there are some facts in dispute, you must address that and explain why they are not material.
+Second, the client must prove they are entitled to judgment by law. This again requires addressing the underlying cause of action and an explanation of why the client is entitled to judgment given the undisputed facts. This may require negating any possible defenses.
+Pleading Issues Based on Cases. If a pleading is requested, the issues may be suggested by the presentation of cases in the Library. Each of the cases will present and discuss one or more issues or tests. Some or all of these issues will be relevant (or irrelevant) to the Client's case. These issues would form the issues to be discussed in the pleading.
+For example, suppose Case A establishes a rule of law, Case B establishes an exception to that rule, and in Case C the court refuses to apply the rule. Then the ISSUES you might argue in a pleading are:
+                   18
+
+Chapter 6: How to Order Issues for Discussion
+1) The rule applies to exclude evidence against the Client (based on Case A).
+2) The exception does not apply to allow the evidence (because Case B is inapplicable law).
+3) The holding in Case C can be distinguished because of different facts.
+Another example is where cases establish "tests". Perhaps Case A creates a "balance test" that says "the interests of the public must be balanced against the rights of the individual," while Case B says "evidence produced by egregious police misconduct must be excluded." Then the ISSUES you might argue in a pleading are:
+1) The rights of the client outweigh the public interest.
+2) The police misconduct is so egregious it requires exclusion of the evidence.
+Evidence Needs. In this situation the Boss' Request says, "Compile a list of evidence we need." This type of response can be structured by source of the evidence, by cause of action or by legal issue.
+For example, if there are clearly three witnesses or sources of evidence, you might compile a list of evidence to acquire from each of the three, sequenced by the witness to be questioned. In this case the order would be determined by FILE documents showing the involvement of each witness.
+If the client has three causes of action, you might list the evidence needed to prove each cause of action in sequence. Here again, the order would probably be determined by FILE documents showing the sequence of events giving rise to the causes of action.
+And if evidence is needed to prove alternative legal theories, the evidence could be ordered according to which legal theory it would support. Here the order might be determined by cases in the LIBRARY that define those alternative legal theories.
+Remedies. In this situation the Boss' Request says, "Analyze the client's legal remedies." The order of the response in this case would probably be set by the statutes and case law in the LIBRARY that defines the legal remedies available.
+For example, the UCC would allow a non-breaching buyer to reject or accept non-conforming goods, to rescind the contract or demand conforming goods, or to cover. These alternative remedies could be analyzed in the order they are defined in statute.
+Closing Argument. In this situation the Boss' Request says, "Draft a closing argument." The key to the order of this product may be the jury instructions included in the LIBRARY. If the jury is instructed that the plaintiff must prove "six elements" then the order of your closing argument would be a discussion of the facts that prove those same six elements.
+Cross-Examination. In this situation the Boss' Request says, "Draft questions to ask on cross- examination." The key here would be to look to the LIBRARY for an evidence code that gives a structure of considerations pertaining to testimony. The evidence code statute would probably set standards for testimony including 1) first hand knowledge, 2) ability to perceive and relate events (see, hear, understand, communicate), 3) admissions, 4) bias, 5) impeachment.
+                19
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 7: Test Preparation
+You must BE PREPARED both physically and mentally for the Performance Test. Before the test starts, anticipate that you will need to quickly organize materials and return a structured response.
+The physical preparation means that you have some office supplies to help organize the materials.
+The Performance Test booklet usually comes in two or three parts. The first part "A" is often called "Instructions and File" and the other part "B" is the "Library." It is possible that the instructions will be in a separate portion. And it is possible the “Boss’ Request”, which tells you the products you are supposed to produce, will be given separately. On all PTs given by the California Bar over the last 20 years the “Boss’ Request” has been a “memo from the Boss” and the first document in the File booklet.
+In every Performance Test there MUST be one body of “facts” consisting of your “evidence” and another body of law consisting of “statutes” and/or “cases” or legal reference works.
+Together, the Performance Test materials form a large and cumbersome volume of paper.
+Sprinkled throughout both the Library and the File are both relevant laws and facts along with irrelevant laws and facts. At first blush it will be difficult to tell which facts and laws are relevant, and which are not.
+Most of the challenge of the Performance Test is the mechanical challenge of dealing with the papers in the File and Library while identifying the relevant laws and facts and organizing them into a cohesive product. To do this, prepare in advance with certain office supplies.
+Needed Office Supplies. You need the following materials available for the Performance Test: Two or three highlight makers in different bright colors.
+Five small spring clips.
+A BOX of paperclips.
+Black pens and some pencils.
+The mental preparation means that you must be prepared mentally to quickly
+1) separate test materials,
+2) organize the test materials,
+3) analyze, and
+4) create a product matching the Boss' Request.
+You should be mentally prepared to establish STRUCTURE for legal issues, underline the rules of law, and quote the facts that prove those rules of law. The same IRAC approach that you would apply to an essay question should be applied to Performance Test assignments.
+For memorandums and letters be prepared to write a three-part response as shown above.
+Be on the lookout for ethical problems and write to the boss or to the client concerning these issues. This is an ABSOLUTE MUST if there are any statutes or cases in the Library related to attorney ethics.
+                      20
+
+Chapter 8: Exam Strategy
+The main challenge of the Performance Test is the large volume of written material to read and condensed into a concise product in a limited period of time. Three hours seems like a lot of time, but the amount of material you must read through is daunting.
+TIME MANAGEMENT is critical. In fact, you should start moving very fast from the very beginning of the Performance Test. Before the Performance Test begins, BE READY to move quickly.
+Sharp differences of opinion abound about the best strategy for approaching a Performance Test. The following are the major areas of dispute and the position taken here on each. The best approach is always the one that matches your individual abilities and preferences.
+To Separate or Not to Separate? This book advocates separating the Performance Test materials so that you can find and review the Boss' Request and Tables of Contents at the same time you are looking at other test materials. Some people discourage this. By having the Boss' Request directly in front of you, you can refer back to it at any time to renew your focus on the assigned task.
+Use or Discard Tables of Contents? This book advocates looking at and using the Tables of Contents of the File and Library. Many instructors ignore the Tables of Contents and find them useful only as scratch paper. But at the beginning of the test they immediately show you how many cases you have to read (if any), how many statutes (if any) there are and the nature and number of documents in the File. If the Boss' Request refers to any document, you can quickly see where it is. And at the end of the test the Tables of Contents provide a checklist so you can be sure you have reviewed and referenced every useful document.
+Jump to the Call or Read to the Call? This book advocates reading the Boss' Request carefully in its entirety. Some instructors advocate jumping to the call of the Boss' Request first, and then reading the Boss' Request from the beginning. But, the Boss' Request is so important, you should read it carefully, line by line, from the beginning. The Boss’ Request often indicates the issues you are to address, and then it tells you the products you are to produce. If you jump to the bottom first, you may focus only on the products and miss the issues.
+To Skim or Not to Skim the File? This book advocates skimming some documents from the File and Library to develop tentative issues. Some instructors say never to skim the documents because it wastes time. They advocate that you carefully read all documents in the File and then all documents in the Library. But, this is of little use if you do not know the issues. The best approach is IRAC: 1) first determine the issues, 2) then determine the rules of law, 3) then determine and analyze the facts. This is the IRAC approach, and it is the order that one should follow -- Issues first, Rules second and Facts last.
+Use Most or Only a Few Documents? This book advocates referring to as many of the documents as possible. Some instructors say only a few of the documents in the Performance Test materials are important or relevant, so they say to only use a few
+Chapter 8: Exam Strategy
+         21
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+documents in writing the final product. This book advocates referring to every document
+that has marginal use because it produces a more thoroughly supported document.
+One or More Outlines? This book advocates one outline for each product. Many instructors encourage you to create "an outline." But Performance Tests can request two or even three written "products," and this book advocates creating one outline per requested product.
+To Grid or Not to Grid? This book advocates writing the final products from the original documents with the help of a "paperclip indexed" outline. Some instructors encourage the use of an extensive "grid" to extensively analyze case law. That is an excellent approach if the Performance Test focuses on differences between several cases. But sometimes no cases are even given in the Performance Test. In that case the grid approach is useless. And the grid approach is very time consuming.
+Write from Outline or Documents? This book advocates writing the final products from the original documents with the help of a "paperclip indexed" outline. Many instructors encourage you to transfer all relevant facts to the outline and write the final product from the outline alone. This often does not make sense because only a few documents in the File and Library will provide the bulk of the facts and rules for the final product. The fastest approach is to write directly from the original sources.
+Cite Some or All Cases? This book advocates citing all given cases in the final products, if only to explain why it does not apply to the Client's case. Some instructors recommend citing only the relevant case law in the final product. The philosophy here is that the Bar would not have put the case in the Library if it did not want you to cite it for something.
+What to Do First? The first thing you should do is separate the materials, read the instructions and the Boss' Request and find out what you are supposed to produce. Read the Boss' Request very carefully, and create a separate blank outline sheet for each written product requested. Spend FOUR or FIVE PERCENT of your time separating the materials and studying and diagramming the Boss' Request onto an outline for each product you will eventually produce. That means that for a 3 hour Performance Test you should spend seven to nine minutes to separate the materials and determine exactly what kind of product you are supposed to create.1
+What to Read Next? The Boss' Request tells you to produce a product, but you usually do not have enough knowledge of the facts and law to do that immediately.
+For example, the Boss may say, "Write a letter addressing the client's concerns." This tells you the client has concerns, but you don't know what they are. Even if you know what they are, you don't know enough about the facts or the law to even begin outlining a letter to the client.
+You usually must go through the File and Library to learn the facts and rules of law. But the File and Library are so voluminous that you are short on time. What do you read first?
+1 The times cited here are based on a three-hour Performance Test. If your State Bar gives Performance Tests that use a different time-frame you must adjust accordingly.
+          22
+
+Chapter 8: Exam Strategy
+If you read the Library first, you will not know what the client's concerns are, so you won't know which statutes are relevant. You will not know which cases help the client and which cases hurt the client's position. Reading case law without any factual reference frame is rather pointless.
+But if you read the entire File before the Library, you won't know which facts are important because you don't know the law that applies.
+Get a tentative idea of ISSUES First. The answer to this problem is to find and skim the documents that might establish the issues first. The key to establishing the issues is the Boss' Request. The Boss' Request cites particular documents or facts as a preface to the request for a written product. These documents or facts will be in the File or in the Library. Go to the TABLES OF CONTENTS and zero in on those documents first. You should spend about Spend FOUR or FIVE PERCENT of your time establishing tentative ISSUES. That means that for a 3 hour Performance Test you should spend seven to nine minutes tentatively deciding what issues to discuss.
+Example 1: If the Boss says, "Write a letter to the client addressing her concerns," the issues to be addressed are the client's "concerns." The client's "concerns" will be listed or described in a transcript of an interview with the client, in a letter from the client or in some other correspondence in the File. Therefore, look in the Table of Contents for the File for these documents. Go to the File and learn the "client's concerns."
+Example 2: If the Boss says, "Write a memo outlining the client's causes of action and the possible defenses," the issues are the "causes of action and possible defenses." The "causes of action and defenses" will be suggested by an accident report, client interview or similar document in the File that describes injury and causation. Therefore, look in the Table of Contents for the File for these documents.
+Example 3: If the Boss says, "Write a memo analyzing potential breach of contract," the issues are whether there was a breach of a contract. The nature of the "contract" and actions that constituted "breach" will be suggested by correspondence, documents or testimony in the File suggesting a failure to perform. Therefore, look in the Table of Contents for the File for these documents.
+Example 4: If the Boss says, "Franklin law prescribes the form of a motion to exclude. Prepare a brief supporting our motion to exclude," the issues are the defined by "Franklin law." Therefore, look in the Table of Contents for the Library for the relevant statutes and cases in the Library that define the law.
+Example 5: If the Boss cites a particular statute and asks for a letter to the Client explaining her rights under that statute, look in the Table of Contents for the Library for the statute to determine the issues.
+Highlight Important Facts. While skimming for issues highlight dates and focus on the date a cause of action accrued (date of injury, death, contract, crime, etc.). Highlight parties (defendant and plaintiff). You may see that intent will be an issue, or that duty or causation appear to be issues.
+                          23
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Skip Unrelated Documents. Since the focus at this point is to get a feel for the ISSUES, skip
+documents that are unrelated to this factor until later.
+Put Issues on Outline Now? You might or might not be able to lay out the ISSUES on the outline at this point. For example, if the Boss said, "Write a letter to the client addressing her concerns," and you find a letter from the client in the File clearly listing six such concerns, then you already know enough to flesh out the Outline with those six concerns as the issues.
+Determine EXISTING LAW Next. After skimming to establish the issues, carefully read the statutes and cases in the Library to determine the law. Spend THIRTEEN to FOURTEEN PERCENT of your time carefully reading the Library. That means on a 3 hour Performance Test you should usually try to read the Library carefully in about 25 minutes.
+Put Issues on Outline Now? You might or might not be able to lay out the ISSUES on the outline at this point. For example, if the Boss said, "Write a brief supporting our motion for summary judgment," and your review of the statutes and case law indicates the issues that must be addressed for such a motion, you could flesh out the issues on the Outline at this point.
+Determine the remaining FACTS. After developing a sound understanding of the law in the Library, carefully read the File to locate facts relevant to the Boss' Request. Spend THIRTEEN to FOURTEEN PERCENT of your time carefully reading the Library. That means on a 3 hour Performance Test you should usually try to read the File carefully in about 25 minutes.
+Finish the OUTLINE. At this point you should have spent THIRTY-FIVE to FORTY PERCENT of your available time and should be ready to finish the outline for your written product. On a 3 hour Performance Test it should take you about 65 minutes to get to this point.
+Now spend THIRTEEN to FOURTEEN PERCENT of your time creating the outline with references to the laws and facts that are important. You need to finish the outline with HALF YOUR TIME REMAINING. So if you use more time on one portion (e.g. the Library is extremely long and difficult to read) then you must use LESS time on some other portion. On a 3 hour Performance Test you should try to have the outline finished in 90 minutes.
+If you are to produce THREE products weighted 40%, 40% and 20%, then allocate your time between the products in that ratio. On a 3 hour Performance Test you should allocate your time creating the three outlines in the approximate ratio of 10 minutes, 10 minutes and 5 minutes.
+Write the PRODUCT. If you adhere to the timeline suggested above, you will have used HALF YOUR TIME creating the outline(s) and will have HALF YOUR TIME left to write the final products. On a 3 hour Performance Test you should use 90 MINUTES to read the test materials and outline a response, and 90 MINUTES left to write the product.
+Quality over Quantity. In writing the final product, emphasize clarity over length. A "letter to the client" for example usually does not have to be more than three or four pages long. Spend 90 minutes crafting a clear and well organized document, rather than an unnecessarily long document.
+              24
+
+Chapter 8: Exam Strategy
+So the strategy advocated here is to: Percent Elapsed time
+1. Read the instructions and diagram Boss' Request onto outline pages 4-5%
+  2. Skim documents for ISSUES ...................................................... 4-5%
+3. Read the Library carefully to determine the law ......................... 13-14%
+4. ReadtheFilecarefullyforfacts..................................................13-14%
+5. Outline the product requested citing the laws and facts that apply
+6. Write the final products. .............................................................. 50%
+If you are given 3 hours to write the Performance test this works out to:
+1. Read the instructions and diagram Boss' Request onto outline pages
+2. Skim documents for ISSUES ...................................................... 7-9 min
+3. Read the Library carefully to determine the law ......................... 24-27 min.
+4. Read the File carefully for facts .................................................. 24-27 min.
+5. Outline the product requested citing the laws and facts that apply
+..................................................................................................... 90 min.
+6. Write the final products. .............................................................. 90 min.
+9%
+22%
+36%
+13-14%2 50% 100%
+Elapsed Time
+7-9 min.
+15 min.
+40 min.
+65 min. 24-27 min.
+3 hours.
+           2 But not using over 50% of total time available on tasks 1-5.
+25
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 9: How to Outline Laws and Facts
+The biggest problem in the Performance Test is HOW to organize the written product so that it correctly and thoroughly refers to the cases, statutes and facts in the Library and File.
+Your written product should follow a clear IRAC approach. There should be a sequential discussion of ISSUES affecting the client's case, the RULES of law that apply (from the Library), ANALYSIS of FACTS (from the File) and a CONCLUSION regarding that particular issue.
+How to Keep Track of Laws and Facts? Within the File there usually are important facts mixed with some irrelevant information. In the Library there are relevant statutes and cases that may be mixed with irrelevant law.
+The challenge is to quickly write a product (a memo, letter, etc.) that pulls a relevant RULE of law from the Library and then supports it with relevant matching FACTS from the File.
+Three Approaches. Three approaches to creating a written product that refers to both the LAW and the FACTS are the Paperclip Index Approach, the Grid Approach, and the List Approach. This book follows a Paperclip Index Approach. But all three approaches are described here.
+All Approaches Require Outline of Each Product. No matter which of these approaches you use to Performance Tests, you have to create an outline of the ISSUES that will be discussed in each of your written products. The difference between the approaches is how you keep track of the reference to the statute or case that provides the controlling RULE of law and the FACTS that prove the elements of that rule.
+1. The Paperclip Approach
+The Paperclip Index Approach advocated in this book is to index each document in the File and Library with a paperclip on the bottom edge, and to index each important rule or fact in those documents on the right edge. As you read through a document, highlight important statute elements, case holdings and facts in the Library and File tagging them with paperclips on the right edge of the document. This allows you to go directly back to important information while writing the documents. Your Outline of each requested product (e.g. memo) can simply refer the pages you have tagged with paperclips (the pages in the File and Library are all sequentially numbered.) As you write the actual product following the outline, you can quickly turn to each referenced location in the Library and File to quote details of both law and fact. This approach will be described step-by-step in later chapters.
+In this approach you create one outline per product, and in those outlines you reference the locations in the Library and File where supporting laws and facts have been highlighted. The Paperclip Index Approach might result in an outline as follows:
+1. Introduction
+2. ISSUE -- Battery
+Statutory Rule - L4 Intent - F3
+Act - F3
+Smith v. Jones - L7
+                  26
+
+3. ISSUE - Assault
+Statutory Rule - L4
+Transfer Rule - White case - L8 Intent - F3
+4. ISSUE - Negligence Rule - Black case - L10 "Careless" - F9
+5. Defense - Contrib Neg? § 1258 - L1
+No doctor - F1
+Made worse - F1
+Would have improved - Doc's report - F11
+Here the notations (F1, F3, L1, etc.) refer to the pages in the File (F) and the Library (L) that you have tagged with paperclips. As you write the requested document, you can quickly refer to the corresponding places in the File and Library that have been marked with paperclips. This allows you to quickly locate and cite facts, statutes and cases pertaining to the issues under discussion.
+2. The Grid Approach
+In the Grid Approach you create a "grid" or table that lays out the law. In this table each statute and case would be listed going down the left hand side. For each statute you would list the elements of the rule. For each case you would list the FACTS of the case, the ISSUES raised and the HOLDING by the court.
+In this approach your grid or table only shows the law, and there is no similar grid for facts. However, this approach may also incorporate an "outline" of the file. Using the "grid" approach you might create a table as follows:
+Chapter 9: How to Outline Laws and Facts
+             Case/Statute
+  Facts
+   Issues
+   Holding/Element
+   Smith v. Jones
+ Tort by child
+  Can child form intent?
+   Child can have intent
+   White v. Black
+ Tort by Insane Defendant
+ Can insane person have tort intent?
+ Insane can have intent
+  Roe v. Wade
+ Involuntary act by defendant
+  Tort require voluntary act?
+   Must be voluntary act
+   § 1253
+ Statutory statement of intent
+ Transferred intent applies to all intentional torts
+ Intent to commit some tort?
+   § 5689
+ Statutory presumptions
+   No intent to be assumed.
+   Any intent shown?
+      Since the grid approach strictly focuses on law and does not aid you at all in referring to facts in the File, you either must refer back to the File to get facts or else you must note the important facts on the product outline itself.
+  27
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+If the Performance Test asks for extensive legal analysis of several cases or comparative analysis of statutory or legal schemes the grid is very useful. If the Performance Test asks for a more fact- driven product the Grid Approach may be of little use to you.
+The grid approach does not eliminate or help with the need to outline the product. And the grid approach is time consuming and necessarily restricts your ability to quote the original documents because there is not enough time or space to repeat long quotes on the grid.
+3. The Three List Approach
+Another suggested approach is to have three lists or outlines, side by side. One is a list or outline of applicable facts from the File, the second is the outline of the document to be produced, the third is an outline of the applicable law in the Library. You can draw lines or arrows to indicate which facts or legal sources from the side lists apply to each issue in the center outline.
+In this approach the lists show the relevant facts, the product outline and the law. The "three-list" approach might result in a table as follows:
+       Facts
+  Outline Issues
+   Law
+   Defendant intended "prank"
+ 1. Intent for battery
+ Smith v. Jones - intent does not require malice
+  "Threw ball"
+ 2. Intentional act
+ White v. Jackson - transferred intent applies to all intentional torts
+  "At Bill and missed"
+ 3. Transferred intent
+ In re Wilson - assumption of risk requires awareness
+  Plaintiff "broke arm"
+ 4. Actual injury
+ Civil Code 1234 - Contributory negligence replaced by comparative negligence -- 50% rule.
+  Defendant failed to look
+ 5. Negligence
+   Plaintiff knew of risk
+ 6. Assumption of risk
+   Plaintiff "dared" defendant
+ 7. Contrib Negligence
+   Plaintiff didn't go to doctor
+ 8. Substantial factor
+    9. Causation
+            The three-list approach focuses on both law and facts, and it creates an outline of the product. But creating these lists is time consuming and it also necessarily restricts your ability to refer easily back to the original Library and File documents.
+    28
+
+Chapter 9: How to Outline Laws and Facts
+Comparative Advantages. The best approach is the one that works for you. If you have a strong preference for one of these methods that is the one you should use.
+With the Paperclip Index Approach you only create a skeletal outline with references to page numbers where paperclips tag important facts. This saves time, but when you write the final product you must look in the Library and File for the locations where statutes, cases, and facts can be cited. You will have to turn pages and search documents during the writing of the product. But your references to the facts and rules will be more extensive and accurate, and numerous detailed quotes are possible.
+With the other approaches more time is spent in the beginning creating "grids" or "lists", but the final products are primarily written from the outline with little reference back to the original documents. References to law and fact are necessarily abbreviated, and the final product will lack "quotes" of both law and fact.
+If the Performance Test presents several cases and requires a detailed comparative analysis, the Grid method would have definite advantages because its focus is on the comparative details of case law.
+On balance, however, the Paperclip Index Approach is recommended here because most of the final product will usually be based on only a few documents from the File and Library. It will usually be faster, easier and more accurate to simply turn to those documents in the Library and File than to copy large portions to a grid or list outline.
+   29
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 10: Performance Test Steps
+The Performance Test approach suggested here is a 9-step process, as follows:
+Step 1: Separate the Documents
+Step 2: Read Instructions and Review Tables of Contents Step 3: Carefully Read the Boss' Request
+Step 4: DIAGRAM an Outline for Each Product
+Step 5: Skim the File and Library for the Issues
+(Put issues on outline now?)
+Step 6: Read and Tag Rules of Law in the Library
+(Put issues on outline now?)
+Step 7: Read and Tag Facts in the File
+Step 8: Finish Separate Outline for Each Product Step 9: Write Each Product
+Each of these steps is discussed in detail in the following chapters.
+30
+
+Chapter 11: Step 1 - Separate Documents
+Chapter 11: Step 1 - Separate Documents
+The first step of a Performance Test is for you to physically separate the test materials into four or five groups. Use a spring clip to hold each group together. Spring clips are better than paper clips for this because they hold more securely. You might also staple the documents. You do NOT want the pages to accidentally come apart and fly everywhere.
+Separate the Test Booklet. As soon as the Performance Test begins, separate the test booklet. Use a nail file, pocket knife or staple remover to remove the original staples. The reason for doing this is so you can refer to and find documents faster. It also allows you to view two or three documents simultaneously. For example, you can look at the Boss’ Request, the rule of law in the Library and the facts that relate to that rule in the File.
+If you do not separate the Performance Test documents, you will waste too much time flipping back and forth through the Performance Test booklet. The degree of separation you should use is a matter of personal taste. If the materials are separated too much, it will waste more time than no separation at all. Some people advocate separating all cases in the Library from statutes.
+The File and Library each have a Table of Contents that gives an immediate overview of the Performance Test. And, they can be used as a checklist for your answer.
+Never mind if you are the only one separating materials the test materials. The other students may be reading instructions first. But why not separate your packet first, and scare the Hell out of everyone around you by getting a fast start?
+Following are the recommended separation approach along with an alternative that is sometimes advocated.
+Recommended:
+1) Instructions, Table of Contents (File and Library)
+2) Boss' Request Memo
+3) File (with Boss' Request removed)
+4) Library (cases and statutes together)
+Alternative Separation:
+1) Instructions (discard Tables of Contents)
+2) Boss' Request Memo
+3) File (except for Boss' Request)
+4) Cases from Library
+5) Other Library materials (statutes, regulations, etc.)
+    31
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 12: Step 2 - Instructions and Tables of Contents
+The second step of a Performance Test is for you to read the instructions and highlight certain facts. Then briefly review the Tables of Contents from the File and Library.
+Read and Highlight the Instructions. Some instructions will be the same on every Performance Test. Read them before the Bar Exam and don't waste time reading those same instructions over again in the actual exam. But a few important facts in the instructions vary from one Performance Test to another. At the actual exam note, and highlight important information very quickly:
+Highlight the state, the client's identity, your identity (e.g. "associate," "district attorney," etc., if given) and the cause of action (if given here.)
+Highlight the products to be produced (e.g. "a memorandum," "position paper," "two briefs and a statement of facts to be incorporated into a declaration," etc.)
+Note whether persuasiveness is a graded factor and the weighting of the different products in the final grade (if more than one product.)
+The above facts are important. Highlight those facts on your instruction sheet.
+Skim the File Table of Contents. Simply look at the File table of contents quickly enough to see the contents of the File. Note whether there is one or more than one Boss' memo. There may be one memo to you telling you what to do, and a second memo to all staff with instructions on how to do it. Look to see if there are pleadings, police reports, letters, transcripts, news articles, etc.
+Just scanning the Table of Contents will reveal the general outline and nature of the events that give rise to the cause of action.
+Skim the Library Table of Contents. Simply look at the Library table of contents to see how many cases there are, and whether there are statutes, ordinances, regulations, etc. In some Performance Tests there a many cases and no statutes, and in others there are many statutes and no cases.
+Later the Tables of Contents can be used as checklists to make sure you have discussed all of the case law and mentioned facts from all of the documents.
+                  32
+
+Chapter 12: Step 2 - Instructions and Tables of Contents
+Applied Example. The Performance Tests on your Bar exam may vary from this format, but here is a “real life” example. The following instructions are from the California Bar Examination of February 21, 1989. The materials provided with the Bar Exam are shown in this and following portions of the Applied Example in italic font. Portions that should be highlighted by the student are shown in bold font. Explanations are provided in plain font within square brackets ([ ]).
+“Flinders v. Gum Springs and Railco
+INSTRUCTIONS:
+1. You will have three hours to complete this session of the examination. This performance test is designed to evaluate your ability to handle a select number of legal authorities in the context of a factual problem involving a client.
+2. The problem is set in the fictional state of Franklin, one of the United States. Your firm represents Peter Flinders in an action to establish his right to recover personal property.
+[This paragraph establishes the state, the client, and the cause of action.]
+3. You will have two sets of materials with which to work: A File and a Library. You will be called upon to distinguish relevant from irrelevant facts, analyze the legal authorities provided, and prepare two briefs and a statement of facts to be incorporated into a declaration.
+[This paragraph defines the written products to be produced.]
+4. The File contains factual information about your case in the form of thirteen documents. The first document is a memorandum to you from Annette Booth containing the instructions for the documents you are to prepare.
+[This paragraph tells about File and gives name of Boss.]
+5. The Library consists of excerpts from the Franklin Code of Civil Procedure, the Franklin Civil Code, and a treatise, and four cases. The materials may be real, modified, or written solely for the purpose of this examination. Although the materials may appear familiar to you, do not assume that they are precisely the same as you have read before. Read them thoroughly, as if all were new to you. You should assume that the cases were decided in the jurisdictions and dates shown.
+[This file tells about Library.]
+6. Your documents must be written in the answer book provided. In answering this performance test, you should concentrate on the materials provided, but you should bring to bear on the problem your general knowledge of the law. What you have learned in law school and elsewhere provides the general background for analyzing the problem; the File and Library provide the specific materials with which you must work.
+7. In citing cases from the Library, you may use abbreviations and delete citations.
+            33
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+8. Although there are no restrictions on how you apportion your time, you should probably
+allocate at least 90 minutes to organizing and writing your documents.
+9. This performance test will be graded on your responsiveness to instructions and on the content, thoroughness, organization, and persuasiveness of the briefs and statement of facts you write. In grading the answers to this question, we anticipate that the following, approximate weights will be assigned to each part:
+Part A, See Annette Booth
+Memorandum of February 21, 1989: 40%
+Part B, See same memorandum: 1: 20% 2: 40%”
+[This paragraph states that "persuasiveness" is required and gives the weights as 40-40-20.]
+34
+
+Chapter 13: Step 3 – Read the Boss’ Request
+Chapter 13: Step 3 - Read the Boss' Request
+The third and MOST IMPORTANT step of a Performance Test is to carefully read the Boss' Request. The Boss' Request will be the first memo in the File, and you should separate it from the other File materials so you can quickly refer back to it. There may actually be two memos. One may tell you to create a product, and the other may establish the format guidelines for such products. Read all explanatory memos from the Boss carefully.
+The Boss' Request memo will expand on the information in the instructions. It will always give you the Boss' name, and usually it will give the client's name, the cause of action, amounts of money at issue, and the opposing party. HIGHLIGHT these facts.
+The Boss' Request will ask you to produce one or more written products, and it will give you instructions on the structure desired. This is the most important part of the Performance Test booklet. Read this request carefully and highlight it.
+Sometimes the Boss' Request gives a very detailed and extensive description of what the written product should look like, and sometimes the description is short and somewhat vague. In either event, look very closely at the wording of the Request.
+Note the signature that should appear on letters and memos. Sometimes the Boss asks for you to draft a letter for the Boss' signature. In this case, put the Boss' name on the letter and DO NOT SIGN the letter with your own name. On any memo or letter from you print and sign with the name "Applicant."
+Double Check the Boss' Request Against the Instructions. Compare the Boss' Request to the instructions to make sure you have not missed something. Sometimes the Boss' Request can be a little deceptive. The Boss might say she wants you to do "A" and "B", but instructions may indicate you are to produce three products. Looking back at the Boss' memo you might see that the "B" part of the memo actually refers to two separate products.
+Applied Example. The following Boss' Request is from the California Bar Examination of February 21, 1989. It followed the instructions given in the previous Chapter.
+               “Booth, Booth and Booth Attorneys at Law
+Gum Springs, Franklin
+MEMORANDUM
+__ __ __
+February 21, 1989
+ To: Applicant
+From: Annette Booth
+Re: Flinders v. Gum Springs and Railco
+ I would like your assistance on this file. As you will see from the attached material, our client, Peter Flinders, claims $12,000 which is currently in the possession of the City of Gum Springs. I've tried to negotiate with the city concerning the return of the money, but they have refused to discuss the matter with me
+35
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+[This first paragraph defines the client and the cause of action -- Peter Flinders is our client
+and the police have $12,000 of his that they refuse to return.]
+We have filed suit seeking recovery of the $12,000. It appears that the only evidence available to either Gum Springs or Railco to rebut our client's claim is his statement to the police following his arrest on a criminal charge. I have decided to file a motion to exclude this evidence and thereafter a motion for summary judgment. Please do the following things:
+[This second paragraph explains the basis for two motions -- a motion to exclude and a motion for summary judgment.]
+A. Under Franklin law, a motion to exclude evidence may be made before trial and in conjunction with a motion for summary judgment. We are seeking to exclude our client's statements to the police based upon the transcript of the police investigation and the court's memorandum of decision in the previous criminal action. Please write a brief in support of our motion to exclude evidence.
+[This paragraph defines the first of three requested documents to be produced -- a brief supporting the motion to exclude. This is worth 40%. Where will the issues be defined? In "Franklin law" from the Library. Where will the facts be primarily found? In the "transcript of police investigation" and in the "court's memorandum of decision."]
+B. Our motion for summary judgment will need to be supported:
+1. Please prepare a statement of facts which I can incorporate into a declaration to be signed by our client under oath. This statement should contain the material facts in support of our motion for summary judgment. It should be concise but have sufficient information to inform the judge as to the facts relating to the "ownership" of the money.
+[This paragraph defines the second requested document to be produced -- a statement of facts. This is worth 20%. It should have a concise statement of material facts to the judge about ownership of money to support of the summary judgment motion.]
+2. Please draft a brief in support of our motion for summary judgment against both defendants.
+[This paragraph defines the third requested document to be produced -- a brief supporting the motion for summary judgment. It is worth 40%. Note that this Boss’ Request appears to ask for two things “A” and “B”, but really asks for three products.]
+Both the brief in support of the motion to exclude evidence and the brief in support of the motion for summary judgment should conform in all respects to the attached intra-office memorandum of March 19, 1987, explaining this firm's policy for drafting this type of document. Do not repeat in either brief your statement of facts.”
+[This paragraph incorporates by reference the following memo with additional instructions concerning the form required for the briefs to be produced.]
+          36
+
+Chapter 13: Step 3 – Read the Boss’ Request
+The following memorandum followed the Boss’ Request memo and defined the firm’s policy for drafting pleadings.
+“Booth, Booth and Booth Attorneys at Law
+Gum Springs, Franklin
+MEMORANDUM
+March 19, 1987
+ To: All Associates
+From: Annette Booth
+Re: Appellate Briefs, Briefs in Support of Motions, and Memoranda of Points and Authorities
+To clarify the expectations of the firm and provide guidance to associates, all Appellate Briefs and Briefs in Support of Motions (also called Memoranda of Points and Authorities) shall conform to the following guidelines.
+This firm follows the practice of writing carefully crafted subject headings which illustrate the arguments they cover. The argument headings should succinctly summarize the reasons the court should take the position you are advocating. A heading should be a specific and persuasive application of a rule of law to the facts of the case, not a bare legal or factual conclusion or a statement of abstract principal.
+[This paragraph says use headings that state why the court should find for the client using both law and fact -- not just a statement of law, not just a factual conclusion and not an abstract statement of principal.]
+The body of each argument should analyze applicable legal authority and persuasively argue how the facts and law support our client's position. Authority supportive of our client's position should be emphasized, but contrary authority should generally be cited and addressed in the argument. Do not reserve arguments for reply or supplemental briefs.
+[This paragraph says that for each issue cite the authority and argue the facts and law that supports the Client. But recognize and address contrary authority.]
+The Associate should not prepare a table of contents, a table of cases, a summary of argument or the index. These will be prepared, where required, after the draft is approved.”
+    37
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 14: Step 4 - Outline Each Product
+The fourth step of a Performance Test is for you to allocate a separate page to hold the future outline for each product to be created.
+Use a Separate Paper for Each Product Outline. For each product requested, select a separate piece of paper where the outline for that product will be created. At the top of the paper for each outline put a distinctive colored marking on the paper and DIAGRAM the Boss' instruction regarding that document. This simply means to write a short product description along with its weight.
+The Boss' Request describes the product you are to produce, and the last paragraph of the instructions will usually tell the weight for the product and exactly what you are to do.
+If the Boss' Request asks for one product with two separately weighted parts, use one sheet of paper, but divide it horizontally into two parts to indicate the weights.
+For Example. Suppose part A of the Boss' Request asks for a "brief in support of the motion to exclude evidence of client's statement based on police interrogation transcript and the court's prior decision," and the instructions give a weight of 40%. Then at the top of the outline page for this product state:
+“Product A. -- 40%
+Brief -- Supporting Motion to exclude client's statement based on
+1) police interrogation transcript and
+2) Court’s prior decision.”
+For Example. Suppose part B of the Boss' Request asks for a "memo analyzing our client's potential causes of action, the defenses that could be raised by the opposition, and the evidence we need to collect," and the instructions give a weight of 60%. Then at the top of the outline page for this product state:
+“Product B. -- 60% Memo --
+1. Causes of Action
+2. Possible defenses for each
+3. Evidence Needed for each.”
+Leave the Page Blank. Don't try creating a complete outline at this stage, because you don't have enough information. Later, after reading the File and Library, you will create a complete outline on these pages. For now, however, leave them blank except for the brief product description.
+Time Spent: You should spend FOUR or FIVE PERCENT of your time (about 7 minutes on a 3 hour Performance Test) separating the file, reading the instructions, reading the Boss' Request and creating a separate outline sheet for each product. Most of this time should be devoted to close examination of the Boss' Request.
+              38
+
+Chapter 14: Step 4 – Outline Each Product
+Applied Example. You should create the following three blank Outlines for the Boss' Request in the California Bar Examination of February 21, 1989 as given previously.
+-------------------------
+“Outline 1 -- 40% -- BRIEF in support of MOTION TO EXCLUDE client's statements to police. BASED ON --
+1) Franklin law.
+2) Transcript of police investigation ("following arrest")
+3) Court's memorandum of decision in previous criminal action.
+4) Headings -- persuasive -- rule and fact
+5) Body -- authority, fact and law
+-------------------------
+Outline 2 -- 20% -- STATEMENT OF FACTS for Boss to incorporate into a declaration for client to sign. Material facts to support motion for summary judgment (product 3).
+1) Concise
+2) Inform judge about facts relating to ownership of money.
+-------------------------
+Outline 3 -- 40% -- BRIEF in support of MOTION FOR SUMMARY JUDGMENT
+1) Against "both defendants" (City of Gum Springs and Railco)
+2) Headings -- persuasive -- rule and fact
+3) Body -- authority, fact and law”
+[The above three statements would appear at the top of three separate sheets of paper.]
+    39
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 15: Step 5 - Skim File and Library for the Issues
+The fifth step of a Performance Test is to skim the File and Library to tentatively establish the ISSUES that should be addressed in each requested product. The purpose here is to develop sufficient information that a close reading of the Library will be productive. This first skimming of the File and Library is a good opportunity to tag each document with a paperclip for easy reference later.
+Look to the Boss' Request. The Boss' Request will either suggest the issues to discuss outright or indicate where to look to establish the issues. It may mention other documents that indicate the issues for discussion. If so, look in the File or Library for the documents mentioned or alluded to in the Boss' Request. The Tables of Contents may help to find and zero in on the documents that define the issues.
+For example: If the Boss says, "Write the client and advise her of her rights under Franklin Civil Procedure Section 123," then zero in on that statute in the Library to see the issues that must be addressed in the letter to the client. Look in the Table of Contents for the Library for a reference to “Franklin Code of Civil Procedure”.
+Look to the File for Factual Issues. If the Boss' Request suggests factual issues, documents in the File should provide information on those issues. This would be the source of information on "client concerns", causes of action, defenses and factual claims. The Tables of Contents may help to find and zero in on the documents that define the issues.
+For example: If the Boss says, "Write me a memo analyzing the client's causes of action," then zero in on the documents in the File that explain how the client suffered injury. Look in the Table of Contents for the File for a document that describes the events that led to injury.
+Look to the Library for Legal Issues. If the Boss' Request suggests or asks for analysis of legal issues, the Library should provide information. This would be the source of information for pleadings and memorandums of law. Use the Table of Contents.
+For example: If the Boss says, "Write a brief supporting a motion..." then look in the Library for documents listing the issues that must be presented in support of such a motion. Look in the Table of Contents for the Library for statutes or other documents related to the motions concerned.
+Tag Documents in the File and Library as you come to them by placing a paperclip on the bottom margin of the first page of the document. Line the paperclips up from left to right so the third paperclip is the third document in the File/Library, the sixth paperclip is the sixth document, etc. This will save you time later when you want to go back to a certain document. You may have anywhere from five to twelve documents, and if you are looking for a certain document of interest this will allow you to find it immediately. Also, if a document is of special importance, you can tag it with two clips or attach the paper clip so it extends out a little further. This helps you find important documents faster.
+Highlight dates on documents whenever you see them. Dates are very important. 40
+       
+Chapter 15: Step 5 – Skim File and Library for the Issues
+Highlight facts and statutes that appear obviously important, and put a paperclip on the right margin of the page where it appears to tag it for future reference.
+If you see events that give rise to a cause of action, note the DATE. For example, if the question involves an accident, note the date on the accident report. If it involves a contract, when was the contract signed? If the question involves a will, when did the testator write the will and when did they die? Put paperclips on these important facts.
+If you see statutes or other documents that show an effective date, note the DATE. When statutes display an effective date, it usually means one or more of the statutes are not applicable to the client's cause of action. That is the reason the effective date is provided.
+Do not spend much time reading documents at this point. This is just a skim and tag with paperclips to get a feel for the case.
+Outline Issues Now? In some cases you can identify and Outline issues after just skimming the documents. You might be able to flesh out the Outline for one or more products with rough issues at this point.
+Time Spent: You should be able to skim the File in FOUR or FIVE PERCENT of your time (about 7 minutes on a 3 hour Performance Test) At this point your elapsed time should be about EIGHT or NINE PERCENT of the total time available (about 15 minutes on a 3 hour Performance Test).
+Applied Example. The Performance Test for the California Bar Examination on February 21, 1989 asked for 1) a brief to support a motion to exclude evidence, 2) a brief in support of a motion for summary judgment and 3) a list of statements for declaration supporting the motion for summary judgment.
+Where should you look to determine the ISSUES to discuss in these briefs? Since the requested products are pleadings the logical place to look to determine the issues that must be addressed is the Library. The first logical place to look is in the Library Table of Contents. The things to look for there are statutes and cases that appear to deal with motions to exclude and motions for summary judgment.
+The Motion to Exclude. Looking in the Library Table of Contents for this particular Performance Test, there were some cases and a citation to the Franklin Code of Civil Procedure. The Table of Contents held no further clues. Nothing in the Table of Contents showed which documents pertained to the motion to exclude and which pertained to the motion for summary judgment. But you should know from law school that the Exclusionary Rule, and the motion to exclude are Criminal Procedure issues primarily based on case law and derive from the 4th Amendment. In contrast, motions for summary judgment are primarily Civil Procedure issues based on statute.
+Skimming the Library immediately revealed that the Franklin Code of Civil Procedure pertained to the motion for summary judgment, and three cases addressed the issue of motions to exclude evidence. The case of Roman v. Equalization Tax Board in turn cited another case, Harris v. New York. Therefore, there were a total of four cases from which to extract the issues for the motion to exclude.
+                41
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+A quick reading of the cases raised the following issues that must be addressed in a motion to
+exclude:
+1) Was police conduct particularly outrageous? (Roman)
+2) Would exclusion of evidence deter police misconduct? (Janis)
+3) Would the deterrent effect outweigh detriment to public interest (City of Waco, Harris)
+4) Is evidence only offered to impeach? (Harris)
+5) Would admission of evidence reward police misconduct? (Roman)
+These issues pertain to the brief supporting the motion to exclude. Following the Paperclip Index Approach, each of the original three cases should have been tagged with a paperclip on the bottom edge, and each page that discussed an issue or important holding would have been tagged on the right edge.
+The Motion for Summary Judgment. The very first document in the Library in this particular Performance Test was the following statute that defined both the issues of law that must be addressed in a motion for summary judgment and the supporting declarations:
+“FRANKLIN CODE OF CIVIL PROCEDURE 437. Grounds for and effect of summary judgment.
+(a) Any party may move for summary judgment if it is contended that the action has no merit or that there is no defense thereto.
+(b) The motion shall be supported by affidavits, declarations, admissions, answers to interrogatories, depositions and matters of which judicial notice shall or may be taken.
+[This states the motion may be supported by a declaration, as requested.]
+(c) The motion shall be granted if all the papers submitted by all parties in support of and in opposition to the motion show that there is no genuine issue of material fact and that the moving party is entitled to judgment as a matter of law. In making its judgment the court shall consider all of the evidence set forth in the papers and all inferences reasonably deducible from such evidence.
+[This establishes the two ISSUES that must be addressed in the brief:
+1) No genuine issue of material fact; and
+2) Entitled to judgment as a matter of law.]
+(d) Supporting or opposing affidavits or declarations shall be made by a person on personal knowledge, shall set forth admissible evidence, and shall show affirmatively that the affiant or declarant is competent to testify to the matters stated therein.”
+[This establishes the criteria that must be addressed in the list of statements for the declaration.]
+                  42
+
+Chapter 15: Step 5 – Skim File and Library for the Issues
+The requirement that the movant show he is "entitled to judgment as a matter of law" raised additional issues of law that were addressed in two additional documents: The Lost Money and Goods Act, and a treatise, Brown on Personal Property -- Finding Lost Articles.
+In Brown on Personal Property "lost goods" and a "finder" of lost goods were defined. And in the Lost Money and Goods Act, it was established that a finder of goods is entitled to keep lost goods if certain conditions are met.
+Careful reading of these documents shows that the issues to be addressed to show "entitlement to judgment as a matter of law" are:
+1) The client was the "finder" of the money. (per Brown)
+2) Railco has no claim because the money was in a public or semi-public place. (per Brown)
+3) The Lost Money and Goods Act applies because the money was lost and not abandoned or
+stolen goods. (per § 2084, § 4340 and Burley)
+4) Under the Lost Money and Goods Act the client has a right to the money. (per § 2081-
+2083)
+Therefore, for this particular Performance Test all issues to be addressed could be established by
+just reading the Library.
+The Statement of Facts for the Declaration. The statement of facts needed for the declaration is defined in the Code of Civil Procedure at § 437(d) and the requirements give by the case law cited above are that:
+1) The client was competent to testify;
+2) The client was the finder of the money;
+3) Client does not know owner;
+4) That the money was not stolen, mislaid or abandoned; and
+5) That the client met the statutory requirements (found money, turned it in, police advertised,
+no claim for money after 90 days.)
+Skimming or Reading? If you are skimming the file and come across an on-point document, slow down and read it thoroughly. Highlight and tag important parts with paperclips. But at this point don’t carefully read documents that have little importance to the central task of establishing the issues.
+                  43
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 16: Step 6 - Read and Tag Rules of Law
+The sixth step of a Performance Test is for you to carefully read the Library to learn the law that applies to the case, and to highlight and tag remaining facts, rules and holdings of importance in the Library with paperclips for easy reference. This is a challenge because the library can be extensive, and you must go through it fairly quickly. If there are any documents in the Library that you did not tag with a paperclip on the bottom edge while skimming, do it at this time.
+First look back at the Boss' Request memo! Remind yourself of the CALL of the question and the legal ISSUES raised. You can look at the Boss' Request quickly if you have separated the Performance Test materials and laid it out on the desktop for easy access.
+Look for Bad Case Law. The Library Table of Contents will show the cases, statutes and regulations presented, along with the date and court of each case. On some Performance Tests you will have cases that are overruled or modified by later cases. And on some Performance Tests there will be state law holdings that are in conflict with U.S. Supreme Court cases. The point of this type of Performance Test is to see if you recognize and correctly identify the good case law versus the bad case law.
+How to Read Statutes. You may be presented with a large volume of statutes, a few statutes or no statutes at all. If you face a large number of statutes, many of them will be irrelevant. Don’t waste your time reading an irrelevant statute. Just skim through large numbers of irrelevant statutes until you find the few statutes that apply to the case at hand. If you are only given a few statutes, they might all apply to your case. If a statute is relevant, read it carefully because its provisions will strictly control your answer. The point of the performance test is to see if you apply the statutes as written.
+Look for Ineffective Statutes. The effective date of statutes will not be shown on the Table of Contents. But if effective dates are shown on the statutes themselves, highlight and note them, because the whole point of the Performance Test is probably to see if you can identify the ineffective or inapplicable statutes!
+Highlight the elements of the applicable RULES, because you will have to find facts in the File that prove (or disprove) those elements. Tag the important elements you need to prove with paperclips on the right edge of the paper.
+How to Read Cases. Almost every case you are given is important and should be mentioned in your written work in some manner. Cases may mention other cases within them, and those should also be mentioned in your final written products.
+Highlight and put two paperclips on the right edge of the page in any case where another case is mentioned (unless the other case is provided already in the library.) This gives you a quick reference to those cases that are mentioned in the Library, but not mentioned on the Table of Contents.
+In each case provided in the Library highlight and tag the issues raised, facts, and holding with paperclips on the right margin. Don't overdo this. A case can be four pages long, but there is usually only one page in a case worth tagging. That is the page where the court presents an explanation of its holding.
+                       44
+
+Some cases will support your client, and some will be negative. In your final product you will have to cite all of the cases, distinguishing those that support the client’s position from those that do not.
+When you are done reading the Library, you should
+1) Have a paperclip at the bottom edge of the first page of each Library document;
+2) Have two paperclips on the right edge of each page that references an outside case;
+3) Have a paperclip at the right edge of statute pages presenting elements to be proven; and
+4) Have a paperclip at the right edge of case pages tagging the issues, rationale or holdings.
+Upon finishing the Library, straighten the paperclips so that the documents are tagged sequentially on the bottom edge from left to right. For example, if you have six documents in your Library, you should have six paperclips lined up from left to right.
+Arrange the clips on the right side of the Library sequentially from top to bottom. These clips will form an index to the applicable law that can be referenced in your outline. In most cases there will only be one page tagged per case or statute.
+Outline Issues Now? In some cases you can identify issues after skimming the File and reading the Library. You might be able to flesh out an Outline with issues here.
+Index the RULES on the Outline? You may be able to index the Outline to the Library at this time.
+For example, suppose "Need for a Writing" for a contract for goods is an issue to be discussed on the Outline, and on page 8 of the Library UCC 2-201 is presented relating to this issue. Further suppose that there is a case called Smith v. Jones in the library that discusses the application of this statute to the sale of goods between merchants on page 15. Then you would tag those pages in the Library (pages 8 and 15) with paperclips. You would then index your Outline to those rules in the Library as follows:
+“1. ISSUE -- Written contract needed? UCC 2-201 -- L8
+Smith case -- L15”
+Time Spent: You should be able to read, highlight and tag the Library in about THIRTEEN to FIFTEEN PERCENT of your total time (about 25 minutes on a 3 hour Performance Test). At this point your elapsed time should be between TWENTY and TWENTY-FIVE PERCENT of your total time (about 40 minutes on a 3 hour Performance Test).
+Chapter 16: Step 6 – Read and Tag Rules of Law
+             45
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Applied Example. The Performance Test for the California Bar Examination on February 21, 1989 was discussed in the prior chapter. As stated there, all issues could be established by simply reading the Library.
+The Outlines at this point would look something as follows:
+-------------------------
+“Outline 1 -- 40% -- BRIEF in support of MOTION TO EXCLUDE client's statements to police. BASED ON --
+1) Franklin law.
+2) Transcript of police investigation ("following arrest")
+3) Court's memorandum of decision in previous criminal action.
+4) Headings -- persuasive -- rule and fact
+5) Body -- authority, fact and law
+ISSUES:
+1) Police conduct was particularly outrageous. (Roman, L11)
+2) Exclusion is proper because it would deter police misconduct. (Janis, L14)
+3) Exclusion is proper because the deterrent effect outweighs the detriment to public interest
+(City of Waco, L17, Harris, L11)
+4) Exclusion is proper because the evidence is not being admitted to just impeach. (Harris,
+L11)
+5) Admission of evidence would reward police misconduct (Roman, L11)
+-------------------------
+Outline 2 -- 20% -- STATEMENT OF FACTS for Boss to incorporate into a declaration for client to sign. Material facts to support motion for summary judgment (product 3).
+1) Concise
+2) Inform judge about facts relating to ownership of money.
+ISSUES:
+1) The client is competent to testify; (L1)
+2) The client found the money; (L5)
+3) Client does not know owner; (L2)
+4) That the money was not stolen, mislaid or abandoned; (L3, L7, L8, L9)
+5) The client took possession of money; (L5)
+6) Police took possession and advertised lost money as required by statute; (L2-3)
+7) Client claims ownership. (L3)
+-------------------------
+Outline 3 -- 40% -- BRIEF in support of MOTION FOR SUMMARY JUDGMENT
+1) Against "both defendants" (City of Gum Springs and Railco)
+2) Headings -- persuasive -- rule and fact
+3) Body -- authority, fact and law
+ISSUES:
+1) No genuine issue of material fact; (L1)
+2) Entitled to judgment as a matter of law. (L1)
+                           46
+
+Chapter 16: Step 6 – Read and Tag Rules of Law
+3) The client was the "finder" of the money. (per Brown, L5)
+4) Railco has no claim because the money was in a public or semi-public place. (per Brown,
+L6, Burley, L9)
+5) The Lost Money and Goods Act applies because the money was lost and not abandoned or
+stolen goods. (per § 2084 L3, § 4340 L3 and Burley L9)
+6) Under the Lost Money and Goods Act the client has a right to the money. (per § 2081-2083
+L2-3)”
+In this applied example, the following ten Library pages are referenced in the Outlines for each of the three products – pages 1,2,3,5,7,8,9,11,14 and 17. On one page (L11) the case of Roman cites the case of Harris. There would be two paperclips on that page to distinguish it. Therefore, there would be a total of 11 paperclips on the right side of the Library, lined up sequentially from top to bottom tagging the pages 1,2,3,5,7,8,9,11(two clips),14 and 17.
+        47
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 17: Step 7 - Read and Tag Facts
+The seventh step of a Performance Test is to read the File to find the facts relevant to the rules of law that apply to the case.
+First look back at the Boss' Request memo! Quickly read the call of the request once again. You can look at the Boss' Request quickly if you have separated the Performance Test materials and laid it out on the desktop for easy access.
+Glance at the File Table of Contents and note the number and order of documents presented.
+Read each document in order. On each File document highlight important facts and tag those you want to refer back to later with paperclips on the right edge. Facts are important if they relate to the elements of rules.
+Irrelevant Documents. Some documents may appear irrelevant. But they could be there for that very reason. For example, if the issue is a motion to compel production of evidence, the irrelevance of the requested evidence is itself the relevant issue.
+Another consideration is that the date on the otherwise irrelevant document may be the important fact. It may establish the date of other occurrences, notice, or the existence of some disputed condition at a point in time. Many times a party must respond in a “reasonable period” and the dates on documents may hint that the party did not respond reasonably. So do not be too hasty in concluding a document is irrelevant.
+Tag Quotable Facts with paperclips so you can quickly come back to them when writing the final product.
+When you are done reading the File, you should
+1) Have one paperclip at the bottom edge of each File document; and
+2) Have one paperclip at the right margin of each page with important facts;
+Upon finishing the File, straighten the paperclips so that the documents are tagged sequentially on the bottom edge from left to right. For example, if you have six documents in your File, you should have six paperclips lined up from left to right.
+Arrange the clips on the right side of the File sequentially from top to bottom. These clips will form an index to the more important and quotable facts that can be referenced in your outline. In most cases some file documents will not be tagged at all, and some documents may be tagged on several pages. For example, a lengthy document such as a deposition transcript may have relevant facts on several pages. In comparison, a one-page document, such as a cancelled check, would not be worth having any paperclips on the right edge. This is not to say the cancelled check is irrelevant. Rather, it is just not very “quotable.”
+          48
+
+Chapter 17: Step 7 – Read and Tag Facts
+Index the FACTS on the Outline. You should be able to index the Outline to the File at this time.
+For example, suppose "Need for a Writing" for a contract for goods is the issue to be discussed on the Outline. Further suppose there is a signed purchase order for goods in the File at page 4 that establishes the terms of an agreement and that the goods are worth more than $500. Then you would index the page with those facts (page 4) to the outline as follows:
+“1. ISSUE -- Written contract needed? UCC 2-201 -- L8
+Smith case -- L15
+Signed writing, goods, over $500 -- F4”
+Time Spent: You should be able to read, highlight and tag the File in about THIRTEEN to FIFTEEN PERCENT of your total time (about 25 minutes on a 3 hour Performance Test). At this point your elapsed time should be about THIRTY-FIVE PERCENT of your total time (about 65 minutes on a 3 hour Performance Test.). If you go over-time on any portion of the exam you must strive to make up for that by doing some other portion faster.
+Approach Illustrated. The following illustration (“Paperclip Index Approach Example”) shows what the File and Library documents would look at with paperclips used to tag documents and pages.
+Paperclip Index Approach Example
+            FILE
+Document Tags
+    LIBRARY
+Page Tags
+                            49
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Chapter 18: Step 8 - Separately Outline Each Product
+The eighth step of a Performance Test is to finish the separate Outline for each product. Lay out the product Outlines side by side and go through this six-step process for fleshing them out into the final Outlines:
+1) For each product Outline, look back to the Boss' Request to CONFIRM that it meets the call of the request.
+2) For each product OUTLINE rearrange and rephrase ISSUES as needed.
+3) Go through EVERY DOCUMENT in the Library --
+Try to cite ALL CASES somewhere in the Outlines.
+Make sure ALL RELEVANT STATUTES are cited somewhere.
+4) Go through EVERY DOCUMENT in the File --
+Make sure EVERY DOCUMENT in the File is cited somewhere in the Outlines.
+5) Do a final check for ETHICAL PROBLEMS and insert it into an Outline for discussion.
+6) Check the Outlines against the assigned WEIGHTS.
+Step 1: Does the Outline MATCH THE REQUEST? The Boss' Request asks for a product addressing certain issues in a certain format. Make sure the Outline matches that request as exactly as possible. Do not ignore or forget to address portions of the Boss’ Request.
+For example, suppose the Boss requests analysis of “causes of action and possible defenses the opposition might raise.” Then your memo MUST analyze both 1) causes of action and 2) possible defenses. Although there is no strict requirement your answer should devote about equal time and space to discussion of each subject. Try not to slight a portion of the request in your response.
+Step 2: Rearrange and rephrase issues on the Outline as necessary. Follow the structure specified in the Boss’ Request, if there is one. If there is no exact structure required, arrange your issues so your answer flows well. If you have to make a lot of changes, your Outline will get messy. You might find it necessary to copy the Outline over onto a new piece of paper.
+Step 3: Make sure almost all Library materials are cited. Go through the Library, document by document, to see where the document fits into your response.
+EVERY CASE AND RELEVANT STATUTE from the Library (and every case cited within a case) should be cited in at least one place in the product Outlines, and you should strive to have TWENTY UNDERLINED CITATIONS to statutes and cases. Even if a case is irrelevant or inapplicable it should be cited and expressly recognized as irrelevant in many situations. This citation may be done in a very cursory fashion.
+For example, you might cite three cases, distinguishing and clarifying two cases with little direct bearing on the current issue, by stating as follows:
+"One issue is whether our client is a merchant for purposes of UCC 2-201. Our client's case most closely matches the situation in the Smith case where the court ruled a hobbyist may be a merchant for purposes of UCC 1-201. Although Smith cited the previous holding in the case of Wilson, the validity of the Smith holding on
+             50
+
+Chapter 18: Step 8 – Separately Outline Each Product
+this issue was not overturned by the Supreme Court's later rejection of Wilson on other grounds in its published opinion in Jones."
+The Outline entry that would form the basis for this statement would look as follows:
+“1. ISSUE -- Is client merchant? UCC 2-201 -- L8
+Smith case -- L15 -- hobbyist is merchant
+Wilson cited in Smith -- L14
+Jones overturned Wilson on other grounds -- L20”
+Do not cite statutes that are clearly irrelevant, but EVERY RELEVANT STATUTE should be cited somewhere in the Outlines. Underline citations to both statutes and cases. Give some thought before concluding a statute is irrelevant.
+If a statute is mentioned in a case, prominently displayed, or mentioned in File documents, it should be cited somewhere in the Outline, if only to say that it is not relevant to the case.
+For example, you might say:
+" UCC 2-201 does not apply here because it did not become effective until
+September 20, 1999 and this contract was signed a year earlier."
+The Outline entry that would form the basis for this statement would look as follows:
+“1. ISSUE -- Writing needed?
+UCC 2-201 -- L8 -- irrelevant -- not effective until 9/20/99”
+Step 4: Make sure all File materials are cited if possible. Go through the File, document by document, to see how facts from each document might be cited.
+EVERY DOCUMENT in the File should be cited at least one place in the product Outlines if possible. Even if a document seems irrelevant it might be cited and expressly recognized as irrelevant. This type of citation may be done in a very cursory fashion. There is nothing wrong with underlining your references to the File materials.
+For example, you might have some arrest documents that have little usefulness. Instead of just ignoring them, you can cite all of these documents together in a cursory fashion as follows:
+"Our client's cause of action arose on September 12, 1998 when he was arrested. This fact is reflected in the arrest report, property inventory, personal property receipt and the preliminary hearing transcript.”
+The Outline entry that would form the basis for this statement would look as follows:
+“1. ISSUE -- Can client recover seized property?
+Civil Code 1234 -- L8 -- recovery of seized evidence (effective 9/1/97) Property taken 9/12/98 --
+                 51
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+arrest report F7, inventory F8,
+receipt F9,
+hearing transcript F13”
+Step 5: Review for ETHICAL PROBLEMS. In every Performance Test you are supposed to be an attorney and sensitive to ethical conflicts. Those conflicts arise in many Performance Tests. Talking about ethical problems is an ABSOLUTE MUST if 1) the Boss’ Request mentions ethical problems or 2) the Library contains Professional Responsibility statutes or cases.
+If the boss says ANYTHING about a professional responsibility issue, including some statement that professional ethics is NOT an issue, you should INDEPENDENTLY review whether there is a professional ethics problem and REPORT BACK to the boss on your findings.
+WATCH OUT for the following situations where ETHICAL PROBLEMS arise:
+Example 1: Prior Relationship Between Firm and Opposing Party. This situation arises when the Firm (the firm for which "Applicant" and "Boss" both work) has a prior relationship with a party in the dispute other than the current client. Watch for the description of a party as an "old", "former" or "major client".
+Example 2: Prior Relationship Between Boss and Opposing Counsel. This situation arises when the "Boss" describes the counsel for another party (other than the Client) as a "friend" or "old law school pals."
+Example 3: Firm Has Financial Interest. This situation arises when the Firm or someone working for the Firm would be financially affected by the outcome of the case. This would be the case if a party owes the firm money.
+Answer is Always Discussion, Disclosure and Consent. The proper response in almost every case of ethical conflict is that the firm must discuss and disclose the potential conflict to the Client and obtain informed consent. If the fully informed Client consents to continued representation, then the Applicant's ethical duty is satisfied.
+And in order to FULLY INFORM the Client, you must explain the rules of law to the client. That gives you opportunities to cite the various statutes and cases.
+Step 6: Check that Outlines Reflect the Weights. You should spend about THIRTEEN to FIFTEEN PERCENT more of your total time (about 25 minutes on a 3 hour Performance Test) completing the Outline. The amount of time you spend (and the outline lengths) should match the assigned product weighting. Before you start this step your elapsed time should be about
+Time Spent: You should finish the Outlines and be ready to write after HALF YOUR TIME has been used up. On a 3 hour Performance Test you should be ready to start writing after 90 minutes have elapsed, giving you 90 minutes writing time.
+            52
+
+Chapter 18: Step 8 – Separately Outline Each Product
+Applied Example. The Performance Test for the California Bar Examination on February 21, 1989 was discussed in the prior chapter.
+Upon completion, The Outlines at this point would look something as follows: -------------------------
+“Outline 1 -- 40% -- BRIEF in support of MOTION TO EXCLUDE client's statements to police. BASED ON --
+1) Franklin law.
+2) Transcript of police investigation ("following arrest")
+3) Court's memorandum of decision in previous criminal action.
+4) Headings -- persuasive -- rule and fact
+5) Body -- authority, fact and law
+ISSUES:
+1) Police conduct was particularly outrageous. (Roman, L11)
+Use of dog -- frightened, night, pounding -- F4, F14, F20 Police report -- F14-15
+Transcript - F16
+Court dismissed - F19
+No probable cause, Clear violation F20/F21, Second occasion - F20
+Kept luggage and rail ticket for months - F22
+2) Exclusion is proper because it would deter police misconduct. (Janis, L14)
+Second occasion - F20
+Police were on city business - F22
+3) Exclusion is proper because the deterrent effect outweighs the detriment to public interest
+(City of Waco, L17, Harris, L11)
+No probable cause, Clear violation F20/F21, Second occasion - F20 Help homeless? F23
+4) Exclusion is proper because the evidence is not being admitted to just impeach. (Harris, L11)
+5) Admission of evidence would reward police misconduct (Roman, L11) Police were on city business - F22
+-------------------------
+Outline 2 -- 20% -- STATEMENT OF FACTS for Boss to incorporate into a declaration for client to sign. Material facts to support motion for summary judgment (product 3).
+1) Concise
+2) Inform judge about facts relating to ownership of money.
+ISSUES:
+1) The client is competent to testify; (L1)
+F4 -- high school teacher
+2) The client found the money; (L5)
+F5 -- found box behind bed
+3) Client does not know owner; (L2)
+F5-6
+4) That the money was not stolen, mislaid or abandoned; (L3, L7, L8, L9)
+                      53
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+F5-6 -- box "stuck in crack" appeared to have "worked way there"
+5) The client took possession of money; (L5)
+F5-6; counted money
+Receipt - F18 -- clearly in his possession
+6) Police took possession and advertised lost money as required by statute; (L2-3)
+F23 -- news clipping -- "if owner does not appear"
+Receipt - F18 -- took possession
+7) Client claims ownership. (L3)
+F9 -- complaint
+-------------------------
+Outline 3 -- 40% -- BRIEF in support of MOTION FOR SUMMARY JUDGMENT
+1) Against "both defendants" (City of Gum Springs and Railco)
+2) Headings -- persuasive -- rule and fact
+3) Body -- authority, fact and law
+ISSUES:
+5) No genuine issue of material fact; (L1)
+F14, F16, F18, F22, F23 -- city and Railco agree money was in possession of client and
+taken from him. Advertised and no rightful owner has claimed.
+6) Entitled to judgment as a matter of law. (L1)
+7) The client was the "finder" of the money. (per Brown, L5)
+F14, F16, F18, F22, F23 -- In his possession. Not stolen or abandoned.
+8) Railco has no claim because the money was in a public or semi-public place. (per Brown,
+L6, Burley, L9)
+F14, F16, F18, F22, F23 -- passenger car open to the public.
+7) The Lost Money and Goods Act applies because the money was lost and not abandoned or
+stolen goods. (per § 2084 L3, § 4340 L3 and Burley L9)
+F4-8 -- "fell in crack". Money this size not abandoned. Not hidden by someone who would return.
+Under the Lost Money and Goods Act the client has a right to the money. (per § 2081-2083 L2-3)”
+             54
+
+Chapter 19: Step 9 – Write Each Product
+Chapter 19: Step 9 - Write Each Product The ninth and last step of a Performance Test is to write each requested product.
+Start with the most important product. If two products are to be produced it is often best to start with the more important product. Never start writing a second product until the first product is completed and carefully placed aside. Number your pages for each written response, and DON'T GET PAGES MIXED FROM TWO PRODUCTS (this is usually only a problem for those students who are typing the exam.)
+Form. The written product should look somewhat like what it is supposed to be. If it is supposed to be a letter, start with a letterhead, inside address, subject line and salutation and end with a signature block. If the product is supposed to be a memo, use a memorandum format. If it is supposed to be a pleading, begin with a caption to show it is a pleading. Don’t go overboard on this because that will not gain you extra points.
+Look in the file for either instructions or examples of what the finished product should look like. Don't waste a lot of time on form, BUT do spend enough time to make the document look somewhat like what was requested. A memo should say “Memorandum” at the top, and a letter should look like a letter. A “points and authorities” should be labeled “Points and Authorities”.
+Open with a statement of what you were to do or what the product is. In most cases the written product is improved if there is a short opening statement describing the contents of the writing.
+For example, a memo to the Boss might start like this:
+"This memo is in response to your request for an analysis of the causes of action, defenses
+and factual problems presented by this case."
+For example, a letter to a Client might start like this:
+"I have been asked to write to you in response to your request for an analysis of the causes
+of action, defenses and factual problems presented by your case."
+For example, a points and authorities submitted to the Court might start like this:
+"Plaintiff John Doe hereby submits this Points and Authorities in support of his Motion for
+Summary Judgment."
+Follow your Outline. It does no good to outline an answer unless the Outline is followed.
+Simple, Clear Language. Write your documents using simple, clear language. This is especially true if the document is supposed to be to the client. Explain and define legal terms for the client. For example,
+"One issue here is whether there was a valid contract. A contract is a bargained-for agreement between two parties in which each party agrees to do something."
+  55
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Use headings and subheadings to emphasize ISSUES. Issues should be illuminated by
+headings, subheadings or other means. Try to have at least one heading on every page. Underline the issue being addressed. In some cases issues can be illustrated by questions. In
+pleadings issues should be argumentative statements of fact placed as numbered headings.
+For example, in a letter or memo a paragraph addressing a cause of action for conversion could be introduced in the following styles:
+"Our client has a cause of action for CONVERSION. Under Civil Code..." "Can our client bring an action for CONVERSION? Under Civil Code..." "CONVERSION. Under Civil Code..."
+For example, in a pleading memo a section claiming a cause of action or arguing a point of law is headed with an underlined and centered caption that should present an assertive statement using a full sentence:
+"I. THERE ARE NO MATERIAL FACTS IN DISPUTE IN THE PRESENT MANNER BECAUSE THE OPPOSING PARTY ADMITS THAT HE TOOK THE MOVANT’S CAR AND KEPT IT FOR OVER THREE MONTHS."
+Obey the CALL. On some Performance Tests they will say that the pleading headings must be a complete sentence that completely states the argument contained within the section.
+Citations to LAW. When writing the final product, always underline any references to both cases or statutes. For example,
+"Under the holding in Smith a hobbyist is a merchant within the meaning of UCC 2-201."
+A case (or statute) is very important if it is mentioned in the Boss' Request, or if it is referred to more than once in the Library or File. A case is of medium importance if it is presented in the Library but not otherwise mentioned. A case is usually of low importance just mentioned in passing in another case.
+You should cite every case at least one time, and important cases should be cited more than once. If a case is of marginal or tangential importance, you still should try to make some reference to it.
+There should be at least one citation to every relevant statute. Your purpose should be to display to the Grader that you are recognizing and incorporating all of the Library materials into your analysis.
+Reference to File Documents and Facts. When writing the final product, underline references to the File documents and quote the facts from the documents. For example,
+"Our client's statements have been inconsistent because in the Client Interview Transcript she said she was "forced to pay" for the widgets, but in her Deposition on 12/1/99 she stated she "wanted to buy the widgets."”
+                56
+
+Try to incorporate at least one citation to facts in each and every document in the File. A simple document may not call for much comment, but avoid unnecessarily ignoring any document in the File. It is better to mention a document of marginal importance than to fail to mention a document of moderate importance.
+For example, if the File contains a document showing photocopies of train tickets ask yourself “Why did the California Bar Examiners go to the trouble of including these train tickets? The following reference might be sufficient citation:
+"We can prove our client paid for the trip because her train tickets are in our file."
+Documents Produced Should Reflect Weight Indicated. Write your documents so that their extent and thoroughness reflect the assigned weights. For example, a document weighted 80% should look about four times bigger than a document weighted only 20%.
+Conclusions. Always provide a conclusion for each issue and a separate and more extensive conclusion for each document. The document conclusion is generally a summary of the document as a whole, simply restating the original Boss' Request as an accomplished fact.
+The conclusion for each issue can be a paragraph introduced with the word "Therefore." The summary for the document should be introduced with a heading that says “CONCLUSION”.
+For example, an issue discussion might be concluded as follows:
+"Therefore, our client may be able to successfully raise assumption of the risk as a defense to negligence."
+But a document should end with a conclusion that is more in the following form:
+"Conclusion.
+Review of the current law and the facts related to our client's case shows that our client has several causes of action. However, the opposing party may be able to raise certain effective defenses identified above. As discussed above, additional investigation is called for to gather evidence needed to meet the possible defense arguments."
+Finishing Touches. The last step in writing the requested document is the signature block and signature.
+BE CAREFUL to note if a memo or letter is to be written for the Boss' signature or the Applicant's signature.
+Never put your own true name on any of the documents, and if the letter or memo is supposed to be from the "applicant", sign the document "Applicant."
+Caution. DO NOT USE COLORS OR HIGHLIGHTERS on the finished document. Underline with black ink pen only.
+Chapter 19: Step 9 – Write Each Product
+            57
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+Applied Example. The Performance Test for the California Bar Examination on February 21, 1989 was discussed in the prior chapter. The following is an example of a brief resulting from the approach suggested above.
+“STATE OF FRANKLIN County of Prince William
+Peter Flinders, Plaintiff ) )
+v.
+) Case No. 1232432
+) City of Gum Springs, Defendant ) ---------------------------------------------)
+BRIEF IN SUPPORT OF MOTION TO EXCLUDE EVIDENCE
+[You MUST have a heading like this]
+This Brief is presented by plaintiff PETER FLINDERS in support of his Motion to Exclude Evidence.
+I. STATEMENT OF FACTS
+[This section is optional]
+II. LEGAL ARGUMENT
+1. THE COURT SHOULD EXCLUDE THE EVIDENCE BECAUSE IT IS THE PRODUCT OF OUTRAGEOUS POLICE MISCONDUCT.
+Under Roman evidence should be excluded if “police conduct was particularly outrageous," and the Court may even exclude it "for purposes of impeachment."
+Here there was outrageous police misconduct because the police entered the plaintiff's sleeper compartment at "3:45 a.m." with a barking police dog after pounding on the door. This is proven by the Police Officer's Incident Report. The police admit they entered the plaintiff's compartment without a warrant and arrested him with no other evidence than the behavior of the police dog. The claim in the incident report that the plaintiff consented to police entry is clearly false.
+The police repeatedly refused to provide the plaintiff with an attorney, as shown by the Transcript of Interview. Further, the police questioned the plaintiff for several hours in violation of his rights. Further, the police took the plaintiff's luggage and stranded him without a train ticket. He was not returned his possessions for months, as shown by the City Solicitor's Letter of January 18, 1989.
+The outrageous nature of the police action is shown by the Dismissal of the criminal case and the Memorandum of Decision the trial court issued. The Court stated the acts of the police were "without probable cause" and that this is the "second occasion" on which the court had occasion to hear of such violations. The Court "condemned" the actions of the police in this case and found they were "unwarranted" and "completely without foundation."
+           58
+
+Chapter 19: Step 9 – Write Each Product
+Therefore, the evidence at issue in this case is the result of outrageous police conduct and should therefore be excluded under the holding of Roman.
+2. THE COURT SHOULD EXCLUDE THE EVIDENCE BECAUSE IT WILL DETER FUTURE POLICE MISCONDUCT.
+Under Janis the Supreme Court held that the "prime purpose" of the rule is to "deter unlawful police conduct," particularly where the police organization to be bound is the same organization that engaged in the unlawful conduct.
+Here deterrence is called for because this is the "second occasion" that the Court has found the police in Gum Springs to conducted an unreasonable search.
+Here the improper police conduct was by the City of Gum Springs as shown by the City Solicitor letter, and this is the same entity that now seeks to gain advantage by its own wrongful act as shown in that letter and the newspaper story.
+In Roman the Court found it "unwholesome" and an "abuse of power" to "award" an advantage to police by using improperly obtained statements against a party in a civil action.
+The situation here can be distinguished from City of Waco because there the claim for money was by "McLennan County," a different entity from that which improperly obtained evidence. There the Court held that there would be no deterrence from excluding evidence because the "governmental entity responsible for violation, the City of Waco, would in no way be deterred since they make no claim to the money."
+Unlike City of Waco, in the current case the claim for the money is by the very same entity that violated the law.
+Therefore, the Court should exclude the evidence here to deter further police misconduct in the future.
+3.. THE COURT SHOULD EXCLUDE THE EVIDENCE BECAUSE THE DETERRENT EFFECT OUTWEIGHS THE DETRIMENT TO PUBLIC INTEREST.
+In City of Waco the Court held the "deterrent benefit of the exclusion must outweigh the detriment to the public interest," and Harris "focused attention on balancing" the deterrent effect of exclusion on the detriment to public interest.
+Here the Court, in its Memorandum of Decision has found the police have acted "without probable cause", in "clear violation" of the law for a "second occasion." Clearly some further effort is necessary to deter police misconduct.
+The detriment to the public interest here is slight. According to the Gum Spring's Gazette article of February 17 the City Council had some difficulty deciding how to spend the money at issue, and decided to give it away to charity. Clearly there will not be a harsh impact on the public interest if the evidence is excluded.
+Therefore, the balance of interest favors exclusion of the evidence.
+                 59
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+4. THE COURT SHOULD EXCLUDE THE EVIDENCE EVEN IF IT IS JUST USED TO IMPEACH BECAUSE IT IS THE UNREALIABLE PRODUCT OF OUTRAGEOUS DURESS.
+Under Roman evidence should be excluded if "police conduct was particularly outrageous," and the Court may even exclude it "for purposes of impeachment."
+In the current case the only purpose of introducing the statements of the plaintiff is to impeach his claim that he possessed the money in dispute. This statement is of little value because it was made under duress as shown in the Police Interview Transcript.
+Further, the fact that the plaintiff had the money in his possession can hardly be disputed since it is shown to be true by the Police Property Receipt, by the Police Incident Report and by the Police Interview Transcript.
+As discussed above, the police conduct here was particularly outrageous as required by Roman.
+Therefore, the evidence should be excluded, even to impeach.
+5. THE COURT SHOULD EXCLUDE THE EVIDENCE BECAUSE ADMISSION WOULD REWARD OUTRAGEOUS POLICE MISCONDUCT.
+Under Roman evidence should be excluded if it would "award an advantage” in establishing a civil liability to the very party that has infringed upon constitutional protections.
+Here the misconduct was by the Gum Springs police on police business as shown by the City Solicitor letter. Admission of the evidence in dispute would "award an advantage" to that same entity.
+Therefore, the evidence should be excluded to prevent an unjust reward for police misconduct.
+III. CONCLUSION.
+Based on the law and facts of this case as outlined above the Court should exclude the evidence illegally obtained by the police to deter future police misconduct.
+Date: January 12, 2000 Signed___________________ Applicant”
+[The thing to note about the foregoing pleading is that it references each applicable case, Roman, Janis, City of Waco and Harris. Further it quotes numerous facts and identifies a number of the supporting documents from the file. Some of the documents cited do not add very much to the analysis, but citing them gives the resulting product an appearance of being much more complete.]
+November 25, 2009
+                60
+
+Chapter 20: Conclusion
+The Performance Test is an important portion of the Bar Exam that may determine whether you pass the Bar Exam or not. If that were not so, you would not be reading this book. Completing the Performance Test within the allotted time is absolutely crucial.
+The best approach to the Performance Test is to follow a series of methodical steps similar to any other project such as erecting a Christmas Tree. You must read instructions, lay out materials and plan the final result and execute the plan.
+You must have a time plan, and you must stick to the plan. Allocate half your time to reading the Performance Test materials and outlining your answer, half your time should be allocated to writing a clear, concise response.
+Successful completion of the Performance Test demands close study of the Boss’ Request and application of the IRAC approach. The Boss’ Request will state or suggest the ISSUES to be discussed, the Library provides the RULES of law, and the File provides the facts to be ANALYZED.
+Organizing and analyzing the materials to be incorporated in your final product is essential. The Paperclip Index Approach explained here is not the only possible approach. The best approach is the one that works for you. But the approach shown here works in most situations, and it is usually more time-efficient than other approaches.
+As explained in the forward to this book, the California State Bar website posts all of the PTs given in the past five years along with two student answers for each that received high scores. The website is at www.calbar.ca.gov. There you can review the last 20 performance tests, and 40 past student answers that received high scores from the Bar.
+Following the steps suggested in this book and reviewing the 40 exemplary answers posted at the California Bar website is all you need to produce a clear and well-organized written product that get you past this portion of the Bar Exam.
+Chapter 20: Conclusion
+      61
+
+NAILING THE BAR – How to Write Performance Tests for Bar Exams
+FREE 8-WEEK Do-It-Yourself Bar Review Schedule for the CALIFORNIA BAR EXAM
+A FREE GBX Study Schedule for the California General Bar Exam (GBX) is now available as a PDF file that gives you step-by-step instructions on how to use Nailing the Bar Books over an 8- week period to fully prepare yourself for the California General Bar Exam.
+Note, this is a rigorous study schedule and not for the indolent or faint of heart. All you need to read or print this file is Adobe Reader, which is readily available (free) on the internet.
+Simply go to www.PracticalStepPress.com and pick up this Study Schedule from the FREE Digital Files section. Or go directly there using the link above.
+Add this PDF to your "shopping cart" as if you were buying it. Enter your name, address and email address as if you were buying the product. You MUST give a VALID EMAIL ADDRESS and enter a PASSWORD. You will be sent an email at that address with a link from which the Study Schedule must be downloaded within 3 days after receiving the link. If you forget your password contact us for help.
+Alternatively, you can simply click on "CLICK TO OPEN THIS BOOK" and save the PDF file to any place on your computer.
+  62
+
+Note: Prices, ISBN numbers and details are subject to change as various volumes are updated. NAILING THE BAR publications by Practical Step Press – www.PracticalStepPress.com
+EXAM GUIDES:
+These Exam Guides identify the most commonly tested legal issues and explain WHAT to Say and HOW to Say It on Law School and Bar Exams:
+1. How to Write Essays for Contracts, UCC, Torts and Crimes Law School and Bar Exams (ABC). The 140 most commonly tested law school and bar exam issues, 217 rules & definitions to answer them, 160 issue spotting hints, how to NAIL THE ELEMENTS, and 20 practice questions with sample answers. $29.95. ISBN 978-1-936160-00-6. © 2009, 2012.
+2. How to Write Essays for Contracts & UCC Law School and Bar Exams (A). The 51 most commonly tested law school and bar exam Contracts and UCC issues, 79 rules & definitions to answer them, 71 issue spotting tips, and 7 practice questions with sample answers and explanations. $19.95. ISBN 978-1-936160-01-3. © 2009, 2012.
+3. How to Write Essays for Torts Law School and Bar Exams (B). The 52 most commonly tested law school and bar exam Torts issues, 91 rules & definitions to answer them, 39 issue spotting tips, and 7 practice questions with sample answers and explanations. $19.95. ISBN 978-1-936160-02-0. © 2009, 2012
+4. How to Write Essays for Crimes Law School and Bar Exams (C). The 37 most commonly tested law school and bar exam Crimes issues, 76 rules & definitions to answer them, 50 issue spotting tips, and 6 practice questions with sample answers and explanations. $19.95. ISBN 978-1-936160-03-7. © 2009.
+5. Nailing the BABY Bar: How to Write Essays for the California First Year Law Student Exam (BB). This book has the same materials as the book “How to Write Contracts, UCC, Torts and Crimes Law School and Bar Exams” PLUS explanation of the California First Year Law Student Exam format. $29.95. ISBN 978-1-936160-04-4. © 2010, 2011, 2012
+6. How to Write Essays for Constitutional Law, Criminal Procedure and Civil Procedure Law School Exams (DEF). The top 33 issues, 104 rules & definitions, 111 issue spotting hints, and 18 practice questions with answers and explanations. $29.95. ISBN 978-1-936160-09-9. © 2011, 2012.
+7. How to Write Essays for Criminal Procedure Law School and Bar Exams (D). Issues, rules, questions and answers for Criminal Procedure. $19.95. ISBN 978-1-936160-10-5. © 2010., 2011, 2012
+8. How to Write Essays for Civil Procedure Law School and Bar Exams (E). Issues, rules, issue spotting, questions and answers for Civil Procedure. $19.95. ISBN 978-1-936160-11-2. © 2010., 2012
+9. How to Write Essays for Constitutional Law Law School and Bar Exams (F). Issues, rules, issue spotting, questions and answers for Constitutional Law. $19.95. ISBN 978-1-936160-12-9. © 2010, 2012, 2013.
+10. How to Write Essays for Real Property, Wills, Trusts and California Community Property Law School and Bar Exams (GHIJ). The 93 top issues, 213 rules & definitions, 165 issue spotting hints, and 20 practice questions with answers and explanations. $29.95. ISBN 978-1-936160-13-6. © 2010, 2011, 2013.
+11. How to Write Essays for Real Property Law School and Bar Exams (G). Issues, rules, issue spotting, questions and answers for Real Property. $19.95. ISBN 978-1-936160-14-3. © 2010, 2013.
+12. How to Write Essays for Wills and Trusts Law School and Bar Exams (HI). Issues, rules, issue spotting, questions and answers, Wills and Trusts. $19.95. ISBN 978-1-936160-15-0. © 2010.
+13. How to Write Essays for California Community Property Law School and Bar Exams (J). Issues, rules, issue spotting, questions and answers for Community Property. $19.95. ISBN 978-1-936160-16-7. © 2010.
+14. How to Write Essays for Evidence, Remedies, Business Organization and Professional Responsibility Law School and Bar Exams (KLMN). The top 103 issues, 142 rules & definitions, 223 issue spotting hints, and 20 practice questions with answers and explanations. $29.95. ISBN 978-1-936160-17-4. © 2011, 2012.
+15. How to Write Essays for Evidence Law School and Bar Exams (K). Issues, rules, issue spotting hints, questions and answers for Evidence. $19.95. ISBN 978-1-936160-18-1. © 2010.
+16. How to Write Essays for Remedies Law School and Bar Exams (L). Issues, rules, issue spotting hints, questions and answers for Remedies. $19.95. ISBN 978-1-936160-19-8. © 2011.
+ 63
+
+PracticalStepPress.com
+17. How to Write Essays for Business Organization Law School and Bar Exams (M). Issues, rules, issue spotting hints, questions and answers for Corporations and Business Organization. $19.95. ISBN 978-1-936160-20-4. © 2011.
+18. How to Write Essays for Professional Responsibility Law School and Bar Exams (N). Issues, rules, issue spotting hints, questions and answers for Professional Responsibility. $19.95. ISBN 978-1-936160-21-1. © 2011.
+19. Rules and Definitions for Law Students (O). Over 800 rules and definitions for Torts, Contracts, UCC, Criminal Law, Civil Procedure, Criminal Procedure, Constitutional Law, Real Property, Wills, Trusts, Community Property, Evidence, Remedies, Business Organization and Professional Responsibility. $24.95. ISBN 978-1-936160-22-8. © 2014
+20. How to Write Essay Answers for Law School and Bar Exams; The Essential Guide to California Bar Exam Preparation (PR). The top 380 issues tested on law school and bar exams in these 14 areas of law tested on the California Bar Exam. 565 issue spotting hints, how to NAIL THE ELEMENTS, and 48 uniquely different practice questions with sample answers and explanations. $64.95. ISBN 978-1-936160-05-1. © 2014.
+21. How to Write Performance Tests for Bar Exams (Q). A guide for writing Performance Tests for Bar Exams. Formatted specifically for the California State Bar Exam with examples of letters, memorandums, pleadings and other required documents. $19.95. ISBN 978-1-936160-23-5. © 2014.
+22. 333 Multiple-Choice Questions for First-Year Law Students (MQ1). 333 multiple-choice questions on contracts, UCC (Articles 1 & 2), torts, crimes, and criminal procedure arranged into 10 practice exams as tested on California’s First-Year Law Student Exam ( “Baby Bar”) and the General Bar Exam (GBX). $29.95. ISBN 978-1-936160-34-1. © 2014.
+23. Nailing the MBE (MQ2). 600 multiple-choice questions arranged in 6 practice exams as tested on the MBE with answers, explanations and proven exam strategies. $74.95. ISBN 978-1-936160-38-8. © 2014.
+CONDENSED OUTLINES:
+These condensed Simple Outlines give “90 Percent of the Law in 90 Pages” to quickly and easily explain the generally adopted Black Letter Law and Bright Line Rules without excessive discussion of historical development or odd holdings that have little or no modern application:
+  24. SIMPLE
+25. SIMPLE
+26. SIMPLE
+27. SIMPLE
+28. SIMPLE
+29. SIMPLE
+30. SIMPLE
+31. SIMPLE
+32. SIMPLE
+33. SIMPLE
+34. SIMPLE
+CONTRACTS & UCC OUTLINE (O-1) © 2010, 2011, 2013 TORTS OUTLINE (O-2) © 2010, 2011, 2013
+CRIMES OUTLINE (O-3) © 2010, 2011, 2012
+CRIMINAL PROCEDURE OUTLINE (O-4) © 2011
+CIVIL PROCEDURE OUTLINE (O-5) © 2012 CONSTITUTIONAL LAW OUTLINE (O-6) © 2012 EVIDENCE OUTLINE (Fed. & Cal. rules) (O-7) © 2012 REAL PROPERTY OUTLINE (O-8) © 2012
+CALIFORNIA COMMUNITY PROPERTY (O-9) © 2012 REMEDIES OUTLINE (O-10) © 2010, 2012
+CALIFORNIA WILLS & TRUSTS OUTLINE (O-11) © 2012
+ISBN 978-1-936160-06-8. ... $19.95 ISBN 978-1-936160-07-5 .... $19.95 ISBN 978-1-936160-08-2 .... $19.95 ISBN 978-1-936160-24-2. ... $19.95 ISBN 978-1-936160-25-9. ... $19.95 ISBN 978-1-936160-26-6. ... $19.95 ISBN 978-1-936160-27-3. ... $19.95 ISBN 978-1-936160--28-0. . $19.95 ISBN 978-1-936160-29-7 .... $19.95 ISBN 978-1-936160--30-3 .. $19.95 ISBN 978-1-936160--31-0 .. $19.95
+   All of these books are available as “eBooks”. For more information visit our website at www.PracticalStepPress.com
+2/14
+ 94
+
+    HOW TO WRITE PERFORMANCE TESTS!
+• How to ORGANIZE MATERIALS!
+• How to use PAPER CLIPS to SAVE TIME!
+• SPOTTING Ethical Issues!
+• How to BUDGET TIME!
+• How to DRAFT Letters, Memos and Pleadings with Reference to
+Law and Fact!
+   When you take a Bar Exam know WHAT you are going to DO, HOW you are going to DO IT, WHAT to SAY and HOW to SAY it!
+The Performance Test portion of the Bar Exam can be the critical factor. Don’t depend on luck. Learn to write superior Performance Test responses using a simple and practical approach.
+Know how to ORGANIZE the test materials! Know how to ESTABLISH the issues!
+Know how to ORGANIZE your response! Know how to KEEP ON TIME!
+Know how to SPOT the ETHICAL ISSUES!
+A Simple STEP-by-STEP Approach with EXAMPLES:
+• LETTER Formats.
+• MEMO Formats.
+• PLEADING Formats.
+         Published by
+Practical Step Press www.PracticalStepPress.com
+Q
+ISBN 978-1-936160-23-5
+  M
+  
