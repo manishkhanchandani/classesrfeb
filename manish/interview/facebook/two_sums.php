@@ -26,7 +26,38 @@ var twoSum = (nums, target) => {
 	return result;
 };//complexity of O(n²)
 
-console.log(twoSum([2, 11, 15, 7], 9));
+
+//correct solution, max of o(n), 
+
+var twoSum2 = (nums, target) => {
+    console.log('nums are ', nums);
+    console.log('target are ', target);
+	
+	var map = {};
+	var i, value, neededValue;
+	var result = [];
+	var len = nums.length;
+	
+	console.log("len is ", len);
+	
+	for (i = 0; i < len; i++) {
+		value = nums[i];
+		console.log('value is ', value);
+		neededValue = target - value;
+		console.log('neededValue is ', neededValue);
+		if (neededValue in map) {
+			result.push(map[neededValue]);
+			result.push(i);
+			break;
+		} else {
+			map[value] = i;
+		}
+	}
+	
+	return result;
+};
+
+console.log(twoSum2([7, 11, 2, 15], 9));
 
 /*
 though process
