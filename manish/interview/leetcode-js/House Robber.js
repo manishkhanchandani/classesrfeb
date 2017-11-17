@@ -20,8 +20,10 @@ var rob = function(nums) {
     
     result[0] = nums[0];
     result[1] = Math.max(nums[1], nums[0]);
+		console.log('result is ', result);
     for(i = 2; i < len; i++) {
         result[i] = Math.max(result[i - 2] + nums[i], result[i - 1]);
+		console.log('i is ', i, ', result[i - 2] is ', result[i - 2], ', nums[i]: ', nums[i], ', result[i - 1]: ', result[i - 1], ', result: ', result);
     }
     
     return result[len - 1];

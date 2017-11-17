@@ -28,6 +28,7 @@ var numberToWords = function(num) {
         } else if (num < 20) {
             str = belowTwenty[num - 10] + ' ';
         } else if (num < 100) {
+			console.log('num is ', num, ', parseInt(num / 10) - 2: ', (parseInt(num / 10) - 2), ', belowHundred[parseInt(num / 10) - 2]: ', belowHundred[parseInt(num / 10) - 2], ', num % 10: ', (num % 10), ', toWordsHelper is ', toWordsHelper(num % 10));
             str = belowHundred[parseInt(num / 10) - 2] + ' ' + toWordsHelper(num % 10);
         } else if (num < 1000) {
             str = belowTen[parseInt(num / 100)] + ' Hundred ' + toWordsHelper(num % 100);
