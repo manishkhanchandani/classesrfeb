@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Sum</title>
+<script language="javascript">
+function add() {
+	var total = 0;
+
+	function sum(){
+		if( arguments.length ){
+			var arr = Array.prototype.slice.call(arguments).sort();
+			total = total + arrayAdder(arr);
+			return sum;
+		}
+		else{
+			return total;
+		}
+	}
+
+	if(arguments.length) {
+		var arr1 = Array.prototype.slice.call(arguments).sort();
+		var mytotal = arrayAdder(arr1);
+		return sum(mytotal);
+	}else{
+		return sum();
+	}
+
+	function arrayAdder(arr){
+		var x = 0;
+		for (var i = 0; i < arr.length; i++) {
+			x = x + arr[i];
+		};
+		return x;
+	}
+}
+var result = add(2,3)(1)(1)(1,2,3)();
+
+console.log('result is ', result);
+</script>
+</head>
+
+<body>
+</body>
+</html>

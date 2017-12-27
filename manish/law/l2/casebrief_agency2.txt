@@ -1,0 +1,249 @@
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=1092
+
+TOPIC: Agency Termination
+
+CASE: Brockmeyer v. Dun & Bradstreet, 113 Wis.2d 561, 335 N.W. 2d 834 (1983)
+
+HISTORY: Trial court ruled in favor of P. Court of Appeals reversed.
+
+FACTS: An employee (P) held a management position as a district manager of credit services for an investment firm, and he had no contract of employment.  Plaintiff had an erratic career, been on employment probation, his employers were unhappy with the performance of a portion of his duties, he was caught smoking marijuana and had a weekend away with his secretary which they assumed was an affair. After the employer settled a sex discrimination suit filed by the employee's former secretary, with whom he allegedly had an affair, the employer fired the employee. This was after they also asked him for a detailed report that led up to the resignation of the secretary which he refused to do.
+
+ISSUE:  Does Wisconsin have any judicial exceptions to the employment at will doctrine? Did the firing of Brockmeyer violate a fundamental mandate of public policy.
+
+RULE:  An employee has a cause of action for wrongful discharge when the discharge is contrary to a fundamental and well-defined public policy as evidenced by existing law.
+
+ANALYSIS:  A wrongful discharge is actionable when the termination clearly contravenes the public welfare and gravely violates paramount requirements of public interest. The public policy must be evidenced by a constitutional or statutory provision. An employee cannot be fired for refusing to violate the constitution or a statute. Employers will be held liable for those terminations that effectuate an unlawful end. A plaintiff-employee alleging a wrongful discharge has the burden of proving that the dismissal violates a clear mandate of public policy. Unless the employee can identify a specific declaration of public policy, no cause of action has been stated. The determination of whether the public policy asserted is a well-defined and fundamental one is an issue of law and is to be made by the trial court. Once the plaintiff has demonstrated that the conduct that caused the discharge was consistent with a clear and compelling public policy, the burden of proof then shifts to the defendant employer to prove that the dismissal was for just cause. Here the court found no evidence of Dun and Bradstreet  termination of plaintiff had violated a well-defined public policy or any statute or constitutional provision. As the employee failed to prove that his discharge violated fundamental public policy, the decision for the employer was appropriate.
+
+HOLDING/CONCLUSION: Since Brockmeyer had failed to demonstrate that his discharge violated a fundamental public policy as expressed in the constitution or statutes the court affirmed the court of Appeals judgment in favor of the Defendants.
+
+My Opinion: I agree that there were no findings that a public policy had been violated.
+
+ 
+ Tormo v. Yormark, 398 F.Supp. 1159 (1975) Lists Wrong Defendant
+ 
+ Facts:  Plaintiff Wendel Tormo was involved in an out of state boat accident and consulted with a business attorney Devlin, (Defendant) about getting a settlement.  Devlin  decided to hand the case over to an attorney Yormark to bring suit in state of the accident not knowing that Yormark had been famously indicted for fraud and who later settled and embezzled the settlement money for the accident victim.  Tormo brought suit against Devlin for negligently “hiring” and supervising the attorney Yourmark. 
+
+ 
+
+Procedure:  The case was actually from the accident victim against the multiple defendants; including banks involved for negligence who cross claimed Devlin.  This case concerns whether the issue is, as a matter of law, grounds for summary judgment.     
+
+ 
+
+Issue:  Is an attorney liable who negligently recommends and somewhat oversees another famously disreputable attorney? 
+
+ 
+
+Holding: Sometimes. 
+
+ 
+
+Analysis:  An out of state attorney who verifies licensure of in state attorney before referral is not liable for failure to further enquire into his reputation for honesty but here the in state attorney appeared to be helping to manage and overseeing the case.    
+
+ 
+
+Rules:  An actor generally has no duty to use care to prevent harm to another via the criminal acts of third parties outside of his control except a defendant who expressly assumes such a duty.  An agent who is authorized to employ other agents to handle his principal’s affairs is under a duty to select competent and proper agents:  Restatement Agency 2d 405 (2). 
+
+ 
+
+Peter Wallis Commentary:  First I have to say that I am against summary judgments in general based on “law” and so I don’t disagree with the courts holding; I only agree with the reasoning.  The case seems similar to Wilderman v. Wachtell in which an in state attorney recommended a necessary out of state attorney who acted negligently but the court found that the recommending attorney should not be liable for fear of being burdened with “hazards he is not qualified to anticipate or prevent.”  That case was one of negligence; this case is one of an intervening intentional tort and crime which should cut off proximate cause.  How could an attorney who recommends another attorney be held liable for the other attorney’s intentional torts when there was no obvious evidence that he would commit those torts? 
+
+I think the tortfeasor here who should be held responsible is the state of New Jersey, who allowed Yourmark to continue to be listed as an attorney even though he had already been indicted for fraud.  Referring attorneys and the public depend upon that representation of character to their detriment as happened here.  An indictment means probable cause has been proven and the government should not wait for an ultimate conviction or disbarment to make the probable criminal nature of a person known to his potential trusting victims.  Although there is great debate over the function of government and law, it is clear that the most efficient and effective benefit the government could have is to help identify dregs and predators who are likely tortfeasors and criminals to help honest people appropriately limit their trust to them.  An attorney who refers a client to another attorney is not necessarily a partner nor does he owe fiduciary responsibilities for the referral absent negligence.  The state though knew and was negligent in not disclosing the nature of the criminal attorney based on a theory that the government is an agent of the people.
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=430
+ 
+ 2. Hoddeson v. Koos Brothers, 47 N.J.Super. 224, 135 A.2d 702 (1957). (Types of Powers--Powers of Agents)
+ TOPIC: Agency Relationship
+
+CASE: Hoddeson v. Koos Bros 47 N.J.Super. 224, 135 A.2d 702 (1957)
+
+FACTS: Plaintiff Hoddeson and her family went into a furniture store owned by Defendant Koos Bros to purchase bedroom furniture. A man approached her purporting to be a salesman.  She showed him the furniture she wished to buy and he wrote up a sales order and charged her $ 168.50. He said that the furniture was out of stock and would be delivered to her home at a later date.  He did not give her a receipt. The furniture was never delivered so plaintiff contacted defendant. Defendant did not have any sales record of the transaction nor could plaintiff identify the salesman in his store. Plaintiff took Defendant to court.
+
+HISTORY: Trial court ruled in favor of Plaintiff.
+
+ISSUE: Is defendant liable for the imposter salesman? Is there sufficient evidence that a relationship of Master and Servant existed between the imposter salesman and the Defendant, Koos Bros.
+
+RULE: The liability of a principal to third parties for the act of an agent may be shown by proof disclosing 1) express or real authority 2) implied authority, that is, to do all that is proper. Customarily incidental and reasonably appropriate to the exercise of the authority granted; and 3) apparent authority, such as where the principal by words, conduct, or other indicative manifestations has held out the person to be his agent.
+
+ANALYSIS: Here the plaintiff’s evidence does not show the existence of any basic express or implied authority. However the issue of apparent authority needs to be debated.  Apparent authority must be shown to have been created by the manifestations of the alleged Principal and not alone and solely by proof of the supposed Agent. The alleged Principal in this case had no knowledge of the agency relationship. The facts do not show that there were any manifestations on the part of the Defendant to indicate conference of authority, actual or apparent upon the alleged salesman .
+
+However, the court when on to state that the Defendant still owed a duty of care to Plaintiff when she enters the store and has an expectation that she will be tend to by an actual salesperson rather than an impostor and that Defendant can be estopped from asserting that no claim existed when there was no agency relationship established.
+
+CONCLUSION/RULING:  Court reversed the trial courts judgment a new trial was ordered to allow Plaintiff to establish a duty of care. 
+
+MY OPINION: I agree with courts holding but I remember a footnote about about an imposter hotel clerk and in that situation the hotel operator was liable and they did say there was apparent agency. How would this situation differ? 
+
+
+
+
+
+
+
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=7186
+
+
+
+
+
+Pine River State Bank v. Mettille, 333 N.W.2d 622 (1983). (Duration of Agency)
+
+Facts:  The employee was hired by the bank as an at will employee and was later fired. When the bank sued for delinquent payments, the employee claimed his discharge breached the contract as modified by the employee handbook. The trial court awarded damages to the employee, and the bank appealed. The court affirmed, finding that although the employment agreement was oral, the bank's employee handbook changed the terms of employment. When the bank fired the employee, disciplinary procedures in the handbook were not followed. By distributing the handbook, the bank modified existing contracts, subjecting them to handbook provisions. The consideration for the job security was the employee's continued performance despite the freedom to leave, making the security provisions enforceable. The bank breached the employment contract with the employee by not following the termination procedures, resulting in unemployment.
+
+History:  Appellant bank contested an order of the District Court, Cass County, Minnesota, holding that appellee employee was wrongfully terminated from his job at the bank and awarding him damages.
+
+Issue:  Did the bank breach the employment contract with the employee by not following the termination procedures?
+
+Ruling:  The court affirmed the order.
+
+Rationale: The court affirmed, finding that although the employment agreement was oral, the bank's employee handbook changed the terms of employment. When the bank fired the employee, disciplinary procedures in the handbook were not followed. By distributing the handbook, the bank modified existing contracts, subjecting them to handbook provisions. The consideration for the job security was the employee's continued performance despite the freedom to leave, making the security provisions enforceable. The bank breached the employment contract with the employee by not following the termination procedures, resulting in unemployment.
+
+Rule:   Partnership by Contract: A partnership may be contractually formed by a written or oral agreement.  A writing will be required in instances where the partnership is to exist for a period exceeding one year. If there is no specified time period, the partnership will be presumed to be a partnership at will and terminable at any time. In order to become a partner, the party must have the ability to legally contract.
+
+Opinion:  I disagree with the ruling to affirm. The rule indicates that where the hiring is for an indefinite term, the employment is at will, meaning that the employer can summarily dismiss the employee for any reason, or no reason, and that the employee, on the other hand, is under no obligation to remain on the job.  Therefore, according to the rule, the bank had the right to terminate at will.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=7192
+
+. Kelsay v. Motorola, Inc., 74 Ill.2d 172, 384 N.E.2d 353 (1979). (Termination of Agency)
+
+Facts:  Appellant was discharged by appellee employer in retaliation for filing a workmen's compensation claim for an injury she suffered while working for appellee. A trial court awarded compensatory damages and punitive damages. An appellate court reversed the judgment when it held that an employee had no cause of action against the employer for retaliatory discharge. The court affirmed the trial court's award of compensatory damages based on public policy considerations of preventing offensive retaliatory discharge.
+
+History:  Appellant employee sought review of a judgment of the Appellate Court for the Fourth District (Illinois), which reversed a damage award assessed against appellee employer for firing appellant. Appellant was fired after filing a workmen's compensation claim. It was found that the employee had no cause of action against the employer for retaliatory discharge.
+
+Issue:  Was their cause of action against the employer for retaliatory discharge?
+
+Ruling:  The court reversed the appellate court, and the trial court's award of compensatory damages was affirmed for public policy reasons.
+
+Rationale:  Punitive damages could be awarded for retaliatory discharge; however, punitive damages were not warranted in the case because the cause of action was a novel one.  Plaintiff’s discharge for filing a workmen’s compensation claim was not prohibited when the event occurred; however, the Workmen's Compensation Act was amended in 1975 making it unlawful for an employer to interfere with or to coerce the employee in the exercise of his rights under the Act.
+
+Rule:  Partner May have Right Damages for Dissolution: If the dissolution of a partnership violates the terms of the partnership agreement, the non-dissolving partners may have a right to recover damages from dissolving partner. If the dissolution is within the terms of the partnership agreement there will be no action for damages.
+
+Opinion:  Based on the case law ruling holding that an employee has no cause of action against an employer for retaliatory discharge. (51 Ill. App. 3d 1016), I agree with the ruling.  In addition, there was nothing in the Workmen's Compensation Act (Ill. Rev. Stat. 1973, ch. 48, par. 138.1 et
+seq.) that impinged on the employer's unfettered right to terminate without
+cause an employee whose employment contract was at will.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=7237
+
+Frigidaire Sales Corp. v. Union Properties, Inc., 88 Wn.2d 400, 562 P.2d 244 (1977). (Limited Partnership)
+
+Facts:  The contractor sued when the limited partnership breached its contract. Noting that the limited partners were also the officers, directors, and shareholders of the corporate general partner, the contractor sought to impose general liability upon the limited partners, claiming that they exercised the day-to-day control of the partnership through the general partner and were therefore liable under Wash. Rev. Code § 25.08.070. The trial court denied their claim that the limited partners incurred general liability and the appellate court affirmed. The Supreme Court agreed, ruling that the limited partners did not incur general liability for the partnership's liabilities under § 25.08.070 simply because they controlled the corporate general partner.
+
+History:  Petitioner contractor appealed from the judgment of the Court of Appeals (Washington) upholding the judgment of the trial court that was entered for respondent limited partners in a contract action seeking, inter alia, to impose general liability against the limited partners for the limited partnership's contractual obligations, where the general partner was a corporation controlled by the limited partners.
+
+Issue:  Did the limited partners incur general liability because they controlled the corporate general partner?
+
+Ruling:  The judgment of the court of appeals was affirmed.
+
+Rationale:  The record showed that the limited partners did not form the general partner for the sole purpose of operating the partnership, but to create several business opportunities. Thus, their control of the general partner was not merely for the benefit of the partnership. Also, although the limited partners signed the contract, the contractor knew they were agents and it was dealing with a limited partnership with a corporate general partner.
+
+Rule:  Limited Partnership: A limited partnership usually has one managing partner responsible for day to day operations and all partnership debt. The limited partner makes a cash contribution to the partnership and whose liability is limited only for the amount invested.
+
+Opinion:  I agree with the court ruling that the limited partners did not incur liablity for the partnership's liabilities under § 25.08.070.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=9529
+
+
+TOPIC: Partnership
+
+CASE: Cunard Line, Ltd. v. Abney. 540 F. Supp. 657 (1982)
+
+FACTS: Plaintiffs (P), Cunard filed action against defendant (D), Coopers, for breach of contract, fraud, and professional malpractice in tort. D agreed to design and install a computer system but the agreement went awry.
+
+HISTORY: Motion filed to dismiss the amended claim by plaintiff 
+
+ISSUE:
+
+1.      Does the contract claim state a cause of action against the individual partners?
+
+2.      May the partnership itself be sued in this court by the device of individually suing fewer than all of its members?
+
+RULING/DECISION:
+
+1.      No. Contract claim against individual partners dismissed for failure to state a claim.
+
+2.      No. The court dismissed claims against the partnership for lack of jurisdiction.
+
+RATIONALE:
+
+1.      The court stated that partners are jointly liable for the performance of contracts entered into by the partnership. It only gives the joint obligor the right to insist that the plaintiff join other obligors in joinder be possible. A plaintiff may hold a joint obligor personally liable on a joint obligation.  However, there is a prerequisite to individual liability on a joint obligation. The individual partner may be liable only if the joint or partnership property is insufficient to pay the firm debts or it appears there can be no effective remedy without resort to individual property. The court found in this case, the P’s claim fails to allege that the partnership is insolvent and unable to pay its debts. In addition, the P stated that the D was one of the big eight accounting firms and that is unlikely that it would be unable to satisfy a judgment. Therefore, the claim states insufficient facts to entitle the P to relief on the contract claims against any of the D’s as individuals.
+
+2.      The court pointed to several cases applying the rule that there is no jurisdiction over D partnership with non-diverse members. The court found unsound the ruling of a previous case, Hamond v. Clapp, 452 F. Supp. 885 (1978) that stated that federal jurisdiction could be avoided by dropping from the actin any non-diverse partner whose citizenship would oust the court of jurisdiction over the partnership. A partnership does not change the color of its citizenship to accommodate the choice of a federal forum by a non-diverse opponent.  Therefore, this court lacks the power over the subject matter of the action against the partnership because the D has an alien partner and  by virtue of the P’s incorporation.
+
+ 
+
+ 
+
+ 
+
+RULE:
+
+1.      Resort maybe had against individual partners only if the joint or partnership property is insufficient to pay the firm debts or it appears there can be no effective remedy without resort to individual property.
+
+2.      For purposes of diversity, a partnership is a citizen of each jurisdiction of which a partner is a citizen.
+
+MY COMMENTS: I agree with the decision of the court in this case. The common law rule allowed a judgment creditor of a partnership to get a judgment against either the partnership or an individual property of a partner. RUPA Section 307(d) requires partnership creditors to exhaust the partnership’s assets before going after the individual partner’s personal property if that partner is liable under Section 306.
+

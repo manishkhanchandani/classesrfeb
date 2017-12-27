@@ -1,0 +1,155 @@
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=11944
+
+.Tormo v. Yormark,
+
+U.S. District Court for the District of New Jersey
+Citation: - 398 F. Supp. 1159 (D.N.J. 1975)Â Â  May 12, 1975
+ 
+ 
+Facts
+After Karen Wendel's boating accident in 1978, her father, Henry asked Devlin, a New York attorney, to take the case and he agreed  "to see what could be done with regard to settlement" . Then, a New Jersey Attorney Yormark, informed Devlin he will like to take the case.
+ 
+By 1970, the venue for the suit had changed from New York to New Jersey, and since Devlin couldn't practice in New Jersey, he asked Yormark to take the case and advised the Wendels accordingly. 
+In January 1971, Yormark was indicted for fraud, convicted sentenced to two consecutive 18 month prison terms and subsequently disbarred in January 1972. However, Yormark had Karen sign some papers, and then forged her signature, obtained $150,000 from the insurance companies, Â and disappeared.
+Subsequently, Â the Wendels sued Yormark for wrongful conversion of settlement money, and against the banks, for negligence in failing to take reasonable measures  to ascertain that the plaintiffâ€™s endorsement was genuine and correct. 
+ The banks in turn filed third party action for either contribution or indemnity against Devlin based on negligence towards his client in wrongful selection of attorney for them, and for failure to supervise Yormark. Devlin in turn, filed motion for summary judgment against the bank contending the absence of "any factual issue concerning his own liability to plaintiffs".
+ 
+ISSUE
+1. Whether the court should grant motion for summary judgment on the grounds that there was no attorney â€“ client relation between Devlin and the Wendels as there was no retainer agreement and no fee was ever paid?
+2. Whether Devlin as an agent was under a duty to select a competent agent?
+ 
+HOLDINGS
+1. No, summary judgment denied  2. Yes, Devlin was under a duty to select a competent agent.
+ 
+Reasoning
+The promise by Devlin " to see what could be done with regard to the settlement" constituted an agreement to perform services with a non-legal character. Therefore, such an undertaking was sufficient as a matter of law to impose the duties owed by an attorney to his client in his relation with Wendel, needing neither a contractual relation nor compensation.
+ 
+2) The court held that "an agent who is authorized to select another agent to handle his principalâ€™s affairs is under a duty to select a competent or otherwise  proper agent. Consequently, the agent may be responsible to his principal for losses proximately caused by the other agent's intentional wrongdoing". 
+ 
+Conclusion
+Having engaged in positive conduct by making a referral, the lawyer assumes the basic duty to act reasonably.
+ 
+My opinion
+I entirely agree with the court. Devlin showed gross professional incompetence by not ascertaining that Yormark was honest, and not checking on his professional competence and reliability. Devlin should have followed the case, for Wendel had brought business to him in the past and could be aptly described as a business client. A professional owes a duty to check on the professional to whom he refers his clients. 
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=11945
+
+Hodesson v. Koos Bros
+by Kofi Oteng-Gyang - Monday, 13 November 2017, 12:52 PM
+ 
+Hoddeson v. Koos Bros., Types of powers of agents
+Superior Court of New Jersey, Appellate Division.
+Citation: Â 47 N.J. Super. 224, 135 A.2d 702 (1957).
+ 
+Facts
+When Plaintiff Hoddeson went to defendant Koos Bros store in Rahway, Â to buy furniture, a man approached them, recorded her order, calculated the total purchase price as $168.50, and promised delivery to her home in September. When Mrs. Hoddeson did not receive her items and inquired defendant about it, defendant denied having any record of her transaction. Plaintiff filed suit to recover her money. Defendant asserted that the clerk who assisted plaintiff was an imposter and not a salesman of defendant.
+The District court of New Jersey awarded plaintiff reimbursement of money paid for the items which she did not receive.
+Defendant appealed arguing a deficit of evidence to support a master-servant relationship between defendant and the impostor. Â 
+ 
+ISSUE
+Whether the defendant can be held liable for the conduct of an impostor agent?
+ 
+HOLDING
+Yes, defendant can be held liable for the conduct of an impostor agent?
+ 
+REASONING/RULE OF LAW
+The court ruled that : "when a proprietor of a place of business, by his dereliction of duty, allows someone who is not his agent, to act conspicuously as such, and ostensibly to transact the proprietor's business while the patron is in the establishment, the appearances being of such a character as to lead a person of ordinary prudence and circumspection to believe that the impostor was in truth the proprietor's agent, the law will not permit the proprietor to defensively avail himself of the impostor's lack of authority and thus escape liability for the consequential loss thereby sustained by the customer."
+Therefore, defendant as a furniture store owner, owed a duty of care to plaintiff when she enters the store, and the customer has an expectation that she will be attended to by an actual salesperson and not an impostor.
+CONCLUSION
+Therefore, the duty of the proprietor also encircles the exercise of reasonable care and vigilance to protect the customer from loss occasioned by deceptions of an apparent salesman.
+ 
+ 
+My Opinion
+I agree with the court's decision. A business person should be able to know and be responsible for what transpires in his establishment, especially if he is present at the time of the incident.
+
+
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=11947
+
+4. Kelsay v. Motorola (termination of agency)
+Illinois Supreme Court
+Citation: 74 Ill.2d 172, 384 N.E.2d 353 (1979).
+ 
+Prior History: Appeal from the Circuit court of Livingston County
+ 
+Facts
+In February 1973, Motorola fired PlaintiffÂ  Kelsay, an at-will employee after she was injured in the course of her employment. In March, she filed an application before the industrial commission for compensation. On June 6, the Personnel Manager fired her after he had had several conversations with her and told her the claim was unnecessary. Plaintiff filed a tort action against Employer, seeking compensatory and punitive damages, asserting wrongful discharge, as well as willful and wanton conduct by defendant. Plaintiff contended that the discharge violates public policy as stated in the Workmen's Compensation Act, and as such creates a tortious wrong which allows actual and punitive damages.
+ 
+Defendant argued the right to terminate plaintiff's employment at any time by either party without liability.
+The trial court awarded plaintiff Â $749 for actual damages, and $25,000 in punitive damages.
+Motorola appealed, and the court with one judge dissenting, reversed the judgment, holding that Kelsay's complaint failed to state a cause of action. Due to the fact that a different panel of the same court reached a contrary result in an opinion filed on the same day, the APPELLATE COURT on its own motion issued a certificate of importance to the Illinois Supreme Court.
+ 
+Issue
+Whether the discharge of Kelsay was a retaliatory action by her employer?
+ 
+Holding
+Yes. A cause of action for retaliatory discharge is evident.
+ 
+Reasoning
+The court, without relying on any state precedent, analogies or statutory applications, based the ruling in furtherance of the state's public policy andÂ  inference from the general purpose and function of the Workmen's compensation act, ruling: "Without such a remedy, employees would be forced to forego exercising their statutory right to file claims in order to keep their jobs".
+Subsequently, the Illinois General Assembly made retaliatory discharge for filing compensation claims a criminal offense. The Illinois Supreme Court also made retaliatory discharge for filing workmen's compensation claims liable for awards of compensatory and punitive damages. Conclusion
+Retaliatory dischargeÂ  of employees who file workmen's compensation claims could result in compensatory and punitive damages.
+ 
+My Opinion
+I find it extremely laudable that the Appellate courtÂ  issued a certificate of importance to the Illinois Supreme Court on behalf of an issue which they saw was of tremendous importance for the rights of workers.
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=11946
+3. Pine River State Bank v. Mettille, Sr., Respondent (duration of agency)
+Citation: 333 N.W.2d 622
+Supreme court of Minnesota
+ 
+Facts
+Pine River State Bank fired Richard Mettille, an at-will loan officer, without following the Bank's Handbook guidelines for firing employees. Mettille sued the Bank, asserting that the Bank was bound by the rules in the employee handbook, and should therefore have followed those rules in his discharge. However, the Bank argued that the handbook was only a source of information and it couldn't be part of an employee's contract because it lacked sufficient consideration. Â The trial court awarded damages to the employee.
+The Bank appealed.
+ 
+Issue
+Whether the employee handbook constitutes a contract between Plaintiff and Defendant?
+ 
+Holding
+Yes.
+ 
+Reasoning /Rule
+An employment at will, may terminate at any time unless:
+1.Ân employment handbook specifically states procedures for dismissal
+2. employer conduct or assurances in the employment relationship creates a contract that forbids firing except for good cause, in which case the employment is no longer at will  
+By distributing the handbook, the Bank modified any existing contracts, and subjected them to the provisions in the handbook.
+ 
+Conclusion
+ Defendant violated that contract by not terminating as indicated in the employee handbook.
+ 
+ 
+My opinion
+I certainly agree with the court's decision; an employee handbook Â holds Â employees liable for any deficiency and it should similarly hold the employer to the same obligations.
+
+
+
+https://ejuris.nwculaw.edu/mod/forum/discuss.php?d=11948
+Brockmeyer v. Dun & Bradstreet
+Supreme Court of Wisconsin
+Citation: 38 U. Miami L. Rev. 565
+ 
+Facts
+In January 1980, Brockmeyer, a district manager found to be vacationing in Montana with his secretary when it was thought he was performing his normal duties in the office, was cautioned after he apologized for absenteeism without notice, and admitted smoking marijuana in front of employees. His secretary was fired in February 1980.
+She then filed a sex discrimination suit against the company which was settled with an award of  $12,000 for her. The company then fired Brockmeyer who then filed suit for wrongful discharge, and sought damages for intentional infliction of emotional harm.
+At trial, the Jury at the Milwaukee County Circuit Court was instructed that a terminated employee can recover damages from his employer "where the discharge violates some clear and specific public policies, or where the discharge is retaliatory or is motivated by bad faith or malice".
+The jury awarded Brockmeyer $250,000 in compensatory damages and $250,000 in punitive damages. The court of appeals reversed the judgment and remanded the case with instructions to dismiss the complaint on the merits because the record contained insufficient evidence to sustain that Brockmeyer was wrongfully discharged.
+An appeal by Amicus curiae was filed by the Wisconsin Academy of Trial Lawyers.
+ 
+Issue
+Whether Brockmeyer was wrongfully discharged?
+Holding
+No. Decision of the Appeals court affirmed.
+ 
+Reasoning
+Two theories emerged from this case:
+1) an employer has an implied duty to terminate an employee only in good faith
+2) public policy exception" - a discharged employee can recover if the termination violates a well-established and important public policy. Public policy is a broad concept embodying the community common sense and common conscience.
+ 
+Conclusion
+Brockmeyer was not wrongfully discharged.
+ 
+My Opinion
+I agree with the court's decision.

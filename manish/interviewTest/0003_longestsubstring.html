@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+/**
+ * Given a string, find the length of the longest substring without repeating characters.
+ * For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
+ */
+ 
+ 
+var lengthOfLongestSubstring = function(s) {
+	if(s === null || s.length === 0){
+        return 0;
+    }
+	
+	var map = {};
+	var len = 0;
+	var maxlen = len;
+	var c;
+	var start = 0;
+	
+	for(let i = start; i < s.length; i++){
+		c = s[i];
+		console.log('c is ', c);
+		console.log('len is ', len);
+		
+		if (map[c] !== undefined && map[c] >= start) {
+			console.log('map[c]: ', map[c], ' start is ', start);
+			start = map[c] + 1;
+			len = i - start;
+			console.log('new start is ', start);
+		}
+		
+		len++;
+		console.log('len2 is ', len);
+		
+		if (len > maxlen) {
+			maxlen = len;
+			console.log('len > max so maxlen is ', maxlen, ', len is ', len);
+		}
+		
+		map[c] = i;
+		console.log('map is ', map);
+	}
+	return maxlen;
+};
+
+var result = lengthOfLongestSubstring('abcabcbb');
+console.log(result);
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

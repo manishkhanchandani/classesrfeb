@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Add Two Numbers</title>
+<script>
+// You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+
+// Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+// Output: 7 -> 0 -> 8
+
+//  Amazon Microsoft Bloomberg Airbnb Adobe
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+
+
+
+// value reverse helps to asslign the first digit or both linklist
+function LinkedList() {
+
+    let Node = function(element){
+
+        this.element = element;
+        this.next = null;
+    };
+
+    let length = 0;
+    let head = null;
+	
+	this.showHead = function() {
+		return head;
+	};
+
+    this.append = function(element){
+
+        let node = new Node(element),
+            current;
+
+        if (head === null){ //first node on list
+            head = node;
+        } else {
+
+            current = head;
+
+            //loop the list until find last item
+            while(current.next){
+                current = current.next;
+            }
+
+            //get last item and assign next to added item to make the link
+            current.next = node;
+        }
+
+        length++; //update size of list
+    };
+
+    this.insert = function(position, element){
+
+        //check for out-of-bounds values
+        if (position >= 0 && position <= length){
+
+            let node = new Node(element),
+                current = head,
+                previous,
+                index = 0;
+
+            if (position === 0){ //add on first position
+
+                node.next = current;
+                head = node;
+
+            } else {
+                while (index++ < position){
+                    previous = current;
+                    current = current.next;
+                }
+                node.next = current;
+                previous.next = node;
+            }
+
+            length++; //update size of list
+
+            return true;
+
+        } else {
+            return false;
+        }
+    };
+
+    this.removeAt = function(position){
+
+        //check for out-of-bounds values
+        if (position > -1 && position < length){
+
+            let current = head,
+                previous,
+                index = 0;
+
+            //removing first item
+            if (position === 0){
+                head = current.next;
+            } else {
+
+                while (index++ < position){
+
+                    previous = current;
+                    current = current.next;
+                }
+
+                //link previous with current's next - skip it to remove
+                previous.next = current.next;
+            }
+
+            length--;
+
+            return current.element;
+
+        } else {
+            return null;
+        }
+    };
+
+    this.remove = function(element){
+
+        let index = this.indexOf(element);
+        return this.removeAt(index);
+    };
+
+    this.indexOf = function(element){
+
+        let current = head,
+            index = 0;
+
+        while (current) {
+            if (element === current.element) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+
+        return -1;
+    };
+
+    this.isEmpty = function() {
+        return length === 0;
+    };
+
+    this.size = function() {
+        return length;
+    };
+
+    this.getHead = function(){
+        return head;
+    };
+
+    this.toString = function(){
+
+        let current = head,
+            string = '';
+
+        while (current) {
+            string += current.element + (current.next ? ', ' : '');
+            current = current.next;
+        }
+        return string;
+
+    };
+
+    this.print = function(){
+        console.log(this.toString());
+    };
+}
+
+
+var addTwoNumbers = function(l1, l2) {
+	if (l1 === null || l2 === null) {
+		return l1 || l2;
+	}
+	let result = new LinkedList();
+
+	var p = l1.showHead();
+	var q = l2.showHead();
+	var carry = 0;
+	console.log(p);
+	console.log(q);
+	while(p || q) {
+		var pval;
+		var qval;
+
+		if (q) {
+			qval = q.element;
+			q = q.next;
+		} else {
+			qval = 0;
+		}
+		
+		if (p) {
+			pval = p.element;
+			p = p.next;
+		} else {
+			pval = 0;
+		}
+		
+		var val = qval + pval + carry;
+		
+		if (val > 9) {
+			carry = 1;
+			val = val % 10;
+		} else {
+			carry = 0;
+		}
+		
+		result.append(val);
+	}
+	
+	return result;
+};
+
+let list = new LinkedList();
+list.append(2);
+list.append(4);
+list.append(3);
+list.print();
+let list2 = new LinkedList();
+list2.append(5);
+list2.append(6);
+list2.append(4);
+list2.print();
+
+var res = addTwoNumbers(list, list2);
+console.log(res.showHead());
+</script>
+</head>
+
+<body>
+</body>
+</html>
