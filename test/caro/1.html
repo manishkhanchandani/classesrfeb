@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pure-CSS Netflix Show Carousel </title>
+  
+   <link rel="stylesheet" href="css/style.css">
+   
+<link href="5/ninja-slider.css" rel="stylesheet" type="text/css" />
+    <!--ninjaVideoPlugin.js is required only when the slider contains video or audio.-->
+    <script src="5/ninjaVideoPlugin.js"></script>
+    <script src="5/ninja-slider.js" type="text/javascript"></script>
+      <!-- Stylesheets -->
+<script src="5/jquery.min.js"></script>
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <!-- javascript -->
+     <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.js"></script>
+	<script src="d3.min.js" charset="utf-8"></script>
+	<style>
+	input[type=text] {
+    width: 120px;
+    box-sizing: border-box;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    font-size: 16px;
+	color:white;
+    background-color: black;
+    background-image: url('images/searchicon.png');
+    
+    background-position: 8px 12px;
+	
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 150%;
+}
+h2 {
+    margin-top:70px;
+}
+input {
+  float: right;
+  clear: both;
+}
+        a {color:#1155CC;}
+        ul li {padding: 0px 0;
+		margin-top:8px;
+		}
+		
+	.owl-carousel .owl-item{
+	max-height: 240px;
+	}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.container {
+    width:100%;
+    position: relative;
+}
+
+.left-element {
+   
+    display: inline-block;
+    position: absolute;
+    left: 0;
+	z-index:100;
+	    top: 90px;
+}
+.center-element {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.right-element {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+	    top: 90px;
+	z-index:100;
+}
+
+
+
+	</style>
+	<script>
+	/* https://github.com/davidbau/seedrandom Copyright 2013 David Bau. */
+(function(a,b,c,d,e,f){function k(a){var b,c=a.length,e=this,f=0,g=e.i=e.j=0,h=e.S=[];for(c||(a=[c++]);d>f;)h[f]=f++;for(f=0;d>f;f++)h[f]=h[g=j&g+a[f%c]+(b=h[f])],h[g]=b;(e.g=function(a){for(var b,c=0,f=e.i,g=e.j,h=e.S;a--;)b=h[f=j&f+1],c=c*d+h[j&(h[f]=h[g=j&g+b])+(h[g]=b)];return e.i=f,e.j=g,c})(d)}function l(a,b){var e,c=[],d=(typeof a)[0];if(b&&"o"==d)for(e in a)try{c.push(l(a[e],b-1))}catch(f){}return c.length?c:"s"==d?a:a+"\0"}function m(a,b){for(var d,c=a+"",e=0;c.length>e;)b[j&e]=j&(d^=19*b[j&e])+c.charCodeAt(e++);return o(b)}function n(c){try{return a.crypto.getRandomValues(c=new Uint8Array(d)),o(c)}catch(e){return[+new Date,a,a.navigator.plugins,a.screen,o(b)]}}function o(a){return String.fromCharCode.apply(0,a)}var g=c.pow(d,e),h=c.pow(2,f),i=2*h,j=d-1;c.seedrandom=function(a,f){var j=[],p=m(l(f?[a,o(b)]:0 in arguments?a:n(),3),j),q=new k(j);return m(o(q.S),b),c.random=function(){for(var a=q.g(e),b=g,c=0;h>a;)a=(a+c)*d,b*=d,c=q.g(1);for(;a>=i;)a/=2,b/=2,c>>>=1;return(a+c)/b},p},m(c.random(),b)})(this,[],Math,256,6,52);
+
+		var data = [];
+		var channel_id=["UC3egnAk8Goe_LlZKz1wZAWA","UC8fD64z8lUxNqn-jNU1oc7Q","UCpUgIX2vMg3GF0a1bUcapnQ","UCv58r9mAhzFjrfk4d5tK2RA","UCrCrHVA0_WTH1vmn_13eGeg"];
+		function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
+		
+function data_int2(){
+	   for(j=0;j<channel_id.length;j++){
+       
+	   
+	   var request = gapi.client.youtube.channels.list({
+			id: channel_id[j],
+			part: 'snippet,brandingSettings'
+		  });
+  request.execute(function(response) {
+    console.log(response.result);
+  });
+	   
+	   
+	   
+
+	}
+
+   }		
+		
+		
+
+function data_int(){
+	   for(j=0;j<channel_id.length;j++){
+       var request = gapi.client.youtube.search.list({
+            part: "snippet",
+            type: "video",  
+            q: encodeURIComponent("dance").replace(/%20/g, "+"),
+            maxResults: 5,   
+            order: "date",  
+            publishedAfter: "2016-01-01T00:00:00Z",
+			channelId: channel_id[j]
+       }); 
+       // execute the request
+       request.execute(function(response) {
+          var results = response.result;
+		  for(i=0;i<results.items.length;i++){
+		  var element={};
+		  element.title = results.items[i].snippet.title;
+			element.url = results.items[i].id.videoId;
+			data.push(element);
+		  }
+          
+		  
+       });
+	}
+	console.log(data);
+	setTimeout(function (){
+  console.log(data);
+			afterphp();
+   
+}, 1000);
+   }
+
+
+
+function init() {
+    gapi.client.setApiKey("AIzaSyBZdS_FYN1RNloDmxjScZkdC_Lc8KflHOE");
+    gapi.client.load("youtube", "v3", function() {
+        data_int();
+		data_int2();
+		
+    });
+}
+
+	</script>
+	
+</head>
+
+<body>
+
+
+  
+	 <h2 class="w3-wide w3-center" id="trending_now">TRENDING NOW</h2>
+      <p class="w3-opacity w3-center"><i>Watch the latest released dances!</i></p><br>
+<div class="container">
+<div class="left-element">
+
+ <a class="prev" >&#10094;</a>
+
+ </div>
+<div class="center-element">
+   <div id="trending_refresh" class="owl-carousel owl-theme">
+
+            <div class="row__inner" onClick="myFuntion2(document.getElementById('song__img1').src)">
+					<div class="tile">
+						<div class="tile__media" >
+							<img id="song__img1" class="tile__img" src="https://img.youtube.com/vi/yUz5uBgJQg0/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title1">
+								first							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner"onclick="myFuntion2(document.getElementById('song__img2').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img2" class="tile__img" src="https://img.youtube.com/vi/vwCP5W9BT4Y/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title2">
+								second							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner"onclick="myFuntion2(document.getElementById('song__img3').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img3" class="tile__img" src="https://img.youtube.com/vi/8KQ3HoZNRsg/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title3">
+								third							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img4').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img4" class="tile__img" src="https://img.youtube.com/vi/tC_JOMeQ_3c/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title4">
+								fourth							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img5').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img5" class="tile__img" src="https://img.youtube.com/vi/FFGfbmUh9-s/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title5">
+								Fifth							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img6').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img6" class="tile__img" src="https://img.youtube.com/vi/yUz5uBgJQg0/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title6">
+								Sixth							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img7').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img7" class="tile__img" src="https://img.youtube.com/vi/L9FVsO3mAFs/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title7">
+								Seventh							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img8').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img8" class="tile__img" src="https://img.youtube.com/vi/6qv53FVGt3s/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title8">
+								Top Gear							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img9').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img9" class="tile__img" src="https://img.youtube.com/vi/6qv53FVGt3s/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title9">
+								Top Gear							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner" onClick="myFuntion2(document.getElementById('song__img10').src)">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img10" class="tile__img" src="https://img.youtube.com/vi/6qv53FVGt3s/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title10">
+								Top Gear							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img11" class="tile__img" src="https://img.youtube.com/vi/AbPhiURfZ-I/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title" id="song_title11">
+								Top Gear							</div>
+						</div>
+					</div>
+					</div>
+					<div class="row__inner">
+					<div class="tile">
+						<div class="tile__media">
+							<img id="song__img12" class="tile__img" src="https://img.youtube.com/vi/WftbvmBsyb4/hqdefault.jpg" alt=""  />						</div>
+						<div class="tile__details">
+							<div class="tile__title"id="song_title12">
+								Top Gear							</div>
+						</div>
+					</div>
+					</div>
+        </div>
+ </div>
+ <div class ="right-element">
+ <a class="next">&#10095;</a>
+</div>
+</div>
+		  </body>
+		  
+		  
+          <script src="assets/vendors/jquery.mousewheel.min.js"></script>
+          <script>
+           
+
+		
+		function afterphp(){
+		Math.seedrandom(+d3.timeHour(new Date));
+
+d3.shuffle(data);
+		
+		for (i = 0; i <12; i++) {
+		d = new Date();
+		var youtube_id=data[i].url;
+		console.log(data[i]);
+		var temp="#song__img"+(i+1);//www.youtube.com/embed/"+youtube_id+"?enablejsapi=1&start=0&rel=0&showinfo=0&iv_load_policy=3&modestbranding=1";
+		
+		song_thumbnail="https://img.youtube.com/vi/" +youtube_id+ "/hqdefault.jpg"
+		$(temp).attr("src", song_thumbnail,d.getTime());
+		
+		var temp="song_title"+(i+1);
+		var partsOfStr = data[i].title.split('|');
+		document.getElementById(temp).innerHTML=partsOfStr[0]+"<br />" +partsOfStr[1];
+		}
+		
+
+
+		
+		//Owl Carousel should be loaded after the div elements have been updated otherwise the clonned div do not get updated
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                loop: true,
+                nav: true,
+                margin: 10,
+				autoHeight: true,
+				autoWidth: true,
+                responsive: {
+                  0: {
+                    items: 1
+                  },
+                  600: {
+                    items: 3
+                  },
+                  960: {
+                    items: 4
+                  },
+                  1200: {
+                    items: 6
+                  }
+                }
+              });
+              owl.on('mousewheel', '.owl-stage', function(e) {
+                if (e.deltaY > 0) {
+                  owl.trigger('next.owl');
+                } else {
+                  owl.trigger('prev.owl');
+                }
+                e.preventDefault();
+              });
+			  setInterval(function(){ 
+			  var isHovered = $('#trending_refresh').is(":hover");
+			  if (isHovered){
+			  
+			  }
+			  else{
+			  owl.trigger('next.owl'); 
+			  }
+			  
+			  }, 8000);
+			  
+			  document.getElementsByClassName("next")[0].addEventListener("click", next_slide, false);
+			 document.getElementsByClassName("prev")[0].addEventListener("click", prev_slide, false);
+			 
+			 
+			 function next_slide(){
+			 owl.trigger('next.owl'); 
+			 owl.trigger('next.owl'); 
+			 }
+			 function prev_slide(){
+			 owl.trigger('prev.owl'); 
+			 owl.trigger('prev.owl'); 
+			 }
+           }
+
+
+function myFuntion1(name_channel){
+name_channel=name_channel.replace("https://www.contempros.com/images/","");
+name_channel=name_channel.replace("https://contempros.com/images/","");
+var new_page="https://www.contempros.com/php_test1.html?channel_id=\""+name_channel+"\"";
+
+window.top.location.href=new_page;
+};
+
+function myFuntion2(song_name){
+song_name=song_name.replace("https://img.youtube.com/vi/","");
+song_name=song_name.replace("/hqdefault.jpg","");
+
+var new_page="https://www.contempros.com/controlplayer.html?video=\""+song_name+"\"";
+
+window.top.location.href=new_page;
+};
+function drawError() {
+console.log("dfdfd");
+}
+function getRequest(url, success, error) {
+    var req = false;
+    try{
+        // most browsers
+        req = new XMLHttpRequest();
+    } catch (e){
+        // IE
+        try{
+            req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch(e) {
+            // try an older version
+            try{
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch(e) {
+                return false;
+            }
+        }
+    }
+    if (!req) return false;
+    if (typeof success != 'function') success = function () {};
+    if (typeof error!= 'function') error = function () {};
+    req.onreadystatechange = function(){
+        if(req.readyState == 4) {
+            return req.status === 200 ? 
+                success(req.responseText) : error(req.status);
+        }
+    }
+    req.open("GET", url, true);
+    req.send(null);
+    return req;
+}
+
+document.getElementById("searchbox")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        document.getElementById("btnSearch").click();
+    }
+});
+
+function doSomething(){
+var temp=document.getElementById("searchbox").value;
+
+var new_page="https://www.contempros.com/netflix_songresult_automatic.html?data=\""+temp+"\"";
+console.log(new_page);
+window.top.location.href=new_page;
+
+}
+			
+          </script>
+        <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    
+		
+
+</html>

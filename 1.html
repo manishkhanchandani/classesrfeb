@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+//factory to start chat box , helper/ personal, marketing 
+/*
+function chatBox(type) {
+	this.type = type;
+	
+	this.chat = null;
+	
+	function helper() {
+		this.var1 = 'test0';
+	}
+	function personal() {
+		this.var1 = 'test1';
+	}
+	function marketing() {
+		this.var1 = 'test2';
+	}
+	 
+
+	switch(type) {
+		case 'helper':
+			this.chat = new helper();
+			break;
+		case 'personal':
+			this.chat = new personal();
+			break;
+		case 'marketing':
+			this.chat = new marketing();
+			break;
+	}
+}
+var chatBox1 = new chatBox('helper');
+console.log(chatBox1);
+var chatBox2 = new chatBox('personal');
+console.log(chatBox2);
+var chatBox3 = new chatBox('marketing');
+console.log(chatBox3);*/
+
+
+function chatBox(type) {
+
+	function someObject(t) {
+		console.log(t);
+	}
+	return function() {
+		return someObject(type);
+	}
+}
+var chatBox1 = new chatBox('helper');
+chatBox1();
+
+var chatBox2 = new chatBox('marketing');
+chatBox2();
+
+
+var chatBox3 = new chatBox('personal');
+chatBox3();
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
