@@ -34,8 +34,39 @@
     }
     return false;
   }
-  console.log(sumFinder([6,4,3,2,1,7], 9));
-  console.log(sumFinder2([6,4,3,2,1,7], 7));
+  //console.log(sumFinder([6,4,3,2,1,7], 9));
+  //console.log(sumFinder2([6,4,3,2,1,7], 7));
+  
+  function xsum(arr, num) {
+  	console.log('arr is ', arr, ', num is ', num);
+  	var counter = 0;
+	var counter2 = 0;
+	var total = 0;
+  	while(counter < arr.length) {
+		console.log('counter: ', counter, ', val: ', arr[counter]);
+		total = arr[counter];
+		counter2 = counter + 1;
+		while (counter2 < arr.length && arr[counter2] >= 0) {
+			console.log('counter + 1: ', counter2, ', val: ', arr[counter2]);
+			total = total + arr[counter2];
+			console.log('total is ', total);
+			counter2++;
+			if (total > num) {
+				break;
+			}
+			
+			if (total === num) {
+				return true;
+			}
+		}
+		counter++;
+	}
+	
+	return false;
+  }
+  
+ var result = xsum([6,4,3,2,1,7], 7);
+ console.log('res is ', result);
 </script>
 </head>
 

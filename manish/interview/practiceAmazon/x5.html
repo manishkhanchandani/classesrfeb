@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+Randomly shuffle an array
+*/
+function shuffle(array) {
+	console.log('array is ', array);
+	let currentIndex = array.length;
+	console.log('currentIndex: ', currentIndex);
+	let temp = null;
+	let randomIndex = null;
+	
+	while (0 !== currentIndex) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		console.log('randomIndex is ', randomIndex);
+		currentIndex -= 1;
+		
+		temp = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temp;
+		console.log('array is ', array);
+	}
+	return array;
+}
+
+var arr = [2, 11, 37, 42, 55, 67, 89, 23, 32];
+arr = shuffle(arr);
+console.log(arr);
+</script>
+</head>
+
+<body>
+</body>
+</html>

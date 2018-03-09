@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+console.log(this);
+
+var c = {
+	name: 'manish',
+	log: function() {
+		this.name = 'naveen';
+		console.log(this);
+		var setname = function(newname) {
+			this.name = newname;
+			console.log('this is ', this);
+			var setname2 = function(newname2) {
+				this.name2 = newname2;
+				console.log('this2 is ', this);
+			}
+			setname2('abc');
+        }
+		setname('my new name');
+		console.log(this);
+    }
+};
+
+c.log();
+</script>
+</head>
+
+<body>
+</body>
+</html>

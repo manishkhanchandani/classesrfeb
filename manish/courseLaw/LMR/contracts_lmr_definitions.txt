@@ -1,0 +1,318 @@
+All Definitions
+
+
+
+CONTRACTS LAW
+
+The rights and remedies of the parties depend on whether or not there was a valid contract. A contract is a promise or set of promises the performance of which the law will recognize as a duty and for which the law will provide a remedy.
+
+A. FORMATION OF CONTRACTS
+
+
+
+
+
+Definition 1. Does UCC apply?
+
+UCC Article 2 governs contracts for the sale of GOODS, movable things at the time of
+identification to the contract. Otherwise, only COMMON LAW governs the contract.
+
+
+
+Definition 2. Are the parties MERCHANTS?
+Under the UCC a MERCHANT is a person who trades in or otherwise holds himself out by occupation or otherwise as knowledgeable about the goods of the contract.
+
+
+
+Definition 3. Was the communication of [date] an OFFER?
+Under contract law an OFFER is a manifestation of present contractual intent communicated to the offeree such that an objective person would reasonably believe assent would form a bargain. 
+
+If ONLY common law go on to say,
+At common law a communication was only deemed sufficient to constitute an offer if it specified the parties, subject matter, quantity, price, and time of performance.
+
+
+If UCC say,
+The UCC deems a communication sufficient to constitute an offer if it specifies the parties and quantity. The UCC provides “GAP FILLERS” that may be used by the Court to determine any additional terms.
+
+
+
+Definition 4. Was the offer a MERCHANT’S FIRM OFFER?
+Under UCC 2-205 an offer by a merchant that promises to “leave the offer open” for a period of time cannot be revoked by the offeror if it is stated in writing, for the period of time stated, or for a reasonable period of time (given the circumstances) if no time period is stated. However, regardless of the period of time stated by the offeror, the offeror can revoke within 3 months if that is less than the time period stated.
+If the merchant promises to “leave the offer open” for any period of time, whether more or less than 3 months, that is the “reasonable period of time” in which the offeree can accept the offer even if the offeror could legally revoke the offer sooner.
+
+
+
+Definition 5. Was it an offer for a UNILATERAL CONTRACT?
+Under the common law a UNILATERAL CONTRACT OFFER is one that unequivocally indicates acceptance can only be manifested by completion of performance by the offeree. GENERAL OFFERS, reward or bounty offers, are always unilateral contract offers.
+
+
+Definition 6. Was the communication (action) of [date] an (implied) ACCEPTANCE?
+If ONLY common law, say,
+Under the common law MIRROR IMAGE RULE an acceptance is an unequivocal assent to an offer.
+
+If UCC say,
+Under UCC 2-206 an acceptance of an offer not otherwise expressly conditioned may be made in any REASONABLE MANNER, including a promise to ship or shipment of either conforming or non-conforming goods. BUT a shipment of NON-CONFORMING goods as an EXPRESS ACCOMMODATION is not an acceptance. Further, UCC 2-207 allows an acceptance containing varying terms to be effective. 
+
+Definition 7. Did the VARYING TERMS become part of the contract?
+Under UCC 2-207 an acceptance that includes varying terms is still effective. If the contract is between merchants the varying term proposed by the offeree may become part of the contract if the offer did not expressly require acceptance according to its terms, the offeror does not object to the varying terms within a reasonable time, and the varying terms are not a material alteration of the offer term.
+
+Definition 8. Had the OFFER LAPSED before acceptance was attempted?
+Under common law an offer LAPSES AND CANNOT BE ACCEPTED unless it is accepted in a reasonable period of time. Oral offers are deemed to lapse at the end of the conversation, and written offers are deemed to lapse within the timeframe implied by the means of dispatch, absent contrary agreement or implication.
+
+
+
+Definition 9. Was the communication of [date] an EFFECTIVE ACCEPTANCE?
+Under the MAILBOX RULES of the common law an acceptance is effective when dispatched, if dispatched in the manner specified in the offer, or by the same or faster means the offer was transmitted where the offer does not specify a means of communication.
+
+
+Definition 10. Was the communication of [date] an EFFECTIVE REJECTION?
+
+Under the MAILBOX RULES of contract law a rejection is effective upon receipt while an acceptance may be effective upon dispatch. An EXCEPTION is made if the OFFEROR CHANGES POSITION in reliance upon a communication of rejection, not knowing that an acceptance was dispatched prior to receipt of the rejection. In that case the rejection is effective upon receipt regardless of the fact an acceptance was also dispatched.
+
+Definition 11. Was the communication of [date] an EFFECTIVE REVOCATION?
+Under the MAILBOX RULES revocation of a contract offer is usually effective upon receipt.
+
+Under common law a unilateral offer could be revoked at any time, and revocation of GENERAL OFFERS, reward or bounty offers, was effective when published in the same manner the offer was first announced. But modernly SAVING DOCTRINES prevent the revocation of a unilateral contract offer if the offeror is aware the offeree has commenced the requested act for a reasonable period during which the offeree will be allowed to complete acceptance by performance.
+
+
+Definition 12. Was there an IMPLIED-IN-FACT CONTRACT?
+Under contract law an IMPLIED-IN-FACT CONTRACT will be deemed to have existed, even if there is no express agreement between the parties, if one party acts to bestow benefits on the other party reasonably expecting to be compensated, and the other party knowingly accepts those benefits knowing that the other party expects to be compensated.
+
+Definition 13. Is a WRITING needed?
+
+If ONLY common law governs say, 
+Under the STATUTE OF FRAUDS certain types of contracts must be written in order to be legally enforced, and one type is a contract for (pick one if it applies here -- MARRIAGE, more than a YEAR, LAND, EXECUTOR of an estate, GUARANTEE of a debt).
+
+
+
+
+Chapter CONTRACT TERMS
+
+Definition 14. What were the CONTRACT TERMS?
+
+If an acceptance forms a contract, for common law say,
+Under common law enforceable contracts generally must indicate PARTIES, PRICE, SUBJECT MATTER, TIME OF PERFORMANCE and QUANTITY. Most express terms and promises are considered to be EXPRESS MATERIAL CONDITIONS, except for TIME of performance, buyer SATISFACTION, and promises NOT TO ASSIGN the contract which are generally considered mere “covenants”.
+
+If an acceptance forms a contract, for UCC say,
+Under the UCC a contract is enforceable if the QUANTITY and PARTIES are specified. Other terms will be provided by the GAP FILLER provisions of the UCC. All express terms and promises are treated as material terms under the PERFECT TENDER RULE.
+
+
+
+Definition 15. Was TIMELY PERFORMANCE a MATERIAL CONDITION?
+Under contract law the parties may agree at the time of contract execution that timely performance (by the party to first perform contract services) is a MATERIAL CONDITION. Then the condition is called an EXPRESS CONDITION, and typically the contract says, “Time is of the essence”.
+
+But material conditions may also be or implied when the parties knew at the time of execution that tardy performance would deny the non-performing party the BENEFIT OF THE BARGAIN, the benefit expected when they entered into the agreement. In that case the condition is called an IMPLIED MATERIAL CONDITION.
+
+
+Definition 16. Was Buyer SATISFACTION a MATERIAL CONDITION?
+Under contract law reasonably satisfactory performance by the parties is ALWAYS AN IMPLIED MATERIAL CONDITON of every contract. However, the parties may agree that buyer SATISFACTION is a MATERIAL CONDITION so buyers who are not actually satisfied have no legal duty to pay.
+
+
+
+Definition 17. Does the PAROL EVIDENCE RULE bar evidence of other covenants and terms?
+
+(This is only an issue if there is a detailed written contract. This and the Statute of Frauds can almost never both be issues in the same fact pattern because usually the contract can only be either written or oral, not both at the same time.)
+
+Under the PAROL EVIDENCE RULE evidence of PRIOR or CONTEMPORANEOUS agreements may not be introduced to VARY or CONTRADICT the terms of a FULLY INTEGRATED WRITING unless it is to show evidence of [DAM FOIL] Duress, Ambiguity, Mistake, Fraud, Oral condition precedent, Illegality, or Lack of consideration. 
+
+
+DEFENSES
+Definition 18. Can LACK OF INTENT be raised as a defense?
+Under the OBJECTIVE MAN RULE, there is sufficient INTENT to enter into a contract if an objective observer listening to the parties would have reasonably concluded from their communications that assent would form a bargain.
+
+
+Definition 19. Is LACK OF CONSIDERATION a defense?
+Under contract law every valid contract, and any modification of a contract, must be supported by CONSIDERATION, a BARGAINED FOR exchange posing sufficient LEGAL DETRIMENT that the law will enforce the agreement.
+
+
+Definition 20. Was the need for a WRITING SATISFIED?
+(This second visit to the Statute of Frauds is only necessary if you did not settle the issue completely at the beginning of the essay OR there has been a contract modification.)
+
+
+Under UCC 2-209 contract modifications do not require consideration, but if a contract as modified would have to be supported by a sufficient writing under UCC 2-201, and the modification is not supported by a writing, it is not enforceable at law. 
+
+
+Definition 21. Was the contract UNCONSCIONABLE?
+Under contract law an unconscionable contract will not be enforceable because there is NO REASONABLE FINDING OF INTENT to enter into such a contract. An ADHESION CONTRACT is a “take it or leave it” contract that a party is forced to agree to, and it will often be found unenforceable.
+
+
+Definition 22. Is DURESS a defense?
+Under contract law only good faith agreements are enforceable. No contract agreement induced by illegal threats is valid. Likewise, agreements induced by deliberate acts to create threats of economic harm are not enforceable. 
+
+
+Definition 23. Is FRAUD (or DECEIT) a defense?
+Under contract law a contract induced through deliberate CONCEALMENT of material facts by a party with a duty to reveal the facts, or by a party deliberately concealing and/or MISREPRESENTING material facts is unenforceable if it can be shown the party seeking to void the contract would never have agreed to the bargain but for the concealment and/or misrepresentation. 
+
+
+
+24. Is INCAPACITY a defense?
+Under contract law a contract cannot be enforced AGAINST one who lacks capacity. EXCEPTIONS are contracts for provision of NECESSITIES of life.
+
+
+Definition 25. Is ILLEGALITY a defense?
+Under contract law, a contract generally cannot be enforced by a party who knowingly entered into it for an illegal purpose.
+
+
+Definition 26. Is IMPOSSIBILITY a defense?
+Under contract law a material condition of every contract is that performance of contract duties must be objectively possible to perform. The inability of a contract party to perform is irrelevant, as long as performance, in general, is possible. But if performance becomes impossible because of events beyond the control of the parties the contract becomes void.
+
+
+Definition 27. Is COMMERCIAL IMPRACTICABILITY a defense?
+A Court (a judge, in equity) has the authority to declare a contract void if performance by a party would be so financially burdensome, because of events beyond the control of the parties, that it would cause an injustice. 
+
+
+Definition 28. Is FRUSTRATION OF PURPOSE a defense?
+Under contract law, if the parties enter into a contract knowing that the failure of some condition beyond their control will deny one of the parties the benefit of the bargain, that condition is an implied material condition of the contract, the failure of which excuses both parties from the agreement .
+
+Definition 29. Is MUTUAL MISTAKE a defense?
+Under PEERLESS when both parties enter into a contract because of a misunderstanding as to a material fact, there is no “meeting of the minds” and the contract is void from the beginning.
+
+
+Definition 30. Is UNILATERAL MISTAKE a defense?
+Under contract law, when one party enters into a contract because of a misunderstanding as to a material fact the majority view is that the parties are legally bound to the contract unless the other party knew or should have known of the mistake, and in that case the contract is voidable by the mistaken party. Under a minority view the contract is legally voidable by the mistaken party in any event if they 1) discover the mistake quickly before the other party substantially relies on the contract, 2) give prompt notice of the mistake, and 3) reimburse the other party for any expenses caused by the mistake.
+
+
+BREACH
+Definition 31. Was there an ANTICIPATORY BREACH?
+Under contract law an anticipatory breach (or anticipatory repudiation) is a CLEAR STATEMENT OR INDICATION that a party WILL NOT PERFORM future contractual duties when they become due. This is a major breach as to those duties, the non-breaching party is EXCUSED from performance of all remaining contractual duties, and the future duties of the breaching party are ACCELERATED to the present.
+
+If a party has a REASONABLE BASIS to believe the other party may not perform future contractual duties, the party may demand REASONABLE ASSURANCES and REFUSE TO PERFORM until they are provided. Reasonable assurances generally means a financial guarantee or payment into escrow.
+If reasonable assurances are properly demanded and not provided, the failure to respond constitutes an anticipatory breach.
+
+
+
+Definition 32. WAIVER of the breach?
+Under contract law if a non-breaching party lets the breaching party continue performance after a major breach it WAIVES THE BREACH. The waiver cannot be revoked, and the non-breaching party is forever ESTOPPED from citing the breach as major and can only cite it as a minor breach.
+
+
+Definition 33. Was there a BREACH OF IMPLIED COVENANT?
+An IMPLIED MATERIAL CONDITION of every contract is that the parties must act in good faith and are bound by an IMPLIED COVENANT that they will act as reasonably necessary to help the other parties enjoy the benefits of the contract and that they will not act in any way to prevent that from occurring.
+
+
+Definition 34. BREACH? MAJOR OR MINOR?
+Realize the first party to breach a contract is the breaching
+party and after that the other party is the non-breaching party no matter what they do later.
+
+For COMMON LAW say,
+Under contract law a BREACH is a failure to perform a contractual duty when it becomes due. A MAJOR BREACH is either an act which deprives the other party of the BENEFIT OF THE BARGAIN or the violation of an EXPRESS OR IMPLIED MATERIAL CONDITION by a party, regardless of its effect on the other party. A major breach EXCUSES the non-breaching party from all further performance of contractual duties and ACCELERATES the future contractual duties of the breaching party to the present so the non-breaching party can seek IMMEDIATE PAYMENT OF DAMAGES.
+
+For UCC say,
+Under the PERFECT TENDER RULE of the UCC any shipment of non-conforming goods is a breach of contract. There is no distinction between “major” and “minor” breaches.
+
+For UCC DIVISIBLE CONTRACT SITUATION say,
+Under the UCC a breach with respect to any shipment of goods under a DIVISIBLE CONTRACT does not constitute a breach of the entire contract. A DIVISIBLE contract is one under which goods are to be delivered in separate shipments which can each be evaluated separately under the contract.
+
+
+Definition 35. EFFECT OF BREACH ON A DIVISIBLE CONTRACT?
+Under the UCC a breach with respect to any shipment of goods under a DIVISIBLE CONTRACT does not constitute a breach of the entire contract. A DIVISIBLE contract is one under which goods are to be delivered in separate shipments which can each be evaluated separately under the contract.
+
+
+Definition 36. WAIVER of condition?
+Under contract law if a party performs a contractual duty that is subject to a condition precedent at a time the condition fails to hold, the party WAIVES THE CONDITION. But after a condition has been waived the waiving party has a legal right to retract the waiver. Nevertheless, a Court of EQUITY may estop the retraction based on considerations of equitable estoppel.
+
+
+Definition 37. Was there an ACCORD AND SATISFACTION?
+Under contract law an ACCORD AND SATISFACTION is binding on both parties if there is an agreement by the parties to settle a reasonable and good faith claim by one party that the other party has breached the original contract. 
+
+
+Chapter THIRD PARTY BENEFICIARY
+Definition 38. Is the plaintiff an INTENDED THIRD-PARTY BENEFICIARY?
+
+Under contract law an INTENDED THIRD-PARTY BENEFICIARY is a party that can seek damages for breach of a contract between two other parties because the contract was INTENDED to benefit them.
+An INCIDENTAL beneficiary, one that was not intended to benefit from a contract between others, has no ability to enforce the contract or seek damages.
+Contracts can only be enforced by VESTED, INTENDED third-party beneficiaries that are DONEES, intended to benefit as a GIFT, or CREDITORS, intended to benefit by EXTINGUISHING A DEBT.
+At common law vesting was a more demanding requirement than it is modernly. Under the modern view VESTING occurs if the beneficiary becomes aware of and relies on the existence of the contract.
+
+
+Definition 39. STANDING based on a VALID ASSIGNMENT?
+Under contract law an ASSIGNEE can seek damages for breach of a contract from the contract promisor if the assignee was EXPRESSLY ASSIGNED the rights of an original promisee, the ASSIGNOR, by EXPRESSION OF CLEAR INTENT.
+An assignment BECOMES EFFECTIVE when the assignee gives the promisor NOTICE of the specific rights assigned. When the assignment becomes effective the promisor is liable only to the assignee and the rights of the original promisee/assignor are EXTINGUISHED.
+If the assignment was in exchange for CONSIDERATION given by the assignee to the promisee/assignor, the assignment is IRREVOCABLE, and it creates a legal contract between the assignee and the promisee/assignor. That contract creates implied warranties 1) that the rights assigned exist, 2) that the promisee/assignor has the authority to assign them, and 3) all documents provided are bone fide. The assignee may seek legal damages from the assignor for a breach of warranty.
+If the assignment was GRATUITOUS it is REVOCABLE until the assignment is made 1) in writing, 2) a token chose is delivered, or 3) detrimental reliance makes revocation inequitable. A gratuitous assignment creates no implied warranties and can only be enforced in equity.
+
+
+Definition 40. VALID DELEGATION of performance
+Under contract law the duty to perform under a contract may be DELEGATED to a DELEGATEE by an original promisor/delegator. However, the promisor/delegator remains primarily liable to the original promisee for performance of the contract. The delegation becomes EFFECTIVE when the delegatee agrees to perform the duties of the promisor/delegator.
+If the delegatee accepts the delegation in exchange for CONSIDERATION, a legal contract is created between the promisor/delegator and the delegatee, and the original promisee is an intended third-party beneficiary of that contract. As an intended third-party beneficiary the promisee has standing to pursue legal actions against both the promisor/delegator and the delegatee.
+If the delegatee GRATUITOUSLY accepts the delegation the delegatee has no legal liability to the original promisee and the promisee can only enforce the delegation agreement in equity by showing detrimental reliance.
+
+Definition 41. Effect of ASSIGNMENT on CLAIMS AND DEFENSES
+Under contract law a promisor may generally assert any claim or defense against the assignee that could have been asserted against the promisee/assignor. 
+
+
+Definition 42. Effect of MODIFICATION AFTER ASSIGNMENT?
+MODIFICATION of a contract after it has been assigned is generally effective against the assignee if 1) the contract has not yet been fully performed, and 2) the modification is made in good faith and in accordance with reasonable commercial standards. The assignee acquires CORRESPONDING RIGHTS under the modified (or substituted) contract.
+
+
+REMEDIES
+Definition 43. COMMON LAW REMEDY of the NON-BREACHING PARTY?
+Under common law the non-breaching party has a right to COMPENSATORY DAMAGES calculated as the sum of 1) RELIANCE DAMAGES, out-of-pocket expenses the non-breaching party paid before the breach in reliance on the contract, 2) EXPECTATION DAMAGES, the expected benefits of the contract lost because of the breach, 3) INCIDENTAL DAMAGES, out- of-pocket expenses the non-breaching party paid because of the breach (e.g. storage costs) and 4) CONSEQUENTIAL DAMAGES, lost profits on collateral contracts that failed because of the breach.
+
+Non-breaching parties must prove their damages with substantial CERTAINTY, that they were CAUSED by the breach, and COULD NOT HAVE BEEN AVOIDED. This is sometimes called the DUTY TO MITIGATE damages.
+
+If the breaching party has SUBSTANTIALLY PERFORMED, the non-breaching party is still obligated under the contract with an OFFSET for damages against the contract price. But if the breaching party is in MAJOR BREACH the non-breaching party is freed from all obligations under the contract and has a right to an award of all damages caused.
+
+A non-breaching buyer of unique property such as land or services can also ask for an order of SPECIFIC PERFORMANCE to obtain title, possession or performance.
+
+
+
+Definition 44. CONSEQUENTIAL DAMAGES?
+Under HADLEY V. BAXENDALE, a party to a contract may recover CONSEQUENTIAL DAMAGES such as LOST PROFITS expected from collateral contracts that fail because the contract was breached only if it can be shown the damages were [CCCC] 1) CONTEMPLATED (foreseen) by both parties at the time of contract, 2) CERTAIN (measurable) as to dollar value, 3) CLEARLY CAUSED by (resulting from) the breach and 4) the loss COULDN'T BE AVOIDED.
+
+
+Definition 45. COMMON LAW REMEDY of the BREACHING PARTY?
+Under common law a breaching party that has SUBSTANTIALLY PERFORMED has a right to recover the CONTRACT PRICE LESS AN OFFSET for damages caused by the breach. The remedy of a party in MAJOR BREACH is to seek RESTITUTION for AMOUNTS PAID and BENEFITS CONFERRED to the extent they exceed the damages of the non-breaching party, to prevent UNJUST ENRICHMENT.
+
+
+Definition 46. UCC REMEDY of the NON-BREACHING BUYER?
+Under the PERFECT TENDER RULE of the UCC a non-breaching buyer can either ACCEPT or REJECT non-conforming goods. Also they can REPUDIATE the contract and COVER, or they can AFFIRM the contract and DEMAND CONFORMING GOODS. The measure of damages is the excess, if any, of market or cover price over the contract price. If the goods are unique non-breaching buyers can ask for an order of SPECIFIC PERFORMANCE to obtain title and possession. 
+
+Definition 47. UCC REMEDY of the NON-BREACHING SELLER?
+
+Under the UCC a non-breaching seller can sell rejected but conforming goods at a PUBLIC OR PRIVATE SALVAGE SALE (with NOTICE TO BREACHING BUYER) and demand the excess, if any, of the CONTRACT PRICE over the SALVAGE SALE price.
+Alternatively, in a LOST-VOLUME SITUATION where sellers cannot effectively sell the same goods to someone else, they can demand the BENEFIT OF THE BARGAIN of their “lost profits” – the excess, if any, of the CONTRACT PRICE over their cost of acquiring the goods.
+And if the goods have been special made or for some other reason can not be sold elsewhere the non-breaching seller can “sue on the contract price” to get a judgment for that amount.
+
+
+Definition 48. UCC REMEDY of the BREACHING SELLER?
+Under the UCC a breaching seller that GIVES NOTICE of an intent to cure has an absolute right to cure the breach WITHIN THE CONTRACT PERIOD, and also has a right to REASONABLE EXTRA TIME in which to cure beyond the contract period if non-conforming goods have been shipped with a reasonable belief they would satisfy the needs of the buyer.
+
+
+Definition 49. Is the LIQUIDATED DAMAGES clause enforceable?
+LIQUIDATED DAMAGES CLAUSES specify that the sole remedy of the non-breaching party is a specified amount of money damages. 
+
+These clauses are only enforceable if 1) DAMAGES arising from a breach were UNCERTAIN at the TIME OF CONTRACT, 2) the specified amount was REASONABLE at the time of contract, and 3) enforcement after a breach will provide a REASONABLE REMEDY for the non-breaching party.
+
+Definition 50. Was there an IMPLIED-IN-LAW CONTRACT?
+The Court may either award the amount necessary to prevent an unjust enrichment to the respondent.
+
+
+Definition 51. Can PROMISSORY ESTOPPEL be pled?
+Under the theory of PROMISSORY ESTOPPEL an agreement that otherwise is unenforceable at law for lack of consideration may be enforced at equity to the extent necessary to avoid injustice. In order to plead equity a party must have CLEAN HANDS. Promissory Estoppel applies where the party to be bound made a 1) promise with 2) intent to induce reliance and there 3) was reasonable reliance and 4) failure to enforce the promise would cause an injustice.
+
+Definiton 52. Can DETRIMENTAL RELIANCE be pled?
+
+Under the theory of DETRIMENTAL RELIANCE an agreement that otherwise is unenforceable at law for 
+
+deliberately false representations of fact by the respondent OR deliberately misleading behavior of the respondent
+
+may be enforced at equity to the extent necessary to avoid injustice. In order to plead equity a party must have CLEAN HANDS. Promissory Estoppel applies where the party to be bound made a 
+
+1) promise with 
+2) intent to induce reliance and there 
+3) was reasonable reliance and 4) failure to enforce the promise would cause an injustice.
+
+
+Definiton 53. Is EQUITABLE RESTITUTION appropriate?
+
+EQUITABLE RESTITUTION is a remedy awarded by a Court of EQUITY when the parties have no adequate legal remedy. The purpose may be to compensate for injuries suffered, prevent unjust enrichment, prevent frustration of reasonable expectations, or restore the status quo.
+
+
+Definiton 54. Is SPECIFIC PERFORMANCE appropriate?
+
+SPECIFIC PERFORMANCE is an equitable remedy. It is an order of the Court directing parties to deliver possession and title to unique property. 
+
+Definiton 55. CONSIDERATION?
+
+Definiton 56. MUTUAL ASSENT?
+

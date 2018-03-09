@@ -1,0 +1,42 @@
+1. Tell me about failure
+
+I implemented the job website with mysql database and then it was having million records, and then search breaks, so that was my failure,
+i fixed it by using solr search engine
+
+I was making a project to fetch the data from yahoo website, but yahoo blocks the ip after few request
+and i fixed it by implementing the ip switcher.
+
+
+How to answer the job interview question 'Give me an example of a time you did something wrong'
+Never say never
+	You say: In my position three years ago at Company X, I missed a major deadline, which is why I'm extremely vigilant on keeping my calendar and to do list up to date every day. 
+	
+Don't blame others
+You say: I missed the deadline because I didn't maintain proper communication with my team members.
+
+
+Tell them you handled it like a champ
+You say: As soon as I realized I was going to miss the deadline, I contacted all the stakeholders in the project to smooth things over, and we all put in the extra hours needed to get it completed quickly.
+
+
+Talk about lessons learned
+You say: After I missed that deadline, I created a spreadsheet for all future projects that showed everyone a project snapshot and clearly indicated deadlines and where we're at in the process at any given time. Since then, I've never missed a deadline.
+
+
+
+2. Tell me about situation where you didn't owned something but you didn't like it, what did you do
+
+
+
+3. Tell me about how did you solved some problem from customer backwards perspective
+4. Tell me about the time where you created something new or simplified existing system and how did you go about finding things that existed rather than reinventing
+5. Tell me about the time when you didn't had enough data and you had to make a decision. HOw did you do it
+6. Tell me about the time when you raised the bar or standards for your team
+7. Tell me about the time when you took a calculated risk
+8. Tell me about the time when you demonstrated frugality (show how to do more in less) or managed the case with insufficient resources
+9. tell me about the time when you earned trust of your team or peers or cross group
+10. Tell me about the time when data didn't agreed with annecdotal evidence - what did you do?
+11. tell me about the time when you disagreed with someone - how did you resolved issue?
+12. tell me about the time when you received critical feedback on your work - how did you handled it
+13. tell me about the time when you missed a deadline or a deliverable - how did you handled it
+14. tell me about the time when you disagreed with your lead or manager - how did you handled it

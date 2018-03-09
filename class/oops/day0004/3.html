@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+var numbers = [3, 0, 1, 5, 0, 7, 0, 8, 12];
+console.log('numbers is ', numbers);
+var temp1, temp2;
+temp2 = numbers.length-1;
+for(j=0; j< numbers.length; j++)
+{
+  if(numbers[j] === 0)
+  {
+    temp1 = numbers[j];
+    numbers[j] = numbers[temp2];
+    numbers[temp1] = temp1;
+    temp2--;
+  }
+}
+
+console.log('numbers is ', numbers);
+
+/*
+
+for (var i = 0; i<numbers.length; i++){
+	if (numbers[i]===0){
+		numbers.splice(i,1);
+		numbers.push(0);
+	}
+};
+
+
+
+var temp1, temp2;
+temp2 = numbers.length-1;
+for(j=0; j< numbers.length; j++)
+{
+  if(numbers[j] === 0)
+  {
+    temp1 = numbers[j];
+    numbers[j] = numbers[temp2];
+    numbers[temp1] = numbers[j];
+    temp2--;
+  }
+}
+console.log('numbers is ', numbers);
+
+*/
+//numbers = [3, 1, 5, 7, 8, 12, 0, 0, 0];
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

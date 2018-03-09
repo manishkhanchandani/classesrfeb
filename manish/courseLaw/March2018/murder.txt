@@ -1,0 +1,187 @@
+Murder
+
+Definition
+
+Under CRIMINAL LAW a MURDER is an unlawful HOMICIDE, the killing of one human being by another, with MALICE aforethought.
+
+
+
+MALICE for murder may be 
+
+1) an express INTENT TO KILL, 
+
+or implied by 2) intent to commit GREAT BODILY INJURY, 
+
+3) a homicide caused by commission of an INHERENTLY DANGEROUS FELONY, the "FELONY MURDER RULE" or
+
+4) DELIBERATE CREATION OF EXTREME RISKS to human life (actus reus) with AWARENESS of the risks and a CONSCIOUS DISREGARD for them (mens rea), the "DEPRAVED HEART" murder.
+
+
+
+Under COMMON LAW there were NO DEGREES of murder but MODERNLY first degree murder is generally codified as a
+
+1) willful, deliberate and premeditated homicide or one
+
+2) done by enumerated means, e.g. torture, poison and explosives.
+
+3) caused by commission of an enumerated felony.
+
+All other murders are in the second degree.
+
+
+
+Felony Murder
+
+Murder may be charged under the FELONY-MURDER RULE if a death is caused by the commission of an inherently dangerous felony, but only if the death is caused by acts done during the RES GESTAE of the underlying felony. The RES GESTAE of a crime is the sequence of events from the first substantial step to committing the crime and ending when the defendants leave the scene of the crime and reach a place of a relative safety. 
+
+Homicide
+
+Homicide is the killing of one human being by another.
+
+Actual Cause
+
+Actual Cause is used by "but for" test. But for the act of the defendant, the result would have not occured.
+
+Proximate Cause 
+
+Proximate cause is the direct and natural result of the act of defendant.
+
+Examples:
+
+A. FELONY MURDER example:
+
+Here there was an unlawful homicide because KilledPerson was a human being and he was killed by Killer, another human being without legal justification. And it was caused by commission of an inherently dangerous felony ROBBERY (or put name of crime), a larceny from the person by force or fear. Killer was taking personal property of another with intent to permanently deprive because she was taking "dynamite" (put name of thing which she was stealing) from Killedperson, and she was using force or fear to overcome his will to resist because she used a "gun". The death of Killedperson occured within the RES GESTAE of the robbery because he was shot before she left the scene of the crime.
+
+Therefore Killer can be charged with murder for killing Killedperson during the robbery. This would be FIRST DEGREE MURDER because robbery is typically one of the "eneumerated felonies" for the first degree murder.
+
+B. GREAT BODILY INJURY (+others combined)
+
+Here there was an unlawful homicide because KilledPerson was a human being and he was killed by Killer, another human being without legal justification. 
+
+Here Killer appears to have acted with an express intent to kill because she shot KilledPerson in the "head" with a "gun". These facts imply an intent to kill. Alternatively, Killer clearly intended great bodily injury because the homicide was caused by a "firearm". Use of a firearm implies intent to cause serious bodily harm, regardless of where the victim is shot.
+
+Killer also appears to have acted with an awareness and conscious disregard for danger to human life because she deliberately shot Killedperson in the head for little good reason. Her act created extreme risks to Ruby, she apparently had an awareness of the risks and consiously disregarded them.
+
+Based on above theories, Killer could be charged with the murder of Killedperson.
+
+It appears Killer killed killedperson willfully and deliberately. If that is proven the murder was FIRST DEGREE. Killer might argue that she did not act willfully and deliberately to kill killedperson and only reacted instinctively because she had a "short fuse", a MITIGATING FACTOR that caused her to suffer from imparied capacity.
+
+If killer can convince the jury she acted instinctively and did not act willfully, deliberately and with premeditation the murder might be reduced to SECOND DEGREE.
+
+C. FIRST DEGREE MURDER EXAMPLES
+
+Here killer had an express intent to kill because she "decided to kill killedperson". Further, this killing was willful, deliberate and premediated because it was planned in advance. Further, this killing was done by bombing the killedperson because killer bought dynamite from store and detonate the dynamite under the car of the killed person.
+
+So killer can be charged with FIRST DEGREE MURDER.
+
+D. DEPRAVED HEART THEORY example
+
+Here there was homicide because Killedperson was a human being killed by Killer, another human being. Killer may have an express intent to kill because she "knew the blast would probably kill killedperson". But killer would argue that she did not want to kill killedperson because "she felt bad about it." Regardless, killer deliberately created extreme risks to human life with awareness of and conscious disregard because she "knew the blast would probably kill Killedperson"
+
+Therefore, Killer could be charged with murder based on Depraved Heart Theory of malice.
+
+Further, this would generally be FIRST DEGREE murder because the use of explosives to murder is generally one of the "enumerated means" for first degree murder.
+
+Therefore, killer can probably be charged with FIRST DEGREE murder of killedperson even if she did not willfully and deliberately cause his deth with premeditation. She has no defenses.
+
+INSANITY 
+Generally comes in murder case
+
+Under criminal law INSANITY is a defense that negates criminal intent. Under the M'NAUGHTEN RULE a person is insane if a disease of the mind so impairs their reasoning that they are unable to appreciate the nature and quality of their acts or to know that they are wrong. Under the IRRESISTIBLE IMPULSE theory a person may raise the defense of insanity if they are unable to control their acts, even if they know the act is wrong.
+
+Here Killer could not plead M'Naughten because "he knew it was wrong"
+or
+Here Killer could plead M'Naughten because "he does not know it was wrong".
+
+But Killer could plead an irresistible impulse because "he had an overwhelming phobia" and "he could not help himself".
+
+Therefore, Killer might be successful with an insanity defense.
+
+
+
+Conspiracy & Murder 
+
+If we have two people and one of them doing the crime then read below:
+
+Criminal B could only be charged with this murder (crime) based on a vicarious liability theory.
+
+There are two vicarious liability theories:
+A. Conspiracy Theory and
+B. Accomplice Theory
+
+A. CONSPIRACY THEORY
+A person may be charged with vicarious liability for a crime based on CONSPIRACY THEORY if while they are member of a conspiracy, a co-conspirator commits the crime within the scope of the conspiracy. But a conspiracy ends when the criminal goal is ATTAINED or ABANDONED.
+
+Here Dick was a member of a conspiracy to rob the store, but that conspiracy goal was abandoned when they found the store closed. Since the conspiracy had ended, Tom did not kill the Victor the next day "within the scope" of the conspiracy.
+
+Therefore Dick cannot be charged on this basis.
+
+B. ACCOMPLICE THEORY
+A person who commits or helps commit a crime is liable for all subsequent crimes by co-felons that are a direct and natural result of the prior crimes.
+
+Here Dick helped Tom to rob the store the prior day, so he would be liable for any crimes by Tom that are a direct and natural result of the attempted robbery. But the murder of Victor was not a foreseeable result of the prior robbery attempt.
+
+Therefore Dick cannot be charged with Victor's death based on accomplice liability.
+
+Since Dick had no direct liability or vicarious liability he cannot be charged with Murder.
+
+VOLUNTARY MANSLAUGHTER
+Under criminal law VOLUNTARY MANSLAUGHTER is an unlawful, intentional homicide without malice aforethought because of adequate provocation sufficient to raise a reasonable person to a fit of rage which could and actually did cause the homicide.
+
+Generally "mere words alone" are not considered at law to be adequate provocation.
+
+Elements:
+
+defendant committed murder
+
+adequate provocation 
+
+defendant lost self-control (subjective test) 
+
+a reasonable person would lose self-control (objective test) 
+
+no cool off period
+
+
+
+Analysis
+Here there was a lack of adequate provocation because "hard looks", being "dissed", challenged to a "spelling bee" and criticisms of attire" are "mere words alone" that would not be sufficient to raise a reasonable person to a fit of murderous rage. The subjective factor that Killer had a "short fuse" would not lower the standard of conduct.
+
+Therefore, Killer would not succeed in reducing the murder charge to voluntary manslaughter.
+
+Counter analysis
+
+Here there was a adequate provocation because "sleeping of wife with friend" would be sufficient to raise a reasonable person to a fit of murderous rage. 
+
+Therefore, Killer would succeed in reducing the murder charge to voluntary manslaughter.
+
+
+INVOLUNTARY MANSLAUGHTER 
+
+Under criminal law, Involuntary manslaughter is an unintentional homicide resulting from GROSS NEGLIGENCE, RECKLESSNESS or the commission of a MALUM IN SE crime insufficient to support the felony murder rule.
+
+GROSS (CRIMINAL) NEGLIGENCE is the deliberate breach of a pre-existing duty to protect others from extreme risks, and RECKLESSNESS is the deliberate creation of extreme risks to others.
+
+
+Example of NO Involuntary manslaughter
+
+Here there wass an inintentional homicide because killedperson died and Killer did not intend for him to die.
+
+And Killer was not committing any crime because smuggling Viagra was "not a crime". The mistake of law by killer does not make an otherwise innocent act as crime.
+
+Further, resisting unlawful arrest is not a crime. Here the arrest was unlawful because there was "no probable cause" and the police wanted to "harass" and "beat" Killer and Killedperson.
+
+And Killer was not grossly negligent because he drove "55 mph" and did not deliberately create extreme risks to others.
+
+Conclusion:
+Therefore, Tom's act was not sufficient to charge him with involuntary manslaughter.
+
+Therefore, Tom's act was sufficient to charge him with involuntary manslaughter.
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+function buildFunctions() {
+ 
+    var arr = [];
+    
+    for (var i = 0; i < 3; i++) {
+        
+        arr.push(
+            function() {
+                console.log(i);   
+            }
+        )
+        
+    }
+    
+    return arr;
+}
+
+var fs = buildFunctions();
+
+fs[0]();
+fs[1]();
+fs[2]();
+
+function buildFunctions2() {
+ 
+    var arr = [];
+    
+    for (var i = 0; i < 3; i++) {
+        arr.push(
+            (function(j) {
+                return function() {
+                    console.log(j);   
+                }
+            }(i))
+        )
+        
+    }
+    
+    return arr;
+}
+
+var fs2 = buildFunctions2();
+
+fs2[0]();
+fs2[1]();
+fs2[2]();
+</script>
+</head>
+
+<body>
+</body>
+</html>

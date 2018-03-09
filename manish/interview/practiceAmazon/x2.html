@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+Swap every other element in a linked list. e.g. a->b->c->d becomes b->a->d->c  
+
+
+*/
+
+function LinkedList() {
+	let Node = function(element){
+
+        this.element = element;
+        this.next = null;
+    };
+	
+	let length = 0;
+	let head = null;
+	
+	this.append = function(element) {
+		let node = new Node(element);
+		let current;
+		
+		if (head === null) { // i.e. first node on list
+			head = node;
+		} else {
+			current = head;
+			
+			while (current.next) {
+				current = current.next;
+			}
+			
+			current.next = node;
+		}
+		
+		length++;
+	};
+	
+	this.isEmpty = function() {
+        return length === 0;
+    };
+
+    this.size = function() {
+        return length;
+    };
+
+    this.getHead = function(){
+        return head;
+    };
+	
+	this.printThis = function(){
+    	let current = head;
+		console.log('print is ', current);
+    };
+	
+	this.swap = function() {
+		let current = head;
+		
+		let counter = 0;
+		while (current && current.next) {
+			console.log('current is ', counter, ', ', current);
+			//swap the data
+			let k = current.element;
+			current.element = current.next.element;
+			current.next.element = k;
+			current = current.next.next;
+			counter++;
+		}
+		
+		console.log('final current is ', current);
+		
+	}
+}
+
+let list = new LinkedList();
+list.append(1);
+list.append(2);
+list.append(3);
+list.append(4);
+list.printThis();
+list.swap();
+list.printThis();
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

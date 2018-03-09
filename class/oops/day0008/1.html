@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+//first non repeat character in string
+/*
+obj = {}
+obj[t] = 2;
+obj[h] = 2;
+obj[e] = 2;
+obj[ ] = 2;
+obj[f] = 1;
+once i found the obj[f] === 1, then i will come out of the loop and i will consider that as a final result
+
+*/
+function firstNonRepeatChar(str) {
+	var len = str.length; //get the total string count
+	console.log('length is ', len);
+	
+	var obj = {};
+	
+	//go through each character and save the count in the obj variable, 
+	for (var i = 0; i < len; i++) {
+		//console.log('i is ', i, ', and character is ', str[i]);
+		if (obj[str[i]]) {
+			obj[str[i]]++;
+		} else {
+			obj[str[i]] = 1;
+		}
+	}
+	
+	console.log('obj is ', obj);
+	
+	
+	//then loop again to see which one is of count 1
+	for (var j = 0; j < len; j++) {
+		//console.log('i is ', j, ', and character is ', str[j], ', and count is ', obj[str[j]]);
+		if (obj[str[j]] === 1) {
+			return str[j];
+		}
+	}
+	
+	
+	return false;
+}
+
+var str = 'the quick brown fox jumps then quickly blow air';
+
+var result = firstNonRepeatChar(str);
+console.log('result is ', result);
+
+/*
+sindhu@All:
+
+var flag = false;
+function firstNonRepetitiveCharacter(sentence){
+for(var current = 0; current<sentence.length-1; current++){
+    if (flag === true){break;}
+for(var checkingAlphabet = current+1; checkingAlphabet<sentence.length; checkingAlphabet++){
+      if((sentence.charAt(current)!==&quot; &quot;) &amp;&amp; (sentence.charAt(current) != sentence.charAt(checkingAlphabet))){
+        console.log(&quot;the first repetitive character is:&quot;+sentence.charAt(current));
+        flag = true;
+        break;
+      }
+    }
+  }
+}
+
+
+Spandana@All: var findChar = function(str) {
+let charMap = {};
+for (let char of str) {
+  if (!charMap[char]) {
+    charMap[char] = 1;
+  } else {
+    charMap[char]++;
+  }
+}
+console.log(charMap)
+let indexArr = []
+for (let x in charMap) {
+  if (charMap[x] === 1) {
+    indexArr.push(str.indexOf(x))
+  }
+}
+let index = Math.min(...indexArr);
+return str[index];
+}
+*/
+</script>
+</head>
+
+<body>
+</body>
+</html>

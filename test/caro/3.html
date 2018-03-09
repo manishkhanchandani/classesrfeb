@@ -10,9 +10,6 @@
    <link rel="stylesheet" href="css/style.css">
    
 <link href="5/ninja-slider.css" rel="stylesheet" type="text/css" />
-    <!--ninjaVideoPlugin.js is required only when the slider contains video or audio.-->
-    <script src="5/ninjaVideoPlugin.js"></script>
-    <script src="5/ninja-slider.js" type="text/javascript"></script>
 	
       <!-- Stylesheets -->
 <script src="5/jquery.min.js"></script>
@@ -27,7 +24,7 @@
     <script src="assets/owlcarousel/owl.carousel.js"></script>
 	<script src="d3.min.js" charset="utf-8"></script>
 	<style>
-	input[type=text] {
+input[type=text] {
     width: 120px;
     box-sizing: border-box;
     border: 2px solid #bbb;
@@ -60,7 +57,7 @@ input {
 		margin-top:8px;
 		}
 		
-	.owl-carousel .owl-item{
+.owl-carousel .owl-item{
 	max-height: 240px;
 	}
 .prev, .next {
@@ -118,83 +115,7 @@ input {
 
 
 	</style>
-	<script>
-	/* https://github.com/davidbau/seedrandom Copyright 2013 David Bau. */
-(function(a,b,c,d,e,f){function k(a){var b,c=a.length,e=this,f=0,g=e.i=e.j=0,h=e.S=[];for(c||(a=[c++]);d>f;)h[f]=f++;for(f=0;d>f;f++)h[f]=h[g=j&g+a[f%c]+(b=h[f])],h[g]=b;(e.g=function(a){for(var b,c=0,f=e.i,g=e.j,h=e.S;a--;)b=h[f=j&f+1],c=c*d+h[j&(h[f]=h[g=j&g+b])+(h[g]=b)];return e.i=f,e.j=g,c})(d)}function l(a,b){var e,c=[],d=(typeof a)[0];if(b&&"o"==d)for(e in a)try{c.push(l(a[e],b-1))}catch(f){}return c.length?c:"s"==d?a:a+"\0"}function m(a,b){for(var d,c=a+"",e=0;c.length>e;)b[j&e]=j&(d^=19*b[j&e])+c.charCodeAt(e++);return o(b)}function n(c){try{return a.crypto.getRandomValues(c=new Uint8Array(d)),o(c)}catch(e){return[+new Date,a,a.navigator.plugins,a.screen,o(b)]}}function o(a){return String.fromCharCode.apply(0,a)}var g=c.pow(d,e),h=c.pow(2,f),i=2*h,j=d-1;c.seedrandom=function(a,f){var j=[],p=m(l(f?[a,o(b)]:0 in arguments?a:n(),3),j),q=new k(j);return m(o(q.S),b),c.random=function(){for(var a=q.g(e),b=g,c=0;h>a;)a=(a+c)*d,b*=d,c=q.g(1);for(;a>=i;)a/=2,b/=2,c>>>=1;return(a+c)/b},p},m(c.random(),b)})(this,[],Math,256,6,52);
 
-		var data = [];
-		var channel_id=["UC3egnAk8Goe_LlZKz1wZAWA","UC8fD64z8lUxNqn-jNU1oc7Q","UCpUgIX2vMg3GF0a1bUcapnQ","UCv58r9mAhzFjrfk4d5tK2RA","UCrCrHVA0_WTH1vmn_13eGeg"];
-		function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
-
-		
-function data_int2(){
-	   for(j=0;j<channel_id.length;j++){
-       
-	   
-	   var request = gapi.client.youtube.channels.list({
-			id: channel_id[j],
-			part: 'snippet,brandingSettings'
-		  });
-  request.execute(function(response) {
-    console.log(response.result);
-  });
-	   
-	   
-	   
-
-	}
-
-   }		
-		
-		
-
-function data_int(){
-
-	   for(j=0;j<channel_id.length;j++){
-       var request = gapi.client.youtube.search.list({
-            part: "snippet",
-            type: "video",  
-            q: encodeURIComponent("dance").replace(/%20/g, "+"),
-            maxResults: 5,   
-            order: "date",  
-            publishedAfter: "2016-01-01T00:00:00Z",
-			channelId: channel_id[j]
-       }); 
-       // execute the request
-       request.execute(function(response) {
-          var results = response.result;
-		  for(i=0;i<results.items.length;i++){
-		  var element={};
-		  element.title = results.items[i].snippet.title;
-			element.url = results.items[i].id.videoId;
-			data.push(element);
-		  }
-          
-		  
-       });
-	}
-	console.log('data: ', data);
-
-	setTimeout(function (){
-  console.log('data2: ', data);
-			afterphp();
-   
-}, 1000);
-   }
-
-
-
-function init() {
-return false;
-    gapi.client.setApiKey("AIzaSyBZdS_FYN1RNloDmxjScZkdC_Lc8KflHOE");
-    gapi.client.load("youtube", "v3", function() {
-        data_int();
-		data_int2();
-		
-    });
-}
-
-	</script>
 	
 </head>
 
@@ -340,88 +261,8 @@ return false;
 		  </body>
 		  
 		  
-          <script src="assets/vendors/jquery.mousewheel.min.js"></script>
           <script>
            
-
-		
-		function afterphp(){
-		Math.seedrandom(+d3.timeHour(new Date));
-
-d3.shuffle(data);
-
-		for (i = 0; i <12; i++) {
-			d = new Date();
-			var youtube_id=data[i].url;
-			console.log(data[i]);
-			var temp="#song__img"+(i+1);//www.youtube.com/embed/"+youtube_id+"?enablejsapi=1&start=0&rel=0&showinfo=0&iv_load_policy=3&modestbranding=1";
-			
-			song_thumbnail="https://img.youtube.com/vi/" +youtube_id+ "/hqdefault.jpg"
-			$(temp).attr("src", song_thumbnail,d.getTime());
-			
-			var temp="song_title"+(i+1);
-			var partsOfStr = data[i].title.split('|');
-			document.getElementById(temp).innerHTML=partsOfStr[0]+"<br />" +partsOfStr[1];
-		}
-		
-
-
-		
-		//Owl Carousel should be loaded after the div elements have been updated otherwise the clonned div do not get updated
-              var owl = $('.owl-carousel');
-              owl.owlCarousel({
-                loop: true,
-                nav: true,
-                margin: 10,
-				autoHeight: true,
-				autoWidth: true,
-                responsive: {
-                  0: {
-                    items: 1
-                  },
-                  600: {
-                    items: 3
-                  },
-                  960: {
-                    items: 4
-                  },
-                  1200: {
-                    items: 6
-                  }
-                }
-              });
-              owl.on('mousewheel', '.owl-stage', function(e) {
-                if (e.deltaY > 0) {
-                  owl.trigger('next.owl');
-                } else {
-                  owl.trigger('prev.owl');
-                }
-                e.preventDefault();
-              });
-			  setInterval(function(){ 
-			  var isHovered = $('#trending_refresh').is(":hover");
-			  if (isHovered){
-			  
-			  }
-			  else{
-			  owl.trigger('next.owl'); 
-			  }
-			  
-			  }, 8000);
-			  
-			  document.getElementsByClassName("next")[0].addEventListener("click", next_slide, false);
-			 document.getElementsByClassName("prev")[0].addEventListener("click", prev_slide, false);
-			 
-			 
-			 function next_slide(){
-			 owl.trigger('next.owl'); 
-			 owl.trigger('next.owl'); 
-			 }
-			 function prev_slide(){
-			 owl.trigger('prev.owl'); 
-			 owl.trigger('prev.owl'); 
-			 }
-           }
 
 function mango() {
 	var owl = $('.owl-carousel');

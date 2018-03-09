@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+Queue and Priority Queue
+*/
+
+function Queue() {
+	let items = [];
+	
+	this.enqueue = function (element) {
+		items.push(element);
+	}
+	
+	this.dequeue = function() {
+		return items.shift();
+	}
+	
+	this.front = function() {
+		return items[0];
+	}
+	
+	this.isEmpty = function() {
+		return items.length === 0;
+	}
+	
+	this.size = function() {
+		return items.length;
+	}
+	
+	this.print = function() {
+		console.log(items);
+	}
+}
+let Queue2 = (function () {
+	const items = new WeakMap();
+	class Queue2 {
+		constructor () {
+			items.set(this, []);
+		}
+		enqueue(element) {
+			let q = items.get(this);
+			q.push(element);
+		}
+		dequeue() {
+			let q = items.get(this);
+			let r = q.shift();
+			return r;
+		}
+		//other methods
+	}
+	return Queue2;
+})();
+
+
+let queue = new Queue();
+console.log(queue.isEmpty());
+queue.enqueue("John");
+queue.enqueue("Jack");
+queue.enqueue("Camila");
+queue.print();
+console.log(queue.size()); //outputs 3
+console.log(queue.isEmpty()); //outputs false
+queue.dequeue();
+queue.dequeue();
+queue.print();
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

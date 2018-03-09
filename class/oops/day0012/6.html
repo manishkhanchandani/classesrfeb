@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+function makeCounter() {
+	let count = 0;
+	return function() {
+		return count++;
+	}
+}
+let counter1 = makeCounter();
+let counter2 = makeCounter();
+let counter3 = makeCounter();
+console.log(counter1()); //
+console.log(counter1()); //
+
+console.log(counter2());
+console.log(counter2());
+console.log(counter2());
+console.log(counter2());
+console.log(counter2()); //
+console.log(counter3());
+</script>
+</head>
+
+<body>
+</body>
+</html>

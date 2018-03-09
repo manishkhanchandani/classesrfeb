@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+Hashes & Dictionaries
+*/
+function HashTable() {
+	var table = [];
+	
+	var loseloseHashCode = function(key) {
+		/*var hash = 0;
+		for (var i = 0; i < key.length; i++) {
+			hash += key.charCodeAt(i);
+			//console.log('i is ', i, ', key is ', key, ', char is ', key.charCodeAt(i));
+		}*/
+		
+		var hash = 5381; //{1}
+		for (var i = 0; i < key.length; i++) { //{2}
+			hash = hash * 33 + key.charCodeAt(i); //{3}
+		}
+		return hash % 1013; //{4}
+		
+		console.log('hash is ', hash);
+		
+		return hash % 37;
+	}
+	
+	this.put = function (key, value) {
+		var position = loseloseHashCode(key);
+		console.log(position + ' - ' + key);
+		table[position] = value;
+		
+		console.log('table is ', table);
+	};
+	
+	this.get = function(key) {
+		return table[loseloseHashCode(key)];
+	}
+	
+	this.remove = function(key) {
+		table[loseloseHashCode(key)] = undefined;
+	}
+}
+
+var hash = new HashTable();
+hash.put('Gandalf', 'gandalf@email.com');
+hash.put('John', 'johnsnow@email.com');
+hash.put('Tyrion', 'tyrion@email.com');
+console.log(hash.get('Gandalf'));
+console.log(hash.get('Loiane'));
+hash.remove('Gandalf');
+console.log(hash.get('Gandalf'));
+</script>
+</head>
+
+<body>
+</body>
+</html>

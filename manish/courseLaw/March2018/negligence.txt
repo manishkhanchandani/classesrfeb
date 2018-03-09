@@ -1,0 +1,262 @@
+Negligence
+
+Strict Liability
+
+1. DUTY?
+
+NEGLIGENCE PER SE?
+
+DUTY BASED ON PERIL?
+
+DUTY BASED ON PREMISES LIABILITY?
+
+ATTRACTIVE NUISANCE DOCTRINE?
+
+LIABILITY BASED ON RESCUER DOCTRINE / FIREMAN’S RULE?
+
+2. BREACH AND STANDARD OF CARE?
+
+RES IPSA LOQUITUR?
+
+BREACH BASED ON NEGLIGENT ENTRUSTMENT?
+
+3. ACTUAL CAUSE of injury to Paula?
+
+4. PROXIMATE CAUSE of injury to Paula?
+
+5. DAMAGES?
+
+NEGLIGENT INFLICTION OF EMOTIONAL DISTRESS?
+
+VICARIOUS LIABILITY BASED ON RESPONDEAT SUPERIOR ?
+
+VICARIOUS LIABILITY for JOINT ENTERPRISE ?
+
+VICARIOUS LIABILITY for acts of INDEPENDENT CONTRACTOR?
+
+
+6. CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+
+EGG-SHELL PLAINTIFF?
+
+7. ASSUMPTION OF RISK?
+
+
+Explanation
+
+Let's say plaintiff name is Paula
+
+Paula's cause of action here is for NEGLIGENCE. Under tort law NEGLIGENCE is the failure to exercise that degree of care that a reasonable prudent person would use in the same circumstances. To establish a prima facie case Paula must generally prove DUTY, BREACH, ACTUAL AND PROXIMATE CAUSATION AND DAMAGES.
+
+Note: Negligence Occurs in case of carelessness or accident. Five elements are present in case of negligence: 1. Defendant had a duty to act reasonable, 2. Defendant berached that duty, 3. Defendant's breach was actual cause of plaintiff's injury, 4. Defendant's breach was proximate cause of plaintiff's injury, 5. Damages are caused by defendant's breach. 
+
+Strict Liability
+
+Under tort law a defendant that engages in any of three activities is STRICTLY LIABLE to any person who is actually and proximately caused injury. These three activities are: 1) keeping a KNOWN, DANGEROUS ANIMAL , 2) keeping an EXOTIC ANIMAL of a type that is not commonly domesticated, or 3) engaging in ULTRA-HAZARDOUS ACTIVITIES that are unusual, pose extreme risks to others, and are usually subject to strict safety regulations. 
+
+If a defendant engages in these activities duty is presumed, and if anyone is caused injured as a result breach is presumed as well. 
+
+1. DUTY?
+
+Under tort law the general rule is that a person has no duty to act to defend others from harm. A DUTY to act to protect others from harm ONLY arises under five scenarios: [SCRAP] STATUTE, CONTRACT, RELATIONSHIP, ASSUMPTION or where PERIL to the plaintiff is caused by the defendant.
+
+Note: Duty to act reasonably necessary to protect others from harm. 
+
+NEGLIGENCE PER SE?
+
+Def 1 Essay: If a STATUTE creates a duty, violating the statute may constitute NEGLIGENCE PER SE if the purpose of the statute was to protect the CLASS OF PEOPLE to which plaintiff belongs, and the violation of the statute caused the plaintiff to suffer the TYPE OF INJURY the statute was intended to prevent. 
+
+Def 2: A defendant that 1) violates a STATUTE or rule causing injury to the plaintiff will be NEGLIGENT PER SE if 2) the statute was intended to protect people like the plaintiff from 3) injuries like those suffered.
+
+Example 1: 
+
+Here Tom violated the law that prohibited fireworks in the National Forest, and that caused Paula to suffer injury. But she was not in the CLASS OF PEOPLE the statute was intended to protect because it was to protect people "on national lands" and she was "outside the National Forest boundaries". Further she did not suffer the TYPE OF INJURY the statute was intended to prevent because it was to "prevent forest fires and injury"while her injury was getting wet and having her money stolen.
+
+Therefore, Paula would be unable to prove Tom was negligent per se. 
+
+DUTY BASED ON PERIL?
+
+Under tort law defendants that create reasonably foreseeable dangers to others have a DUTY based on PERIL to act reasonably to protect others from those dangers. 
+
+Under PALSGRAF, Cardozo said that a duty is only owed to those who are in the zone of danger caused by the defendant's acts. The Zone of Danger is the area where the defendant’s acts create reasonably foreseeable peril to others. 
+
+Andrews held that if the defendant owes a duty to anyone and breaches it, he should be liable for all injury actually and proximately caused by that breach.
+
+Example 1:
+
+Here the Zone of Danger was the gravel bar and the water area immediately around it because it was not reasonably foreseeable the firecrackers could cause peril to anyone outside that area. And there was nobody placed in danger within the zone of danger because "no one else was around" and there was "nothing that could burn".
+
+Paula appeared to be outside the zone of danger caused by Tom's activities because she was a "half mile downstream". Paula might argue that the zone of danger was larger than the small area of the "gravel bar" because Tom should have seen the possibility injury could occur further away.
+
+Therefore, it would be difficult for Paula to prove that Tom had any duty at all, and almost impossible for her to prove that she was placed in foreseeable peril by his actions.
+
+Example 2:
+
+Here Dick could only have a duty based on PERIL, and there is little evidence Dick's act created reasonably foreseeable peril to anyone. The only foreseeable danger he caused by pushing the log in the river is that it might hit someone swimming in the river downstream. Therefore the "zone of danger" created by his act is the surface of the river downstream. There is no evidence anyone was in the river, and Paula was certainly not beacuse she was on the bridge.
+
+Therefore, there is no evidence Dick created any foreseeable peril to anyone, and if that could not be proven he did not owe Paula anyone else a duty. 
+
+DUTY BASED ON PREMISES LIABILITY?
+
+Under tort law OCCUPIERS OF LAND have a duty to both those who come onto the land and to those off the land. This is a form of duty based on RELATIONSHIP.
+
+Under the common law occupiers of land had no duty to UNKNOWN TRESPASSERS.
+
+The occupiers had a duty to warn and protect KNOWN TRESPASSERS and LICENSEES from known, hidden dangers and artificial conditions. Licensees are people allowed onto the land but not for the occupiers’ benefit.
+
+The occupiers had a duty to reasonably inspect the land and warn and protect INVITEES from known, hidden dangers and artificial conditions. Invitees are people invited or allowed onto the land for the occupiers’ benefit.
+
+Finally the occupiers of land had a duty to conduct and control activities on the land with due care to prevent injury to PEOPLE OFF THE LAND.
+
+Modernly these rigid rules by classification have often been modified by both statute and Court decision to create a balancing test under which occupiers of land have a duty of due care to ALL PEOPLE to act as reasonable people would in inspecting, maintaining and using their property so that it does not pose known dangers to others.
+
+ATTRACTIVE NUISANCE DOCTRINE?
+
+Under the ATTRACTIVE NUISANCE DOCTRINE an OCCUPIER OF LAND who knows that children have or may in the future trespassed onto her land has a strict duty to inspect for and eliminate any condition posing dangers the children might not fully appreciate because of their young age.
+
+This is a duty based on RELATIONSHIP which poses almost strict liability. The only defense the landowner may raise is assumption of the risk.
+
+LIABILITY BASED ON RESCUER DOCTRINE / FIREMAN’S RULE?
+
+Under the RESCUER DOCTRINE defendants may be liable to rescuers who are injured attempting to rescue people injured.
+
+But under the FIREMAN’S RULE defendants are generally not liable to professional rescue workers because they have ASSUMED THE RISKS associated with their professions.
+
+2. BREACH AND STANDARD OF CARE?
+
+Under tort law a BREACH is the failure to exercise DUE CARE. The standard of due care is that level of caution a reasonably prudent person would use in the same circumstance. 
+
+Example 1: 
+
+Here Tom went to great lengths to be sure his activities did not endabger anyone because he went to a "gravel bar" in the middle of the river with no one around so there would be no foreseeable danger to anyone. And once there he threw the firecrackers "carefully".
+
+Paula could only argue that a reasonable observant person would have seen the "log" floating down the river, and would have been careful not to throw any burning firecrackers onto it.
+
+Therefore, it would be difficult for the Paula to show that a reasonable person would have been any more careful than Tom. 
+
+Example 2:
+
+Breach was defined above. The STANDARD OF CARE for a child is to act in the manner reasonable children of the same age and experience act.
+
+Here Dick was only "three year old" and he would only be negligent if he acted in a manner that children of that age do not reasonable act.
+
+Since Dick was so young it is unlikely Paula could prove that he breached his duty, if he had a duty. 
+
+RES IPSA LOQUITUR?
+
+Under the doctrine of RES IPSA LOQUITUR an INFERENCE OF BREACH exists if 1) negligence by someone is implied by the facts, 2) the defendant had control of the event or instrument that caused injury, and 3) the plaintiff had no control over the event or instrument causing injury.
+
+Example 1 Sample:
+
+Here negligence by someone is implied because… and the defendant had control over the event (or cause of injury) because… and the plaintiff had no control over the event (or cause of injury) because…
+
+Therefore, BREACH could be inferred based on RES IPSA LOQUITUR. 
+
+BREACH BASED ON NEGLIGENT ENTRUSTMENT?
+
+Under tort law defendants who NEGLIGENTLY ENTRUST third parties with resources or authority are directly liable for injuries actually and proximately caused as a result.
+
+[This is the intended issue when a defendant negligently gives or loans someone else an object (e.g. a car to a drunk driver) or otherwise puts them in a position where they have the power and ability to hurt the plaintiff. If the defendant SELLS the object to the other person (e.g. sells a car to a known alcoholic) the law is far less likely to find the defendant liable.
+
+3. ACTUAL CAUSE of injury?
+
+Under tort law the defendant is the ACTUAL CAUSE of injury if the plaintiff would not have been injured BUT FOR the acts of the defendant.
+
+If two or more defendants acted negligently, the plaintiff would not have been injured if neither had acted, and the plaintiff cannot reasonably prove she would not have been injured but for the acts of each alone, then each defendant is a SUBSTANTIAL FACTOR causing injury.
+
+Example 1:
+
+Here Paula would not have fallen in the river and had her money stolen if Tom had not thrown the firecracker.
+
+Therefore, Tom was the actual cause of Paula's injury. 
+
+4. PROXIMATE CAUSE?
+
+Under tort law PROXIMATE CAUSE means that the injury suffered by the plaintiff was so DIRECT, NATURAL and FORESEEABLE, so close in time and place, resulting from a CHAIN OF CAUSATION begun by the defendant’s acts, unbroken by UNFORESEEABLE INTERVENING EVENTS that the law will impose liability for the result.
+
+Generally if two or more events are actual causes of the plaintiff’s injury, the last event will be an UNFORESEEABLE INTERVENING EVENT cutting off the liability of all defendants who acted earlier. However, it is a matter of settled law that negligent acts by others are FORESEEABLE so they can never be intervening events. Acts of nature [e.g. tornados] and criminal or intentionally tortious acts by third parties [e.g. thefts, batteries] are presumed to be UNFORESEEABLE and will terminate defendants’ liability unless extrinsic evidence shows defendants were aware the subsequent events were likely to occur.
+
+Definition in Exam: 
+
+Under tort law, PROXIMATE CAUSE means that the injury to the plaintiff was so foreseeable, close in time and place to the acts of the defendant and a direct result of a chain of causation unbroken by unforeseeable intervening events.
+
+Generally where there are two or more actual causes of an injury, the last, unforeseeable, intentional act will be an UNFORESEEABLE INTERVENING EVENT that becomes the sole proximate cause, cutting off all the liablities arising from the prior acts. Further, criminal acts and intentional torts by third parties are presumed to be unforeseeable absent additional facts. 
+
+Example 1:
+
+Here Paula was rather far away from Tom in time and space, and it would not be foreseeable she could be injured by a firecraker at that distance. Further a reasonable person could not foresee that a firecracker could cause money to be stolen. Finally, even if Tom was the proximate cause of Paula failing in the river, he was not the proximate cause of her money being stolen because Harry's criminal act was an unforeseeable intervening event. 
+
+Therefore, Paula probably could not prove Tom was the proximate cause of her fall into the river, and she certainly could not prove he was the proximate cause of her money being taken. 
+
+Example 2:
+
+Here Dick was even farther away from Paula than Tom, and it was even more unforeseeable that his act could harm her or anyone else.
+
+Therefore, Paula would have even a more difficult time proving Dick was the cause of her injury. 
+
+5. DAMAGES?
+
+Under tort law DAMAGES are SPECIAL (out of pocket expense) and GENERAL (pain and suffering). 
+
+Example 1:
+
+Here Paula had SPECIAL damages because she lost "two dollars" and she had GENERAL damages because she was "hurt and upset". But she got out of the river "laughingly" and was not "hurt and upset" until after she discovered the purse was stolen.
+
+Therefore, Paula suffered actual damages, but Tom was not the cause of those damages. 
+
+NEGLIGENT INFLICTION OF EMOTIONAL DISTRESS?
+
+Under tort law, a BYSTANDER to an event may bring an action for NEGLIGENT INFLICTION if they suffer severe emotional distress and there is a nexus between the negligent act and the injury based on a PROXIMITY IN TIME, PLACE and RELATIONSHIP. In some jurisdictions a physical manifestation of emotional distress must be shown. 
+
+Do not discuss NIED unless the plaintiff is a BYSTANDER who only witnesses or hears about some accident that injures another person. If the plaintiff is actually, physically involved in an event they have an action for NEGLIGENCE and can recover for their “emotional distress” as special damages.
+
+VICARIOUS LIABILITY BASED ON RESPONDEAT SUPERIOR ?
+
+Under the doctrine of RESPONDEAT SUPERIOR an employer, master or principal is vicariously liable for all torts committed by an employee, servant or agent, respectively, if the tort is committed within the scope of the employment or agency relationship. 
+
+Respondeat superior does not apply to independent contractors.
+
+VICARIOUS LIABILITY for JOINT ENTERPRISE ?
+
+Under tort law each member of a JOINT ENTERPRISE is vicariously liable for all torts committed by other members within the scope of the enterprise relationship. A joint enterprise is one in which two or more parties agree to work together for mutual benefit and each shares equal rights of control over assets and activities. 
+
+VICARIOUS LIABILITY for acts of INDEPENDENT CONTRACTOR?
+
+Under tort law prople who hire INDEPENDENT CONTRACTORS to perform duties that are not “non-delegable” by law are NOT vicariously liable for torts committed by the contractors and can only be directly liable because of negligent selection or negligent entrustment of the contractors. An independent contractor is a person selected to provide labor services without close and regular supervision [e.g. gardeners, housekeepers, house painters and babysitters that are not employed on an exclusive and continuous basis.]
+
+6. CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+
+Under tort law CONTRIBUTORY NEGLIGENCE is a complete bar to recovery if the plaintiff was responsible in any manner for their injury. It is a MINORITY VIEW rule, and the MAJORITY approach is COMPARATIVE NEGLIGENCE which just reduces the plaintiff’s recovery based on the degree of fault of the plaintiff. In some states a plaintiff that is over 50% at fault for her own injuries is completely barred from recovery.
+
+The Last Clear Chance Doctrine held that contributory negligence by a plaintiff was NOT a complete bar to recovery if the defendant had a last clear chance to avoid the accident that injured the plaintiff and failed to do so. 
+
+Example 1:
+
+Negligence Per Se is defined above. Tom might argue Paula was NEGLIGENT PER SE because she was fishing on the bridge where that is prohibited by Statute. But Paula did not suffer the TYPE OF INJURY the statute was to prevent. The purpose of the statute was "traffic safety" and she was not injured in a traffic accident. 
+
+Therefore any "negligence per se" argument by Tom would fail.
+
+Tom's better argument is that Paula was contributory (comparatively) negligent because she sat "carelessly" and that placed her in PERIL of falling.
+
+Therefore, Tom could easily prove Paula was "careless" and partly responsible for her own injury. 
+
+EGG-SHELL PLAINTIFF?
+
+Under the EGG-SHELL PLAINTIFF concept, defendants are liable for all damages they actually cause plaintiffs, even if the plaintiffs , through no fault of their own, have pre-existing conditions that make them especially vulnerable to injury. The doctrine of the law is that “defendants must take plaintiffs as they find them.” 
+
+7. ASSUMPTION OF RISK?
+Under tort law ASSUMPTION OF THE RISK is a complete bar to recovery for negligence if 1) plaintiffs deliberately put themselves at risk 2) with full awareness of the risks and 3) a conscious acceptance of the risks.
+
+[Note: Assumption of the risk is the only possible affirmative defense to a proven claim of Strict Liability or Attractive Nuisance Doctrine .]
+
+Example 1: 
+
+Here Paula put herself at risk because she "sat carelessly". She had a full awareness of the risks that she could fall. And she appears to have consciously accepted those risks because the river was only a few "feet" below her, "she could swim" and it was a "nice day".
+
+Therefore, Tom may be able to prove assumptions of risks. 
+
+Example 2 (Oct 2016): 
+
+Here Moe put herself at risk because Moe comes into Barry’s shop to get a shave. He had a full awareness of the risks that he would be cut by Barry during a shave with a straight razor. And he appears to have consciously accepted those risks because he voluntarily entered Barry's shop for a shave and consented to the activity.
+
+Therefore, Barry may be able to prove assumptions of risks. 

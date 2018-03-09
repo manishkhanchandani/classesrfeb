@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+    Write a function/method with this signature:
+
+bool MyFunc(string term, string input) {}
+
+
+The method should return true if the search term is found in the input string, even when there are other characters in between.
+
+Examples:
+
+"aba", "bbbbabbxxxxxxbb" returns false
+
+"aba", "bbbbabbxxxxxxab" returns true
+
+
+k = 0;
+
+for j in 0: strlen(input)
+
+{ ?
+
+if term[k] == input[j]
+
+{
+
+k++;
+
+if (k>=strlen(term))
+
+return true
+
+}
+
+}
+
+return false
+*/
+
+function myFunc(term, input) {
+	let k = 0;
+	for (let j = 0; j < input.length; j++) {
+		if (term[k] === input[j]) {
+			k++;
+			if (k >=  term.length) {
+				return true;
+			}
+		}
+	}
+	
+	
+	return false;
+}
+
+let x1 = myFunc('aba', 'bbbbabbxxxxxxbb'); //return false
+console.log('x1 is ', x1);
+let x2 = myFunc('aba', 'bbbbabbxxxxxxab'); //return true
+console.log('x2 is ', x2);
+</script>
+</head>
+
+<body>
+</body>
+</html>

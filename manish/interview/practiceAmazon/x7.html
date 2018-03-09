@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+Queue and Priority Queue
+*/
+
+function PriorityQueue() {
+	let items = [];
+	
+	function QueueElement(element, priority) {
+		this.element = element;
+		this.priority = priority;
+	}
+	
+	this.enqueue = function (element, priority) {
+		let queueElement = new QueueElement(element, priority);
+		let added = false;
+		console.log('queueElement: ', queueElement);
+		if (items.length > 0) {
+			for (let i = 0; i < items.length; i++) {
+			console.log('i is ', i, ', qp: ', queueElement.priority , ', items[i].priority: ', items[i].priority);
+				if (queueElement.priority < items[i].priority) {
+					items.splice(i, 0, queueElement);
+					added = true;
+					break;
+				}
+			}
+		}
+		
+		if (!added) {
+			items.push(queueElement);
+		}
+		
+		console.log('items is ', items);
+	}
+	
+	
+	this.print = function() {
+		console.log(items);
+	}
+}
+let priorityQueue = new PriorityQueue();
+priorityQueue.enqueue("John", 5);
+priorityQueue.enqueue("Jack", 1);
+priorityQueue.enqueue("Banana", 3);
+priorityQueue.enqueue("Camila", 1);
+priorityQueue.enqueue("Mango", 2);
+priorityQueue.print();
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

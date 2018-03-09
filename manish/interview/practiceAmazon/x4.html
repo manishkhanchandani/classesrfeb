@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+/*
+find intersection of 2 arrays
+*/
+
+function intersect1(a, b)
+{
+	let ai = 0;
+	let bi = 0;
+	
+	let result = [];
+	
+			console.log('ai  ', ai);
+			console.log('bi  ', bi);
+	while (ai < a.length && bi < b.length) {
+		console.log('a is ', a[ai], ', b is ', b[bi]);
+		if (a[ai] < b[bi]) {
+			ai++;
+			console.log('moving ai to ', ai);
+		} else if (a[ai] > b[bi]) {
+			bi++;
+			console.log('moving bi to ', bi);
+		} else {//equal case
+			result.push(a[ai]);
+			ai++;
+			bi++;
+			console.log('moving2 ai to ', ai);
+			console.log('moving2 bi to ', bi);
+			console.log(' rs is ', result);
+		}
+		
+	}
+	
+	console.log('result is ', result);
+}
+
+intersect1([1,2,3], [2,3,4]);
+</script>
+</head>
+
+<body>
+</body>
+</html>
