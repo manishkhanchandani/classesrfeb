@@ -15,7 +15,7 @@ Under tort law a battery is an intentional act done to cause a harmful or offens
 
 Definition 3. CONVERSION?
 
-Under tort law CONVERSION is an intentional act to cause and that does cause interference with the chattel of the plaintiff resulting in substantial deprivation of possession. The proscribed legal remedy is forced purchase by the defendant, but the plaintiff may “waive the tort” and seek restitution instead. 
+Under tort law CONVERSION is an intentional act to cause and that does cause interference with the chattel of the plaintiff resulting in substantial deprivation of possession. The prescribed legal remedy is forced purchase by the defendant, but the plaintiff may “waive the tort” and seek restitution instead. 
 
 Definition 4. FALSE IMPRISONMENT?
 Under tort law a false imprisonment is an intentional act causing the plaintiff to be confined to a defined space against their will with no reasonably apparent means of reasonable exit. The plaintiff must be aware of the confinement. 
@@ -90,15 +90,6 @@ As he stood on the ledge Gates accidentally knocked a decorative panel loose. It
 Suddenly Gates discovered that there was an unlocked window next to him all the time. He opened the window and escaped immediately.
 Discuss Kent's liability to Gates, the World Tribune and fireman Frank.
 
-[ANSWER EXPLANATION: This question has all of the common law intentional torts except for conversion and trespass to chattels. Why did Kent act? Because he intended to pull a “prank.” That fact expressly proves his acts were intentional. His physical acts imply intent, but the fact he wanted to pull a “prank” expressly proves intent. That saves you time.
-Be prepared for batteries that cause “offense” but not harm. Being pushed around by a stranger is offensive to a reasonable person, and be prepared to state that.
-The whole purpose of having fireman Frank hurt is to raise the issue of transferred intent. Did you spot the issue? Don’t turn to “negligence” when the acts causing harm are intentional.
-If Frank was injured as the result of negligence by Kent or Gates, he might have no case because of the “Fireman’s Rule” that rescue personnel cannot sue for injuries suffered as a result of the negligence of others that creates the emergency situation to which they have responded. That is often codified in statute, and it expressly recognizes the issue that emergency personnel, by occupation, have assumed the risks of their employment.
-But the Fireman’s Rule does not generally extend to injury caused by intentional torts.
-Some professors insist that students “always discuss defenses”, and if your professor insists on that humor the prof and discuss defenses, even when there are no facts to suggest any. Often this sort of professor also wants the defenses discussed at the end of the essay in a “Defenses” section.
-But generally the writers of law exam and bar exam questions will guide you by giving you facts to suggest the issues you are to discuss, and if you are not given any facts that suggest an issue it means they don’t want you to discuss that issue.
-And generally question writers want and expect you to discuss the issues in the order in which they arise in the fact pattern.
-If no facts are presented to suggest any plausible defense the writer is effectively saying, “I don’t want you to discuss defenses!” Here there are absolutely no facts to suggest that Kent has any plausible defense claims, so I didn’t waste my time discussing it.]
 
 Sample Answer 16-1: Intentional Torts
 GATES V. KENT
@@ -134,6 +125,15 @@ Here Kent intentionally acted to cause Gates to suffer assault, battery, false i
 Therefore, Kent would be liable to Frank for battery by transferred intent.
 
 
+[ANSWER EXPLANATION: This question has all of the common law intentional torts except for conversion and trespass to chattels. Why did Kent act? Because he intended to pull a “prank.” That fact expressly proves his acts were intentional. His physical acts imply intent, but the fact he wanted to pull a “prank” expressly proves intent. That saves you time.
+Be prepared for batteries that cause “offense” but not harm. Being pushed around by a stranger is offensive to a reasonable person, and be prepared to state that.
+The whole purpose of having fireman Frank hurt is to raise the issue of transferred intent. Did you spot the issue? Don’t turn to “negligence” when the acts causing harm are intentional.
+If Frank was injured as the result of negligence by Kent or Gates, he might have no case because of the “Fireman’s Rule” that rescue personnel cannot sue for injuries suffered as a result of the negligence of others that creates the emergency situation to which they have responded. That is often codified in statute, and it expressly recognizes the issue that emergency personnel, by occupation, have assumed the risks of their employment.
+But the Fireman’s Rule does not generally extend to injury caused by intentional torts.
+Some professors insist that students “always discuss defenses”, and if your professor insists on that humor the prof and discuss defenses, even when there are no facts to suggest any. Often this sort of professor also wants the defenses discussed at the end of the essay in a “Defenses” section.
+But generally the writers of law exam and bar exam questions will guide you by giving you facts to suggest the issues you are to discuss, and if you are not given any facts that suggest an issue it means they don’t want you to discuss that issue.
+And generally question writers want and expect you to discuss the issues in the order in which they arise in the fact pattern.
+If no facts are presented to suggest any plausible defense the writer is effectively saying, “I don’t want you to discuss defenses!” Here there are absolutely no facts to suggest that Kent has any plausible defense claims, so I didn’t waste my time discussing it.]
 
 
 Definition 19. NEGLIGENCE?
@@ -262,8 +262,6 @@ Other people that had been fishing rushed off the bridge and down the river bank
 Harry had been fishing too, but instead of going to help Paula, he stayed on the bridge and took two dollars out of Paula's purse. No one saw Harry take the money and the crime was never solved. Paula was hurt and upset.
 Under what theories can Paula seek to recover from Tom and Dick and what defenses would they raise?
 
-[ANSWER EXPLANATION: This question focuses on the outer limits of DUTY to a remotely situated plaintiff (with firecracker yet, a la Palsgraf) and PROXIMATE CAUSATION of damage by some burning object floating down a river (a la Wagon Mound I and II). The question also focuses on the outer limits of BREACH because one cannot be breaching a duty by an act that poses no foreseeable risk to others.
-Law schools tend to brainwash every student into thinking they can always sue, and win, for every injury. The truth is that Paula’s case is frivolous. ]
 
 
 Sample Answer 16-2: Negligence
@@ -327,6 +325,8 @@ Here Dick was even farther away from Paula than Tom, and it was even more unfore
 Therefore, Paula would have even a more difficult time proving Dick was the cause of her injury.
 
 
+[ANSWER EXPLANATION: This question focuses on the outer limits of DUTY to a remotely situated plaintiff (with firecracker yet, a la Palsgraf) and PROXIMATE CAUSATION of damage by some burning object floating down a river (a la Wagon Mound I and II). The question also focuses on the outer limits of BREACH because one cannot be breaching a duty by an act that poses no foreseeable risk to others.
+Law schools tend to brainwash every student into thinking they can always sue, and win, for every injury. The truth is that Paula’s case is frivolous. ]
 
 Definition 39. PRODUCTS LIABILITY?
 Under PRODUCT LIABILITY LAW a person who places an unreasonably dangerous product into the steam of commerce may be liable for the injury it causes. There are four basic theories on which a product liability action may be brought: Breach of Express Warranty, Breach of Implied Warranty, Negligence and Strict Liability. 
@@ -363,11 +363,6 @@ Moe saw the warning in the owner's manual and tried to return the saw. Sam refus
 Harry saw Moe's old saw in the garbage and took it. There was no owner's manual, but the saw was just like brand new. When he first used the saw it burst into flames and burned him.
 Discuss all the theories under which Tom, Dick and Harry would seek to recover from Sam. Under which theories can they NOT recover?
 
-[ANSWER EXPLANATION: This question calls for a discussion of the four theories of product liability. The facts are intended to illustrate the differences between express and implied breach along with the fact that strict product liability theory extends to remote plaintiffs.
-The preliminary discussion of whether this is an “unreasonably dangerous product” or not is very, very important. Stating the “balance” test given here is MANDATORY if you want to score maximum points.
-Be wary of products that are not really “unreasonably dangerous” at all because they have been extensively tested, have great utility (often saves lives), pose trivial risks (turns hair green) to a very small number of users (less than 0.05%), and what little danger they pose is totally unknown to the manufacturer or simply cannot be easily eliminated. That is NOT an unreasonably dangerous product!
-As for Harry, it is not clear if a person can prevail on a products liability claim if the product has been discarded, scrapped or abandoned. The purpose of product liability law is to protect consumers and regular users of products, not “Dumpster Divers”. There is a strong argument that a product is no longer in the “stream of commerce” after it has been discarded or scrapped.
-Here it seems that Harry put the product back in the stream of commerce by retrieving it from the Dumpster. Also he has assumed the risk by doing that since he knew or should have known something might be wrong with a product that has been discarded.]
 
 Sample Answer 16-3: Product Liability
 TOM V. SAM
@@ -420,6 +415,11 @@ out of the garbage.
 Therefore, Harry might not be able to recover under strict product liability.
 
 
+[ANSWER EXPLANATION: This question calls for a discussion of the four theories of product liability. The facts are intended to illustrate the differences between express and implied breach along with the fact that strict product liability theory extends to remote plaintiffs.
+The preliminary discussion of whether this is an “unreasonably dangerous product” or not is very, very important. Stating the “balance” test given here is MANDATORY if you want to score maximum points.
+Be wary of products that are not really “unreasonably dangerous” at all because they have been extensively tested, have great utility (often saves lives), pose trivial risks (turns hair green) to a very small number of users (less than 0.05%), and what little danger they pose is totally unknown to the manufacturer or simply cannot be easily eliminated. That is NOT an unreasonably dangerous product!
+As for Harry, it is not clear if a person can prevail on a products liability claim if the product has been discarded, scrapped or abandoned. The purpose of product liability law is to protect consumers and regular users of products, not “Dumpster Divers”. There is a strong argument that a product is no longer in the “stream of commerce” after it has been discarded or scrapped.
+Here it seems that Harry put the product back in the stream of commerce by retrieving it from the Dumpster. Also he has assumed the risk by doing that since he knew or should have known something might be wrong with a product that has been discarded.]
 
 Definition 40. DEFAMATION?
 Under tort law DEFAMATION is a FALSE statement of material fact PUBLISHED to others about the plaintiff CAUSING DAMAGE to REPUTATION. Defamation may be SLANDER, an oral statement, or LIBEL, a written statement.
@@ -478,10 +478,6 @@ On TV Barbara accurately described Wilson's slurred speech, bloodshot eyes and u
 Because of the news broadcast, rumors rapidly spread that Wilson had again developed a drinking habit. Wilson's approval in polls fell dramatically, and he was passed over for the post of State Republican Chair, but he had little chance of being selected for that post.
 Wilson demanded a retraction and apology, but Barbara refuses. Discuss potential action by Wilson.
 
-[ANSWER EXPLANATION: This question requires discussion of defamation actions by public figures. It is an example of defamation using innuendo, interpretation (COLLOQUIUM) or knowledge of extrinsic facts (INDUCEMENT).
-A definition and discussion of actual malice is necessary. Actual malice may be based on recklessness. When it comes to recklessness, this question is a wobbler because Barbara clearly could have asked and then reported "Wilson denies a drinking problem."
-If Wilson was not a public figure, he would only have to prove the falsity of Barbara’s statements and that they were of the sort that would damage his reputation. Barbara might then claim she was PRIVILEGED to make the statements, even if they were false. But she would have to prove she acted in a ‘reasonable manner’ without malice to protect the public interest. But she would not be able to prove that because it is not clear what “public interest” she is protecting, and it would not be reasonable to make damning statements of this type on TV about a private individual without at least questioning the person about it first directly.
-PRIVILEGE is frequently tested and poorly taught so be sure to consider it in any defamation question. Did the defendant have a legitimate reason to speak out, and did they do it in a reasonable manner? The 1st Amendment does not protect defamatory statements, but it does protect the right to speak out to protect legitimate interests, as long as the defendant acts reasonably and without malice. Privilege defines the balance between these two conflicting rules of law.]
 
 Practice Answer 4
 
@@ -522,6 +518,11 @@ Wilson would argue she acted with a reckless disregard of whether her comments w
 Barbara would argue it was not reckless disregard because Wilson would only have denied drinking. She would show that no further effort on her part would have clarified the matter any further.
 Therefore, Barbara probably would be held to have not acted with actual malice.
 
+[ANSWER EXPLANATION: This question requires discussion of defamation actions by public figures. It is an example of defamation using innuendo, interpretation (COLLOQUIUM) or knowledge of extrinsic facts (INDUCEMENT).
+A definition and discussion of actual malice is necessary. Actual malice may be based on recklessness. When it comes to recklessness, this question is a wobbler because Barbara clearly could have asked and then reported "Wilson denies a drinking problem."
+If Wilson was not a public figure, he would only have to prove the falsity of Barbara’s statements and that they were of the sort that would damage his reputation. Barbara might then claim she was PRIVILEGED to make the statements, even if they were false. But she would have to prove she acted in a ‘reasonable manner’ without malice to protect the public interest. But she would not be able to prove that because it is not clear what “public interest” she is protecting, and it would not be reasonable to make damning statements of this type on TV about a private individual without at least questioning the person about it first directly.
+PRIVILEGE is frequently tested and poorly taught so be sure to consider it in any defamation question. Did the defendant have a legitimate reason to speak out, and did they do it in a reasonable manner? The 1st Amendment does not protect defamatory statements, but it does protect the right to speak out to protect legitimate interests, as long as the defendant acts reasonably and without malice. Privilege defines the balance between these two conflicting rules of law.]
+
 Definition 41. FALSE LIGHT?
 Under tort law FALSE LIGHT is the tort of publishing a false portrayal of a person in a manner that would cause them embarrassment or inconvenience.
 
@@ -549,11 +550,6 @@ Ellen decided to sue the Inkwire, so she went to the grocery store and bought a 
 Before Ellen could file suit the Inkwire ran an interview with Ellen's old boyfriend from college. He said that even though Ellen was now a strong and vocal anti-abortion advocate, she had an abortion herself in college. This was a true fact that Ellen had told her ex-boyfriend in strictest confidence. This disclosure embarrassed Ellen and made her look like a hypocrite.
 Discuss the possible actions Ellen might bring against the Inkwire and their defenses.
 
-[ANSWER EXPLANATION: This question calls for discussion of each of the four Invasion of Privacy torts -- False Light, Appropriation of Likeness, Intrusion and Disclosure of Private Facts (LAID).
-The focus in intrusion and disclosure is on the unreasonableness of the acts of the defendant. It is not unreasonable to take a picture of a naked lady if she is lying on a public beach, but it is unreasonable to take the same picture by going to great lengths to avoid detection because it violates “reasonable expectations of privacy”.
-The term “money damages” generally means an award intended to compensate the plaintiff for losses suffered in terms of property damage, lost income, inconvenience, lost privacy, embarrassment, pain and suffering, etc. But the plaintiff can also request damages measured by the unjust enrichment the defendant would otherwise reap. In that case the plaintiff is said to have, “waived the tort and sued in restitution”, and the damage award in that case is often referred to as “damages in restitution”. In most cases of False Light, Intrusion and Disclosure of Private Facts the plaintiff is suing for compensatory damages, and in most cases of Appropriation of Likeness the plaintiff is suing for damages in restitution.
-The term “damages” is broadly misused to mean “money judgment” and students are strongly advised to get (and read) Nailing the Bar’s Simple Remedies Outline early in their law school career.]
-
 
 Practice Answer 5: Invasion of Privacy
 ELLEN v. INKWIRE 1) FALSE LIGHT?
@@ -575,6 +571,11 @@ Under tort law PUBLIC DISCLOSURE is the unreasonable public disclosure of privat
 Here there was a public disclosure because Inkwire "ran the interview" in its publication. And the facts were private facts because they were told to the ex-boyfriend in "strictest confidence." These were embarrassing facts because they concerned an "abortion", a matter of personal intimacy, and of a nature likely to cause public disdain and ridicule. Ellen would argue Inkwire acted in an unreasonable manner.
 Inkwire would argue that it acted reasonably because these facts were a matter of legitimate public concern since Ellen had injected herself into the public arena as a "strong and vocal anti- abortion advocate." Inkwire would argue the public had a right to know Ellen's true background since she sought to influence public opinion on this controversial topic.
 Therefore, Ellen might fail to show Inkwire acted unreasonably.
+
+[ANSWER EXPLANATION: This question calls for discussion of each of the four Invasion of Privacy torts -- False Light, Appropriation of Likeness, Intrusion and Disclosure of Private Facts (LAID).
+The focus in intrusion and disclosure is on the unreasonableness of the acts of the defendant. It is not unreasonable to take a picture of a naked lady if she is lying on a public beach, but it is unreasonable to take the same picture by going to great lengths to avoid detection because it violates “reasonable expectations of privacy”.
+The term “money damages” generally means an award intended to compensate the plaintiff for losses suffered in terms of property damage, lost income, inconvenience, lost privacy, embarrassment, pain and suffering, etc. But the plaintiff can also request damages measured by the unjust enrichment the defendant would otherwise reap. In that case the plaintiff is said to have, “waived the tort and sued in restitution”, and the damage award in that case is often referred to as “damages in restitution”. In most cases of False Light, Intrusion and Disclosure of Private Facts the plaintiff is suing for compensatory damages, and in most cases of Appropriation of Likeness the plaintiff is suing for damages in restitution.
+The term “damages” is broadly misused to mean “money judgment” and students are strongly advised to get (and read) Nailing the Bar’s Simple Remedies Outline early in their law school career.]
 
 
 Definition 45. PRIVATE NUISANCE?
@@ -599,10 +600,6 @@ Ken realized his home was directly in the flight path of the airplanes taking of
 Four years later Ken lost the election and he wanted to move back to Los Angeles. When he had the house appraised, it was worth $500,000. Ken was furious because his home value had only increased 25 percent in value while most real estate had gone up 50 percent.
 Ken blamed the County. In the four years he owned the home the number of flights at the airport increased ten percent. This increased traffic was from increased military use in response to the crisis in Romaria. Ken could not enjoy his yard as much as before, and the little birds on the public river parkway didn't seem to sing as much as they used to.
 What actions might Ken bring against the County, what defenses might be raised, and what remedies are appropriate?
-
-[ANSWER EXPLANATION: This question is roughly based on true events. The point to remember is that "coming to the nuisance" is not a complete bar to recovery. If a defendant unreasonably interferes with the use of land, a new purchaser might "buy into the right to sue" for a nuisance the previous owner did not litigate.
-Just state the rule and prove (or disprove) the elements. Here Ken’s case is rather weak, so you may have to give “conditional” conclusions.
-Discussion of “defenses” and “remedies” is mandatory because the CALL specifically asks for it.]
 
 
 Sample Answer 16-6: Nuisance
@@ -632,6 +629,11 @@ The REMEDIES for a nuisance action include both money damages and injunctive rel
 If the nuisance is a temporary situation money damages measured by the loss of use for the period of the nuisance will be an adequate remedy. If the nuisance would continue but for injunctive relief, the Court would consider granting an injunction. Injunctive relief is an equitable remedy, and the court has discretion to deny it. The Court will balance the interests of the parties, the interests of third parties and the feasibility of judicial enforcement. If the Court denies injunctive relief, the appropriate remedy is an award of money damages measured by the loss of property value caused by the nuisance.
 Here the nuisance is a permanent condition, so the Court would consider injunctive relief. But the interest of third parties, people who use the airport, the military, and the County residents would be so significant the Court is unlikely to issue an injunction stopping the airport from continuing operations.
 Therefore the Court would most likely award Ken money damages to reflect the loss of market value of his property caused by the increase in airport traffic.
+
+[ANSWER EXPLANATION: This question is roughly based on true events. The point to remember is that "coming to the nuisance" is not a complete bar to recovery. If a defendant unreasonably interferes with the use of land, a new purchaser might "buy into the right to sue" for a nuisance the previous owner did not litigate.
+Just state the rule and prove (or disprove) the elements. Here Ken’s case is rather weak, so you may have to give “conditional” conclusions.
+Discussion of “defenses” and “remedies” is mandatory because the CALL specifically asks for it.]
+
 
 Definition 47. MALICIOUS PROSECUTION?
 Under tort law a person is liable for MALICIOUS PROSECUTION if they have instituted or continued a criminal prosecution of another person out of malice and the action was terminated based on its merits because there was no probable cause.
@@ -667,9 +669,6 @@ Three months later Star happened upon the grand opening of the next new JavaMani
 Then Buck sued Star for slander per se for accusing him of questionable business practices. Star won the suit when the jury found her statements had been true.
 What are Star's possible actions against Buck? (Do not discuss intentional infliction, defamation or false light.)
 
-[ANSWER EXPLANATION: This very short question is intended to focus on the elements that must be proven for fraud, interference, and abuse of process.
-Intentional infliction, defamation and false light were excluded by the call because they are covered in other questions.
-There is no evidence of IIED anyway because Star did not suffer “severe emotional distress.” You are unlikely to ever get such a short, simple question on a real exam.]
 
 
 Sample Answer 16-7: Miscellaneous Torts
@@ -688,3 +687,7 @@ Under tort law ABUSE OF PROCESS is bringing a civil action against the plaintiff
 legitimate basis out of malice and for an improper purpose.
 Here Buck brought a civil action against Star because he "sued Star for slander." And he had no legitimate basis because all of Star's statements were true. Buck acted out of malice and for an improper purpose because he was trying to refute Star's statements and hide the truth.
 Therefore, Buck could be liable for abuse of process.
+[ANSWER EXPLANATION: This very short question is intended to focus on the elements that must be proven for fraud, interference, and abuse of process.
+Intentional infliction, defamation and false light were excluded by the call because they are covered in other questions.
+There is no evidence of IIED anyway because Star did not suffer “severe emotional distress.” You are unlikely to ever get such a short, simple question on a real exam.]
+

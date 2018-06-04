@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script src="Stack.js"></script>
+<script>
+var my = new Stack();
+var x = 'racecar';
+console.log('x is ', x);
+for (var i = 0; i < x.length; i++) {
+	console.log('i is ', x[i]);
+	my.push(x[i]);
+}
+
+var y = '';
+for (var j = 0; j < x.length; j++) {
+	y = y + my.pop();
+}
+
+console.log('y is ', y);
+if (x === y) {
+	console.log('word is palindrome');
+} else {
+
+	console.log('word is not palindrome');
+}
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

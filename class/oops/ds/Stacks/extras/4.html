@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script src="Stack.js"></script>
+<script>
+
+function divideBy2(decNumber){
+
+    var remStack = new Stack(),
+        rem,
+        binaryString = '';
+
+    while (decNumber > 0){
+        rem = decNumber % 2;
+        remStack.push(rem);
+        decNumber = Math.floor(decNumber / 2);
+    }
+
+    while (!remStack.isEmpty()){
+        binaryString += remStack.pop();
+    }
+
+	console.log('binaryString is ', binaryString, ' and conversion is ', parseInt(binaryString, 2));
+    return binaryString;
+}
+
+console.log(divideBy2(233));
+console.log(divideBy2(10));
+console.log(divideBy2(1000));
+
+
+function bin2dec(num){
+	console.log('num is ', num);
+	var rev = num.split('').reverse();
+	console.log('rev is ', rev);
+	return rev.reduce(function(x, y, i) {
+		var ret = (y === '1') ? x + Math.pow(2, i) : x;
+		console.log('x is ', x, ', y is ', y, ', i is ', i, ', ret is ', ret);
+		return ret;
+	}, 0);
+}
+
+bin2dec('1010');
+</script>
+</head>
+
+<body>
+</body>
+</html>

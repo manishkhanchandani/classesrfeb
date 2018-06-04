@@ -116,6 +116,8 @@ Under the ATTRACTIVE NUISANCE DOCTRINE an OCCUPIER OF LAND who knows that childr
 
 This is a duty based on RELATIONSHIP which poses almost strict liability. The only defense the landowner may raise is assumption of the risk.
 
+Note: The defendant would be liable for dangers caused by use of the "attractive thing" on his land if he knew or should have known that: (1) children came to his property when the defendant and his family were not home, (2) children played on the "attractive thing", (3) use of the "attractive thing" would likely cause injury because the children would not realize the danger of using the "attractive thing", and (4) the expense of remedying the situation was slight compared to the probability of injury. 
+
 LIABILITY BASED ON RESCUER DOCTRINE / FIREMAN’S RULE?
 
 Under the RESCUER DOCTRINE defendants may be liable to rescuers who are injured attempting to rescue people injured.
@@ -260,3 +262,85 @@ Example 2 (Oct 2016):
 Here Moe put herself at risk because Moe comes into Barry’s shop to get a shave. He had a full awareness of the risks that he would be cut by Barry during a shave with a straight razor. And he appears to have consciously accepted those risks because he voluntarily entered Barry's shop for a shave and consented to the activity.
 
 Therefore, Barry may be able to prove assumptions of risks. 
+
+
+Practice Question 2
+Tom bought some firecrackers in Rural County, where they were legal. He took them into the National Forest where federal law prohibited the possession and use of fireworks. The federal law was enacted to reduce the threat of forest fires and injury on national lands.
+In the National Forest Tom waded to a gravel bar in the middle of Big River, and there he carefully lit and threw the firecrackers into the air above the river. Occasionally one would fail to explode and it would fall harmlessly into the water. There was no one else around, and there was nothing on the gravel bar that could burn.
+Little Dick was playing a half-mile upstream from Tom, throwing sticks into Big River. He was three years old. His mother warned him to stay back from the edge of the river because it was dangerous. Dick disobeyed his mother and recklessly pushed a rotted tree into the river and it swirled away in the water. No one was hurt.
+Half a mile downstream from Tom, Paula was one of five people on the bridge above Big River fishing for trout. Paula was outside the National Forest boundaries. She had ignored a sign that said "No Fishing From Bridge." Fishing from the bridge was prohibited for traffic safety, but she was well off the roadway and there were very few cars this time of year. Paula was sitting carelessly on the edge of the bridge, but it was a nice day, the water was only six feet below her, and she knew how to swim.
+Tom threw another firecracker into the air and it did not explode. Instead it fell onto the log that Dick had pushed into the river upstream.
+The log swept down the river for half a mile before the firecracker exploded just as the log swept under the bridge.
+Paula was startled and fell into the river.
+Other people that had been fishing rushed off the bridge and down the river bank to rescue Paula as she laughingly climbed up the bank.
+Harry had been fishing too, but instead of going to help Paula, he stayed on the bridge and took two dollars out of Paula's purse. No one saw Harry take the money and the crime was never solved. Paula was hurt and upset.
+Under what theories can Paula seek to recover from Tom and Dick and what defenses would they raise?
+
+[ANSWER EXPLANATION: This question focuses on the outer limits of DUTY to a remotely situated plaintiff (with firecracker yet, a la Palsgraf) and PROXIMATE CAUSATION of damage by some burning object floating down a river (a la Wagon Mound I and II). The question also focuses on the outer limits of BREACH because one cannot be breaching a duty by an act that poses no foreseeable risk to others.
+Law schools tend to brainwash every student into thinking they can always sue, and win, for every injury. The truth is that Paula’s case is frivolous. ]
+
+
+Sample Answer 16-2: Negligence
+PAULA V. TOM
+NEGLIGENCE?
+Paula’s only cause of action here is for NEGLIGENCE. Under tort law NEGLIGENCE is the failure to exercise that degree of care that a reasonably prudent person would use in the same circumstances. To establish a prima facie case Paula must generally prove DUTY, BREACH, ACTUAL AND PROXIMATE CAUSATION and DAMAGES.
+1) DUTY?
+Generally a person owes no duty to others. But a duty may be based on a STATUTE, a CONTRACT, a RELATIONSHIP, the ASSUMPTION of a duty, or PERIL caused by the defendant.
+NEGLIGENCE PER SE?
+If a STATUTE creates a duty, violating the statute may constitute NEGLIGENCE PER SE if the purpose of the statute was to protect the CLASS OF PEOPLE to which the plaintiff belongs, and the violation of the statute caused the plaintiff to suffer the TYPE OF INJURY the statute was intended to prevent.
+Here Tom violated the law that prohibited fireworks in the National Forest, and that caused Paula to suffer injury. But she was not in the CLASS OF PEOPLE the statute was intended to protect because it was to protect people “on national lands” and she was “outside the National Forest boundaries”. Further, she did not suffer the TYPE OF INJURY the statute was intended to prevent because it was to “prevent forest fires and injury” while her injury was getting wet and having her money stolen.
+Therefore, Paula would be unable to prove Tom was negligent per se.
+DUTY BASED ON PERIL?
+Under PALSGRAF, Cardozo said that a duty is only owed to those who are in the zone of danger caused by the defendant's acts. The Zone of Danger is the area where the defendant’s acts create reasonably foreseeable peril to others.
+Andrews held that if the defendant owes a duty to anyone and breaches it, he should be liable for all injury actually and proximately caused by that breach.
+Here the Zone of Danger was the gravel bar and the water area immediately around it because it was not reasonably foreseeable the firecrackers could cause peril to anyone outside that area. And there was nobody placed in danger within the zone of danger because “no one else was around” and there was “nothing that could burn”.
+Paula appeared to be outside the zone of danger caused by Tom's activities because she was a "half mile downstream." Paula might argue that the zone of danger was larger than the small area of the “gravel bar” because Tom should have seen the possibility injury could occur farther away.
+Therefore, it would be difficult for Paula to prove that Tom had any duty at all, and almost impossible for her to prove that she was placed in foreseeable peril by his actions.
+2) BREACH?
+Under tort law a BREACH is the failure to exercise DUE CARE. The standard of due care is that level of caution a reasonably prudent person would use in the same circumstance.
+Here Tom went to great lengths to be sure his activities did not endanger anyone because he went to a "gravel bar" in the "middle of the river" with no one around so there would be no foreseeable danger to anyone. And once there he threw the firecrackers “carefully”.
+Paula could only argue that a reasonably observant person would have seen the “log” floating down the river, and would have been careful not to throw any burning firecrackers onto it.
+Therefore, it would be difficult for Paula to show that a reasonable person would have been any more careful than Tom.
+3) ACTUAL CAUSE of injury to Paula?
+Under tort law an act ACTUALLY CAUSES injury if the plaintiff would not have been injured but for the act.
+Here Paula would not have fallen in the river and had her money stolen if Tom had not thrown the firecracker.
+Therefore, Tom was the actual cause of Paula's injury.
+4) PROXIMATE CAUSE of injury to Paula?
+Under tort law PROXIMATE CAUSE means that the injury to the plaintiff was foreseeable, close in time and place to the acts of the defendant and a direct result of a chain of causation unbroken by unforeseeable intervening events.
+Generally when there are two or more actual causes of an injury, the last, unforeseeable,
+intentional act will be an UNFORESEEABLE INTERVENING EVENT that becomes the sole proximate cause, cutting off all liability arising from prior acts. Further, criminal acts and intentional torts by third parties are presumed to be unforeseeable absent additional specific facts.
+Here Paula was rather far away from Tom in time and space, and it would not be foreseeable she could be injured by a firecracker at that distance. Further a reasonable person could not foresee that a firecracker would cause money to be stolen. Finally, even if Tom was the proximate cause of Paula falling in the river, he was not the proximate cause of her money being stolen because Harry’s criminal act was an unforeseeable intervening event.
+Therefore, Paula probably could not prove Tom was the proximate cause of her fall into the river, and she certainly could not prove he was the proximate cause of her money being taken.
+
+
+5) DAMAGES?
+Under tort law DAMAGES are SPECIAL (out of pocket expense) and GENERAL (pain and suffering).
+Here Paula had SPECIAL damages because she lost "two dollars" and she had GENERAL damages because she was "hurt and upset." But she got out of the river “laughingly” and was not “hurt and upset” until after she discovered the purse was stolen.
+Therefore Paula suffered actual damages, but Tom was not the cause of those damages. 6) CONTRIBUTORY or COMPARATIVE NEGLIGENCE?
+Under tort law CONTRIBUTORY NEGLIGENCE is a complete bar to recovery if the plaintiff was responsible in any manner for their injury. It is a MINORITY VIEW rule, and the MAJORITY approach is COMPARATIVE NEGLIGENCE which just reduces the plaintiff’s recovery based on the degree of fault of the plaintiff. In some states a plaintiff that is over 50% at fault for her own injuries is completely barred from recovery.
+NEGLIGENCE PER SE is defined above. Tom might argue Paula was NEGLIGENT PER SE because she was fishing on the bridge where that is prohibited by statute. But Paula did not suffer the TYPE OF INJURY the statute was to prevent/ The purpose of the statute was “traffic safety” and she was not injured in a traffic accident.
+Therefore any “negligence per se” argument by Tom would fail.
+Tom’s better argument is that Paula was contributorily (comparatively) negligent because she sat “carelessly” and that placed her in PERIL of falling.
+Therefore, Tom could easily prove Paula was “careless” and partly responsible for her own injury.
+7) ASSUMPTION OF THE RISK?
+Under tort law ASSUMPTION OF THE RISK is a complete defense when plaintiffs 1) put
+themselves at risk, 2) with a full awareness of the risks, and 3) a conscious acceptance of the risks.
+Here Paula put herself at risk because she “sat carelessly”. She had a full awareness of the risks that she could fall. And she appears to have consciously accepted those risks because the river was only a few “feet” below her, “she could swim” and it was a “nice day”.
+Therefore Tom may be able to prove assumption of the risks.
+
+Negligence is defined above.
+8) DUTY?
+Duty was defined above. Here Dick could only have a duty based on PERIL, and there is little evidence Dick’s act created reasonably foreseeable peril to anyone. The only foreseeable danger he caused by pushing the log in the river is that it might hit someone swimming in the river downstream. Therefore the “zone of danger” created by his act is the surface of the river downstream. There is no evidence anyone was in the river, and Paula was certainly not because she was on the bridge..
+Therefore, there is no evidence Dick created any foreseeable peril to anyone, and if that could not be proven he did not owe Paula or anyone else a duty.
+9) BREACH AND STANDARD OF CARE?
+Breach was defined above. The STANDARD OF CARE for a child is to act in the manner reasonable children of the same age and experience act.
+Here Dick was only “three years old” and he would only be negligent if he acted in a manner that children of that age do not reasonably act.
+Since Dick was so young it is unlikely Paula could prove that he breached his duty, if he had a duty.
+10) PROXIMATE CAUSE? Proximate cause is defined above.
+Here Dick was even farther away from Paula than Tom, and it was even more unforeseeable that his act could harm her or anyone else.
+Therefore, Paula would have even a more difficult time proving Dick was the cause of her injury.
+
+
+
+
+

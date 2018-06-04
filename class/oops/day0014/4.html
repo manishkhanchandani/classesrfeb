@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script>
+function Shape() {		//since we did not specify the prototype of this, so its parent is OBJECT
+	this.name = 'shape';
+	this.Display = function() {
+		return this.name;
+	}
+}
+
+function TwoDShape() {	//parent of this object is Shape
+	this.name = '2D shape';
+}
+
+function Triangle(side, height) {	// parent of this object is TwoDShape
+	this.name = 'Triangle';
+	this.side = side;
+	this.height = height;
+	this.getArea = function() {
+		return this.side * this.height / 2;
+	};
+}
+
+TwoDShape.prototype = new Shape();
+Triangle.prototype = new TwoDShape();
+</script>
+</head>
+
+<body>
+<p>Prototype is use to extend the object</p>
+<p>Shape</p>
+<p>TwoDShape</p>
+<p>Triangle</p>
+</body>
+</html>

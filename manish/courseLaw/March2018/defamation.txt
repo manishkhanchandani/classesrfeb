@@ -1,0 +1,268 @@
+Defamation
+
+Under tort law DEFAMATION is a FALSE statement of material fact PUBLISHED to others about the plaintiff CAUSING DAMAGE to REPUTATION. Defamation may be SLANDER, an oral statement, or LIBEL, a written statement. 
+
+Note: It is usually a mistake to discuss both defamation and false light concerning the same statement because if it is a statement that would damage one’s reputation the issue is clearly defamation, not false light. If the statement does not damage the plaintiff’s reputation but only causes embarrassment otherwise, it is not defamation and can only be false light.
+
+But many false statements are PRIVILEGED where the defendant speaks to defend a private interest, group interest or the public interest and does so without malice and in a reasonable manner calculated to defend that interest without unnecessarily harming the plaintiff.
+
+Injury to reputation will be presumed where there is LIBEL or SLANDER PER SE. SLANDER PER SE is found where the false statement alleges CRIMINAL behavior, LOATHSOME disease, UNCHASTE behavior or improper BUSINESS practices.
+
+Under NEW YORK TIMES and its progeny, a PUBLIC FIGURE PLAINTIFF must prove ACTUAL MALICE, that the false statement was made with knowledge or reckless disregard of its falseness, in order to recover in a defamation action. A PUBLIC FIGURE is a person who has acted to put themselves in the public spotlight. Further, where a matter of PUBLIC CONCERN is at issue, or where the plaintiff seeks punitive damages, the plaintiff must at least prove NEGLIGENCE.
+
+More Explanation about per se and per quod:
+Certain types of defamatory statements were damaging to reputation. Those are called defamation per se. If a statement is defamation per se, the Court may award a money judgment to plaintiffs without requiring any further evidence they suffered injury.
+
+Other defamatory statements that were are not so clearly damaging to reputation were called defamation per quod. If a statement was defamation per quod, the Court could not award a money judgment to the plaintiffs unless they presented convincing evidence they suffered monetary losses as a result of the statements.
+
+Whether statements are defamation per se or defamation pre quod depends on three factors:
+1. Whether statements are insinuations that have to be interpreted by the listener or clearly defamatory statements about the plaintiff;
+2. Whether the statements are written or oral; and
+3. The subject matter of the statements.
+
+Insinuations
+Under the common law insinuations that might harm the reputation of the plaintiff were always defamation per quod whether they are oral or written, and no matter what the subject matter might be.
+Three types of “insinuations” were recognized by the common law: innuendo, colloquium, and inducement. 
+
+The important point is that if defendants do not clearly identify the plaintiffs as the subject of their statements, or the statements do not clearly make factual assertions about the plaintiffs that would damage their reputations, they are “insinuations” and defamations per quod in all cases.
+
+If defendants make statements that clearly identify the plaintiff and allege facts that would injure the plaintiff’s reputation, they are clearly defamatory. But whether they were defamation per se or defamation per quod depended on whether the statements are libel or slander.
+
+A. Libel:
+A defamatory statement is libel if it is written or recorded in a manner that gives its damaging effects longevity. Under the common law a written defamatory statement about the plaintiff was libel and libel was always defamation per se, regardless of the subject matter.
+
+B. Slander
+A defamatory statement is slander if it is oral or transitory in nature so that the damaging effect soon dissipates. Under common law an oral defamatory statement about the plaintiff was slander but it was only defamation per se if it accused the plaintiff of one of the following four things:
+• Having committed a serious crime; 
+• Having a loathsome disease; 
+• Engaging in sexual misconduct. (Unchaste Behavior) OR 
+• Engaging in business or professional misconduct; 
+
+Remember: CLUB
+
+Any slander regarding any other subject matter was always defamation per quod.
+
+If plaintiffs prove the elements of defamation per se the Court can award money judgments without any proof the plaintiffs suffered monetary losses. These are general damages. If the plaintiff also proves the statements caused monetary losses those are special damages and they can be awarded in addition. This is often phrased, “The plaintiff can get generals without proving specials.”
+
+If plaintiffs only prove the elements of defamation per quod the Court cannot award any damages at all until unless the plaintiffs prove the defamations caused monetary losses. Those are special damages. If plaintiffs do prove special damages, the Court can award general damages in addition to the special damages. But if plaintiffs fail to prove defamations per quod caused monetary losses the plaintiffs get nothing. This is often phrased, “The plaintiff must prove specials to get generals”.
+
+Essay
+
+Barbara, the famous TV news lady, was assigned to do a story on former governor, Pat Wilson, to find out why Wilson had become almost a recluse in the years since he left office.
+
+Barbara interviewed Wilson at his home. Wilson's speech was slurred, his eyes were bloodshot and he was unsteady. Barbara asked him about his health, and he declined to comment. Barbara knew Wilson had once been an alcoholic, and she suspected he had begun drinking heavily again. But she did not ask him about this because she knew he would deny it.
+
+On TV Barbara accurately described Wilson's slurred speech, bloodshot eyes and unsteady gait. Then she stated, "It appears that someone we once knew and respected has gone back to his old ways." She did not state who the "someone" was, and she did not explain what she meant by "his old ways."
+
+Because of the news broadcast, rumors rapidly spread that Wilson had again developed a drinking habit. Wilson's approval in polls fell dramatically, and he was passed over for the post of State Republican Chair, but he had little chance of being selected for that post.
+
+Wilson demanded a retraction and apology, but Barbara refuses. Discuss potential action by Wilson.
+
+[ANSWER EXPLANATION: This question requires discussion of defamation actions by public figures. It is an example of defamation using innuendo (When you refer to something indirectly, you point at it without mentioning it, making an innuendo), interpretation (COLLOQUIUM) or knowledge of extrinsic facts (INDUCEMENT).
+A definition and discussion of actual malice is necessary. Actual malice may be based on recklessness. When it comes to recklessness, this question is a wobbler because Barbara clearly could have asked and then reported "Wilson denies a drinking problem."
+If Wilson was not a public figure, he would only have to prove the falsity of Barbara’s statements and that they were of the sort that would damage his reputation. Barbara might then claim she was PRIVILEGED to make the statements, even if they were false. But she would have to prove she acted in a ‘reasonable manner’ without malice to protect the public interest. But she would not be able to prove that because it is not clear what “public interest” she is protecting, and it would not be reasonable to make damning statements of this type on TV about a private individual without at least questioning the person about it first directly.
+PRIVILEGE is frequently tested and poorly taught so be sure to consider it in any defamation question. Did the defendant have a legitimate reason to speak out, and did they do it in a reasonable manner? The 1st Amendment does not protect defamatory statements, but it does protect the right to speak out to protect legitimate interests, as long as the defendant acts reasonably and without malice. Privilege defines the balance between these two conflicting rules of law.]
+
+Solution:
+
+WILSON v. BARBARA 
+
+1) DEFAMATION?
+
+Under the law of torts DEFAMATION is a false statement of material fact of or about the plaintiff published to another party causing damage to the plaintiff's reputation. If the statement involves innuendo, interpretation, or knowledge of extrinsic facts it is DEFAMATION PER QUOD. Oral defamation is SLANDER and written or recorded defamation is LIBEL.
+
+A false statement may be PRIVILEGED if the defendant speaks to defend a private interest, group interest or the public interest and does so without malice and in a reasonable manner calculated to defend that interest without unnecessarily harming the plaintiff.
+
+Therefore, if Wilson can establish a prima facie case, and that Barbara was not privileged, Barbara can be liable for defamation.
+
+2) Were there FALSE STATEMENTS OF FACT?
+
+To establish a prima facie case, Wilson must show Barbara's objectionable comments were false. Her comments about his physical appearance, the slurred speech and bloodshot eyes, would be true and not defamatory because they do not, by themselves, cause loss of reputation.
+
+Wilson's denial that he had been drinking might not be credible enough to prove the point. He may have difficulty proving factually that he had not been drinking.
+
+Therefore, Wilson may not be able to prove the remarks were false.
+
+3) Were the STATEMENTS ABOUT THE PLAINTIFF?
+
+Here Barbara might say her remarks were not clearly about Wilson because she only said "someone" had done something. But the context within which the remarks were made, comments on an interview with Wilson and his physical appearance, made it clear Barbara's statements were about Wilson.
+
+The statement involved innuendo and required extrinsic facts and interpretation because it referred to "his old ways." Therefore Barbara would argue this was a defamation PER QUOD, if at all. But Wilson would argue that since the remarks were made along with observations about "slurred speech" and "bloodshot eyes" viewers would interpret this as a reference to prior drinking problems even if they had no prior knowledge of extrinsic facts. Wilson would argue this was defamation PER SE.
+
+Therefore, the remarks would reasonably be interpreted to be about Wilson.
+
+4) Did Barbara PUBLISH her remarks?
+
+Here Barbara clearly published her remarks because they were made "on TV."
+
+5) Were the statements DAMAGING TO REPUTATION?
+
+A statement that Wilson had become an alcoholic would be damaging to reputation because alcoholism is generally seen as a character flaw and undesirable in a person placed in a position of responsibility.
+
+Therefore, the remarks were damaging to reputation.
+
+6) Did Wilson SUFFER DAMAGE?
+
+Under the law of torts DEFAMATION PER QUOD requires proof of SPECIAL DAMAGES before GENERAL DAMAGES will be presumed. Special damages will be presumed in a slander per se concerning criminal acts, a loathsome disease, unchaste behavior or improper business practices.
+
+Here Wilson might argue that the claim he was alcoholic is equivalent to accusation of a loathsome disease. Barbara would dispute this, but alcoholism often is seen as a disease that might cause others to avoid the plaintiff.
+
+Barbara would argue that her statements were not defamatory on their face (not per se) because they involved innuendo and required interpretation. Wilson would dispute this.
+Wilson would argue he had suffered SPECIAL DAMAGES because his "popularity fell" and he did not get a position he wanted. Barbara would argue that this did not damage Wilson because he was a "former" politician and "almost a recluse." Further, she would argue that Wilson "had little chance" of getting the post, so her broadcast did not cause his loss.
+
+Therefore, damages may be presumed, or Wilson may be able to prove damages.
+
+7) Is Wilson a PUBLIC FIGURE PLAINTIFF?
+
+Under New York Times v. Sullivan a plaintiff that is a public figure must prove actual malice, statements made with knowledge or reckless disregard for their falsity. A public figure is one who injects themselves into the public arena.
+
+Here Wilson had been inactive in the public arena because he was "almost a recluse" and only a "former governor." Barbara would argue that Wilson agreed to be "interviewed at his home" for a "TV" show, and hoped to become the "State Republican Chair."
+
+Therefore, Wilson had been in the public eye, was placing himself in the public arena by willingly being interviewed, and was a public figure.
+
+8) Can Wilson prove ACTUAL MALICE?
+
+Actual malice means statements made with knowledge of or reckless disregard for their falsity. Reckless disregard means intentionally acting without awareness and with negligent disregard for the clear and serious risk to others.
+
+Here Barbara did not act with knowledge her statement was false because she "suspected" it was true. But there was a clear risk of injury to Wilson because she made comments "on TV" that would damage him.
+
+Wilson would argue she acted with a reckless disregard of whether her comments were true or not because she had an opportunity to ask Wilson and "did not ask."
+Barbara would argue it was not reckless disregard because Wilson would only have denied drinking. She would show that no further effort on her part would have clarified the matter any further.
+
+Therefore, Barbara probably would be held to have not acted with actual malice.
+
+June 2012
+
+Superstore is a 24-hour grocery store. For safety reasons, Superstore has installed bright lights in its parking lot that turn on in response to loud noises. The lights turn on several times a week, especially during the night, and have caused neighboring homeowners to complain of loss of sleep and various adverse health consequences.
+
+One night, Ned and Carl exited Superstore, each carrying a heavy bag. Ned is the publisher of a local newspaper and Carl is a business consultant. As they exited, they accidentally bumped into each other, each causing the other to drop his bag and spill its contents. A loud argument ensued. Ned took several steps toward Carl; Carl threw an orange at Ned and grazed his pant leg without injuring him; and Ned punched Carl in the stomach. The loudness of the argument caused the lights in the parking lot to turn on. Soon, a Superstore security guard arrived and restored order.
+
+The next day, Ned published an account of the incident, calling Carl a “coward and a liar.” Carl experienced a substantial decrease in business consulting thereafter.
+
+1. What tort claim or claims can Ned reasonably bring against Carl, and what defense or defenses can Carl reasonably raise? Discuss.
+2. What tort claim or claims can Carl reasonably bring against Ned, and what defense or defenses can Ned reasonably raise? Discuss.
+3. What tort claim or claims can the neighboring homeowners reasonably bring against Superstore? Discuss. 
+
+Solution A
+
+DEFAMATION
+
+DEFAMATION is the publication to a third party of information "of and concerning the plaintiff" that is false and harms the plaintiff's reputation. LIBEL is publishing the defamatory information in a manner that is fairly permanent, e.g., in a newspaper. Normally, special damages do not need to be proved for any form of LIBEL, but they are certainly presumed for LIBEL PER SE. LIBEL PER SE is libelous publication of defamatory information that alleges:
+
+i) Unchastely
+ii) Commission of a crime of moral turpitude
+iii) A person is incompetent in his business or profession OR
+iv) A loathsome disease (traditionally leprosy or a venereal disease)
+
+Here, Ned "published an account of [the altercation between him and Carl]" and in the newspaper publication called Carl a "coward and a liar." This information was "of and concerning" Carl, and it was published to third parties (the newspaper's readers). Ned had nothing on which to base the allegation that Carl was a liar, and thus the information was false. Since Carl "experienced a substantial decrease in business consulting thereafter," it is arguable that the decrease was a result of the allegation. The publication clearly harmed Carl's reputation. Since being a "coward and a liar" clearly implies that a person is not competent as a business consultant, Ned's publication constitutes LIBEL PER SE and Carl does not need to prove special damages. Since Carl was not a public personality and this occurrence was not of public concern, there are no constitutional elements to be dealt with.
+
+DEFENSES TO DEFAMATION
+Ned will argue that he had the limited privileges of publishing an opinion, and of publishing a report of a public incident. However, Ned surpassed and thus made ineffective these privileges by showing malice, a reckless indifference to the truth or falsity of the allegations. NED'S DEFENSES TO DEFAMATION WILL FAIL.
+
+Solution B
+
+Defamation
+
+Defamation requires a defamatory statement by D, of or concerning P, published to a third party who understands it to refer to P, and damage to the reputation. A defamatory remark is one that causes a person to be shunned, hated, loathed or avoided or causes injury to a person reputation.
+
+Slander/Libel
+
+A statement is slander if it is spoken and libel if it is printed. A statement is libel on its face or slander per se if it imputes a loathsome disease, a want of chastity, a crime of moral turpitude or is injurious to one's occupation. If the person defamed is a public figure and the matter is of public concern they must prove falsity and fault. If person is private figure and the matter is of private concern the P must prove fault and mere negligence.
+
+Here Carl will bring an action against Ned for defamation. Carl will argue that the statement that he was a liar and a coward was defamatory and damaged his reputation. He will further argue that when he published it in the newspaper that he worked for, it was publicated to a third party and that he used his name and described the incident would cause others to understand that it was referred to him. Carl will argue that his business and reputation was damaged in this publication. Carl will argue that this statement is libel because it was printed and in a permanent form and widely read. He will further assert that this statement was libel on its face because Ned said he was a coward and a liar. Carl will argue that as a business consultant his customers expect honesty and to publicly call him a liar is deliberately injurious to his occupation. The courts may not determine that this is an "on its face" statement because Ned did not specifically state that he could not perform his occupation or was inept directly, therefore Carl will have to prove special damages and will not get presumed damages for a statement being libel on its face.
+
+Fault
+
+Fault requires proving malice. Malice is knowledge of falsity or entertaining serious doubts as to the truthfulness before publishing something.
+Here Carl will argue that Ned was acting with malice as he was maliciously and recklessly printing the incident and calling him injurious names after the altercation. Carl will assert that he was negligent in printing the statement as he had a duty as a professional newsman to accurately report the news and not incidents that he embellished out of spite. Carl will prevail in this argument.
+
+Damages
+
+Carl will show that he was injured in his occupation as a result of Ned's negligent publication. He will show that his business has substantially declined as a result of the remarks made by Ned. Carl will be entitled to general damages that he can show as a result and possibly punitive damages as the statements were made negligently and maliciously. 
+
+June 2015
+
+Abe was the head coach of the fifth-grade girls’ basketball team at Elementary School. Bob, the assistant coach, blamed Abe for the team’s poor performance. Seeking to have Abe fired, Bob accused Abe after a game of stealing money from the team fund. Bob made the accusation while standing in a crowd of students and parents. Bob knew the accusation to be untrue.
+
+In retaliation, Abe threw a basketball at Bob, who ducked to avoid being hit. The basketball missed Bob but struck Carl, a parent, in the face. Abe then went up to Bob and told him, “You’d better watch your back,” which subsequently caused Bob to have nightmares.
+
+Abe was thereafter fired from his position as head coach, based on Bob’s accusation that Abe had stolen money from the team, and he was unable to obtain a job in his chosen profession.
+
+1. Under what theories, if any, and against whom, might Abe sue for damages? Discuss.
+2. Under what theories, if any, and against whom, might Bob sue for damages? Discuss.
+3. Under what theories, if any, and against whom, might Carl sue for damages? Discuss.
+
+Solution A
+
+Abe v Bob Defamation
+
+A defamatory statement made by D concerning of P published to a third party that causes damages to P's reputation. Here Abe was the coach of the basketball team and was being blamed for the team’s bad performance. Bob made an accusation in front of the crowd of students and parents. Bob knew the accusation to be false. This would constitute a defamatory statement because it was known to be false.
+
+Concerning of P
+
+Here the statements were about Abe because he was mentioned directly. 
+
+Published to a third party
+
+Here Bob made the statements in front of the students and parents who presumably understood.
+
+Damages to P's reputation
+
+Here being accused of stealing money would damage one's reputation because it implies that you are a dishonest person and reflects on your character as a person and morals. The facts indicate that due to the defamation Abe was fired and was not able to obtain a job in his profession.
+
+Slander per se
+
+Slander is spoken defamation. It is per se if it falls within the following categories: business, crime involving moral turpitude, chastity of a woman and loathsome disease. Here the statements were regarding theft and dishonesty. This would constitute moral turpitude crime because it tarnishes the P's reputation as an honorable and honest person and alludes that P is a criminal who stole money from the team fund.
+
+Additionally it also falls within the business and profession category because as a head coach he was held in a trust position to dispose of the team funds and entrust in training the girls. This accusation would reflect badly on his ability to do his job and on his trustworthiness.
+
+Therefore the defamation is slander per se and if there are no damages they would be presumed.
+
+Constitutional Issues
+
+If the P is a public figure you need to prove actual malice which is falsity and fault as to the defamation. If it is a private person you only need to establish a prima facie case.
+A public person is one who gains notoriety or thrust himself into the public eye.
+
+Here Abe seems to be public person amongst his peers because he is the head coach and is known by the students and teachers. Usually all the students and parents know the sport coaches. Not only was he known by his peers from the school he coached since he was the head coach but was also known by other schools that compete against the coach's team. Among the sports community the coaches know of other school coaches thus other schools would know of Abe and his work as a coach, whether he is a good coach and has won games or a bad one and lost championships.
+
+Therefore in this regard Abe will be considered a public person.
+
+Falsity and Fault
+
+There needs to be intentional or reckless disregard for its truth or falsity. If the matter is private then there needs to be at least negligence.
+The facts state that Bob knew the statements to be false nevertheless Bob intentionally made the statements in front of everyone with the purpose to damage Abe's reputation.
+Therefore there is malice and Abe would be entitled to recover actual damages and may recover punitive damages.
+
+Damages
+
+Here the facts state that Abe lost his job due to the defamation and was not able to get other jobs because his reputation was tarnished.
+Therefore Abe will be entitled to recover damages.
+
+Defenses Qualified Privilege
+
+Bob will raise that his statements were privileged because they were for the public interest. Because it was in the interest of the school and the parents to know the type of coach Abe was.
+
+However this defense will not hold because the statements were made intentionally with malice since he knew the statements were not true.
+
+Solution B:
+
+Abe v. Bob
+
+Defamation: when a defendant makes a false statement about another that he knows to be false or is negligent as to its truth or falsity, and it is communicated to a third party, he is liable to that person for all harm caused thereby.
+
+False Statement: a statement that is untrue about the plaintiff.
+
+In the current case, the facts tell us that Bob made statement about Abe stealing from the team fund that he knew to be false. Therefore this element is met.
+
+Communicated to a third party: This is either accomplished by libel (printed matter) or slander (verbally communicated) where the defendant says it directly to a third party or in manner which they are reasonably certain the third person will hear or read it.
+
+In the current case, Bob made the false statement while standing in a crowd of students and parents. Bob was reasonably certain that this false statement would be heard by third parties. Therefore the element of communication is met.
+
+Plaintiff is harmed thereby: In the current case the facts tell us that Abe was fired as a result of the false statement made by Bob and was not able to find another job. Clearly Abe was harmed thereby.
+
+Slander per se: When the false statement made was such that would shock the conscience and hold the subject of the statement up to ridicule, scorn, hate and contempt, especially one that impacts one’s work and job, this can be slander per se.
+In the current case, the type of slander made by Bob was one that accused him of being a thief, something that would shock the conscience of a regular person. It clearly caused Abe to be scorned and hated as he was fired as a result of it and could not find another job in his chosen profession. 
+
+Therefore Bob would clearly be liable to Abe for Defamation.
+
+Defenses: There do not appear to be any good defenses for Bob to use. 

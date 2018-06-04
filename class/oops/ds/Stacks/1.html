@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script src="Stack.js"></script>
+<script>
+
+let myStack = new Stack();
+console.log('is empty: ', myStack.isEmpty());
+myStack.push('Book 1');
+myStack.push('Book 2');
+myStack.push('Book 3');
+myStack.push('Book 4');
+console.log(myStack.peek());
+console.log(myStack.size());
+console.log('is empty: ', myStack.isEmpty());
+myStack.push('Book 5');
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.size());
+
+
+
+myStack.print();
+</script>
+</head>
+
+<body>
+</body>
+</html>

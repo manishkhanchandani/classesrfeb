@@ -1,0 +1,294 @@
+{
+	"issues": {
+		"assault": {
+			"title": "Assault",
+			"mbe": [
+			
+			]
+		},
+		"battery": {
+			"title": "Battery",
+			"mbe": [
+			
+			]	
+		},
+		"conversion": {
+			"title": "Conversion",
+			"mbe": [
+			
+			]
+		},
+		"defamation": {
+			"title": "Defamation",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_necessity": {
+			"title": "Defense of Necessity",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_recapture": {
+			"title": "Defense of Recapture",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_discipline": {
+			"title": "Defense of Discipline",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_authority_of_law": {
+			"title": "Defense of Authority of Law",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_consent": {
+			"title": "Defense of Consent",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_others": {
+			"title": "Defense of Others",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_property": {
+			"title": "Defense of Property",
+			"mbe": [
+			
+			]
+		},
+		"defense_of_infancy_insanity": {
+			"title": "Defense of Insanity / Infancy",
+			"mbe": [
+			
+			]
+		},
+		"iied": {
+			"title": "Intentional Infliction of Emotional Distress",
+			"mbe": [
+			
+			]
+		},
+		"independent_contractor_liability": {
+			"title": "Independent Contractor",
+			"mbe": [
+			
+			]
+		},
+		"negligence": {
+			"title": "Negligence",
+			"mbe": [
+				"A manufacturer acts negligently when it fails to act with due care i.e. it fails to act reasonably under all the relevant circumstances. The question specifies that Price has brought a negligence, not a strict liability action. Therefore, Price must prove more than that the bolt was defective. So conclusion is strict liability is case, then we have to show only that bolt was defective and in negligence case we have to show more than that."
+			]
+		},
+		"negligence_actual_cause": {
+			"title": "Negligence Actual Cause",
+			"mbe": [
+			
+			]
+		},
+		"negligence_assumption_of_risks": {
+			"title": "Negligence Assumption of Risks",
+			"mbe": [
+			
+			]
+		},
+		"negligence_attractive_nuisance": {
+			"title": "Attractive Nuisance Doctrine",
+			"mbe": [
+			
+			]
+		},
+		"negligence_breach": {
+			"title": "Negligence Breach",
+			"mbe": [
+			
+			]
+		},
+		"negligence_breach_res_ipsa_loquitur": {
+			"title": "Negligence Breach based Res Ipsa Loquitur",
+			"mbe": [
+			
+			]
+		},
+		"negligence_comparative": {
+			"title": "Comparative Negligence",
+			"mbe": [
+				"All comparative negligence statutes allow a negligent plaintiff to recover if the plaintiff to recoer if the plaintiff's share of negligence is less than that of the defendant. Some comparative negligence statutes may allow recovery for a plaintiff whose share is equal to that of the defendant. "Pure" comparative negligence statutes allow a plaintiff to recover so long as the plaintiff's share of negligence is less than 100 percent."
+			]
+		},
+		"negligence_contributory": {
+			"title": "Contributory Negligence",
+			"mbe": [
+			
+			]
+		},
+		"negligence_duty": {
+			"title": "Negligence General Duty",
+			"mbe": [
+			
+			]
+		},
+		"negligence_duty_peril": {
+			"title": "Negligence Duty based on PERIL",
+			"mbe": [
+			
+			]
+		},
+		"negligence_duty_premises": {
+			"title": "Negligence Duty based on Premises Liability",
+			"mbe": [
+			
+			]
+		},
+		"negligence_egg_shell_plaintiff": {
+			"title": "Negligence Egg Shell Plaintiff",
+			"mbe": [
+			
+			]
+		},
+		"negligence_general_damages": {
+			"title": "Negligence General Damages",
+			"mbe": [
+			
+			]
+		},
+		"negligence_nied": {
+			"title": "NIED"
+		},
+		"negligence_last_clear_chance": {
+			"title": "Negligence Last Clear Chance",
+			"mbe": [
+			
+			]
+		},
+		"negligence_per_se": {
+			"title": "Negligence Per Se",
+			"mbe": [
+			
+			]
+		},
+		"negligence_proximate_cause": {
+			"title": "Negligence Proximate Cause",
+			"mbe": [
+			
+			]
+		},
+		"negligence_rescuer_doctrine": {
+			"title": "Negligence Rescuer Doctrine / Fireman's Rule",
+			"mbe": [
+			
+			]
+		},
+		"negligence_special_damages": {
+			"title": "Negligence Special Damages",
+			"mbe": [
+			
+			]
+		},
+		"products_liability": {
+			"title": "Products Liability",
+			"mbe": [
+			
+			]
+		},
+		"pl_breach_exp_warranty": {
+			"title": "Products Liability Breach of Express Warranty",
+			"mbe": [
+			
+			]
+		},
+		"pl_breach_imp_warranty": {
+			"title": "Products Liability Breach of Implied Warranty",
+			"mbe": [
+			
+			]
+		},
+		"pl_negligence": {
+			"title": "Products Liability Negligence",
+			"mbe": [
+			
+			]
+		},
+		"pl_strict_liability": {
+			"title": "Products Liability Strict Liability in Tort",
+			"mbe": [
+			
+			]
+		},
+		"respondent_superior": {
+			"title": "Respondent Superior",
+			"mbe": [
+			
+			]
+		},
+		"self_defense": {
+			"title": "Self Defense",
+			"mbe": [
+			
+			]
+		},
+		"strict_liability": {
+			"title": "Strict Liability",
+			"mbe": [
+			
+			]
+		},
+		"trespass_to_chattels": {
+			"title": "Trespass To Chattel",
+			"mbe": [
+			
+			]
+		},
+		"transferred_intent": {
+			"title": "Transferred Intent",
+			"mbe": [
+			
+			]
+		},
+		"trespass_to_land": {
+			"title": "Trespass to Land",
+			"mbe": [
+			
+			]
+		},
+		"vicarious_liability": {
+			"title": "Vicarious Liability for Joint Enterprise",
+			"mbe": [
+			
+			]
+		}
+	}
+}
+
+
+
+1. All comparative negligence statutes allow a negligent plaintiff to recover if the plaintiff to recoer if the plaintiff's share of negligence is less than that of the defendant. Some comparative negligence statutes may allow recovery for a plaintiff whose share is equal to that of the defendant. "Pure" comparative negligence statutes allow a plaintiff to recover so long as the plaintiff's share of negligence is less than 100 percent.
+
+comparative negligence
+
+
+2. A manufacturer acts negligently when it fails to act with due care i.e. it fails to act reasonably under all the relevant circumstances. The question specifies that Price has brought a negligence, not a strict liability action. Therefore, Price must prove more than that the bolt was defective. So conclusion is strict liability is case, then we have to show only that bolt was defective and in negligence case we have to show more than that.
+
+negligence vs strict liability
+
+3. Ther terms "proximate cause" and "legal cause" are different names for the same basic legal concept - the liability of a person who is negligent extends to all the consequences of his conduct which are reasonably foreseeable. Proximate causes does not exist when an unforeseeable, intervening cause results in an injury which was not likely to occur as a consequence of the defendant's negligence.
+
+negligence proximate cause
+
+4. If a jury is not persudaded that a defendant failed to exercise due care, or that is failed to act reasonably under the circumstances, the plaintiff must lose.
+
+negligence duty
+
+5. The tort of false imprisonment occurs when the defendant has intentionally caused the plaintiff to be confined to an area which has definite physical boundaries and from which there is no reasonable means to escape.
+
+false imprisonment

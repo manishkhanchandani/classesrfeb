@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script src="Stack.js"></script>
+<script>
+//Balance Parenthesis Project
+function fn(symbols) {
+	let stack = new Stack();
+	let index = 0;
+	let balanced = true;
+	let opens = '([{';
+	let closes = ')]}';
+	let symbol = '';
+	let takeout = '';
+	
+	//console.log('stack size is ', stack.size());
+	
+	while(index < symbols.length && balanced) {
+		symbol = symbols[index]; //symbols.charAt(index);
+		//console.log('index is ', index, ', symbol is ', symbol, ', opens.indexOf is ', opens.indexOf(symbol));
+		if (opens.indexOf(symbol) >= 0) {
+			stack.push(symbol);
+			//console.log('open symbol added in the stack: ', symbol);
+			//stack.print();
+		} else {
+			if (stack.isEmpty()) {
+				balanced = false;
+				//console.log('stack is empty, no more symbols to takeout');
+			} else {
+				//this is close case
+				//console.log('close symbol is ', symbol); //symbol is close symbol
+				takeout = stack.pop();//takeout is open symbol 
+				//console.log('takeout value is ', takeout, ', numbering for takeout is ', opens.indexOf(takeout), ', numbering for symbol is ', closes.indexOf(symbol));
+				if (opens.indexOf(takeout) === closes.indexOf(symbol)) {
+					//console.log('take out symbol ', takeout, ', matching with symbol: ', symbol);
+				} else {
+					balanced = false;
+					//console.log('take out symbol ', takeout, ', not matching with symbol: ', symbol);
+				}
+			}
+		}
+	
+		index++;
+	}//ending while loop
+	
+	if (balanced && stack.isEmpty()) {
+		return true;
+	}
+	
+	return false;
+}
+
+console.log(fn('{[()]}]')); //true
+console.log(fn('{{([][])}()}')); //true
+console.log(fn('({)}')); //false
+
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

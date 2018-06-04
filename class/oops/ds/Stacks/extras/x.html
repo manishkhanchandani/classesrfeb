@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>Stack Examples
+
+Example 1 (Balanced Parenthesis)
+
+<script src="Stack.js"></script>
+<script>
+//Balance Parenthesis Project
+function fn(symbols) {
+   let stack = new Stack();
+   let index = 0;
+   let balanced = true;
+   let opens = '([{';
+   let closes = ')]}';
+   let symbol = '';
+   let takeout = '';
+   
+   //console.log('stack size is ', stack.size());
+   
+   while(index < symbols.length && balanced) {
+      symbol = symbols[index]; //symbols.charAt(index);
+      //console.log('index is ', index, ', symbol is ', symbol, ', opens.indexOf is ', opens.indexOf(symbol));
+      if (opens.indexOf(symbol) >= 0) {
+         stack.push(symbol);
+         //console.log('open symbol added in the stack: ', symbol);
+         //stack.print();
+      } else {
+         if (stack.isEmpty()) {
+            balanced = false;
+            //console.log('stack is empty, no more symbols to takeout');
+         } else {
+            //this is close case
+            //console.log('close symbol is ', symbol); //symbol is close symbol
+            takeout = stack.pop();//takeout is open symbol 
+            //console.log('takeout value is ', takeout, ', numbering for takeout is ', opens.indexOf(takeout), ', numbering for symbol is ', closes.indexOf(symbol));
+            if (opens.indexOf(takeout) === closes.indexOf(symbol)) {
+               //console.log('take out symbol ', takeout, ', matching with symbol: ', symbol);
+            } else {
+               balanced = false;
+               //console.log('take out symbol ', takeout, ', not matching with symbol: ', symbol);
+            }
+         }
+      }
+   
+      index++;
+   }//ending while loop
+   
+   if (balanced && stack.isEmpty()) {
+      return true;
+   }
+   
+   return false;
+}
+
+console.log(fn('{[()]}]')); //true
+console.log(fn('{{([][])}()}')); //true
+console.log(fn('({)}')); //false
+
+</script>
+Example 2 (Reverse the words and check if they are palindrome)
+
+<script src="Stack.js"></script>
+<script>
+var my = new Stack();
+var x = 'racecar';
+console.log('x is ', x);
+for (var i = 0; i < x.length; i++) {
+   console.log('i is ', x[i]);
+   my.push(x[i]);
+}
+
+var y = '';
+for (var j = 0; j < x.length; j++) {
+   y = y + my.pop();
+}
+
+console.log('y is ', y);
+if (x === y) {
+   console.log('word is palindrome');
+} else {
+
+   console.log('word is not palindrome');
+}
+</script>
+Example 3 
+
+<script src="Stack.js"></script>
+<script>
+
+function divideBy2(decNumber){
+
+    var remStack = new Stack(),
+        rem,
+        binaryString = '';
+
+    while (decNumber > 0){
+        rem = decNumber % 2;
+        remStack.push(rem);
+        decNumber = Math.floor(decNumber / 2);
+    }
+
+    while (!remStack.isEmpty()){
+        binaryString += remStack.pop();
+    }
+
+    return binaryString;
+}
+
+console.log(divideBy2(233));
+console.log(divideBy2(10));
+console.log(divideBy2(1000));
+
+//parseInt(binaryString, 2)
+
+function bin2dec(num){
+	console.log('num is ', num);
+	var rev = num.split('').reverse();
+	console.log('rev is ', rev);
+	return rev.reduce(function(x, y, i) {
+		var ret = (y === '1') ? x + Math.pow(2, i) : x;
+		console.log('x is ', x, ', y is ', y, ', i is ', i, ', ret is ', ret);
+		return ret;
+	}, 0);
+}
+
+bin2dec('1010');
+</script>
+
+</body>
+</html>
