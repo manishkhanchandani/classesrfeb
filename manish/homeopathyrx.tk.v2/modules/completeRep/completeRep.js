@@ -325,7 +325,7 @@ angular.module('myApp.completeRep', ['ngRoute'])
     if ($routeParams.page) {
       $scope.frm.page = parseInt($routeParams.page);
     }
-    var url = 'php2/repertory/complete.php?action=complete_getAll&start=0&max=5&cacheTime=0&page='+$scope.frm.page;
+    var url = 'php2/repertory/complete.php?action=complete_getAll&start=0&max=25&cacheTime=0&page='+$scope.frm.page;
     dataService.get(url, function (r) { console.log('success: ', r); $scope.records = r.data.data.results; /*console.log($scope.records); */}, function (r) { console.log('failed: ', r)});
   };
   $scope.viewSymptoms();
